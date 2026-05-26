@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sean · SK square</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="#" aria-label="SK square">
+                <span class="brand-sk">SK</span>
+                <span class="brand-square">square</span>
+            </a>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#hobby">Hobby</a>
+                <a href="#intro">Intro</a>
+                <a href="#color">Color</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <p class="eyebrow" id="greeting">HELLO, I'M</p>
+                <h1 class="hero-name">
+                    <span class="hero-name-text">Sean</span>
+                </h1>
+                <p class="hero-role">IR Manager · SK square</p>
+                <div class="hero-divider" aria-hidden="true"></div>
+                <p class="hero-tagline">재윤이 아빠, 그리고 IR 매니저.</p>
+            </div>
+            <div class="hero-orb" aria-hidden="true"></div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-head">
+                <span class="section-num">01</span>
+                <h2 class="section-title">기본 정보</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-cell">
+                    <p class="info-label">Name</p>
+                    <p class="info-value">Sean</p>
+                </div>
+                <div class="info-cell">
+                    <p class="info-label">Age</p>
+                    <p class="info-value">40s</p>
+                </div>
+                <div class="info-cell">
+                    <p class="info-label">Role</p>
+                    <p class="info-value">IR Manager</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobby" class="section">
+            <div class="section-head">
+                <span class="section-num">02</span>
+                <h2 class="section-title">취미</h2>
+            </div>
+            <div class="hobby-list">
+                <article class="hobby-card">
+                    <span class="hobby-index">01</span>
+                    <h3 class="hobby-name">여행</h3>
+                    <p class="hobby-desc">새로운 공간에서 영감을 얻습니다.</p>
+                </article>
+                <article class="hobby-card hobby-card-accent">
+                    <span class="hobby-index">02</span>
+                    <h3 class="hobby-name">Partay~~~</h3>
+                    <p class="hobby-desc">사람들과 어울리는 에너지를 즐깁니다.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="intro" class="section section-quote">
+            <div class="section-head">
+                <span class="section-num">03</span>
+                <h2 class="section-title">한 줄 소개</h2>
+            </div>
+            <blockquote id="introQuote" class="quote">
+                <span class="quote-mark" aria-hidden="true">"</span>
+                <span class="quote-text">재윤이 아빠입니다</span>
+            </blockquote>
+            <button id="highlightBtn" class="btn-ghost" type="button">
+                한 줄 소개 강조하기
+            </button>
+        </section>
+
+        <section id="color" class="section">
+            <div class="section-head">
+                <span class="section-num">04</span>
+                <h2 class="section-title">좋아하는 색깔</h2>
+            </div>
+            <div class="color-card">
+                <div
+                    class="color-swatch"
+                    id="colorSwatch"
+                    data-color="#87CEEB"
+                    title="클릭하면 색상 코드가 복사됩니다"
+                ></div>
+                <div class="color-meta">
+                    <p class="color-name">Sky Blue</p>
+                    <p class="color-code" id="colorCode">#87CEEB</p>
+                    <p class="color-hint">클릭하면 색상 코드가 복사됩니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-brand">
+                <span class="brand-sk">SK</span><span class="brand-square">square</span>
+            </span>
+            <span class="footer-copy">© 2026 Sean · Personal introduction</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

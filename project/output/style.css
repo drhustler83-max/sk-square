@@ -1,0 +1,566 @@
+/* ============================================================
+   SK square inspired design system
+   - Primary  : SK Red    #EA002C
+   - Accent   : SK Orange #F26E22
+   - Surface  : #FFFFFF / #FFF7F4
+   - Ink      : #1A1A1A / #5B5B5B
+   ============================================================ */
+
+:root {
+    --sk-red: #ea002c;
+    --sk-red-dark: #b8001f;
+    --sk-orange: #f26e22;
+    --sk-orange-light: #ffa15c;
+    --sky-blue: #87ceeb;
+
+    --ink: #1a1a1a;
+    --ink-muted: #5b5b5b;
+    --ink-soft: #8b8b8b;
+    --line: #ececec;
+
+    --surface: #ffffff;
+    --surface-warm: #fff7f4;
+    --surface-soft: #fafafa;
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 12px 32px rgba(234, 0, 44, 0.08);
+
+    --font:
+        "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+
+    --container-max: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* ----------------------------- Topbar ----------------------------- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.brand-sk {
+    color: var(--sk-red);
+}
+
+.brand-square {
+    color: var(--sk-orange);
+    font-weight: 500;
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--sk-red);
+}
+
+/* ----------------------------- Hero ----------------------------- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 32px 120px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-warm) 100%);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    color: var(--sk-red);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.hero-name {
+    font-size: clamp(72px, 14vw, 184px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+}
+
+.hero-name-text {
+    background: linear-gradient(
+        100deg,
+        var(--sk-red) 0%,
+        var(--sk-red) 45%,
+        var(--sk-orange) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-role {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.01em;
+}
+
+.hero-divider {
+    margin-top: 36px;
+    width: 64px;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--sk-red) 0%,
+        var(--sk-orange) 100%
+    );
+    border-radius: 2px;
+}
+
+.hero-tagline {
+    margin-top: 24px;
+    font-size: 20px;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* Decorative orb — SK 로고의 빨강+주황 그라데이션 형상 */
+.hero-orb {
+    position: absolute;
+    top: 50%;
+    right: -120px;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        var(--sk-orange) 0%,
+        var(--sk-red) 55%,
+        transparent 75%
+    );
+    filter: blur(6px);
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+/* ----------------------------- Section ----------------------------- */
+.section {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 96px 32px;
+    border-top: 1px solid var(--line);
+}
+
+.section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.section-num {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sk-red);
+    letter-spacing: 0.08em;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+/* ----------------------------- About / Info grid ----------------------------- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.info-cell {
+    padding: 32px 24px;
+    border-right: 1px solid var(--line);
+    transition: background 0.25s ease;
+}
+
+.info-cell:last-child {
+    border-right: none;
+}
+
+.info-cell:hover {
+    background: var(--surface-warm);
+}
+
+.info-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--sk-red);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.info-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+}
+
+/* ----------------------------- Hobby ----------------------------- */
+.hobby-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.hobby-card {
+    position: relative;
+    padding: 36px 32px;
+    background: var(--surface);
+    border: 1.5px solid var(--ink);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.hobby-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -40px -40px auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--sk-red);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background: var(--surface-warm);
+}
+
+.hobby-card-accent::after {
+    background: var(--sk-orange);
+}
+
+.hobby-card:hover::after {
+    opacity: 0.08;
+}
+
+.hobby-index {
+    display: inline-block;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--sk-red);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+.hobby-card-accent .hobby-index {
+    color: var(--sk-orange);
+}
+
+.hobby-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.hobby-desc {
+    font-size: 15px;
+    color: var(--ink-muted);
+}
+
+/* ----------------------------- Quote ----------------------------- */
+.section-quote {
+    background: var(--surface-soft);
+    max-width: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section-quote .section-head,
+.section-quote .quote,
+.section-quote .btn-ghost {
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.quote {
+    position: relative;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.quote-mark {
+    color: var(--sk-red);
+    font-size: 1.2em;
+    line-height: 0;
+    margin-right: 8px;
+    vertical-align: -0.15em;
+}
+
+.quote-text {
+    background: linear-gradient(
+        90deg,
+        var(--ink) 0%,
+        var(--ink) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.quote.highlight .quote-text {
+    background: linear-gradient(
+        90deg,
+        var(--sk-red) 0%,
+        var(--sk-orange) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.quote.highlight {
+    transform: translateX(8px);
+}
+
+.btn-ghost {
+    margin-top: 32px;
+    display: inline-block;
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+    background: var(--sk-red);
+    border-color: var(--sk-red);
+    color: #fff;
+}
+
+/* ----------------------------- Color ----------------------------- */
+.color-card {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 40px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.color-swatch {
+    width: 220px;
+    height: 220px;
+    border-radius: var(--radius-md);
+    background: var(--sky-blue);
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05),
+        0 18px 40px rgba(135, 206, 235, 0.45);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+    transform: translateY(-4px) rotate(-2deg);
+}
+
+.color-name {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+.color-code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+}
+
+.color-hint {
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+/* ----------------------------- Footer ----------------------------- */
+.footer {
+    background: var(--ink);
+    color: #fff;
+    margin-top: 96px;
+}
+
+.footer-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 40px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-brand {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.footer .brand-sk {
+    color: #ff5470;
+}
+
+.footer .brand-square {
+    color: var(--sk-orange-light);
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ----------------------------- Responsive ----------------------------- */
+@media (max-width: 768px) {
+    .topbar-inner {
+        padding: 14px 20px;
+    }
+    .nav {
+        gap: 16px;
+    }
+    .hero {
+        padding: 80px 20px 80px;
+    }
+    .hero-orb {
+        right: -200px;
+        width: 380px;
+        height: 380px;
+    }
+    .section {
+        padding: 64px 20px;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .info-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+    .info-cell:last-child {
+        border-bottom: none;
+    }
+    .hobby-list {
+        grid-template-columns: 1fr;
+    }
+    .color-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px;
+    }
+    .color-swatch {
+        width: 100%;
+        height: 180px;
+    }
+    .footer-inner {
+        padding: 28px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
