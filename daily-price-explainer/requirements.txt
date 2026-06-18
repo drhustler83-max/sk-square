@@ -1,0 +1,37 @@
+# LLM
+google-genai>=1.0.0
+
+# 주식 데이터
+pykrx>=1.0.47
+finance-datareader>=0.9.50
+yfinance>=0.2.40
+
+# HTTP / 크롤링
+httpx>=0.27.0
+beautifulsoup4>=4.12.0
+lxml>=5.2.0
+
+# 비동기
+asyncio
+
+# 데이터 처리
+pandas>=2.2.0
+numpy>=1.26.0
+
+# 팩터 모델링 (OLS 베타 + XGBoost 귀인)
+scikit-learn>=1.4.0    # tools/beta.py OLS 회귀
+xgboost>=2.0.0         # 비선형 팩터 귀인 (250행+ 누적 후)
+shap>=0.45.0           # XGBoost 일별 기여분 분해(SHAP)
+
+# 벡터 스토어 (RAG)
+chromadb>=0.5.0
+
+# 캐싱
+diskcache>=5.6.0
+
+# 환경변수
+python-dotenv>=1.0.0
+
+# 유틸
+tenacity>=8.3.0        # retry 로직
+loguru>=0.7.0          # 로깅
