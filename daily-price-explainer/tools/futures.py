@@ -25,6 +25,66 @@ from loguru import logger
 _FUTURE_PRODUCT = "KRDRVFUEQU"
 
 
+def _skq_near_month(date: str):
+    """해당일 SK스퀘어 단일주식선물 최근월물(거래량 최대) 계약 + 전체 계약 리스트 반환.
+
+    Returns: (near_month_dict | None, contracts_list)
+    """
+    df = stock.get_future_ohlcv_by_ticker(date, _FUTURE_PRODUCT)
+    if df is None or df.empty:
+        return None, []
+
+    mask = df.index.astype(str).str.contains("스퀘어", na=False)
+    if not mask.any() and "종목명" in df.columns:
+        mask = df["종목명"].astype(str).str.contains("스퀘어", na=False)
+    sksq = df[mask].copy()
+    if sksq.empty:
+        return None, []
+
+    def col(row, candidates):
+        for c in candidates:
+            if c in row.index:
+                try:
+                    v = row[c]
+                    if v is not None:
+                        return v
+                except Exception:
+                    pass
+        return None
+
+    def safe_int(v):
+        try:
+            return int(v) if v is not None else None
+        except Exception:
+            return None
+
+    contracts = []
+    for idx, row in sksq.iterrows():
+        name = str(idx) if "종목명" not in row.index else str(row.get("종목명", idx))
+        contracts.append({
+            "futures_ticker": name,
+            "close":          safe_int(col(row, ["종가", "Close"])),
+            "change":         safe_int(col(row, ["대비", "Change"])),
+            "volume":         safe_int(col(row, ["거래량", "Volume"])),
+            "spot_close":     safe_int(col(row, ["현물가", "Spot"])),
+        })
+
+    active = [c for c in contracts if c["volume"] and c["volume"] > 0] or contracts
+    near = max(active, key=lambda x: x["volume"] or 0)
+    return near, contracts
+
+
+def _basis_pct_on(ticker: str, date: str):
+    """해당일 SK스퀘어 최근월물 베이시스율(%) — 전일 대비 변화 계산용. 없으면 None."""
+    near, _ = _skq_near_month(date)
+    if not near or not near.get("close"):
+        return None
+    spot = _get_spot_close(ticker, date) or near.get("spot_close")
+    if not spot:
+        return None
+    return round((near["close"] - spot) / spot * 100, 3)
+
+
 def get_futures_data(ticker: str, date: str) -> dict:
     """
     주식선물 베이시스·만기별 데이터 수집
@@ -49,84 +109,42 @@ def get_futures_data(ticker: str, date: str) -> dict:
         contracts (list[dict]):      만기별 상세
     """
     try:
-        # ── 1. 단일주식선물 전체 조회 ─────────────────────────
-        df = stock.get_future_ohlcv_by_ticker(date, _FUTURE_PRODUCT)
-
-        if df is None or df.empty:
-            logger.info(f"주식선물 데이터 없음 (휴장일 가능): {date}")
+        near, contracts = _skq_near_month(date)
+        if near is None:
+            logger.info(f"SK스퀘어 선물 계약 없음/데이터 없음: {date}")
             return {"date": date, "ticker": ticker, "listed": False,
-                    "error": "주식선물 데이터 없음 (휴장일 또는 API 오류)"}
+                    "error": "SK스퀘어 주식선물 미상장 또는 데이터 없음 (휴장/만기 후)"}
 
-        # ── 2. SK스퀘어 계약 필터링 ──────────────────────────
-        mask = df.index.astype(str).str.contains("스퀘어", na=False)
-        # 일부 버전에서는 인덱스가 종목명인 경우도 있음
-        if not mask.any() and "종목명" in df.columns:
-            mask = df["종목명"].astype(str).str.contains("스퀘어", na=False)
+        logger.info(f"SK스퀘어 선물 계약 {len(contracts)}개 조회: "
+                    f"{[c['futures_ticker'] for c in contracts]}")
 
-        sksq = df[mask].copy()
-
-        if sksq.empty:
-            logger.info(f"SK스퀘어 선물 계약 없음: {date}")
-            return {"date": date, "ticker": ticker, "listed": False,
-                    "error": "SK스퀘어 주식선물 계약이 조회되지 않음 (미상장 또는 만기 후)"}
-
-        logger.info(f"SK스퀘어 선물 계약 {len(sksq)}개 조회: {sksq.index.tolist()}")
-
-        # ── 3. 컬럼 매핑 (pykrx 버전 허용) ──────────────────
-        def col(row, candidates):
-            for c in candidates:
-                if c in row.index:
-                    try:
-                        v = row[c]
-                        if v is not None:
-                            return v
-                    except Exception:
-                        pass
-            return None
-
-        def safe_int(v):
-            try:
-                return int(v) if v is not None else None
-            except Exception:
-                return None
-
-        contracts = []
-        for idx, row in sksq.iterrows():
-            name = str(idx) if "종목명" not in row.index else str(row.get("종목명", idx))
-            close_v = col(row, ["종가", "Close"])
-            change_v = col(row, ["대비", "Change"])
-            vol_v = col(row, ["거래량", "Volume"])
-            spot_v = col(row, ["현물가", "Spot"])
-            contracts.append({
-                "futures_ticker": name,
-                "close":          safe_int(close_v),
-                "change":         safe_int(change_v),
-                "volume":         safe_int(vol_v),
-                "spot_close":     safe_int(spot_v),
-            })
-
-        # ── 4. 최근월물: 거래량 최대 계약 ────────────────────
-        active = [c for c in contracts if c["volume"] and c["volume"] > 0]
-        if not active:
-            active = contracts  # 모두 거래량 0이면 전부 후보
-        near = max(active, key=lambda x: x["volume"] or 0)
-
-        # ── 5. 현물 종가 (pykrx market 직접 조회) ────────────
+        # 현물 종가 (현물가 필드가 있으면 우선 사용)
         spot = _get_spot_close(ticker, date)
-        # 현물가 필드가 있으면 우선 사용
         if spot is None and near.get("spot_close"):
             spot = near["spot_close"]
 
-        # ── 6. 베이시스 계산 ──────────────────────────────────
-        basis = None
-        basis_pct = None
+        # 베이시스 (선물 - 현물; 양수=콘탱고, 음수=백워데이션)
+        basis = basis_pct = None
         if spot and near.get("close"):
             basis = near["close"] - spot
             basis_pct = round(basis / spot * 100, 3)
 
+        # 최근월물 선물 등락률 (현물 등락률과 선행/후행 비교용)
+        fut_pct = None
+        if near.get("close") is not None and near.get("change") is not None:
+            fut_prev = near["close"] - near["change"]
+            if fut_prev:
+                fut_pct = round(near["change"] / fut_prev * 100, 2)
+
+        # 전일 대비 베이시스 변화 (premium 확대/축소 판정용)
+        from tools.market import _prev_trading_day
+        prev_basis_pct = _basis_pct_on(ticker, _prev_trading_day(date))
+        basis_change_pct = (round(basis_pct - prev_basis_pct, 3)
+                            if basis_pct is not None and prev_basis_pct is not None else None)
+
         logger.info(
             f"[선물] 최근월물={near['futures_ticker']} 종가={near.get('close')} "
-            f"현물={spot} 베이시스={basis}"
+            f"현물={spot} 베이시스={basis} (전일대비Δ={basis_change_pct})"
         )
 
         return {
@@ -137,6 +155,9 @@ def get_futures_data(ticker: str, date: str) -> dict:
             "spot_close":          spot,
             "basis":               basis,
             "basis_pct":           basis_pct,
+            "fut_pct":             fut_pct,            # 최근월물 선물 등락률(%)
+            "prev_basis_pct":      prev_basis_pct,     # 전일 베이시스율(%)
+            "basis_change_pct":    basis_change_pct,   # 전일 대비 베이시스 변화(%p, +확대/−축소)
             "open_interest_total": None,   # API 미지원
             "oi_change":           None,
             "contracts":           contracts,

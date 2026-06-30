@@ -93,6 +93,12 @@ if __name__ == "__main__":
         fargs = [a for a in sys.argv[2:] if not a.startswith("--")]
         lookback = int(fargs[0]) if fargs else None
         feature_summary(lookback=lookback)
+    elif mode == "events":
+        from tools.events import residual_event_analysis
+        residual_event_analysis()
+    elif mode == "backfill-futures":
+        from tools.backfill_futures import backfill_futures
+        backfill_futures()
     elif mode == "backfill":
         from tools.backfill import backfill, DEFAULT_START
         bf_args = sys.argv[2:]
@@ -101,5 +107,9 @@ if __name__ == "__main__":
         start = positional[0] if len(positional) > 0 else DEFAULT_START
         end = positional[1] if len(positional) > 1 else None
         backfill(start=start, end=end, rebuild=rebuild)
+    elif mode == "attribution":
+        from tools.attribution import print_attribution
+        date = sys.argv[2] if len(sys.argv) > 2 else None
+        print_attribution(date)
     else:
         run_chat()

@@ -1,0 +1,17 @@
+date,category,event,direction,importance,note,source
+20220114 ,신규투자,SK스퀘어의 코빗 투자,?,L,총 NAV 대비 너무 작은 규모의 투자,https://www.sksquare.com/kor/ir/presentation.do
+20220114 ,신규투자,SK스퀘어의 온마인드 투자,?,L,총 NAV 대비 너무 작은 규모의 투자,https://www.sksquare.com/kor/ir/presentation.do
+20220210 ,실적발표,재무상태표 ? 2021년 11월 1일 기준,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20220225 ,실적발표,Q4 ’21 Portfolio Update,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20220317 ,실적발표,2021-Pro Forma 연결재무제표,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20220506 ,자회사,"SK쉴더스, 글로벌 긴축 및 수요예측 부진으로 증권신고서 철회(상장 연기) 단독 보도",-,H,Rebalancing 계획 지연 (자회사 IPO 불발),https://www.sedaily.com/article/13381841
+20220506 ,자회사,"원스토어, 수요예측 참패 및 재무적 투자자(FI) 반대로 상장 철회 최종 결정 단독 보도",-,H,Rebalancing 계획 지연 (자회사 IPO 불발),https://www.fnnews.com/news/202205111538089206
+20220516 ,실적발표,Q1 ’22 Portfolio Update,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20220816 ,실적발표,Q2 ’22 Portfolio Update,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20221114 ,실적발표,Q3 ’22 Portfolio Update,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20230223 ,실적발표,Q4 ’22 Portfolio Update,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20230302 ,투자회수,Portfolio Update - SK shieldus,+,H,"누적 투자수익 80% 달성 및 매각대금 8,646억원 확보. 이로인해 주주환원 기대감 증가",https://www.sksquare.com/kor/ir/presentation.do
+20230330 ,주주환원,SK스퀘어가 제2기 정기 주주총회에서 창사 첫 주주환원 정책을 발표하며 SK쉴더스 매각 대금 중 2000억원을 자사주 매입·소각에 투입하겠다고 밝힘,+,H,주주환원 정책 명문화 및 자사주 매입에 따른 NAV 할인율 죽소 기대감,https://biz.chosun.com/it-science/ict/2023/03/30/7BXZEOGECRHZLIZAUDGGZUCWUY/
+20230515 ,실적발표,Q1 ’23 Portfolio Update,?,L,지주회사 특성상 실적 발표는 Daily Price 영향도가 작음,https://www.sksquare.com/kor/ir/presentation.do
+20230612 ,SK하이닉스,SK스퀘어·SK온 등 적자 계열사 위기설 속에서 고성능 DDR5 및 고대역폭메모리(HBM) 수요 증가와 D램 판가 상승에 따른 반도체 업황 극적 반등 가능성 조명,+,M,HBM 시장 개화 초기였기 때문에 실질적인 주가 영향은 크지 않았던 것 같음,https://v.daum.net/v/20230612060258159
+20230905 ,자회사,5년 만에 기업가치 반토막 난 11번가…SK스퀘어의 콜옵션 행사 딜레마,-,M,부실 자회사에 대한 스퀘어의 지원 가능성에 대한 시장의 우려,https://www.investchosun.com/site/data/html_dir/2023/09/05/2023090580167.html

@@ -119,7 +119,7 @@ async def collect_data(ticker: str, company: str, date: str,
     if "market" in tools:
         key = make_key("market", ticker=ticker, date=date)
         tasks["market"] = loop.run_in_executor(
-            None, _cached_call, get_market_data, key, ticker, date)
+            None, _cached_call, get_market_data, key, ticker, date, True)  # with_history=True (챗봇 경로만)
 
     if "news" in tools:
         key = make_key("news", company=company, date=date)
@@ -172,6 +172,33 @@ async def collect_data(ticker: str, company: str, date: str,
     return dict(zip(tasks.keys(), results))
 
 
+def _investor_flow_trend(hist: list[dict]) -> str:
+    """최근 집계완료 거래일들의 주체별 순매수(거래대금)로 일별 흐름 코멘트 생성.
+
+    hist: 최신순 [{date, foreign_net, institution_net, individual_net(원)}]
+    예) "최근 5거래일 기준 외국인이 순매수를 주도(누적 +560억원, 3거래일 연속 순매수); 개인 누적 -610억원 순매도"
+    """
+    if not hist:
+        return ""
+    label = {"foreign_net": "외국인", "institution_net": "기관", "individual_net": "개인"}
+    cum = {k: sum((d.get(k) or 0) for d in hist) for k in label}
+    lead = max(cum, key=lambda k: cum[k])      # 누적 순매수 1위
+    seller = min(cum, key=lambda k: cum[k])    # 누적 순매도 1위
+    # lead 주체의 최근 연속 순매수 일수 (hist 최신순)
+    streak = 0
+    for d in hist:
+        if (d.get(lead) or 0) > 0:
+            streak += 1
+        else:
+            break
+    parts = [f"최근 {len(hist)}거래일 기준 {label[lead]}이 순매수를 주도"
+             f"(누적 {cum[lead] / 1e8:+,.0f}억원"
+             + (f", {streak}거래일 연속 순매수" if streak >= 2 else "") + ")"]
+    if seller != lead and cum[seller] < 0:
+        parts.append(f"{label[seller]}은 누적 {cum[seller] / 1e8:+,.0f}억원 순매도")
+    return "; ".join(parts)
+
+
 def build_context(data: dict, query: str) -> str:
     """수집 데이터 → 프롬프트 컨텍스트 조립"""
     import pytz
@@ -191,15 +218,44 @@ def build_context(data: dict, query: str) -> str:
         close_label = "전일 종가" if is_prev else "종가"
         lines.append(f"- {close_label}: {m.get('close', 'N/A')}원 ({pct_str})")
         lines.append(f"- 거래량: {vol_str}")
-        if "investor_flow" in m:
-            f = m["investor_flow"]
-            def _fmt_flow(v, unit="원"):
-                if v is None:
-                    return "데이터 없음"
-                return f"{v:+,}{unit}"
-            lines.append(f"- 외국인 순매수: {_fmt_flow(f.get('foreign_net'))}")
-            lines.append(f"- 기관 순매수: {_fmt_flow(f.get('institution_net'))}")
-            lines.append(f"- 개인 순매수: {_fmt_flow(f.get('individual_net'))}")
+        # ── SK스퀘어 주체별 순매수 (거래대금) — 장 중에는 미집계라 숨김 ──
+        if m.get("investor_flow_in_session"):
+            lines.append("- (SK스퀘어 외국인/기관/개인 주체별 순매수는 장 마감 후 집계 — "
+                         "현재 미집계이므로 답변에서 생략할 것)")
+        else:
+            hist = m.get("investor_flow_history") or []
+            if hist:
+                latest = hist[0]
+                ld = str(latest.get("date", ""))
+                ld_fmt = f"{ld[:4]}-{ld[4:6]}-{ld[6:]}" if len(ld) == 8 else ld
+                def _eok(v):
+                    if v is None:
+                        return "데이터 없음"
+                    e = v / 1e8
+                    direction = "순매수" if e > 0 else ("순매도" if e < 0 else "중립")
+                    return f"{e:+,.0f}억원 ({direction})"
+                lines.append(f"- [SK스퀘어 주체별 순매수 · {ld_fmt} 집계 기준, 거래대금]")
+                lines.append(f"  · 외국인: {_eok(latest.get('foreign_net'))}")
+                lines.append(f"  · 기관: {_eok(latest.get('institution_net'))}")
+                lines.append(f"  · 개인: {_eok(latest.get('individual_net'))}")
+                trend = _investor_flow_trend(hist)
+                if trend:
+                    lines.append(f"  · [일별 흐름] {trend}")
+        # ── 외국인 지분율 추이 (전일 기준, T+1 공시) ──
+        fo = m.get("foreign_ownership")
+        if fo and fo.get("ratio") is not None:
+            seg = f"- [외국인 지분율 · {fo['date']} 기준] {fo['ratio']:.2f}%"
+            extra = []
+            if fo.get("chg_1d") is not None:
+                extra.append(f"전일 대비 {fo['chg_1d']:+.2f}%p")
+            if fo.get("chg_5d") is not None:
+                extra.append(f"5거래일 {fo['chg_5d']:+.2f}%p")
+            if fo.get("streak"):
+                extra.append(f"{fo['streak']}거래일째 {fo['direction']}")
+            if extra:
+                seg += " (" + ", ".join(extra) + ")"
+            lines.append(seg)
+
         if "kospi_investor_flow" in m:
             kf = m["kospi_investor_flow"]
             lines.append(f"- [KOSPI 전체] 외국인 순매수: {kf.get('foreign_net', 0):+,}억원")
@@ -395,33 +451,31 @@ def build_context(data: dict, query: str) -> str:
             if nm.get("close"):
                 lines.append(f"- 최근월물({nm.get('futures_ticker', 'N/A')}) 종가: {nm['close']:,}원")
             if basis is not None:
-                basis_label = "콘탱고(매수차익)" if basis > 0 else "백워데이션(매도차익)" if basis < 0 else "등가"
-                lines.append(f"- 베이시스: {basis:+,}원 ({basis_pct:+.3f}%) — {basis_label}")
+                basis_label = "콘탱고(선물>현물)" if basis > 0 else "백워데이션(선물<현물)" if basis < 0 else "등가"
+                # 전일 대비 베이시스 변화 → premium/discount 확대·축소
+                bchg = fut.get("basis_change_pct")
+                if bchg is None or basis == 0:
+                    chg_label = ""
+                elif basis > 0:   # 콘탱고(프리미엄)
+                    word = "확대" if bchg > 0 else "축소" if bchg < 0 else "유지"
+                    chg_label = f", 전일 대비 프리미엄 {word}({bchg:+.3f}%p)"
+                else:             # 백워데이션(디스카운트)
+                    word = "확대" if bchg < 0 else "축소" if bchg > 0 else "유지"
+                    chg_label = f", 전일 대비 디스카운트 {word}({bchg:+.3f}%p)"
+                lines.append(f"- 베이시스: {basis:+,}원 ({basis_pct:+.3f}%) — {basis_label}{chg_label}")
 
-                # ── 차익거래 압력 해석 ─────────────────────────────────────
-                skq_pct = None
-                if "market" in data and isinstance(data["market"], dict):
-                    skq_pct = data["market"].get("pct_change")
-                if basis is not None and skq_pct is not None:
-                    if basis > 0 and skq_pct < -0.3:
-                        lines.append(
-                            "- [차익거래 해석] 콘탱고(선물>현물)에서 현물 하락 "
-                            "→ 매도차익거래 압력 의심 (현물 매도·선물 매수)"
-                        )
-                    elif basis < 0 and skq_pct > 0.3:
-                        lines.append(
-                            "- [차익거래 해석] 백워데이션(선물<현물) 심화 "
-                            "→ 숏커버링 또는 현물 선호 매수 압력 (선물 대비 현물 초강세)"
-                        )
-                    elif basis > 0 and skq_pct > 0.3:
-                        lines.append(
-                            "- [차익거래 해석] 콘탱고 + 현물 상승 → 정상 프리미엄, 차익거래 압력 없음"
-                        )
-                    elif basis < 0 and skq_pct < -0.3:
-                        lines.append(
-                            "- [차익거래 해석] 백워데이션(선물<현물)에서 현물 하락 "
-                            "→ 선물·현물 동반 약세, 방향성 매도 또는 헤지 가능"
-                        )
+                # 선물 vs 현물 등락 (선행/후행) — 표 해석용 신호
+                fut_pct = fut.get("fut_pct")
+                skq_pct = data["market"].get("pct_change") if isinstance(data.get("market"), dict) else None
+                if fut_pct is not None and skq_pct is not None:
+                    if abs(fut_pct) - abs(skq_pct) > 0.3 and fut_pct * skq_pct >= 0:
+                        lead = "선물이 현물 선행(선물 주도)"
+                    elif abs(skq_pct) - abs(fut_pct) > 0.3 and fut_pct * skq_pct >= 0:
+                        lead = "현물이 선물 선행(현물 주도)"
+                    else:
+                        lead = "선물·현물 동행"
+                    lines.append(f"- 선물 등락률: {fut_pct:+.2f}% (현물 {skq_pct:+.2f}%) — {lead}")
+                lines.append("- (※ 해석은 시스템 프롬프트의 '선물 베이시스 해석표'를 적용)")
 
             if oi_total is not None:
                 lines.append(f"- 전체 미결제약정: {oi_total:,}계약"

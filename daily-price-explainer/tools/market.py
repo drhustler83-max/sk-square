@@ -56,7 +56,112 @@ def _safe_int(val):
         return None
 
 
-def get_market_data(ticker: str, date: str) -> dict:
+def _investor_nets(flows: pd.DataFrame) -> dict | None:
+    """투자자별 매매동향 DF → 외국인/기관/개인 '순매수 거래대금'(원). 없으면 None.
+
+    get_market_trading_value_by_investor 결과(거래대금 기준)의 '순매수' 컬럼을 사용한다.
+    """
+    if flows is None or flows.empty:
+        return None
+    col = "순매수" if "순매수" in flows.columns else flows.columns[-1]
+
+    def pick(labels):
+        for label in labels:
+            try:
+                v = flows.loc[label, col]
+                if v is not None and str(v) != "nan":
+                    return int(v)
+            except Exception:
+                pass
+        return None
+
+    return {
+        "foreign_net":     pick(["외국인", "외국인합계"]),   # "외국인" = 등록외국인 순계
+        "institution_net": pick(["기관합계", "기관"]),
+        "individual_net":  pick(["개인"]),
+    }
+
+
+def _in_session(date_str: str) -> bool:
+    """조회 대상이 '오늘'이고 현재 KRX 정규장 시간(09:00~15:30 KST)이면 True.
+
+    장 중에는 종목별 주체(외국인/기관/개인) 순매수가 아직 집계 전(0)이라 표시를 보류한다.
+    과거 날짜 조회는 항상 집계 완료로 간주(False).
+    """
+    import pytz
+    now = datetime.now(pytz.timezone("Asia/Seoul"))
+    if now.strftime("%Y%m%d") != date_str:
+        return False
+    if now.weekday() >= 5:  # 주말
+        return False
+    t = now.hour * 60 + now.minute
+    return 9 * 60 <= t < 15 * 60 + 30
+
+
+def _recent_investor_value_flows(ticker: str, date: str, days: int = 5) -> list[dict]:
+    """최근 N 거래일 주체별 순매수 '거래대금'(원) — 집계 완료(0 아님)된 날만, 최신순.
+
+    일별 흐름 코멘트('몇일째 어느 주체가 순매수 주도')용. 장 마감 후/장전에만 호출한다.
+    """
+    out, ds, guard = [], date, 0
+    while len(out) < days and guard < days + 6:
+        guard += 1
+        try:
+            fl = stock.get_market_trading_value_by_investor(ds, ds, ticker)
+        except Exception:
+            fl = pd.DataFrame()
+        nets = _investor_nets(fl)
+        # 세 주체 중 하나라도 0이 아니면 집계 완료된 거래일로 본다
+        if nets and any(v for v in nets.values() if v is not None):
+            out.append({"date": ds, **nets})
+        ds = _prev_trading_day(ds)
+    return out
+
+
+def _foreign_ownership(ticker: str, date: str) -> dict | None:
+    """전일 기준 외국인 지분율(%) + 추세(전일대비/5거래일/연속 방향).
+
+    pykrx get_exhaustion_rates_of_foreign_investment의 '지분율' 컬럼 사용.
+    외국인 지분율은 T+1 공시 → date까지 조회 후 마지막 가용 거래일 행을 '전일 기준'으로 사용.
+    """
+    try:
+        start = (datetime.strptime(date, "%Y%m%d") - timedelta(days=25)).strftime("%Y%m%d")
+        df = stock.get_exhaustion_rates_of_foreign_investment(start, date, ticker)
+    except Exception as e:
+        logger.warning(f"외국인 지분율 조회 실패: {e}")
+        return None
+    if df is None or df.empty or "지분율" not in df.columns:
+        return None
+
+    s = df["지분율"].astype(float).dropna()
+    if s.empty:
+        return None
+
+    ratio = round(float(s.iloc[-1]), 2)
+    ld = s.index[-1]
+    last_date = ld.strftime("%Y-%m-%d") if hasattr(ld, "strftime") else str(ld)
+    chg_1d = round(float(s.iloc[-1] - s.iloc[-2]), 2) if len(s) >= 2 else None
+    chg_5d = round(float(s.iloc[-1] - s.iloc[-6]), 2) if len(s) >= 6 else None
+
+    # 연속 방향(며칠째 증가/감소)
+    diffs = s.diff().dropna().tolist()
+    streak, direction = 0, "보합"
+    if diffs and diffs[-1] != 0:
+        sign = 1 if diffs[-1] > 0 else -1
+        direction = "증가" if sign > 0 else "감소"
+        for d in reversed(diffs):
+            if (d > 0) == (sign > 0) and d != 0:
+                streak += 1
+            else:
+                break
+
+    logger.info(f"외국인 지분율({last_date}) {ratio}% "
+                f"(전일대비 {chg_1d}%p, {streak}일째 {direction})")
+    return {"date": last_date, "ratio": ratio, "chg_1d": chg_1d,
+            "chg_5d": chg_5d, "streak": streak, "direction": direction}
+
+
+def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
     """
     Args:
         ticker: 종목코드 (e.g. '402340')
@@ -107,30 +212,13 @@ def get_market_data(ticker: str, date: str) -> dict:
 
         if not flows.empty:
             logger.debug(f"investor_flow 인덱스: {flows.index.tolist()}, 컬럼: {flows.columns.tolist()}")
-
-            def _flow(labels):
-                """라벨 후보 순서대로 시도, 없으면 None"""
-                col = "순매수" if "순매수" in flows.columns else (
-                      "거래량" if "거래량" in flows.columns else flows.columns[-1])
-                for label in labels:
-                    try:
-                        v = flows.loc[label, col]
-                        if v is not None and str(v) != "nan":
-                            return int(v)
-                    except Exception:
-                        pass
-                return None
-
-            result["investor_flow"] = {
-                "foreign_net":     _flow(["외국인", "외국인합계"]),   # "외국인" = 등록외국인 순계
-                "institution_net": _flow(["기관합계", "기관"]),
-                "individual_net":  _flow(["개인"]),
-            }
-            logger.info(
-                f"SK스퀘어 수급 - 외국인: {result['investor_flow']['foreign_net']}, "
-                f"기관: {result['investor_flow']['institution_net']}, "
-                f"개인: {result['investor_flow']['individual_net']}"
-            )
+            nets = _investor_nets(flows)
+            if nets:
+                result["investor_flow"] = nets   # 거래대금(원) 기준, factor_logger F3 피처도 사용
+                logger.info(
+                    f"SK스퀘어 수급(거래대금) - 외국인: {nets['foreign_net']}, "
+                    f"기관: {nets['institution_net']}, 개인: {nets['individual_net']}"
+                )
 
         # KOSPI 전체 외국인 순매수 (Naver Finance 파싱)
         try:
@@ -142,6 +230,16 @@ def get_market_data(ticker: str, date: str) -> dict:
             )
         except Exception as e:
             logger.warning(f"KOSPI 수급 오류: {e}")
+
+        # 주체별 수급 표시 게이팅: 장 중이면 미집계(숨김), 장 마감 후/장전이면 최근 집계완료일 히스토리
+        result["investor_flow_in_session"] = _in_session(date)
+        if with_history:
+            result["investor_flow_history"] = (
+                [] if result["investor_flow_in_session"]
+                else _recent_investor_value_flows(ticker, date))
+            result["foreign_ownership"] = _foreign_ownership(ticker, date)  # 전일 기준(T+1), 장중에도 표시
+        else:
+            result["investor_flow_history"] = []
 
         return result
 

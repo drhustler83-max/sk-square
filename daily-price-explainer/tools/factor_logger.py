@@ -151,9 +151,23 @@ def _append_to_csv(row: dict) -> None:
             logger.info(f"CSV 컬럼 마이그레이션: {new_cols} 추가")
             _migrate_csv(existing_cols)
 
-        with open(LOG_PATH, "a", newline="", encoding="utf-8") as f:
+        # 같은 날짜가 이미 있으면 덧붙이지 않고 교체(idempotent).
+        # 일별 스케줄 로그와 수동 backfill이 겹쳐도 중복 행이 생기지 않게 한다.
+        # (예: 장중 backfill로 들어간 불완전한 오늘 행을 장마감 후 로그가 덮어씀)
+        with open(LOG_PATH, "r", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+        new_row = {col: row.get(col, "") for col in COLUMNS}
+        idx = next((i for i, r in enumerate(rows) if r.get("date") == row.get("date")), None)
+        if idx is not None:
+            rows[idx] = new_row
+            logger.info(f"기존 {row.get('date')} 행 교체")
+        else:
+            rows.append(new_row)
+        with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
-            writer.writerow({col: row.get(col, "") for col in COLUMNS})
+            writer.writeheader()
+            for r in rows:
+                writer.writerow({col: r.get(col, "") for col in COLUMNS})
     else:
         with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
