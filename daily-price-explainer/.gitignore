@@ -21,3 +21,7 @@ Thumbs.db
 
 # ── Office 임시 잠금 파일 (~$로 시작) ──
 ~$*
+
+# ── 애널리스트 리포트 PDF (대용량, 저작권) ──
+data/analyst_reports/*.pdf
+data/analyst_reports/*.PDF

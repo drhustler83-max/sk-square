@@ -40,7 +40,14 @@ def load_events() -> "pd.DataFrame":
     import pandas as pd
     if not EVENTS_PATH.exists():
         raise FileNotFoundError(f"이벤트 파일 없음: {EVENTS_PATH}")
-    ev = pd.read_csv(EVENTS_PATH, dtype=str).fillna("")
+    for enc in ("utf-8-sig", "cp949", "utf-8"):
+        try:
+            ev = pd.read_csv(EVENTS_PATH, dtype=str, encoding=enc).fillna("")
+            break
+        except (UnicodeDecodeError, LookupError):
+            continue
+    else:
+        raise ValueError(f"events.csv 인코딩 인식 실패 (utf-8/cp949 모두 실패): {EVENTS_PATH}")
     ev = ev[ev["date"].str.strip() != ""]
     if ev.empty:
         return ev.assign(date=pd.to_datetime([]), dir=[])
@@ -107,8 +114,8 @@ def residual_event_analysis(resid_col: str = RESID_COL) -> None:
     for _, r in ev_full.head(20).iterrows():
         exp = {1: "+", -1: "-", 0: "?"}[r["dir"]]
         actual = r[resid_col]
-        match = "✓" if (r["dir"] != 0 and np.sign(actual) == np.sign(r["dir"])) else \
-                ("✗" if r["dir"] != 0 else " ")
+        match = "O" if (r["dir"] != 0 and np.sign(actual) == np.sign(r["dir"])) else \
+                ("X" if r["dir"] != 0 else " ")
         print(f"  {r['date'].date()} [{r.get('category','')[:6]:6}] "
               f"예상{exp} 실제 {actual:+.2f}%p {match}  {str(r.get('event',''))[:30]}")
     print()

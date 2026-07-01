@@ -111,5 +111,15 @@ if __name__ == "__main__":
         from tools.attribution import print_attribution
         date = sys.argv[2] if len(sys.argv) > 2 else None
         print_attribution(date)
+    elif mode == "analyst":
+        from tools.report_processor import process_reports
+        merge = "--merge" in sys.argv
+        test  = "--test"  in sys.argv
+        process_reports(merge=merge, test=test)
+    elif mode == "dart-web":
+        from tools.dart_web_scraper import run as dart_web_run
+        dart_only = "--dart" in sys.argv
+        web_only  = "--web"  in sys.argv
+        dart_web_run(dart_only=dart_only, web_only=web_only)
     else:
         run_chat()
