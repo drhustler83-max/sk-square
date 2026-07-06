@@ -95,17 +95,21 @@ def _cat_news(title: str) -> tuple:
 
 
 # ── 웹사이트 섹션 목록 (함수 정의 이후에 배치) ────────────────────────────
+# 페이지네이션은 GET 쿼리파라미터가 아니라 JS goPage() → AJAX POST로 동작함
+# (사이트 HTML의 goPage/loadList 함수 분석으로 확인, 2026-07-06)
 _WEB_SECTIONS = [
     {
         "name":       "IR자료실",
-        "url":        "https://www.sksquare.com/kor/ir/presentation.do",
+        "page_url":   "https://www.sksquare.com/kor/ir/presentation.do",
+        "ajax_url":   "https://www.sksquare.com/kor/ir/ajax/loadPresentationList.do",
         "max_pages":  6,
         "category_fn": _cat_ir,
     },
     {
         "name":       "뉴스룸",
-        "url":        "https://www.sksquare.com/kor/news/newsMediaList.do",
-        "max_pages":  20,
+        "page_url":   "https://www.sksquare.com/kor/news/newsMediaList.do",
+        "ajax_url":   "https://www.sksquare.com/kor/news/ajax/loadNewsList.do",
+        "max_pages":  15,
         "category_fn": _cat_news,
     },
 ]
@@ -227,15 +231,20 @@ def fetch_web_events() -> list:
 
     for section in _WEB_SECTIONS:
         name     = section["name"]
-        base_url = section["url"]
+        ajax_url = section["ajax_url"]
         cat_fn   = section["category_fn"]
+        req_headers = {**headers, "X-Requested-With": "XMLHttpRequest", "Referer": section["page_url"]}
         logger.info(f"홈페이지 {name} 수집 (최대 {section['max_pages']}p)")
 
         seen = set()
         for pg in range(1, section["max_pages"] + 1):
             try:
-                # pageIndex 방식 우선 시도, POST도 함께 준비
-                r = client.get(base_url, params={"pageIndex": pg, "currentPage": pg})
+                # 실제 페이지네이션은 goPage(n) → AJAX POST (GET 쿼리파라미터는 무시됨)
+                r = client.post(
+                    ajax_url,
+                    data={"idx": "", "pageNo": pg, "searchType": "subject", "searchStr": ""},
+                    headers=req_headers,
+                )
                 r.raise_for_status()
                 soup = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
@@ -308,7 +317,7 @@ def _parse_board(soup) -> list:
         date_str = date_div.get_text(strip=True) if date_div else ""
         # 제목: a 태그 → 제목 div → board-list-item-contents 첫 텍스트
         title = ""
-        for sel in ("a.tit", "p.tit", "div.tit", "a", "p", "h4", "h3", "strong"):
+        for sel in ("div.title", "a.title", "a.tit", "p.tit", "div.tit", "a", "p", "h4", "h3", "strong"):
             el = li.select_one(sel)
             if el:
                 t = el.get_text(strip=True)
@@ -437,14 +446,16 @@ def _save_staged(rows: list) -> int:
     df_new = pd.DataFrame(new).reindex(columns=cols).fillna("")
 
     if _STAGED_CSV.exists():
-        try:
-            df_old = pd.read_csv(_STAGED_CSV, dtype=str, encoding="cp949").fillna("")
-            df_new = pd.concat([df_old, df_new], ignore_index=True)
-        except Exception:
-            pass
+        for enc in ("utf-8-sig", "cp949", "utf-8"):
+            try:
+                df_old = pd.read_csv(_STAGED_CSV, dtype=str, encoding=enc).fillna("")
+                df_new = pd.concat([df_old, df_new], ignore_index=True)
+                break
+            except (UnicodeDecodeError, LookupError):
+                continue
 
     df_new = df_new.sort_values("date").reset_index(drop=True)
-    df_new.to_csv(_STAGED_CSV, index=False, encoding="cp949")
+    df_new.to_csv(_STAGED_CSV, index=False, encoding="utf-8-sig")
     logger.info(f"events_staged.csv 저장: {len(new)}건 신규")
     return len(new)
 

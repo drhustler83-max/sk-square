@@ -57,8 +57,9 @@ def run_factor_log(date: str = None):
 
 
 def run_chat():
-    """대화형 CLI 모드"""
-    from agents.orchestrator import chat
+    """대화형 CLI 모드 — 세션 내내 대화 이력을 유지 (일반 챗봇처럼 후속 질문 가능)"""
+    from agents.orchestrator import ChatSession
+    session = ChatSession()
     print("Daily Price Move Explainer (종료: 'q')")
     print("-" * 40)
 
@@ -69,7 +70,7 @@ def run_chat():
         if not query:
             continue
         try:
-            response = chat(query)
+            response = session.ask(query)
             print(f"\n{response}")
         except Exception as e:
             logger.error(f"Error: {e}")

@@ -169,7 +169,7 @@ def _extract_events_from_pdf(client, pdf: Path) -> str:
         uploaded = client.files.get(name=uploaded.name)
 
     logger.info(f"추출 중: {pdf.name}")
-    _MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-8b", "gemini-1.5-flash"]
+    _MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
     last_err = None
     for model in _MODELS:
         try:
@@ -266,7 +266,9 @@ def process_reports(merge: bool = False, test: bool = False):
     client = _gemini_client()
     existing = _load_existing_events()
 
-    all_rows: list[dict] = []
+    import pandas as pd
+    cols = ["date", "category", "event", "direction", "importance", "note", "source"]
+    total_saved = 0
     for pdf in new_pdfs:
         try:
             raw = _extract_events_from_pdf(client, pdf)
@@ -277,30 +279,32 @@ def process_reports(merge: bool = False, test: bool = False):
                 if (r.get("date","").strip(), r.get("event","").strip()[:20]) not in existing
             ]
             logger.info(f"  {pdf.name}: {len(rows)}건 추출, {len(new_rows)}건 신규")
-            all_rows.extend(new_rows)
+
+            # PDF 1개 처리할 때마다 즉시 저장 (중단 시 유실 방지)
+            if new_rows:
+                df_new = pd.DataFrame(new_rows).reindex(columns=cols).fillna("")
+                if _STAGED_CSV.exists():
+                    for enc in ("utf-8-sig", "cp949", "utf-8"):
+                        try:
+                            df_existing = pd.read_csv(_STAGED_CSV, dtype=str, encoding=enc).fillna("")
+                            df_new = pd.concat([df_existing, df_new], ignore_index=True)
+                            break
+                        except (UnicodeDecodeError, LookupError):
+                            continue
+                df_new = df_new.drop_duplicates(subset=["date", "event"]).sort_values("date").reset_index(drop=True)
+                df_new.to_csv(_STAGED_CSV, index=False, encoding="utf-8-sig")
+                total_saved = len(df_new)
+
             tracker[_file_id(pdf)] = pdf.name
+            _save_tracker(tracker)
         except Exception as e:
             logger.error(f"  {pdf.name} 처리 실패: {e}")
 
-    if all_rows:
-        import pandas as pd
-        cols = ["date", "category", "event", "direction", "importance", "note", "source"]
-        df_new = pd.DataFrame(all_rows).reindex(columns=cols).fillna("")
-        df_new = df_new.sort_values("date").reset_index(drop=True)
-
-        if _STAGED_CSV.exists():
-            df_existing = pd.read_csv(_STAGED_CSV, dtype=str, encoding="cp949").fillna("")
-            df_new = pd.concat([df_existing, df_new], ignore_index=True).drop_duplicates(
-                subset=["date", "event"]
-            )
-
-        df_new.to_csv(_STAGED_CSV, index=False, encoding="cp949")
-        print(f"\n  → data/events_staged.csv 에 {len(df_new)}건 저장 완료")
+    if total_saved:
+        print(f"\n  → data/events_staged.csv 에 총 {total_saved}건 저장 완료")
         print("  내용 확인 후: python main.py analyst --merge")
     else:
         print("\n  신규 이벤트 없음 (모두 기존 events.csv 와 중복)")
-
-    _save_tracker(tracker)
 
 
 def _merge_staged():
@@ -311,7 +315,14 @@ def _merge_staged():
         print("\n[병합할 파일 없음] 먼저 python main.py analyst 를 실행하세요.")
         return
 
-    staged = pd.read_csv(_STAGED_CSV, dtype=str, encoding="cp949").fillna("")
+    for enc in ("utf-8-sig", "cp949", "utf-8"):
+        try:
+            staged = pd.read_csv(_STAGED_CSV, dtype=str, encoding=enc).fillna("")
+            break
+        except (UnicodeDecodeError, LookupError):
+            continue
+    else:
+        raise ValueError(f"events_staged.csv 인코딩 인식 실패: {_STAGED_CSV}")
     print(f"\nstaged 항목: {len(staged)}건")
 
     if _EVENTS_CSV.exists():
@@ -333,7 +344,7 @@ def _merge_staged():
                 .sort_values("date")
                 .reset_index(drop=True))
 
-    combined.to_csv(_EVENTS_CSV, index=False, encoding="cp949")
+    combined.to_csv(_EVENTS_CSV, index=False, encoding="utf-8-sig")
     _STAGED_CSV.unlink()
     print(f"  → events.csv 업데이트 완료: 총 {len(combined)}건")
     print("  python main.py events 로 분석 결과 확인하세요.")

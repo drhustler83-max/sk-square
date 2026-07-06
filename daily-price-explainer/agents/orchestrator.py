@@ -48,6 +48,19 @@ load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
+# 모델 우선순위: .env GEMINI_MODEL(기본 gemini-2.5-flash) → 2.0-flash → 1.5-flash (503 폴백)
+# Pro급으로 전환할 때는 .env에 GEMINI_MODEL=gemini-2.5-pro 만 추가하면 됨 (코드 변경 불필요)
+_FALLBACK_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+
+
+def _primary_model() -> str:
+    return os.getenv("GEMINI_MODEL", _FALLBACK_MODELS[0])
+
+
+def _model_chain() -> list[str]:
+    primary = _primary_model()
+    return [primary] + [m for m in _FALLBACK_MODELS if m != primary]
+
 # 질문 의도 분류 키워드 맵
 INTENT_KEYWORDS = {
     "daily_briefing": ["브리핑", "요약", "오늘 주가", "전체", "정리"],
@@ -59,39 +72,47 @@ INTENT_KEYWORDS = {
     "rotation":       ["로테이션", "섹터 흐름", "반도체", "조선", "방산", "바이오", "어느 섹터"],
     "history":        ["전에", "이전", "지난", "과거", "패턴", "비슷"],
     "futures":        ["선물", "미결제약정", "베이시스", "콘탱고", "백워데이션", "OI", "파생"],
+    "short":          ["공매도", "숏", "대차", "잔고율", "숏커버링", "숏스퀴즈"],
+}
+
+_TOOL_MAP = {
+    "supply_demand": ["market", "broker"],
+    "news":          ["news"],
+    "macro":         ["macro", "market"],
+    "sector":        ["sector", "market"],
+    "nav":           ["nav", "market"],
+    "rotation":      ["rotation"],
+    "history":       ["market"],
+    "futures":       ["futures", "market"],
+    "short":         ["short", "market"],
 }
 
 
-def classify_intent(query: str) -> list[str]:
-    """질문에서 필요한 툴 목록 반환"""
+def classify_intent(query: str, default_to_briefing: bool = True) -> list[str] | None:
+    """질문에서 필요한 툴 목록 반환.
+
+    default_to_briefing=False면 키워드 매칭이 하나도 없을 때 None을 반환한다
+    (전체 브리핑으로 폴백하지 않음) — 대화형 세션의 후속 질문·잡담을 매번
+    전체 데이터 재수집으로 처리하지 않기 위해 사용.
+    """
     query_lower = query.lower()
     matched = []
     for intent, keywords in INTENT_KEYWORDS.items():
         if any(kw in query_lower for kw in keywords):
             matched.append(intent)
 
-    # 매칭 없으면 기본 브리핑
     if not matched:
+        if not default_to_briefing:
+            return None
         matched = ["daily_briefing"]
 
     # 브리핑이면 모든 툴
     if "daily_briefing" in matched:
         return ["market", "news", "macro", "sector", "nav", "rotation", "broker", "nxt", "futures", "short"]
 
-    # 의도별 툴 매핑
-    tool_map = {
-        "supply_demand": ["market", "broker"],
-        "news":          ["news"],
-        "macro":         ["macro", "market"],
-        "sector":        ["sector", "market"],
-        "nav":           ["nav", "market"],
-        "rotation":      ["rotation"],
-        "history":       ["market"],
-        "futures":       ["futures", "market"],
-    }
     tools = set()
     for intent in matched:
-        tools.update(tool_map.get(intent, ["market"]))
+        tools.update(_TOOL_MAP.get(intent, ["market"]))
 
     # market이 포함되면 nxt·broker 항상 추가
     if "market" in tools:
@@ -608,12 +629,10 @@ def chat(query: str, date: str = None) -> str:
     )
 
     # 4. 컨텍스트 조립 + Gemini 호출
-    # 모델 우선순위: 2.5-flash → 2.0-flash → 1.5-flash (503 폴백)
     import time
-    _MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-8b", "gemini-1.5-flash"]
     context = build_context(data, query)
     last_err = None
-    for model in _MODELS:
+    for model in _model_chain():
         for attempt in range(3):
             try:
                 response = client.models.generate_content(
@@ -621,7 +640,7 @@ def chat(query: str, date: str = None) -> str:
                     config=types.GenerateContentConfig(system_instruction=system),
                     contents=context,
                 )
-                if model != "gemini-2.5-flash":
+                if model != _primary_model():
                     logger.info(f"폴백 모델 사용: {model}")
                 return response.text
             except Exception as e:
@@ -636,3 +655,64 @@ def chat(query: str, date: str = None) -> str:
                 else:
                     raise
     raise last_err
+
+
+class ChatSession:
+    """대화형 세션 — Gemini 멀티턴 채팅(client.chats.create)으로 실제 대화 이력을 유지한다.
+    매 턴마다 질문 의도에 맞는 최신 데이터를 다시 수집해 이어붙이되(공매도·수급 등은
+    실시간성이 중요), 응답 형식은 system_prompt의 RESPONSE MODE 규칙에 따라
+    브리핑 요청일 때만 전체 구조를, 후속 질문일 때는 짧게 답하도록 모델이 판단한다.
+    """
+
+    def __init__(self, ticker: str = None, company: str = None):
+        self.ticker = ticker or os.getenv("COMPANY_TICKER", "402340")
+        self.company = company or os.getenv("COMPANY_NAME", "SK스퀘어")
+        self._session = None
+
+    def ask(self, query: str, date: str = None) -> str:
+        import time
+        date = date or datetime.today().strftime("%Y%m%d")
+        is_first_turn = self._session is None
+
+        # 첫 턴은 항상 전체 브리핑 범위로 세션을 연다.
+        # 이후 턴은 질문에 매칭되는 의도가 있을 때만 그 범위만큼만 새로 수집하고,
+        # 아무 키워드도 안 걸리는 잡담/후속 질문(예: "고마워", "그게 무슨 뜻이야")은
+        # 데이터 재수집 없이 대화 이력만으로 답하게 한다.
+        tools = classify_intent(query, default_to_briefing=is_first_turn)
+
+        if tools is None:
+            response = self._send_with_retry(query)
+            return response
+
+        data = asyncio.run(collect_data(self.ticker, self.company, date, tools))
+
+        if is_first_turn:
+            market = data.get("market", {})
+            system = build_system_prompt(
+                company_name=self.company, ticker=self.ticker, date=date,
+                close_price=market.get("close", 0), pct_change=market.get("pct_change", 0),
+            )
+            self._session = client.chats.create(
+                model=_primary_model(),
+                config=types.GenerateContentConfig(system_instruction=system),
+            )
+
+        context = build_context(data, query)
+        return self._send_with_retry(context)
+
+    def _send_with_retry(self, message: str) -> str:
+        import time
+        last_err = None
+        for attempt in range(3):
+            try:
+                response = self._session.send_message(message)
+                return response.text
+            except Exception as e:
+                last_err = e
+                if "503" in str(e) and attempt < 2:
+                    wait = 10 * (attempt + 1)
+                    logger.warning(f"Gemini 503 — {wait}초 후 재시도 ({attempt+1}/3)")
+                    time.sleep(wait)
+                else:
+                    raise
+        raise last_err
