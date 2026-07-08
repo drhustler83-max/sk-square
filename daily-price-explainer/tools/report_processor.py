@@ -169,7 +169,7 @@ def _extract_events_from_pdf(client, pdf: Path) -> str:
         uploaded = client.files.get(name=uploaded.name)
 
     logger.info(f"추출 중: {pdf.name}")
-    _MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    _MODELS = ["gemini-2.5-flash", "gemini-1.5-flash"]
     last_err = None
     for model in _MODELS:
         try:
@@ -180,10 +180,8 @@ def _extract_events_from_pdf(client, pdf: Path) -> str:
             break
         except Exception as e:
             last_err = e
-            if "503" in str(e):
-                logger.warning(f"Gemini 503 ({model}) — 다음 모델로")
-                continue
-            raise
+            logger.warning(f"Gemini 오류 ({model}) — 다음 모델로: {e}")
+            continue
     else:
         raise RuntimeError(f"모든 Gemini 모델 실패: {last_err}")
 
@@ -244,7 +242,9 @@ def process_reports(merge: bool = False, test: bool = False):
         return
 
     _REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    pdfs = sorted(_REPORTS_DIR.glob("*.pdf")) + sorted(_REPORTS_DIR.glob("*.PDF"))
+    # Windows는 대소문자 구분이 없어 "*.pdf"와 "*.PDF"가 같은 파일을 중복으로
+    # 매칭한다 (set으로 중복 제거 후 정렬)
+    pdfs = sorted(set(_REPORTS_DIR.glob("*.pdf")) | set(_REPORTS_DIR.glob("*.PDF")))
 
     if not pdfs:
         print(f"\n[리포트 없음] data/analyst_reports/ 에 PDF를 복사한 뒤 다시 실행하세요.")

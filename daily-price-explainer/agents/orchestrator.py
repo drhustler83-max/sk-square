@@ -48,9 +48,9 @@ load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-# 모델 우선순위: .env GEMINI_MODEL(기본 gemini-2.5-flash) → 2.0-flash → 1.5-flash (503 폴백)
+# 모델 우선순위: .env GEMINI_MODEL(기본 gemini-2.5-flash) → 1.5-flash (오류 시 폴백)
 # Pro급으로 전환할 때는 .env에 GEMINI_MODEL=gemini-2.5-pro 만 추가하면 됨 (코드 변경 불필요)
-_FALLBACK_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+_FALLBACK_MODELS = ["gemini-2.5-flash", "gemini-1.5-flash"]
 
 
 def _primary_model() -> str:
@@ -649,11 +649,9 @@ def chat(query: str, date: str = None) -> str:
                     wait = 10 * (attempt + 1)
                     logger.warning(f"Gemini 503 ({model}) — {wait}초 후 재시도 ({attempt+1}/3)")
                     time.sleep(wait)
-                elif "503" in str(e):
-                    logger.warning(f"{model} 3회 모두 503 — 다음 모델로 폴백")
-                    break  # 다음 모델 시도
                 else:
-                    raise
+                    logger.warning(f"{model} 오류 — 다음 모델로 폴백: {e}")
+                    break  # 다음 모델 시도
     raise last_err
 
 
