@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DPE 협업 게시판</title>
+  <style>
+    :root {
+      --bg: #F0F1EC;
+      --surface: #FAFAF6;
+      --surface-alt: #E8E9E2;
+      --ink: #1B1F1C;
+      --ink-soft: #576059;
+      --accent: #2E6358;
+      --accent-soft: #DCE8E3;
+      --warn: #B4632C;
+      --warn-soft: #F1E1D2;
+      --line: #DAD8CC;
+    }
+    :root[data-theme="dark"] {
+      --bg: #141713;
+      --surface: #1B1F1A;
+      --surface-alt: #242822;
+      --ink: #EDEEE7;
+      --ink-soft: #A7AEA3;
+      --accent: #6FC0AC;
+      --accent-soft: #1F3A34;
+      --warn: #E2924F;
+      --warn-soft: #3A2A1C;
+      --line: #2B2F28;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #141713;
+        --surface: #1B1F1A;
+        --surface-alt: #242822;
+        --ink: #EDEEE7;
+        --ink-soft: #A7AEA3;
+        --accent: #6FC0AC;
+        --accent-soft: #1F3A34;
+        --warn: #E2924F;
+        --warn-soft: #3A2A1C;
+        --line: #2B2F28;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                   "Malgun Gothic", "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", "SF Mono", monospace;
+      font-size: 0.9em;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    header {
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    .board-rules {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 40px;
+      font-size: 13px;
+    }
+
+    .board-rules h3 {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .board-rules ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .board-rules li {
+      margin-bottom: 6px;
+    }
+
+    .posts {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .post {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+      scroll-margin-top: 100px;
+    }
+
+    .post.pinned {
+      border-color: var(--accent);
+      border-width: 2px;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%);
+    }
+
+    .post-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .post-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .author-claude {
+      background: #E3F2FD;
+      color: #01579B;
+    }
+
+    .author-gpt {
+      background: #F3E5F5;
+      color: #4A148C;
+    }
+
+    .author-user {
+      background: #E8F5E9;
+      color: #1B5E20;
+    }
+
+    .timestamp {
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .post-content {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .post-content h4 {
+      margin: 16px 0 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .post-content p {
+      margin: 0 0 12px;
+    }
+
+    .post-content ul, .post-content ol {
+      margin: 0 0 12px;
+      padding-left: 24px;
+    }
+
+    .post-content li {
+      margin-bottom: 4px;
+    }
+
+    .code-block {
+      background: var(--surface-alt);
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 4px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      overflow-x: auto;
+    }
+
+    .section {
+      background: var(--surface-alt);
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 4px;
+    }
+
+    .section h5 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .section p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-bottom: 8px;
+    }
+
+    .tag-file { background: #E1F5FE; color: #01579B; }
+    .tag-decision { background: #F1E1D2; color: #B4632C; }
+    .tag-todo { background: #E0F2F1; color: #004D40; }
+    .tag-done { background: #C8E6C9; color: #1B5E20; }
+    .tag-blocked { background: #FFEBEE; color: #B71C1C; }
+
+    .post-footer {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      font-size: 13px;
+    }
+
+    .footer-section {
+      margin-bottom: 12px;
+    }
+
+    .footer-section strong {
+      color: var(--accent);
+    }
+
+    .next-owner {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    footer.board-footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+
+    @media print {
+      .board-rules { display: none; }
+      .page { padding: 20px; }
+    }
+
+    @media (max-width: 768px) {
+      .page { padding: 20px 16px; }
+      .post { padding: 16px; }
+      .post-header { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <h1>📋 DPE 협업 게시판</h1>
+    <p class="subtitle">SK스퀘어 Daily Price Explainer · Claude Code ↔ ChatGPT Codex 협업</p>
+  </header>
+
+  <div class="board-rules">
+    <h3>📌 게시판 규칙</h3>
+    <ul>
+      <li><strong>작성 형식:</strong> 작성자(Claude/GPT/User) · 시각(YYYY-MM-DD HH:MM) · 제목 · 내용 · 변경파일 · 다음담당자</li>
+      <li><strong>기존 글 유지:</strong> 이전 항목은 삭제하지 않고 유지 (최신순 상단 표시)</li>
+      <li><strong>변경 추적:</strong> 각 항목마다 어떤 파일을 수정했는지 명시</li>
+      <li><strong>Git 기록:</strong> 모든 변경사항은 Git 커밋으로 기록 (작성자 명시)</li>
+      <li><strong>작업 인수인계:</strong> "다음 담당자" 명시로 명확한 핸드오프</li>
+    </ul>
+  </div>
+
+  <div class="posts">
+
+    <!-- ========== POST TEMPLATE ========== -->
+    <article class="post">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">📌 게시판 사용 가이드 (PINNED)</h2>
+          <div class="post-meta">
+            <span class="author-badge author-user">Sean (User)</span>
+            <span class="timestamp">2026-07-13 14:30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>개요</h4>
+        <p>이 게시판은 Claude Code와 ChatGPT Codex 간의 협업을 위한 공식 Bulletin Board입니다. 로컬 저장소에 보관되어 Git으로 버전 관리됩니다.</p>
+
+        <h4>게시글 작성 템플릿</h4>
+        <div class="code-block">
+작성자: Claude / ChatGPT / Sean
+시각: YYYY-MM-DD HH:MM
+제목: (간단한 작업 제목)
+
+## 작업 내용
+- 항목1
+- 항목2
+
+## 변경 파일
+- data/events.csv
+- tools/attribution.py
+
+## 다음 담당자
+→ ChatGPT (작업명: XXX)
+        </div>
+
+        <h4>태그 종류</h4>
+        <ul>
+          <li><span class="tag tag-file">파일</span> 파일 수정/생성</li>
+          <li><span class="tag tag-decision">결정</span> 주요 의사결정</li>
+          <li><span class="tag tag-todo">할일</span> 진행 중인 작업</li>
+          <li><span class="tag tag-done">완료</span> 작업 완료</li>
+          <li><span class="tag tag-blocked">막힘</span> 진행 불가</li>
+        </ul>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>📎 첨부 파일:</strong> 없음
+        </div>
+        <div class="footer-section">
+          <strong>🏷️ 태그:</strong> <span class="tag tag-done">공지</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="board-footer">
+    <p>🚀 DPE 협업 게시판 v1.0 | Git 버전 관리됨 | 모든 변경사항은 커밋으로 기록</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
