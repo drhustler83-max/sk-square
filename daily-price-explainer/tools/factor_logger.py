@@ -46,6 +46,12 @@ COLUMNS = [
     "shorting_balance_ratio", # 공매도 잔고율 (%)
     "shorting_volume_ratio",  # 당일 공매도 비중 (%)
     "shorting_balance_change",# 잔고 전일 대비 변화 (주)
+    "fut_listed",             # 주식선물 상장 여부 0/1 (futures_log.csv 병합, 2026-07-21)
+    "fut_basis",              # 근월물 베이시스 (선물-현물, 원)
+    "fut_basis_pct",          # 근월물 베이시스 (%)
+    "fut_volume",             # 근월물 거래량
+    "foreign_own_pct",        # 외국인 지분율 (%, extra_log.csv 병합, 2026-07-21)
+    "individual_net",         # 개인 순매수 (거래대금, 원)
 ]
 
 

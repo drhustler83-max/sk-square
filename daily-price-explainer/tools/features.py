@@ -23,11 +23,6 @@ from tools.factor_logger import load_log, LOG_PATH
 
 TARGET = "skq_ret"
 
-# 선물 로그(별도 cadence) — build_features에서 date 기준 left-join
-FUT_LOG_PATH = LOG_PATH.parent / "futures_log.csv"
-# 추가 원천(외국인 지분율·개인 순매수) — tools/backfill_extra.py로 생성
-EXTRA_LOG_PATH = LOG_PATH.parent / "extra_log.csv"
-
 # ─────────────────────────────────────────────────────────────────────────────
 # 피처 ↔ taxonomy 매핑.
 #   key = feature 컬럼명, value = (taxonomy 코드, 한 줄 설명)
@@ -84,7 +79,7 @@ FEATURES: list[str] = list(FEATURE_TAXONOMY.keys())
 
 
 def _attach_futures(df: "pd.DataFrame") -> "pd.DataFrame":
-    """data/futures_log.csv를 date 기준 left-join하여 F5 파생(선물) 피처 추가.
+    """factor_log.csv에 병합된 F5(선물) raw 컬럼을 정규화.
 
     선물은 상장 구간이 간헐적(미상장 구간 다수)이라 다음 규칙으로 정규화한다.
       - fut_listed(0/1) 플래그로 '상장 중 베이시스 0'과 '미상장(0)'을 구분.
@@ -95,17 +90,6 @@ def _attach_futures(df: "pd.DataFrame") -> "pd.DataFrame":
     """
     import pandas as pd
 
-    if not FUT_LOG_PATH.exists():
-        logger.warning(f"선물 로그 없음: {FUT_LOG_PATH} — F5 피처를 0으로 채움")
-        df["fut_listed"] = 0
-        df["fut_basis_pct"] = 0.0
-        df["fut_volume"] = 0.0
-        return df
-
-    fut = pd.read_csv(FUT_LOG_PATH, parse_dates=["date"])
-    keep = [c for c in ["date", "fut_listed", "fut_basis_pct", "fut_volume"] if c in fut.columns]
-    df = df.merge(fut[keep], on="date", how="left")
-
     df["fut_listed"]    = (pd.to_numeric(df["fut_listed"], errors="coerce").fillna(0) > 0).astype(int)
     df["fut_basis_pct"] = pd.to_numeric(df["fut_basis_pct"], errors="coerce").fillna(0.0)
     df["fut_volume"]    = pd.to_numeric(df["fut_volume"], errors="coerce").fillna(0.0)
@@ -115,18 +99,9 @@ def _attach_futures(df: "pd.DataFrame") -> "pd.DataFrame":
 
 
 def _attach_extra(df: "pd.DataFrame") -> "pd.DataFrame":
-    """data/extra_log.csv를 date 기준 left-join → 외국인 지분율·개인 순매수 raw 컬럼 추가."""
+    """factor_log.csv에 병합된 외국인 지분율·개인 순매수 raw 컬럼 타입 정규화."""
     import pandas as pd
 
-    if not EXTRA_LOG_PATH.exists():
-        logger.warning(f"extra 로그 없음: {EXTRA_LOG_PATH} — foreign_own_pct/individual_net NaN")
-        df["foreign_own_pct"] = float("nan")
-        df["individual_net"] = float("nan")
-        return df
-
-    ex = pd.read_csv(EXTRA_LOG_PATH, parse_dates=["date"])
-    keep = [c for c in ["date", "foreign_own_pct", "individual_net"] if c in ex.columns]
-    df = df.merge(ex[keep], on="date", how="left")
     df["foreign_own_pct"] = pd.to_numeric(df["foreign_own_pct"], errors="coerce")
     df["individual_net"]  = pd.to_numeric(df["individual_net"], errors="coerce")
     return df
