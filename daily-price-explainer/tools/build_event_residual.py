@@ -16,7 +16,9 @@ Sean 리뷰용 마스터 테이블. data/factor_log.csv + data/events.csv를 소
   direction      (수동 입력용, 현재 비워둠)
   importance     (수동 입력용, 현재 비워둠)
   note           (수동 입력용, 현재 비워둠)
-  source         (수동 입력용, 현재 비워둠)
+  source         event_name과 동일한 행(들)의 원천 표기(예: "DART 20220128 rcpNo=..."
+                 | "SK스퀘어 홈페이지 뉴스룸 20220328"). event_name과 같은 규칙으로
+                 events.csv의 source 컬럼을 그룹핑한 값 — 자동 산출.
 
 주의
   event_name은 dart/homepage 두 원천만 반영한다 — 애널리스트 리포트는 이벤트 실제
@@ -83,15 +85,16 @@ def build(save: bool = True) -> pd.DataFrame:
     ev = ev[ev["source_type"].isin(DISCLOSURE_SOURCE_TYPES)]
     grouped = (
         ev.dropna(subset=["effective_date"])
-        .groupby("effective_date")["event"]
-        .apply(lambda s: " | ".join(s))
+        .groupby("effective_date")
+        .agg(event_name=("event", lambda s: " | ".join(s)), source=("source", lambda s: " | ".join(s)))
         .reset_index()
-        .rename(columns={"effective_date": "date", "event": "event_name"})
+        .rename(columns={"effective_date": "date"})
     )
     df = df.merge(grouped, on="date", how="left")
     df["event_name"] = df["event_name"].fillna("")
+    df["source"] = df["source"].fillna("")
 
-    for col in ("direction", "importance", "note", "source"):
+    for col in ("direction", "importance", "note"):
         df[col] = ""
 
     out = df[[

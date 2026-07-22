@@ -8,7 +8,11 @@ Regime x Event Merge
   찾는" 방향으로 전환 — 이 모듈은 그 매칭의 시차(lag) 규칙을 담당한다.
 
 effective_date 규칙 (source_type별 시장 반영일)
-  - DART 공시 / 홈페이지 보도자료: 장 마감 후 발생 → 다음 거래일에 반영
+  - DART 공시: rcept_dt 당일 반영 (비거래일이면 다음 거래일로 롤). DART 공시는
+    장중에도 접수되는 경우가 많아 "다음 거래일" 일괄 적용 시 실제 최초공개일과
+    하루 어긋나는 문제가 있었음 (예: 자사주 매입 신탁계약체결 공시 rcept_dt가
+    실제 공개일과 정확히 일치하는데도 다음날로 밀려버림) — 애널리스트와 동일 규칙으로 수정.
+  - 홈페이지 보도자료: 장 마감 후 발생 → 다음 거래일에 반영
   - 애널리스트 리포트: 장 시작 전(오전 9시 이전) 발간 → 당일 반영
     (이벤트 date가 비거래일이면 다음 거래일로 롤)
   - 뉴스매체 링크·source_type 불명(unknown): 발간 시각을 알 수 없으므로
@@ -104,10 +108,10 @@ def load_events_with_effective_date() -> pd.DataFrame:
 
     eff_dates, confidences = [], []
     for st, d in zip(ev["source_type"], ev["date"]):
-        if st in ("dart", "homepage"):
+        if st == "homepage":
             eff_dates.append(next_trading_day(d))
             confidences.append("rule")
-        elif st == "analyst":
+        elif st in ("dart", "analyst"):
             eff_dates.append(same_or_next_trading_day(d))
             confidences.append("rule")
         else:  # news, unknown — 발간 시각 불명, homepage 규칙을 잠정 적용
