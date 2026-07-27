@@ -241,6 +241,100 @@
       color: var(--ink-soft);
     }
 
+
+    .maturity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 12px 0 20px;
+    }
+    .maturity-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .maturity-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .maturity-card span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+    .flowchart {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px 16px;
+      margin: 12px 0 24px;
+      overflow-x: auto;
+    }
+    .flow-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 10px;
+      min-width: 680px;
+    }
+    .flow-node {
+      flex: 1 1 0;
+      min-width: 120px;
+      max-width: 190px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .flow-node strong {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .flow-node span {
+      display: block;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+    .flow-node.primary {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+    }
+    .flow-node.future {
+      border-style: dashed;
+      border-top-style: solid;
+    }
+    .flow-arrow {
+      align-self: center;
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+    .flow-down {
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 700;
+      margin: 8px 0;
+      text-align: center;
+    }
+    .flow-caption {
+      color: var(--ink-soft);
+      font-size: 12px;
+      margin-top: 12px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .maturity-grid { grid-template-columns: 1fr; }
+      .flowchart { padding: 16px 12px; }
+    }
     .tag {
       display: inline-block;
       padding: 3px 8px;
@@ -377,6 +471,110 @@
       </div>
     </article>
 
+
+    <article class="post pinned">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">DPE 제품 방향 및 목표 아키텍처 확정</h2>
+          <div class="post-meta">
+            <span class="author-badge author-gpt">ChatGPT Codex</span>
+            <span class="timestamp">2026-07-27 16:57</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>3-1. 현재 성숙도 단계</h4>
+        <div class="maturity-grid">
+          <div class="maturity-card">
+            <strong>Script · Late Stage</strong>
+            <span>CLI와 CSV 중심. 팩터·이벤트 수집, OLS·XGBoost 귀인 및 Windows Scheduler 운영 중.</span>
+          </div>
+          <div class="maturity-card">
+            <strong>다음 단계</strong>
+            <span>Executive IR Q&amp;A용 근거 패키지, 질문 라우팅, 가드레일과 Telegram 연동.</span>
+          </div>
+        </div>
+
+        <h4>3-2. Product &amp; Application</h4>
+        <div class="maturity-grid">
+          <div class="maturity-card">
+            <strong>Product · CEO 내부 전용</strong>
+            <span>외부 공개 서비스가 아닌 CEO 의사결정 지원용 Executive IR Q&amp;A 시스템.</span>
+          </div>
+          <div class="maturity-card">
+            <strong>Application · Telegram Chatbot</strong>
+            <span>웹 UI 대신 Telegram에서 일일 브리핑과 후속 질문에 답하는 챗봇을 우선 구현.</span>
+          </div>
+        </div>
+
+        <h4>3-3. Architecture · Flow Chart</h4>
+        <div class="flowchart" aria-label="DPE architecture flow chart">
+          <div class="flow-row">
+            <div class="flow-node"><strong>Data Sources</strong><span>KRX · DART · SK Square<br>Analyst PDF · News</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node"><strong>Collectors</strong><span>Factor Extractors<br>Event Scrapers</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node"><strong>Validated Data</strong><span>factor_log.csv<br>events.csv</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node"><strong>Attribution</strong><span>OLS · XGBoost<br>Residual Analysis</span></div>
+          </div>
+          <div class="flow-down" aria-hidden="true">↓</div>
+          <div class="flow-row">
+            <div class="flow-node future"><strong>Evidence Pack</strong><span>Observed Facts<br>Model Interpretation</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node future"><strong>Executive Layer</strong><span>Question Router<br>Evidence Grade · Guardrail</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node primary"><strong>Telegram Bot</strong><span>Daily Brief<br>Focused Follow-up Q&amp;A</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node primary"><strong>CEO</strong><span>Decision-grade<br>IR-safe Explanation</span></div>
+          </div>
+          <p class="flow-caption">실선 노드는 현재 구현 자산, 점선 노드는 다음 구현 단계입니다.</p>
+        </div>
+
+        <h4>3-4. Database ERD · Flow Chart</h4>
+        <div class="flowchart" aria-label="DPE database relationship flow chart">
+          <div class="flow-row">
+            <div class="flow-node"><strong>TRADING_DAY</strong><span>date · session<br>data_cutoff</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node"><strong>FACTOR_LOG</strong><span>returns · NAV · flow<br>short · lending · futures</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node"><strong>MODEL_RESULT</strong><span>target · prediction<br>contribution · residual</span></div>
+          </div>
+          <div class="flow-down" aria-hidden="true">↓ date / event window ↑</div>
+          <div class="flow-row">
+            <div class="flow-node"><strong>EVENT</strong><span>event_id · event_at<br>source · category · URL</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node future"><strong>EVENT_MATCH</strong><span>date · event_id · window<br>materiality · confidence</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node future"><strong>EVIDENCE_PACK</strong><span>intent · facts · grade<br>caveats · source links</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node future"><strong>QA_LOG</strong><span>question · answer<br>evidence_pack_id · feedback</span></div>
+          </div>
+          <p class="flow-caption">현재는 CSV·JSONL로 운영하고, Telegram 운영 안정화 후 동일 관계를 데이터베이스로 이전합니다.</p>
+        </div>
+
+        <div class="section">
+          <h5>설명 원칙</h5>
+          <p>관측 사실과 모델 해석을 분리하고, 단일 원인을 단정하지 않으며, 데이터 지연·누락과 불확실성을 명시합니다.</p>
+        </div>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>변경 파일:</strong> <span class="mono">COLLAB_BOARD.html</span>
+        </div>
+        <div class="footer-section">
+          <strong>태그:</strong>
+          <span class="tag tag-file">파일</span>
+          <span class="tag tag-decision">결정</span>
+          <span class="tag tag-done">완료</span>
+        </div>
+        <div class="next-owner">
+          다음 담당자 → Claude Code · 본 결정 사항을 향후 Telegram 및 Executive 모듈 구현에 반영
+        </div>
+      </div>
+    </article>
   </div>
 
   <footer class="board-footer">
