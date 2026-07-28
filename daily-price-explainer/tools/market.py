@@ -21,6 +21,7 @@ import re
 import requests as _requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
+from functools import lru_cache
 from loguru import logger
 
 
@@ -248,13 +249,24 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
         return {"error": str(e)}
 
 
+@lru_cache(maxsize=512)
 def _prev_trading_day(date_str: str) -> str:
-    """가장 가까운 직전 영업일 반환 (간단 버전: 주말 제외)"""
-    dt = datetime.strptime(date_str, "%Y%m%d")
-    dt -= timedelta(days=1)
-    while dt.weekday() >= 5:  # 토(5), 일(6)
-        dt -= timedelta(days=1)
-    return dt.strftime("%Y%m%d")
+    'KRX 거래 캘린더 기준 가장 가까운 직전 거래일 반환.'
+    end = datetime.strptime(date_str, '%Y%m%d') - timedelta(days=1)
+    start = end - timedelta(days=14)
+    try:
+        calendar = stock.get_market_ohlcv(
+            start.strftime('%Y%m%d'), end.strftime('%Y%m%d'), '005930'
+        )
+        if calendar is not None and not calendar.empty:
+            return calendar.index[-1].strftime('%Y%m%d')
+    except Exception as exc:
+        logger.warning(f'KRX 직전 거래일 조회 실패({date_str}): {exc}')
+
+    # 네트워크 장애 시 기존 주말 제외 방식으로 폴백한다.
+    while end.weekday() >= 5:
+        end -= timedelta(days=1)
+    return end.strftime('%Y%m%d')
 
 
 def safe_index_ohlcv(start: str, end: str, code: str) -> pd.DataFrame:

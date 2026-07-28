@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+"""Refresh the DPE collaboration board after each successful commit."""
+
+from __future__ import annotations
+
+from pathlib import Path
+import sys
+
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_DIR))
+
+try:
+    from tools.update_collab_commit_history import refresh
+
+    changed = refresh()
+except Exception as error:  # A post-commit helper must never invalidate the commit.
+    print(f"warning: DPE commit-history update failed: {error}", file=sys.stderr)
+    raise SystemExit(0)
+
+if changed:
+    print(
+        "DPE: COLLAB_BOARD.html commit history updated for the next commit."
+    )
