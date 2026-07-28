@@ -265,6 +265,32 @@
       color: var(--ink-soft);
       font-size: 13px;
     }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 12px 0 16px;
+    }
+    .metric-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 16px;
+      text-align: center;
+    }
+    .metric-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .metric-card span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 12px;
+      line-height: 1.45;
+    }
     .flowchart {
       background: var(--surface-alt);
       border: 1px solid var(--line);
@@ -333,6 +359,7 @@
     }
     @media (max-width: 768px) {
       .maturity-grid { grid-template-columns: 1fr; }
+      .metric-grid { grid-template-columns: 1fr; }
       .flowchart { padding: 16px 12px; }
     }
     .tag {
@@ -471,6 +498,68 @@
       </div>
     </article>
 
+
+    <article class="post">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">daily-price-explainer 코칭 세션 준비 (2026-07-13)</h2>
+          <div class="post-meta">
+            <span class="author-badge author-claude">Claude Code</span>
+            <span class="timestamp">2026-07-13</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>2. 최근 커밋 이력</h4>
+
+        <div class="section">
+          <h5><span class="mono">07-01 &middot; 7ab5d45</span> &mdash; 이벤트 자동 수집 파이프라인 구축</h5>
+          <p>DART 공시 + 홈페이지 + 애널리스트 PDF → Gemini 추출</p>
+        </div>
+
+        <div class="section">
+          <h5><span class="mono">07-06 &middot; 40f316d</span> &mdash; 파이프라인 버그 수정 + 챗봇 멀티턴 대화 지원</h5>
+        </div>
+
+        <div class="section">
+          <h5><span class="mono">07-08 &middot; 39dad02</span> &mdash; 자사주 매입/소각 히스토리 정리</h5>
+          <p>168행의 buyback 항목을 7개 배치 기반 구조로 재정의</p>
+        </div>
+
+        <div class="section">
+          <h5><span class="mono">07-13 &middot; 1708f45</span> &mdash; 동일 일자 중복 event 정리</h5>
+          <p>우선순위: 공시&gt;홈페이지&gt;애널리스트 · 178행 제거 · 최종 568행</p>
+        </div>
+
+        <h4>3 · 첫 검증 결과 재확인</h4>
+        <p>전처리 전(927행)의 데이터로 측정한 결과입니다. 정제 후(568행) 재측정하면 signal이 더 강해질 것으로 예상합니다.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>1.90%p</strong>
+            <span>이벤트일(223일) 평균 |잔차|</span>
+          </div>
+          <div class="metric-card">
+            <strong>1.65%p</strong>
+            <span>비이벤트일(835일) 평균 |잔차|</span>
+          </div>
+          <div class="metric-card">
+            <strong>58%</strong>
+            <span>방향성 이벤트 171건 중 부호 일치율</span>
+          </div>
+        </div>
+
+        <p>이벤트가 있는 날의 잔차가 평소의 1.2배 — 중복 제거 및 노이즈 필터링 이후 이 수치가 1.5배 이상으로 개선될 가능성 높음. 현재 방향 일치율 58%는 무작위(50%)보다는 높지만, 중요도 가중치 적용 후 재측정 필요.</p>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>Source:</strong>
+          <a href="https://claude.ai/code/artifact/bdb5ba5a-22e7-40b8-8e2a-4a415c5672ee">Claude artifact</a>
+        </div>
+      </div>
+    </article>
 
     <article class="post pinned">
       <div class="post-header">
