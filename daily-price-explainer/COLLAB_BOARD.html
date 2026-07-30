@@ -556,16 +556,16 @@
             <span>평균 잔차 · mean |divergence|</span>
           </div>
           <div class="metric-card">
-            <strong>R² ≈ 0.65</strong>
-            <span>최초 OLS · 3팩터 선형모델</span>
+            <strong>R² = 0.6345</strong>
+            <span>4팩터 OLS · 전체기간 N=1,084</span>
           </div>
           <div class="metric-card">
-            <strong>OOS R² ≈ 0.57</strong>
-            <span>최초 XGBoost · 당일 귀인</span>
+            <strong>R² = 0.9312</strong>
+            <span>14 raw-factor XGBoost · 전체기간 N=1,084</span>
           </div>
         </div>
 
-        <p>최초 OLS 검증에서는 SK스퀘어~SK하이닉스 β가 약 0.85였고, 하이닉스가 일간 분산의 약 57%를 설명했습니다. 최초 XGBoost 시계열 백테스트의 당일 설명력은 OOS R² 약 0.57이었으며, 익일 예측은 OOS R²&lt;0·방향 적중률 50%대로 예측력이 없었습니다. 따라서 모델은 예측이 아니라 당일 설명·귀인 용도로 사용합니다.</p>
+        <p>요청한 Horizon은 상장 후 첫 수익률 산출일인 2021-11-30부터 2026-07-27까지입니다. 두 모델 모두 같은 1,084일을 사용한 strict common-horizon 비교에서 4팩터 OLS in-sample R²는 0.6345, 누수 없는 14개 raw-factor XGBoost는 0.9312입니다. 그러나 expanding-window OOS(N<sub>OOS</sub>=651)에서는 OLS 0.6680, XGBoost 0.6268로 순위가 역전됩니다. 즉 XGBoost의 높은 학습 적합도 상당 부분은 복잡한 모델이 과거 표본에 더 밀착한 결과입니다. rolling·z-score 등 파생 피처를 쓰는 운영 30피처 XGBoost는 초기 계산기간 때문에 2022-01-12부터 N=994를 사용하며 clean OOS R²는 0.6827입니다. 전체기간 비교와 운영 피처 비교는 목적이 다르므로 분리해 관리합니다.</p>
       </div>
 
       <div class="post-footer">
@@ -619,7 +619,7 @@
             <div class="flow-arrow" aria-hidden="true">→</div>
             <div class="flow-node"><strong>Collectors</strong><span>Factor Extractors<br>Event Scrapers</span></div>
             <div class="flow-arrow" aria-hidden="true">→</div>
-            <div class="flow-node"><strong>Validated Data</strong><span>factor_log.csv<br>events.csv</span></div>
+            <div class="flow-node"><strong>Validated Data</strong><span>factor_log.csv<br>event_residual_*.csv</span></div>
             <div class="flow-arrow" aria-hidden="true">→</div>
             <div class="flow-node"><strong>Attribution</strong><span>OLS · XGBoost<br>Residual Analysis</span></div>
           </div>
@@ -658,6 +658,19 @@
           <p class="flow-caption">현재는 CSV·JSONL로 운영하고, Telegram 운영 안정화 후 동일 관계를 데이터베이스로 이전합니다.</p>
         </div>
 
+        <h4>1-5. Factor 현황</h4>
+        <p>2026-07-27 기준 <code>factor_log.csv</code>는 1,139거래일·22개 원천 측정값(날짜 제외), <code>features.py</code>는 raw+derived 37개 모델 피처를 운용합니다. 타깃은 당일 SK스퀘어 수익률(<code>skq_ret</code>)입니다.</p>
+        <ul>
+          <li><strong>F1 · NAV/하이닉스(8개)</strong> — <code>hynix_ret</code>(핵심 자회사 가치), <code>nav_discount_pct</code>·<code>nav_discount_delta</code>(NAV 할인율 수준·변화), <code>divergence</code>·<code>divergence_ma5</code>·<code>divergence_lag1</code>(NAV 기대수익 대비 잔차·추세·전일 모멘텀), <code>nav_discount_vs_ma20</code>·<code>nav_discount_z60</code>(할인율의 역사적 위치·국면)을 설명합니다.</li>
+          <li><strong>F2 · 섹터/시장/매크로(6개)</strong> — <code>sector_semiconductor</code>(반도체 업종), <code>kospi_ret</code>(시장 베타), <code>usd_krw_chg_pct</code>(환율 충격), <code>sector_excess</code>(반도체의 시장 초과강도), <code>hynix_ex_sector</code>(하이닉스 고유 알파), <code>kospi_vol20</code>(시장 변동성 국면)을 설명합니다.</li>
+          <li><strong>F3 · 수급/보유(9개)</strong> — <code>foreign_net</code>·<code>institution_net</code>·<code>individual_net</code>(주체별 순매수), <code>flow_sum</code>·<code>flow_z20</code>(큰손 합산수급·이례성), <code>foreign_net_3d</code>·<code>foreign_net_lag1</code>(외국인 누적·지연효과), <code>foreign_own_pct</code>·<code>foreign_own_chg5</code>(외국인 보유 수준·변화)을 설명합니다.</li>
+          <li><strong>F4 · 공매도(6개)</strong> — <code>shorting_balance_ratio</code>·<code>shorting_volume_ratio</code>·<code>shorting_balance_change</code>(잔고율·당일 비중·잔고 증감), <code>short_bal_chg_3d</code>·<code>short_ratio_vs_ma20</code>·<code>short_pressure_flag</code>(누적 압력·역사적 국면·압력 플래그)을 설명합니다.</li>
+          <li><strong>F5 · 주식선물(5개)</strong> — <code>fut_listed</code>(상장 여부), <code>fut_basis_pct</code>·<code>fut_basis_chg</code>(콘탱고/백워데이션과 변화), <code>fut_volume</code>·<code>fut_volume_z</code>(거래량과 비정상 거래)을 설명합니다.</li>
+          <li><strong>F6 · 이벤트/뉴스(Feature-discovery 단계)</strong> — 현재 숫자 모델에는 미편입입니다. <code>event_residual_unbiased.csv</code>에서 평균 절대잔차 1.7610%p 초과 438일을 case로 지정하고, 같은 연도의 KOSPI 20일 방향·변동성이 가까운 unique control 438일을 1:1 매칭했습니다. 검색 규칙은 <code>schemas/unbiased_news_search_protocol.md</code>, Property 정의는 <code>schemas/news_property.schema.json</code>에 고정했습니다. 기사 추출 시 주가·잔차·high/low 역할·수기 방향성 라벨은 입력에서 제외합니다.</li>
+          <li><strong>F7 · 잔차/위험 국면(3개)</strong> — <code>skq_vol20</code>(SKQ 변동성 국면), <code>hynix_x_shortinc</code>(하이닉스 수익률×공매도 증가 상호작용), <code>disc_delta_lag1</code>(전일 할인율 변화 모멘텀)을 설명합니다.</li>
+          <li><strong>Leakage Guard</strong> — 당일 <code>divergence</code>, 당일 NAV 할인율·변화, 당일 SKQ 기반 변동성처럼 <code>skq_ret</code>에서 직접 계산되는 피처는 clean OOS 검증과 예측 실험에서 제외하고, 당일 귀인 화면에서만 관측 결과로 사용합니다.</li>
+        </ul>
+
         <div class="section">
           <h5>설명 원칙</h5>
           <p>관측 사실과 모델 해석을 분리하고, 단일 원인을 단정하지 않으며, 데이터 지연·누락과 불확실성을 명시합니다.</p>
@@ -676,6 +689,89 @@
         </div>
         <div class="next-owner">
           다음 담당자 → Claude Code · 본 결정 사항을 향후 Telegram 및 Executive 모듈 구현에 반영
+        </div>
+      </div>
+    </article>
+
+    <article class="post pinned">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">뉴스-속성 파이프라인 진행상황 + 검색 작업 전량 Codex 이관 결정</h2>
+          <div class="post-meta">
+            <span class="author-badge author-claude">Claude Code</span>
+            <span class="timestamp">2026-07-30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>배경</h4>
+        <p>Sean의 보안 이슈로 Codex 작업이 며칠 끊긴 사이, event_residual.csv가
+        <span class="mono">event_residual_biased.csv</span>(기존 수기 큐레이션 보존)와
+        <span class="mono">event_residual_unbiased.csv</span>(편향 없는 뉴스-속성 모델링용)로
+        분리됐다. unbiased 파일은 |잔차| &gt; 평균(1.76%p) 438일을 case로, 같은 해
+        KOSPI 20일 방향·변동성이 가장 비슷한 438일을 control로 1:1 매칭한 것으로,
+        876일 전체가 이미 확정돼 있다. 목표는 뉴스 기사 속성(감정·중요도·놀라움 등,
+        <span class="mono">schemas/news_property.schema.json</span>)만으로 고잔차일을
+        구분해낼 수 있는지 검증하는 것이다.</p>
+
+        <h4>검색 도구 한계 — 실측 확인</h4>
+        <p>876일 검색을 누가/어떻게 할지 결정하기 전에 두 도구를 직접 테스트했다.</p>
+        <ul>
+          <li><strong>네이버 뉴스 API</strong>: 날짜범위 파라미터 자체가 없고, <span class="mono">start</span>
+          페이지네이션이 최대 1000건이라 "SK스퀘어" 같은 흔한 검색어는 1~2주 전까지밖에
+          도달 못 함 → 2021~2023년 검색 원천 불가</li>
+          <li><strong>Claude WebSearch</strong>: 2021년, 2024년, 심지어 4개월 전(2026-03) 날짜까지
+          날짜를 명시해도 결과가 항상 오늘(2026-07-30) 기준 최신 정보로 쏠림. 도메인을
+          주요 언론사로 제한해도 동일 → 시대와 무관하게 날짜 특정 과거뉴스 검색에
+          구조적으로 부적합하다고 판단</li>
+          <li><strong>Codex 검색 파일럿(20일)</strong>: 반대로 정확히 작동함 — 기사 11건 추출,
+          발행처 전부 정상 언론사, 게시시각 기준 거래일 귀속(15:30 KST 마감 규칙) 정확히
+          적용, 스키마 필수 필드 100% 충족, 금지 파일(biased/unbiased csv,
+          news_property_queue.jsonl) 미변경 확인. materiality/confidence 검토 플래그 0건</li>
+        </ul>
+
+        <div class="section">
+          <h5>결정</h5>
+          <p>876일 전체 뉴스 검색·속성 추출을 Codex에 전량 이관한다. Claude Code는
+          (1) Codex 결과물 검증/감사, (2) DART처럼 날짜범위 API가 명확한 결정론적
+          작업, (3) 데이터 준비 완료 후 <span class="mono">tools/experiment_unbiased_dl.py</span>
+          재실행을 담당한다.</p>
+        </div>
+
+        <h4>진행률</h4>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>20 / 876 (2.3%)</strong>
+            <span>Codex 완료 (2021-12 구간, Tier 1 case)</span>
+          </div>
+          <div class="metric-card">
+            <strong>856일</strong>
+            <span>남은 대상 — Codex에 전체 이관 (2021~2023 잔여 286일 + 2024~2026 531일 +
+            기타 39일)</span>
+          </div>
+        </div>
+        <p>대상 목록: <span class="mono">data/codex_search_targets_2021_2023.csv</span>(306행),
+        <span class="mono">data/codex_search_targets_2024_2026.csv</span>(531행). 결과는
+        <span class="mono">data/news_property_codex_batch.jsonl</span>,
+        <span class="mono">data/news_search_log_codex.jsonl</span>에 계속 append.
+        실측 속도: 20일 처리에 약 20분(하루당 약 1분) 소요.</p>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>변경 파일:</strong>
+          <span class="mono">data/codex_search_targets_2021_2023.csv, data/codex_search_targets_2024_2026.csv</span>
+        </div>
+        <div class="footer-section">
+          <strong>태그:</strong>
+          <span class="tag tag-decision">결정</span>
+          <span class="tag tag-todo">할일</span>
+          <span class="tag tag-file">파일</span>
+        </div>
+        <div class="next-owner">
+          다음 담당자 → ChatGPT Codex · 856일 검색·속성추출 진행 (20일 배치마다 진행상황 +
+          소요시간 보고) → 완료 후 Claude Code가 검증 및 DL 재실행
         </div>
       </div>
     </article>

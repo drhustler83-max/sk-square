@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dpe.internal/schemas/news_property.schema.json",
+  "title": "DPE News Property",
+  "description": "Article-only properties extracted without price, divergence, high_residual, direction, or importance labels.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "article_id",
+    "trading_date",
+    "url",
+    "publisher",
+    "availability",
+    "primary_subject",
+    "entities",
+    "relevance_score",
+    "event_type",
+    "event_stage",
+    "novelty_score",
+    "sentiment_score",
+    "surprise_direction",
+    "surprise_magnitude",
+    "materiality_score",
+    "uncertainty_score",
+    "forward_looking",
+    "ex_ante_impact_direction",
+    "impact_horizon",
+    "mechanisms",
+    "confidence_score",
+    "numeric_claims",
+    "evidence_facts",
+    "extraction"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "news_property.v1"
+    },
+    "article_id": {
+      "type": "string",
+      "description": "Stable SHA-256 identifier derived from canonical URL and article text hash."
+    },
+    "trading_date": {
+      "type": "string",
+      "pattern": "^[0-9]{8}$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "event_time_bucket": {
+      "enum": ["pre_open", "intraday", "post_close", "non_trading_day", "unknown"]
+    },
+    "retrieved_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "article_text_hash": {
+      "type": ["string", "null"]
+    },
+    "availability": {
+      "enum": ["full_text", "partial_text", "metadata_only", "unavailable"]
+    },
+    "language": {
+      "type": "string",
+      "default": "ko"
+    },
+    "title": {
+      "type": ["string", "null"]
+    },
+    "primary_subject": {
+      "enum": [
+        "sk_square",
+        "sk_hynix",
+        "portfolio_company",
+        "shareholder_policy",
+        "governance",
+        "semiconductor_sector",
+        "macro_market",
+        "regulation",
+        "other"
+      ]
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "relevance_score": {
+      "$ref": "#/$defs/unitScore"
+    },
+    "event_type": {
+      "enum": [
+        "earnings",
+        "capital_return",
+        "value_up",
+        "portfolio_acquisition",
+        "portfolio_disposal",
+        "ipo",
+        "financing",
+        "governance",
+        "regulation",
+        "semiconductor_cycle",
+        "analyst_opinion",
+        "market_flow",
+        "litigation",
+        "management_change",
+        "other"
+      ]
+    },
+    "event_stage": {
+      "enum": [
+        "rumor",
+        "expectation",
+        "proposal",
+        "announcement",
+        "approval",
+        "execution",
+        "completion",
+        "follow_up",
+        "unknown"
+      ]
+    },
+    "novelty_score": {
+      "$ref": "#/$defs/unitScore"
+    },
+    "sentiment_score": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    },
+    "surprise_direction": {
+      "enum": ["negative", "neutral", "positive", "unknown"]
+    },
+    "surprise_magnitude": {
+      "$ref": "#/$defs/unitScore"
+    },
+    "materiality_score": {
+      "$ref": "#/$defs/unitScore"
+    },
+    "uncertainty_score": {
+      "$ref": "#/$defs/unitScore"
+    },
+    "forward_looking": {
+      "type": "boolean"
+    },
+    "ex_ante_impact_direction": {
+      "type": "integer",
+      "minimum": -1,
+      "maximum": 1,
+      "description": "Expected direction from article semantics only: -1, 0, or +1."
+    },
+    "impact_horizon": {
+      "enum": ["intraday", "one_to_three_days", "one_to_four_weeks", "structural", "unknown"]
+    },
+    "mechanisms": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "nav",
+          "nav_discount",
+          "cash_flow",
+          "capital_allocation",
+          "governance",
+          "supply_demand",
+          "sector_beta",
+          "macro",
+          "valuation_multiple",
+          "unclear"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "confidence_score": {
+      "$ref": "#/$defs/unitScore"
+    },
+    "numeric_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["metric", "value", "unit"],
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "value": {
+            "type": ["number", "string"]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "period": {
+            "type": ["string", "null"]
+          },
+          "comparison": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "evidence_facts": {
+      "type": "array",
+      "description": "Short paraphrased facts supporting the properties; do not copy long article passages.",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5
+    },
+    "duplicate_cluster_id": {
+      "type": ["string", "null"]
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["extractor", "model", "prompt_version", "extracted_at", "review_status"],
+      "properties": {
+        "extractor": {
+          "enum": ["codex", "claude_code", "gemini", "human"]
+        },
+        "model": {
+          "type": "string"
+        },
+        "prompt_version": {
+          "type": "string"
+        },
+        "extracted_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "review_status": {
+          "enum": ["unreviewed", "approved", "overridden", "rejected"]
+        },
+        "human_override_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "unitScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}
