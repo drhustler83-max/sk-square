@@ -512,3 +512,19 @@
 {"trading_date": "20241104", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "T1·SK플래닛 CEO 관련 주요 기사는 15:30 이후라 다음 거래일 귀속."}
 {"trading_date": "20241105", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 4, "notes": "T1 우승/SK스퀘어, SK플래닛 CEO 교체, 11번가 행사 성과, 인크로스 실적 기사 확인."}
 {"trading_date": "20241127", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "팰리서캐피털의 밸류업 강화 요구 기사 확인."}
+{"trading_date":"20241216","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 SK스퀘어 관련 언론 기사 확인 못함."}
+{"trading_date":"20241217","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"시총 100대 상승률 기사와 OTT 관련주 회복 기사 확인."}
+{"trading_date":"20241219","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 오픈마켓 9개월 연속 흑자 기사 확인."}
+{"trading_date":"20241220","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"티맵모빌리티 우티 지분 매각 기사 확인."}
+{"trading_date":"20241223","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"티맵 우티 지분 매각 후속 기사와 주간 외국인 수급 기사 확인."}
+{"trading_date":"20241224","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 10분 러시 성과 기사 확인."}
+{"trading_date":"20241226","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 오픈마켓 9개월 흑자 후속 기사 확인."}
+{"trading_date":"20241227","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"11번가 FI 엑시트 논의, SK스퀘어 반도체 투자, 드림어스 팝업 기사 확인."}
+{"trading_date":"20250102","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"드림어스컴퍼니 아이리버 사업 매각 기사 확인."}
+{"trading_date":"20250103","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"운세성 콘텐츠와 SK하이닉스 단독 기사 외 SK스퀘어 연결 기사 확인 못함."}
+{"trading_date":"20250106","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"빗썸파트너스 투자자 지분 청산과 11번가 설 프로모션 기사 확인."}
+{"trading_date":"20250107","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"11번가 베스트 파트너 기사와 기술적 분석 특징주 기사 확인."}
+{"trading_date":"20250108","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"MK시그널 수익률 상위 종목 기사에서 SK스퀘어 확인."}
+{"trading_date":"20250109","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"11번가 연간 흑자 전환 전략 기사와 장초반 SK스퀘어 강세 기사 확인."}
+{"trading_date":"20250113","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"집중투표제 지배구조 기사와 11번가 설 할인 기사 확인; 17:16 SK플래닛 감축 기사는 15:30 이후라 제외."}
+{"trading_date":"20250512","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK스퀘어 공매도 상위 편입 기사와 11번가 마트플러스 기사 확인; 15:55 코스피 마감 기사는 시간초과 제외."}
