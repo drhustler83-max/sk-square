@@ -202,3 +202,83 @@
 {"trading_date":"20221123","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK스퀘어 1주년·나노엔텍 관련 주요 기사는 15:30 이후라 다음 거래일 창으로 이동"}
 {"trading_date":"20221206","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"박성하 신임 CEO와 NAV 75조 목표 관련 딜사이트 기사 1건"}
 {"trading_date":"20221207","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"AI 반도체 시장에서 SK ICT 연합 내 SK스퀘어 역할 언급 기사 1건"}
+{"trading_date":"20221212","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 실적 눈높이 하향 및 SK ICT 전략회의 관련 반도체 업황 기사 1건"}
+{"trading_date":"20221213","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"재계 비상경영 기사 내 SK ICT 계열사 전략회의 언급 1건"}
+{"trading_date":"20221216","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 4종 검색 결과, 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20221220","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"CES·OTT 관련 결과는 SK스퀘어 직접성 부족 또는 15:30 이후 기사로 제외"}
+{"trading_date":"20221222","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"웨이브 코코와 인수 및 SK스퀘어 지분율 확대 기사 2건"}
+{"trading_date":"20221227","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK하이닉스 CES 기사는 SK스퀘어 직접성이 확인되지 않았고, SK그룹 업황 기사는 15:30 이후라 제외"}
+{"trading_date":"20230102","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"박정호 SK하이닉스·SK스퀘어 부회장 신년사/인물 기사 2건"}
+{"trading_date":"20230103","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"블라인드 등 비언론/SNS성 결과만 확인되어 제외"}
+{"trading_date":"20230104","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK그룹 임원·CES 관련 기사에서 SK스퀘어 경영진/박정호 언급 2건"}
+{"trading_date":"20230105","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"CES 2023 SKT 전시 기사 내 SK스퀘어·SK하이닉스 공동 개발 AI반도체 언급 1건"}
+{"trading_date":"20230116","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"대기업 CEO MBA 분석 기사 내 박성하 SK스퀘어 대표 언급 1건"}
+{"trading_date":"20230120","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 연간 손실 전망 및 SK그룹 우려 기사 1건"}
+{"trading_date":"20230206","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"부동산 스퀘어 등 동음이의 결과만 확인되어 제외"}
+{"trading_date":"20230213","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK그룹 계열 편입 일반 기사 등 SK스퀘어 직접 입력 후보 부재"}
+{"trading_date":"20230220","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"11번가 IPO 지연, SKT·IDQ 양자보안칩, 반도체 ETF 기사 3건"}
+{"trading_date":"20230221","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 4종 검색 결과, 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20230222","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 4종 검색 결과, 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20230223","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 주총 안건 내 박성하 SK스퀘어 사장 기타비상무이사 신규선임 기사 1건"}
+{"trading_date":"20230307","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주주환원 관측 기사는 17:33 입력으로 15:30 이후라 제외"}
+{"trading_date":"20230322","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK 자산가치 리포트 및 SK그룹 보수 기사 내 SK스퀘어 관련 언급 2건"}
+{"trading_date":"20230224","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 장후 및 당일 오전 SK스퀘어 첫 연간 실적 기사 2건"}
+{"trading_date":"20230227","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"SK쉴더스 EQT 매각 관측, 주주환원/통신주 대안 리포트, 드림어스 유통권 관련 기사"}
+{"trading_date":"20230302","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK쉴더스 지분 매각 및 공동경영 공식화 관련 기사 2건"}
+{"trading_date":"20230303","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK쉴더스 매각 평가 및 주총 이후 주주환원 가능성 리포트"}
+{"trading_date":"20230308","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"주주환원 기대, SK쉴더스 매각 NAV 영향, IDQ 유럽 양자위성 프로젝트 기사"}
+{"trading_date":"20230310","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 자동 수급/공시성 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20230313","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK쉴더스 지분 매각의 현금 유입 및 NAV 개선 평가 기사 2건"}
+{"trading_date":"20230314","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"그린랩스 투자자 합의 지연 및 SK스퀘어 주주사 언급 기사 1건"}
+{"trading_date":"20230316","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"티맵모빌리티 매출 성장/적자 확대 및 11번가 IPO·매각 고심 기사"}
+{"trading_date":"20230317","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"장중 수급 자동 기사 외 채택 가능한 회사·포트폴리오 뉴스 없음"}
+{"trading_date":"20230321","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 기사 없음; 18시 이후 보수 기사들은 다음 거래일 창"}
+{"trading_date":"20230323","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"박정호 SKT 미등기임원 퇴임 및 EQT의 SK쉴더스 인수 이자 부담 분석 기사"}
+{"trading_date":"20230328","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"대기업 평균연봉 기사에서 SK스퀘어 직원 평균연봉 언급"}
+{"trading_date":"20230329","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"온마인드 신규 가상인간 공개 및 SK하이닉스 주총/미국 보조금 관련 기사"}
+{"trading_date":"20230331","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"박성하 대표 선임, 자사주 소각 중심 주주환원, 주주환원 정책 이후 시장 반응 기사"}
+{"trading_date":"20230406","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK텔레콤 리포트 기사 내 SK스퀘어 분할 이후 신규서비스 전략 언급"}
+{"trading_date":"20230407","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"SK쉴더스 빅딜 임원 평가, 웨이브·티빙 콘텐츠 경쟁, 11번가 유동성 압박 기사"}
+{"trading_date":"20230410","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"11번가/우티 관련 주요 기사는 15:30 이후라 다음 거래일 창으로 이동"}
+{"trading_date":"20230412","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20230414","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"비즈워치 산업 리그테이블 기사에서 SK스퀘어·박정호 보수 및 대표직 퇴임 언급"}
+{"trading_date":"20230424","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 자동 수급/시세표 외 채택 가능한 기사 없음"}
+{"trading_date":"20230502","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"직전 거래일 장후 AI 반도체 기사에서 사피온·SK스퀘어·SK하이닉스 언급 1건"}
+{"trading_date":"20230504","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20230508","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"원스토어 투자유치 추진 및 SK스퀘어 포트폴리오 재검토 기사"}
+{"trading_date":"20230515","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"드림어스컴퍼니 1분기 흑자전환 기사 1건"}
+{"trading_date":"20230516","sampling_role":"unknown","status":"completed_with_articles","articles_found":5,"notes":"1분기 실적, 11번가 손실 확대, 나노엔텍 매각, 주주환원 리포트, 정보보호 인증 기사"}
+{"trading_date":"20230525","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"웨이브·플로 개선 노력 및 우티 CEO 교체 검토 기사"}
+{"trading_date":"20230526","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"증권 방송 상담/자동 수급 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20230531","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"국내 OTT 적자와 웨이브 관련 기사 1건"}
+{"trading_date":"20230601","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"AI 기술주권, 공매도 속 SK스퀘어 주주환원, IDQ 양자위성 프로젝트 기사"}
+{"trading_date":"20230602","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 리레이팅 및 NAV 관련 증권사 분석 기사 1건"}
+{"trading_date":"20230605","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"웨이브 경쟁력 우려 및 SKT 일본법인 JV 전환 기사"}
+{"trading_date":"20230607","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 IPO 전략과 리스크 분석 기사 1건"}
+{"trading_date":"20230608","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK하이닉스 자동 시세 기사 등 낮은 품질 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20230609","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20230612","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 위기설 및 SK스퀘어 적자 계열사 언급 기사 1건"}
+{"trading_date":"20230613","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 첫 사회적 가치 창출 성과 공개 기사 1건"}
+{"trading_date":"20230614","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 현금흐름 및 추가 차입 가능성 기사 1건"}
+{"trading_date":"20230830","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"11번가 매각 협상, 사피온 투자유치, SK쉴더스 신임 CEO 관련 기사"}
+{"trading_date":"20231222","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 NAV·포트폴리오 관리 시험대 관련 매경이코노미 기사 1건"}
+{"trading_date":"20230615","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20230620","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"코리아시큐리티홀딩스 자회사 편입 관련 기사 1건"}
+{"trading_date":"20230628","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"자동 수급/기술적분석성 결과와 공시 원문 외 채택 가능한 기사 없음"}
+{"trading_date":"20230629","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"SK쉴더스 유상증자·주식취득 절차와 시장 해석 관련 기사 3건"}
+{"trading_date":"20230703","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"코빗 창립 10주년 기사에서 SK스퀘어 지분투자 및 주주 역할 언급 1건"}
+{"trading_date":"20230704","sampling_role":"unknown","status":"completed_with_articles","articles_found":5,"notes":"그랩 투자 청산, SK쉴더스 유상증자 해석, 11번가 매각설, 웨이브·티빙 합병설, 반도체 소부장 투자법인 기사"}
+{"trading_date":"20230705","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 해외 반도체 소부장 투자법인 TGC SQUARE 설립 기사 1건"}
+{"trading_date":"20230706","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 큐텐 매각 가능성 관련 기사 1건"}
+{"trading_date":"20230724","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 게시판/스니펫/시세성 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20230725","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK ICT 시너지와 박정호·SK스퀘어 부회장 언급 기사 1건"}
+{"trading_date":"20230727","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK쉴더스 거래 성과와 주주환원 재원 관련 기사 1건"}
+{"trading_date":"20230728","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"SK쉴더스 공동경영 체제 및 나녹스 유상증자 관련 기사 2건"}
+{"trading_date":"20230802","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"콘텐츠웨이브 FI의 티빙 합병 여부 주목 기사 1건"}
+{"trading_date":"20230803","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"공매도 비중/수급 리스트 등 시세성·자동생성 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20230807","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"반도체 ETF 자금 유입 기사 내 SK하이닉스·SK스퀘어 편입 언급 1건"}
+{"trading_date":"20230811","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"대규모 자사주 매입·소각 분석 및 웨이브 IPO/CB 부담 기사 2건"}
+{"trading_date":"20230814","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주요 2분기 실적·포트폴리오 기사는 15:30 이후라 다음 거래일 창으로 이동"}
+{"trading_date":"20230816","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"SK스퀘어 2분기 실적, 11번가·티맵 실적, NH투자증권 리포트 기사 4건"}
+{"trading_date":"20230817","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"드림어스컴퍼니 상반기 흑자전환과 IP 자회사 성과 분석 기사 1건"}
+{"trading_date":"20231204","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"11번가 콜옵션 포기·희망퇴직·강제매각 및 SK그룹 인사 영향 기사 4건"}
