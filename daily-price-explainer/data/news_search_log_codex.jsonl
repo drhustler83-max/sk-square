@@ -476,7 +476,7 @@
 {"trading_date": "20241101", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "11번가 그랜드십일절, 반도체 투자 검토, NH투자증권 리포트 기사 확인."}
 {"trading_date":"20241107","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 기사 확인 못함; 16:15 프리미엄 글은 다음 거래일 귀속."}
 {"trading_date":"20241121","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"밸류업·자사주 기사들은 대부분 15:30 이후 공개되어 다음 거래일 귀속."}
-{"trading_date":"20241128","sampling_role":"unknown","status":"retrieval_failed","articles_found":0,"notes":"Codex가 2건 확인했다고 보고했으나 응답 전송 중 잘려 기사 본문 미수신; 배치24에서 재검색 필요."}
+{"trading_date": "20241128", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "SK스퀘어·CJ ENM 웨이브 전환사채 공동 투자와 삼성증권 티빙·웨이브 합병 가시화 분석 기사 확인."}
 {"trading_date":"20241202","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"16:17 이후 11번가 연말 감사제 기사는 다음 거래일 귀속."}
 {"trading_date": "20240909", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "국내 증시 급락 개장 기사에서 SK스퀘어 수급·시세 영향 확인."}
 {"trading_date": "20240910", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "코빗 투자 손실과 SK스퀘어 지분가치 관련 기사 확인."}
