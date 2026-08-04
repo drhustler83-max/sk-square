@@ -473,8 +473,42 @@
 {"trading_date":"20240905","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 정산지연 판매자 지원 기사 확인."}
 {"trading_date":"20240906","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"티빙·웨이브 합병 막판 진통과 SK그룹 카브아웃 기사 확인."}
 {"trading_date":"20240912","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"인크로스 데이터펄스 출시 기사 확인."}
-{"trading_date":"20241101","sampling_role":"unknown","status":"retrieval_failed","articles_found":0,"notes":"Codex가 2건 확인했다고 보고했으나 응답 전송 중 잘려 기사 본문 미수신; 배치24에서 재검색 필요."}
+{"trading_date": "20241101", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "11번가 그랜드십일절, 반도체 투자 검토, NH투자증권 리포트 기사 확인."}
 {"trading_date":"20241107","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 기사 확인 못함; 16:15 프리미엄 글은 다음 거래일 귀속."}
 {"trading_date":"20241121","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"밸류업·자사주 기사들은 대부분 15:30 이후 공개되어 다음 거래일 귀속."}
 {"trading_date":"20241128","sampling_role":"unknown","status":"retrieval_failed","articles_found":0,"notes":"Codex가 2건 확인했다고 보고했으나 응답 전송 중 잘려 기사 본문 미수신; 배치24에서 재검색 필요."}
 {"trading_date":"20241202","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"16:17 이후 11번가 연말 감사제 기사는 다음 거래일 귀속."}
+{"trading_date": "20240909", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "국내 증시 급락 개장 기사에서 SK스퀘어 수급·시세 영향 확인."}
+{"trading_date": "20240910", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "코빗 투자 손실과 SK스퀘어 지분가치 관련 기사 확인."}
+{"trading_date": "20240911", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "11번가 월간 십일절 기사 확인; 9/11 17:57 불법사이트 기사는 다음 거래일 창이라 제외."}
+{"trading_date": "20240913", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "11번가 착한기업 기획전 성과 기사 확인."}
+{"trading_date": "20240920", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 SK스퀘어 관련 언론 기사 확인 못함."}
+{"trading_date": "20240923", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "SK하이닉스 단독 기술 기사와 운세성 콘텐츠 외 채택 후보 없음."}
+{"trading_date": "20240924", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "11번가 흑자 지속 기사와 SK스퀘어 집중투표제 언급 지배구조 기사 확인."}
+{"trading_date": "20240925", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "11번가·서울시 소상공인 온라인 전용관 기사 확인."}
+{"trading_date": "20240926", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "마이크론 실적 영향에 따른 SK스퀘어 반응 기사와 기관 수급 기사 확인."}
+{"trading_date": "20240927", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 SK스퀘어 연결성이 확인되는 채택 기사 없음."}
+{"trading_date": "20240930", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "SK그룹 지배력 약화 및 리밸런싱 관련 기사 확인."}
+{"trading_date": "20241002", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "SK스퀘어 자사주 처분 결정 투자정보 기사 확인."}
+{"trading_date": "20241004", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "11번가 포인트 적립률 변경 기사 확인."}
+{"trading_date": "20241007", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "SK그룹 ETF 내 SK스퀘어 비중과 수익률 기사 확인."}
+{"trading_date": "20241008", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "11번가 프리 블랙프라이데이 행사 기사 확인."}
+{"trading_date": "20241010", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 기사 확인 못함."}
+{"trading_date": "20241011", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 기사 확인 못함."}
+{"trading_date": "20241014", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 기사 확인 못함."}
+{"trading_date": "20241015", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 기사 확인 못함."}
+{"trading_date": "20241016", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "팰리서캐피털의 SK스퀘어 지분 확보 및 밸류업 요구 기사 확인."}
+{"trading_date": "20241017", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "행동주의펀드 후속 기사, 실적전망 상향 기사, 인크로스 PPL 협약 기사 확인."}
+{"trading_date": "20241018", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "팰리서캐피털의 NAV 할인 해소 제안 기사 확인."}
+{"trading_date": "20241021", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "운세성 콘텐츠 외 채택 가능한 기사 확인 못함."}
+{"trading_date": "20241022", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "11번가 히든스타 프로모션 및 오픈마켓 흑자 지속 기사 확인."}
+{"trading_date": "20241023", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "행동주의펀드의 저평가 개선 요구 기사 확인."}
+{"trading_date": "20241024", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "DS투자증권 목표가 상향 기사와 11번가 소상공인 대출지원 기사 확인."}
+{"trading_date": "20241025", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "한국ESG기준원 A+ 등급 기사에서 SK스퀘어 포함 확인."}
+{"trading_date": "20241028", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "행동주의 표적 기업 비교 기사에서 SK스퀘어 주주가치 제고 논의 확인."}
+{"trading_date": "20241029", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "내년 주총 대비 행동주의 이슈 기사에서 SK스퀘어 언급 확인."}
+{"trading_date": "20241030", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "11번가 토스페이 제휴와 SK쉴더스 ESG 경영 기사 확인."}
+{"trading_date": "20241031", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "11번가 그랜드십일절 기사는 15:30 이후라 다음 거래일 귀속."}
+{"trading_date": "20241104", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "T1·SK플래닛 CEO 관련 주요 기사는 15:30 이후라 다음 거래일 귀속."}
+{"trading_date": "20241105", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 4, "notes": "T1 우승/SK스퀘어, SK플래닛 CEO 교체, 11번가 행사 성과, 인크로스 실적 기사 확인."}
+{"trading_date": "20241127", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "팰리서캐피털의 밸류업 강화 요구 기사 확인."}
