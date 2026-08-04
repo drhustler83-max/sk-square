@@ -322,3 +322,23 @@
 {"trading_date":"20231220","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 52주 신고가 시세성 기사 1건"}
 {"trading_date":"20231226","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"성탄 연휴 포함 창 확인 결과 유효시간 창 내 신규 채택 기사 없음"}
 {"trading_date":"20231228","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"티빙-웨이브 합병 MOU 및 SK스퀘어 52주 신고가 시세성 기사 2건"}
+{"trading_date":"20240102","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"연말 휴장 이후 창까지 확인했으나 유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20240103","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"자회사 정리와 SK스퀘어 신고가 관련 한국경제 기사 1건"}
+{"trading_date":"20240104","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK하이닉스 자동 시세성 기사 및 공시성 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20240105","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"종목진단/자동 시세성 결과 외 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20240108","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"11번가 강제매각 관련 주요 기사는 15:30 이후라 다음 거래일 창으로 이동"}
+{"trading_date":"20240109","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"11번가 강제매각 본격화 및 SK스퀘어 해명 기사 2건"}
+{"trading_date":"20240110","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 장후 11번가 강제매각과 SK스퀘어 손실 우려 기사 1건"}
+{"trading_date":"20240111","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 장후 SK스퀘어 NAV 75조 목표 차질 우려 기사 1건"}
+{"trading_date":"20240112","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 쿼리 검색 결과 유효시간 창 내 채택 가능한 기사 없음"}
+{"trading_date":"20240116","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"11번가 강제매각 및 큐텐 재도전 가능성 관련 기사 2건"}
+{"trading_date":"20240117","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"자사주 소각 일반 기사 등 주요 결과는 15:30 이후라 다음 거래일 창으로 이동"}
+{"trading_date":"20240118","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"자사주 소각 확대 기사 내 SK스퀘어 언급 및 포트폴리오 다이어트 기사 2건"}
+{"trading_date":"20240119","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"머니로 종목진단/블로그성 결과 외 채택 가능한 기사 없음"}
+{"trading_date":"20240125","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 2023년 영업손실 발표 기사 1건"}
+{"trading_date":"20240418","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"52주 신고가 자동 기사 등은 15:30 이후라 다음 거래일 창으로 이동"}
+{"trading_date":"20240419","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"52주 신고가 자동 기사 및 티빙·웨이브 합병 본계약 전망 기사 2건"}
+{"trading_date":"20240422","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"페이커 광고모델 기사 등은 SK스퀘어 직접성이 사진설명 수준이라 제외"}
+{"trading_date":"20240423","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"크래프톤 지분 블록딜 및 주가 반응 기사 2건"}
+{"trading_date":"20240731","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK그룹 수펙스 컨트롤타워 변화 기사 내 SK스퀘어 언급 1건"}
+{"trading_date":"20241106","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 관계사 인크로스 3분기 실적 기사 1건"}
