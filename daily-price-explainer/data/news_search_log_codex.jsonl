@@ -672,3 +672,9 @@
 {"trading_date":"20251013","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전거래일 18:03 드림어스컴퍼니 매각 우선협상 기사 1건 귀속"}
 {"trading_date":"20251014","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"06:50 11번가 콜옵션 기사와 07:20 SK그룹 지배구조 기사 채택"}
 {"trading_date":"20251229","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"오전 SK스퀘어 리포트·인사·시장·수급 기사 4건 채택, 15:30 이후 기사는 제외"}
+{"trading_date":"20250825","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"08:27 NH투자증권 목표가 상향·자사주 매입 영향 기사 1건 채택"}
+{"trading_date":"20250827","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 SK스퀘어 또는 포트폴리오 가치에 직접 연결되는 채택 대상 기사 없음"}
+{"trading_date":"20250828","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"현대차증권 저평가 리포트, 11번가 MD픽, NAV 할인율 관련 기사 채택"}
+{"trading_date":"20250829","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 자사주 처분 기사와 당일 pre_open 투자실탄·주주환원 기사 채택"}
+{"trading_date":"20250903","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"07:00 SK그룹 조기 인사 가능성 기사에서 SK스퀘어 리밸런싱 언급 확인"}
+{"trading_date":"20250904","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 15:30 이후 기사와 공시 원문은 제외, 유효시간 내 채택 대상 기사 없음"}
