@@ -710,3 +710,21 @@
 {"trading_date":"20251208","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 없음과 기간 외·공식·스니펫 제외 후 채택 기사 없음"}
 {"trading_date":"20251212","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 SK스퀘어 또는 포트폴리오 가치에 직접 연결되는 채택 대상 기사 없음"}
 {"trading_date":"20251222","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 15:30 이전 창에 해당하는 채택 대상 기사 없음"}
+{"trading_date":"20250917","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close SK스퀘어 관련 지배구조·그룹 이슈 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20250919","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20250924","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close SK스퀘어 주가·수급 부담 관련 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20250925","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 52주 신고가·기관 순매수 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20250929","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전거래일 post_close 주간 기관 순매매 표 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20251001","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 자사주 취득 신탁계약 해지 기사 1건 채택"}
+{"trading_date":"20251015","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 기관 순매매 표와 당일 intraday 대신증권 목표가 상향 기사 채택"}
+{"trading_date":"20251016","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론·증권 기사 없음"}
+{"trading_date":"20251017","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 공식·스니펫·기간 외 결과를 제외하면 채택 대상 기사 없음"}
+{"trading_date":"20251020","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주말·직전거래일 창 포함 검색했으나 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20251021","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 SK스퀘어 또는 포트폴리오 가치와 연결되는 채택 대상 기사 없음"}
+{"trading_date":"20251022","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 없음과 공식·스니펫 제외 후 채택 기사 없음"}
+{"trading_date":"20251023","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 언론·증권사 기사로 확인 가능한 후보 없음"}
+{"trading_date":"20251024","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"장중 종목 흐름 외 독립 기사 확인이 제한되어 채택 대상 없음"}
+{"trading_date":"20251027","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"09:47 SK스퀘어 상승폭 확대·신고가 기사 1건 낮은 관련성 후보로 채택"}
+{"trading_date":"20251028","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 원스토어 FI 투자금 조기상환 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20251029","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"15:20 11번가 SK플래닛 매각·FI 투자금 회수 기사 1건 채택"}
+{"trading_date":"20251030","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 11번가 매각 기사와 당일 intraday 종목 흐름 기사 채택"}
