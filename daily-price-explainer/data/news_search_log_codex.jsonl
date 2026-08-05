@@ -685,3 +685,10 @@
 {"trading_date":"20250811","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"07:00 SK스퀘어 리밸런싱 기사와 09:23 11번가 행사 기사 채택"}
 {"trading_date":"20250813","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 유효시간 창 내 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
 {"trading_date":"20250814","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"08:00 SK그룹 계열사 급여 비교 기사에서 SK스퀘어 언급 확인, 낮은 관련성 후보로 채택"}
+{"trading_date":"20250717","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"09:28 골드만삭스의 SK하이닉스 중립 의견 보도로 SK스퀘어 지분가치 연결 기사 1건 채택"}
+{"trading_date":"20250724","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"13:00 드림어스컴퍼니 인수전 경쟁 확대 관련 기사 1건 채택"}
+{"trading_date":"20250725","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 행동주의·주주환원 기사와 당일 intraday SK증권 목표가 기사 채택"}
+{"trading_date":"20250728","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"10:40 DS투자증권 리포트 브리핑 기사 1건 채택"}
+{"trading_date":"20250729","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 11번가 콜옵션·차입 관련 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20250730","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 기관 순매매 표와 당일 pre_open 드림어스컴퍼니 M&A 기사 채택"}
+{"trading_date":"20250731","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 e쿠폰 행사 기사 1건 채택, 동일 내용 재전송은 제외"}
