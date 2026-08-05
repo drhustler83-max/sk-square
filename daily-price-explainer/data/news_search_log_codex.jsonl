@@ -564,3 +564,23 @@
 {"trading_date":"20250701","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 기사 확인 못함."}
 {"trading_date":"20250702","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"장초반 하락률 상위 기사에서 SK스퀘어 확인; 18:33 기획기사는 시간초과 제외."}
 {"trading_date":"20251217","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"15:46 기관 수급표는 15:30 이후라 다음 거래일 귀속, 공식 공시 원문은 제외."}
+{"trading_date": "20250114", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "엔비디아 GPU·GDDR 시장 확대와 SK하이닉스 수혜 기사 확인."}
+{"trading_date": "20250115", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "티맵모빌리티-우티 지분정리 후속과 11번가 로봇청소기 사전판매 기사 확인."}
+{"trading_date": "20250121", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "11번가 매각 고민과 SK그룹 시총 증가 기사 확인."}
+{"trading_date": "20250122", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "반도체 소부장 투자, SK그룹 ETF, 11번가 광주 기획전 기사 확인."}
+{"trading_date": "20250123", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "SK하이닉스 배당, 행동주의펀드 이슈, 11번가 갤럭시 S25 기사 확인."}
+{"trading_date": "20250124", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "주주행동주의, SK증권 주주환원 리포트, FLO 설 플레이리스트 기사 확인."}
+{"trading_date": "20250131", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "설 연휴 포함 유효시간 내 채택 가능한 SK스퀘어 관련 기사 확인 못함."}
+{"trading_date": "20250203", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 기사 확인 못함."}
+{"trading_date": "20250204", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "딜사이트경제TV의 SK스퀘어 리밸런싱·빅딜 지연 기사 확인."}
+{"trading_date": "20250205", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "거래소 외국인 수급표에서 SK스퀘어 순매도 확인."}
+{"trading_date": "20250206", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 3, "notes": "대차잔고 감소, 장중 상승, 11번가 원데이 빅딜 기사 확인."}
+{"trading_date": "20250207", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "유효시간 내 채택 가능한 기사 확인 못함."}
+{"trading_date": "20250210", "sampling_role": "unknown", "status": "completed_no_news", "articles_found": 0, "notes": "헤드라인성 스니펫 외 URL·본문 확인 가능한 채택 기사 없음."}
+{"trading_date": "20250211", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "FLO 그래미 청취 데이터와 11번가 60분러시 기사 확인."}
+{"trading_date": "20250212", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "2024년 흑자전환 실적 기사와 SK그룹 유동성 칼럼 확인."}
+{"trading_date": "20250213", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "SK스퀘어 ESG 현장점검과 드림어스컴퍼니 실적 기사 확인."}
+{"trading_date": "20250214", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "드림어스컴퍼니 적자폭 축소 기사 확인."}
+{"trading_date": "20250217", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "원스토어 콘텐츠 자회사 매각 기사 확인."}
+{"trading_date": "20250218", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "팰리서캐피털 지분 축소와 기관 수급 기사 확인."}
+{"trading_date": "20250219", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "우버택시-SK 결별 후 네이버 협업 기사와 장중 상승률 기사 확인."}
