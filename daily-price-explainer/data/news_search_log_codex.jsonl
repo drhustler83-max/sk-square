@@ -692,3 +692,21 @@
 {"trading_date":"20250729","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 11번가 콜옵션·차입 관련 기사 1건을 다음 거래일 창으로 귀속"}
 {"trading_date":"20250730","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 기관 순매매 표와 당일 pre_open 드림어스컴퍼니 M&A 기사 채택"}
 {"trading_date":"20250731","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 e쿠폰 행사 기사 1건 채택, 동일 내용 재전송은 제외"}
+{"trading_date":"20251031","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 11번가 FI 상환 이후 투자재원 유지 분석 기사 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20251103","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"공개 전환·재전송 성격 후보는 중복으로 제외, 신규 채택 대상 기사 없음"}
+{"trading_date":"20251104","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20251105","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 공식·스니펫·기간 외 결과를 제외하면 채택 대상 기사 없음"}
+{"trading_date":"20251106","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 언론·증권사 기사로 확인 가능한 후보 없음"}
+{"trading_date":"20251107","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK스퀘어·포트폴리오 가치와 직접 연결되는 채택 대상 기사 없음"}
+{"trading_date":"20251110","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주말·직전거래일 창 포함 검색했으나 채택 대상 기사 없음"}
+{"trading_date":"20251111","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"09:23 NH투자증권 목표가 대폭 상향·SK하이닉스 NAV 상승 기사 1건 채택"}
+{"trading_date":"20251112","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론·증권 기사 없음"}
+{"trading_date":"20251113","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"15:30 이후 실적·자사주 기사는 다음 거래일 창으로 귀속"}
+{"trading_date":"20251114","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 자사주 취득 결정 기사와 3분기 최대 실적 기사 채택"}
+{"trading_date":"20251117","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주말 공개 기사와 직전거래일 post_close 검색 결과 중 채택 대상 없음"}
+{"trading_date":"20251119","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"07:42 DB증권 목표가 상향·주주환원 기사 1건 채택"}
+{"trading_date":"20251120","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20251203","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"09:53 SK플래닛의 11번가 유상증자 지원 기사 1건 채택"}
+{"trading_date":"20251208","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 없음과 기간 외·공식·스니펫 제외 후 채택 기사 없음"}
+{"trading_date":"20251212","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 SK스퀘어 또는 포트폴리오 가치에 직접 연결되는 채택 대상 기사 없음"}
+{"trading_date":"20251222","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 15:30 이전 창에 해당하는 채택 대상 기사 없음"}
