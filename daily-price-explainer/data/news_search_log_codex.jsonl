@@ -728,3 +728,21 @@
 {"trading_date":"20251028","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 원스토어 FI 투자금 조기상환 기사 1건을 다음 거래일 창으로 귀속"}
 {"trading_date":"20251029","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"15:20 11번가 SK플래닛 매각·FI 투자금 회수 기사 1건 채택"}
 {"trading_date":"20251030","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 11번가 매각 기사와 당일 intraday 종목 흐름 기사 채택"}
+{"trading_date":"20260108","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20260109","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"08:43 김정규 사장 신년사 기반 AI 전환·반도체 투자 기사 1건 채택"}
+{"trading_date":"20260112","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주말·직전거래일 창 포함 검색했으나 신규 채택 대상 기사 없음"}
+{"trading_date":"20260113","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 공식·스니펫·기간 외 결과를 제외하면 채택 대상 기사 없음"}
+{"trading_date":"20260114","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 언론·증권사 기사로 확인 가능한 후보 없음"}
+{"trading_date":"20260115","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"SK스퀘어 또는 포트폴리오 가치와 직접 연결되는 채택 대상 기사 없음"}
+{"trading_date":"20260116","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 4종 적용 결과 채택 가능한 기사 없음"}
+{"trading_date":"20260119","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주말 공개 기사 포함 검색했으나 채택 대상 기사 없음"}
+{"trading_date":"20260120","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"09:36 CDP 기후변화 대응 평가 최고등급 기사 1건 낮은 관련성 후보로 채택"}
+{"trading_date":"20260121","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 신규 뉴스 후보 없음"}
+{"trading_date":"20260122","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"13:49 SK하이닉스 강세에 따른 SK스퀘어 상승 기사 1건 채택"}
+{"trading_date":"20260123","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론·증권 기사 없음"}
+{"trading_date":"20260126","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"주말·직전거래일 창 포함 검색했으나 채택 대상 기사 없음"}
+{"trading_date":"20260127","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20260128","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"07:45 NH투자증권 목표가 상향·SK하이닉스 업황 기사 1건 채택"}
+{"trading_date":"20260129","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"15:01 SK하이닉스 자사주 소각 훈풍에 SK스퀘어 신고가 기사 1건 채택"}
+{"trading_date":"20260130","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"AI법인 관련 더벨 기사는 20260129 intraday 공개로 판단해 20260130 창에서 제외"}
+{"trading_date":"20260210","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 SK스퀘어 관련 채택 대상 기사 없음"}
