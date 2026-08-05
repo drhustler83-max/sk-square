@@ -678,3 +678,10 @@
 {"trading_date":"20250829","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 자사주 처분 기사와 당일 pre_open 투자실탄·주주환원 기사 채택"}
 {"trading_date":"20250903","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"07:00 SK그룹 조기 인사 가능성 기사에서 SK스퀘어 리밸런싱 언급 확인"}
 {"trading_date":"20250904","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 15:30 이후 기사와 공시 원문은 제외, 유효시간 내 채택 대상 기사 없음"}
+{"trading_date":"20250801","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 외국인 반도체·SK스퀘어 매수 관련 기사 1건 귀속"}
+{"trading_date":"20250806","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"09:00 SK하이닉스 프로필성 기사에서 최대주주 SK스퀘어 확인, 낮은 관련성 후보로 채택"}
+{"trading_date":"20250807","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전일 post_close 기관 순매매 표 1건을 다음 거래일 창으로 귀속"}
+{"trading_date":"20250808","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전일 post_close 웨이브 추가투자와 당일 pre_open 11번가 콜옵션 기사 채택"}
+{"trading_date":"20250811","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"07:00 SK스퀘어 리밸런싱 기사와 09:23 11번가 행사 기사 채택"}
+{"trading_date":"20250813","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"검색 결과 중 유효시간 창 내 URL·게시시각 확인 가능한 채택 대상 기사 없음"}
+{"trading_date":"20250814","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"08:00 SK그룹 계열사 급여 비교 기사에서 SK스퀘어 언급 확인, 낮은 관련성 후보로 채택"}
