@@ -764,3 +764,21 @@
 {"trading_date":"20260105","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
 {"trading_date":"20260106","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
 {"trading_date":"20260107","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260305","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 반도체주 반등과 SK스퀘어 장중 수급·상승 기사 확인"}
+{"trading_date":"20260306","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260309","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK스퀘어 포트폴리오 재평가 기사와 반도체주 급락 기사 확인"}
+{"trading_date":"20260310","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 외국인 순매수 상위 종목 기사에서 SK스퀘어 수급 노출 확인"}
+{"trading_date":"20260311","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 SK그룹 자사주 소각 관련 기사와 당일 오전 SK 목표가 상향 기사에서 SK스퀘어 가치 언급 확인"}
+{"trading_date":"20260312","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"감사보고서·주총 관련 공시 원문은 확인되나 제외 대상이며 채택 가능한 기사 없음"}
+{"trading_date":"20260313","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 전일자 증권사 투자의견 상향 표에서 DB증권의 SK스퀘어 목표가 상향 확인"}
+{"trading_date":"20260316","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 직후 코스피 하락 시황에서 SK스퀘어 약세 언급 확인"}
+{"trading_date":"20260317","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 반도체 중심 시황과 당일 ETF 신규상장 기사에서 SK스퀘어 편입 확인"}
+{"trading_date":"20260318","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 GTC·반도체 강세와 오후 매수 사이드카 기사에서 SK스퀘어 상승 확인"}
+{"trading_date":"20260319","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 외국인 순매도 상위 종목 기사에서 SK스퀘어 수급 노출 확인"}
+{"trading_date":"20260604","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260605","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 미국 증시 약세에 따른 코스피 급락 기사에서 SK스퀘어 하락 확인"}
+{"trading_date":"20260608","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"주말 공개된 주간 코스피 순매수 기사에서 외국인 SK스퀘어 순매수 1위 확인"}
+{"trading_date":"20260616","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 ETF 신규 편입과 장중 SK하이닉스 대체 투자 수요에 따른 신고가 기사 확인"}
+{"trading_date":"20260630","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK하이닉스 조정 연동 약세와 오후 반도체 대형주 반등 시황 기사 확인"}
+{"trading_date":"20260701","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 15:30 이전 채택 가능한 SK스퀘어 관련 기사 없음, 15:30 이후 기사들은 다음 거래일 창으로 제외"}
+{"trading_date":"20260706","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 SK하이닉스 ADR 정정 공시를 해설한 투자정보 매체 글 확인, 게시시각은 명확하지 않아 unknown 처리"}
