@@ -584,3 +584,19 @@
 {"trading_date": "20250217", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 1, "notes": "원스토어 콘텐츠 자회사 매각 기사 확인."}
 {"trading_date": "20250218", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "팰리서캐피털 지분 축소와 기관 수급 기사 확인."}
 {"trading_date": "20250219", "sampling_role": "unknown", "status": "completed_with_articles", "articles_found": 2, "notes": "우버택시-SK 결별 후 네이버 협업 기사와 장중 상승률 기사 확인."}
+{"trading_date":"20250429","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"미·일 AI·반도체 기업 5곳 투자 기사 확인."}
+{"trading_date":"20250508","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"공매도 비중 상위 종목 기사에서 SK스퀘어 확인."}
+{"trading_date":"20250513","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 장초반 강세 기사에서 SK스퀘어 최대주주 지위 확인."}
+{"trading_date":"20250514","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"엔비디아발 반도체 투자심리 개선 기사에서 SK스퀘어 연결성 확인."}
+{"trading_date":"20250515","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"1분기 실적 기사는 16:14 공개라 다음 거래일 귀속, 이번 날짜 제외."}
+{"trading_date":"20250519","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 SK스퀘어 관련 기사 확인 못함."}
+{"trading_date":"20250522","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"드림어스컴퍼니 자사주 공개매수·소각 기사 확인."}
+{"trading_date":"20250528","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"포트폴리오 실적 개선과 사상 최고가 경신 기사 확인; 19:30 투자 기사는 시간초과."}
+{"trading_date":"20250617","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"BNK 목표가 상향, 티빙·웨이브 합병 조건부 승인, 기술적 분석 특징주 기사 확인."}
+{"trading_date":"20250626","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"15:30 이전 유효시간 내 채택 가능한 기사 확인 못함; 15:45 기관 수급표는 다음 거래일 귀속."}
+{"trading_date":"20250703","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 한국서비스품질지수 18년 연속 1위 기사 확인."}
+{"trading_date":"20250819","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 SK스퀘어 관련 기사 확인 못함."}
+{"trading_date":"20250821","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"드림어스 매각 기사와 외국인 수급표는 15:30 이후 공개되어 다음 거래일 귀속."}
+{"trading_date":"20250822","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"드림어스 흑자전환·매각, 외국인 수급, 11번가 슈팅데이 기사 확인."}
+{"trading_date":"20250826","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"NH투자증권 목표가 상향 관련 모닝포커스와 머니투데이 기사 확인."}
+{"trading_date":"20250902","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"딜사이트 SK스퀘어 리밸런싱·AI반도체 투자 기사 2건과 외국계 순매수표 확인."}
