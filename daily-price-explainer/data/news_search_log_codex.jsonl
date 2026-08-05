@@ -620,3 +620,19 @@
 {"trading_date":"20250324","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"직전 거래일 장마감 후 증권사 커버리지와 수급·목표가 기사 3건 채택"}
 {"trading_date":"20250325","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"포트폴리오 회사 원스토어·11번가 관련 기사 2건 채택"}
 {"trading_date":"20250326","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 기준 유효창 내 채택 가능한 기사 없음"}
+{"trading_date":"20250709","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 기준 유효창 내 채택 가능한 기사 없음"}
+{"trading_date":"20250710","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"15:30 이후 블록딜 기사는 다음 거래일 귀속으로 처리"}
+{"trading_date":"20250711","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"카카오의 SK스퀘어 지분 블록딜 추진 및 장중 영향 기사 3건 채택"}
+{"trading_date":"20250714","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"직전 거래일 장마감 후 블록딜 후속·수급·주요공시 기사 3건 채택"}
+{"trading_date":"20250715","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"코스피 상승과 지주사·외국인 수급 맥락 기사 2건 채택"}
+{"trading_date":"20250716","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 기준 유효창 내 채택 가능한 기사 없음"}
+{"trading_date":"20250718","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"공매도 금액 및 자사주 체결 현황 기사 2건 채택"}
+{"trading_date":"20250721","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 찐템페스타 프로모션 기사 1건 채택"}
+{"trading_date":"20250804","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"공매도 금액 및 11번가 아모레퍼시픽 프로모션 기사 2건 채택"}
+{"trading_date":"20250805","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"장중 상승률 목록 및 리튬 관련 시장 기사 내 SK스퀘어 언급 2건 채택"}
+{"trading_date":"20250812","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"티빙·웨이브 합병 및 지주사 테마 강세 기사 2건 채택"}
+{"trading_date":"20250818","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"대신증권 SK스퀘어 목표가 상향 리포트 기사 1건 채택"}
+{"trading_date":"20250820","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 기준 유효창 내 채택 가능한 기사 없음"}
+{"trading_date":"20250901","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"11번가 디지털 십일절 프로모션 기사 1건 채택"}
+{"trading_date":"20251226","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"투자경고 해제와 반도체 랠리, 기관 수급 기사 3건 채택"}
+{"trading_date":"20251230","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"반도체 대형주 강세 속 SK스퀘어 시총·수급 기사 2건 채택"}
