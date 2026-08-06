@@ -791,3 +791,12 @@
 {"trading_date":"20260227","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 외국인 순매도 로보뉴스에서 SK스퀘어 수급 노출 확인"}
 {"trading_date":"20260303","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"당일 오전 유안타증권 목표가 상향 및 장중 반도체 조정 시황 기사 확인"}
 {"trading_date":"20260304","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 지정학 리스크 급락 시황 기사 채택. Codex가 함께 제출한 오렌지보드(투자 커뮤니티) 게시물은 프로토콜 제외 대상(블로그/카페/게시판)이라 반영에서 제외, articles_found를 2에서 1로 수정"}
+{"trading_date":"20260202","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 장중 SK스퀘어 급락을 다룬 언론 기사를 확인"}
+{"trading_date":"20260203","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 급락 마감 분석과 당일 오전 SK하이닉스 반등 연동 상승 기사를 확인"}
+{"trading_date":"20260204","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260205","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 외국계 순매수 상위 종목 기사에서 SK스퀘어 수급 노출 확인"}
+{"trading_date":"20260206","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 반도체 대형주 약세와 SK스퀘어 동반 하락 특징주 기사 확인"}
+{"trading_date":"20260209","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK하이닉스 반등에 따른 SK스퀘어 급등 및 수급 기사 확인"}
+{"trading_date":"20260211","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오후 장중 시황 기사에서 SK스퀘어 약세와 반도체 쉬어가기 언급 확인"}
+{"trading_date":"20260212","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 개장 시황에서 SK스퀘어 등 대형주 상승 언급 확인"}
+{"trading_date":"20260213","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"원스토어 매각 난항 관련 더벨 기사와 당일 오전 시장 시황 기사 확인"}
