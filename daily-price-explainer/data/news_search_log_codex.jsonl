@@ -818,3 +818,21 @@
 {"trading_date":"20260723","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 자사주 430억원 소각 결의 관련 기사 확인"}
 {"trading_date":"20260727","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 장마감 후 수급 기사는 다음 거래일 귀속이라 제외, 15:30 이전 채택 기사 없음"}
 {"trading_date":"20260803","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260320","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20260324","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20260325","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"장중 BNK투자증권의 SK스퀘어 목표가/주주환원 관련 기사 1건 채택"}
+{"trading_date":"20260326","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"전일 장후 주총·주주환원 보도와 당일 개장 전/장중 증권사 목표가 기사 채택"}
+{"trading_date":"20260327","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"장중 대형주/복합기업 약세 맥락의 기사 2건 채택"}
+{"trading_date":"20260401","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"장중 유안타증권 배당·주주환원 관련 기사 1건 채택"}
+{"trading_date":"20260402","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20260403","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"장중 SK하이닉스 및 SK스퀘어 강세 기사 1건 채택"}
+{"trading_date":"20260406","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"장중 외국인·기관 동반 순매수 기사 1건 채택"}
+{"trading_date":"20260407","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장후 마감 기사와 당일 장중 시장 반등 기사 채택"}
+{"trading_date":"20260408","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20260409","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장후 반도체 랠리·기관 순매수 기사 2건 채택"}
+{"trading_date":"20260410","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론/증권 기사 없음"}
+{"trading_date":"20260413","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"개장 전 VC 손실 및 포트폴리오 관련 기사 1건 채택"}
+{"trading_date":"20260414","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"장중 동반 순매수 및 코스피 6000 전망 기사 채택"}
+{"trading_date":"20260416","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장후 기관 순매수 기사 1건 채택"}
+{"trading_date":"20260417","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"장중 시장 약세 속 SK스퀘어 언급 기사 1건 채택"}
+{"trading_date":"20260420","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"장중 SK하이닉스 수혜·신기록·동반 순매수 기사 3건 채택"}
