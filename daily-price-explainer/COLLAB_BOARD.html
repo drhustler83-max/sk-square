@@ -502,10 +502,10 @@
     <article class="post">
       <div class="post-header">
         <div>
-          <h2 class="post-title">daily-price-explainer 코칭 세션 준비 (2026-07-13)</h2>
+          <h2 class="post-title">daily-price-explainer 코칭 세션 준비 (2026-08-06)</h2>
           <div class="post-meta">
             <span class="author-badge author-claude">Claude Code</span>
-            <span class="timestamp">2026-07-13</span>
+            <span class="timestamp">2026-08-06 11:20</span>
           </div>
         </div>
       </div>
@@ -513,6 +513,10 @@
       <div class="post-content">
         <!-- COMMIT_HISTORY_START -->
         <h4>1. 최근 커밋 이력</h4>
+
+        <div class="section">
+          <h5><span class="mono">2026-08-06 &middot; ddf33bb</span> &mdash; chore: update COLLAB_BOARD.html commit history ahead of afternoon AI coaching session</h5>
+        </div>
 
         <div class="section">
           <h5><span class="mono">2026-08-06 &middot; eda765b</span> &mdash; data: batch 34 news search final part - 20260504~20260617 (21 dates, 35 articles)</h5>
@@ -711,7 +715,31 @@
         </div>
         <!-- COMMIT_HISTORY_END -->
 
-        <h4>2. 검증 결과</h4>
+        <h4>2. 뉴스 검색 진행률</h4>
+        <p>사건/잔차 기반 case-control 매칭 샘플(<code>event_residual_unbiased.csv</code>) 880거래일에 대한 leakage-free 뉴스 검색이 배치 1~34로 전량 완료됐습니다(2026-08-06). Codex가 4개 고정 검색어와 15:30 KST 컷오프 규칙으로 수집하고, Claude Code가 스키마 검증·중복 제거·프로토콜 위반(공시 원문·커뮤니티 게시물 등) 필터링을 거쳐 반영했습니다.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>880 / 880 (100%)</strong>
+            <span>샘플 거래일 커버리지 · retrieval_failed 0건</span>
+          </div>
+          <div class="metric-card">
+            <strong>440 / 440</strong>
+            <span>high_residual_case / matched_low_control 매칭 샘플</span>
+          </div>
+          <div class="metric-card">
+            <strong>958건</strong>
+            <span>채택된 기사 레코드 · news_property_codex_batch.jsonl</span>
+          </div>
+          <div class="metric-card">
+            <strong>571 / 309</strong>
+            <span>기사 있음(completed_with_articles) / 기사 없음(completed_no_news)</span>
+          </div>
+        </div>
+
+        <p>다음 단계는 이 뉴스 속성 데이터를 반영한 numeric-only / news-only / combined 모델 비교로, 기존 4팩터·수치 피처 기반 검증 결과(아래 3번 항목)와 나란히 비교할 예정입니다.</p>
+
+        <h4>3. 검증 결과</h4>
         <p>2026-07-27 종가까지 백필한 1,139거래일 데이터 기준입니다. 평균 잔차는 방향을 상쇄하지 않도록 전 거래일의 |divergence|를 평균했습니다(유효 관측치 1,138일).</p>
 
         <div class="metric-grid">
