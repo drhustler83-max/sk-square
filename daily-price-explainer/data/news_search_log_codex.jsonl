@@ -800,3 +800,21 @@
 {"trading_date":"20260211","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오후 장중 시황 기사에서 SK스퀘어 약세와 반도체 쉬어가기 언급 확인"}
 {"trading_date":"20260212","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 개장 시황에서 SK스퀘어 등 대형주 상승 언급 확인"}
 {"trading_date":"20260213","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"원스토어 매각 난항 관련 더벨 기사와 당일 오전 시장 시황 기사 확인"}
+{"trading_date":"20260421","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 15:30 이전 채택 가능한 SK스퀘어 관련 기사 없음"}
+{"trading_date":"20260422","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 기관 순매수 표에서 SK스퀘어 수급 노출 확인"}
+{"trading_date":"20260423","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 SK하이닉스 배당 해설과 당일 오후 더벨 포트폴리오 전략 기사 확인"}
+{"trading_date":"20260424","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260427","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 SK하이닉스 호조와 주주환원 기대에 따른 SK스퀘어 신고가 기사 확인"}
+{"trading_date":"20260428","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 대신증권 목표가 100만원 상향과 SK하이닉스 대체 투자 논리 기사 확인"}
+{"trading_date":"20260429","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 황제주 기대 기사와 당일 오전 연기금 대체 매수·신고가 기사 확인"}
+{"trading_date":"20260430","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 신고가 기사와 당일 오전 NH투자증권 목표가 상향 기사 확인"}
+{"trading_date":"20260506","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK스퀘어 황제주 등극 및 시총 상위권 재평가 기사 확인"}
+{"trading_date":"20260511","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 반도체 강세에 따른 SK스퀘어 급등·신고가 기사 확인"}
+{"trading_date":"20260512","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 기관 순매수 로보뉴스에서 SK스퀘어 수급 노출 확인"}
+{"trading_date":"20260513","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"임원 보유상황 공시 원문은 확인되나 제외 대상이며 채택 가능한 기사 없음"}
+{"trading_date":"20260520","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK스퀘어 추천·DB증권 목표가 상향 기사 확인"}
+{"trading_date":"20260619","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK하이닉스 강세와 주주환원 기대에 따른 SK스퀘어 신고가 기사 확인"}
+{"trading_date":"20260707","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK스퀘어 투자 아이디어와 유안타증권 NDR 후기 리포트 기사 확인"}
+{"trading_date":"20260723","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 자사주 430억원 소각 결의 관련 기사 확인"}
+{"trading_date":"20260727","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 장마감 후 수급 기사는 다음 거래일 귀속이라 제외, 15:30 이전 채택 기사 없음"}
+{"trading_date":"20260803","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
