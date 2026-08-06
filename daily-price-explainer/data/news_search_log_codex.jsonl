@@ -782,3 +782,12 @@
 {"trading_date":"20260630","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK하이닉스 조정 연동 약세와 오후 반도체 대형주 반등 시황 기사 확인"}
 {"trading_date":"20260701","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"당일 15:30 이전 채택 가능한 SK스퀘어 관련 기사 없음, 15:30 이후 기사들은 다음 거래일 창으로 제외"}
 {"trading_date":"20260706","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 SK하이닉스 ADR 정정 공시를 해설한 투자정보 매체 글 확인, 게시시각은 명확하지 않아 unknown 처리"}
+{"trading_date":"20260219","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"DART 자기주식취득결과보고서는 확인되나 원문 공시라 제외, 채택 가능한 기사 없음"}
+{"trading_date":"20260220","sampling_role":"unknown","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 SK스퀘어 관련 언론·증권 기사 없음"}
+{"trading_date":"20260223","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"당일 오전 SK스퀘어 글로벌 AI·반도체 투자 기사와 SK 관련 증권 의견 기사 확인"}
+{"trading_date":"20260224","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오후 SK스퀘어 시총 톱5·투자회사 본업 관련 기사 확인"}
+{"trading_date":"20260225","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"전 거래일 장마감 후 연간 실적·AI 포트폴리오 기사와 당일 오전 목표가 상향 기사 다수 확인"}
+{"trading_date":"20260226","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"전 거래일 장마감 후 ETF·11번가 기사와 당일 오전 SK하이닉스 연동 신고가 기사 확인"}
+{"trading_date":"20260227","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 외국인 순매도 로보뉴스에서 SK스퀘어 수급 노출 확인"}
+{"trading_date":"20260303","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"당일 오전 유안타증권 목표가 상향 및 장중 반도체 조정 시황 기사 확인"}
+{"trading_date":"20260304","sampling_role":"unknown","status":"completed_with_articles","articles_found":1,"notes":"당일 오전 지정학 리스크 급락 시황 기사 채택. Codex가 함께 제출한 오렌지보드(투자 커뮤니티) 게시물은 프로토콜 제외 대상(블로그/카페/게시판)이라 반영에서 제외, articles_found를 2에서 1로 수정"}
