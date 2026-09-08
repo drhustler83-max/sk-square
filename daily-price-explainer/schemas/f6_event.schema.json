@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sk-square.local/schemas/f6_event.schema.json",
+  "title": "SK Square F6 structured corporate event",
+  "description": "Point-in-time-safe, append-only contract for one version of an F6 corporate event.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "deal_id",
+    "event_type",
+    "stage",
+    "issuer",
+    "economic_at",
+    "known_at",
+    "effective_trading_date",
+    "known_at_precision",
+    "source_type",
+    "source_id",
+    "source_version",
+    "retrieved_at",
+    "correction",
+    "supersedes",
+    "model_eligible",
+    "backfill_only",
+    "metrics"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Immutable identifier for this source version. Corrections receive a new event_id."
+    },
+    "deal_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier shared by decision, execution, result, cancellation, and correction records for the same economic episode."
+    },
+    "event_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Versioned snake_case event vocabulary; initial values are documented in f6_event_protocol.md."
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "decision",
+        "publication",
+        "execution",
+        "result",
+        "completion",
+        "disclosure",
+        "cancellation",
+        "correction"
+      ]
+    },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "stock_code",
+        "corp_code"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stock_code": {
+          "type": "string",
+          "pattern": "^[0-9]{6}$"
+        },
+        "corp_code": {
+          "type": "string",
+          "pattern": "^[0-9]{8}$"
+        }
+      }
+    },
+    "economic_at": {
+      "description": "When the underlying decision or transaction occurred. Null only when the source does not disclose it; never use this field for model attribution.",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "known_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Earliest public availability, encoded as RFC 3339 with an explicit UTC offset."
+    },
+    "effective_trading_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Trading date derived only from known_at through tools/regime_events.py."
+    },
+    "known_at_precision": {
+      "type": "string",
+      "enum": [
+        "date",
+        "minute",
+        "second",
+        "subsecond"
+      ]
+    },
+    "source_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Examples: dart_document, dart_xbrl, analyst_report, exchange_disclosure."
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable upstream identifier such as DART receipt number or analyst report ID."
+    },
+    "source_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Upstream revision, content hash, or parser/source revision needed for reproducibility."
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Acquisition timestamp; it must never replace known_at."
+    },
+    "correction": {
+      "type": "boolean"
+    },
+    "supersedes": {
+      "description": "event_id replaced by this version, or null for an original record.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model_eligible": {
+      "type": "boolean",
+      "description": "Whether this record may enter a point-in-time model from effective_trading_date onward."
+    },
+    "backfill_only": {
+      "type": "boolean",
+      "description": "True for retrospective reconstruction that is retained for audit but prohibited from model features."
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/metric"
+      }
+    }
+  },
+  "$defs": {
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "value",
+        "unit",
+        "as_of"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "KRW",
+            "KRW_per_share",
+            "shares",
+            "pct",
+            "percentage_point",
+            "ratio",
+            "count"
+          ]
+        },
+        "as_of": {
+          "description": "Economic date or timestamp to which the numeric value refers; it does not control model attribution.",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "correction": {
+            "const": true
+          }
+        },
+        "required": [
+          "correction"
+        ]
+      },
+      "then": {
+        "properties": {
+          "supersedes": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "supersedes": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "backfill_only": {
+            "const": true
+          }
+        },
+        "required": [
+          "backfill_only"
+        ]
+      },
+      "then": {
+        "properties": {
+          "model_eligible": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
+}

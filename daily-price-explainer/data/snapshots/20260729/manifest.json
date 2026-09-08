@@ -1,0 +1,60 @@
+{
+  "snapshot_version": "event_residual_unbiased_snapshot.v1",
+  "created_at": "2026-07-29T11:24:11+09:00",
+  "source": "data/event_residual_unbiased.csv",
+  "snapshot": "data/snapshots/20260729/event_residual_unbiased.csv",
+  "sha256": "5cded5d520d6a647e2eac448b71aa60734695b3efcbfa7e70809490ad4535636",
+  "size_bytes": 119248,
+  "source_mtime": "2026-07-28T16:09:29+09:00",
+  "immutability_policy": "Do not overwrite event_residual_unbiased.csv. Create derivative files only.",
+  "audit": {
+    "rows": 1139,
+    "columns": [
+      "date",
+      "skq_price",
+      "hynix_price",
+      "regime",
+      "divergence",
+      "high_residual",
+      "event_name",
+      "sampling_role",
+      "matched_pair_id",
+      "matched_date",
+      "market_regime_20d",
+      "market_volatility_bin",
+      "match_quality",
+      "match_distance"
+    ],
+    "date_min": "20211129",
+    "date_max": "20260727",
+    "duplicate_dates": 0,
+    "dates_sorted": true,
+    "missing": {
+      "date": 0,
+      "skq_price": 0,
+      "hynix_price": 0,
+      "regime": 1,
+      "divergence": 1,
+      "high_residual": 701,
+      "event_name": 1052,
+      "sampling_role": 0,
+      "matched_pair_id": 263,
+      "matched_date": 263,
+      "market_regime_20d": 0,
+      "market_volatility_bin": 0,
+      "match_quality": 263,
+      "match_distance": 263
+    },
+    "high_residual_rows": 438,
+    "event_name_rows": 87,
+    "high_flag_mismatches": 243,
+    "selection_cross_tab": {
+      "event_false_high_false": 701,
+      "event_false_high_true": 351,
+      "event_true_high_false": 0,
+      "event_true_high_true": 87
+    },
+    "event_rate_on_high_residual": 0.19863,
+    "event_rate_on_non_high_residual": 0.0
+  }
+}

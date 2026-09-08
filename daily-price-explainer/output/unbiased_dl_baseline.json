@@ -1,0 +1,163 @@
+{
+  "experiment": "unbiased_dl_baseline_v1",
+  "as_of": "2026-07-27",
+  "validation": "expanding window; first 40% seed; four OOS blocks",
+  "input_feature_count": 30,
+  "input_features": [
+    "hynix_ret",
+    "divergence_lag1",
+    "sector_semiconductor",
+    "kospi_ret",
+    "usd_krw_chg_pct",
+    "sector_excess",
+    "hynix_ex_sector",
+    "kospi_vol20",
+    "foreign_net",
+    "institution_net",
+    "individual_net",
+    "flow_sum",
+    "flow_z20",
+    "foreign_net_3d",
+    "foreign_net_lag1",
+    "foreign_own_pct",
+    "foreign_own_chg5",
+    "shorting_balance_ratio",
+    "shorting_volume_ratio",
+    "shorting_balance_change",
+    "short_bal_chg_3d",
+    "short_ratio_vs_ma20",
+    "short_pressure_flag",
+    "fut_listed",
+    "fut_basis_pct",
+    "fut_volume",
+    "fut_basis_chg",
+    "fut_volume_z",
+    "hynix_x_shortinc",
+    "disc_delta_lag1"
+  ],
+  "excluded_target_derived_features": [
+    "divergence",
+    "divergence_ma5",
+    "nav_discount_pct",
+    "nav_discount_delta",
+    "nav_discount_vs_ma20",
+    "nav_discount_z60",
+    "skq_vol20"
+  ],
+  "selection_bias_audit": {
+    "rows": 1139,
+    "event_name_non_null": 87,
+    "high_residual_rows": 195,
+    "high_residual_rate": 0.1712,
+    "cross_tab": {
+      "event_false_high_false": 943,
+      "event_false_high_true": 109,
+      "event_true_high_false": 1,
+      "event_true_high_true": 86
+    },
+    "event_rate_on_high_residual": 0.441,
+    "event_rate_on_non_high_residual": 0.0011,
+    "event_name_used_as_model_input": false,
+    "reason": "event_name is excluded because news was curated almost exclusively on high-residual dates, creating selection leakage."
+  },
+  "regression": {
+    "target": "divergence",
+    "n_total": 1085,
+    "n_oos": 651,
+    "aggregate": {
+      "mean_baseline": {
+        "r2": -0.0052,
+        "mae_pctp": 1.9057,
+        "sign_accuracy": 0.49
+      },
+      "ridge": {
+        "r2": -6.9559,
+        "mae_pctp": 2.6929,
+        "sign_accuracy": 0.7127
+      },
+      "mlp_2layer": {
+        "r2": -6.2171,
+        "mae_pctp": 2.7613,
+        "sign_accuracy": 0.6728
+      },
+      "xgboost": {
+        "r2": 0.2141,
+        "mae_pctp": 1.6021,
+        "sign_accuracy": 0.7097
+      }
+    },
+    "folds": [
+      {
+        "fold": 1,
+        "period": [
+          "2023-09-27",
+          "2024-06-17"
+        ],
+        "n": 162,
+        "mlp_r2": 0.2397,
+        "xgboost_r2": 0.441
+      },
+      {
+        "fold": 2,
+        "period": [
+          "2024-06-18",
+          "2025-03-05"
+        ],
+        "n": 163,
+        "mlp_r2": 0.2143,
+        "xgboost_r2": 0.4544
+      },
+      {
+        "fold": 3,
+        "period": [
+          "2025-03-06",
+          "2025-11-12"
+        ],
+        "n": 163,
+        "mlp_r2": -1.6309,
+        "xgboost_r2": 0.2092
+      },
+      {
+        "fold": 4,
+        "period": [
+          "2025-11-13",
+          "2026-07-27"
+        ],
+        "n": 163,
+        "mlp_r2": -19.523,
+        "xgboost_r2": -0.1348
+      }
+    ]
+  },
+  "classification": {
+    "target": "abs(divergence) >= 3",
+    "n_total": 1085,
+    "n_oos": 651,
+    "positive_rate_oos": 0.2135,
+    "no_skill_pr_auc": 0.2135,
+    "aggregate": {
+      "logistic": {
+        "pr_auc": 0.3105,
+        "roc_auc": 0.6228,
+        "balanced_accuracy": 0.586,
+        "precision": 0.2607,
+        "recall": 0.7482
+      },
+      "mlp_2layer": {
+        "pr_auc": 0.1953,
+        "roc_auc": 0.453,
+        "balanced_accuracy": 0.4971,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "xgboost": {
+        "pr_auc": 0.3194,
+        "roc_auc": 0.6465,
+        "balanced_accuracy": 0.6279,
+        "precision": 0.3305,
+        "recall": 0.5683
+      }
+    }
+  },
+  "conclusion": "The two-layer MLP does not beat simpler baselines and is unstable after the 2025-11 regime shift. Keep XGBoost as the tabular baseline; add article-only news properties and retest with time splits."
+}
