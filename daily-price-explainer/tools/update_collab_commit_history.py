@@ -16,7 +16,7 @@ import subprocess
 
 
 BASE = Path(__file__).resolve().parent.parent
-BOARD_PATH = BASE / "COLLAB_BOARD.html"
+BOARD_PATH = BASE / "docs" / "COLLAB_BOARD.html"
 SINCE = "2026-07-14 00:00:00 +0900"
 START_MARKER = "        <!-- COMMIT_HISTORY_START -->"
 END_MARKER = "        <!-- COMMIT_HISTORY_END -->"

@@ -1,0 +1,82 @@
+[SK스퀘어 daily-price-explainer 프로젝트 — Codex 작업 브리핑]
+
+나는 SK스퀘어(코스피 402340) IR 매니저이고, "daily-price-explainer"(DPE)라는
+사내 프로젝트를 진행 중이야. SK스퀘어의 일별 주가 변동을 자동으로 설명해주는
+IR 챗봇(LLM: Gemini)을 만들고 있어. Claude Code와 ChatGPT Codex 둘 다 이
+프로젝트에 참여하고 있고, 협업 기록은 COLLAB_BOARD.html(로컬, Git 추적)에
+남겨.
+
+# 배경 — AI 코칭에서 받은 방향
+"Taxonomy → Feature Extraction → Train → Feature-discovery Loop"를
+반복하는 귀인(attribution) 시스템을 만들고, 최종적으로는
+Script → Service → Application → Product 단계로 성숙시키는 게 목표.
+
+# 제품/아키텍처 방향 (2026-07-27, Codex가 COLLAB_BOARD.html에 정리)
+- 성숙도: Script 후반 단계 (CLI+CSV 중심, 자동 스케줄러는 있지만 상시
+  서버/UI/DB는 없음)
+- Product: 외부 공개 서비스가 아니라 CEO 의사결정 지원용 Executive IR Q&A
+- Application: 웹 UI가 아니라 Telegram 챗봇으로 일일 브리핑 + 후속 질문 응답
+- 다음 단계: Evidence Pack(관측사실/모델해석 분리) → Question Router/
+  Guardrail → Telegram Bot. 자세한 아키텍처·ERD는 COLLAB_BOARD.html 참고.
+
+# 현재까지 구조 (엔진 레이어)
+- Taxonomy: atomic_facts.jsonl — F1(NAV)~F7(잔차) 7계층, 62개 사실
+- Feature Extraction: factor_log.csv — 1,134거래일치, 16개 팩터 컬럼.
+  평일 16:35 Windows 스케줄러로 매일 자동 수집
+- Train/귀인: OLS 베타(R²=0.85) + XGBoost 귀인 통합 완료
+- Feature-discovery Loop (핵심 작업 전환): 기존에는 DART/홈페이지/애널리스트
+  이벤트를 events.csv 하나에 모아 날짜 매칭하는 방식이었는데, 날짜 매칭
+  정확도 문제가 반복돼서 방향을 바꿨음 → 지금은 data/event_residual.csv
+  하나로 통합: 상장 이후 전 거래일의 종가·잔차(divergence)·국면(regime)·
+  high_residual(|잔차|≥3%) 플래그를 먼저 깔고, 거기에 이벤트를 역으로
+  채워나가는 구조. events.csv는 더 이상 메인 파이프라인이 아님 (참고용으로만
+  남아있고 갱신 안 함).
+
+# event_residual.csv — 컬럼 구조 (A~K)
+date, skq_price, hynix_price, regime, divergence, high_residual,
+event_name, direction(+/-/?), importance(H/M/L), note(자유서술), source
+
+# 현재 상태 (2026-07-28 기준)
+- high_residual=Y(잔차 3%↑) 총 181행 중:
+  · 61행: event_name/direction/importance/note/source 전부 수기 큐레이션 완료
+  · 17행: event_name/source는 채워졌지만 direction/importance는 아직 미기입
+    (SK하이닉스 자체 DART 공시로 새로 찾은 것 — 사유가 SK스퀘어 자체 뉴스가
+    아니라 자회사(하이닉스) 쪽 공시라서 판단이 필요함)
+  · 103행: 뉴스/공시 전부 찾아봤는데도 원인 불명 (#N/A) — SK스퀘어 자체
+    DART/홈페이지, SK하이닉스 자체 DART 둘 다 확인했고 없음
+- event_residual.csv는 이제 Sean이 Excel에서 직접 수기로 큐레이션 중.
+  자동 재빌드 스크립트(tools/build_event_residual.py,
+  tools/build_dart_events.py 등)를 다시 돌리면 수기 입력이 통째로
+  덮어써지니 절대 재실행하지 말 것 — 이 파일은 이제부터는 사람이 관리하는
+  마스터 데이터로 취급.
+- 알아둘 버그 수정: DART 공시 effective_date 규칙이 예전엔 "무조건 다음
+  거래일"이었는데, DART는 장중 접수되는 경우가 많아서 실제 최초공개일과
+  하루씩 어긋났던 버그를 고쳤음 (지금은 접수일 당일, 비거래일이면 다음
+  거래일). 홈페이지 보도자료는 여전히 "다음 거래일" 규칙.
+
+# 남은 뉴스 검색(#N/A 103행)에 대한 도구 제약 — Codex가 맡아줄 부분
+- 네이버 뉴스 검색 API(openapi.naver.com)를 시도해봤는데, start 파라미터가
+  최대 1000까지만 허용되고 "SK스퀘어" 같은 일반 쿼리는 결과가 너무 많아서
+  (9만건대) 1000건 이내로는 최근 1~2주치밖에 못 봄 — 구조적으로 옛날
+  날짜(2021~2025년) 검색이 불가능함. 더 구체적인 키워드로 좁히면 조금 더
+  과거로 가지만(예: "SK스퀘어 밸류업"은 2025년 3월까지), 2021~2023년
+  34건은 이 방법으로는 거의 불가능.
+- 그래서 일반 웹 검색(Google/Bing 등, 과거 인덱싱이 더 잘 됨)이 대안인데
+  토큰 비용 문제로 아직 시도 안 했음 — Codex가 브라우징/검색 도구를 가지고
+  있다면 이 103행을 날짜별로 검색해서 event_name/source 채우는 작업을
+  맡기면 좋을 것 같음. (direction/importance는 Sean이 직접 판단해서 채움)
+
+# 최근 커밋 타임라인
+- 07-06~07: 이벤트 자동 수집 파이프라인 구축 + 버그 3종 수정, 챗봇 멀티턴
+  전환
+- 07-09~14: events.csv 925행→568행 정리 (중복 제거, 자사주 168행→7개
+  배치로 정리)
+- 07-16: futures/extra 로그를 factor_log로 병합, event_residual.csv 최초
+  생성 (DART 437건 매칭 — 이 원본 DART 데이터는 저장이 안 돼서 이후 소실)
+- 07-21~22: 자사주 7개 배치 note 라벨링 → event_residual.csv 수기
+  큐레이션 시작 → DART effective_date 버그 발견·수정 → SK하이닉스 자체
+  공시 크로스체크로 16행 추가 채움
+- 07-27: COLLAB_BOARD.html에 제품/아키텍처 방향 확정 (Codex 작성)
+
+이 내용을 참고해서 아래 질문에 답해줘:
+[여기에 Codex에게 묻고 싶은 구체적 질문을 적어주세요]
