@@ -38,13 +38,10 @@ FEATURE_TAXONOMY: dict[str, tuple[str, str]] = {
     "divergence_lag1":      ("F1.4", "전일 divergence (모멘텀 지속성) [derived]"),
     "nav_discount_vs_ma20": ("F1.3", "할인율 - 20일평균 (역사적 위치) [derived]"),
     "nav_discount_z60":     ("F1.3", "할인율 60일 z-score (국면) [derived]"),
-    # ── F2 섹터·매크로 ────────────────────────────────────────────────────
+    # ── F2 섹터 ───────────────────────────────────────────────────────────
     "sector_semiconductor": ("F2", "반도체 섹터 ETF 평균 수익률 [raw]"),
-    "kospi_ret":            ("F2", "KOSPI 수익률 (시장 베타) [raw]"),
-    "usd_krw_chg_pct":      ("F2", "USD/KRW 변화율 (FX) [raw]"),
     "sector_excess":        ("F2", "반도체 - KOSPI (섹터 초과 강도) [derived]"),
     "hynix_ex_sector":      ("F2", "하이닉스 - 반도체섹터 (종목 고유 알파) [derived]"),
-    "kospi_vol20":          ("F2", "KOSPI 수익률 20일 변동성 (시장 변동성 regime) [derived]"),
     # ── F3 수급 ───────────────────────────────────────────────────────────
     "foreign_net":          ("F3", "외국인 순매수 [raw]"),
     "institution_net":      ("F3", "기관 순매수 [raw]"),
@@ -69,10 +66,18 @@ FEATURE_TAXONOMY: dict[str, tuple[str, str]] = {
     "fut_volume":           ("F5", "근월물 거래량 (미상장=0) [raw]"),
     "fut_basis_chg":        ("F5", "선물 베이시스 전일 대비 변화(%p) (미상장=0) [derived]"),
     "fut_volume_z":         ("F5", "선물 거래량 20일 z-score (비정상 거래) (미상장=0) [derived]"),
-    # ── 국면·상호작용 (F7 잔차 탐색용) ─────────────────────────────────────
-    "skq_vol20":            ("F7", "SKQ 수익률 20일 변동성 (위험 국면) [derived]"),
-    "hynix_x_shortinc":     ("F7", "하이닉스수익률 × 공매도증가 (상호작용) [derived]"),
-    "disc_delta_lag1":      ("F7", "전일 NAV 할인율 변화 (비누설 모멘텀) [derived]"),
+    # ── F6 기업이벤트 (뉴스 전용 — 숫자 피처 없음) ───────────────────────────
+    #   news_primary_subject ∈ {sk_square, portfolio_company, governance,
+    #   shareholder_policy 등} 로 골라낸 뉴스 파생 피처가 여기 해당
+    # ── F7 매크로 (숫자 + 뉴스) ───────────────────────────────────────────
+    #   news_primary_subject ∈ {macro_market, semiconductor_sector, regulation 등}
+    "kospi_ret":            ("F7", "KOSPI 수익률 (시장 베타) [raw]"),
+    "usd_krw_chg_pct":      ("F7", "USD/KRW 변화율 (FX) [raw]"),
+    "kospi_vol20":          ("F7", "KOSPI 수익률 20일 변동성 (시장 변동성 regime) [derived]"),
+    # ── F8 국면·상호작용 ─────────────────────────────────────────────────
+    "skq_vol20":            ("F8", "SKQ 수익률 20일 변동성 (위험 국면) [derived]"),
+    "hynix_x_shortinc":     ("F8", "하이닉스수익률 × 공매도증가 (상호작용) [derived]"),
+    "disc_delta_lag1":      ("F8", "전일 NAV 할인율 변화 (비누설 모멘텀) [derived]"),
 }
 
 FEATURES: list[str] = list(FEATURE_TAXONOMY.keys())

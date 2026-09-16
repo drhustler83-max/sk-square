@@ -156,7 +156,7 @@ def global_importance(lookback: int = None, top: int = 15) -> dict:
         code = FEATURE_TAXONOMY.get(f, ("?", ""))[0]
         bar = "#" * int(v * 60)
         print(f"   [{code:5}] {f:24} {v:6.3f} {bar}")
-    print("\n  [카테고리 귀인]  F1=NAV/하이닉스 F2=섹터·매크로 F3=수급 F4=공매도 F5=선물 F7=국면")
+    print("\n  [카테고리 귀인]  F1=NAV/하이닉스 F2=섹터 F3=수급 F4=공매도 F5=선물 F7=매크로 F8=국면·상호작용")
     for c, v in cat.items():
         bar = "#" * int(v * 60)
         print(f"   {c:4} {v:6.3f} {bar}")
