@@ -1,0 +1,363 @@
+{
+  "experiment": "factor_category_ablation_v1",
+  "as_of": "2026-09-15",
+  "target": "divergence",
+  "validation": "expanding window; first 40% seed; four OOS blocks; moving-block bootstrap (20d blocks, 2000 reps)",
+  "methodology_note": "experiment_unbiased_dl.py 와 동일 설계. full_30 이 그쪽 xgboost 수치와 일치해야 정상이다.",
+  "n_total": 1101,
+  "n_oos": 661,
+  "categories": {
+    "F1": {
+      "label": "SK하이닉스 수익률",
+      "features": [
+        "hynix_ret",
+        "divergence_lag1"
+      ]
+    },
+    "F2": {
+      "label": "반도체 섹터 ETF 평균 수익률 [raw]",
+      "features": [
+        "sector_semiconductor",
+        "sector_excess",
+        "hynix_ex_sector"
+      ]
+    },
+    "F3": {
+      "label": "외국인 순매수 [raw]",
+      "features": [
+        "foreign_net",
+        "institution_net",
+        "individual_net",
+        "flow_sum",
+        "flow_z20",
+        "foreign_net_3d",
+        "foreign_net_lag1",
+        "foreign_own_pct",
+        "foreign_own_chg5"
+      ]
+    },
+    "F4": {
+      "label": "공매도 잔고율 [raw]",
+      "features": [
+        "shorting_balance_ratio",
+        "shorting_volume_ratio",
+        "shorting_balance_change",
+        "short_bal_chg_3d",
+        "short_ratio_vs_ma20",
+        "short_pressure_flag"
+      ]
+    },
+    "F5": {
+      "label": "주식선물 상장 여부 0/1",
+      "features": [
+        "fut_listed",
+        "fut_basis_pct",
+        "fut_volume",
+        "fut_basis_chg",
+        "fut_volume_z"
+      ]
+    },
+    "F7": {
+      "label": "KOSPI 수익률",
+      "features": [
+        "kospi_ret",
+        "usd_krw_chg_pct",
+        "kospi_vol20"
+      ]
+    },
+    "F8": {
+      "label": "하이닉스수익률 × 공매도증가",
+      "features": [
+        "hynix_x_shortinc",
+        "disc_delta_lag1"
+      ]
+    }
+  },
+  "baseline_mean": {
+    "r2": -0.0061,
+    "mae_pctp": 1.9171,
+    "sign_accuracy": 0.4947
+  },
+  "full_30": {
+    "n_features": 30,
+    "r2": 0.2116,
+    "mae_pctp": 1.609,
+    "sign_accuracy": 0.7126,
+    "folds_r2": [
+      0.4165,
+      0.4942,
+      0.204,
+      -0.1384
+    ],
+    "vs_baseline": {
+      "mae_improvement_pctp": 0.3082,
+      "ci95_low": 0.1647,
+      "ci95_high": 0.452,
+      "significant": true
+    }
+  },
+  "solo": {
+    "F1": {
+      "features": [
+        "hynix_ret",
+        "divergence_lag1"
+      ],
+      "n_features": 2,
+      "r2": -0.1214,
+      "mae_pctp": 2.0178,
+      "sign_accuracy": 0.4841,
+      "folds_r2": [
+        -0.1407,
+        -0.0703,
+        -0.1263,
+        -0.1371
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": -0.1006,
+        "ci95_low": -0.1506,
+        "ci95_high": -0.0498,
+        "significant": false
+      }
+    },
+    "F2": {
+      "features": [
+        "sector_semiconductor",
+        "sector_excess",
+        "hynix_ex_sector"
+      ],
+      "n_features": 3,
+      "r2": -0.0691,
+      "mae_pctp": 1.9366,
+      "sign_accuracy": 0.5567,
+      "folds_r2": [
+        0.0444,
+        -0.0715,
+        -0.0055,
+        -0.2153
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": -0.0194,
+        "ci95_low": -0.0814,
+        "ci95_high": 0.0463,
+        "significant": false
+      }
+    },
+    "F3": {
+      "features": [
+        "foreign_net",
+        "institution_net",
+        "individual_net",
+        "flow_sum",
+        "flow_z20",
+        "foreign_net_3d",
+        "foreign_net_lag1",
+        "foreign_own_pct",
+        "foreign_own_chg5"
+      ],
+      "n_features": 9,
+      "r2": 0.078,
+      "mae_pctp": 1.7946,
+      "sign_accuracy": 0.6838,
+      "folds_r2": [
+        0.2568,
+        0.3725,
+        0.0088,
+        -0.2091
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": 0.1226,
+        "ci95_low": -0.0061,
+        "ci95_high": 0.2683,
+        "significant": false
+      }
+    },
+    "F4": {
+      "features": [
+        "shorting_balance_ratio",
+        "shorting_volume_ratio",
+        "shorting_balance_change",
+        "short_bal_chg_3d",
+        "short_ratio_vs_ma20",
+        "short_pressure_flag"
+      ],
+      "n_features": 6,
+      "r2": -0.1707,
+      "mae_pctp": 2.0857,
+      "sign_accuracy": 0.4871,
+      "folds_r2": [
+        -0.1354,
+        -0.4276,
+        -0.1111,
+        -0.0833
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": -0.1686,
+        "ci95_low": -0.2567,
+        "ci95_high": -0.0909,
+        "significant": false
+      }
+    },
+    "F5": {
+      "features": [
+        "fut_listed",
+        "fut_basis_pct",
+        "fut_volume",
+        "fut_basis_chg",
+        "fut_volume_z"
+      ],
+      "n_features": 5,
+      "r2": -0.1051,
+      "mae_pctp": 1.999,
+      "sign_accuracy": 0.531,
+      "folds_r2": [
+        -0.1311,
+        -0.1355,
+        0.0448,
+        -0.1866
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": -0.0819,
+        "ci95_low": -0.1567,
+        "ci95_high": -0.0118,
+        "significant": false
+      }
+    },
+    "F7": {
+      "features": [
+        "kospi_ret",
+        "usd_krw_chg_pct",
+        "kospi_vol20"
+      ],
+      "n_features": 3,
+      "r2": -0.0588,
+      "mae_pctp": 1.9417,
+      "sign_accuracy": 0.5219,
+      "folds_r2": [
+        -0.0984,
+        -0.0706,
+        0.0235,
+        -0.0867
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": -0.0246,
+        "ci95_low": -0.0804,
+        "ci95_high": 0.0319,
+        "significant": false
+      }
+    },
+    "F8": {
+      "features": [
+        "hynix_x_shortinc",
+        "disc_delta_lag1"
+      ],
+      "n_features": 2,
+      "r2": -0.0531,
+      "mae_pctp": 1.9493,
+      "sign_accuracy": 0.5189,
+      "folds_r2": [
+        -0.0583,
+        -0.0534,
+        -0.0761,
+        -0.0322
+      ],
+      "vs_baseline": {
+        "mae_improvement_pctp": -0.0322,
+        "ci95_low": -0.0742,
+        "ci95_high": 0.005,
+        "significant": false
+      }
+    }
+  },
+  "leave_one_out": {
+    "F1": {
+      "n_features_remaining": 28,
+      "r2": 0.2327,
+      "mae_pctp": 1.5866,
+      "sign_accuracy": 0.7292,
+      "marginal_contribution": {
+        "mae_improvement_pctp": -0.0224,
+        "ci95_low": -0.0432,
+        "ci95_high": -0.0058,
+        "significant": false
+      }
+    },
+    "F2": {
+      "n_features_remaining": 27,
+      "r2": 0.2107,
+      "mae_pctp": 1.6067,
+      "sign_accuracy": 0.7292,
+      "marginal_contribution": {
+        "mae_improvement_pctp": -0.0023,
+        "ci95_low": -0.0242,
+        "ci95_high": 0.0258,
+        "significant": false
+      }
+    },
+    "F3": {
+      "n_features_remaining": 21,
+      "r2": -0.0913,
+      "mae_pctp": 1.9745,
+      "sign_accuracy": 0.5643,
+      "marginal_contribution": {
+        "mae_improvement_pctp": 0.3655,
+        "ci95_low": 0.2329,
+        "ci95_high": 0.5129,
+        "significant": true
+      }
+    },
+    "F4": {
+      "n_features_remaining": 24,
+      "r2": 0.2397,
+      "mae_pctp": 1.5818,
+      "sign_accuracy": 0.7171,
+      "marginal_contribution": {
+        "mae_improvement_pctp": -0.0272,
+        "ci95_low": -0.0467,
+        "ci95_high": -0.0094,
+        "significant": false
+      }
+    },
+    "F5": {
+      "n_features_remaining": 25,
+      "r2": 0.2084,
+      "mae_pctp": 1.6143,
+      "sign_accuracy": 0.7201,
+      "marginal_contribution": {
+        "mae_improvement_pctp": 0.0053,
+        "ci95_low": -0.0405,
+        "ci95_high": 0.0455,
+        "significant": false
+      }
+    },
+    "F7": {
+      "n_features_remaining": 27,
+      "r2": 0.2195,
+      "mae_pctp": 1.6022,
+      "sign_accuracy": 0.711,
+      "marginal_contribution": {
+        "mae_improvement_pctp": -0.0068,
+        "ci95_low": -0.0298,
+        "ci95_high": 0.0137,
+        "significant": false
+      }
+    },
+    "F8": {
+      "n_features_remaining": 28,
+      "r2": 0.2195,
+      "mae_pctp": 1.5988,
+      "sign_accuracy": 0.7156,
+      "marginal_contribution": {
+        "mae_improvement_pctp": -0.0102,
+        "ci95_low": -0.0293,
+        "ci95_high": 0.0099,
+        "significant": false
+      }
+    }
+  },
+  "interpretation_guardrails": [
+    "solo 는 카테고리 자체 설명력, leave_one_out 은 다른 팩터를 통제한 한계 기여다.",
+    "solo 가 유의해도 leave_one_out 이 유의하지 않으면, 그 정보는 다른 카테고리에 중복돼 있다.",
+    "significant=true 는 MAE 개선의 95% CI 하한이 0을 넘는다는 뜻이며, 실무적 크기는 별개로 판단해야 한다.",
+    "피처 수가 적은 카테고리(F1=2, F8=2)는 표본력이 낮아 유의성 미달이 신호 부재를 뜻하지 않는다."
+  ]
+}
