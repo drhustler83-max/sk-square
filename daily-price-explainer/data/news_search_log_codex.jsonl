@@ -937,3 +937,23 @@
 {"trading_date":"20221115","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전일 장마감 후 발표된 SK스퀘어 3분기 실적 기사"}
 {"trading_date":"20221116","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"실적 추정치 괴리, SK그룹 실적 분석, SK쉴더스 IPO 전략 기사"}
 {"trading_date":"20221121","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"온마인드 투자유치와 드림어스컴퍼니 콘텐츠 투자 기사"}
+{"trading_date":"20221124","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 4종 검색 결과 유효시간 창에 해당하는 채택 가능 기사 없음"}
+{"trading_date":"20221125","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 4종 검색 결과 URL·게시시각이 확인되는 관련 기사 없음"}
+{"trading_date":"20221128","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK그룹 투자전략과 SK스퀘어 NAV 할인·자회사 매각 관련 분석기사 확인"}
+{"trading_date":"20221130","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"계열사 출자 공시 후속, 신임 대표 내정, 포트폴리오 매각 전망 기사 확인"}
+{"trading_date":"20221201","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SK스퀘어 신임 대표 예상 및 공식 인사 발표 기사 확인"}
+{"trading_date":"20221202","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전일 장마감 후 공개된 신임 CEO 관련 종합·비판 기사 귀속"}
+{"trading_date":"20221205","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"직전 거래일 장마감 후 공개된 SK그룹 재무·전략통 인사 분석기사 귀속"}
+{"trading_date":"20221208","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 4종과 포트폴리오사 조합 재검색 결과 채택 가능 기사 없음"}
+{"trading_date":"20221209","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 URL·게시시각이 확인되는 관련 기사 없음"}
+{"trading_date":"20221214","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"SK㈜ 관련 리포트는 별도 종목이므로 제외; SK스퀘어 채택 기사 없음"}
+{"trading_date":"20221215","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 4종 검색 결과 채택 가능 기사 없음"}
+{"trading_date":"20221219","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어 및 포트폴리오사 교차검색 결과 관련 기사 없음"}
+{"trading_date":"20221221","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"유효시간 창 내 채택 가능한 언론·증권사 기사 없음"}
+{"trading_date":"20221223","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"전일 장마감 후 공개된 콘텐츠웨이브 유상증자·SK스퀘어 지분 확대 기사 귀속"}
+{"trading_date":"20221226","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"휴일 공개된 11번가 IPO 전망 및 SK쉴더스 투자유치 협상 기사 귀속"}
+{"trading_date":"20221228","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"SK쉴더스 협상 기사는 최초 유료 게재일 기준 20221226에 귀속; 이 날짜의 신규 채택 기사 없음"}
+{"trading_date":"20230106","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"장마감 전까지 채택 가능한 관련 기사 없음; 18:32 공개 기사는 다음 거래일로 이동"}
+{"trading_date":"20230109","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"크래프톤 주식 현물배당, 장중 외국인 수급, CES ICT 협력 기사 확인"}
+{"trading_date":"20230110","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전일 장마감 후 근무제 개편 기사와 NAV 할인 해소 전망 증권기사 확인"}
+{"trading_date":"20230111","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"전일 장마감 후 공개된 SK ICT 계열사 공동 거점오피스 관련 후속기사 귀속"}
