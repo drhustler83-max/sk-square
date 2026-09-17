@@ -1,0 +1,119 @@
+{
+  "generated_from": {
+    "factor_log": "factor_log.csv",
+    "nav_daily": "nav_daily.csv"
+  },
+  "definition": "divergence ≈ (β − w_hynix) × hynix_ret",
+  "w_denominator": "listed_value_mtm(t-1) + unlisted_value(t) + netcash_value(t)",
+  "observations": 1174,
+  "date_start": "20211130",
+  "date_end": "20260916",
+  "full_sample": {
+    "beta": 0.885,
+    "beta_t": 44.3,
+    "beta_r2": 0.6369,
+    "w_hynix_mean": 0.7792,
+    "beta_minus_w": 0.1058,
+    "divergence_on_hynix_slope": 0.0033,
+    "divergence_on_hynix_t": 0.17,
+    "divergence_on_hynix_r2": 0.0,
+    "corr_divergence_hynix": 0.0051,
+    "v1_divergence_on_hynix_slope": -0.013,
+    "v1_divergence_on_hynix_t": -0.66
+  },
+  "by_year": [
+    {
+      "year": "2022",
+      "n": 235,
+      "beta": 0.5778,
+      "beta_t": 9.07,
+      "w_hynix_mean": 0.6629,
+      "w_hynix_min": 0.5832,
+      "w_hynix_max": 0.7268,
+      "beta_minus_w": -0.0852,
+      "divergence_on_hynix_slope": -0.0972,
+      "divergence_on_hynix_t": -1.54,
+      "divergence_on_hynix_r2": 0.01,
+      "corr_divergence_hynix": -0.1002,
+      "v1_divergence_on_hynix_slope": -0.1635,
+      "v1_divergence_on_hynix_t": -2.57
+    },
+    {
+      "year": "2023",
+      "n": 234,
+      "beta": 0.5386,
+      "beta_t": 11.82,
+      "w_hynix_mean": 0.6583,
+      "w_hynix_min": 0.5841,
+      "w_hynix_max": 0.719,
+      "beta_minus_w": -0.1197,
+      "divergence_on_hynix_slope": -0.1284,
+      "divergence_on_hynix_t": -2.84,
+      "divergence_on_hynix_r2": 0.0336,
+      "corr_divergence_hynix": -0.1833,
+      "v1_divergence_on_hynix_slope": -0.2047,
+      "v1_divergence_on_hynix_t": -4.49
+    },
+    {
+      "year": "2024",
+      "n": 230,
+      "beta": 0.8567,
+      "beta_t": 15.0,
+      "w_hynix_mean": 0.7958,
+      "w_hynix_min": 0.7393,
+      "w_hynix_max": 0.844,
+      "beta_minus_w": 0.0609,
+      "divergence_on_hynix_slope": 0.0543,
+      "divergence_on_hynix_t": 0.95,
+      "divergence_on_hynix_r2": 0.0039,
+      "corr_divergence_hynix": 0.0628,
+      "v1_divergence_on_hynix_slope": 0.0246,
+      "v1_divergence_on_hynix_t": 0.43
+    },
+    {
+      "year": "2025",
+      "n": 232,
+      "beta": 0.9659,
+      "beta_t": 21.73,
+      "w_hynix_mean": 0.8682,
+      "w_hynix_min": 0.8058,
+      "w_hynix_max": 0.9437,
+      "beta_minus_w": 0.0977,
+      "divergence_on_hynix_slope": 0.0874,
+      "divergence_on_hynix_t": 1.96,
+      "divergence_on_hynix_r2": 0.0164,
+      "corr_divergence_hynix": 0.1279,
+      "v1_divergence_on_hynix_slope": 0.0769,
+      "v1_divergence_on_hynix_t": 1.72
+    },
+    {
+      "year": "2026",
+      "n": 167,
+      "beta": 0.9661,
+      "beta_t": 29.21,
+      "w_hynix_mean": 0.973,
+      "w_hynix_min": 0.9482,
+      "w_hynix_max": 0.9879,
+      "beta_minus_w": -0.0069,
+      "divergence_on_hynix_slope": -0.0101,
+      "divergence_on_hynix_t": -0.31,
+      "divergence_on_hynix_r2": 0.0006,
+      "corr_divergence_hynix": -0.0238,
+      "v1_divergence_on_hynix_slope": -0.009,
+      "v1_divergence_on_hynix_t": -0.27
+    }
+  ],
+  "sign_flip_detected": true,
+  "beta_minus_w_sign_by_year": {
+    "2022": -1,
+    "2023": -1,
+    "2024": 1,
+    "2025": 1,
+    "2026": -1
+  },
+  "rolling": {
+    "window": 120,
+    "n": 1055,
+    "corr_beta_minus_w_vs_realized_slope": 0.9597
+  }
+}

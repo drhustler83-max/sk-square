@@ -137,6 +137,10 @@ def _search_coverage() -> tuple[dict[str, str], set[str]]:
     if SEARCH_REMAINING.exists():
         pending = pd.read_csv(SEARCH_REMAINING, dtype={"date": str})
         remaining = set(_date_key(pending["date"]))
+        # 대기 목록은 수기 갱신이라 낡기 쉽다. 검색 로그에 완료 기록이 있으면
+        # 로그를 신뢰한다 (낡은 목록이 표본을 조용히 깎던 문제).
+        remaining -= {key for key in remaining
+                      if resolved.get(key, "").startswith("completed_")}
     return resolved, remaining
 
 

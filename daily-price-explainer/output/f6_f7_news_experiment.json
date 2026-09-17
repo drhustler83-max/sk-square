@@ -1,0 +1,518 @@
+{
+  "experiment": "f6_f7_news_split_v1",
+  "as_of": "20260727",
+  "target": "divergence (matched case/control sample)",
+  "validation": "expanding window; first 40% seed; four OOS blocks; moving-block bootstrap (20d, 2000 reps); XGB/MLP averaged over 3 seeds",
+  "hypothesis": "Phase 1 은 뉴스 84개를 통째로 넣어 기각됐다. 기업 뉴스 신호가 매크로 뉴스에 희석됐을 가능성을 버킷 분할로 검정한다.",
+  "audit": {
+    "workbook_rows": 1526,
+    "article_rows_after_cluster_dedup": 935,
+    "subject_counts": {
+      "sk_square": 366,
+      "portfolio_company": 294,
+      "macro_market": 65,
+      "governance": 62,
+      "shareholder_policy": 53,
+      "semiconductor_sector": 41,
+      "sk_hynix": 29,
+      "other": 15,
+      "market_flow": 8,
+      "regulation": 2
+    },
+    "bucket_definition": {
+      "f6": [
+        "governance",
+        "portfolio_company",
+        "shareholder_policy",
+        "sk_square"
+      ],
+      "f7": [
+        "macro_market",
+        "regulation",
+        "semiconductor_sector"
+      ],
+      "hx": [
+        "sk_hynix"
+      ]
+    },
+    "excluded_subjects": [
+      "market_flow",
+      "other"
+    ],
+    "bucket_article_counts": {
+      "f6": 775,
+      "f7": 108,
+      "hx": 29
+    },
+    "bucket_days_with_article": {
+      "f6": 484,
+      "f7": 90,
+      "hx": 28
+    },
+    "bucket_feature_counts": {
+      "f6": 73,
+      "f7": 57,
+      "hx": 62
+    },
+    "numeric_feature_count": 30,
+    "excluded_target_derived": [
+      "divergence",
+      "divergence_ma5",
+      "nav_discount_pct",
+      "nav_discount_delta",
+      "nav_discount_vs_ma20",
+      "nav_discount_z60",
+      "skq_vol20"
+    ],
+    "model_dates": 863,
+    "date_start": "20211201",
+    "date_end": "20260727"
+  },
+  "n_oos": 518,
+  "regression": {
+    "baseline": {
+      "n_features": 0,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        }
+      }
+    },
+    "numeric_30": {
+      "n_features": 30,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -6.0914,
+          "mae_pctp": 3.0913,
+          "sign_accuracy": 0.6969
+        },
+        "ridge": {
+          "r2": -5.6904,
+          "mae_pctp": 3.0101,
+          "sign_accuracy": 0.6969
+        },
+        "mlp_2layer": {
+          "r2": -3.4305,
+          "mae_pctp": 2.5734,
+          "sign_accuracy": 0.6892
+        },
+        "xgboost": {
+          "r2": 0.2946,
+          "mae_pctp": 1.6828,
+          "sign_accuracy": 0.7239
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": 0.4199,
+        "ci95_low": 0.2781,
+        "ci95_high": 0.5356,
+        "significant": true
+      }
+    },
+    "numeric_plus_f6": {
+      "n_features": 103,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -5.6636,
+          "mae_pctp": 3.0624,
+          "sign_accuracy": 0.7046
+        },
+        "ridge": {
+          "r2": -5.7789,
+          "mae_pctp": 3.0262,
+          "sign_accuracy": 0.7181
+        },
+        "mlp_2layer": {
+          "r2": -1.7707,
+          "mae_pctp": 2.3476,
+          "sign_accuracy": 0.6583
+        },
+        "xgboost": {
+          "r2": 0.2995,
+          "mae_pctp": 1.6737,
+          "sign_accuracy": 0.722
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": 0.429,
+        "ci95_low": 0.2926,
+        "ci95_high": 0.5413,
+        "significant": true
+      },
+      "xgb_vs_numeric30": {
+        "mae_improvement_pctp": 0.0091,
+        "ci95_low": -0.0049,
+        "ci95_high": 0.0227,
+        "significant": false
+      }
+    },
+    "numeric_plus_f7": {
+      "n_features": 87,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -69.662,
+          "mae_pctp": 5.499,
+          "sign_accuracy": 0.6892
+        },
+        "ridge": {
+          "r2": -6.1348,
+          "mae_pctp": 3.0313,
+          "sign_accuracy": 0.7046
+        },
+        "mlp_2layer": {
+          "r2": -4.5647,
+          "mae_pctp": 2.659,
+          "sign_accuracy": 0.7008
+        },
+        "xgboost": {
+          "r2": 0.296,
+          "mae_pctp": 1.6798,
+          "sign_accuracy": 0.7317
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": 0.4229,
+        "ci95_low": 0.2816,
+        "ci95_high": 0.5384,
+        "significant": true
+      },
+      "xgb_vs_numeric30": {
+        "mae_improvement_pctp": 0.003,
+        "ci95_low": -0.0038,
+        "ci95_high": 0.0092,
+        "significant": false
+      }
+    },
+    "numeric_plus_f6_f7": {
+      "n_features": 160,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -32.3208,
+          "mae_pctp": 4.8808,
+          "sign_accuracy": 0.6737
+        },
+        "ridge": {
+          "r2": -5.9471,
+          "mae_pctp": 3.0403,
+          "sign_accuracy": 0.7046
+        },
+        "mlp_2layer": {
+          "r2": -2.9567,
+          "mae_pctp": 2.5112,
+          "sign_accuracy": 0.668
+        },
+        "xgboost": {
+          "r2": 0.2966,
+          "mae_pctp": 1.6784,
+          "sign_accuracy": 0.7143
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": 0.4244,
+        "ci95_low": 0.2854,
+        "ci95_high": 0.5381,
+        "significant": true
+      },
+      "xgb_vs_numeric30": {
+        "mae_improvement_pctp": 0.0044,
+        "ci95_low": -0.0087,
+        "ci95_high": 0.0181,
+        "significant": false
+      }
+    },
+    "numeric_plus_all_news": {
+      "n_features": 222,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -29.2472,
+          "mae_pctp": 4.8004,
+          "sign_accuracy": 0.6737
+        },
+        "ridge": {
+          "r2": -5.8979,
+          "mae_pctp": 3.0495,
+          "sign_accuracy": 0.6988
+        },
+        "mlp_2layer": {
+          "r2": -3.5766,
+          "mae_pctp": 2.5839,
+          "sign_accuracy": 0.6737
+        },
+        "xgboost": {
+          "r2": 0.2997,
+          "mae_pctp": 1.6725,
+          "sign_accuracy": 0.7143
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": 0.4303,
+        "ci95_low": 0.2929,
+        "ci95_high": 0.5427,
+        "significant": true
+      },
+      "xgb_vs_numeric30": {
+        "mae_improvement_pctp": 0.0103,
+        "ci95_low": -0.0027,
+        "ci95_high": 0.025,
+        "significant": false
+      }
+    },
+    "f6_only": {
+      "n_features": 73,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -0.7077,
+          "mae_pctp": 2.6158,
+          "sign_accuracy": 0.4788
+        },
+        "ridge": {
+          "r2": -0.1226,
+          "mae_pctp": 2.2177,
+          "sign_accuracy": 0.4846
+        },
+        "mlp_2layer": {
+          "r2": -0.0259,
+          "mae_pctp": 2.1038,
+          "sign_accuracy": 0.4903
+        },
+        "xgboost": {
+          "r2": -0.0146,
+          "mae_pctp": 2.13,
+          "sign_accuracy": 0.4807
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": -0.0273,
+        "ci95_low": -0.0722,
+        "ci95_high": 0.0153,
+        "significant": false
+      },
+      "xgb_vs_numeric30": {
+        "mae_improvement_pctp": -0.4472,
+        "ci95_low": -0.5655,
+        "ci95_high": -0.2926,
+        "significant": false
+      }
+    },
+    "f7_only": {
+      "n_features": 57,
+      "models": {
+        "mean_baseline": {
+          "r2": -0.0039,
+          "mae_pctp": 2.1027,
+          "sign_accuracy": 0.5
+        },
+        "ols": {
+          "r2": -90.7811,
+          "mae_pctp": 5.6511,
+          "sign_accuracy": 0.5
+        },
+        "ridge": {
+          "r2": -0.4504,
+          "mae_pctp": 2.3419,
+          "sign_accuracy": 0.5
+        },
+        "mlp_2layer": {
+          "r2": -0.0265,
+          "mae_pctp": 2.1177,
+          "sign_accuracy": 0.4942
+        },
+        "xgboost": {
+          "r2": -0.0124,
+          "mae_pctp": 2.1052,
+          "sign_accuracy": 0.5193
+        }
+      },
+      "xgb_vs_baseline": {
+        "mae_improvement_pctp": -0.0024,
+        "ci95_low": -0.0421,
+        "ci95_high": 0.0388,
+        "significant": false
+      },
+      "xgb_vs_numeric30": {
+        "mae_improvement_pctp": -0.4224,
+        "ci95_low": -0.5387,
+        "ci95_high": -0.2737,
+        "significant": false
+      }
+    }
+  },
+  "classification": {
+    "numeric_30": {
+      "roc_auc": 0.6556,
+      "pr_auc": 0.6687,
+      "brier": 0.2357
+    },
+    "numeric_plus_f6": {
+      "roc_auc": 0.6498,
+      "pr_auc": 0.6566,
+      "brier": 0.2372
+    },
+    "numeric_plus_f7": {
+      "roc_auc": 0.6596,
+      "pr_auc": 0.6692,
+      "brier": 0.2352
+    },
+    "numeric_plus_f6_f7": {
+      "roc_auc": 0.6512,
+      "pr_auc": 0.658,
+      "brier": 0.2366
+    },
+    "numeric_plus_all_news": {
+      "roc_auc": 0.6544,
+      "pr_auc": 0.6615,
+      "brier": 0.236
+    },
+    "f6_only": {
+      "roc_auc": 0.487,
+      "pr_auc": 0.4952,
+      "brier": 0.2589
+    },
+    "f7_only": {
+      "roc_auc": 0.4493,
+      "pr_auc": 0.4763,
+      "brier": 0.2523
+    },
+    "_positive_rate_oos": 0.5
+  },
+  "shap_top_numeric_plus_f6_f7": [
+    {
+      "feature": "flow_z20",
+      "mean_abs_shap": 0.706787,
+      "share": 0.2351
+    },
+    {
+      "feature": "individual_net",
+      "mean_abs_shap": 0.570909,
+      "share": 0.1899
+    },
+    {
+      "feature": "hynix_ex_sector",
+      "mean_abs_shap": 0.521228,
+      "share": 0.1734
+    },
+    {
+      "feature": "hynix_ret",
+      "mean_abs_shap": 0.173414,
+      "share": 0.0577
+    },
+    {
+      "feature": "institution_net",
+      "mean_abs_shap": 0.155186,
+      "share": 0.0516
+    },
+    {
+      "feature": "sector_excess",
+      "mean_abs_shap": 0.119233,
+      "share": 0.0397
+    },
+    {
+      "feature": "kospi_ret",
+      "mean_abs_shap": 0.116236,
+      "share": 0.0387
+    },
+    {
+      "feature": "flow_sum",
+      "mean_abs_shap": 0.085366,
+      "share": 0.0284
+    },
+    {
+      "feature": "usd_krw_chg_pct",
+      "mean_abs_shap": 0.081903,
+      "share": 0.0272
+    },
+    {
+      "feature": "fut_volume",
+      "mean_abs_shap": 0.075498,
+      "share": 0.0251
+    },
+    {
+      "feature": "foreign_net",
+      "mean_abs_shap": 0.061844,
+      "share": 0.0206
+    },
+    {
+      "feature": "foreign_net_lag1",
+      "mean_abs_shap": 0.051133,
+      "share": 0.017
+    },
+    {
+      "feature": "fut_basis_pct",
+      "mean_abs_shap": 0.047774,
+      "share": 0.0159
+    },
+    {
+      "feature": "foreign_net_3d",
+      "mean_abs_shap": 0.034894,
+      "share": 0.0116
+    },
+    {
+      "feature": "shorting_volume_ratio",
+      "mean_abs_shap": 0.023934,
+      "share": 0.008
+    },
+    {
+      "feature": "f6_mechanism_nav",
+      "mean_abs_shap": 0.023093,
+      "share": 0.0077
+    },
+    {
+      "feature": "short_bal_chg_3d",
+      "mean_abs_shap": 0.021917,
+      "share": 0.0073
+    },
+    {
+      "feature": "f6_article_count",
+      "mean_abs_shap": 0.01938,
+      "share": 0.0064
+    },
+    {
+      "feature": "f6_mechanism_valuation_multiple",
+      "mean_abs_shap": 0.014753,
+      "share": 0.0049
+    },
+    {
+      "feature": "foreign_own_pct",
+      "mean_abs_shap": 0.012871,
+      "share": 0.0043
+    }
+  ],
+  "guardrails": [
+    "F7(매크로) 기사는 109건뿐이라 표본력이 낮다. 미달이 곧 신호 부재를 뜻하지 않는다.",
+    "hx(sk_hynix) 버킷은 하이닉스 주가가 1단계에서 이미 통제되므로 이중계산 우려가 있어 참고용이다.",
+    "매칭 표본 확률은 모집단 확률이 아니다.",
+    "significant=true 는 MAE 개선 CI 하한이 0을 넘는다는 뜻이며 실무적 크기는 별도 판단이 필요하다."
+  ]
+}

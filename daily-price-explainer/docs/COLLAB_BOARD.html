@@ -515,6 +515,14 @@
         <h4>1. 최근 커밋 이력</h4>
 
         <div class="section">
+          <h5><span class="mono">2026-09-16 &middot; c347141</span> &mdash; feat(experiment): 팩터 카테고리별 개별 유의성 검증 — F3 수급이 사실상 전부</h5>
+        </div>
+
+        <div class="section">
+          <h5><span class="mono">2026-09-16 &middot; 664692e</span> &mdash; refactor(taxonomy): F2를 섹터로 축소, 매크로를 F7로, F8 국면·상호작용 신설</h5>
+        </div>
+
+        <div class="section">
           <h5><span class="mono">2026-09-08 &middot; 7143869</span> &mdash; chore: 작업 폴더 구조 정리 + Phase 1 보고서 + 상장주식수 모듈</h5>
         </div>
 
@@ -976,6 +984,343 @@
         <div class="next-owner">
           다음 담당자 → ChatGPT Codex · 856일 검색·속성추출 진행 (20일 배치마다 진행상황 +
           소요시간 보고) → 완료 후 Claude Code가 검증 및 DL 재실행
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">F1~F8 taxonomy 재배치 + 팩터별 유의성 검증 — 수급(F3)이 사실상 전부</h2>
+          <div class="post-meta">
+            <span class="author-badge author-claude">Claude Code</span>
+            <span class="timestamp">2026-09-17 10:40</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>1. taxonomy 재배치 (Sean 결정, 2026-09-16)</h4>
+        <p>Phase 2에서 F6·F7을 뉴스 카테고리로 쓰기로 하면서, 이름표가 내용물과 어긋나던 부분을 함께 정리했습니다.
+        <strong>피처의 추가·삭제는 없고 이름표만 재배치</strong>했습니다 — 등록 37개 / 누설차단 후 30개 그대로입니다.</p>
+        <ul>
+          <li><strong>F2</strong> "섹터·매크로" → <strong>"섹터"</strong>로 축소 (3개: <span class="mono">sector_semiconductor, sector_excess, hynix_ex_sector</span>)</li>
+          <li>매크로 3개(<span class="mono">kospi_ret, usd_krw_chg_pct, kospi_vol20</span>)를 F2 → <strong>F7 "매크로"</strong>로 이전</li>
+          <li><strong>F8 "국면·상호작용" 신설</strong> — 구 F7의 <span class="mono">skq_vol20, hynix_x_shortinc, disc_delta_lag1</span> 이전 보존</li>
+          <li><strong>F6</strong>은 숫자 피처 0개 유지 (뉴스 전용 칸). F6=기업 / F7=매크로 뉴스 분할 기준을 <span class="mono">news_primary_subject</span> 값으로 주석에 명시</li>
+        </ul>
+        <p>코드가 F 코드를 문자열로 직접 비교하는 곳은 <span class="mono">attribution.py</span> 범례 한 줄뿐이고
+        (나머지는 <span class="mono">code.split(".")[0]</span>로 일반 처리), 누설차단 목록은 피처 <em>이름</em> 기준이라
+        재배치 영향이 없음을 확인했습니다.</p>
+
+        <h4>2. 카테고리별 개별 유의성 검증 (신규)</h4>
+        <p><span class="mono">tools/experiment_factor_ablation.py</span> 신규 작성.
+        <span class="mono">experiment_unbiased_dl.py</span>와 <strong>동일 설계</strong>(확장윈도우 40% seed + 4블록,
+        동일 XGBoost 파라미터, 누설차단 7개 제외)로 맞춰 결과를 비교 가능하게 했습니다.
+        유의성은 점추정이 아니라 <strong>이동블록 부트스트랩(20일 블록, 2,000회) 95% CI</strong>로 판정했습니다.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>0.2116</strong>
+            <span>전체 30개 OOS R² — 기존 0.2141 재현 확인 (OOS 651→661일)</span>
+          </div>
+          <div class="metric-card">
+            <strong>−0.0913</strong>
+            <span>F3(수급) 제거 시 R² — 평균 예측보다도 못해짐. 7개 중 유일하게 유의</span>
+          </div>
+          <div class="metric-card">
+            <strong>+0.0211 / +0.0281</strong>
+            <span>F1 / F4 제거 시 R² 개선 — 통계적으로 해로움(과적합 노이즈)</span>
+          </div>
+          <div class="metric-card">
+            <strong>1 / 7</strong>
+            <span>유의한 카테고리 수. F2·F5·F7·F8은 CI가 0을 포함</span>
+          </div>
+        </div>
+
+        <p><strong>solo와 LOO가 어긋나는 지점</strong> — F3는 solo에선 간신히 미달(R² 0.078, CI가 0 포함)인데
+        LOO에선 강하게 유의합니다. F3 단독으론 약하지만 F3가 없으면 나머지 21개가 아무것도 못 한다는 뜻입니다.
+        그리고 비-F3 카테고리끼리 정보가 중복되어(다중공선성) 하나씩 빼면 서로 대체되므로,
+        <strong>LOO만으로는 비-F3 중 무엇이 필요한지 가릴 수 없습니다.</strong></p>
+
+        <h4>3. F1이 해로운 원인 규명</h4>
+        <p>정의상 <span class="mono">divergence = skq_ret − nav_implied_ret</span>이고,
+        <span class="mono">skq_ret ≈ β×hynix_ret</span>, <span class="mono">nav_implied_ret ≈ w×hynix_ret</span>이므로
+        <strong><span class="mono">divergence ≈ (β−w) × hynix_ret</span></strong>입니다.
+        이 (β−w)가 연도별로 부호를 뒤집습니다.</p>
+        <div class="code-block">
+연도    β(실제베타)   w(NAV내 비중)   β−w      실측 corr
+2022      0.572        0.740       -0.168     -0.166
+2023      0.540        0.754       -0.215     -0.283
+2024      0.857        0.832       +0.025     +0.028
+2025      0.966        0.880       +0.086     +0.113
+2026      0.959        0.970       -0.010     -0.040
+        </div>
+        <p>이론값과 실측 상관이 거의 정확히 일치해 메커니즘이 확정됐습니다. 확장윈도우는 과거로 학습하므로
+        2022~23에서 배운 음의 관계를 2025 양의 구간에 적용해 <strong>체계적으로 틀립니다.</strong>
+        F1의 나머지 피처 <span class="mono">divergence_lag1</span>도 부호 있는 자기상관이 +0.016으로 노이즈였습니다
+        (신호는 절대값 쪽 +0.132인데 그건 피처로 등록돼 있지 않음).</p>
+        <p>추가로 <strong><span class="mono">nav_implied_ret</span>이 <span class="mono">FEATURE_TAXONOMY</span>에
+        등록조차 되어 있지 않다</strong>는 것도 확인했습니다. 타깃을 만드는 데만 쓰이고 모델 입력으로는 한 번도
+        들어간 적이 없습니다. F1의 이름표("NAV")와 실제 내용물(<span class="mono">hynix_ret</span> +
+        <span class="mono">divergence_lag1</span>)이 어긋나 있었습니다.</p>
+
+        <h4>4. 부수 발견 — 밸류업의 통계적 지문</h4>
+        <p>위 표에서 <strong>β가 0.57→0.96, w가 0.74→0.97로 수렴</strong>했습니다.
+        2022~23년엔 NAV가 0.74 움직일 때 주가는 0.57만 움직였고(상승장에서 할인율 확대),
+        지금은 간극이 −0.010으로 닫혔습니다. <strong>SK스퀘어가 NAV를 거의 1:1로 추종하게 됐다는 뜻이고,
+        IR이 주장해 온 할인율 축소가 팩터 구조에서 관측된 것</strong>입니다.
+        동시에 하이닉스로 잔차를 설명하던 채널이 닫혔다는 의미이기도 합니다.</p>
+
+        <h4>5. 실무 함의 — 챗봇 프롬프트가 검증 결과와 반대</h4>
+        <p><span class="mono">prompts/system_prompt.py</span>의 원인 탐색 순서는
+        <strong>①뉴스 → ②수급 → ③공매도 → ④선물</strong>입니다. 검증 결과는
+        <strong>수급이 사실상 유일</strong>하고, 뉴스는 Phase 1에서 기각됐으며, 공매도는 넣으면 오히려 해롭고,
+        선물은 기여가 0과 구분되지 않습니다. <strong>1순위와 3·4순위가 통계적으로 뒤집혀 있으며 아직 미수정입니다.</strong>
+        "DPE 1.0 종료"의 최우선 항목입니다.</p>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>변경 파일:</strong>
+          <span class="mono">tools/features.py, tools/attribution.py, tools/experiment_factor_ablation.py(신규),
+          output/factor_ablation.json(신규), docs/DPE_Phase1_Report.html(9.4절 추가)</span>
+        </div>
+        <div class="footer-section">
+          <strong>커밋:</strong>
+          <span class="mono">664692e</span> (taxonomy 재배치) ·
+          <span class="mono">c347141</span> (ablation 실험)
+        </div>
+        <div class="footer-section">
+          <strong>태그:</strong>
+          <span class="tag tag-done">완료</span>
+          <span class="tag tag-decision">결정</span>
+          <span class="tag tag-file">파일</span>
+          <span class="tag tag-todo">할일</span>
+        </div>
+        <div class="next-owner">
+          다음 담당자 → Sean 결정 대기 · (1) F1·F4 동시 제거 테스트 (2) F6 기업뉴스/F7 매크로뉴스
+          재분할 검증 (3) 분기별 Historical NAV 반영 (4) system_prompt.py 원인 순서 수정
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">데이터 백필 + F6·F7 뉴스 분할 재검증 — 희석 가설 기각</h2>
+          <div class="post-meta">
+            <span class="author-badge author-claude">Claude Code</span>
+            <span class="timestamp">2026-09-17 11:20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>1. 관찰기간 진단 — 팩터별로 달랐음</h4>
+        <p>Sean 질문("F1~F8 관찰기간이 동일한가?")에서 출발해 점검한 결과 <strong>동일하지 않았습니다.</strong>
+        30개 전체가 동시에 관측되는 날은 1,101일 중 <strong>1,015일(92.2%)</strong>뿐이었고,
+        rolling 피처가 있는 카테고리(F3 <span class="mono">flow_z20</span>, F7 <span class="mono">kospi_vol20</span>,
+        F4 <span class="mono">short_ratio_vs_ma20</span>)는 앞 20일이 잘려 시작일이 2021-12-10~13으로 밀려 있었습니다.</p>
+        <p>그 과정에서 <strong>운영 문제 두 개</strong>를 발견했습니다.</p>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>7거래일 누락</strong>
+            <span>9월에만 0903·0904·0908·0909·0911·0914·0916이 로그에 없었음 — 스케줄러가 날짜를 흘리고 있음</span>
+          </div>
+          <div class="metric-card">
+            <strong>수급 8월 중단</strong>
+            <span>foreign_own_pct·individual_net이 08-03/04에서 멈춤. individual_net은 SHAP 3위(18.5%) 피처</span>
+          </div>
+          <div class="metric-card">
+            <strong>선물 미상장</strong>
+            <span>fut_listed=1인 마지막 날이 2026-07-27. 이후 F5 5개 피처가 전부 0 (백필로 해결 불가)</span>
+          </div>
+        </div>
+
+        <h4>2. 백필 실행 (2021-11-30 ~ 2026-09-16)</h4>
+        <p><span class="mono">backfill_extra.py</span>로 수급 2개 컬럼을 전 구간 재조회하고,
+        <span class="mono">main.py backfill</span>로 누락 거래일 20일을 채웠습니다.
+        <strong><span class="mono">--rebuild</span>는 쓰지 않았습니다</strong> — CSV를 지우고 재생성하면
+        1Q26 설정(드림어스 티커도 틀린 상태)으로 2021년 NAV를 다시 계산해 Phase 1 수치가 전부 무효가 됩니다.
+        rebuild 없는 backfill은 기존 행을 건드리지 않고 없는 날짜만 추가합니다.</p>
+        <p>결과: 타깃 유효행 <strong>1,101 → 1,121일</strong>, 종료일 2026-09-15 → <strong>2026-09-16</strong>.
+        다만 <strong>시작일은 통일할 수 없습니다</strong> — 20일 z-score는 20일치가 쌓여야 첫 값이 나오는
+        계산 정의상의 문제이지 수집 누락이 아닙니다.</p>
+
+        <h4>3. 팩터 ablation 재실행 — 해로운 카테고리가 2개에서 4개로</h4>
+        <p>백필로 <span class="mono">individual_net</span> 값이 바뀌었으므로 재실행했습니다 (OOS 661 → 673일).</p>
+        <div class="code-block">
+             solo R²   빼면 R²   한계기여        95% CI          판정
+F1 NAV       -0.1148   +0.2203   -0.0195   [-0.034, -0.005]   해로움
+F2 섹터      -0.0706   +0.2235   -0.0282   [-0.062, +0.003]   무관
+F3 수급      +0.0691   -0.0744   +0.3307   [+0.204, +0.474]   유의 ★
+F4 공매도    -0.1672   +0.2336   -0.0370   [-0.057, -0.019]   해로움
+F5 선물      -0.0824   +0.1968   +0.0072   [-0.027, +0.041]   무관
+F7 매크로    -0.0561   +0.2194   -0.0224   [-0.043, -0.003]   해로움 (신규)
+F8 국면      -0.0601   +0.2142   -0.0215   [-0.037, -0.004]   해로움 (신규)
+전체 30개 R² +0.2057 / 기준선 -0.0063 / 부호정확도 0.710
+        </div>
+        <p>결론 강화 — <strong>F3를 제외한 6개 중 4개가 통계적으로 해롭고 2개만 중립</strong>입니다.
+        유용한 카테고리는 여전히 F3 하나뿐입니다.</p>
+
+        <h4>4. F6(기업뉴스)·F7(매크로뉴스) 분할 재검증 — 기각</h4>
+        <p>가설은 "기업 뉴스 신호가 매크로 잡음에 희석돼 Phase 1에서 안 보였을 것"이었습니다.
+        기사 단위로 되돌아가 <span class="mono">primary_subject</span>로 버킷을 나눠 재집계하고,
+        <span class="mono">experiment_residual_news.py</span>와 동일 설계로 검정했습니다.
+        <span class="mono">numeric_30</span>이 R² 0.2878(기존 0.2811), ROC-AUC 0.6474(기존 0.6468)로
+        재현되어 비교 가능성을 확보했습니다.</p>
+        <div class="code-block">
+피처셋(XGBoost)      R²       MAE     부호    ΔMAE vs 숫자30      판정
+숫자 30            +0.2878  1.6619  0.712        -              기준
+숫자+F6            +0.2898  1.6568  0.706   +0.0051 [-.006,+.018]  미달
+숫자+F7            +0.2924  1.6609  0.710   +0.0010 [-.007,+.009]  미달
+숫자+F6+F7         +0.2975  1.6467  0.702   +0.0152 [+.002,+.032]  유의
+F6 단독            -0.0089  2.1049  0.483        -              무력
+F7 단독            -0.0101  2.0767  0.509        -              무력
+
+분류(case vs control)  숫자30 ROC-AUC 0.6474 -> +F6 0.6392, +F6F7 0.6413 (하락)
+                       F6 단독 0.5079(동전), F7 단독 0.4664(동전 이하)
+        </div>
+        <p><strong>희석 가설 기각.</strong> 개별로는 F6도 F7도 유의하지 않고, 합쳤을 때만 간신히 유의한데
+        그 크기(+0.0152)가 <strong>Phase 1 pooled(+0.0223)보다 오히려 작습니다.</strong>
+        나누면 좋아져야 가설이 맞는데 반대입니다. 부호정확도는 0.712 → 0.702로 떨어지고,
+        판별력도 하락합니다.</p>
+        <p><strong>SHAP</strong> — 상위 11위까지 전부 숫자 피처(1위 <span class="mono">hynix_ex_sector</span> 20.9%,
+        2위 <span class="mono">flow_z20</span> 19.8%, 3위 <span class="mono">individual_net</span> 18.5%).
+        뉴스는 상위 20 중 4개, 기여 합 <strong>2.7%</strong>. F7 뉴스는 상위 20에 하나도 없습니다.
+        그리고 뉴스 중 순위가 높은 것이 <span class="mono">f6_event_stage_follow_up</span>,
+        <span class="mono">f6_article_count</span> — <strong>내용이 아니라 후속보도 여부와 기사 개수</strong>입니다.
+        Phase 1에서 <span class="mono">news_availability_partial_text</span>가 최상위였던 것과 같은 패턴입니다.</p>
+        <p><strong>모델 비교</strong> — OLS는 피처가 늘자 R² -72 ~ -112로 붕괴, Ridge -6, MLP -2~-6.
+        <strong>XGBoost만 작동합니다.</strong> Phase 1의 "딥러닝이 트리 계열을 이기지 못함"과 일치합니다.</p>
+        <p><strong>단서</strong> — F7은 기사 108건/84일뿐이라 "신호 없음"과 "표본 부족"을 구분할 수 없습니다.
+        F6는 775건/462일이라 이 단서가 적용되지 않습니다.</p>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>변경 파일:</strong>
+          <span class="mono">tools/experiment_f6_f7_news.py(신규), output/f6_f7_news_experiment.json(신규),
+          data/factor_log.csv(백필), output/factor_ablation.json(재실행),
+          docs/DPE_Phase1_Report.html(9.4 수치 갱신 + 9.5절 추가), docs/SK스퀘어_Price_Explainer_PRD.docx(v1.0)</span>
+        </div>
+        <div class="footer-section">
+          <strong>태그:</strong>
+          <span class="tag tag-done">완료</span>
+          <span class="tag tag-decision">결정</span>
+          <span class="tag tag-file">파일</span>
+          <span class="tag tag-blocked">막힘</span>
+        </div>
+        <div class="next-owner">
+          다음 담당자 → Sean · DPE 1.0 마무리 단계로 진입. (1) 검증 모델을 챗봇에 연결
+          (2) 여러 번 돌려보며 프롬프트 가드레일 확정 (3) system_prompt.py 원인 순서 교정
+          — 이후 DPE 1.0 완료 선언. 별건으로 스케줄러 날짜 누락 원인 규명 필요
+        </div>
+      </div>
+    </article>
+
+    <article class="post pinned">
+      <div class="post-header">
+        <div>
+          <h2 class="post-title">NAV point-in-time 보정 — "F1·F4가 해롭다"는 결론이 뒤집힘</h2>
+          <div class="post-meta">
+            <span class="author-badge author-claude">Claude Code</span>
+            <span class="timestamp">2026-09-17 18:40</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4>1. 발견 — NAV가 1Q26 스냅샷에 고정돼 있었음</h4>
+        <p>바로 위 포스트의 ablation·F6/F7 결과는 전부 <span class="mono">company_context.py</span>의
+        고정값(발행주식수 132,087,115주, 비상장+순현금 5.115조) 위에서 계산됐습니다. 실제로는
+        발행주식수가 <strong>141,467,571 → 131,923,998주(−6.7%, 자사주 소각 7건)</strong>로,
+        비상장+순현금이 <strong>5.66조 → 3.85조</strong>로 전 기간 계속 바뀌었습니다. 즉 과거로
+        갈수록 시가총액이 최대 7% 저평가된 상태로 <span class="mono">divergence</span>가 계산되고
+        있었습니다.</p>
+
+        <h4>2. NAV 재구성</h4>
+        <ul>
+          <li><span class="mono">tools/build_listed_holdings.py</span> — DART 타법인출자현황·
+          대량보유상황보고로 상장 7개사(SK하이닉스·드림어스·인크로스·나노엔텍·크래프톤·
+          넥써쓰·IONQ) 보유주식수를 일자별 재구성. Sean이 준 소각 이력 7건과 <strong>10/10 정확히
+          일치</strong> 확인</li>
+          <li><span class="mono">tools/build_nav_daily.py</span> — Sean이 제공한 분기별 비상장가치·
+          순현금(억원)을 1분기 시차로 적용해 <span class="mono">nav_daily.csv</span> 생성.
+          상장사는 전량 시가평가(<span class="mono">nav_mtm</span>)</li>
+          <li><span class="mono">tools/apply_nav_v2.py</span> — <span class="mono">factor_log.csv</span>의
+          NAV 계열 컬럼 교체, 원본은 <span class="mono">*_v1</span>로 보존. 분기 재평가로 생기는
+          가짜 수익률 스파이크는 "전일 상장가치 + 당일 비상장·순현금"으로 분모를 잡아 제거</li>
+        </ul>
+
+        <h4>3. 재실행 결과 — 결론이 뒤집힘</h4>
+        <div class="code-block">
+                    solo R²   빼면 R²   한계기여        95% CI          판정(NAV v1→v2)
+F1 NAV/하이닉스     -0.076    +0.238   +0.006   [-0.010,+0.024]   해로움 → 무관
+F2 섹터             -0.071    +0.244   -0.005   [-0.030,+0.021]   무관 (유지)
+F3 수급             +0.119    -0.030   +0.331   [+0.214,+0.469]   유의 (유지, 압도적)
+F4 공매도           -0.104    +0.244   -0.000   [-0.018,+0.020]   해로움 → 무관
+F5 선물             -0.112    +0.208   +0.046   [+0.007,+0.080]   무관 → 유의(신규)
+F7 매크로           -0.067    +0.242   +0.001   [-0.017,+0.018]   해로움 → 무관
+F8 국면             -0.053    +0.238   -0.000   [-0.017,+0.017]   해로움 → 무관
+전체 30개 R² v1 0.2057 → v2 0.2357 / 부호정확도 0.710 → 0.726 / n_OOS 673 → 704
+        </div>
+        <p><strong>"F1·F4·F7·F8이 통계적으로 해롭다"는 지난 포스트의 핵심 주장은 NAV 오류의
+        부산물이었습니다.</strong> 보정 후에는 넷 다 CI가 0을 포함하는 중립(무관)이고, 대신
+        <strong>F5(선물)가 LOO에서 새로 유의</strong>해졌습니다. F3가 압도적이라는 결론과
+        β−w 부호 반전 자체는 그대로 재확인됐습니다(β 0.58→0.97, w 0.66→0.97, 2022 −0.09 →
+        2025 +0.10 → 2026 −0.01, 롤링 상관 +0.960).</p>
+        <p>F6·F7 뉴스 분할(9.5절)도 같은 방향으로 더 약해졌습니다 — pooled 대비 근소하게
+        유의했던 F6+F7 결합 증분(+0.0152)이 보정 후 <strong>미달(+0.0044)</strong>로 내려갔고,
+        뉴스에 유리했던 마지막 흔적도 사라졌습니다.</p>
+
+        <h4>4. 선택편의 수치 정정 (3.1절)</h4>
+        <p>Phase 1 보고서에 남아 있던 옛 스냅샷(1,139일 중 195일, 17.12%)도 같이 정정했습니다.
+        현재 <span class="mono">selection_bias_audit</span> 기준 <strong>1,144일 중 440일
+        (38.46%)</strong>이 고잔차일이고, 이벤트 라벨 87건은 <strong>전부 고잔차일에만</strong>
+        붙어 있습니다(고잔차일 19.77% vs 비고잔차일 <strong>0.00%(0건)</strong> — 완전 분리).
+        선택편의는 약해지기는커녕 더 극단적으로 확인됐습니다.</p>
+
+        <h4>5. 뉴스 검색 목록 정리 (덤)</h4>
+        <ul>
+          <li><span class="mono">news_search_remaining.csv</span> — "미완료 10일"로 남아 실험이
+          876일→821일로 표본을 깎고 있었는데, 검색 로그 대조 결과 <strong>10일 전부 이미 완료</strong>
+          상태였습니다. 정리 후 표본이 873일로 회복. 재발 방지로
+          <span class="mono">experiment_residual_news.py</span>에 로그 우선 규칙 추가</li>
+          <li><span class="mono">news_property_queue.jsonl</span> — pending 39건 중 12건은 이미
+          추출 완료본이 있어 <span class="mono">completed</span>로, 27건은 구 표본 전용이라
+          <span class="mono">superseded</span>로 확정. <strong>pending 0건</strong></li>
+        </ul>
+
+        <h4>6. Codex 후속 검색 진행 중</h4>
+        <p>매칭 표본(880일)에 없던 나머지 294거래일(<span class="mono">news_search_targets_gap.csv</span>)을
+        Codex가 전수 검색 중입니다(<span class="mono">docs/CODEX_PROMPT_news_gap_294.md</span>).
+        완료되면 매칭 case-control 설계를 폐기하고 1,174일 전수 표본으로 뉴스를 재검정합니다.</p>
+      </div>
+
+      <div class="post-footer">
+        <div class="footer-section">
+          <strong>변경 파일:</strong>
+          <span class="mono">tools/build_listed_holdings.py(신규), tools/build_nav_daily.py(신규),
+          tools/apply_nav_v2.py(신규), tools/recompute_beta_w.py(신규),
+          tools/cleanup_news_artifacts.py(신규), data/listed_holdings_daily.csv(신규),
+          data/nav_daily.csv(신규), data/factor_log.csv(NAV v2 반영, v1은 *_v1 컬럼 보존),
+          data/factor_log_v1_backup.csv(신규 백업), output/unbiased_dl_baseline.json(재실행),
+          output/factor_ablation.json(재실행), output/f6_f7_news_experiment.json(재실행),
+          output/residual_news_experiment.json(재실행), output/beta_w_decomposition.json(신규),
+          docs/DPE_Phase1_Report.html(전면 수치 갱신)</span>
+        </div>
+        <div class="footer-section">
+          <strong>태그:</strong>
+          <span class="tag tag-done">완료</span>
+          <span class="tag tag-decision">결정</span>
+          <span class="tag tag-file">파일</span>
+        </div>
+        <div class="next-owner">
+          다음 담당자 → Sean · Codex의 294일 검색 완료 대기. 완료 후 (1) 전수 표본 뉴스
+          재검정 (2) system_prompt.py 원인 순서 교정(수급→선물, 뉴스 순위 하향)
+          (3) 검증 모델을 챗봇에 연결 → DPE 1.0 완료 선언
         </div>
       </div>
     </article>

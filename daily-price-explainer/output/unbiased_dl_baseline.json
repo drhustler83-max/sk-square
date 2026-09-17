@@ -1,17 +1,14 @@
 {
   "experiment": "unbiased_dl_baseline_v1",
-  "as_of": "2026-07-27",
+  "as_of": "2026-09-16",
   "validation": "expanding window; first 40% seed; four OOS blocks",
   "input_feature_count": 30,
   "input_features": [
     "hynix_ret",
     "divergence_lag1",
     "sector_semiconductor",
-    "kospi_ret",
-    "usd_krw_chg_pct",
     "sector_excess",
     "hynix_ex_sector",
-    "kospi_vol20",
     "foreign_net",
     "institution_net",
     "individual_net",
@@ -32,6 +29,9 @@
     "fut_volume",
     "fut_basis_chg",
     "fut_volume_z",
+    "kospi_ret",
+    "usd_krw_chg_pct",
+    "kospi_vol20",
     "hynix_x_shortinc",
     "disc_delta_lag1"
   ],
@@ -45,117 +45,117 @@
     "skq_vol20"
   ],
   "selection_bias_audit": {
-    "rows": 1139,
+    "rows": 1144,
     "event_name_non_null": 87,
-    "high_residual_rows": 195,
-    "high_residual_rate": 0.1712,
+    "high_residual_rows": 440,
+    "high_residual_rate": 0.3846,
     "cross_tab": {
-      "event_false_high_false": 943,
-      "event_false_high_true": 109,
-      "event_true_high_false": 1,
-      "event_true_high_true": 86
+      "event_false_high_false": 704,
+      "event_false_high_true": 353,
+      "event_true_high_false": 0,
+      "event_true_high_true": 87
     },
-    "event_rate_on_high_residual": 0.441,
-    "event_rate_on_non_high_residual": 0.0011,
+    "event_rate_on_high_residual": 0.1977,
+    "event_rate_on_non_high_residual": 0.0,
     "event_name_used_as_model_input": false,
     "reason": "event_name is excluded because news was curated almost exclusively on high-residual dates, creating selection leakage."
   },
   "regression": {
     "target": "divergence",
-    "n_total": 1085,
-    "n_oos": 651,
+    "n_total": 1173,
+    "n_oos": 704,
     "aggregate": {
       "mean_baseline": {
-        "r2": -0.0052,
-        "mae_pctp": 1.9057,
-        "sign_accuracy": 0.49
+        "r2": -0.005,
+        "mae_pctp": 1.9271,
+        "sign_accuracy": 0.4716
       },
       "ridge": {
-        "r2": -6.9559,
-        "mae_pctp": 2.6929,
-        "sign_accuracy": 0.7127
+        "r2": -6.7923,
+        "mae_pctp": 2.9455,
+        "sign_accuracy": 0.706
       },
       "mlp_2layer": {
-        "r2": -6.2171,
-        "mae_pctp": 2.7613,
-        "sign_accuracy": 0.6728
+        "r2": -7.0831,
+        "mae_pctp": 2.9258,
+        "sign_accuracy": 0.6903
       },
       "xgboost": {
-        "r2": 0.2141,
-        "mae_pctp": 1.6021,
-        "sign_accuracy": 0.7097
+        "r2": 0.2357,
+        "mae_pctp": 1.606,
+        "sign_accuracy": 0.7259
       }
     },
     "folds": [
       {
         "fold": 1,
         "period": [
-          "2023-09-27",
-          "2024-06-17"
+          "2023-10-27",
+          "2024-07-15"
         ],
-        "n": 162,
-        "mlp_r2": 0.2397,
-        "xgboost_r2": 0.441
+        "n": 176,
+        "mlp_r2": 0.3997,
+        "xgboost_r2": 0.4025
       },
       {
         "fold": 2,
         "period": [
-          "2024-06-18",
-          "2025-03-05"
+          "2024-07-16",
+          "2025-04-08"
         ],
-        "n": 163,
-        "mlp_r2": 0.2143,
-        "xgboost_r2": 0.4544
+        "n": 176,
+        "mlp_r2": 0.3347,
+        "xgboost_r2": 0.4883
       },
       {
         "fold": 3,
         "period": [
-          "2025-03-06",
-          "2025-11-12"
+          "2025-04-09",
+          "2025-12-26"
         ],
-        "n": 163,
-        "mlp_r2": -1.6309,
-        "xgboost_r2": 0.2092
+        "n": 176,
+        "mlp_r2": -1.8326,
+        "xgboost_r2": 0.226
       },
       {
         "fold": 4,
         "period": [
-          "2025-11-13",
-          "2026-07-27"
+          "2025-12-29",
+          "2026-09-16"
         ],
-        "n": 163,
-        "mlp_r2": -19.523,
-        "xgboost_r2": -0.1348
+        "n": 176,
+        "mlp_r2": -22.8247,
+        "xgboost_r2": -0.0617
       }
     ]
   },
   "classification": {
     "target": "abs(divergence) >= 3",
-    "n_total": 1085,
-    "n_oos": 651,
-    "positive_rate_oos": 0.2135,
-    "no_skill_pr_auc": 0.2135,
+    "n_total": 1173,
+    "n_oos": 704,
+    "positive_rate_oos": 0.2131,
+    "no_skill_pr_auc": 0.2131,
     "aggregate": {
       "logistic": {
-        "pr_auc": 0.3105,
-        "roc_auc": 0.6228,
-        "balanced_accuracy": 0.586,
-        "precision": 0.2607,
-        "recall": 0.7482
+        "pr_auc": 0.3077,
+        "roc_auc": 0.6282,
+        "balanced_accuracy": 0.5849,
+        "precision": 0.2585,
+        "recall": 0.76
       },
       "mlp_2layer": {
-        "pr_auc": 0.1953,
-        "roc_auc": 0.453,
-        "balanced_accuracy": 0.4971,
-        "precision": 0.0,
-        "recall": 0.0
+        "pr_auc": 0.173,
+        "roc_auc": 0.3678,
+        "balanced_accuracy": 0.5006,
+        "precision": 0.25,
+        "recall": 0.0067
       },
       "xgboost": {
-        "pr_auc": 0.3194,
-        "roc_auc": 0.6465,
-        "balanced_accuracy": 0.6279,
-        "precision": 0.3305,
-        "recall": 0.5683
+        "pr_auc": 0.3166,
+        "roc_auc": 0.6416,
+        "balanced_accuracy": 0.5939,
+        "precision": 0.3024,
+        "recall": 0.5
       }
     }
   },
