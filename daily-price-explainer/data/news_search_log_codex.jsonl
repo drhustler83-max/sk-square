@@ -957,3 +957,23 @@
 {"trading_date":"20230109","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"크래프톤 주식 현물배당, 장중 외국인 수급, CES ICT 협력 기사 확인"}
 {"trading_date":"20230110","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전일 장마감 후 근무제 개편 기사와 NAV 할인 해소 전망 증권기사 확인"}
 {"trading_date":"20230111","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"전일 장마감 후 공개된 SK ICT 계열사 공동 거점오피스 관련 후속기사 귀속"}
+{"trading_date":"20230112","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"게시시각 미표기 증권사 리서치 1건을 날짜 기준으로 보수 귀속"}
+{"trading_date":"20230113","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"전일 장마감 후 사피온 기사와 당일 수급·인사 기사 확인"}
+{"trading_date":"20230117","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"주말 공개된 SK증권 주간추천주 기사 1건을 다음 거래일에 귀속"}
+{"trading_date":"20230118","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어로 유효 기사 없음; 공식자료·시세표 제외"}
+{"trading_date":"20230119","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"15:30 이전 유효 기사 없음; 17:19 공개 11번가 IPO 기사는 다음 거래일 창으로 이월"}
+{"trading_date":"20230125","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"15:30 이전 유효 기사 없음; 17:09 지배구조 기사는 20230126으로 이월"}
+{"trading_date":"20230126","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전일 장마감 후 지배구조 기사와 당일 워케이션 기사 확인"}
+{"trading_date":"20230127","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK그룹 지배구조 보고서 1건 확인"}
+{"trading_date":"20230130","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"고정 검색어로 유효 기사 없음"}
+{"trading_date":"20230131","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 직원 이용 가능 워케이션 후속 기사 1건 확인"}
+{"trading_date":"20230201","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 신용평가 리포트 1건 확인"}
+{"trading_date":"20230202","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"SK스퀘어·SK하이닉스 증권사 분석 3건 확인"}
+{"trading_date":"20230203","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 포함 장중 기술적 분석 기사 1건 확인"}
+{"trading_date":"20230207","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"3월 주총·이사회 재편 기사 1건 확인"}
+{"trading_date":"20230208","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"전일 장마감 후 드림어스 실적 기사 2건과 당일 SKT 실적 기사 1건 확인"}
+{"trading_date":"20230209","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"전일 장마감 후 SKT 실적 후속 기사 1건 확인"}
+{"trading_date":"20230210","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"관련 언론 기사 없음; DART 원문·시세표 제외"}
+{"trading_date":"20230214","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SKT 자사주·사피온 관련 기사 2건 확인"}
+{"trading_date":"20230215","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 투자사 그린랩스 유동성 기사 1건 확인"}
+{"trading_date":"20230216","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 장중 수급 자동생성 기사 1건 확인"}
