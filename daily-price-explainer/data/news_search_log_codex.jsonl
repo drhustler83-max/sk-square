@@ -878,3 +878,22 @@
 {"trading_date":"20260612","sampling_role":"unknown","status":"completed_with_articles","articles_found":3,"notes":"전일 장후 마감 기사와 당일 프리장·장중 수급 기사 3건 채택"}
 {"trading_date":"20260615","sampling_role":"unknown","status":"completed_with_articles","articles_found":2,"notes":"개장 전·장중 중동 리스크 완화와 반도체 강세 기사 2건 채택"}
 {"trading_date":"20260617","sampling_role":"unknown","status":"completed_with_articles","articles_found":4,"notes":"장중 리포트 브리핑·하이닉스 수혜·시장 반등 기사 4건 채택"}
+{"trading_date":"20211228","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 그린랩스 투자 기사와 당일 수급 분석 기사 확인"}
+{"trading_date":"20220120","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"MSCI 유동비율 확대 예상 기사 확인"}
+{"trading_date":"20220126","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"전 거래일 장마감 후 MSCI 비중 확대 전망 기사 확인"}
+{"trading_date":"20220127","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 메타버스 M&A 전망과 당일 새벽 지배구조 관련 기사 확인"}
+{"trading_date":"20220404","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"가상자산 발행 계획과 원스토어 IPO 분석 기사 확인"}
+{"trading_date":"20220421","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK그룹 사업재편과 SK스퀘어 역할을 다룬 기사 확인"}
+{"trading_date":"20220427","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"사피온, SK쉴더스 IPO, SK그룹 자산순위 관련 기사 확인"}
+{"trading_date":"20220428","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"메타버스 전략과 박정호 경영전략 기사 확인"}
+{"trading_date":"20220503","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SK스퀘어 투자전략과 자회사 IPO 고평가 논쟁 기사 확인"}
+{"trading_date":"20220504","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"SK쉴더스와 원스토어 IPO 관련 독립 기사 3건 확인"}
+{"trading_date":"20220517","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 발표된 1분기 실적 기사와 후속 기사 확인"}
+{"trading_date":"20220518","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"연이은 IPO 차질과 전략 수정 가능성 분석 기사 확인"}
+{"trading_date":"20220519","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"SK하이닉스 중국 투자, 자회사 IPO 차질, 11번가 IPO 기사 확인"}
+{"trading_date":"20220524","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"티맵모빌리티 대리운전 사업 관련 규제 기사 확인"}
+{"trading_date":"20220525","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SK스퀘어 가치평가 분석과 원스토어 수수료 정책 기사 확인"}
+{"trading_date":"20220602","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"ARM 공동인수 전망, UAM 협업 가능성, 11번가 IPO 주관사 기사 확인"}
+{"trading_date":"20220603","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"전 거래일 장마감 후 진단 기사와 당일 자동생성 수급 기사 확인; 15시30분 이후 기사는 제외"}
+{"trading_date":"20220614","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK하이닉스 의존도와 신사업 확대 과제를 분석한 기사 확인"}
+{"trading_date":"20220620","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"주말 공개된 11번가 제휴 기사와 당일 CIO 선임 기사 확인"}
