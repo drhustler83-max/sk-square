@@ -997,3 +997,23 @@
 {"trading_date":"20230420","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"전일 장마감 후 SK 중간지주사 실적 전망 기사 확인"}
 {"trading_date":"20230421","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"장중 매수잔량 시황 기사 확인"}
 {"trading_date":"20230425","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"공매도 시황과 드림어스컴퍼니 FLO 서비스 기사 확인"}
+{"trading_date":"20230426","sampling_role":"unused_low","status":"completed_with_articles","articles_found":4,"notes":"플로 음원 확대, 외국인 지분 증가, SK하이닉스 1분기 실적 및 기관 수급 기사 확인"}
+{"trading_date":"20230427","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"11번가 IPO 추진 관련 기사 확인; 15:30 이후 기사는 다음 거래일 귀속으로 제외"}
+{"trading_date":"20230503","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 공매도 비중 기사 확인"}
+{"trading_date":"20230509","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"나노엔텍 지분매각 지연 관련 기사 확인"}
+{"trading_date":"20230510","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"11번가 IPO 리스크와 SK텔레콤 실적 기사 확인"}
+{"trading_date":"20230511","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 관련 기사 없음; 18:56 SK쉴더스 기사는 다음 거래일 귀속"}
+{"trading_date":"20230512","sampling_role":"unused_low","status":"completed_with_articles","articles_found":3,"notes":"SK쉴더스 매각 승인, 통신사 실적, 웨이브·티빙 합병 논의 기사 확인"}
+{"trading_date":"20230517","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"계열사 실적 분석과 IDQ 양자보안 사업 기사 확인"}
+{"trading_date":"20230518","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SK 계열사 실적 전망과 SK스퀘어 증권사 분석보고서 확인"}
+{"trading_date":"20230519","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"주주환원 분석과 콘텐츠웨이브 자금조달·합병 추진 기사 확인"}
+{"trading_date":"20230522","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"휴일 공개된 음악 플랫폼 경쟁 기사 확인"}
+{"trading_date":"20230523","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"웨이브 유상증자와 SK스퀘어 자회사 IPO 리스크 기사 확인"}
+{"trading_date":"20230524","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어 자사주 소각·주주환원 분석 기사 확인"}
+{"trading_date":"20230530","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SK스퀘어 자본재분배 분석과 반도체 업종 수급 기사 확인"}
+{"trading_date":"20230616","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK그룹 확대경영회의와 계열사 포트폴리오 관련 기사 확인"}
+{"trading_date":"20230619","sampling_role":"unused_low","status":"completed_no_news","articles_found":0,"notes":"유효시간 내 채택 가능한 관련 기사 없음; 19:08 이후 SK쉴더스 기사는 다음 거래일 귀속"}
+{"trading_date":"20230621","sampling_role":"unused_low","status":"completed_with_articles","articles_found":2,"notes":"SK쉴더스 매각 일정 단축과 주주환원 전망을 다룬 독립 매체 기사 2건 확인"}
+{"trading_date":"20230622","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"SK스퀘어의 그랩 관련 투자 청산 기사 확인"}
+{"trading_date":"20230623","sampling_role":"unused_low","status":"completed_with_articles","articles_found":4,"notes":"자사주 소각 발표·시장 반응과 티맵모빌리티 매각설 기사 확인"}
+{"trading_date":"20230626","sampling_role":"unused_low","status":"completed_with_articles","articles_found":1,"notes":"11번가 서비스 재정비와 IPO 관련 기사 확인"}
