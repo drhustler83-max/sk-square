@@ -1,0 +1,2867 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DPE 설명 모델 고도화 — Phase 1 연구결과보고서 v3 (Handoff)</title>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  @media print {
+    body { background: #ffffff !important; }
+    .sheet { max-width: none; padding: 0 8mm 0; }
+    h2 { page-break-after: avoid; break-after: avoid; }
+    h3, h4 { page-break-after: avoid; break-after: avoid; }
+    figure, .hyp, .tw, .callout, .flag, .formula, .tiles { page-break-inside: avoid; break-inside: avoid; }
+    .toc { page-break-after: always; break-after: page; }
+    .fw svg { min-width: 0; }
+    a { text-decoration: none; }
+  }
+  @page { size: A4; margin: 14mm 10mm; }
+</style>
+</head>
+<body><title>Daily Price Explainer 설명 모델 고도화 — Phase 1 연구결과보고서 v3 (Handoff)</title>
+
+<style>
+  :root {
+    color-scheme: light;
+
+    /* ── 지면 ── */
+    --plane:        #f7f8f9;
+    --surface:      #fcfcfb;
+    --surface-sunk: #f1f2f4;
+
+    /* ── 잉크 ── */
+    --ink:          #111418;
+    --ink-2:        #4d545c;
+    --ink-3:        #868d95;
+
+    /* ── 괘선 ── */
+    --rule:         #dcdee2;
+    --rule-strong:  #b9bdc4;
+    --hdr-bg:       #23282e;
+    --hdr-ink:      #f4f5f6;
+
+    /* ── 액센트 ── */
+    --accent:       #1c5cab;
+    --accent-soft:  #eaf1fa;
+
+    /* ── 차트 ── */
+    --viz-surface:  #fcfcfb;
+    --s1:           #2a78d6;
+    --s2:           #eb6834;
+    --s3:           #1baf7a;
+    --neg:          #e34948;
+    --grid:         #e1e0d9;
+    --axis:         #c3c2b7;
+    --viz-muted:    #898781;
+
+    /* ── 판정 ── */
+    --ok:           #0ca30c;
+    --ok-bg:        #eaf6ea;
+    --no:           #d03b3b;
+    --no-bg:        #fbebeb;
+    --warn:         #b0741a;
+    --warn-bg:      #fbf3e4;
+
+    --sans: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "Cascadia Mono", Consolas, "SFMono-Regular", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --plane:        #0d0d0d;
+      --surface:      #1a1a19;
+      --surface-sunk: #232322;
+      --ink:          #ffffff;
+      --ink-2:        #c3c2b7;
+      --ink-3:        #898781;
+      --rule:         #2f2f2d;
+      --rule-strong:  #45453f;
+      --hdr-bg:       #33332f;
+      --hdr-ink:      #f4f5f6;
+      --accent:       #6da7ec;
+      --accent-soft:  #1d2733;
+      --viz-surface:  #1a1a19;
+      --s1:           #3987e5;
+      --s2:           #d95926;
+      --s3:           #199e70;
+      --neg:          #e66767;
+      --grid:         #2c2c2a;
+      --axis:         #383835;
+      --viz-muted:    #898781;
+      --ok:           #0ca30c;
+      --ok-bg:        #142514;
+      --no:           #d03b3b;
+      --no-bg:        #2a1717;
+      --warn:         #fab219;
+      --warn-bg:      #2a2314;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --plane:        #0d0d0d;
+    --surface:      #1a1a19;
+    --surface-sunk: #232322;
+    --ink:          #ffffff;
+    --ink-2:        #c3c2b7;
+    --ink-3:        #898781;
+    --rule:         #2f2f2d;
+    --rule-strong:  #45453f;
+    --hdr-bg:       #33332f;
+    --hdr-ink:      #f4f5f6;
+    --accent:       #6da7ec;
+    --accent-soft:  #1d2733;
+    --viz-surface:  #1a1a19;
+    --s1:           #3987e5;
+    --s2:           #d95926;
+    --s3:           #199e70;
+    --neg:          #e66767;
+    --grid:         #2c2c2a;
+    --axis:         #383835;
+    --viz-muted:    #898781;
+    --ok:           #0ca30c;
+    --ok-bg:        #142514;
+    --no:           #d03b3b;
+    --no-bg:        #2a1717;
+    --warn:         #fab219;
+    --warn-bg:      #2a2314;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--plane);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 28px 120px;
+  }
+
+  /* ─────────── 표제 ─────────── */
+  .cover {
+    padding: 76px 0 40px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 52px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    color: var(--accent);
+    margin: 0 0 22px;
+  }
+  h1 {
+    font-size: clamp(29px, 4.4vw, 43px);
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: 0 0 18px;
+  }
+  .subtitle {
+    font-size: 18px;
+    color: var(--ink-2);
+    max-width: 62ch;
+    margin: 0 0 34px;
+    text-wrap: pretty;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+    font-size: 13.5px;
+    color: var(--ink-3);
+  }
+  .meta-row b { color: var(--ink-2); font-weight: 600; }
+
+  /* ─────────── 핵심 수치 타일 ─────────── */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 0 0 40px;
+  }
+  .tile {
+    background: var(--surface);
+    padding: 20px 22px 18px;
+  }
+  .tile-k {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    color: var(--ink-3);
+    margin: 0 0 10px;
+  }
+  .tile-v {
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1;
+    margin: 0 0 8px;
+  }
+  .tile-v.pos { color: var(--accent); }
+  .tile-v.neg { color: var(--no); }
+  .tile-n { font-size: 12.5px; line-height: 1.6; color: var(--ink-3); margin: 0; }
+
+  /* ─────────── 장·절 ─────────── */
+  h2 {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -.015em;
+    margin: 80px 0 8px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+    text-wrap: balance;
+  }
+  h2 .num {
+    display: inline-block;
+    min-width: 2.1em;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 44px 0 12px;
+    text-wrap: balance;
+  }
+  h3 .num {
+    display: inline-block;
+    min-width: 3.1em;
+    color: var(--ink-3);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 30px 0 8px;
+    color: var(--ink);
+  }
+  p { margin: 0 0 18px; max-width: 78ch; text-wrap: pretty; }
+  strong { font-weight: 700; }
+  code {
+    font-family: var(--mono);
+    font-size: .87em;
+    background: var(--surface-sunk);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: .08em .38em;
+    word-break: break-all;
+  }
+  ol, ul { max-width: 78ch; margin: 0 0 18px; padding-left: 1.5em; }
+  li { margin-bottom: 9px; }
+
+  /* ─────────── 목차 ─────────── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 30px 34px;
+    margin: 0 0 20px;
+  }
+  .toc h2 { margin: 0 0 20px; font-size: 19px; border-bottom-width: 1px; padding-bottom: 12px; }
+  .toc ol { list-style: none; padding: 0; margin: 0; max-width: none;
+            columns: 2; column-gap: 48px; }
+  .toc li { margin: 0 0 7px; break-inside: avoid; font-size: 14px; }
+  .toc a { color: var(--ink-2); text-decoration: none; display: flex; gap: 12px; }
+  .toc a:hover, .toc a:focus-visible { color: var(--accent); text-decoration: underline; }
+  .toc .tn { color: var(--ink-3); font-variant-numeric: tabular-nums; min-width: 1.6em; font-weight: 600; }
+
+  /* ─────────── 표 ─────────── */
+  .tw { overflow-x: auto; margin: 26px 0 8px; border: 1px solid var(--rule); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 13.5px; }
+  th, td { padding: 11px 14px; text-align: left; vertical-align: top; line-height: 1.6; }
+  thead th {
+    background: var(--hdr-bg);
+    color: var(--hdr-ink);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  tbody tr { border-top: 1px solid var(--rule); }
+  tbody tr:nth-child(even) { background: var(--surface-sunk); }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.c, th.c { text-align: center; }
+  td.lab { font-weight: 600; white-space: nowrap; }
+  .cap {
+    font-size: 12px;
+    color: var(--ink-3);
+    text-align: center;
+    margin: 0 0 30px;
+    letter-spacing: .01em;
+  }
+  .best { font-weight: 700; color: var(--accent); }
+
+  /* ─────────── 그림 ─────────── */
+  figure { margin: 30px 0 8px; }
+  .fw {
+    border: 1px solid var(--rule);
+    background: var(--viz-surface);
+    padding: 18px 14px 10px;
+    overflow-x: auto;
+  }
+  .fw svg { display: block; max-width: 100%; height: auto; min-width: 620px; }
+  .vtitle { font-size: 12.5px; font-weight: 700; fill: var(--ink); }
+  .vsub   { font-size: 11px; fill: var(--viz-muted); }
+  .vlab   { font-size: 11.5px; fill: var(--ink-2); }
+  .vval   { font-size: 11.5px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
+  .vtick  { font-size: 10.5px; fill: var(--viz-muted); font-variant-numeric: tabular-nums; }
+  .vgrid  { stroke: var(--grid); stroke-width: 1; }
+  .vaxis  { stroke: var(--axis); stroke-width: 1.5; }
+  .vnote  { font-size: 11px; fill: var(--viz-muted); }
+  .vflag  { font-size: 11px; font-weight: 700; fill: var(--no); }
+  .mark   { transition: opacity .12s ease; }
+  .fw:hover .mark { opacity: .55; }
+  .fw .mark:hover { opacity: 1; }
+  .lineseries { fill: none; stroke-width: 2; }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px 22px;
+    font-size: 12px; color: var(--ink-2);
+    padding: 12px 4px 2px;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .swatch { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+
+  /* ─────────── 가설 카드 ─────────── */
+  .hyp { border: 1px solid var(--rule-strong); background: var(--surface); margin: 26px 0 34px; }
+  .hyp-hd {
+    background: var(--hdr-bg); color: var(--hdr-ink);
+    padding: 12px 18px; font-size: 14px; font-weight: 700;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px;
+  }
+  .hyp-hd .hid {
+    font-size: 12px; letter-spacing: .1em;
+    background: rgba(255,255,255,.16); padding: 2px 8px; border-radius: 3px; flex: none;
+  }
+  .hyp-claim {
+    padding: 16px 18px; font-size: 14.5px; font-weight: 600;
+    border-bottom: 1px solid var(--rule); line-height: 1.75;
+  }
+  .hyp dl { display: grid; grid-template-columns: 118px 1fr; margin: 0; font-size: 13.5px; }
+  .hyp dt {
+    padding: 11px 14px; font-weight: 700; font-size: 12.5px;
+    background: var(--surface-sunk); border-top: 1px solid var(--rule);
+    color: var(--ink-2);
+  }
+  .hyp dd {
+    padding: 11px 16px; margin: 0; border-top: 1px solid var(--rule);
+    line-height: 1.7;
+  }
+  .verdict { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 3px; flex: none; }
+  .v-ok { background: var(--ok-bg); color: var(--ok); }
+  .v-no { background: var(--no-bg); color: var(--no); }
+  .v-part { background: var(--warn-bg); color: var(--warn); }
+
+  /* ─────────── 강조 박스 ─────────── */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 18px 22px;
+    margin: 26px 0;
+    font-size: 14.5px;
+  }
+  .callout p { margin: 0 0 10px; max-width: none; }
+  .callout p:last-child { margin: 0; }
+  .callout .ct {
+    font-size: 11.5px; font-weight: 700; letter-spacing: .11em;
+    color: var(--accent); margin: 0 0 8px;
+  }
+  .flag {
+    border-left: 3px solid var(--no);
+    background: var(--no-bg);
+    padding: 18px 22px; margin: 26px 0; font-size: 14.5px;
+  }
+  .flag .ct { font-size: 11.5px; font-weight: 700; letter-spacing: .11em; color: var(--no); margin: 0 0 8px; }
+  .flag p { margin: 0 0 10px; max-width: none; }
+  .flag p:last-child { margin: 0; }
+
+  .formula {
+    background: var(--surface-sunk);
+    border: 1px solid var(--rule);
+    padding: 16px 20px; margin: 22px 0;
+    font-family: var(--mono); font-size: 13px; line-height: 2;
+    overflow-x: auto;
+  }
+
+  .prov {
+    font-size: 12.5px; color: var(--ink-3);
+    border-top: 1px solid var(--rule);
+    padding-top: 14px; margin: 34px 0 0;
+    max-width: 78ch;
+  }
+  sup.dag { color: var(--no); font-weight: 700; }
+
+  footer {
+    margin-top: 84px; padding-top: 22px;
+    border-top: 2px solid var(--ink);
+    font-size: 12.5px; color: var(--ink-3);
+  }
+
+  a { color: var(--accent); }
+  a:focus-visible, .toc a:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+  @media (max-width: 720px) {
+    .sheet { padding: 0 16px 80px; }
+    .toc ol { columns: 1; }
+    .hyp dl { grid-template-columns: 1fr; }
+    .hyp dt { border-top: 1px solid var(--rule-strong); }
+    .hyp dd { border-top: none; padding-top: 0; }
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="cover">
+    <p class="eyebrow">SK SQUARE · DAILY PRICE EXPLAINER · PHASE 1 · V3 HANDOFF</p>
+    <h1>Daily Price Explainer 설명 모델 고도화</h1>
+    <p class="subtitle">
+      SK스퀘어 주가가 전일 대비 왜 움직였는지 답하는 IR 챗봇(DPE)의 설명 엔진을
+      OLS에서 XGBoost·SHAP으로, 다시 딥러닝과 뉴스 텍스트로 끌어올린 과정과,
+      그 마지막 단계가 통계적 유의성을 확보하지 못한 채 종료되기까지의 검증 기록.
+    </p>
+    <div class="meta-row">
+      <span><b>대상</b> SK스퀘어 (KOSPI 402340)</span>
+      <span><b>표본</b> 2026-09-17 재개정 기준 1,144거래일 (2021-11-30 ~ 2026-09-16)</span>
+      <span><b>작성</b> 2026-08-11 · <b>개정</b> 2026-09-17 · <b>v3 Handoff</b> 2026-09-18</span>
+      <span><b>단계</b> Phase 1 종료 / DPE 1.0 마무리 중 / 294일 뉴스 gap-fill 진행 중 (139/294)</span>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <p class="ct">2026-09-17 재개정 — NAV point-in-time 보정 후 재실행</p>
+      <p>
+        본문은 2026-08-11 작성본이며, 2026-09-16 백필 이후 결과를 <a href="#s94">9.4절</a>·
+        <a href="#s95">9.5절</a>에 추가했다. 그런데 그 직후 <strong>NAV 자체가 잘못돼 있었다는 것이
+        드러났다</strong> — 발행주식수를 132,087,115주로 고정해 뒀는데(1Q26 스냅샷), 실제로는
+        141,467,571주(2021-11-30)에서 자사주 소각을 거쳐 131,923,998주(2026-07-31)까지
+        <strong>−6.7% 변동</strong>했고, 비상장·순현금도 5.115조 고정이 아니라 실제 5.66조→3.85조로
+        분기마다 바뀌었다. 상장 7개사 보유주식수를 DART 공시로 일자별 재구성하고(<code>listed_holdings_daily.csv</code>),
+        분기별 비상장가치·순현금을 반영한 point-in-time NAV(<code>nav_daily.csv</code>)로
+        <strong>모든 수치를 재실행</strong>했다. 아래 ①·②는 그 결과로 갱신됐다.
+      </p>
+      <p>
+        <strong>① 팩터 카테고리별 유의성(9.4) — 결론이 뒤집혔다.</strong> "F1·F4·F7·F8이
+        통계적으로 해롭다"는 이전 결론은 <strong>NAV 오류의 부산물이었다.</strong> 보정된 NAV로
+        다시 보면 이 넷은 해로운 것이 아니라 <strong>그냥 유의하지 않다</strong>(신뢰구간이 0을
+        포함) — F3(수급)은 여전히 solo·LOO 양쪽에서 유의하고, <strong>F5(선물)가 LOO에서 새로
+        유의</strong>해졌다. β−w 부호 반전 자체는 재확인됐지만 격차 크기는 줄었다.
+      </p>
+      <p>
+        <strong>② F6·F7 뉴스 분할(9.5)</strong> — 결론은 그대로 <strong>기각</strong>이다. 다만
+        pooled 대비 근소하게 유의했던 F6+F7 결합 증분(+0.0152)도 보정 후에는
+        <strong>미달(+0.0044)</strong>로 내려앉아, 뉴스에 유리한 쪽으로 남아 있던 마지막 흔적도 사라졌다.
+      </p>
+      <p>
+        <strong>③ 뉴스 라벨 선택편의(3.1절) 수치 정정.</strong> 이전 판(1,139일 중 195일,
+        17.12%)은 옛 감사 스냅샷이었다. 현재 <code>selection_bias_audit</code> 기준으로는
+        <strong>1,144일 중 440일(38.46%)</strong>이 고잔차일이고, 이벤트 라벨 87건은
+        <strong>전부 고잔차일에만</strong> 붙어(고잔차일 19.77% vs 비고잔차일 0.00% — 0건)
+        완전히 분리돼 있다. 부착률 자체(44.1%→19.77%)는 낮아졌지만 — 고잔차일 표본이
+        195일에서 440일로 늘었으니 당연하다 — 선택편의의 본질인 "비고잔차일엔 전혀 붙지
+        않는다"는 사실은 그대로이며, 오히려 완전 분리(0.00%)로 더 극단적으로 확인됐다.
+      </p>
+      <p>
+        그 밖에 taxonomy를 F1~F8로 재배치했고(F2=섹터, F7=매크로, F8=국면 신설), 뉴스 검색
+        정합성 정리(낡은 <code>news_search_remaining.csv</code> 10일·대기열 39건 확정)로
+        뉴스 검증 표본이 873일로 늘었다. Codex가 검색하지 못했던 나머지 294거래일은
+        검색이 진행 중이며, 2026-09-18 현재 <strong>139일(47.3%)</strong>이 반영됐다
+        (<a href="#sH3">H.3절</a>).
+      </p>
+    </div>
+    <div class="callout" style="margin-top:14px;border-left-color:var(--ok)">
+      <p class="ct" style="color:var(--ok)">2026-09-18 v3 — Handoff 판에서 달라진 것</p>
+      <p>
+        본문(1~12장)의 수치와 결론은 2026-09-17 재개정판과 동일하다. 이 판은 다음 작업자에게
+        넘기기 위해 <strong><a href="#sH">H장 "Handoff — 인계 노트"</a></strong>를 추가하고
+        표지·목차·파일 경로 문구를 갱신했다. H장에는 ① 최근 작업 이력(09-16~18),
+        ② 진행 중인 294일 뉴스 gap-fill의 배치별 현황(139/294 반영, 누락 5건, 남은 155일과
+        다음 배치 20일), ③ 우선순위별 미해결 이슈 11건, ④ 인계용 파일 지도, ⑤ 작업 규약,
+        ⑥ 5분 상태 확인 체크리스트, ⑦ 권장 작업 순서가 들어 있다.
+        2026-09-17 아카이브 이동(<code>factor_log_v1_backup.csv</code>·
+        <code>news_search_remaining.csv</code> → <code>data/과거 데이터 참고/</code>)을
+        6.2절과 수치 출처에 반영했다.
+      </p>
+    </div>
+  </header>
+
+  <h2 id="s0" style="margin-top:0">요약문</h2>
+
+  <p>
+    <strong>DPE(Daily Price Explainer)는 SK스퀘어 주가가 전일 대비 왜 이렇게 움직였는지를
+    실시간으로 답하는 IR 챗봇이다.</strong> 챗봇 자체는 이미 존재했다. 문제는 그 답변의 근거가
+    약하다는 것이었다. 그럴듯하게 말하는 LLM과 설명력을 갖춘 모델은 다르고, IR 자료에
+    인용되려면 후자여야 한다. 이 보고서는 <strong>DPE의 설명 엔진을 고도화한 작업의 기록</strong>이다.
+  </p>
+  <p>
+    고도화는 세 단계를 밟았다. 처음에는 단순 OLS를 생각했고, 그 과정에서 주가 변동을 무엇으로
+    나눠 볼 것인지 — NAV·섹터·수급·공매도·선물·변동성 국면 — 팩터 체계를 정의했다. 이 팩터들이
+    시계열 검증에서 안정적으로 작동한다는 것을 확인한 뒤, AI 코칭을 거치며 XGBoost와 SHAP 등
+    OLS보다 고도화된 모델로 <strong>각 팩터의 통계적 유의성을 검증</strong>했다. 마지막으로 팩터로도
+    설명되지 않고 남은 잔차를 겨냥해, 뉴스 텍스트를 LLM으로 읽어 만든 속성 점수를 딥러닝 실험
+    라인에 투입했다.
+  </p>
+  <p>
+    앞의 두 단계는 성공했다. 세 번째는 실패했다. <strong>뉴스는 잔차의 크기도 방향도 설명하지
+    못했고, 판별력이 AUC 0.5 언저리에 머물러 통계적 유의성을 확보하지 못한 채 Phase 1이
+    종료되었다.</strong> 다만 실패한 방식이 다음 단계의 설계를 바꿀 만큼 구체적으로 드러났고,
+    그것이 이 보고서에서 가장 중요한 부분이다.
+  </p>
+
+  <div class="tiles">
+    <div class="tile">
+      <p class="tile-k">팩터 모델 설명력</p>
+      <p class="tile-v pos">0.236</p>
+      <p class="tile-n">OOS R² · 확장윈도우 검증 · NAV 보정 후</p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">팩터 모델 방향</p>
+      <p class="tile-v pos">0.726</p>
+      <p class="tile-n">부호정확도 · 기준선 0.472</p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">뉴스 판별력</p>
+      <p class="tile-v neg">0.501</p>
+      <p class="tile-n">ROC-AUC · 고잔차일 vs 대조일 · <strong>유의성 미확보</strong></p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">뉴스 방향</p>
+      <p class="tile-v neg">0.504</p>
+      <p class="tile-n">부호정확도 · 동전 던지기 수준</p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">수급(F3) 한계기여</p>
+      <p class="tile-v pos">+0.331</p>
+      <p class="tile-n">MAE %p · CI [+0.214,+0.469] · <strong>7개 중 F3·F5만 유의</strong></p>
+    </div>
+  </div>
+
+  <div class="flag">
+    <p class="ct">⚠ 2026-09-17 재개정 — F3(수급)이 주력이나, "해롭다"는 결론은 NAV 오류였다</p>
+    <p>
+      위 "팩터 모델 설명력 0.236"은 30개 피처를 한꺼번에 넣은 값이다. 카테고리별로 분해해 보니
+      여전히 <strong>F3(수급)을 빼면 R²가 −0.030까지 붕괴</strong>해 압도적 주력임은 그대로다.
+      다만 발행주식수·비상장가치를 고정 스냅샷으로 잘못 계산했던 NAV를 point-in-time으로
+      보정해 재실행하자, <strong>"F1·F4가 통계적으로 해롭다"던 이전 결론은 사라졌다</strong> —
+      제거해도 성능이 유의하게 좋아지지 않는, 그냥 <strong>중립(무관)</strong>인 카테고리였다.
+      대신 <strong>F5(선물)가 leave-one-out에서 새로 유의</strong>해졌다(+0.046, CI 하한 &gt;0).
+      자세한 내용은 9.4절에 있다.
+    </p>
+  </div>
+
+  <h3 style="margin-top:44px">설명 대상의 2단 구조 — 무엇을 남기고 무엇을 설명했는가</h3>
+  <p>
+    이 프로젝트에서 "잔차"라는 말은 두 번 나오고, 서로 다른 것을 가리킨다. 이 구분이 보고서
+    전체를 관통하므로 먼저 정리한다.
+  </p>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 340" role="img" aria-labelledby="fa1t">
+        <title id="fa1t">주가 변동의 2단 잔차 구조 (2026-09-17 NAV 보정 후). 1단계에서 하이닉스/NAV가 63.7%를 설명하고 divergence가 남는다. 2단계에서 팩터 모델이 divergence의 23.6%를 설명하고 모델 잔차가 남는다. 3단계에서 뉴스는 모델 잔차를 설명하지 못했다.</title>
+
+        <text class="vtitle" x="8" y="20">설명의 2단 구조 — 각 단계에서 걷어낸 것과 남은 것</text>
+        <text class="vsub" x="8" y="38">각 단계의 &quot;남은 부분&quot;이 다음 단계의 전체가 된다</text>
+
+        <!-- Row 1 -->
+        <text class="vlab" x="170" y="80" text-anchor="end" style="font-weight:700">① 주가 변동 전체</text>
+        <text class="vtick" x="170" y="96" text-anchor="end">skq_ret</text>
+        <rect class="mark" x="180" y="62" width="331" height="38" fill="var(--s1)"><title>SK하이닉스·NAV로 설명되는 부분 63.7%</title></rect>
+        <rect x="511" y="62" width="189" height="38" fill="var(--surface-sunk)" stroke="var(--axis)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text class="vval" x="190" y="86" style="fill:#ffffff">SK하이닉스 · NAV  63.7%</text>
+        <text class="vval" x="521" y="86">남은 것 →</text>
+
+        <!-- connector 1 -->
+        <path d="M511,100 L180,142 M700,100 L700,142" stroke="var(--axis)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+
+        <!-- Row 2 -->
+        <text class="vlab" x="170" y="160" text-anchor="end" style="font-weight:700">② divergence</text>
+        <text class="vtick" x="170" y="176" text-anchor="end">1차 잔차</text>
+        <rect class="mark" x="180" y="142" width="123" height="38" fill="var(--s1)"><title>팩터 6종이 설명하는 부분, OOS R² 0.236</title></rect>
+        <rect x="303" y="142" width="397" height="38" fill="var(--surface-sunk)" stroke="var(--axis)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text class="vval" x="190" y="166" style="fill:#ffffff">팩터 23.6%</text>
+        <text class="vval" x="313" y="166">남은 것 →</text>
+
+        <!-- connector 2 -->
+        <path d="M303,180 L180,222 M700,180 L700,222" stroke="var(--axis)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+
+        <!-- Row 3 -->
+        <text class="vlab" x="170" y="240" text-anchor="end" style="font-weight:700">③ 모델 잔차</text>
+        <text class="vtick" x="170" y="256" text-anchor="end">2차 잔차</text>
+        <rect x="180" y="222" width="520" height="38" fill="var(--surface-sunk)" stroke="var(--no)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text class="vval" x="190" y="246" style="fill:var(--no)">뉴스로 보정 시도 → 오히려 악화 (ΔR² −0.085, MAE −0.110%p)</text>
+
+        <line class="vgrid" x1="8" y1="284" x2="752" y2="284"/>
+        <text class="vnote" x="8" y="304">① 하이닉스 설명 비중은 OLS 결정계수(R² 0.637), ② 팩터 설명력은 확장윈도우 OOS R²(0.236). 산출 방식이 다르므로 두 비율의 직접 합산은 성립하지 않는다. (2026-09-17 NAV 보정 후)</text>
+        <text class="vnote" x="8" y="322">막대 길이는 각 단계의 설명 비중을 나타내며, 절대 분산 크기의 비교가 아니다.</text>
+      </svg>
+    </div>
+    <figcaption class="cap">[ 그림 A.1 - 설명의 2단 잔차 구조. 뉴스가 겨냥한 것은 ③ 모델 잔차다 ]</figcaption>
+  </figure>
+
+  <h3>모델 고도화 경과 — OLS에서 딥러닝·뉴스까지</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th class="c" style="width:56px">단계</th><th style="width:150px">모델</th><th style="width:180px">이 단계의 목적</th><th>결과</th><th class="c" style="width:80px">판정</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="c lab">1</td><td class="lab">OLS</td>
+          <td>주가 변동을 무엇으로 나눌지 <strong>팩터 체계 정의</strong></td>
+          <td>NAV·섹터·수급·공매도·선물·변동성 국면 6개 계층 확립. 하이닉스 회귀 R² 0.623<sup class="dag">†</sup>로 타겟을 divergence로 전환</td>
+          <td class="c"><span class="verdict v-ok">성공</span></td>
+        </tr>
+        <tr>
+          <td class="c lab">2</td><td class="lab">XGBoost · SHAP</td>
+          <td>정의한 팩터들의 <strong>통계적 유의성 검증</strong></td>
+          <td>확장윈도우 OOS R² 0.236, 부호정확도 0.726. 기준선(R² −0.005, 0.472)을 압도. 팩터 체계가 실제 신호를 담고 있음을 확인</td>
+          <td class="c"><span class="verdict v-ok">성공</span></td>
+        </tr>
+        <tr>
+          <td class="c lab">3</td><td class="lab">딥러닝 (MLP 2층)</td>
+          <td>트리 계열보다 나은 구조가 있는지 확인</td>
+          <td>R² −6.217로 붕괴. 부호정확도는 0.673으로 유사하나 크기를 크게 틀림. 국면 전환 구간에서 −19.5까지 발산</td>
+          <td class="c"><span class="verdict v-no">기각</span></td>
+        </tr>
+        <tr>
+          <td class="c lab">4</td><td class="lab">뉴스 속성 투입</td>
+          <td><strong>팩터로 설명 안 된 잔차</strong>를 뉴스가 설명하는지 시험</td>
+          <td>뉴스 단독 ROC-AUC 0.501, 부호정확도 0.504, R² −0.031. <strong>유의성 미확보</strong></td>
+          <td class="c"><span class="verdict v-no">기각</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 A.1 - 모델 고도화 경과. 1~2단계 채택, 3~4단계 기각 ]</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:150px">구분</th><th>내용</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">제품</td><td>DPE — SK스퀘어 주가의 전일 대비 변동 사유를 응답하는 IR 매니저 전용 챗봇. <strong>현재 확인되는 실행 진입점은 CLI</strong>(<code>main.py</code>)이며 Telegram 배포는 10.1절 3단계 목표</td></tr>
+        <tr><td class="lab">이 작업의 성격</td><td>챗봇 신규 개발이 아니라 <strong>기존 챗봇의 설명 엔진 고도화</strong></td></tr>
+        <tr><td class="lab">분석 데이터</td><td>1,144거래일(선택편의 감사 기준) · 원천 팩터 22개 · 피처 37개 · 뉴스 기사 935건(중복제거 후) · 뉴스 파생 피처 84개</td></tr>
+        <tr><td class="lab">1차 타겟</td><td><code>divergence = skq_ret − nav_implied_ret</code> (%p) — 하이닉스·NAV로 설명되지 않는 부분. NAV는 point-in-time 보정판(2026-09-17)</td></tr>
+        <tr><td class="lab">2차 타겟</td><td><strong>모델 잔차</strong> = divergence − 팩터모델 예측 — 뉴스가 설명하려 겨냥한 대상</td></tr>
+        <tr><td class="lab">모델 고도화</td><td>OLS(팩터 정의) → XGBoost·SHAP(유의성 검증) → 딥러닝 MLP(기각) → 뉴스 속성 투입(기각)</td></tr>
+        <tr><td class="lab">가설</td><td>5개 가설 수립 → <strong>3개 채택, 2개 기각</strong> (기각된 2개가 모두 뉴스 가설)</td></tr>
+        <tr><td class="lab">표본 설계</td><td>고잔차 438일 : 대조 438일 1:1 매칭 case-control (뉴스 검색 비용 제약) → 294일 gap-fill로 1,174일 전수 표본 전환 진행 중 (139/294, 2026-09-18, <a href="#sH3">H.3</a>)</td></tr>
+        <tr><td class="lab">검증 방식</td><td>확장윈도우(expanding window), 앞 40% seed, 4개 OOS 구간, 일자 단위 집계</td></tr>
+        <tr><td class="lab">핵심 구조</td><td>Leakage Gate(타겟 파생 7개 피처 하드 제외) + XGBoost</td></tr>
+        <tr><td class="lab">채택 모델</td><td>팩터 XGBoost — OOS R² 0.236, MAE 1.606%p, 부호정확도 0.726 (n<sub>OOS</sub>=704, NAV 보정 후)</td></tr>
+        <tr><td class="lab">핵심 결론</td><td>뉴스는 <strong>ROC-AUC 0.501 · 부호정확도 0.504</strong>로 유의성 미확보. 크기 신호는 저품질 기사·기사량 아티팩트가 상당 부분 설명</td></tr>
+        <tr><td class="lab">부수 발견</td><td>|divergence|의 lag1~2 자기상관 +0.13~0.17<sup class="dag">†</sup> — 방향은 몰라도 "오늘 변동성 국면"은 숫자만으로 가늠 가능</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 A.2 - 연구 핵심 결과 요약 ]</p>
+
+  <p style="font-size:14px;color:var(--ink-2)">
+    <strong>핵심어:</strong> NAV 할인율, divergence, 잔차 귀인(attribution), 확장윈도우 검증,
+    Leakage Gate, 1:1 매칭 case-control, 선택편의, 순열 중요도, 블록 부트스트랩, FDR 보정
+  </p>
+
+  <!-- ══════════════ 목차 ══════════════ -->
+  <nav class="toc" style="margin-top:56px">
+    <h2 style="border-bottom:1px solid var(--rule)">목 차</h2>
+    <ol>
+      <li><a href="#s1"><span class="tn">1</span><span>프로젝트 개요 및 문제 정의</span></a></li>
+      <li><a href="#s2"><span class="tn">2</span><span>도메인 배경 및 데이터 이해</span></a></li>
+      <li><a href="#s3"><span class="tn">3</span><span>탐색적 데이터 분석 (EDA)</span></a></li>
+      <li><a href="#s4"><span class="tn">4</span><span>가설 수립 및 검증</span></a></li>
+      <li><a href="#s5"><span class="tn">5</span><span>피처 엔지니어링</span></a></li>
+      <li><a href="#s6"><span class="tn">6</span><span>표본 설계 (매칭 case-control)</span></a></li>
+      <li><a href="#s7"><span class="tn">7</span><span>시나리오별 모델링</span></a></li>
+      <li><a href="#s8"><span class="tn">8</span><span>모델 성능 비교 및 최종 모델 선정</span></a></li>
+      <li><a href="#s9"><span class="tn">9</span><span>모델 해석 및 인사이트 도출</span></a></li>
+      <li><a href="#s10"><span class="tn">10</span><span>실무 적용 시나리오</span></a></li>
+      <li><a href="#s11"><span class="tn">11</span><span>한계 및 개선 방향</span></a></li>
+      <li><a href="#s12"><span class="tn">12</span><span>결론</span></a></li>
+      <li><a href="#sH"><span class="tn">H</span><span>Handoff — 인계 노트 (2026-09-18)</span></a></li>
+      <li><a href="#sA"><span class="tn">부록</span><span>용어 정리</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ══════════════ 1 ══════════════ -->
+  <h2 id="s1"><span class="num">1.</span>프로젝트 개요 및 문제 정의</h2>
+
+  <h3><span class="num">1.1</span>DPE란 무엇이고, 왜 고도화가 필요했는가</h3>
+  <p>
+    <strong>DPE(Daily Price Explainer)는 이미 운영 중인 IR 챗봇이다.</strong> IR 매니저가
+    "지금 주가가 왜 이래?"라고 물으면, 현재가가 전일 종가 대비 얼마나 어떤 이유로 움직였는지를
+    답한다. 장중에도 장 마감 후에도 같은 질문이 들어온다.
+  </p>
+  <p>
+    챗봇을 만드는 것 자체는 어렵지 않았다. 어려운 것은 <strong>그 답변이 근거를 갖는가</strong>였다.
+    LLM에게 그날의 뉴스와 시황을 던져주면 그럴듯한 설명이 나온다. 문제는 그럴듯한 것과 맞는
+    것이 다르다는 점이다. IR 자료에 인용되고 CEO 의사결정에 들어가려면, "이렇게 보입니다"가
+    아니라 "이 요인이 이만큼 기여했습니다"라고 말할 수 있어야 한다. 이 보고서가 다루는
+    작업은 챗봇 개발이 아니라 <strong>챗봇 뒤에 있는 설명 엔진의 고도화</strong>다.
+  </p>
+  <p>
+    설명이 두 겹인 것이 이 문제를 까다롭게 만든다. SK스퀘어는 SK하이닉스 지분을 최대 자산으로
+    보유한 투자전문회사여서, 주가가 크게 움직인 날 IR이 받는 질문은 "얼마나 움직였나"가 아니라
+    <strong>"하이닉스 때문인가, 우리 때문인가"</strong>다. 앞쪽이면 설명할 것이 별로 없고,
+    뒤쪽이면 반드시 이유를 찾아야 한다. 지금까지 이 구분은 사람의 판단에 맡겨져 있었고, 같은
+    날의 주가를 두고도 누가 정리하느냐에 따라 원인이 달라졌으며, 그 근거는 기록으로 남지 않았다.
+  </p>
+  <p>
+    잔차가 벌어지는 원인은 크게 세 갈래다. NAV 자체가 재평가되는 경우(자회사 가치 변동),
+    NAV는 그대로인데 할인율이 움직이는 경우(자사주·주주환원·지배구조), 그리고 펀더멘털과
+    무관한 수급 요인(외국인·기관 수급, 공매도, 선물 베이시스)이다. 이 세 갈래는 독립적으로
+    작동하지 않고 서로 맞물린다. 할인율이 축소되는 국면에 수급까지 몰리면 잔차가 급격히
+    벌어지고, 그때 나온 뉴스는 원인이 아니라 결과일 수도 있다. 이 얽힘이 이 문제를 단순
+    규칙이 아니라 데이터로 접근해야 하는 이유다.
+  </p>
+
+  <h3><span class="num">1.2</span>설명 실패의 비용 구조</h3>
+  <p>
+    설명을 못 하면 보고서 한 줄이 비는 것이 아니다. 비용은 여러 층위에서 발생한다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:150px">비용 항목</th><th>세부 내용</th><th style="width:170px">영향</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">대응 지연</td><td>장 마감 후 원인 확인에 수 시간 소요, 그 사이 문의는 계속 들어옴</td><td>적시성 상실</td></tr>
+        <tr><td class="lab">근거 부재</td><td>CEO 의사결정 지원 자료에 "원인 불명"으로 남는 구간 발생</td><td>의사결정 품질 저하</td></tr>
+        <tr><td class="lab">설명 비일관</td><td>담당자·시점에 따라 같은 현상에 다른 원인이 부여됨</td><td>대외 메시지 충돌</td></tr>
+        <tr><td class="lab">내러티브 고착</td><td>한 번 잘못 붙인 원인이 이후 자료에 반복 인용됨</td><td>누적 왜곡</td></tr>
+        <tr><td class="lab">과잉 해석</td><td>단순 수급 노이즈를 회사 이벤트로 오귀인</td><td>불필요한 대응 유발</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 1.1 - 잔차 설명 실패 시 비용 구조 ]</p>
+
+  <h3><span class="num">1.3</span>연구 목적 및 범위</h3>
+  <p>
+    목적은 주가를 맞히는 것이 아니다. <strong>DPE가 내놓는 설명에 정량적 근거를 붙이고,
+    동시에 그 근거가 어디까지 유효한지의 경계를 확정하는 것</strong>이다. 챗봇은 이미 답을
+    하고 있었으므로, Phase 1이 더한 것은 답이 아니라 답의 신뢰 구간이다.
+  </p>
+  <p>
+    작업은 잔차를 두 번 걷어내는 방식으로 진행했다. 먼저 하이닉스·NAV로 설명되는 부분을
+    걷어내 <strong>divergence(1차 잔차)</strong>를 남기고, 여기에 팩터 모델을 적합시켜
+    <strong>모델 잔차(2차 잔차)</strong>를 남긴다. 뉴스가 겨냥한 것은 이 2차 잔차다.
+    두 잔차를 구분하지 않으면 "뉴스가 주가를 설명하는가"라는 답할 수 없는 질문이 되어버린다
+    (그림 A.1).
+  </p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:150px">구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">분석 대상</td><td>SK스퀘어 상장(2021-11-29) 이후 전 거래일 1,144일 (2026-09-17 NAV 보정판 기준)</td></tr>
+        <tr><td class="lab">1차 타겟</td><td>divergence (%p) — 일별 실제 수익률과 NAV 기반 기대수익률의 차</td></tr>
+        <tr><td class="lab">2차 타겟</td><td>모델 잔차 — divergence에서 팩터 모델 예측을 뺀 나머지. 뉴스 검증 대상</td></tr>
+        <tr><td class="lab">입력 변수</td><td>원천 팩터 22개 → 파생 포함 37개 피처 → 누설 차단 후 30개 사용 / 뉴스 파생 84개</td></tr>
+        <tr><td class="lab">모델 계보</td><td>OLS → Ridge → XGBoost·SHAP → MLP(2층 딥러닝) → 뉴스 속성 결합·2단 구조</td></tr>
+        <tr><td class="lab">분석 방법</td><td>EDA → 가설 수립·검증 → 피처 설계 → 표본 설계 → 확장윈도우 모델링 → 순열 중요도 해석</td></tr>
+        <tr><td class="lab">주요 도구</td><td>Python · pandas · scikit-learn · XGBoost · Gemini(뉴스 속성 추출)</td></tr>
+        <tr><td class="lab">제외 범위</td><td>장중 실시간 추론 검증, 챗봇 응답 생성 로직, 목표주가 예측</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 1.2 - 연구 범위 요약 ]</p>
+
+  <h3><span class="num">1.4</span>기대 효과</h3>
+  <p>
+    <strong>첫째, 귀인 기준의 명시화.</strong> 잔차가 벌어진 날 어떤 팩터가 얼마나 기여했는지를
+    수치로 제시할 수 있으면, 설명의 근거가 담당자의 기억이 아니라 데이터에 놓인다.
+  </p>
+  <p>
+    <strong>둘째, 설명 가능한 것과 불가능한 것의 경계 확정.</strong> 이것이 Phase 1의 가장 큰
+    실용적 성과다. 뉴스로 방향을 설명할 수 없다는 사실을 확인했기 때문에, 챗봇이
+    "이 뉴스 때문에 올랐습니다"라는 문장을 만들지 못하도록 사전에 막을 수 있다.
+    설명할 수 없다는 것을 아는 것이 잘못 설명하는 것보다 낫다.
+  </p>
+  <p>
+    <strong>셋째, 다음 단계의 방향 결정.</strong> 뉴스가 실패한 지점이 "LLM의 주관적 판정"과
+    "관련성 낮은 시황 기사"로 특정되었으므로, Phase 2는 텍스트 해석을 경유하지 않는
+    구조화된 정량 이벤트로 넘어갈 근거를 갖게 되었다.
+  </p>
+
+  <!-- ══════════════ 2 ══════════════ -->
+  <h2 id="s2"><span class="num">2.</span>도메인 배경 및 데이터 이해</h2>
+
+  <h3><span class="num">2.1</span>NAV 할인 구조와 divergence의 정의</h3>
+  <p>
+    투자전문회사의 주가는 보유 자산 가치(NAV)에 할인율이 곱해진 형태로 형성된다. SK스퀘어의
+    NAV는 SK하이닉스 지분이 압도적 비중을 차지하므로, 하이닉스가 움직이면 NAV도 함께 움직이고
+    주가도 따라 움직여야 한다. 그 "따라 움직여야 하는 폭"이 <code>nav_implied_ret</code>이고,
+    실제 움직임과의 차이가 이 연구의 타겟이다.
+  </p>
+  <div class="formula">
+    <b>1차 잔차</b>  divergence   =  skq_ret − nav_implied_ret        [%p]<br>
+    <b>2차 잔차</b>  모델 잔차     =  divergence − 팩터모델 예측치      [%p]  ← 뉴스 검증 대상<br><br>
+    nav_discount_pct  =  (NAV − 시가총액) / NAV × 100  [%]
+  </div>
+  <p>
+    여기서 중요한 것은 divergence가 <strong>회귀 잔차가 아니라 회계식 잔차</strong>라는 점이다.
+    회귀 잔차는 정의상 평균이 0이고 설명변수와 직교하지만, NAV 회계식 잔차는 그렇지 않다.
+    할인율이 구조적으로 축소되는 국면에서는 divergence가 며칠 연속 같은 방향으로 쌓일 수 있고,
+    실제로 그런 구간이 관측된다. 이 성질이 뒤에서 자기상관 발견(H5)으로 이어진다.
+  </p>
+  <p>
+    잔차가 발생하는 경로는 정의상 두 가지뿐이다. NAV 계산에 반영되지 않은 자산가치 변동이
+    있었거나, 할인율 자체가 움직였거나. 전자는 자회사 이벤트, 후자는 주주환원·지배구조·수급이
+    주로 건드린다. 문제는 타이밍이다. NAV는 종가 기준으로 사후 계산되므로, 잔차가 벌어졌다는
+    사실은 장이 끝난 뒤에야 확정된다. 설명을 앞당길 수 있다면 대응 방식 자체가 달라진다.
+  </p>
+
+  <h3><span class="num">2.2</span>데이터 구조 및 변수 정의</h3>
+  <p>
+    수집 파이프라인은 <code>data/factor_log.csv</code>를 중심으로 돈다. 평일 16:35에 Windows
+    작업 스케줄러가 갱신하며, 현재 <code>date</code> 외 22개 원천 팩터 컬럼을 보유한다.
+    이 원천 컬럼에서 파생을 만들어 <code>tools/features.py</code>의
+    <code>FEATURE_TAXONOMY</code>에 37개 피처로 등록되어 있고, F1~F8의 8계층 분류를 따른다.
+    <strong>2026-09-16에 이름표를 재배치했다</strong> — F2를 "섹터·매크로"에서 "섹터"로 좁히고,
+    매크로 3개를 F7로 옮겨 F7을 "매크로"로 통일했으며, 기존 F7의 국면·상호작용을 F8로 분리
+    보존했다. 피처 자체의 추가·삭제는 없고 이름표만 바뀌었다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:62px">계층</th><th style="width:120px">이름</th><th class="c" style="width:54px">등록</th><th class="c" style="width:74px">누설차단 후</th><th>주요 변수</th><th>도메인 의미</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">F1</td><td>NAV</td><td class="c n">8</td><td class="c n">2</td><td><code>hynix_ret</code>, <code>divergence_lag1</code></td><td>할인율 레벨·변화 6개가 전부 누설로 빠져, 남은 건 사실상 하이닉스 수익률뿐</td></tr>
+        <tr><td class="lab">F2</td><td>섹터</td><td class="c n">3</td><td class="c n">3</td><td><code>sector_semiconductor</code>, <code>sector_excess</code>, <code>hynix_ex_sector</code></td><td>반도체 섹터 대비 초과 강도, 종목 고유 알파</td></tr>
+        <tr><td class="lab">F3</td><td>수급</td><td class="c n">9</td><td class="c n">9</td><td><code>foreign_net</code>, <code>flow_z20</code>, <code>foreign_own_pct</code></td><td>외국인·기관·개인 순매수와 그 서프라이즈. <strong>유일하게 유의한 카테고리(9.4절)</strong></td></tr>
+        <tr><td class="lab">F4</td><td>공매도</td><td class="c n">6</td><td class="c n">6</td><td><code>shorting_balance_ratio</code>, <code>short_pressure_flag</code></td><td>잔고율 국면과 압력 플래그. <strong>제거 시 성능 개선(9.4절)</strong></td></tr>
+        <tr><td class="lab">F5</td><td>파생(선물)</td><td class="c n">5</td><td class="c n">5</td><td><code>fut_basis_pct</code>, <code>fut_listed</code></td><td>콘탱고/백워데이션. 상장이 간헐적이라 미상장 구간 다수</td></tr>
+        <tr><td class="lab">F6</td><td>기업 이벤트</td><td class="c n">0</td><td class="c n">0</td><td>—</td><td><strong>숫자 피처가 없는 뉴스 전용 칸.</strong> 뉴스 텍스트로 채우려다 기각. Phase 2에서 기업 관련 뉴스로 재시도 예정</td></tr>
+        <tr><td class="lab">F7</td><td>매크로</td><td class="c n">3</td><td class="c n">3</td><td><code>kospi_ret</code>, <code>usd_krw_chg_pct</code>, <code>kospi_vol20</code></td><td>시장 베타·FX·시장 변동성. Phase 2에서 매크로 관련 뉴스가 같은 칸에 합류 예정</td></tr>
+        <tr><td class="lab">F8</td><td>국면·상호작용</td><td class="c n">3</td><td class="c n">2</td><td><code>hynix_x_shortinc</code>, <code>disc_delta_lag1</code></td><td>잔차 탐색용 교호작용항. <code>skq_vol20</code>은 누설로 제외</td></tr>
+        <tr style="border-top:2px solid var(--rule-strong)"><td class="lab">합계</td><td>—</td><td class="c n"><strong>37</strong></td><td class="c n"><strong>30</strong></td><td colspan="2">누설 차단 7개 = 할인율 레벨·추세 4개 + divergence 계열 2개 + <code>skq_vol20</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 2.1 - F1~F8 피처 taxonomy 구성 (등록 37개 / 모델 투입 30개) ]</p>
+  <div class="flag">
+    <p class="ct">⚠ 이름표와 내용물의 불일치 — F1은 "NAV"가 아니다</p>
+    <p>
+      F1의 이름은 "NAV"지만, <strong><code>nav_implied_ret</code>(실제 NAV 증감율)은
+      <code>FEATURE_TAXONOMY</code>에 등록조차 되어 있지 않다.</strong>
+      <code>factor_log.csv</code>에 값은 있으나 <strong>타겟(<code>divergence</code>)을 만드는 데만
+      쓰이고 모델 입력으로는 한 번도 들어간 적이 없다.</strong> 누설 차단 후 F1에 남는 것은
+      <code>hynix_ret</code>과 <code>divergence_lag1</code> 둘뿐이다.
+      이 이름표가 "NAV 증감율이 F1에 들어가 있다"는 오해를 만들어 왔다.
+    </p>
+  </div>
+  <p>
+    뉴스 쪽은 별도 경로다. 880거래일에 대한 뉴스 검색을 전수 수행해 기사를 수집하고,
+    LLM으로 기사별 속성을 추출했다. 수치형 8종(<code>relevance_score</code>,
+    <code>novelty_score</code>, <code>sentiment_score</code>, <code>surprise_magnitude</code>,
+    <code>materiality_score</code>, <code>uncertainty_score</code>, <code>confidence_score</code>,
+    <code>ex_ante_impact_direction</code>)과 범주형 7종(<code>primary_subject</code>,
+    <code>event_type</code>, <code>event_stage</code>, <code>surprise_direction</code>,
+    <code>impact_horizon</code>, <code>event_time_bucket</code>, <code>availability</code>)을
+    일자 단위로 집계(평균·최대·가중합·원핫)하여 <strong>84개 뉴스 피처</strong>를 만들었다.
+  </p>
+
+  <h3><span class="num">2.3</span>데이터 품질 진단</h3>
+  <p>
+    결측은 구조적인 것과 우발적인 것이 섞여 있다. F5 선물은 SK스퀘어 주식선물의 상장 구간이
+    간헐적이라 미상장 기간이 길고, 이를 0으로 채우고 <code>fut_listed</code> 플래그로 구분한다.
+    상장 첫날(2021-11-29)은 전일 종가가 없어 수익률이 정의되지 않으므로 표본에서 제외했다.
+  </p>
+  <p>
+    타겟 분포는 심각한 불균형은 아니다. |divergence| ≥ 3%p인 고잔차일은 <strong>1,144일 중
+    440일로 38.46%</strong>다(2026-09-17 NAV 보정 후 <code>selection_bias_audit</code> 기준 —
+    이전 판의 195일·17.12%는 옛 스냅샷이다). 다만 부호는 거의 대칭이어서, 평균 예측 기준선의
+    부호정확도가 0.47~0.50에 머문다. 즉 <strong>방향은 사전적으로 동전 던지기</strong>이고,
+    이것이 뒤에서 모델의 부호정확도 0.73을 의미 있게 만드는 배경이다.
+  </p>
+  <div class="flag">
+    <p class="ct">⚠ 치명적 품질 이슈 — 뉴스 라벨의 선택편의</p>
+    <p>
+      뉴스·이벤트 라벨(<code>event_name</code>)은 <strong>고잔차일에만 사실상 배타적으로 수집되었다.</strong>
+      전체 1,144일 중 라벨이 붙은 날은 87일이고, <strong>전부(87/87)가 고잔차일</strong>이다.
+      고잔차일의 라벨 부착률은 19.77%(87/440), 비고잔차일은 <strong>0.00%(0/704)</strong>다 —
+      완전히 분리돼 있다.
+    </p>
+    <p>
+      이 상태로 <code>event_name</code>을 모델 입력에 넣으면 "이벤트가 있으면 잔차가 크다"는
+      결론이 나오는데, 그것은 데이터가 아니라 수집 절차가 만든 결론이다. 따라서
+      <code>event_name</code>은 모든 모델 입력에서 <strong>영구 제외</strong>했고, 뉴스 검증은
+      동일 프로토콜로 검색된 일자만 대상으로 하는 매칭 표본(6장) 위에서만 수행했다.
+    </p>
+  </div>
+
+  <!-- ══════════════ 3 ══════════════ -->
+  <h2 id="s3"><span class="num">3.</span>탐색적 데이터 분석 (EDA)</h2>
+
+  <h3><span class="num">3.1</span>타겟 분포와 뉴스 커버리지의 편중</h3>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 250" role="img" aria-labelledby="f31t">
+        <title id="f31t">패널 A: 고잔차일은 1,144거래일 중 440일(38.5%). 패널 B: 뉴스 라벨은 고잔차일에만 붙는다 — 고잔차일 19.8%, 비고잔차일 0.0%(0건).</title>
+
+        <!-- Panel A -->
+        <text class="vtitle" x="8" y="20">패널 A — 고잔차일 분포 <tspan style="font-size:11px;fill:var(--ink-3)">(2026-09-17 NAV 보정 후)</tspan></text>
+        <text class="vsub" x="8" y="38">|divergence| ≥ 3%p · 전체 1,144거래일</text>
+        <g>
+          <line class="vaxis" x1="104" y1="56" x2="104" y2="150"/>
+          <!-- 미해당 704 -->
+          <text class="vlab" x="96" y="80" text-anchor="end">미해당</text>
+          <rect class="mark" x="104" y="64" width="154" height="24" fill="var(--s1)"><title>미해당 704일 (61.5%)</title></rect>
+          <text class="vval" x="266" y="80">704일 · 61.5%</text>
+          <!-- 고잔차 440 -->
+          <text class="vlab" x="96" y="122" text-anchor="end">고잔차</text>
+          <rect class="mark" x="104" y="106" width="96" height="24" fill="var(--s1)"><title>고잔차 440일 (38.5%)</title></rect>
+          <text class="vval" x="208" y="122">440일 · 38.5%</text>
+          <text class="vnote" x="104" y="168">부호는 거의 대칭 — 평균 기준선 부호정확도 0.47</text>
+        </g>
+
+        <!-- divider -->
+        <line class="vgrid" x1="392" y1="8" x2="392" y2="200"/>
+
+        <!-- Panel B -->
+        <text class="vtitle" x="412" y="20">패널 B — 뉴스 라벨 부착률</text>
+        <text class="vsub" x="412" y="38">event_name 이 채워진 일자 비율</text>
+        <g>
+          <line class="vaxis" x1="500" y1="56" x2="500" y2="150"/>
+          <text class="vlab" x="492" y="80" text-anchor="end">고잔차일</text>
+          <rect class="mark" x="500" y="64" width="99" height="24" fill="var(--s1)"><title>고잔차일 87/440 = 19.77%</title></rect>
+          <text class="vval" x="500" y="103">19.77%  (87 / 440일)</text>
+          <text class="vlab" x="492" y="122" text-anchor="end">비고잔차일</text>
+          <rect class="mark" x="500" y="106" width="1" height="24" fill="var(--no)"><title>비고잔차일 0/704 = 0.00%</title></rect>
+          <text class="vval" x="505" y="122">0.00%  (0 / 704일)</text>
+          <text class="vflag" x="412" y="168">⚠ 선택편의 — 완전 분리(0건). event_name 모델 입력 제외 근거</text>
+        </g>
+
+        <line class="vgrid" x1="8" y1="200" x2="752" y2="200"/>
+        <text class="vnote" x="8" y="224">출처: output/unbiased_dl_baseline.json · selection_bias_audit (rows 1,144 / event_name_non_null 87) · 2026-09-17 NAV 보정 후</text>
+      </svg>
+    </div>
+    <figcaption class="cap">[ 그림 3.1 - 타겟 분포(좌) 및 뉴스 라벨 부착률의 구조적 편중(우) · 2026-09-17 NAV 보정 후 재계산 ]</figcaption>
+  </figure>
+
+  <p>
+    패널 B가 이 프로젝트의 방법론적 분기점이다. 뉴스가 고잔차일에만 붙어 있다는 것은,
+    뉴스와 잔차의 상관을 그대로 측정하면 반드시 강한 양의 관계가 나온다는 뜻이다.
+    이 편의를 제거하지 않은 상태의 어떤 결과도 신뢰할 수 없다.
+  </p>
+
+  <h3><span class="num">3.2</span>잔차의 시계열 구조</h3>
+  <p>
+    divergence 자체의 부호는 예측하기 어렵지만, <strong>크기</strong>는 그렇지 않았다.
+    |divergence|와 divergence²에 대해 lag 1~2 자기상관이 <strong>+0.13~0.17</strong> 수준으로
+    관측된다.<sup class="dag">†</sup> 큰 변동이 있었던 날 다음 날에도 큰 변동이 나올 확률이
+    높다는 뜻으로, 금융 시계열의 전형적인 변동성 군집화(ARCH형) 패턴이다.
+  </p>
+  <p>
+    이 발견은 실무적으로 작지 않다. 방향은 못 맞혀도 "오늘은 잔차가 크게 벌어질 수 있는
+    국면"이라는 사전 경고는 순수 숫자만으로 가능하다는 의미이기 때문이다. 이 성질은
+    <code>divergence_lag1</code>, <code>disc_delta_lag1</code> 두 파생변수로 모델에 반영했다.
+  </p>
+
+  <h3><span class="num">3.3</span>뉴스 속성 간 상관 구조 — 라벨 설계의 결함</h3>
+  <p>
+    뉴스 속성 점수 8종의 상관 구조를 보면, LLM이 서로 다른 것을 재고 있다고 가정한 필드들이
+    실은 같은 것을 재고 있었다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>관측</th><th class="n" style="width:110px">상관</th><th>해석</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>confidence_score</code> ↔ <code>relevance_score</code>, <code>materiality_score</code></td>
+          <td class="n">ρ &gt; 0.75<sup class="dag">†</sup></td>
+          <td>"확신도"를 재라고 지시했으나 실제로는 <strong>기사 품질의 대리변수</strong>가 되었음. 관련성 높고 중요한 기사에 높은 확신도가 부여됨</td>
+        </tr>
+        <tr>
+          <td><code>sentiment_score</code> ↔ <code>surprise_direction</code> ↔ <code>ex_ante_impact_direction</code></td>
+          <td class="n">0.838<sup class="dag">†</sup></td>
+          <td>세 필드에서 <strong>반대 부호 사례가 0건.</strong> 사실상 하나의 변수. 라벨이 "기사 톤"을 재고 있고, "SK스퀘어 vs NAV 반응 차이의 방향"을 재지 못함</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 3.1 - 뉴스 속성 필드 간 중복 구조 ]</p>
+  <p>
+    두 번째 항목이 특히 중요하다. 우리가 설명하려는 것은 주가의 방향이 아니라
+    <strong>주가와 NAV의 반응 차이</strong>의 방향이다. 그런데 기사 톤은 "이 뉴스가 좋은
+    소식인가"를 재는 것이지, "이 뉴스 때문에 SK스퀘어가 NAV보다 더 올랐을 것인가"를 재지
+    않는다. 좋은 소식이 NAV와 주가를 같은 폭으로 올리면 divergence는 0이다. 라벨과 타겟이
+    애초에 다른 것을 가리키고 있었다.
+  </p>
+
+  <h3><span class="num">3.4</span>EDA 종합</h3>
+  <p>
+    <strong>첫째, 잔차의 크기와 방향은 완전히 다른 문제다.</strong> 방향은 사전적으로 대칭이고
+    기준선 정확도가 0.49다. 크기는 자기상관을 갖는다. 두 문제를 하나의 모델로 다루면 크기 쪽
+    설명력이 방향 쪽 무능을 가려버리므로, 이후 모든 평가에서 R²(크기)와 부호정확도(방향)를
+    분리해 보고했다.
+  </p>
+  <p>
+    <strong>둘째, 뉴스 데이터의 결함은 수집과 라벨 양쪽에 있었다.</strong> 수집은 고잔차일에
+    편중되었고(3.1), 라벨은 서로 중복되며 타겟과 다른 것을 재고 있었다(3.3). 이 둘은
+    별개의 문제이고 각각 다른 처방이 필요하다 — 앞은 표본 설계로, 뒤는 라벨 재설계로.
+  </p>
+  <p>
+    <strong>셋째, 숫자 팩터에는 실제 신호가 있다.</strong> F1 하이닉스 수익률과 F1.3 할인율
+    계열이 잔차와 직접 연결되고, F3 수급과 F4 공매도가 할인율 변동 경로를 설명한다.
+    이 구조는 이후 모델에서 그대로 확인된다.
+  </p>
+
+  <!-- ══════════════ 4 ══════════════ -->
+  <h2 id="s4"><span class="num">4.</span>가설 수립 및 검증</h2>
+
+  <h3><span class="num">4.1</span>가설 수립 방법론</h3>
+  <p>
+    가설은 3장 EDA와 지주사 밸류에이션 도메인 지식을 결합해 세웠다. 각 가설은
+    「가설 → 근거 → 검증 방법 → 검증 결과 → 피처·구조 반영 → 결론」의 형식을 유지했고,
+    가설이 채택되든 기각되든 그 결과가 모델 구조나 다음 단계 설계로 이어지도록 설계했다.
+  </p>
+  <p>
+    다섯 개 가설은 표 A.0의 모델 고도화 단계와 일대일로 대응한다. H1은 OLS로 팩터 체계를
+    정의하던 1단계에서, H2는 XGBoost·SHAP으로 유의성을 검증하던 2단계에서, H3·H4는 뉴스
+    속성을 투입한 4단계에서 각각 검정되었다. H5는 어느 단계에도 계획되어 있지 않았고,
+    2단계 진행 중 부수적으로 발견되었다.
+  </p>
+  <p>
+    코치님 보고서의 사례와 달리 이 프로젝트에서는 <strong>5개 가설 중 2개가 기각되었다.</strong>
+    기각은 실패가 아니라 산출물이다. H3·H4가 기각됨으로써 Phase 2의 방향이
+    "LLM 텍스트 해석"에서 "구조화 정량 이벤트"로 확정되었기 때문이다.
+  </p>
+
+  <!-- H1 -->
+  <div class="hyp">
+    <div class="hyp-hd">
+      <span class="hid">H1</span>
+      <span>SK스퀘어 수익률의 대부분은 SK하이닉스로 설명된다</span>
+      <span class="verdict v-ok">채택</span>
+    </div>
+    <p class="hyp-claim">
+      SK스퀘어 주가 변동은 단독 현상이 아니라 SK하이닉스 수익률에 대한 종속 변동이 지배적이며,
+      따라서 설명 대상은 원수익률이 아니라 그 나머지여야 한다.
+    </p>
+    <dl>
+      <dt>근거</dt>
+      <dd>SK스퀘어 NAV에서 SK하이닉스 지분이 압도적 비중. 투자전문회사의 주가는 보유 자산 가치에 연동되는 것이 정상</dd>
+      <dt>검증 방법</dt>
+      <dd><code>skq_ret ~ hynix_ret</code> OLS 회귀. 베타·결정계수 추정</dd>
+      <dt>검증 결과</dt>
+      <dd><strong>β = 0.885, R² = 0.637</strong> (NAV 보정 후 재계산, n=1,120) — 수익률 분산의 약 64%가 하이닉스로 설명됨</dd>
+      <dt>구조 반영</dt>
+      <dd>분석 타겟을 <code>skq_ret</code>에서 <code>divergence</code>로 전환. 이 결정이 프로젝트 전체 구조를 규정</dd>
+      <dt>결론</dt>
+      <dd><strong>채택</strong> — 다만 나머지 38%가 이 연구의 실질 대상임이 확정됨</dd>
+    </dl>
+  </div>
+
+  <!-- H2 -->
+  <div class="hyp">
+    <div class="hyp-hd">
+      <span class="hid">H2</span>
+      <span>남은 잔차는 숫자 팩터만으로 유의하게 설명된다</span>
+      <span class="verdict v-ok">채택</span>
+    </div>
+    <p class="hyp-claim">
+      NAV·섹터·수급·공매도·선물·국면 팩터는 텍스트 해석 없이도 divergence의 크기와 방향을
+      기준선 대비 유의하게 설명한다.
+    </p>
+    <dl>
+      <dt>근거</dt>
+      <dd>할인율 변동은 수급과 주주환원 기대의 함수. 이 요인들은 모두 이미 숫자로 관측됨</dd>
+      <dt>검증 방법</dt>
+      <dd>누설 차단 30개 피처 · 확장윈도우 4개 OOS 구간 · 평균 기준선/Ridge/MLP/XGBoost 비교</dd>
+      <dt>검증 결과</dt>
+      <dd>
+        XGBoost <strong>OOS R² 0.236</strong> (n=704), MAE 1.606%p, 부호정확도 <strong>0.726</strong><br>
+        매칭 표본(뉴스 검증용)에서는 숫자 팩터 단독 OOS R² <strong>0.298</strong> (n=524), 부호정확도 0.721<br>
+        평균 기준선은 R² −0.005, 부호정확도 0.472 (NAV 보정 후 재실행)
+      </dd>
+      <dt>피처 반영</dt>
+      <dd>F1~F5·F7 전 계층 채택. <code>divergence_lag1</code>, <code>flow_z20</code>, <code>sector_excess</code> 등 파생 유지</dd>
+      <dt>결론</dt>
+      <dd><strong>채택</strong> — 단, 마지막 구간에서 R² −0.062로 급락(8.3절). 국면 의존성이 존재</dd>
+    </dl>
+  </div>
+
+  <!-- H3 -->
+  <div class="hyp">
+    <div class="hyp-hd">
+      <span class="hid">H3</span>
+      <span>뉴스 텍스트 속성은 잔차의 <em>방향</em>을 설명한다</span>
+      <span class="verdict v-no">기각</span>
+    </div>
+    <p class="hyp-claim">
+      LLM이 추출한 감성·서프라이즈 방향·사전 영향 방향 점수는 divergence의 부호를 설명한다.
+    </p>
+    <dl>
+      <dt>근거</dt>
+      <dd>긍정 뉴스는 할인율을 축소시켜 주가를 NAV보다 더 끌어올릴 것이라는 기대</dd>
+      <dt>검증 방법</dt>
+      <dd>매칭 case-control 표본 · 확장윈도우 OOS · 뉴스 단독 XGBoost 및 조건부 로짓 · 부호정확도와 방향 AUC</dd>
+      <dt>검증 결과</dt>
+      <dd>
+        뉴스 단독 <strong>OOS R² −0.031</strong> (NAV 보정 후 재실행) — 평균 예측보다 나쁨<br>
+        부호정확도 <strong>0.5038</strong> (기준선 0.502). 방향 AUC <strong>0.531</strong><sup class="dag">†</sup><br>
+        방향 필드 3종은 상호 상관 0.838로 사실상 1개 변수(3.3절)
+      </dd>
+      <dt>구조 반영</dt>
+      <dd>챗봇 가드레일에 반영 — 뉴스 기반 방향 서술 생성 금지 규칙</dd>
+      <dt>결론</dt>
+      <dd><strong>기각 (불변)</strong> — 저품질 기사 제거, 라벨 정제, 모델 교체 어느 조건에서도 회복되지 않음</dd>
+    </dl>
+  </div>
+
+  <!-- H4 -->
+  <div class="hyp">
+    <div class="hyp-hd">
+      <span class="hid">H4</span>
+      <span>뉴스 텍스트 속성은 잔차의 <em>크기·발생</em>을 설명한다</span>
+      <span class="verdict v-no">기각</span>
+    </div>
+    <p class="hyp-claim">
+      방향은 못 맞혀도, 뉴스의 양과 중요도는 "오늘 잔차가 크게 벌어질지"를 설명한다.
+    </p>
+    <dl>
+      <dt>근거</dt>
+      <dd>중요 뉴스가 많은 날에 거래와 재평가가 몰린다는 통상적 기대. 1차 스크리닝에서 실제로 유의했음</dd>
+      <dt>검증 방법</dt>
+      <dd>
+        (1단계) 매칭 표본 조건부 로짓·XGBoost·SHAP → 발생 여부 AUC<br>
+        (2단계) 저품질 기사 제거 후 재실행 + FDR 다중검정 보정<br>
+        (3단계) 확장윈도우 OOS에서 숫자 팩터 대비 증분 기여 · 블록 부트스트랩
+      </dd>
+      <dt>검증 결과</dt>
+      <dd>
+        1단계: 발생 여부 AUC <strong>0.611</strong> (p&lt;0.01) — 유의<sup class="dag">†</sup><br>
+        2단계: <code>market_flow</code>·<code>follow_up</code>·<code>metadata_only</code>
+        (전체의 <strong>58.4%</strong>) 제거 후 AUC <strong>0.559</strong>로 하락 — 실무 문턱 0.58 미달.
+        FDR 보정 시 개별 신호 10개 중 <strong>0개 생존</strong><sup class="dag">†</sup><br>
+        3단계: 매칭 표본 OOS 판별 ROC-AUC <strong>0.501</strong>. 증분 ΔR² <strong>−0.001</strong> (NAV 보정 후 재실행)
+      </dd>
+      <dt>구조 반영</dt>
+      <dd>F6 자리를 텍스트가 아닌 구조화 정량 이벤트로 채우기로 결정 (Phase 2)</dd>
+      <dt>결론</dt>
+      <dd><strong>기각</strong> — 1차 신호의 상당 부분이 저품질 기사와 기사량 아티팩트였음</dd>
+    </dl>
+  </div>
+
+  <!-- H5 -->
+  <div class="hyp">
+    <div class="hyp-hd">
+      <span class="hid">H5</span>
+      <span>잔차의 크기는 자기상관을 가진다 (변동성 군집화)</span>
+      <span class="verdict v-ok">채택</span>
+    </div>
+    <p class="hyp-claim">
+      divergence의 부호는 예측 불가하지만, 그 절대크기는 전일 값과 양의 상관을 가지며
+      국면 형태로 지속된다.
+    </p>
+    <dl>
+      <dt>근거</dt>
+      <dd>금융 시계열의 ARCH형 변동성 군집화. 할인율 재평가는 하루에 끝나지 않고 며칠에 걸쳐 진행됨</dd>
+      <dt>검증 방법</dt>
+      <dd>|divergence|·divergence²의 lag 1~2 자기상관 · |divergence| ≥ 3 분류 모델</dd>
+      <dt>검증 결과</dt>
+      <dd>
+        자기상관 <strong>+0.13~0.17</strong><sup class="dag">†</sup><br>
+        고잔차 분류: XGBoost PR-AUC <strong>0.317</strong> (무작위 기준선 0.213), ROC-AUC 0.642,
+        재현율 0.500 (NAV 보정 후 재실행)
+      </dd>
+      <dt>피처 반영</dt>
+      <dd><code>divergence_lag1</code>, <code>disc_delta_lag1</code>, <code>kospi_vol20</code>, <code>short_pressure_flag</code></dd>
+      <dt>결론</dt>
+      <dd><strong>채택</strong> — Phase 1의 부수 발견이지만 실무 활용도가 가장 높은 결과</dd>
+    </dl>
+  </div>
+
+  <h3><span class="num">4.6</span>가설 검증 종합</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:52px">가설</th><th>실무 질문</th><th class="c" style="width:96px">결과</th><th>핵심 수치</th><th>후속 반영</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">H1</td><td>주가는 하이닉스로 설명되나?</td><td class="c"><span class="verdict v-ok">채택</span></td><td class="n">R² 0.637</td><td>타겟을 divergence로 전환</td></tr>
+        <tr><td class="lab">H2</td><td>잔차는 숫자로 설명되나?</td><td class="c"><span class="verdict v-ok">채택</span></td><td class="n">OOS R² 0.236</td><td>숫자 팩터 XGBoost 최종 채택</td></tr>
+        <tr><td class="lab">H3</td><td>뉴스가 방향을 설명하나?</td><td class="c"><span class="verdict v-no">기각</span></td><td class="n">부호정확도 0.504</td><td>챗봇 방향 서술 금지 가드레일</td></tr>
+        <tr><td class="lab">H4</td><td>뉴스가 크기를 설명하나?</td><td class="c"><span class="verdict v-no">기각</span></td><td class="n">AUC 0.611→0.559<sup class="dag">†</sup></td><td>F6을 구조화 이벤트로 재설계</td></tr>
+        <tr><td class="lab">H5</td><td>잔차 크기는 지속되나?</td><td class="c"><span class="verdict v-ok">채택</span></td><td class="n">자기상관 +0.13~0.17<sup class="dag">†</sup></td><td>국면 경고 기능의 근거</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 4.1 - 5개 가설 검증 종합 (채택 3 / 기각 2) ]</p>
+
+  <!-- ══════════════ 5 ══════════════ -->
+  <h2 id="s5"><span class="num">5.</span>피처 엔지니어링</h2>
+
+  <h3><span class="num">5.1</span>Leakage Gate 설계</h3>
+  <p>
+    이 프로젝트에서 가장 먼저 세운 구조는 성능 향상 장치가 아니라 <strong>차단 장치</strong>다.
+    타겟 <code>divergence</code>는 NAV 회계식에서 나오는데, 같은 회계식에서 나오는 다른
+    변수들이 피처 목록에 함께 들어 있었다. 이들을 그대로 넣으면 모델이 타겟을 사실상 다시
+    읽는 것이 되어 R²가 인위적으로 올라간다.
+  </p>
+  <div class="formula">
+    leakage_gate: 다음 7개 피처는 조건 없이 모델 입력에서 제외<br>
+    &nbsp;&nbsp;divergence · divergence_ma5 · nav_discount_pct · nav_discount_delta<br>
+    &nbsp;&nbsp;nav_discount_vs_ma20 · nav_discount_z60 · skq_vol20<br><br>
+    → 37개 피처 − 7개 타겟 파생 = <b>30개 누설 차단 입력</b><br>
+    → 추가로 event_name 은 선택편의(2.3절) 사유로 영구 제외
+  </div>
+  <p>
+    이 Gate는 규칙이 단순하고 예외가 없어서, 이후 어떤 모델을 붙여도 성능 숫자를
+    같은 기준으로 비교할 수 있다. 반대로 말하면, Gate 없이 측정된 과거 수치는 모두
+    폐기 대상이다. 실제로 초기 문서에는 입력 피처 수가 27개로 기록되어 있었는데,
+    감사 과정에서 저장소의 실제 정의가 37개(누설 차단 후 30개)임이 확인되어 정정했다.
+  </p>
+
+  <h3><span class="num">5.2</span>Taxonomy 기반 파생변수</h3>
+  <p>
+    파생변수는 "원천 컬럼을 조합해 도메인 논리를 수치로 표현한 것"이며, 각각 F1~F7 노드에
+    매핑되어 나중에 귀인 결과를 계층별로 집계할 수 있게 설계했다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:190px">파생변수</th><th class="c" style="width:58px">계층</th><th>산출 방식</th><th>실무 의미</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab"><code>divergence_lag1</code></td><td class="c">F1.4</td><td>전일 divergence</td><td>H5 자기상관을 직접 변수화. 유일하게 살아남은 시계열 신호</td></tr>
+        <tr><td class="lab"><code>disc_delta_lag1</code></td><td class="c">F7</td><td>전일 할인율 변화</td><td>누설 없는 모멘텀 대체재 (당일 할인율은 Gate로 차단됨)</td></tr>
+        <tr><td class="lab"><code>sector_excess</code></td><td class="c">F2</td><td>반도체 − KOSPI</td><td>섹터 초과 강도. 시장 전체와 섹터를 분리</td></tr>
+        <tr><td class="lab"><code>hynix_ex_sector</code></td><td class="c">F2</td><td>하이닉스 − 반도체섹터</td><td>하이닉스 종목 고유 알파. NAV 재평가 경로</td></tr>
+        <tr><td class="lab"><code>flow_z20</code></td><td class="c">F3</td><td>(외국인+기관) 20일 z-score</td><td>수급 서프라이즈. 레벨이 아니라 이례성을 잡음</td></tr>
+        <tr><td class="lab"><code>foreign_net_lag1</code></td><td class="c">F3</td><td>전일 외국인 순매수</td><td>수급 데이터의 T+1 공시 지연 반영</td></tr>
+        <tr><td class="lab"><code>short_pressure_flag</code></td><td class="c">F4</td><td>잔고 증가 &amp; 잔고율 ≥ 1%</td><td>공매도 압력 국면의 이진 플래그</td></tr>
+        <tr><td class="lab"><code>hynix_x_shortinc</code></td><td class="c">F7</td><td>하이닉스수익률 × 공매도증가</td><td>교호작용 — 하락장에서 공매도가 겹칠 때의 증폭</td></tr>
+        <tr><td class="lab"><code>fut_basis_chg</code></td><td class="c">F5</td><td>선물 베이시스 전일 대비</td><td>미상장 구간은 0, <code>fut_listed</code>로 구분</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 5.1 - 주요 파생변수 (전체 파생 목록의 발췌) ]</p>
+
+  <h3><span class="num">5.3</span>제거 변수 처리</h3>
+  <p>
+    제거는 세 층위에서 이루어졌고, 각각 이유가 다르다.
+  </p>
+  <ol>
+    <li>
+      <strong>타겟 파생 7개</strong> — 누설. 성능이 좋아지지만 그 성능이 가짜이므로 제거(5.1).
+    </li>
+    <li>
+      <strong><code>event_name</code></strong> — 선택편의. 변수 자체는 유효할 수 있으나
+      수집 절차가 타겟과 얽혀 있어 현 상태로는 사용 불가(2.3).
+    </li>
+    <li>
+      <strong>저품질 기사 58.4%</strong><sup class="dag">†</sup> — 시황 자동생성(<code>market_flow</code>),
+      후속 보도(<code>follow_up</code>), 본문 없이 메타데이터만 있는 기사(<code>metadata_only</code>).
+      이들을 제거하자 뉴스 신호가 AUC 0.611에서 0.559로 떨어졌다. 즉 <strong>1차 신호의
+      상당 부분이 이 저품질 기사에서 나왔다</strong>는 뜻이며, 제거는 성능을 깎는 행위가
+      아니라 착시를 걷어내는 행위였다.
+    </li>
+  </ol>
+  <p>
+    세 번째 항목이 Phase 1에서 가장 값비싼 교훈이다. 노이즈 변수를 제거하면 보통 성능이
+    유지되거나 오른다. 여기서는 크게 떨어졌다. 그것은 노이즈가 예측에 기여하고 있었다는
+    뜻이고, 기여하는 노이즈는 신호가 아니라 아티팩트다.
+  </p>
+
+  <!-- ══════════════ 6 ══════════════ -->
+  <h2 id="s6"><span class="num">6.</span>표본 설계 (매칭 case-control)</h2>
+
+  <h3><span class="num">6.1</span>설계 필요성과 원칙</h3>
+  <p>
+    뉴스 검증에는 전수 데이터가 필요했지만, 1,139일 전체에 대해 동일 품질의 뉴스 검색을
+    수행하는 것은 비용상 불가능했다. 동시에 3.1절에서 확인한 대로, 고잔차일에만 검색된
+    기존 데이터는 그대로 쓸 수 없었다. 그래서 클래스 불균형 대응이 아니라
+    <strong>선택편의 제거</strong>를 목적으로 하는 표본 설계를 별도로 수립했다.
+  </p>
+  <p>
+    핵심 원칙은 세 가지다. 첫째, 고잔차일 하나마다 <strong>동일한 프로토콜로 검색된</strong>
+    대조일 하나를 짝지운다. 둘째, 짝짓기 기준에 타겟(divergence)을 쓰지 않고 시장 국면과
+    변동성 구간만 쓴다. 셋째, <code>sampling_role</code>은 어떤 모델 입력에도 넣지 않는다.
+    세 번째가 없으면 모델이 "이 날은 case로 뽑혔다"는 사실 자체를 학습한다.
+  </p>
+
+  <h3><span class="num">6.2</span>표본 구성과 검증</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>구분</th><th class="n" style="width:110px">일자 수</th><th class="n" style="width:130px">뉴스 검색 완료</th><th>설명</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">high_residual_case</td><td class="n">438</td><td class="n">277</td><td>|divergence| ≥ 3%p 인 고잔차일</td></tr>
+        <tr><td class="lab">matched_low_control</td><td class="n">438</td><td class="n">291</td><td>국면·변동성 구간으로 1:1 매칭된 저잔차 대조일</td></tr>
+        <tr><td class="lab">unused_low</td><td class="n">262</td><td class="n">1</td><td>매칭되지 않은 저잔차일 — 모델에서 제외</td></tr>
+        <tr><td class="lab">excluded</td><td class="n">1</td><td class="n">0</td><td>상장 첫날 (divergence 미정의)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 6.1 - 매칭 표본 구성 (합계 1,139일) ]</p>
+  <p>
+    매칭 후 검색 커버리지 필터를 적용해, 동일 프로토콜 검색이 완료된 일자만 모델에
+    투입했다. 표본 876일 → 최종 모델 사용 <strong>873일</strong>, 기간은
+    2021-11-30 ~ 2026-07-27이다. 기사는 956건을 수집해 클러스터 중복 제거 후
+    <strong>935건</strong>을 사용했다.
+    <span style="font-size:13px;color:var(--ink-3)">(2026-09-17 정정: "미완료 10일"로 표시돼
+    있던 <code>news_search_remaining.csv</code>는 실제로는 검색 로그에 전부 완료로 남아 있던
+    낡은 목록이었다. 대조 확인 후 정리해 10일 모두 회수했다. 파일은 2026-09-17
+    <code>data/과거 데이터 참고/</code>로 옮겼고, <code>experiment_residual_news.py</code>는 검색 로그의
+    완료 상태를 우선하도록 고쳐 재발을 막았다.)</span>
+  </p>
+  <div class="callout">
+    <p class="ct">설계 검증 — 균형이 실제로 잡혔는가</p>
+    <p>
+      OOS 구간의 양성 비율이 <strong>0.504</strong>로 나왔다. 거의 절반이라는 것은 매칭이
+      의도대로 작동했다는 뜻이고, 동시에 이 표본에서 나오는 어떤 확률값도
+      <strong>모집단 확률이 아니라는</strong> 뜻이다. 따라서 이 표본의 결과는
+      "매칭·검색된 표본 내부의 연관성"으로만 해석하고, 발생 확률의 절대 수준은
+      보고하지 않는 것을 원칙으로 삼았다.
+    </p>
+  </div>
+
+  <!-- ══════════════ 7 ══════════════ -->
+  <h2 id="s7"><span class="num">7.</span>시나리오별 모델링</h2>
+
+  <h3><span class="num">7.1</span>모델 개발 전략</h3>
+  <p>
+    이 장의 모델 목록은 한 번에 설계된 것이 아니라 <strong>고도화 과정에서 순차적으로 쌓인
+    것</strong>이다(표 A.0). 처음에는 OLS로 팩터 체계를 세웠고, 선형만으로 충분한지 확인하기 위해
+    Ridge를, 비선형이 필요한지 보기 위해 XGBoost를, 딥러닝이 트리 계열을 이기는지 보기 위해
+    2층 MLP를 차례로 붙였다. 뉴스 속성 모델 세 종(단독·결합·2단 ENet)은 가장 마지막에,
+    앞 단계에서 확정된 팩터 모델을 기준선으로 삼아 추가되었다.
+  </p>
+  <p>
+    그 결과 각 모델은 성능 경쟁 상대가 아니라 <strong>특정 질문에 답하는 도구</strong>가 되었다.
+    질문에 답한 뒤에는 폐기되어도 무방하다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:210px">모델</th><th style="width:140px">입력</th><th>이 모델이 답하는 질문</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">평균 기준선</td><td>없음</td><td>아무것도 모를 때의 성능 하한선은 얼마인가</td></tr>
+        <tr><td class="lab">Ridge</td><td>숫자 30</td><td>선형만으로 충분한가</td></tr>
+        <tr><td class="lab">MLP (2층)</td><td>숫자 30</td><td>딥러닝이 트리 계열을 이기는가</td></tr>
+        <tr><td class="lab">XGBoost (숫자)</td><td>숫자 30</td><td>숫자 팩터의 실제 설명력은 얼마인가 <span class="best">← 최종 채택</span></td></tr>
+        <tr><td class="lab">XGBoost (뉴스 단독)</td><td>뉴스 84</td><td>뉴스만으로 잔차를 설명할 수 있는가 (H3·H4 직접 검정)</td></tr>
+        <tr><td class="lab">XGBoost (결합)</td><td>숫자 30 + 뉴스 84</td><td>뉴스를 더하면 숫자 대비 나아지는가 (증분 기여)</td></tr>
+        <tr><td class="lab">숫자 + 뉴스잔차 ENet</td><td>2단 구조</td><td>숫자 모델의 잔차를 뉴스가 선형으로 줍는가</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 7.1 - 모델 구성과 각 모델의 검증 역할 ]</p>
+
+  <h3><span class="num">7.2</span>검증 설계 — 왜 무작위 분할을 쓰지 않았는가</h3>
+  <p>
+    정형 데이터 분석의 표준인 층화 무작위 분할(stratified split)은 이 문제에 쓸 수 없다.
+    시계열이기 때문이다. 미래 데이터로 학습해 과거를 예측하면 성능이 부풀려지고, 특히
+    자기상관이 있는 타겟(H5)에서는 인접일이 학습·검증에 나뉘어 들어가는 것만으로도 누설이
+    발생한다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:170px">설계 항목</th><th style="width:230px">방법</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">분할</td><td>확장윈도우, 앞 40%를 seed, 이후 4개 OOS 블록</td><td>항상 과거로 학습해 미래를 예측. 시간 누설 차단</td></tr>
+        <tr><td class="lab">집계 단위</td><td>일자 단위 (기사 단위 아님)</td><td>기사가 많은 날이 가중치를 더 갖는 것을 방지</td></tr>
+        <tr><td class="lab">누설 차단</td><td>타겟 파생 7개 + <code>event_name</code> + <code>sampling_role</code> 제외</td><td>5.1·6.1절</td></tr>
+        <tr><td class="lab">결측 처리</td><td>학습 구간에서만 fit한 <code>SimpleImputer</code></td><td>검증 구간 정보의 역류 방지</td></tr>
+        <tr><td class="lab">스케일링</td><td>선형 모델에만 <code>StandardScaler</code>, 학습 fit → 검증 transform</td><td>동일</td></tr>
+        <tr><td class="lab">증분 유의성</td><td>블록 부트스트랩 (블록 20일, 2,000회)</td><td>자기상관이 있으면 단순 부트스트랩은 신뢰구간을 과소추정</td></tr>
+        <tr><td class="lab">다중검정</td><td>FDR 보정</td><td>뉴스 피처 84개를 개별 검정하면 우연한 유의가 다수 발생</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 7.2 - 검증 설계 요약 ]</p>
+
+  <h3><span class="num">7.3</span>모델별 구성</h3>
+  <p>
+    <strong>기준선.</strong> 평균 예측. 이 프로젝트에서 기준선은 형식적 장치가 아니다.
+    divergence는 평균이 0에 가깝고 부호가 대칭이므로, R² 0 부근과 부호정확도 0.5가
+    "아무것도 모르는 상태"의 정확한 좌표다. 뉴스 단독 모델이 이 좌표를 넘지 못했다는 것이
+    H3·H4 기각의 직접 근거가 된다.
+  </p>
+  <p>
+    <strong>Ridge와 MLP.</strong> 두 모델은 실패했지만 실패 방식이 유용했다. 둘 다 R²가 −6 대로
+    붕괴했는데, 부호정확도는 각각 0.713과 0.673으로 XGBoost와 비슷했다. 방향은 잡으면서
+    크기를 크게 틀린다는 뜻이다. 선형·신경망 계열이 divergence의 두꺼운 꼬리에 과도하게
+    반응했음을 시사한다.
+  </p>
+  <p>
+    <strong>XGBoost.</strong> 트리 계열은 이상치에 견고하고, 별도 하이퍼파라미터 최적화 없이도
+    기준선을 크게 앞섰다. 최종 채택 모델이다.
+  </p>
+  <p>
+    <strong>2단 구조 (숫자 + 뉴스잔차 ENet).</strong> 숫자 모델을 먼저 적합시킨 뒤 그 잔차를
+    뉴스 피처로 선형 회귀하는 구조다. 뉴스가 숫자 모델이 놓친 부분을 줍는지를 직접 보려는
+    설계였는데, 결과는 오히려 악화였다(8.4절).
+  </p>
+
+  <!-- ══════════════ 8 ══════════════ -->
+  <h2 id="s8"><span class="num">8.</span>모델 성능 비교 및 최종 모델 선정</h2>
+
+  <h3><span class="num">8.1</span>선정 기준</h3>
+  <p>
+    가장 높은 숫자를 고르는 것이 목적이 아니다. IR 실무에서는 <strong>틀린 방향을 자신 있게
+    말하는 것</strong>이 가장 비싼 오류이므로, R² 하나로 순위를 매기지 않고 세 지표를 함께 봤다.
+  </p>
+  <ul>
+    <li><strong>R²</strong> — 잔차 크기를 얼마나 설명하는가. 0 미만이면 평균 예측보다 못하다.</li>
+    <li><strong>MAE (%p)</strong> — 평균적으로 몇 %p 틀리는가. 실무 감각에 직결되는 지표.</li>
+    <li><strong>부호정확도</strong> — 방향을 맞히는가. 0.5가 동전 던지기. <strong>이 지표가 사실상 채택 기준</strong>.</li>
+  </ul>
+
+  <h3><span class="num">8.2</span>성능 지표 비교</h3>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 300" role="img" aria-labelledby="f81t">
+        <title id="f81t">모델별 OOS R² (2026-09-17 NAV 보정 후): 평균 기준선 -0.002, 숫자팩터 XGB 0.298, 뉴스단독 XGB -0.031, 결합 XGB 0.298, 숫자+뉴스잔차 ENet 0.214</title>
+        <text class="vtitle" x="8" y="20">모델별 확장윈도우 OOS R² — 매칭 표본 (n = 524)</text>
+        <text class="vsub" x="8" y="38">0 = 평균 예측과 동일 · 음수 = 평균보다 나쁨 · 2026-09-17 NAV 보정 후</text>
+
+        <!-- gridlines -->
+        <g>
+          <line class="vgrid" x1="200" y1="50" x2="200" y2="252"/>
+          <line class="vgrid" x1="447.6" y1="50" x2="447.6" y2="252"/>
+          <line class="vgrid" x1="571.4" y1="50" x2="571.4" y2="252"/>
+          <line class="vgrid" x1="695.2" y1="50" x2="695.2" y2="252"/>
+          <text class="vtick" x="200" y="270" text-anchor="middle">−0.10</text>
+          <text class="vtick" x="323.8" y="270" text-anchor="middle">0</text>
+          <text class="vtick" x="447.6" y="270" text-anchor="middle">0.10</text>
+          <text class="vtick" x="571.4" y="270" text-anchor="middle">0.20</text>
+          <text class="vtick" x="695.2" y="270" text-anchor="middle">0.30</text>
+        </g>
+
+        <!-- bars -->
+        <g>
+          <text class="vlab" x="190" y="70" text-anchor="end">평균 기준선</text>
+          <rect class="mark" x="320.8" y="52" width="3.0" height="28" fill="var(--neg)"><title>평균 기준선 R² −0.0024</title></rect>
+          <text class="vval" x="312" y="70" text-anchor="end" style="fill:var(--neg)">−0.002</text>
+
+          <text class="vlab" x="190" y="110" text-anchor="end">숫자 팩터 XGB</text>
+          <rect class="mark" x="323.8" y="92" width="369.5" height="28" fill="var(--s1)"><title>숫자 팩터 XGB R² 0.2984</title></rect>
+          <text class="vval" x="701" y="110">0.298</text>
+
+          <text class="vlab" x="190" y="150" text-anchor="end">뉴스 단독 XGB</text>
+          <rect class="mark" x="285.4" y="132" width="38.4" height="28" fill="var(--neg)"><title>뉴스 단독 XGB R² −0.0310</title></rect>
+          <text class="vval" x="277" y="150" text-anchor="end" style="fill:var(--neg)">−0.031</text>
+
+          <text class="vlab" x="190" y="190" text-anchor="end">결합 XGB</text>
+          <rect class="mark" x="323.8" y="172" width="368.7" height="28" fill="var(--s1)"><title>결합 XGB R² 0.2978</title></rect>
+          <text class="vval" x="700" y="190">0.298</text>
+
+          <text class="vlab" x="190" y="230" text-anchor="end">숫자+뉴스잔차 ENet</text>
+          <rect class="mark" x="323.8" y="212" width="264.5" height="28" fill="var(--s1)"><title>숫자+뉴스잔차 ENet R² 0.2136</title></rect>
+          <text class="vval" x="596" y="230">0.214</text>
+        </g>
+
+        <!-- zero axis -->
+        <line class="vaxis" x1="323.8" y1="46" x2="323.8" y2="256" stroke="var(--axis)" stroke-width="2"/>
+
+        <text class="vnote" x="8" y="292">출처: output/residual_news_experiment.json · regression.aggregate · 2026-09-17 NAV 보정 + 검색 목록 정리 후 재실행</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><span class="swatch" style="background:var(--s1)"></span>평균 예측보다 우수 (R² &gt; 0)</span>
+      <span><span class="swatch" style="background:var(--neg)"></span>평균 예측보다 열등 (R² &lt; 0)</span>
+    </div>
+    <figcaption class="cap">[ 그림 8.1 - 모델별 OOS R² 비교. 뉴스 단독은 기준선 아래로 내려감 ]</figcaption>
+  </figure>
+
+  <p>
+    아래는 두 실험의 전체 지표다. 실험 A는 전 기간 숫자 팩터만으로 divergence를 설명한
+    기준 실험이고, 실험 B는 뉴스 검증을 위해 매칭 표본에서 수행한 실험이다. 표본이 다르므로
+    두 실험 사이의 절대값 비교는 하지 않고, 각 실험 내부의 모델 간 비교만 유효하다.
+  </p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:200px">모델</th><th class="n">R²</th><th class="n">MAE (%p)</th><th class="n">부호정확도</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">평균 기준선</td><td class="n">−0.0050</td><td class="n">1.9271</td><td class="n">0.4716</td><td>성능 하한선</td></tr>
+        <tr><td class="lab">Ridge</td><td class="n">−6.7923</td><td class="n">2.9455</td><td class="n">0.7060</td><td>크기 붕괴, 방향은 유지</td></tr>
+        <tr><td class="lab">MLP (2층)</td><td class="n">−7.0831</td><td class="n">2.9258</td><td class="n">0.6903</td><td>딥러닝 우위 없음</td></tr>
+        <tr><td class="lab"><span class="best">XGBoost</span></td><td class="n best">0.2357</td><td class="n best">1.6060</td><td class="n best">0.7259</td><td>전 지표 최우수</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 8.1 - 실험 A: 전 기간 숫자 팩터 기준 실험 (타겟 divergence, n<sub>OOS</sub> = 704, 입력 30개, 2026-09-17 NAV 보정 후) ]</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:200px">모델</th><th class="n">R²</th><th class="n">MAE (%p)</th><th class="n">부호정확도</th><th class="n">판별 ROC-AUC</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">평균 기준선</td><td class="n">−0.0024</td><td class="n">2.1203</td><td class="n">0.5019</td><td class="n">—</td><td>성능 하한선</td></tr>
+        <tr><td class="lab"><span class="best">숫자 팩터 XGB</span></td><td class="n">0.2984</td><td class="n">1.6928</td><td class="n best">0.7214</td><td class="n best">0.6521</td><td>실질 최종 모델</td></tr>
+        <tr><td class="lab">뉴스 단독 XGB</td><td class="n" style="color:var(--no)">−0.0310</td><td class="n">2.1441</td><td class="n" style="color:var(--no)">0.5038</td><td class="n" style="color:var(--no)">0.5013</td><td><strong>기준선보다 나쁨</strong></td></tr>
+        <tr><td class="lab">결합 XGB</td><td class="n">0.2978</td><td class="n">1.6932</td><td class="n">0.7233</td><td class="n">0.6451</td><td>R²·ROC 모두 숫자 단독보다 낮음</td></tr>
+        <tr><td class="lab">숫자+뉴스잔차 ENet</td><td class="n">0.2136</td><td class="n">1.8027</td><td class="n">0.7137</td><td class="n">—</td><td>숫자 단독보다 악화</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 8.2 - 실험 B: 매칭 표본 뉴스 검증 실험 (n<sub>OOS</sub> = 524, 숫자 30 + 뉴스 84, 2026-09-17 NAV 보정 + 검색 정리 후) ]</p>
+
+  <p>
+    2026-08 판에서는 결합 모델의 R²가 숫자 단독보다 근소하게 높았다. NAV 보정 후 재실행하니
+    <strong>그 근소한 우위도 사라졌다</strong> — 결합 XGB는 R²(0.2978)·부호정확도(0.7233)·
+    판별 ROC-AUC(0.6451) 모두 숫자 단독(0.2984 / 0.7214 / 0.6521)과 사실상 같거나 낮다.
+    뉴스를 더해서 나아지는 지표가 하나도 없다.
+  </p>
+
+  <h3><span class="num">8.3</span>구간별 안정성 — 2026년 초 국면 전환</h3>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 340" role="img" aria-labelledby="f82t">
+        <title id="f82t">구간별 OOS R² (2026-09-17 NAV 보정 후). 숫자팩터는 0.396, 0.506, 0.246, 0.106로 하락. 결합은 0.396, 0.497, 0.255, 0.103. 뉴스단독은 4개 구간 모두 음수.</title>
+        <text class="vtitle" x="8" y="20">4개 OOS 구간별 R² 추이 — 매칭 표본 (NAV 보정 후)</text>
+        <text class="vsub" x="8" y="38">숫자 팩터의 설명력이 마지막 구간에서 급격히 소실됨</text>
+
+        <!-- gridlines -->
+        <g>
+          <line class="vgrid" x1="90" y1="50" x2="610" y2="50"/>
+          <line class="vgrid" x1="90" y1="83.8" x2="610" y2="83.8"/>
+          <line class="vgrid" x1="90" y1="117.7" x2="610" y2="117.7"/>
+          <line class="vgrid" x1="90" y1="151.5" x2="610" y2="151.5"/>
+          <line class="vgrid" x1="90" y1="185.4" x2="610" y2="185.4"/>
+          <line class="vgrid" x1="90" y1="253.1" x2="610" y2="253.1"/>
+          <text class="vtick" x="82" y="54" text-anchor="end">0.50</text>
+          <text class="vtick" x="82" y="88" text-anchor="end">0.40</text>
+          <text class="vtick" x="82" y="122" text-anchor="end">0.30</text>
+          <text class="vtick" x="82" y="155" text-anchor="end">0.20</text>
+          <text class="vtick" x="82" y="189" text-anchor="end">0.10</text>
+          <text class="vtick" x="82" y="223" text-anchor="end">0</text>
+          <text class="vtick" x="82" y="257" text-anchor="end">−0.10</text>
+        </g>
+        <!-- zero line -->
+        <line x1="90" y1="219.2" x2="610" y2="219.2" stroke="var(--axis)" stroke-width="2"/>
+
+        <!-- numeric -->
+        <polyline class="lineseries" points="90,85.2 260,47.9 430,135.8 600,183.3" stroke="var(--s1)"/>
+        <g fill="var(--s1)">
+          <circle class="mark" cx="90" cy="85.2" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>1구간 숫자 팩터 R² 0.3959</title></circle>
+          <circle class="mark" cx="260" cy="47.9" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>2구간 숫자 팩터 R² 0.5062</title></circle>
+          <circle class="mark" cx="430" cy="135.8" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>3구간 숫자 팩터 R² 0.2463</title></circle>
+          <circle class="mark" cx="600" cy="183.3" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>4구간 숫자 팩터 R² 0.1059</title></circle>
+        </g>
+        <text class="vval" x="616" y="187" style="fill:var(--s1)">0.106</text>
+        <text class="vlab" x="616" y="90" style="fill:var(--s1);font-weight:700">숫자 팩터</text>
+
+        <!-- combined -->
+        <polyline class="lineseries" points="90,85.1 260,51.0 430,132.9 600,184.5" stroke="var(--s2)" stroke-dasharray="5 3"/>
+        <g fill="var(--s2)">
+          <circle class="mark" cx="90" cy="85.1" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>1구간 결합 R² 0.3961</title></circle>
+          <circle class="mark" cx="260" cy="51.0" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>2구간 결합 R² 0.4967</title></circle>
+          <circle class="mark" cx="430" cy="132.9" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>3구간 결합 R² 0.2553</title></circle>
+          <circle class="mark" cx="600" cy="184.5" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>4구간 결합 R² 0.1025</title></circle>
+        </g>
+        <text class="vval" x="616" y="205" style="fill:var(--s2)">0.103</text>
+        <text class="vlab" x="616" y="70" style="fill:var(--s2);font-weight:700">결합</text>
+
+        <!-- news -->
+        <polyline class="lineseries" points="90,222.4 260,240.6 430,234.4 600,226.4" stroke="var(--s3)"/>
+        <g fill="var(--s3)">
+          <circle class="mark" cx="90" cy="222.4" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>1구간 뉴스 단독 R² −0.0096</title></circle>
+          <circle class="mark" cx="260" cy="240.6" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>2구간 뉴스 단독 R² −0.0631</title></circle>
+          <circle class="mark" cx="430" cy="234.4" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>3구간 뉴스 단독 R² −0.0448</title></circle>
+          <circle class="mark" cx="600" cy="226.4" r="5" stroke="var(--viz-surface)" stroke-width="2"><title>4구간 뉴스 단독 R² −0.0213</title></circle>
+        </g>
+        <text class="vlab" x="616" y="245" style="fill:var(--s3);font-weight:700">뉴스 단독</text>
+
+        <!-- x labels -->
+        <g>
+          <text class="vtick" x="90" y="288" text-anchor="middle">1구간</text>
+          <text class="vtick" x="90" y="302" text-anchor="middle">24-02 ~ 24-10</text>
+          <text class="vtick" x="260" y="288" text-anchor="middle">2구간</text>
+          <text class="vtick" x="260" y="302" text-anchor="middle">24-10 ~ 25-06</text>
+          <text class="vtick" x="430" y="288" text-anchor="middle">3구간</text>
+          <text class="vtick" x="430" y="302" text-anchor="middle">25-06 ~ 26-01</text>
+          <text class="vtick" x="600" y="288" text-anchor="middle">4구간</text>
+          <text class="vtick" x="600" y="302" text-anchor="middle">26-01 ~ 26-07</text>
+        </g>
+        <text class="vnote" x="8" y="330">출처: output/residual_news_experiment.json · regression.folds (각 구간 n = 131) · 2026-09-17 NAV 보정 후</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><span class="swatch" style="background:var(--s1)"></span>숫자 팩터 XGB</span>
+      <span><span class="swatch" style="background:var(--s2)"></span>결합 XGB</span>
+      <span><span class="swatch" style="background:var(--s3)"></span>뉴스 단독 XGB</span>
+    </div>
+    <figcaption class="cap">[ 그림 8.2 - 구간별 R² 추이. 뉴스 단독(초록)은 4개 구간 전부 0 아래 ]</figcaption>
+  </figure>
+
+  <p>
+    두 가지가 동시에 읽힌다. 첫째, <strong>뉴스 단독은 예외 없이 0 아래다.</strong> 네 구간 모두
+    음수라는 것은 특정 시기의 문제가 아니라는 뜻이며, H3·H4 기각의 가장 강한 증거다.
+  </p>
+  <p>
+    둘째, <strong>숫자 팩터도 마지막 구간에서 무너진다.</strong> 2구간 0.506에서 4구간 0.106로
+    떨어졌다. 전 기간 실험(실험 A)에서는 같은 시기 XGBoost R²가 <strong>−0.062</strong>까지
+    내려갔고, MLP는 −22.8로 완전히 붕괴했다. 2025년 11월 전후로 divergence의 생성 구조가
+    바뀌었다고 볼 수밖에 없다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:150px">구간</th><th class="n">XGBoost R²</th><th class="n">MLP R²</th><th>해석</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">1구간 (23-10~24-07)</td><td class="n">0.403</td><td class="n">0.400</td><td>안정</td></tr>
+        <tr><td class="lab">2구간 (24-07~25-04)</td><td class="n">0.488</td><td class="n">0.335</td><td>안정</td></tr>
+        <tr><td class="lab">3구간 (25-04~25-12)</td><td class="n">0.226</td><td class="n" style="color:var(--no)">−1.833</td><td>MLP 먼저 붕괴</td></tr>
+        <tr><td class="lab">4구간 (25-12~26-09)</td><td class="n" style="color:var(--no)">−0.062</td><td class="n" style="color:var(--no)">−22.825</td><td><strong>국면 전환 — 양쪽 모두 실패</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 8.3 - 실험 A 구간별 안정성 (2026-09-17 NAV 보정 후, n<sub>OOS</sub>=704). MLP가 훨씬 크게 무너짐 ]</p>
+  <p>
+    MLP가 −22.8를 기록한 것은 단순한 성능 저하가 아니라 외삽 실패다. 신경망이 학습 구간에
+    없던 입력 조합을 만나면 예측이 임의로 발산한다. 트리 계열은 분기 구조상 학습 범위를
+    벗어나도 유한한 값을 낸다. 이 차이가 <strong>운영 환경에서 딥러닝을 채택하지 않은
+    실질적 이유</strong>다.
+  </p>
+
+  <h3><span class="num">8.4</span>뉴스 증분 기여 분석</h3>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 270" role="img" aria-labelledby="f83t">
+        <title id="f83t">구간별 뉴스 증분 ΔR² (2026-09-17 NAV 보정 후): 1구간 +0.0002, 2구간 -0.0095, 3구간 +0.0090, 4구간 -0.0034, 전체 -0.0006</title>
+        <text class="vtitle" x="8" y="20">뉴스 증분 기여 ΔR² (결합 − 숫자 단독)</text>
+        <text class="vsub" x="8" y="38">모든 구간이 0 근처 — 뉴스를 더해도 사실상 변화 없음</text>
+
+        <g>
+          <line class="vgrid" x1="262.5" y1="46" x2="262.5" y2="228"/>
+          <line class="vgrid" x1="512.5" y1="46" x2="512.5" y2="228"/>
+          <line class="vgrid" x1="637.5" y1="46" x2="637.5" y2="228"/>
+          <text class="vtick" x="262.5" y="246" text-anchor="middle">−0.02</text>
+          <text class="vtick" x="387.5" y="246" text-anchor="middle">0</text>
+          <text class="vtick" x="512.5" y="246" text-anchor="middle">+0.02</text>
+          <text class="vtick" x="637.5" y="246" text-anchor="middle">+0.04</text>
+        </g>
+
+        <g>
+          <text class="vlab" x="190" y="70" text-anchor="end">1구간</text>
+          <rect class="mark" x="387.5" y="52" width="1.3" height="24" fill="var(--s1)"><title>1구간 ΔR² +0.0002</title></rect>
+          <text class="vval" x="396" y="70">+0.0002</text>
+
+          <text class="vlab" x="190" y="108" text-anchor="end">2구간</text>
+          <rect class="mark" x="328.1" y="90" width="59.4" height="24" fill="var(--neg)"><title>2구간 ΔR² −0.0095</title></rect>
+          <text class="vval" x="320" y="108" text-anchor="end" style="fill:var(--neg)">−0.0095</text>
+
+          <text class="vlab" x="190" y="146" text-anchor="end">3구간</text>
+          <rect class="mark" x="387.5" y="128" width="56.3" height="24" fill="var(--s1)"><title>3구간 ΔR² +0.0090</title></rect>
+          <text class="vval" x="451" y="146">+0.0090</text>
+
+          <text class="vlab" x="190" y="184" text-anchor="end">4구간</text>
+          <rect class="mark" x="366.3" y="166" width="21.2" height="24" fill="var(--neg)"><title>4구간 ΔR² −0.0034</title></rect>
+          <text class="vval" x="358" y="184" text-anchor="end" style="fill:var(--neg)">−0.0034</text>
+
+          <line class="vgrid" x1="200" y1="202" x2="700" y2="202"/>
+          <text class="vlab" x="190" y="222" text-anchor="end" style="font-weight:700">전체 집계</text>
+          <rect class="mark" x="383.8" y="204" width="3.7" height="24" fill="var(--viz-muted)"><title>전체 ΔR² −0.0006</title></rect>
+          <text class="vval" x="376" y="222" text-anchor="end" style="fill:var(--viz-muted)">−0.0006</text>
+        </g>
+
+        <line x1="387.5" y1="46" x2="387.5" y2="232" stroke="var(--axis)" stroke-width="2"/>
+        <text class="vnote" x="8" y="264">출처: output/residual_news_experiment.json · incremental_news.combined_xgb_vs_numeric_xgb · 2026-09-17 NAV 보정 후</text>
+      </svg>
+    </div>
+    <figcaption class="cap">[ 그림 8.3 - 구간별 뉴스 증분 기여. NAV 보정 후 모든 구간이 0 근처로 수렴 ]</figcaption>
+  </figure>
+
+  <p>
+    2026-08 판에서는 증분 MAE 개선폭이 +0.0223%p, CI [+0.0031,+0.0411]로 <strong>0을 포함하지
+    않아 통계적으로 유의</strong>했다. NAV 보정 후 재실행하면 결과가 뒤집힌다 — MAE 개선폭
+    <strong>−0.0004%p</strong>, 블록 부트스트랩 95% 신뢰구간 <strong>[−0.0185, +0.0179]</strong>
+    (블록 20일, 2,000회)로 <strong>0을 포함해 통계적으로 유의하지 않다.</strong>
+  </p>
+  <div class="callout">
+    <p class="ct">2026-08 판의 "유의함"은 잘못된 NAV의 부산물이었다</p>
+    <p>
+      이전 판에서 유의했던 개선폭 자체도 크기는 미미했다(오차의 1.3%). 그런데 이번 재실행에서는
+      그 미미한 개선조차 사라졌다. 구간별로 봐도 부호가 여전히 들쭉날쭉하고(2구간 −0.0095,
+      3구간 +0.0090) 어느 구간도 실질적 크기를 만들지 못한다. NAV를 바로잡자 "뉴스가 근소하게
+      돕는다"던 마지막 근거까지 사라졌다는 뜻이다.
+    </p>
+  </div>
+  <p>
+    2단 구조(숫자 + 뉴스잔차 ENet)는 여전히 더 분명하게 실패한다. 숫자 단독 대비
+    ΔR² <strong>−0.0848</strong>, MAE <strong>−0.1099%p</strong>, 신뢰구간
+    [−0.1828, −0.0413]으로 <strong>악화가 통계적으로 유의</strong>하다. 뉴스가 숫자 모델의
+    잔차를 줍지 못할 뿐 아니라, 줍겠다고 시도하면 기존 성능을 깎는다.
+  </p>
+
+  <h3><span class="num">8.5</span>최종 모델 선정</h3>
+  <p>
+    <strong>숫자 팩터 XGBoost를 최종 모델로 선정한다.</strong> NAV 보정 후에는 결합 모델이
+    R²에서도 더 이상 앞서지 않는다(8.2절). 부호정확도·판별력에서 뒤지고, 구간별 증분 부호가
+    불안정하며, 피처 84개를 추가 유지하는 운영 비용을 요구한다. 무엇보다 결합 모델을 채택하면
+    챗봇이 뉴스 피처를 근거로 제시할 수 있게 되는데, 그 근거는 9장에서 보듯 내용이 아니라
+    메타데이터다.
+  </p>
+
+  <!-- ══════════════ 9 ══════════════ -->
+  <h2 id="s9"><span class="num">9.</span>모델 해석 및 인사이트 도출</h2>
+
+  <h3><span class="num">9.1</span>뉴스 피처 중요도 — 무엇을 학습했는가</h3>
+  <p>
+    뉴스 피처 84개에 대해 OOS 순열 중요도(permutation importance)를 4개 구간에서 각각
+    측정하고, 몇 개 구간에서 양의 중요도가 반복되는지를 셌다. 한 구간에서만 좋은 피처는
+    우연일 수 있지만, 여러 구간에서 반복되면 신호다.
+  </p>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 300" role="img" aria-labelledby="f91t">
+        <title id="f91t">뉴스 84개 피처의 OOS 순열 중요도 반복성: 0개 구간 61개, 1개 구간 12개, 2개 구간 10개, 3개 구간 1개, 4개 구간 0개</title>
+        <text class="vtitle" x="8" y="20">뉴스 피처 84개 — OOS 순열 중요도가 양수였던 구간 수</text>
+        <text class="vsub" x="8" y="38">4개 구간 모두에서 예측에 기여한 피처는 하나도 없음</text>
+
+        <g>
+          <line class="vgrid" x1="90" y1="250" x2="700" y2="250"/>
+          <line class="vgrid" x1="90" y1="192.5" x2="700" y2="192.5"/>
+          <line class="vgrid" x1="90" y1="134.9" x2="700" y2="134.9"/>
+          <line class="vgrid" x1="90" y1="77.4" x2="700" y2="77.4"/>
+          <text class="vtick" x="82" y="254" text-anchor="end">0</text>
+          <text class="vtick" x="82" y="196" text-anchor="end">20</text>
+          <text class="vtick" x="82" y="139" text-anchor="end">40</text>
+          <text class="vtick" x="82" y="81" text-anchor="end">60</text>
+        </g>
+
+        <g fill="var(--s1)">
+          <rect class="mark" x="120" y="71.7" width="62" height="178.3"><title>0개 구간에서 양수: 61개 피처</title></rect>
+          <rect class="mark" x="242" y="214.9" width="62" height="35.1"><title>1개 구간에서 양수: 12개 피처</title></rect>
+          <rect class="mark" x="364" y="220.8" width="62" height="29.2"><title>2개 구간에서 양수: 10개 피처</title></rect>
+          <rect class="mark" x="486" y="247.1" width="62" height="2.9"><title>3개 구간에서 양수: 1개 피처</title></rect>
+        </g>
+
+        <g>
+          <text class="vval" x="151" y="63" text-anchor="middle">61</text>
+          <text class="vval" x="273" y="207" text-anchor="middle">12</text>
+          <text class="vval" x="395" y="213" text-anchor="middle">10</text>
+          <text class="vval" x="517" y="240" text-anchor="middle">1</text>
+          <text class="vval" x="639" y="243" text-anchor="middle" style="fill:var(--viz-muted)">0</text>
+        </g>
+
+        <line class="vaxis" x1="90" y1="250" x2="700" y2="250"/>
+        <g>
+          <text class="vtick" x="151" y="270" text-anchor="middle">0 / 4 구간</text>
+          <text class="vtick" x="273" y="270" text-anchor="middle">1 / 4 구간</text>
+          <text class="vtick" x="395" y="270" text-anchor="middle">2 / 4 구간</text>
+          <text class="vtick" x="517" y="270" text-anchor="middle">3 / 4 구간</text>
+          <text class="vtick" x="639" y="270" text-anchor="middle">4 / 4 구간</text>
+        </g>
+        <text class="vflag" x="90" y="290">84개 중 61개(72.6%)는 어느 구간에서도 기여 없음 · 50개는 트리가 한 번도 분기하지 않음</text>
+      </svg>
+    </div>
+    <figcaption class="cap">[ 그림 9.1 - 뉴스 피처의 OOS 반복성 분포. 재현되는 신호가 사실상 존재하지 않음 ]</figcaption>
+  </figure>
+
+  <p>
+    84개 중 <strong>61개(72.6%)</strong>는 어느 구간에서도 양의 중요도를 갖지 못했고, 그 중
+    <strong>50개</strong>는 XGBoost가 <strong>단 한 번도 분기 기준으로 쓰지 않았다</strong>
+    (gain 정확히 0). 4개 구간 모두에서 기여한 피처는 <strong>0개</strong>다.
+  </p>
+  <p>
+    그리고 가장 안정적인 상위 피처들의 정체가 이 실험의 결론을 못 박는다.
+  </p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:250px">피처</th><th class="c" style="width:88px">양수 구간</th><th class="n" style="width:96px">XGB gain</th><th>정체</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lab"><code>news_availability_partial_text</code></td>
+          <td class="c n">3 / 4</td><td class="n">0.0203</td>
+          <td><strong style="color:var(--no)">기사 본문 확보 여부 — 내용이 아니라 수집 메타데이터</strong></td>
+        </tr>
+        <tr><td class="lab"><code>news_sentiment_score_max</code></td><td class="c n">2 / 4</td><td class="n">0.0088</td><td>감성 최대값. 3.3절에서 방향 필드와 중복 확인됨</td></tr>
+        <tr><td class="lab"><code>news_weighted_sentiment_sum</code></td><td class="c n">2 / 4</td><td class="n">0.0143</td><td>감성 가중합 — 기사량에 비례하는 성질</td></tr>
+        <tr><td class="lab"><code>news_confidence_score_max</code></td><td class="c n">2 / 4</td><td class="n">0.0086</td><td>3.3절에서 품질 대리변수로 판명된 필드</td></tr>
+        <tr><td class="lab"><code>news_event_stage_announcement</code></td><td class="c n">2 / 4</td><td class="n">0.0080</td><td>이벤트 단계 원핫. 유일하게 내용에 가까운 상위 피처</td></tr>
+        <tr><td class="lab"><code>news_mechanism_supply_demand</code></td><td class="c n">2 / 4</td><td class="n">0.0216</td><td>순열 중요도 <strong>−0.0029</strong> — 무작위 섞음보다 나쁨</td></tr>
+        <tr><td class="lab"><code>news_event_stage_follow_up</code></td><td class="c n">0 / 4</td><td class="n">0.0192</td><td>gain은 높은데 OOS 기여 −0.0021 — <strong>전형적 과적합</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.1 - 뉴스 피처 상위 중요도와 그 정체 ]</p>
+
+  <div class="flag">
+    <p class="ct">⚠ 핵심 발견 — 모델은 뉴스 내용을 읽지 않았다</p>
+    <p>
+      가장 안정적인 뉴스 피처가 <code>news_availability_partial_text</code>다. 이 변수는
+      "기사 본문을 일부만 확보했는가"를 나타내는 <strong>수집 상태 플래그</strong>이며,
+      기사가 무슨 내용인지와는 아무 관계가 없다. Elastic Net 계수도 4개 구간 전부에서
+      같은 부호(−0.037)로 일관되게 나왔다.
+    </p>
+    <p>
+      즉 모델이 학습한 것은 "어떤 뉴스가 있었나"가 아니라 <strong>"뉴스를 어떻게 수집했나"</strong>였다.
+      상위권을 차지한 나머지 피처들도 감성 계열(3.3절에서 중복 확인)과 기사량 비례 가중합에
+      몰려 있다. H4에서 저품질 기사 58.4%를 제거했을 때 AUC가 0.611에서 0.559로 떨어진 것이
+      독립적으로 같은 이야기를 하고 있었다.
+    </p>
+  </div>
+
+  <h3><span class="num">9.2</span>가설-모델 정합성 검증</h3>
+  <p>
+    가설 단계의 판단과 모델의 사후 해석이 같은 방향을 가리키는지 확인했다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:52px">가설</th><th style="width:110px">사전 판단</th><th>모델 사후 확인</th><th class="c" style="width:80px">정합</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">H1</td><td>하이닉스 지배</td><td><code>hynix_ret</code>·<code>hynix_ex_sector</code>가 F1·F2 핵심 입력으로 유지됨</td><td class="c">일치</td></tr>
+        <tr><td class="lab">H2</td><td>숫자로 설명됨</td><td>숫자 단독 R² 0.236·부호정확도 0.726로 기준선 압도</td><td class="c">일치</td></tr>
+        <tr><td class="lab">H3</td><td>뉴스 방향 무력 예상</td><td>뉴스 단독 부호정확도 0.504, OOS R² 전 구간 음수 근접</td><td class="c">일치</td></tr>
+        <tr><td class="lab">H4</td><td>뉴스 크기 신호 의심</td><td>최상위 뉴스 피처가 <code>availability</code> 메타데이터. 61/84개 기여 0</td><td class="c">일치</td></tr>
+        <tr><td class="lab">H5</td><td>변동성 군집화</td><td><code>divergence_lag1</code>이 30개 입력에 유지, 고잔차 분류 PR-AUC 0.317 &gt; 기준선 0.213</td><td class="c">일치</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.2 - 가설-모델 정합성. 채택·기각 방향이 사후 해석과 모두 일치 ]</p>
+  <p>
+    기각된 가설이 모델 해석에서도 같은 이유로 기각된다는 점이 중요하다. H4를 기각한 근거는
+    두 개가 독립적으로 나왔다 — 저품질 기사 제거 시 성능 하락(5.3)과 최상위 피처가
+    메타데이터라는 사실(9.1). 서로 다른 방법이 같은 결론을 내리면 그 결론은 방법의
+    부산물이 아니다.
+  </p>
+
+  <h3><span class="num">9.3</span>실무 운영 규칙 도출</h3>
+  <p>
+    검증 결과를 챗봇과 일일 브리핑에 적용할 수 있는 규칙으로 정리한다. 이 규칙들의 절반은
+    <strong>금지 규칙</strong>이며, 그것이 Phase 1의 실질적 산출물이다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th class="c" style="width:56px">구분</th><th style="width:190px">규칙</th><th>내용과 근거</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="c">허용</td><td class="lab"><strong>수급을 1순위 원인으로</strong></td><td><strong>2026-09 개정.</strong> 수급(F3)이 solo·LOO 양쪽에서 유의한 유일한 카테고리. divergence 귀인의 1순위여야 함 (9.4)</td></tr>
+        <tr><td class="c">허용</td><td class="lab"><strong>선물 베이시스를 2순위 원인으로</strong></td><td><strong>2026-09-17 신설.</strong> NAV 보정 후 재실행에서 F5(선물)가 LOO 기준 새로 유의(+0.046, CI 하한 &gt;0). 2순위 후보로 승격 (9.4)</td></tr>
+        <tr><td class="c">허용</td><td class="lab">숫자 기반 방향 귀인</td><td>divergence 부호와 기여도 제시 (부호정확도 0.726). 단 카테고리별 신뢰도는 9.4를 따를 것</td></tr>
+        <tr><td class="c">허용</td><td class="lab">변동성 국면 사전 경고</td><td>전일 |divergence|와 국면 피처로 "오늘 잔차 확대 가능" 경고 (H5)</td></tr>
+        <tr><td class="c">허용</td><td class="lab">뉴스는 사후 라벨로만</td><td>관측된 사실로 병기. 인과·방향 주장 없이 "같은 날 다음 공시가 있었음" 수준</td></tr>
+        <tr><td class="c" style="color:var(--no);font-weight:700">금지</td><td class="lab">뉴스 기반 방향 서술</td><td>"이 뉴스 때문에 올랐다" 형태의 문장 생성 금지 (H3 기각, 부호정확도 0.504)</td></tr>
+        <tr><td class="c" style="color:var(--no);font-weight:700">금지</td><td class="lab">뉴스 개수·감성 점수 제시</td><td>기사량과 감성 가중합은 아티팩트로 확인됨. 근거로 인용 금지 (9.1)</td></tr>
+        <tr><td class="c" style="color:var(--no);font-weight:700">금지</td><td class="lab">NAV/하이닉스·섹터·공매도·매크로·국면(F1·F2·F4·F7·F8)을 단독 원인으로 제시</td><td><strong>2026-09-17 수정.</strong> NAV 보정 후 재실행에서 다섯 다 LOO 신뢰구간이 0을 포함 — "해롭다"는 아니지만 통계적으로 뒷받침되지 않음. 원인으로 들려면 F3(또는 F5)와 함께여야 함 (9.4)</td></tr>
+        <tr><td class="c" style="color:var(--no);font-weight:700">금지</td><td class="lab">발생 확률 절대값 보고</td><td>매칭 표본 확률은 모집단 확률이 아님 (6.2)</td></tr>
+        <tr><td class="c" style="color:var(--warn);font-weight:700">경고</td><td class="lab">국면 전환 감지 시 신뢰도 하향</td><td>2026년 마지막 OOS 구간 R² −0.062. 모델 성능 저하 구간에서는 귀인 신뢰도를 낮춰 표기 (8.3)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.3 - 실무 운영 규칙 (허용 5 / 금지 4 / 경고 1) · 2026-09-17 재개정 ]</p>
+  <div class="flag">
+    <p class="ct">⚠ 현재 챗봇 프롬프트는 이 규칙과 거의 반대다</p>
+    <p>
+      <code>prompts/system_prompt.py</code>의 원인 탐색 순서는
+      <strong>①뉴스 → ②수급 → ③공매도 → ④선물</strong>이다. 검증 결과가 말하는 순서는
+      <strong>①수급(F3) → ②선물(F5)</strong>이고, 뉴스는 기각됐으며, 공매도·섹터·매크로·
+      NAV/하이닉스 단독은 통계적 근거가 없다(무관). 즉 <strong>1순위는 맞지만 뉴스가
+      끼어 있고, 선물이 3위가 아니라 2위로 올라와야 한다.</strong>
+      이 프롬프트는 2026-09-17 현재 <strong>아직 수정되지 않았다.</strong>
+      "DPE 1.0 종료" 작업의 최우선 항목이다.
+    </p>
+  </div>
+
+  <h3 id="s94"><span class="num">9.4</span>팩터 카테고리별 개별 유의성 <span style="font-size:13px;color:var(--ink-3);font-weight:600">— 2026-09-16 추가</span></h3>
+  <p>
+    본문 8장까지의 결과는 30개 피처를 <strong>한꺼번에</strong> 넣은 모델의 성능이다.
+    "숫자 팩터가 잔차를 설명한다"까지는 알 수 있지만, <strong>그 설명력이 어느 카테고리에서
+    나오는지는 알 수 없었다.</strong> 11장에서 한계로 적어둔 항목이기도 하다. 이를 해소하기 위해
+    카테고리별 ablation을 수행했다.
+  </p>
+  <p>
+    검증 설계는 <code>experiment_unbiased_dl.py</code>와 <strong>완전히 동일하게</strong> 맞췄다 —
+    확장윈도우(앞 40% seed + 4개 OOS 블록), 동일 XGBoost 파라미터, 동일 누설 차단 7개 제외.
+    그 결과 전체 30개 모델이 <strong>R² 0.2357</strong>로 재현되어(실험 A와 동일, n<sub>OOS</sub>=704),
+    아래 수치를 같은 기준으로 비교할 수 있다.
+  </p>
+  <p style="font-size:14px;color:var(--ink-3)">
+    ※ 아래 수치는 <strong>2026-09-17 NAV point-in-time 보정 이후</strong> 재실행 결과다. 2026-09-16
+    백필판(전체 R² 0.2057, OOS 673일)은 발행주식수·비상장가치를 고정 스냅샷으로 계산한 잘못된
+    NAV 위에서 나온 값이었다. 아래 수치가 현재 기준이며, <strong>결론의 방향 자체가 바뀌었다</strong>
+    — 이전 판에서 "해롭다"고 판정됐던 카테고리들이 이번 판에서는 그냥 유의하지 않다.
+  </p>
+  <p>
+    측정은 두 방향으로 했다. <strong>solo</strong>는 카테고리 하나만 넣었을 때의 자체 설명력이고,
+    <strong>leave-one-out</strong>은 30개에서 그 카테고리만 뺐을 때의 한계 기여다. 후자가
+    순서 의존성이 없어 해석이 안전하다. 유의성은 점추정이 아니라
+    <strong>이동블록 부트스트랩(20일 블록, 2,000회) 95% 신뢰구간</strong>으로 판정했다 —
+    <code>divergence</code>는 절대값에 자기상관이 있어 단순 부트스트랩이 구간을 과소추정한다.
+  </p>
+
+  <figure>
+    <div class="fw">
+      <svg viewBox="0 0 760 340" role="img" aria-labelledby="f94t">
+        <title id="f94t">카테고리 제거 시 R² 변화 (NAV 보정 후). F3 제거 시 -0.2655로 붕괴, F5 제거 시 -0.0276로 유의하게 나빠짐, 나머지는 CI가 0을 포함해 무관.</title>
+        <text class="vtitle" x="8" y="20">카테고리를 하나씩 제거했을 때의 R² 변화 (전체 30개 = 0.2357 기준)</text>
+        <text class="vsub" x="8" y="38">왼쪽(음수) = 빼면 나빠짐 → 기여했다 · 판정은 MAE 개선 신뢰구간 기준(표 9.4)</text>
+
+        <g>
+          <line class="vgrid" x1="220" y1="48" x2="220" y2="292"/>
+          <line class="vgrid" x1="362.9" y1="48" x2="362.9" y2="292"/>
+          <line class="vgrid" x1="505.7" y1="48" x2="505.7" y2="292"/>
+          <text class="vtick" x="220" y="310" text-anchor="middle">−0.30</text>
+          <text class="vtick" x="362.9" y="310" text-anchor="middle">−0.20</text>
+          <text class="vtick" x="505.7" y="310" text-anchor="middle">−0.10</text>
+          <text class="vtick" x="648.6" y="310" text-anchor="middle">0</text>
+        </g>
+
+        <g>
+          <text class="vlab" x="212" y="73" text-anchor="end">F1 NAV/하이닉스</text>
+          <rect class="mark" x="648.6" y="56" width="2.6" height="24" fill="var(--viz-muted)"><title>F1 제거 시 R² 0.2357→0.2375 (+0.0018, CI가 0 포함)</title></rect>
+          <text class="vval" x="659" y="73" style="fill:var(--viz-muted)">+0.002 무관</text>
+
+          <text class="vlab" x="212" y="107" text-anchor="end">F2 섹터</text>
+          <rect class="mark" x="648.6" y="90" width="12.1" height="24" fill="var(--viz-muted)"><title>F2 제거 시 R² 0.2442 (+0.0085, CI가 0 포함)</title></rect>
+          <text class="vval" x="669" y="107" style="fill:var(--viz-muted)">+0.009 무관</text>
+
+          <text class="vlab" x="212" y="141" text-anchor="end" style="font-weight:700">F3 수급</text>
+          <rect class="mark" x="269.3" y="124" width="379.3" height="24" fill="var(--s1)"><title>F3 제거 시 R² 0.2357 → −0.0298 으로 붕괴 (−0.2655)</title></rect>
+          <text class="vval" x="279" y="141" style="fill:#ffffff">−0.266 → R² −0.0298 로 붕괴</text>
+
+          <text class="vlab" x="212" y="175" text-anchor="end">F4 공매도</text>
+          <rect class="mark" x="648.6" y="158" width="11.4" height="24" fill="var(--viz-muted)"><title>F4 제거 시 R² 0.2437 (+0.0080, CI가 0 포함)</title></rect>
+          <text class="vval" x="668" y="175" style="fill:var(--viz-muted)">+0.008 무관</text>
+
+          <text class="vlab" x="212" y="209" text-anchor="end" style="font-weight:700">F5 선물</text>
+          <rect class="mark" x="609.2" y="192" width="39.4" height="24" fill="var(--s1)"><title>F5 제거 시 R² 0.2081 (−0.0276, 신규 유의)</title></rect>
+          <text class="vval" x="601" y="209" text-anchor="end" style="fill:var(--s1)">−0.028 유의(신규)</text>
+
+          <text class="vlab" x="212" y="243" text-anchor="end">F7 매크로</text>
+          <rect class="mark" x="648.6" y="226" width="9.0" height="24" fill="var(--viz-muted)"><title>F7 제거 시 R² 0.2420 (+0.0063, CI가 0 포함)</title></rect>
+          <text class="vval" x="666" y="243" style="fill:var(--viz-muted)">+0.006 무관</text>
+
+          <text class="vlab" x="212" y="277" text-anchor="end">F8 국면</text>
+          <rect class="mark" x="648.6" y="260" width="2.6" height="24" fill="var(--viz-muted)"><title>F8 제거 시 R² 0.2375 (+0.0018, CI가 0 포함)</title></rect>
+          <text class="vval" x="659" y="277" style="fill:var(--viz-muted)">+0.002 무관</text>
+        </g>
+
+        <line x1="648.6" y1="48" x2="648.6" y2="292" stroke="var(--axis)" stroke-width="2"/>
+        <text class="vnote" x="8" y="332">출처: output/factor_ablation.json · leave_one_out (2026-09-17 NAV 보정 후). 색은 부트스트랩 95% CI 판정 — 파랑=유의한 기여, 회색=CI가 0 포함(무관). 유의하게 해로운 카테고리는 없음</text>
+      </svg>
+    </div>
+    <figcaption class="cap">[ 그림 9.2 - 카테고리 제거 시 R² 변화. F3가 압도적이고, F5가 새로 유의. "해로운" 카테고리는 없음 ]</figcaption>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:130px">카테고리</th><th class="n">solo R²</th><th class="n">solo 부호</th><th class="n">빼면 R²</th><th class="n">한계기여(MAE %p)</th><th class="n">95% CI</th><th class="c" style="width:78px">판정</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">F1 NAV/하이닉스</td><td class="n">−0.0755</td><td class="n">0.490</td><td class="n">+0.2375</td><td class="n">+0.0064</td><td class="n">[−0.010, +0.024]</td><td class="c"><span class="verdict v-part">무관</span></td></tr>
+        <tr><td class="lab">F2 섹터</td><td class="n">−0.0705</td><td class="n">0.548</td><td class="n">+0.2442</td><td class="n">−0.0053</td><td class="n">[−0.030, +0.021]</td><td class="c"><span class="verdict v-part">무관</span></td></tr>
+        <tr><td class="lab"><strong>F3 수급</strong></td><td class="n best">+0.1189</td><td class="n best">0.703</td><td class="n" style="color:var(--no);font-weight:700">−0.0298</td><td class="n best">+0.3306</td><td class="n best">[+0.214, +0.469]</td><td class="c"><span class="verdict v-ok">유의</span></td></tr>
+        <tr><td class="lab">F4 공매도</td><td class="n">−0.1042</td><td class="n">0.487</td><td class="n">+0.2437</td><td class="n">−0.0003</td><td class="n">[−0.018, +0.020]</td><td class="c"><span class="verdict v-part">무관</span></td></tr>
+        <tr><td class="lab"><strong>F5 선물</strong></td><td class="n">−0.1123</td><td class="n">0.543</td><td class="n">+0.2081</td><td class="n best">+0.0455</td><td class="n best">[+0.007, +0.080]</td><td class="c"><span class="verdict v-ok">유의(신규)</span></td></tr>
+        <tr><td class="lab">F7 매크로</td><td class="n">−0.0667</td><td class="n">0.509</td><td class="n">+0.2420</td><td class="n">+0.0006</td><td class="n">[−0.017, +0.018]</td><td class="c"><span class="verdict v-part">무관</span></td></tr>
+        <tr><td class="lab">F8 국면</td><td class="n">−0.0526</td><td class="n">0.511</td><td class="n">+0.2375</td><td class="n">−0.0004</td><td class="n">[−0.017, +0.017]</td><td class="c"><span class="verdict v-part">무관</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.4 - 카테고리별 solo·leave-one-out 결과 (기준선 R² −0.0050 / 전체 30개 R² +0.2357, 부호정확도 0.726, OOS 704일, 2026-09-17 NAV 보정 후) ]</p>
+  <div class="flag" style="border-color:var(--ok)">
+    <p class="ct">⚠→✓ NAV 보정 후 결론이 뒤집혔다 — "해로운" 카테고리는 없다</p>
+    <p>
+      2026-09-16 백필판에서는 F1·F4·F7·F8 네 카테고리의 신뢰구간이 전부 음수 구간으로 내려와
+      "제거하면 통계적으로 유의하게 좋아진다(=해롭다)"고 판정했었다. 발행주식수·비상장가치를
+      point-in-time으로 바로잡아 재실행하니 <strong>넷 다 신뢰구간이 0을 포함</strong>한다 —
+      즉 있으나 없으나 성능에 유의한 차이가 없는 <strong>중립(무관)</strong> 카테고리였다.
+      대신 <strong>F5(선물)가 LOO에서 새로 유의</strong>해졌다(+0.046, CI 하한 +0.007로 0을
+      초과). <strong>유용한 카테고리는 F3·F5 둘</strong>이고, 나머지 다섯은 있어도 없어도
+      그만이지 해롭지는 않다.
+    </p>
+  </div>
+
+  <h4>solo와 leave-one-out이 어긋나는 이유</h4>
+  <p>
+    F3는 solo·LOO 양쪽에서 유의한 유일한 카테고리다. <strong>solo</strong>는 F3 9개만으로도
+    R² +0.119, 부호정확도 0.703으로 기준선을 넘고, <strong>LOO</strong>는 F3가 없으면 나머지
+    21개가 R² −0.030까지 무너진다는 뜻이다. 두 결과가 같은 방향을 가리키므로 F3가 진짜
+    핵심이라는 결론은 NAV 보정 전후로 흔들리지 않는다.
+  </p>
+  <p>
+    반면 F5는 <strong>solo에선 미달인데 LOO에선 유의</strong>하다. 이것은 모순이 아니라
+    F5 5개만으로는 직접 예측하기엔 약하지만(solo R² −0.112), 30개 전체 안에서는 다른
+    카테고리가 대체하지 못하는 고유 정보를 담고 있다는 뜻이다.
+  </p>
+  <p>
+    F1·F2·F4·F7·F8을 하나씩 빼도 영향이 없는 것은 <strong>이들끼리 정보가 중복
+    (다중공선성)</strong>되어 있어 하나가 빠지면 다른 것이 대체하기 때문일 수 있다. 따라서
+    <strong>LOO만으로는 "이 다섯 중 정말 불필요한 것이 있는지"를 판정할 수 없다.</strong>
+    이를 가리려면 F3·F5를 고정한 뒤 카테고리를 하나씩 더하는 증분 테스트가 필요하며, 이는
+    미수행 상태다.
+  </p>
+
+  <h4>F1은 왜 무관한가 — β와 w의 부호 반전 (재확인, NAV 보정 후)</h4>
+  <p>
+    F1이 "해롭다"는 이전 결론은 사라졌지만, F1을 진단하며 규명한 <strong>메커니즘 자체는
+    NAV 보정 후에도 그대로 재현됐다.</strong> 정의상
+  </p>
+  <div class="formula">
+    divergence      =  skq_ret − nav_implied_ret<br>
+    skq_ret         ≈  β × hynix_ret&nbsp;&nbsp;&nbsp;(β = 실제 베타)<br>
+    nav_implied_ret ≈  w × hynix_ret&nbsp;&nbsp;&nbsp;(w = NAV 내 하이닉스 비중)<br><br>
+    →  <b>divergence ≈ (β − w) × hynix_ret</b>
+  </div>
+  <p>
+    즉 <code>hynix_ret</code>이 <code>divergence</code>를 설명할 수 있는 여지는
+    <strong>(β − w)만큼뿐</strong>이다. NAV를 point-in-time으로 보정해 w를 다시 계산해도
+    이 값은 여전히 연도별로 부호를 뒤집는다 — 다만 격차의 크기는 이전 판보다 작아졌다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:80px">연도</th><th class="n">β 실제 베타</th><th class="n">w NAV 내 비중</th><th class="n">β − w</th><th class="n">실측 corr(hynix_ret, divergence)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">2022</td><td class="n">0.578</td><td class="n">0.663</td><td class="n" style="color:var(--no)">−0.085</td><td class="n">−0.100</td></tr>
+        <tr><td class="lab">2023</td><td class="n">0.539</td><td class="n">0.658</td><td class="n" style="color:var(--no)">−0.120</td><td class="n">−0.183</td></tr>
+        <tr><td class="lab">2024</td><td class="n">0.857</td><td class="n">0.796</td><td class="n" style="color:var(--accent)">+0.061</td><td class="n">+0.063</td></tr>
+        <tr><td class="lab">2025</td><td class="n">0.966</td><td class="n">0.868</td><td class="n" style="color:var(--accent)">+0.098</td><td class="n">+0.128</td></tr>
+        <tr><td class="lab">2026</td><td class="n">0.966</td><td class="n">0.973</td><td class="n">−0.007</td><td class="n">−0.024</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.5 - 이론값 (β−w)와 실측 상관이 거의 일치 — 메커니즘 재확인 (2026-09-17 NAV 보정 후, n=1,120) ]</p>
+  <p>
+    확장윈도우는 과거로 학습해 미래를 예측한다. 2022~23 구간에서 모델은
+    "하이닉스↑ → divergence↓"(−0.09~−0.12)를 학습하고, 그것을 2025 구간에 적용하면 실제는
+    <strong>반대</strong>(+0.10)다. <strong>부호가 뒤집히는 관계를 고정 모델에 학습시키면
+    안 쓰는 것보다 체계적으로 더 틀릴 수 있다</strong> — 다만 격차가 이전 판보다 작아졌고
+    롤링 120일 기준 (β−w)와 실측 기울기의 상관이 <strong>+0.960</strong>으로 여전히 강하므로,
+    F1이 LOO에서 "무관(CI가 0 포함)"으로 나온 것은 이 메커니즘이 없어서가 아니라
+    <strong>부호 반전 때문에 평균적으로 상쇄</strong>되기 때문이다.
+  </p>
+  <div class="callout">
+    <p class="ct">부수 발견 — 밸류업의 통계적 지문 (재확인)</p>
+    <p>
+      표 9.5에서 <strong>β가 0.58 → 0.97, w가 0.66 → 0.97로 수렴</strong>했다.
+      2022~23년에는 NAV가 0.66 움직일 때 주가는 0.58만 움직였다 — 상승장에서 할인율이
+      벌어졌다는 뜻이다. 2026년에는 그 간극이 −0.007로 거의 닫혔다.
+      <strong>SK스퀘어가 NAV를 거의 1:1로 추종하게 되었고, 이것이 자사주 소각·밸류업의
+      통계적 지문이다.</strong> 동시에 이는 하이닉스로 divergence를 설명할 여지가
+      구조적으로 닫혔다는 뜻이기도 하다.
+    </p>
+  </div>
+
+  <h3 id="s95"><span class="num">9.5</span>F6(기업뉴스)·F7(매크로뉴스) 분할 재검증 <span style="font-size:13px;color:var(--ink-3);font-weight:600">— 2026-09-17 추가</span></h3>
+  <p>
+    <strong>가설</strong> — Phase 1은 뉴스 84개 피처를 통째로 넣어 기각됐다. 만약 기업 뉴스에
+    신호가 있었는데 매크로 뉴스의 잡음에 희석되어 안 보였던 것이라면, 두 묶음으로 나누면
+    드러나야 한다. 이를 직접 검정했다.
+  </p>
+  <p>
+    <strong>설계</strong> — 기존 84개 피처의 이름표만 나누는 것이 아니라, <strong>기사 단위로
+    되돌아가 버킷별로 점수를 재집계</strong>했다. 표본·확장윈도우·누설 차단은
+    <code>experiment_residual_news.py</code>와 동일하다. 그 결과 <code>numeric_30</code> 기준선이
+    <strong>R² 0.2946</strong>, <strong>판별 ROC-AUC 0.6556</strong>로 재현되어 비교 가능성이
+    확보됐다 (2026-09-17 NAV 보정 후 재실행. 8.2절의 매칭 표본 수치와는 대상 일자 집합이
+    약간 달라 소수점이 다르다).
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:110px">버킷</th><th>구성 (primary_subject)</th><th class="n">기사</th><th class="n">기사 있는 날</th><th class="n">피처</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">F6 기업</td><td><code>sk_square</code>, <code>portfolio_company</code>, <code>governance</code>, <code>shareholder_policy</code></td><td class="n">775</td><td class="n">484</td><td class="n">73</td></tr>
+        <tr><td class="lab">F7 매크로</td><td><code>macro_market</code>, <code>semiconductor_sector</code>, <code>regulation</code></td><td class="n">108</td><td class="n">90</td><td class="n">57</td></tr>
+        <tr><td class="lab">HX 하이닉스</td><td><code>sk_hynix</code> — 하이닉스 주가는 1단계에서 이미 통제되어 이중계산 우려. 참고용</td><td class="n">29</td><td class="n">28</td><td class="n">62</td></tr>
+        <tr><td class="lab">제외</td><td><code>other</code> 15, <code>market_flow</code> 8 — 후자는 Phase 1에서 저품질 확인</td><td class="n">23</td><td class="n">—</td><td class="n">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.6 - 뉴스 버킷 분할 (모델 대상 863일 중, 2026-09-17 NAV 보정 후 재실행) ]</p>
+  <p style="font-size:13px;color:var(--ink-3)">
+    ※ 이 재실행은 NAV 보정만 반영했고, 같은 날 별도로 정리한 검색 목록 정합화(6.2절 —
+    <code>news_search_remaining.csv</code> 10일 회수)는 아직 반영 전이라 8.2절의 873일보다
+    10일 적다. 다음 전체 재실행(Codex의 294일 검색 완료 후)에서 함께 반영한다.
+  </p>
+
+  <h4>결과 — 가설 기각</h4>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:180px">피처셋 (XGBoost)</th><th class="n">R²</th><th class="n">MAE</th><th class="n">부호정확도</th><th class="n">숫자30 대비 ΔMAE</th><th class="n">95% CI</th><th class="c" style="width:72px">판정</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lab">평균 기준선</td><td class="n">−0.0039</td><td class="n">2.1027</td><td class="n">0.500</td><td class="n">—</td><td class="n">—</td><td class="c">—</td></tr>
+        <tr><td class="lab"><strong>숫자 30</strong></td><td class="n">+0.2946</td><td class="n">1.6828</td><td class="n best">0.724</td><td class="n">—</td><td class="n">—</td><td class="c">기준</td></tr>
+        <tr><td class="lab">숫자 + F6</td><td class="n">+0.2995</td><td class="n">1.6737</td><td class="n">0.722</td><td class="n">+0.0091</td><td class="n">[−0.005, +0.023]</td><td class="c"><span class="verdict v-no">미달</span></td></tr>
+        <tr><td class="lab">숫자 + F7</td><td class="n">+0.2960</td><td class="n">1.6798</td><td class="n">0.732</td><td class="n">+0.0030</td><td class="n">[−0.004, +0.009]</td><td class="c"><span class="verdict v-no">미달</span></td></tr>
+        <tr><td class="lab">숫자 + F6 + F7</td><td class="n">+0.2966</td><td class="n">1.6784</td><td class="n">0.714</td><td class="n">+0.0044</td><td class="n">[−0.009, +0.018]</td><td class="c"><span class="verdict v-no">미달</span></td></tr>
+        <tr><td class="lab">숫자 + 전체 뉴스</td><td class="n best">+0.2997</td><td class="n best">1.6725</td><td class="n">0.714</td><td class="n">+0.0103</td><td class="n">[−0.003, +0.025]</td><td class="c"><span class="verdict v-no">미달</span></td></tr>
+        <tr><td class="lab">F6 단독</td><td class="n" style="color:var(--no)">−0.0146</td><td class="n">2.1300</td><td class="n" style="color:var(--no)">0.481</td><td class="n">−0.4472</td><td class="n">[−0.566, −0.293]</td><td class="c"><span class="verdict v-no">무력</span></td></tr>
+        <tr><td class="lab">F7 단독</td><td class="n" style="color:var(--no)">−0.0124</td><td class="n">2.1052</td><td class="n" style="color:var(--no)">0.519</td><td class="n">−0.4224</td><td class="n">[−0.539, −0.274]</td><td class="c"><span class="verdict v-no">무력</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.7 - 피처셋별 성능과 증분 검정 (매칭 표본, OOS 518일, 2026-09-17 NAV 보정 후) ]</p>
+
+  <div class="flag">
+    <p class="ct">⚠ 희석 가설은 지지되지 않는다 — NAV 보정 후에는 결합조차 유의하지 않다</p>
+    <p>
+      2026-08 판에서는 F6+F7 결합이 근소하게 유의했다(ΔMAE +0.0152). NAV 보정 후
+      재실행하니 <strong>그 근소한 유의성도 사라졌다</strong>(ΔMAE +0.0044, CI가 0을 포함).
+      <strong>개별로도, 결합으로도, 전체 뉴스를 다 넣어도 어느 조합에서도 유의하지 않다</strong> —
+      가장 큰 증분(+0.0103, 전체 뉴스)조차 신뢰구간 하한이 음수다. "기업 뉴스가 매크로
+      잡음에 희석됐다"는 가설이 맞았다면 분할이 pooled를 넘어야 하는데, NAV 보정 후에는
+      pooled 자체가 더 이상 유의하지 않으므로 비교할 기준선도 사라졌다.
+    </p>
+    <p>
+      크기도 무의미하다. 가장 좋았던 조합(전체 뉴스)조차 MAE 1.6828 → 1.6725,
+      <strong>0.6% 감소</strong>이고 이마저 통계적으로 유의하지 않다. 그리고 F6+F7 결합은
+      <strong>방향도 오히려 나빠진다</strong> — 부호정확도가 0.724에서 0.714로 떨어진다.
+    </p>
+  </div>
+
+  <h4>분류(고잔차일 판별)는 전혀 개선되지 않는다</h4>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:180px">피처셋</th><th class="n">ROC-AUC</th><th class="n">PR-AUC</th><th class="n">Brier</th></tr></thead>
+      <tbody>
+        <tr><td class="lab"><strong>숫자 30</strong></td><td class="n best">0.6556</td><td class="n best">0.6687</td><td class="n best">0.2357</td></tr>
+        <tr><td class="lab">숫자 + F6</td><td class="n">0.6498</td><td class="n">0.6566</td><td class="n">0.2372</td></tr>
+        <tr><td class="lab">숫자 + F7</td><td class="n">0.6596</td><td class="n">0.6692</td><td class="n">0.2352</td></tr>
+        <tr><td class="lab">숫자 + F6 + F7</td><td class="n">0.6512</td><td class="n">0.6580</td><td class="n">0.2366</td></tr>
+        <tr><td class="lab">F6 단독</td><td class="n" style="color:var(--no)">0.4870</td><td class="n">0.4952</td><td class="n">0.2589</td></tr>
+        <tr><td class="lab">F7 단독</td><td class="n" style="color:var(--no)">0.4493</td><td class="n">0.4763</td><td class="n">0.2523</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.8 - case vs control 판별 (양성률 0.500, 2026-09-17 NAV 보정 후). 뉴스를 더해도 대체로 하락 ]</p>
+  <p>
+    숫자+F7만 근소하게 오르고(0.6556→0.6596) 나머지는 떨어진다(0.6556 → 0.6498/0.6512).
+    단독으로는 <strong>F6가 0.4870, F7은 0.4493 — 둘 다 동전 던지기(0.5)보다도 못하다.</strong>
+  </p>
+
+  <h4>모델 비교 — XGBoost만 작동한다</h4>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:180px">피처셋</th><th class="n">OLS</th><th class="n">Ridge</th><th class="n">MLP 2층</th><th class="n">XGBoost</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">숫자 30</td><td class="n" style="color:var(--no)">−6.09</td><td class="n" style="color:var(--no)">−5.69</td><td class="n" style="color:var(--no)">−3.43</td><td class="n best">+0.295</td></tr>
+        <tr><td class="lab">숫자 + F6</td><td class="n" style="color:var(--no)">−5.66</td><td class="n" style="color:var(--no)">−5.78</td><td class="n" style="color:var(--no)">−1.77</td><td class="n best">+0.300</td></tr>
+        <tr><td class="lab">숫자 + F6 + F7</td><td class="n" style="color:var(--no)">−32.32</td><td class="n" style="color:var(--no)">−5.95</td><td class="n" style="color:var(--no)">−2.96</td><td class="n best">+0.297</td></tr>
+        <tr><td class="lab">F7 단독</td><td class="n" style="color:var(--no)">−90.78</td><td class="n" style="color:var(--no)">−0.45</td><td class="n">−0.027</td><td class="n">−0.012</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.9 - 모델별 OOS R² (2026-09-17 NAV 보정 후). 피처가 늘수록 OLS가 붕괴 ]</p>
+  <p>
+    피처 수가 표본 대비 커지면서 <strong>정규화 없는 OLS는 R² −32 ~ −91로 완전히 붕괴</strong>한다.
+    Ridge는 −6 대, MLP도 −2 ~ −6 대다. <strong>이 문제에서 쓸 수 있는 모델은 XGBoost뿐</strong>이며,
+    이는 Phase 1의 결론(딥러닝이 트리 계열을 이기지 못함)과 일치한다.
+  </p>
+
+  <h4>SHAP — 뉴스는 기여도 상위권에 거의 없다</h4>
+  <p>
+    <code>숫자 + F6 + F7</code>(160개 피처) 모델의 SHAP 평균 절대기여를 보면(2026-09-17
+    NAV 보정 후 재실행), <strong>상위 15위까지가 전부 숫자 피처</strong>이고 뉴스는 16위
+    (<code>f6_mechanism_nav</code>, 0.77%)에서 처음 나온다.
+    <strong>상위 20개 중 뉴스는 3개뿐이고 기여 비중 합이 1.9%</strong>다 — 8월 판(4개·2.7%)보다
+    더 줄었다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="c" style="width:56px">순위</th><th>피처</th><th class="n">SHAP 비중</th><th class="c" style="width:80px">구분</th></tr></thead>
+      <tbody>
+        <tr><td class="c">1</td><td><code>flow_z20</code></td><td class="n">23.51%</td><td class="c">숫자 F3</td></tr>
+        <tr><td class="c">2</td><td><code>individual_net</code></td><td class="n">18.99%</td><td class="c">숫자 F3</td></tr>
+        <tr><td class="c">3</td><td><code>hynix_ex_sector</code></td><td class="n">17.34%</td><td class="c">숫자 F2</td></tr>
+        <tr><td class="c">4</td><td><code>hynix_ret</code></td><td class="n">5.77%</td><td class="c">숫자 F1</td></tr>
+        <tr><td class="c">5</td><td><code>institution_net</code></td><td class="n">5.16%</td><td class="c">숫자 F3</td></tr>
+        <tr><td class="c">16</td><td><code>f6_mechanism_nav</code></td><td class="n">0.77%</td><td class="c">뉴스 F6</td></tr>
+        <tr><td class="c">18</td><td><code>f6_article_count</code></td><td class="n">0.64%</td><td class="c">뉴스 F6</td></tr>
+        <tr><td class="c">19</td><td><code>f6_mechanism_valuation_multiple</code></td><td class="n">0.49%</td><td class="c">뉴스 F6</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 9.10 - SHAP 상위 기여 피처 (발췌, 2026-09-17 NAV 보정 후). F7 뉴스는 상위 20에 하나도 없음 ]</p>
+  <p>
+    주목할 점이 둘 있다. 첫째, <strong>F7(매크로 뉴스)은 상위 20에 단 하나도 들지 못했다.</strong>
+    둘째, 뉴스 중 그나마 순위가 높은 <code>f6_article_count</code>는 <strong>내용이 아니라
+    기사 개수</strong>다 — Phase 1에서 <code>news_availability_partial_text</code>가
+    최상위였던 것과 같은 패턴, 즉 모델이 여전히 "뉴스를 어떻게 수집했는가"를 학습하고 있다.
+  </p>
+  <p>
+    또 하나 — SHAP 1위가 <code>flow_z20</code>·2위가 <code>individual_net</code>(둘 다 F3)로
+    바뀌었다. 9.4절 ablation에서도 F3가 유일한 유의 카테고리였으므로, <strong>이번에는
+    SHAP 순위와 ablation 판정이 일치한다.</strong> 3위인 <code>hynix_ex_sector</code>(F2)는
+    여전히 SHAP 상위권이지만 ablation에서는 "무관" — SHAP은 모델이 그 피처를 얼마나
+    쓰는지를 보여주고, ablation은 빼도 다른 피처가 대체하는지를 보므로 둘이 다른 것을
+    측정한다는 점은 그대로다.
+  </p>
+
+  <div class="callout">
+    <p class="ct">9.5절 결론 (2026-09-17 NAV 보정 후 재확인)</p>
+    <p>
+      <strong>F6·F7 분할 가설을 기각한다 — 이전보다 더 분명하게.</strong> 2026-08 판에서
+      근소하게 유의했던 F6+F7 결합조차 NAV 보정 후에는 미달로 내려앉았다. 나눠도 pooled보다
+      나아지지 않고, 개별로도 결합으로도 유의하지 않으며, 방향과 판별력은 오히려 나빠진다.
+      뉴스 단독은 여전히 무력하다. <strong>Phase 1의 "뉴스는 잔차를 설명하지 못한다"는 결론이
+      더 정밀한 설계와 더 정확한 타겟 양쪽에서 유지된다.</strong>
+    </p>
+    <p>
+      다만 <strong>F7은 표본 부족이라는 대안 설명이 남는다</strong> — 기사 108건, 기사가 있는 날
+      90일뿐이다. "매크로 뉴스에 신호가 없다"와 "매크로 뉴스 표본이 부족하다"를 이 데이터로는
+      구분할 수 없다. F6는 775건/484일로 충분하므로 이 단서가 적용되지 않는다.
+    </p>
+  </div>
+
+  <!-- ══════════════ 10 ══════════════ -->
+  <h2 id="s10"><span class="num">10.</span>실무 적용 시나리오</h2>
+
+  <h3><span class="num">10.1</span>3단계 도입 전략</h3>
+  <p>
+    적용은 전면 자동화가 아니라, IR 담당자의 신뢰를 단계적으로 확보하면서 범위를 넓히는
+    방식으로 설계한다. 각 단계는 다음 단계 진행 여부를 판단할 기준을 명시적으로 갖는다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th class="c" style="width:60px">단계</th><th style="width:130px">명칭</th><th>운영 방식</th><th style="width:170px">진행 기준</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="c lab">1</td><td class="lab">Evidence Pack</td>
+          <td>관측 사실과 모델 해석을 <strong>분리</strong>해 일일 산출. 사실은 사실로, 추정은 추정으로 표기</td>
+          <td>고잔차일 귀인 결과가 담당자 판단과 불일치하는 비율 &lt; 20%</td>
+        </tr>
+        <tr>
+          <td class="c lab">2</td><td class="lab">Question Router + Guardrail</td>
+          <td>질문 유형 분류 후 답변 가능 범위 판정. 표 9.3의 금지 규칙을 하드 게이트로 구현</td>
+          <td>금지 규칙 위반 응답 0건</td>
+        </tr>
+        <tr>
+          <td class="c lab">3</td><td class="lab">Telegram 브리핑 봇</td>
+          <td>일일 브리핑 자동 발송 + 후속 질문 멀티턴 응답. 신뢰도 등급 병기</td>
+          <td>담당자 재확인 없이 인용 가능한 응답 비율 확보</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 10.1 - 3단계 도입 전략 ]</p>
+
+  <h3><span class="num">10.2</span>운영 흐름</h3>
+  <p>
+    평일 장 마감 후의 흐름은 이렇게 된다. 16:35에 스케줄러가
+    <code>factor_log.csv</code>를 갱신하며 당일 22개 원천 팩터를 수집한다. 파생을 붙여 37개
+    피처를 만들고, Leakage Gate가 7개를 걷어낸 30개로 XGBoost 귀인을 실행한다. 산출물은
+    divergence 예측값·부호·팩터 계층별 기여도이며, 여기에 전일 |divergence| 기반 국면
+    플래그를 덧붙인다.
+  </p>
+  <p>
+    이 결과가 Evidence Pack으로 조립될 때, <strong>관측 사실과 모델 추정은 절대 섞지 않는다.</strong>
+    "외국인 순매수 −○○억"은 사실이고, "수급이 잔차의 ○%를 설명"은 추정이다. 뉴스가 있으면
+    별도 블록에 사후 라벨로만 붙이고, 방향 주장은 붙이지 않는다. 마지막으로 모델 성능
+    저하 구간이면 신뢰도 하향 표기가 자동으로 들어간다.
+  </p>
+  <p>
+    1차 목표는 모델이 설명을 대신 써주는 것이 아니라, <strong>담당자가 고잔차일의 원인
+    후보를 빠르고 일관되게 좁히도록 돕는 것</strong>이다. 실제 대응 품질 개선이 확인된 뒤에만
+    다음 단계로 넘어간다.
+  </p>
+
+  <!-- ══════════════ 11 ══════════════ -->
+  <h2 id="s11"><span class="num">11.</span>한계 및 개선 방향</h2>
+
+  <h4>데이터 측면의 한계</h4>
+  <p>
+    가장 큰 한계는 <strong>F6 기업 이벤트 계층이 여전히 비어 있다는 점</strong>이다. Phase 1은
+    이 자리를 뉴스 텍스트로 채우려다 실패했고, 그 결과 30개 입력 중 회사 고유 이벤트를
+    직접 표현하는 변수가 하나도 없다. 잔차의 상당 부분이 자사주·주주환원·지분 거래에서
+    나온다는 도메인 지식과 모델 입력 사이에 구조적 공백이 있다.
+  </p>
+  <p>
+    <code>event_residual</code> 마스터 데이터에는 고잔차 181행 중 <strong>103행이 원인 불명</strong>
+    (#N/A)으로 남아 있다(2026-07-28 기준). SK스퀘어 자체 DART·홈페이지와 SK하이닉스 자체
+    DART를 모두 확인했는데도 해당 날짜에 대응하는 이벤트가 없었다. 이는 검색 누락일 수도
+    있고, 실제로 회사 이벤트 없이 수급만으로 잔차가 벌어진 날일 수도 있다. 현 데이터로는
+    두 경우를 구분할 수 없다.
+  </p>
+  <p>
+    부수적으로, DART 수집은 공시 제목과 날짜만 가져오고 본문 숫자를 전혀 파싱하지 않는다.
+    자기주식 취득 <em>결정</em>과 <em>결과보고</em>가 제목 단계에서 같은 규칙에 걸려 동일
+    카테고리로 뭉뚱그려지는 문제도 남아 있다.
+  </p>
+
+  <h4>제품과 모델의 시점 불일치 — 가장 시급한 한계</h4>
+  <p>
+    <strong>DPE는 장중에도 질문을 받지만, 이 모델은 전부 종가 기준으로 학습·검증되었다.</strong>
+    30개 입력 중 수급(F3)·공매도(F4) 계열은 당일 확정치가 장 마감 이후에야 나오고,
+    일부는 T+1 공시다. 즉 장중 12시에 "지금 왜 이래?"라는 질문을 받으면 모델이 실제로 쓸 수
+    있는 입력은 전체의 일부뿐이며, 이 조건에서의 성능은 <strong>측정된 적이 없다.</strong>
+  </p>
+  <p>
+    실험 산출물에도 이 경고가 명시되어 있다 — <em>"당일 수급 필드는 장 마감 후 귀인에는
+    적합하지만 장중 예측에는 적합하지 않다."</em> 보고된 OOS R² 0.236과 부호정확도 0.726는
+    <strong>장 마감 후 귀인 성능</strong>이며, 장중 응답의 신뢰도로 그대로 인용해서는 안 된다.
+    Phase 2에서는 장중 가용 입력만으로 구성한 별도 모델의 성능을 따로 측정해야 하고,
+    그때까지 챗봇은 장중 답변에 신뢰도 하향 표기를 붙여야 한다.
+  </p>
+
+  <h4>모델 측면의 한계</h4>
+  <p>
+    <strong>국면 의존성이 해결되지 않았다.</strong> 4구간에서 R²가 0.065(실험 A에서는 −0.135)로
+    떨어진 원인을 아직 규명하지 못했다. 2025년 11월 전후 무엇이 바뀌었는지 — 유동성 구조,
+    투자자 구성, 하이닉스 비중 — 를 특정하지 못한 상태에서는 재학습 주기나 국면 감지 규칙을
+    설계할 수 없다.
+  </p>
+  <p>
+    <strong style="color:var(--warn)">2026-09 보강 —</strong> 9.4절의 β·w 분석이 유력한 후보 하나를
+    제시한다. β−w가 2025년 +0.098에서 2026년 −0.007로 이동하며 <strong>하이닉스→divergence
+    채널이 사실상 닫혔다.</strong> 모델이 의존하던 관계 하나가 소멸한 시점과 성능 붕괴 시점이
+    겹친다. 다만 이것만으로 마지막 구간 R² −0.062까지 설명되는지는 검증하지 않았다 — 가설이지
+    결론이 아니다.
+  </p>
+  <p>
+    <s style="color:var(--ink-3)">또한 이번 실행에서 숫자 피처 쪽 SHAP·순열 중요도를 산출물로 남기지 않았다.</s>
+    <strong style="color:var(--ok)">→ 2026-09-16 부분 해소.</strong>
+    카테고리 단위 ablation을 수행해 <code>output/factor_ablation.json</code>에 기록했다(9.4절).
+    다만 <strong>개별 피처 단위</strong> SHAP·순열 중요도는 여전히 없다. 카테고리 안에서
+    어떤 피처가 기여하는지(예: F3 9개 중 <code>flow_z20</code>인지 <code>foreign_net</code>인지)는
+    아직 재확인할 수 없어, 표 5.1의 파생변수 설계 근거는 여전히 사후 검증이 미흡하다.
+  </p>
+  <p>
+    <strong>ablation이 새로 만든 한계가 있다.</strong> 비-F3·F5 카테고리끼리 정보가 중복되어
+    leave-one-out으로는 그중 무엇이 진짜 불필요한지 가려지지 않는다(9.4절). NAV 보정 후
+    "F1·F4가 해롭다"는 결론 자체는 사라졌지만, F3·F5를 고정한 뒤 나머지를 하나씩 더하는
+    증분 테스트는 여전히 미수행이라 30개를 그대로 쓸지 줄일지는 확정되지 않았다.
+  </p>
+  <p>
+    매칭 표본의 확률값은 보정되지 않았다. 판별 ROC-AUC 0.6521(8.2절)은 표본 내부 순위 지표로만
+    유효하고, "이 날 고잔차일 확률 ○%" 형태로는 쓸 수 없다.
+  </p>
+
+  <h4>문서 정합성 이슈</h4>
+  <p>
+    작업 기록 간 수치 불일치가 몇 건 확인되었다. H1 회귀의 결정계수가 Phase 1 요약에는
+    R² 0.623으로, 초기 프로젝트 브리핑에는 R² 0.85로 기록되어 있다. 산출 시점과 기간이
+    달랐던 것으로 보이나 어느 쪽이 현재 기준인지 파일로 확정되지 않는다. 또한
+    <code>MIGRATION_PROMPT.md</code>에는 F6이 "시장 구조 / 거래량"이라는 낡은 정의로 남아
+    있어, 실제 taxonomy의 "기업 이벤트"와 충돌한다. Phase 2 착수 전 정리 대상이다.
+  </p>
+
+  <h4>개선 방향 — 텍스트에서 구조화 정량으로</h4>
+  <p>
+    Phase 1의 실패 경로가 명확하다. <strong>LLM의 주관적 판정</strong>(confidence가 품질
+    대리변수로 변질, 방향 필드 3종의 사실상 단일화)과 <strong>관련성 낮은 기사</strong>
+    (전체의 58.4%가 시황·후속·메타데이터)다. 그렇다면 처방은 텍스트 해석을 개선하는 것이
+    아니라, <strong>애초에 숫자로 존재하는 이벤트를 텍스트를 경유하지 않고 직접 쓰는 것</strong>이다.
+    공시 집행 수량, 목표주가 숫자, 블록딜 지분율은 해석의 여지가 없다.
+  </p>
+  <p>
+    다만 구조화 이벤트는 뉴스보다 훨씬 <strong>희소</strong>하다는 새로운 문제를 만난다.
+    자사주 취득결정이 880일 중 10일이라면 검정력이 확보되지 않아 "구조화해도 유의하지 않음"
+    이라는 결론밖에 얻지 못하는데, 그것은 구조화의 실패가 아니라 표본의 실패다. 따라서
+    Phase 2는 (1) 이벤트 유형별 발생 빈도 확인을 0단계로 두고, (2) 희소한 점(point) 이벤트를
+    구간(state) 변수로 전환하는 설계 — <code>buyback_program_active</code>,
+    <code>days_since_buyback_start</code> 같은 형태 — 를 원칙으로 삼는다.
+  </p>
+  <p>
+    세 번째로, 방향 라벨을 재정의해야 한다. Phase 1의 라벨은 "기사 톤"을 재고 있었다.
+    필요한 것은 <strong>"이 이벤트가 NAV와 주가에 비대칭적으로 작용하는가"</strong>이며, 이는
+    감성이 아니라 메커니즘의 문제다. 자사주 매입은 NAV 불변·시총 증가로 정의상 할인율을
+    축소시킨다. 이런 회계적 비대칭이 있는 이벤트만 방향 신호로 인정하는 것이 옳은 설계다.
+  </p>
+
+  <!-- ══════════════ 12 ══════════════ -->
+  <h2 id="s12"><span class="num">12.</span>결론</h2>
+  <p>
+    이 작업은 이미 돌아가고 있던 챗봇(DPE)의 답변에 근거를 붙이는 것에서 시작했다. 그러기
+    위해 주가 변동을 두 번 걷어냈다. 하이닉스·NAV로 설명되는 부분을 걷어내 divergence를 남기고,
+    거기에 팩터 모델을 적합시켜 모델 잔차를 남겼다. 그리고 그 잔차를 뉴스로 설명할 수 있는지
+    시험했다.
+  </p>
+  <p>
+    <strong>고도화 1~2단계는 성공했다.</strong> OLS로 정의한 팩터 체계(NAV·섹터·수급·공매도·
+    선물·변동성 국면)는 XGBoost·SHAP 검증에서 실제 신호를 담고 있음이 확인되었다. 확장윈도우
+    시계열 검증에서 OOS R² 0.236, 부호정확도 0.726이다. 방향이 사전적으로 동전 던지기(0.472)인
+    문제에서 73%를 맞힌다는 것은 실무에 쓸 수 있는 수준이다. 이어서 시험한 딥러닝(2층 MLP)은
+    트리 계열을 이기지 못했고, 국면이 바뀌자 R² −22.8까지 발산하며 훨씬 크게 무너졌다.
+  </p>
+  <p>
+    <strong>3~4단계는 실패했고, 그 실패가 더 값졌다.</strong> 뉴스는 모델 잔차의 방향을 설명하지
+    못했다(부호정확도 0.504). 판별력은 ROC-AUC 0.501로 <strong>사실상 0.5 언저리에 머물러
+    통계적 유의성을 확보하지 못했다.</strong> 크기도 설명하지 못했다 — 1차 스크리닝에서 유의해 보였던 신호는
+    저품질 기사 58.4%를 제거하자 실무 문턱 아래로 떨어졌고, FDR 보정에서 개별 신호 10개 중
+    0개가 생존했다. 확장윈도우 검증에서는 뉴스 단독 R²가 4개 구간 모두 음수였고,
+    84개 피처 중 61개는 어느 구간에서도 기여하지 않았다.
+  </p>
+  <p>
+    실패의 원인이 특정되었다는 점이 핵심이다. 가장 안정적인 뉴스 피처가
+    <code>news_availability_partial_text</code> — 기사 본문을 확보했는지를 나타내는 수집 상태
+    플래그였다. <strong>모델은 뉴스가 무슨 내용인지가 아니라, 우리가 뉴스를 어떻게 수집했는지를
+    학습하고 있었다.</strong> 이것이 저품질 기사 제거 실험, 라벨 상관 분석, 순열 중요도 분석
+    셋에서 독립적으로 확인되었다.
+  </p>
+  <p>
+    그래서 Phase 1의 산출물은 모델 하나가 아니다. 무엇을 설명할 수 있고 무엇을 설명할 수
+    없는지의 경계, 그리고 그 경계를 챗봇이 넘지 않도록 하는 금지 규칙 세 개다. 설명할 수
+    없다는 것을 아는 시스템은 잘못 설명하는 시스템보다 낫다. IR 자료에 한 번 잘못 붙은
+    원인은 이후 자료에 계속 인용되기 때문에, 이 경계 설정은 방어적 조치가 아니라 실질적
+    가치다.
+  </p>
+  <p>
+    가설 5개 중 2개가 기각되었다. 처음 세운 가설이 모두 채택되는 분석보다, 기각이 다음
+    설계를 바꾼 분석이 더 멀리 간다고 생각한다. F6 계층은 여전히 비어 있지만, 이제 그
+    자리를 무엇으로 채워야 하는지 — 그리고 무엇으로 채우면 안 되는지 — 를 알고 있다.
+  </p>
+
+  <h3><span class="num">12.1</span>2026-09 개정이 바꾼 것</h3>
+  <p>
+    위 결론은 유지되지만, 카테고리별 ablation(9.4절)이 <strong>"성공했다"의 의미를 좁혔다.</strong>
+    팩터 모델의 OOS R² 0.24는 30개 피처가 함께 만든 값이 아니라 <strong>사실상 F3(수급)
+    하나가 만든 값</strong>이다. F3를 빼면 모델은 평균 예측보다도 못해진다.
+  </p>
+  <p>
+    <strong>2026-09-17 재확인 — "F1·F4가 해롭다"는 결론은 NAV 오류였다.</strong> 발행주식수를
+    132,087,115주로 고정한 잘못된 NAV 위에서 계산했던 9.4절 초판은 F1(NAV/하이닉스)과
+    F4(공매도)가 넣으면 통계적으로 해롭다고 판정했었다. 실제 발행주식수 변동(141,467,571→
+    131,923,998주, 자사주 소각 −6.7%)과 분기별 비상장가치·순현금을 반영한 point-in-time
+    NAV로 다시 계산하니, <strong>F1·F2·F4·F7·F8 다섯 다 신뢰구간이 0을 포함</strong>한다 —
+    해로운 게 아니라 그냥 무관이었다. 대신 <strong>F5(선물)가 새로 유의</strong>해졌다.
+  </p>
+  <p>
+    이것은 Phase 1의 결론을 뒤집지 않는다 — 숫자 팩터가 뉴스보다 낫다는 사실은 그대로다.
+    다만 <strong>"숫자 팩터"라는 뭉뚱그린 표현이 실제로는 "수급, 그리고 이번에 확인된
+    선물"을 뜻했다</strong>는 점이 분명해졌고, 이는 챗봇이 원인을 서술하는 순서를 바꿔야
+    한다는 실무 결론으로 직결된다. 현재 프롬프트는 뉴스를 1순위로 두고 있는데,
+    <strong>통계적 근거가 없는 순서다.</strong>
+  </p>
+  <p>
+    <strong>그리고 뉴스에 마지막 기회를 한 번 더 줬으나 결과는 같았고, NAV 보정 후 더
+    약해졌다(9.5절).</strong> 기업 뉴스와 매크로 뉴스를 나눠 재검증했지만, 2026-08 판에서
+    근소하게 유의했던 결합조차 보정 후에는 미달로 내려앉았다. SHAP 상위 15위까지가 전부
+    숫자 피처였고, 뉴스 중 그나마 높은 것은 <code>f6_article_count</code> — 내용이 아니라
+    <strong>기사 개수</strong>였다. Phase 1에서 <code>news_availability_partial_text</code>가
+    최상위였던 것과 정확히 같은 패턴이다. 모델은 여전히 뉴스의 내용이 아니라
+    <strong>우리가 뉴스를 어떻게 수집했는지</strong>를 학습하고 있다. 서로 다른 두 설계에서
+    같은 패턴이 나왔다면 그것은 우연이 아니다.
+  </p>
+  <p>
+    F1을 왜 (더 이상 해롭지는 않지만 여전히) 신뢰할 수 없는지 파고든 결과는 그대로
+    유효했다. β(실제 베타)와 w(NAV 내 하이닉스 비중)가 각각 0.58→0.97, 0.66→0.97로
+    <strong>수렴</strong>했다. SK스퀘어가 NAV를 거의 1:1로 추종하게 되었다는 뜻이고,
+    자사주 소각·밸류업이 통계에 남긴 지문이다. <strong>IR이 주장해 온 할인율 축소가 팩터
+    구조 자체에서 관측된 셈</strong>이며, 동시에 하이닉스로 잔차를 설명하던 채널이
+    닫혔다는 뜻이기도 하다. Phase 2는 그 닫힌 자리를 무엇으로 대체할지의 문제이기도 하다.
+  </p>
+
+  <!-- ══════════════ H. Handoff ══════════════ -->
+  <h2 id="sH"><span class="num">H.</span>Handoff — 인계 노트 <span style="font-size:14px;color:var(--ink-3);font-weight:600">(v3 · 2026-09-18 · 기준 커밋 <code>a586f8b</code>)</span></h2>
+
+  <p>
+    이 장은 본문 1~12장의 결론을 바꾸지 않는다. <strong>다음 작업자가 본문을 전부 읽지 않고도
+    현재 상태·진행 중인 작업·미해결 이슈·파일 위치를 파악해 그대로 이어받을 수 있도록</strong>
+    쓴 인계 노트다. 본문은 "무엇을 알아냈는가"를, 이 장은 "지금 어디까지 와 있고 다음에
+    무엇을 해야 하는가"를 다룬다. 기준 시점은 2026-09-18이며, 저장소의 마지막 커밋은
+    <code>a586f8b</code>다.
+  </p>
+
+  <h3 id="sH1"><span class="num">H.1</span>30초 요약 — 현재 상태</h3>
+  <div class="tiles">
+    <div class="tile">
+      <p class="tile-k">뉴스 gap-fill 진행</p>
+      <p class="tile-v pos">139 / 294</p>
+      <p class="tile-n">거래일 · 47.3% · 2021-12-28 ~ 2023-06-26 반영</p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">기사 수신</p>
+      <p class="tile-v pos">203 / 208</p>
+      <p class="tile-n">Codex 로그 합계 대비 실제 도착 · 5건 누락(4일자)</p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">남은 거래일</p>
+      <p class="tile-v">155</p>
+      <p class="tile-n">2023-06-27 ~ 2026-09-16 · 20일 배치 약 8회분</p>
+    </div>
+    <div class="tile">
+      <p class="tile-k">미푸시 커밋</p>
+      <p class="tile-v neg">72</p>
+      <p class="tile-n"><code>origin/master</code> 대비 ahead · 원격 백업 없음 상태</p>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:150px">구분</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">확정된 결론</td><td>숫자 팩터가 divergence를 설명한다(OOS R² 0.236, 부호정확도 0.726). 그 설명력은 사실상 <strong>F3 수급</strong>이 만들고 <strong>F5 선물</strong>이 보조한다(9.4절). 뉴스는 방향도 크기도 설명하지 못한다(H3·H4 기각). 딥러닝은 트리 계열을 이기지 못한다.</td></tr>
+        <tr><td class="lab">2026-09-17에 바뀐 것</td><td>NAV를 point-in-time으로 보정하자 "F1·F4·F7·F8이 해롭다"는 결론이 <strong>철회</strong>됐다(무관으로 정정). F5가 새로 유의해졌다. 뉴스 결합의 근소한 유의성도 사라져 뉴스 기각이 더 강해졌다.</td></tr>
+        <tr><td class="lab">진행 중</td><td>매칭 표본 880일을 <strong>1,174일 전수 표본</strong>으로 바꾸는 294일 뉴스 gap-fill. Codex가 검색·추출하고 Claude Code가 검증·병합한다. 139일 완료(H.3).</td></tr>
+        <tr><td class="lab">다음 결정 지점</td><td>gap-fill 완료 → 전수 표본으로 뉴스 재검정 → 본문 H3·H4 결론 <strong>확정 또는 수정</strong>. 이것이 Phase 1을 닫는 마지막 검증이다.</td></tr>
+        <tr><td class="lab">최우선 미해결</td><td>챗봇 프롬프트(<code>prompts/system_prompt.py</code>)가 여전히 <strong>뉴스를 원인 후보 ①번</strong>으로 둔다. 검증 결과와 정면 충돌하며 2026-09-18 현재 미수정(H.4).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.1 - 인계 시점 상태 요약 ]</p>
+
+  <h3 id="sH2"><span class="num">H.2</span>최근 작업 이력 (2026-09-16 ~ 09-18)</h3>
+  <p>
+    본문 2026-09-17 재개정판 이후에 일어난 일과, 재개정판에 반영된 직전 작업을 함께 적는다.
+    커밋 해시는 저장소(<code>sk-square/</code> 루트, 브랜치 <code>master</code>) 기준이다.
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:92px">일자</th><th style="width:84px">커밋</th><th>작업</th><th style="width:210px">보고서 반영</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="n">09-16</td><td><code>664692e</code></td><td>taxonomy 재배치 — F2를 섹터로 축소, 매크로 3개를 F7로 이전, F8 국면·상호작용 신설. 피처 추가·삭제 없음(37개/누설 차단 후 30개 유지)</td><td>2.2절 표 2.1</td></tr>
+        <tr><td class="n">09-16</td><td><code>c347141</code></td><td>팩터 카테고리별 ablation(solo·leave-one-out, 블록 부트스트랩 CI) 신설 — <code>tools/experiment_factor_ablation.py</code>, <code>output/factor_ablation.json</code></td><td>9.4절 (초판 결론은 다음 행에서 철회)</td></tr>
+        <tr><td class="n">09-17</td><td><code>f09ce3e</code></td><td><strong>NAV point-in-time 보정.</strong> 상장 7개사 보유주식수 일자별 재구성(<code>build_listed_holdings.py</code>), 분기별 비상장가치·순현금 반영(<code>build_nav_daily.py</code>), <code>factor_log.csv</code> NAV 계열 교체(<code>apply_nav_v2.py</code>, 원본은 <code>*_v1</code> 컬럼 보존). 전 실험 재실행 → "F1·F4·F7·F8 해로움" 철회, F5 신규 유의. β−w 재계산(<code>recompute_beta_w.py</code>). 선택편의 수치 정정(1,144일 중 440일). 뉴스 아티팩트 정리(<code>cleanup_news_artifacts.py</code>): <code>news_search_remaining.csv</code> 10일 회수, <code>news_property_queue.jsonl</code> pending 39건 확정, <code>experiment_residual_news.py</code>에 검색 로그 우선 로직 추가. 보고서·PRD·COLLAB_BOARD 전면 갱신</td><td>표지 callout, 3.1, 6.2, 8.x, 9.4, 9.5, 12.1</td></tr>
+        <tr><td class="n">09-17</td><td>—</td><td>Codex 의뢰서 <code>docs/CODEX_PROMPT_news_gap_294.md</code>와 대상 목록 <code>data/news_search_targets_gap.csv</code>(294행) 작성</td><td>표지 callout 마지막 문단</td></tr>
+        <tr><td class="n">09-17</td><td><code>fb396a0</code>~<code>31275f0</code></td><td>Codex gap-fill 배치 1~3 반영 + 배치1 누락 1건 보충</td><td rowspan="3"><strong>v3에서 신규</strong> — H.3</td></tr>
+        <tr><td class="n">09-17</td><td><code>b9fef01</code></td><td>배치 4 반영 + <strong>아카이브 이동</strong>: <code>factor_log_v1_backup.csv</code>, <code>news_search_remaining.csv</code>(0행) → <code>data/과거 데이터 참고/</code></td></tr>
+        <tr><td class="n">09-17~18</td><td><code>2a5a284</code>~<code>a586f8b</code></td><td>20221121 누락 2건 보충, 배치 5~7 반영</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.2 - 최근 작업 이력. 09-16·09-17 앞 세 건은 본문 2026-09-17 재개정판에 이미 반영됨 ]</p>
+
+  <h3 id="sH3"><span class="num">H.3</span>진행 중 — 294일 뉴스 gap-fill</h3>
+
+  <h4>왜 하는가</h4>
+  <p>
+    본문 6장의 뉴스 검증은 <strong>매칭 case-control 880일</strong> 위에서 이루어졌다. 고잔차일
+    440일과 그 대조일 440일만 검색했고, 나머지 294거래일(전체의 25%)은 검색된 적이 없다.
+    이 294일을 채우면 1,174거래일 <strong>전수 표본</strong>이 되어 (1) 매칭 설계가 필요 없어지고
+    선택편의가 원천적으로 사라지며, (2) 표본이 880 → 1,174로 늘어 검정력이 오르고,
+    (3) "뉴스에 신호가 없다"와 "표본이 부족했다"를 비로소 구분할 수 있다. 특히 9.5절의
+    F7 매크로 뉴스(108건/90일)는 표본 부족이라는 대안 설명이 남아 있었다.
+  </p>
+
+  <h4>역할 분담과 절차</h4>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:110px">역할</th><th>수행 내용</th><th style="width:250px">근거 문서</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">Codex</td><td>대상 날짜별 웹 검색(네이버 API 불가 — 2021~23년 조회 구조적 불가) → 기사별 <code>news_property.v1</code> 속성 추출 → 두 jsonl에 들어갈 줄을 20일 배치로 출력. <strong>기사가 없어도 로그 1줄</strong>. 주가·잔차를 보고 라벨을 정하지 않음</td><td><code>docs/CODEX_PROMPT_news_gap_294.md</code> §3~§7</td></tr>
+        <tr><td class="lab">Sean</td><td>Codex 출력을 Claude Code에 붙여넣기. 누락분 재전송 요청 중계</td><td>—</td></tr>
+        <tr><td class="lab">Claude Code</td><td>① 붙여넣은 텍스트를 <code>SEARCH_LOG</code>/<code>ARTICLES</code>로 분리 → ② 스키마 검증(<code>additionalProperties:false</code>, 필수 필드·enum·값 범위) → ③ 로그의 <code>articles_found</code> 합계와 실제 도착 기사 수를 <strong>거래일별로 대조</strong>해 절단 탐지 → ④ 기존 파일과 <code>article_id</code>/<code>trading_date</code> 중복 검사 → ⑤ 유효 레코드만 append → ⑥ 커밋 + 진행 보고</td><td><code>schemas/news_property.schema.json</code>, <code>schemas/unbiased_news_search_protocol.md</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.3 - gap-fill 역할 분담. 검증·병합 스크립트는 세션 임시 폴더에서 실행했고 저장소에는 두지 않았다 ]</p>
+
+  <h4>배치별 진행표</h4>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th class="c" style="width:52px">배치</th><th style="width:84px">커밋</th><th style="width:170px">기간</th><th class="n">일수</th><th class="n">기사</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="c">1</td><td><code>fb396a0</code></td><td>20211228 ~ 20220620</td><td class="n">19</td><td class="n">35</td><td>39일치로 전송됐으나 <strong>약 50,000자에서 절단</strong>되어 19일만 수신. 20220620 2번째 기사(하형일 CIO)는 <code>7470619</code>에서 보충(+1)</td></tr>
+        <tr><td class="c">2</td><td><code>7470619</code></td><td>20220621 ~ 20220921</td><td class="n">20</td><td class="n">29</td><td>완전. 이후 모든 배치를 20일 단위로 고정</td></tr>
+        <tr><td class="c">3</td><td><code>31275f0</code></td><td>20220922 ~ 20221121</td><td class="n">20</td><td class="n">33</td><td>38건 중 33건 도착. 20221121 3건 중 2건은 <code>2a5a284</code>에서 보충(+2). <strong>20221116 2건·20221121 1건 여전히 누락</strong></td></tr>
+        <tr><td class="c">4</td><td><code>b9fef01</code></td><td>20221124 ~ 20230111</td><td class="n">20</td><td class="n">20</td><td>완전</td></tr>
+        <tr><td class="c">5</td><td><code>2ae4299</code></td><td>20230112 ~ 20230216</td><td class="n">20</td><td class="n">23</td><td>완전</td></tr>
+        <tr><td class="c">6</td><td><code>1054a0e</code></td><td>20230217 ~ 20230425</td><td class="n">20</td><td class="n">29</td><td>완전. SK쉴더스 EQT 매각, 첫 주주환원 정책(2023-03-30) 포함</td></tr>
+        <tr><td class="c">7</td><td><code>a586f8b</code></td><td>20230426 ~ 20230626</td><td class="n">20</td><td class="n">31</td><td>33건 중 31건 도착. <strong>20230623 4번째 기사(<code>article_id 11ce9ef1…</code>, publisher 값에서 끊김)·20230626 1건 누락</strong>. 첫 자사주 소각 1,063억원(2023-06-22~23) 포함</td></tr>
+        <tr style="border-top:2px solid var(--rule-strong)"><td class="c lab">합계</td><td>—</td><td>20211228 ~ 20230626</td><td class="n"><strong>139</strong></td><td class="n"><strong>203</strong></td><td>배치 200건 + 보충 3건. 로그 상태: <code>completed_with_articles</code> 109일 / <code>completed_no_news</code> 30일</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.4 - Codex gap-fill 배치별 반영 현황 (2026-09-18) ]</p>
+
+  <div class="flag">
+    <p class="ct">⚠ 누락 기사 5건 — 재전송 요청 필요</p>
+    <div class="tw" style="margin:12px 0 0;border:none;background:transparent">
+      <table style="min-width:0">
+        <thead><tr><th style="width:110px">거래일</th><th class="n" style="width:90px">로그 기대</th><th class="n" style="width:90px">실제 도착</th><th class="n" style="width:70px">누락</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td class="n">20221116</td><td class="n">3</td><td class="n">1</td><td class="n">2</td><td>배치3 절단. 한 번도 재전송되지 않음</td></tr>
+          <tr><td class="n">20221121</td><td class="n">3</td><td class="n">2</td><td class="n">1</td><td>배치3 절단. 2건은 보충됨, 1건 잔여</td></tr>
+          <tr><td class="n">20230623</td><td class="n">4</td><td class="n">3</td><td class="n">1</td><td>배치7 절단. 4번째 기사 <code>11ce9ef1…</code></td></tr>
+          <tr><td class="n">20230626</td><td class="n">1</td><td class="n">0</td><td class="n">1</td><td>배치7 절단. 11번가 서비스 재정비·IPO 기사</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px">
+      로그 줄은 이미 들어가 있으므로 <strong>기사 레코드만</strong> 다시 받으면 된다. 재전송분은 기존
+      <code>article_id</code>와 중복 검사 후 append한다. 이 5건이 채워지기 전까지 해당 4일자는
+      "검색 완료·기사 일부 누락" 상태이며, 전수 재검정 전에 반드시 정리해야 한다.
+    </p>
+  </div>
+
+  <h4>남은 155일</h4>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:100px">연도</th><th class="n">남은 일수</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">2023</td><td class="n">59</td><td>2023-06-27부터. <code>sampling_role=unused_low</code></td></tr>
+        <tr><td class="lab">2024</td><td class="n">24</td><td><code>unused_low</code></td></tr>
+        <tr><td class="lab">2025</td><td class="n">36</td><td><code>unused_low</code></td></tr>
+        <tr><td class="lab">2026</td><td class="n">36</td><td>이 중 <strong>31일(2026-07-28 이후)은 <code>sampling_role</code>이 빈값, <code>reason=after_log_end</code></strong> — 매칭 표본 작성 시점 이후에 생긴 거래일. 로그에도 빈 문자열로 기록한다</td></tr>
+        <tr style="border-top:2px solid var(--rule-strong)"><td class="lab">합계</td><td class="n"><strong>155</strong></td><td>20일 배치 약 8회. Phase 1 실측 기준 배치당 약 20분</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.5 - 남은 대상 거래일 연도별 분포 ]</p>
+  <p>
+    <strong>다음 배치(8번째)의 20일:</strong>
+    20230627 · 20230630 · 20230707 · 20230710 · 20230711 · 20230712 · 20230713 · 20230714 ·
+    20230717 · 20230718 · 20230719 · 20230720 · 20230721 · 20230726 · 20230731 · 20230801 ·
+    20230804 · 20230808 · 20230809 · 20230810.
+    전체 남은 목록은 <code>data/news_search_targets_gap.csv</code>에서
+    <code>data/news_search_log_codex.jsonl</code>에 없는 <code>trading_date</code>를 빼면 재현된다.
+  </p>
+
+  <h4>현재 파일 상태</h4>
+  <div class="formula">
+    data/news_search_log_codex.jsonl        1,019줄  =  880(매칭 표본) + 139(gap-fill)<br>
+    data/news_property_codex_batch.jsonl    1,161건  =  958(매칭 표본) + 203(gap-fill)<br>
+    data/news_search_targets_gap.csv          294행  (변경 없음 — 처리 여부는 로그와 대조로 판정)<br>
+    data/news_property_queue.jsonl          pending 0건  (2026-09-17 정리: completed 12 / superseded 27)<br><br>
+    진행률 산식:  days_processed = 로그 줄수 − 880  ·  days_remaining = 294 − days_processed
+  </div>
+
+  <h4>알려진 함정</h4>
+  <ol>
+    <li>
+      <strong>붙여넣기 절단(약 50,000자).</strong> 39일 배치는 매번 JSON 중간에서 끊겼다. 20일 배치는
+      기사 없는 날(<code>completed_no_news</code>)이 섞이면 대부분 들어가지만, 기사가 많은 구간에서는
+      20일도 끊길 수 있다(배치 3·7). 절단은 로그 합계와 도착 기사 수의 거래일별 대조로만 잡힌다 —
+      <strong>마지막 레코드가 온전히 닫혔는지만 보면 놓친다.</strong>
+    </li>
+    <li>
+      <strong>동일 배치 재전송.</strong> 배치 1이 한 번 통째로 다시 왔다. <code>article_id</code>·
+      <code>trading_date</code> 기준으로 100% 중복이면 append하지 않는다. 절단된 배치를 다시 받을 때는
+      전체가 아니라 <strong>누락 거래일의 기사만</strong> 요청하는 것이 낫다.
+    </li>
+    <li>
+      <strong>Codex 로그의 <code>notes</code>는 한국어.</strong> 콘솔 인코딩이 CP949가 아니면 깨져 보이지만
+      파일 자체는 UTF-8로 정상이다. 검증 스크립트는 <code>encoding="utf-8"</code>로 읽어야 한다.
+    </li>
+    <li>
+      <strong>귀속 규칙.</strong> 15:30 이후·휴장일 기사는 다음 거래일로 귀속하며, Codex는 이를
+      <code>notes</code>에 남긴다("18:56 기사는 다음 거래일 귀속"). 어떤 거래일의 기사 0건이 이 규칙의
+      결과일 수 있으므로 <code>completed_no_news</code>를 "관련 뉴스 부재"로만 읽으면 안 된다.
+    </li>
+  </ol>
+
+  <h4>완료 후 절차</h4>
+  <ol>
+    <li>누락 5건 보충 → 로그 합계와 기사 수가 294일 전체에서 일치하는지 최종 대조.</li>
+    <li><code>tools/experiment_residual_news.py</code>와 <code>tools/experiment_f6_f7_news.py</code>를
+      <strong>매칭 설계를 폐기한 전수 1,174일</strong>로 재실행. 두 스크립트는 현재
+      <code>event_residual_unbiased.csv</code>의 <code>sampling_role</code>로 표본을 고르므로, 전수 모드
+      옵션 추가 또는 표본 선택 로직 수정이 필요하다.</li>
+    <li>전수 표본에서는 고잔차 양성률이 0.5가 아니라 <strong>약 0.38</strong>(440/1,144)이다. PR-AUC 기준선과
+      6.2절의 "매칭 확률 ≠ 모집단 확률" 경고문을 다시 써야 한다. 전수에서는 그 경고가 필요 없어진다.</li>
+    <li>9.5절 각주의 "873일 vs 863일" 불일치도 이 재실행에서 함께 해소된다.</li>
+    <li>결과에 따라 본문 H3·H4·9.5절·12장의 뉴스 결론을 확정하거나 수정하고, 이 보고서를 v4로 올린다.</li>
+  </ol>
+
+  <h3 id="sH4"><span class="num">H.4</span>미해결 이슈·리스크 (우선순위순)</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="c" style="width:44px">#</th><th class="c" style="width:60px">심각도</th><th>이슈</th><th style="width:230px">위치 / 근거</th></tr></thead>
+      <tbody>
+        <tr><td class="c">1</td><td class="c" style="color:var(--no);font-weight:700">높음</td><td>챗봇 원인 탐색 순서가 <strong>①뉴스 → ②수급 → ③공매도 → ④선물</strong>. 검증 결과는 ①수급(F3) → ②선물(F5), 뉴스는 사후 라벨만(9.3절). 2026-09-18 현재 미수정 — DPE 1.0 종료의 최우선 항목</td><td><code>prompts/system_prompt.py</code> 67~77행</td></tr>
+        <tr><td class="c">2</td><td class="c" style="color:var(--no);font-weight:700">높음</td><td>운영 귀인 모듈이 검증된 설정과 다름 — 37피처 전체 + <code>skq_ret</code> 타겟, 누설 차단 7개 미적용. 그대로 연결하면 검증 안 된 모델이 배포됨. 2026-09-08 이후 재확인되지 않음</td><td><code>tools/attribution.py</code> · PROJECT_MAP §6-③</td></tr>
+        <tr><td class="c">3</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td>원격 저장소(<code>origin</code>, GitHub)는 있으나 <strong><code>master</code>가 72커밋 ahead</strong> — 사실상 백업 없음. 재생성 비용이 가장 큰 두 jsonl이 여기에 포함됨. <code>.gitignore</code> 대상(애널리스트 PDF 118 MB, 캐시)은 git에도 없음</td><td><code>git branch -vv</code></td></tr>
+        <tr><td class="c">4</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td><strong>표본 수 표기가 출처마다 다르다.</strong> <code>factor_log.csv</code> 1,175행(수익률 정의 1,174일) · 실험 A/ablation <code>n_total</code> 1,173 · 선택편의 감사 <code>rows</code> 1,144 · 뉴스 전수 목표 1,174(880+294). 각 필터 기준(결측 컬럼, 상장 첫날 등)이 문서화되지 않아 인용 시 혼동 위험</td><td><code>output/*.json</code>, 표지 메타</td></tr>
+        <tr><td class="c">5</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td>2025-12 이후 4구간 국면 전환 원인 미규명. β−w 채널 폐쇄(2025 +0.098 → 2026 −0.007)가 유력 후보지만 마지막 구간 R² −0.062를 그것만으로 설명하는지 미검증</td><td>8.3절, 11장</td></tr>
+        <tr><td class="c">6</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td>비-F3·F5 카테고리의 다중공선성 — LOO로는 F1·F2·F4·F7·F8 중 진짜 불필요한 것을 가릴 수 없음. F3·F5 고정 후 증분 테스트 미수행</td><td>9.4절</td></tr>
+        <tr><td class="c">7</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td><sup class="dag">†</sup> 표시 수치(H1 R² 0.623, 1차 스크리닝 AUC 0.611/0.559, 저품질 58.4%, 속성 상관, 자기상관, FDR 0/10)의 재현 스크립트가 저장소에 없음</td><td>수치 출처 각주</td></tr>
+        <tr><td class="c">8</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td>F7 매크로 뉴스 표본 부족(108건/90일) — "신호 없음"과 "표본 부족" 미구분. gap-fill 완료 후 재평가</td><td>9.5절</td></tr>
+        <tr><td class="c">9</td><td class="c" style="color:var(--warn);font-weight:700">중간</td><td>장중 응답 성능 미측정 — 모델은 전부 종가 기준. 수급·공매도는 장 마감 후 확정</td><td>11장</td></tr>
+        <tr><td class="c">10</td><td class="c" style="color:var(--ok);font-weight:700">낮음</td><td><code>docs/PROJECT_MAP.md</code>(2026-09-08)가 일부 낡음 — <code>news_search_remaining.csv</code> 위치(현재 <code>과거 데이터 참고/</code>), 실험 수치(0.2141/0.2811 → 0.2357/0.2984), "원격 없음"(현재 origin 존재·미푸시), F6·F7 정의</td><td><code>docs/PROJECT_MAP.md</code></td></tr>
+        <tr><td class="c">11</td><td class="c" style="color:var(--ok);font-weight:700">낮음</td><td><code>docs/MIGRATION_PROMPT.md</code>의 F6 정의("시장 구조/거래량")가 실제 taxonomy("기업 이벤트")와 충돌</td><td><code>docs/MIGRATION_PROMPT.md</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.6 - 미해결 이슈 목록. 1·2번은 코드 수정, 3번은 운영 조치, 나머지는 분석·문서 ]</p>
+
+  <h3 id="sH5"><span class="num">H.5</span>파일 지도 — 인계 시 먼저 열 것</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:300px">파일</th><th>무엇인지 / 주의</th></tr></thead>
+      <tbody>
+        <tr><td colspan="2" style="background:var(--surface-sunk);font-weight:700;font-size:12.5px;letter-spacing:.06em">문서 (docs/)</td></tr>
+        <tr><td class="lab"><code>DPE_Phase1_Report.html</code></td><td>2026-09-17 재개정판(v2). <strong>원본 그대로 보존.</strong> 이 파일(v3)은 v2 + H장·표지 갱신</td></tr>
+        <tr><td class="lab"><code>DPE_Phase1_Report_v3_Handoff.html</code></td><td>이 문서. 인계용</td></tr>
+        <tr><td class="lab"><code>CODEX_PROMPT_news_gap_294.md</code></td><td>Codex 의뢰서. 검색 방법·스키마·판단 규칙·귀속 규칙·진행 방식의 단일 기준</td></tr>
+        <tr><td class="lab"><code>PROJECT_MAP.md</code></td><td>폴더·파일 역할, 건드리면 안 되는 것, Phase 2 착수 지점. 2026-09-08 기준(H.4 #10)</td></tr>
+        <tr><td class="lab"><code>COLLAB_BOARD.html</code></td><td>협업 보드. post-commit 훅이 커밋 이력을 자동 추가하므로 <strong>커밋 직후 항상 수정 상태</strong>가 되며 다음 커밋에 포함시킨다</td></tr>
+        <tr><td class="lab"><code>SK스퀘어_Price_Explainer_PRD.docx</code></td><td>제품 요구 문서. 2026-09-17 NAV 보정 반영</td></tr>
+        <tr><td colspan="2" style="background:var(--surface-sunk);font-weight:700;font-size:12.5px;letter-spacing:.06em">데이터 (data/)</td></tr>
+        <tr><td class="lab"><code>factor_log.csv</code></td><td>마스터 시계열 1,175행(2021-11-29 ~ 2026-09-16). NAV 계열은 v2(point-in-time), 원본은 <code>*_v1</code> 컬럼. 평일 16:35 자동 적재</td></tr>
+        <tr><td class="lab"><code>nav_daily.csv</code> · <code>listed_holdings_daily.csv</code></td><td>2026-09-17 신설. point-in-time NAV와 상장 7개사 일자별 보유주식수</td></tr>
+        <tr><td class="lab"><code>news_search_log_codex.jsonl</code></td><td>1,019줄. 거래일별 검색 수행 기록. <strong>append-only</strong></td></tr>
+        <tr><td class="lab"><code>news_property_codex_batch.jsonl</code></td><td>1,161건. 기사별 속성. <strong>재생성 비용이 가장 큰 자산, append-only</strong></td></tr>
+        <tr><td class="lab"><code>news_search_targets_gap.csv</code></td><td>294일 대상 목록(date, sampling_role, reason)</td></tr>
+        <tr><td class="lab"><code>event_residual_unbiased.csv</code></td><td>매칭 표본(<code>sampling_role</code>, <code>matched_pair_id</code>). 전수 전환 후에는 표본 선택용으로 쓰지 않게 된다</td></tr>
+        <tr><td class="lab"><code>과거 데이터 참고/</code></td><td>2026-09-17 이동: <code>factor_log_v1_backup.csv</code>(NAV v1 원본), <code>news_search_remaining.csv</code>(0행). 기존: <code>자사주 History.xlsx</code></td></tr>
+        <tr><td colspan="2" style="background:var(--surface-sunk);font-weight:700;font-size:12.5px;letter-spacing:.06em">산출물 (output/) — 표본이 다르므로 수치 혼용 금지</td></tr>
+        <tr><td class="lab"><code>unbiased_dl_baseline.json</code></td><td>실험 A: 전 기간, OOS 704. 숫자 XGB R² 0.2357 · 부호 0.7259</td></tr>
+        <tr><td class="lab"><code>residual_news_experiment.json</code></td><td>실험 B: 매칭 873일, OOS 524. 숫자 XGB R² 0.2984 · 뉴스 단독 −0.0310</td></tr>
+        <tr><td class="lab"><code>factor_ablation.json</code></td><td>9.4절 solo·LOO. OOS 704</td></tr>
+        <tr><td class="lab"><code>f6_f7_news_experiment.json</code></td><td>9.5절. 863일 기준(H.3 완료 후 절차 4)</td></tr>
+        <tr><td class="lab"><code>beta_w_decomposition.json</code> · <code>beta_w_daily.csv</code></td><td>β−w 분해. n=1,174, 롤링 120일 상관 +0.9597</td></tr>
+        <tr><td colspan="2" style="background:var(--surface-sunk);font-weight:700;font-size:12.5px;letter-spacing:.06em">코드 (tools/, prompts/, schemas/)</td></tr>
+        <tr><td class="lab"><code>tools/features.py</code></td><td><code>FEATURE_TAXONOMY</code> 37개, 누설 차단 목록. F1~F8 재배치 반영</td></tr>
+        <tr><td class="lab"><code>tools/build_listed_holdings.py</code> → <code>build_nav_daily.py</code> → <code>apply_nav_v2.py</code></td><td>NAV v2 파이프라인. 이 순서로 실행. <code>apply_nav_v2.py</code>는 백업 파일 존재를 확인하므로 아카이브 경로 변경에 주의</td></tr>
+        <tr><td class="lab"><code>tools/experiment_unbiased_dl.py</code> · <code>experiment_factor_ablation.py</code> · <code>experiment_residual_news.py</code> · <code>experiment_f6_f7_news.py</code></td><td>실험 A · ablation · 실험 B · F6/F7. 전수 전환 시 뒤의 둘을 수정</td></tr>
+        <tr><td class="lab"><code>tools/recompute_beta_w.py</code> · <code>cleanup_news_artifacts.py</code></td><td>2026-09-17 신설. β−w 재계산 / 뉴스 아티팩트 정리(백업 <code>.bak</code> 생성)</td></tr>
+        <tr><td class="lab"><code>tools/build_event_residual.py</code></td><td><strong>재실행 금지</strong> — 수기 큐레이션을 덮어씀. <code>repair_event_residual_metrics.py</code>도 확인 후 실행</td></tr>
+        <tr><td class="lab"><code>prompts/system_prompt.py</code></td><td>챗봇 규칙. H.4 #1의 수정 대상</td></tr>
+        <tr><td class="lab"><code>schemas/news_property.schema.json</code></td><td><code>news_property.v1</code>. <code>additionalProperties:false</code>. gap-fill 검증의 기준</td></tr>
+        <tr><td class="lab"><code>schemas/f6_event_protocol.md</code> · <code>f6_event.schema.json</code></td><td>Phase 2 구조화 이벤트 프로토콜(point-in-time 규칙, 20일 창 피처 8개)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 H.7 - 인계용 파일 지도. 전체 목록은 PROJECT_MAP.md ]</p>
+
+  <h3 id="sH6"><span class="num">H.6</span>작업 규약 — 지켜야 할 것</h3>
+  <ul>
+    <li><strong>두 뉴스 jsonl은 append-only.</strong> 수정·삭제가 필요하면 새 레코드를 추가하고 큐 파일에 <code>superseded</code>로 남긴다. 스키마 검증을 통과한 레코드만 붙인다.</li>
+    <li><strong>라벨은 기사 본문만 보고 정한다.</strong> 주가·divergence·고잔차 여부를 참고해 <code>sentiment_score</code>·<code>ex_ante_impact_direction</code>을 채우면 검정이 무의미해진다(의뢰서 §6-①).</li>
+    <li><strong><code>event_name</code>·<code>sampling_role</code>은 모델 입력에 넣지 않는다</strong>(2.3절, 6.1절). Leakage Gate 7개도 예외 없이 제외한다(5.1절).</li>
+    <li><strong>실험 A와 B의 수치를 섞어 인용하지 않는다.</strong> 표본이 다르다(H.5).</li>
+    <li><strong>이벤트 마스터는 수기 큐레이션 결과다.</strong> <code>build_event_residual.py</code>로 재생성하지 않는다.</li>
+    <li><strong>커밋 메시지 형식</strong> — 데이터 배치: <code>data(news): Codex gap-fill 배치N 반영 (X일/Y건, YYYYMMDD~YYYYMMDD)</code> + 누락·누계 한 줄. 분석: <code>feat(experiment):</code> / <code>fix(nav):</code> / <code>docs(report):</code>. 본문에 "왜"를 남긴다.</li>
+    <li><strong>git 루트는 상위 <code>sk-square/</code></strong>이고, <code>core.hooksPath</code>는 <code>daily-price-explainer/.githooks</code>다. <code>add</code>는 <code>daily-price-explainer/</code> 하위로 범위를 한정한다(형제 폴더 <code>bok-meeting-adr-prep/</code>·<code>daily-price-explainer.zip</code>이 untracked로 함께 잡힌다).</li>
+    <li><strong>post-commit 훅</strong>은 <code>docs/COLLAB_BOARD.html</code>에 커밋 이력을 추가한다. 간헐적으로 <code>WinError 5</code>로 실패해도 커밋 자체는 유효하다. 성공하면 보드가 수정 상태로 남으니 다음 커밋에 포함한다.</li>
+    <li><strong>로컬 환경 메모(Windows).</strong> 셸에서 <code>git</code>을 이름으로 호출하면 인자가 깨지는 경우가 있어 <code>C:\Program Files\Git\mingw64\bin\git.exe</code>를 직접 호출했다. 셸 스폰이 <code>EPERM</code>으로 실패하면 같은 명령을 재시도하면 된다(고아 프로세스 누적이 원인으로 추정).</li>
+  </ul>
+
+  <h3 id="sH7"><span class="num">H.7</span>인계 체크리스트 — 5분 안에 상태 확인</h3>
+  <div class="formula">
+    # 1. 저장소 위치·최근 커밋<br>
+    git -C sk-square log --oneline -8          # 최상단이 a586f8b 이어야 함 (2026-09-18 기준)<br>
+    git -C sk-square status --porcelain          # docs/COLLAB_BOARD.html 만 M 이면 정상<br><br>
+    # 2. gap-fill 진행률 (로그 줄수 − 880)<br>
+    wc -l data/news_search_log_codex.jsonl        # 1019 → 139일 처리<br>
+    wc -l data/news_property_codex_batch.jsonl    # 1161<br><br>
+    # 3. 남은 대상·누락 기사 재산출 (파이썬, UTF-8)<br>
+    #    targets = news_search_targets_gap.csv 의 date 집합<br>
+    #    done    = 로그의 trading_date 집합 ∩ targets     → 139<br>
+    #    remain  = targets − done                          → 155, 첫 날짜 20230627<br>
+    #    누락    = Σ log.articles_found − 해당일 기사 수   → 5 (20221116×2, 20221121, 20230623, 20230626)<br><br>
+    # 4. 실험 재현 (NAV v2 기준 수치와 일치해야 함)<br>
+    python tools/experiment_unbiased_dl.py        # XGB R² 0.2357 / 부호 0.7259 / n_oos 704<br>
+    python tools/experiment_residual_news.py      # 숫자 XGB R² 0.2984 / 뉴스 단독 −0.0310 / n_oos 524
+  </div>
+
+  <h3 id="sH8"><span class="num">H.8</span>권장 작업 순서</h3>
+  <ol>
+    <li><strong>gap-fill 마무리</strong> — 누락 5건 보충, 남은 155일을 20일 배치 8회로 처리(H.3). 배치마다 검증·append·커밋.</li>
+    <li><strong>전수 재검정</strong> — 두 뉴스 실험을 1,174일 전수 모드로 수정·재실행. 양성률·기준선·경고문 갱신(H.3 완료 후 절차).</li>
+    <li><strong>보고서 v4</strong> — H3·H4·9.5절·12장의 뉴스 결론 확정 또는 수정. 표본 수 표기 기준 통일(H.4 #4). † 수치 재현 스크립트 추가(H.4 #7).</li>
+    <li><strong>DPE 1.0 종료</strong> — <code>system_prompt.py</code> 원인 순서를 ①수급 → ②선물로, 뉴스는 사후 라벨로 격하(H.4 #1). <code>attribution.py</code>를 검증된 30피처·divergence 타겟 설정으로 정합화(H.4 #2). 표 9.3 금지 규칙을 하드 게이트로 구현(10.1절 2단계).</li>
+    <li><strong>백업</strong> — <code>origin</code>에 푸시(H.4 #3). <code>.gitignore</code> 대상 대용량 자산은 별도 보관.</li>
+    <li><strong>Phase 2 착수</strong> — PROJECT_MAP §8의 "컨센서스 할인율 갭" 수준 가설(A)부터. NAV v2가 이미 준비돼 선행 조건 하나가 해소됐다.</li>
+  </ol>
+
+  <div class="callout">
+    <p class="ct">이 장을 읽는 인계자에게</p>
+    <p>
+      본문 결론 중 인용해도 안전한 것은 <strong>NAV 보정 후(2026-09-17) 수치</strong>만이다. 2026-08-11
+      원판과 2026-09-16 백필판의 수치("F1·F4 해롭다", 증분 유의 +0.0223, R² 0.2057/0.2141)는
+      모두 철회·대체되었다. 뉴스에 관한 결론은 gap-fill 완료 전까지 <strong>"매칭 표본에서 기각"</strong>으로
+      한정해 서술해야 하며, 전수 표본에서의 확정은 H.8의 2단계 이후에만 가능하다.
+    </p>
+  </div>
+
+  <!-- ══════════════ 부록 ══════════════ -->
+  <h2 id="sA"><span class="num">부록.</span>용어 정리</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:210px">용어</th><th>정의</th></tr></thead>
+      <tbody>
+        <tr><td class="lab">DPE</td><td>Daily Price Explainer. SK스퀘어 주가가 전일 종가 대비 왜 움직였는지를 응답하는 IR 매니저 전용 챗봇. <strong>현재 실행 진입점은 CLI</strong>(<code>main.py</code>)이며 Telegram 배포는 10.1절 3단계 목표다. 이 보고서의 작업 대상은 챗봇 자체가 아니라 그 뒤의 설명 엔진이다</td></tr>
+        <tr><td class="lab">leave-one-out (LOO)</td><td>전체 피처에서 한 카테고리만 제거해 성능 변화를 보는 방식. 제거 시 성능이 떨어지면 그 카테고리가 기여했다는 뜻이다. solo(단독 투입)와 달리 <strong>순서 의존성이 없어</strong> 한계 기여 해석에 안전하다. 단 카테고리끼리 정보가 중복되면 서로 대체되어 아무것도 중요해 보이지 않는 한계가 있다 (9.4절)</td></tr>
+        <tr><td class="lab">β − w</td><td>β는 SK스퀘어 주가의 하이닉스에 대한 실제 베타, w는 NAV 내 하이닉스 비중. <code>divergence ≈ (β−w) × hynix_ret</code>이므로 이 차이가 하이닉스로 잔차를 설명할 수 있는 최대 여지다. 2022년 −0.09에서 2025년 +0.10로 <strong>부호가 뒤집혔고</strong>, 2026년 −0.01로 닫혔다 (9.4절, 2026-09-17 NAV 보정 후 재확인)</td></tr>
+        <tr><td class="lab">이동블록 부트스트랩</td><td>연속 구간(여기서는 20일) 단위로 재표본을 추출해 신뢰구간을 만드는 방식. 자기상관이 있는 시계열에서 단순 부트스트랩은 구간을 지나치게 좁게 추정한다. 9.4절의 유의성 판정은 모두 이 방식(2,000회)을 따른다</td></tr>
+        <tr><td class="lab">divergence (1차 잔차)</td><td><code>skq_ret − nav_implied_ret</code> (%p). SK스퀘어 실제 수익률과 NAV 기반 기대수익률의 차이. 회귀 잔차가 아니라 NAV 회계식에서 나오는 잔차이므로 평균 0·설명변수 직교가 보장되지 않는다</td></tr>
+        <tr><td class="lab">모델 잔차 (2차 잔차)</td><td>divergence에서 팩터 모델 예측치를 뺀 나머지. 즉 <strong>팩터로도 설명되지 않은 부분</strong>이며, Phase 1에서 뉴스가 설명하려 겨냥한 대상이다. "잔차"라는 말이 두 가지를 가리키므로 반드시 구분해야 한다</td></tr>
+        <tr><td class="lab">NAV 할인율</td><td>(NAV − 시가총액) / NAV. 투자전문회사 주가가 보유 자산 가치보다 낮게 형성되는 정도. 자사주·주주환원은 NAV 불변 상태에서 시총을 올려 할인율을 축소시킨다</td></tr>
+        <tr><td class="lab">high_residual</td><td>|divergence| ≥ 3%p 인 날. 전체 1,144일 중 440일(38.46%, 2026-09-17 NAV 보정 후)</td></tr>
+        <tr><td class="lab">Leakage Gate</td><td>타겟과 같은 회계식에서 파생된 7개 피처를 조건 없이 모델 입력에서 배제하는 하드 필터. 37개 피처 → 30개 입력</td></tr>
+        <tr><td class="lab">확장윈도우 검증</td><td>학습 구간을 시간순으로 늘려가며 그 다음 구간을 예측하는 방식. 시계열에서 무작위 분할을 쓰면 미래 정보가 과거 예측에 새어 들어간다</td></tr>
+        <tr><td class="lab">1:1 매칭 case-control</td><td>고잔차일 하나마다 국면·변동성이 유사한 저잔차일 하나를 짝지어 표본을 구성하는 설계. 뉴스가 고잔차일에만 수집된 선택편의를 제거하기 위해 도입</td></tr>
+        <tr><td class="lab">선택편의</td><td>데이터 수집 절차가 타겟과 상관되어 발생하는 편의. 이 프로젝트에서는 뉴스 라벨이 고잔차일에 19.77%(87/440), 비고잔차일에는 0.00%(0/704)만 붙어 완전히 분리돼 있었다 (2026-09-17 NAV 보정 후)</td></tr>
+        <tr><td class="lab">순열 중요도</td><td>특정 피처 값을 무작위로 섞었을 때 성능이 얼마나 나빠지는지로 기여도를 측정하는 방법. 값이 음수면 그 피처가 노이즈보다 못하다는 뜻</td></tr>
+        <tr><td class="lab">블록 부트스트랩</td><td>연속된 구간(여기서는 20일) 단위로 재표본을 추출하는 방식. 자기상관이 있는 시계열에서 단순 부트스트랩은 신뢰구간을 지나치게 좁게 추정한다</td></tr>
+        <tr><td class="lab">FDR 보정</td><td>다중검정 시 위양성 비율을 통제하는 보정. 뉴스 피처 84개를 개별 검정하면 우연히 유의한 결과가 다수 발생하므로 필수</td></tr>
+        <tr><td class="lab">PR-AUC</td><td>정밀도-재현율 곡선 하 면적. 양성 비율이 낮은 불균형 문제에서 ROC-AUC보다 실질적 성능을 잘 반영한다. 무작위 기준선이 양성 비율과 같다</td></tr>
+        <tr><td class="lab">부호정확도</td><td>divergence의 부호를 맞힌 비율. 0.5가 동전 던지기. 이 프로젝트에서 가장 중요한 실무 지표</td></tr>
+        <tr><td class="lab">news_property</td><td>기사별로 LLM이 추출한 속성 점수 집합(수치형 8종 + 범주형 7종). 일자 단위로 집계해 84개 피처를 생성했다</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">[ 표 A.3 - 주요 용어 정리 ]</p>
+
+  <p class="prov">
+    <strong>수치 출처</strong> — 별도 표기가 없는 모든 수치는 저장소 산출물에서 직접 확인한 값이다.
+    실험 A는 <code>output/unbiased_dl_baseline.json</code>, 실험 B는
+    <code>output/residual_news_experiment.json</code>, 카테고리 ablation은
+    <code>output/factor_ablation.json</code>, F6·F7 분할은
+    <code>output/f6_f7_news_experiment.json</code>, β−w 분해는
+    <code>output/beta_w_decomposition.json</code>, 뉴스 피처 중요도는
+    <code>output/residual_news_feature_importance.csv</code>, 데이터 구조는
+    <code>data/factor_log.csv</code>·<code>data/nav_daily.csv</code>·
+    <code>data/event_residual_unbiased.csv</code>·<code>tools/features.py</code>에서 확인했다.
+    NAV point-in-time 보정은 <code>tools/build_listed_holdings.py</code>·
+    <code>tools/build_nav_daily.py</code>·<code>tools/apply_nav_v2.py</code>로 2026-09-17
+    수행했다 (원본은 <code>data/과거 데이터 참고/factor_log_v1_backup.csv</code>에 보존 —
+    2026-09-17 아카이브 이동).
+    <br><br>
+    <sup class="dag">†</sup> 표시된 수치는 <strong>산출물 파일로 재확인하지 못한 값</strong>으로,
+    Phase 1 요약 기록에 근거한다 (H1 β·R², 1차 뉴스 스크리닝 AUC 0.611/0.559,
+    저품질 기사 비율 58.4%, 뉴스 속성 간 상관 ρ&gt;0.75·0.838, |divergence| 자기상관
+    +0.13~0.17, FDR 생존 0/10). 이 값들을 산출한 스크립트와 출력이 저장소에 남아 있지
+    않으므로, Phase 2 착수 전 재현 스크립트를 남기는 것을 권한다. 특히
+    1차 스크리닝(AUC 0.611)과 확장윈도우 검증(ROC-AUC 0.501)은 표본·검증 설계가 다른
+    별개의 실행이므로, 두 수치를 직접 비교하지 않도록 주의해야 한다.
+  </p>
+
+  <footer>
+    SK스퀘어 Daily Price Explainer · Phase 1 연구결과보고서 · 2026-08-11 작성 ·
+    2026-09-17 NAV point-in-time 보정 후 재개정 · 2026-09-18 v3 Handoff 판 ·
+    표본 기간 2021-11-30 ~ 2026-09-16 (선택편의 감사 기준 1,144거래일)
+  </footer>
+
+</div>
+
+</body>
+</html>
