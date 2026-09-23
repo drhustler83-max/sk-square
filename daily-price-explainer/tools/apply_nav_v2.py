@@ -42,7 +42,7 @@ if str(BASE) not in sys.path:
 
 FACTOR_LOG = BASE / "data" / "factor_log.csv"
 NAV_DAILY = BASE / "data" / "nav_daily.csv"
-BACKUP = BASE / "data" / "factor_log_v1_backup.csv"
+BACKUP = BASE / "data" / "과거 데이터 참고" / "factor_log_v1_backup.csv"
 
 REPLACED = ["nav_total_trillion", "nav_implied_ret", "divergence",
             "nav_discount_pct", "nav_discount_delta"]
@@ -147,8 +147,11 @@ def main() -> None:
         return
 
     if not BACKUP.exists():
+        if any(f"{c}_v1" in fl.columns for c in REPLACED):
+            raise FileNotFoundError(f"v2가 적용됐지만 v1 원본 백업이 없습니다: {BACKUP}")
+        BACKUP.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(FACTOR_LOG, BACKUP)
-        logger.info(f"원본 백업: {BACKUP}")
+        logger.info(f"v1 원본 백업: {BACKUP}")
 
     for c in REPLACED:
         if c in fl.columns and f"{c}_v1" not in fl.columns:
@@ -161,13 +164,18 @@ def main() -> None:
     for c in ["nav_implied_ret_raw", "nav_per_share", "skq_shares_v2"]:
         fl[c] = idx.map(upd[c])
 
-    # skq_ret 수집 구멍을 종가 계산분으로 메움 (기존 값은 보존)
+    # divergence와 같은 nav_daily 종가를 skq_ret에도 적용한다.
+    # nav_daily에 없는 날짜만 기존 값을 유지한다.
     if "skq_ret_v1" not in fl.columns:
         fl["skq_ret_v1"] = fl["skq_ret"]
-    filled = idx.map(upd["skq_ret_v2"])
-    n_fill = int(fl["skq_ret"].isna().sum() and filled.notna().sum())
-    fl["skq_ret"] = pd.to_numeric(fl["skq_ret"], errors="coerce").fillna(filled)
-    logger.info(f"skq_ret 결측 보완 후 유효 {int(fl['skq_ret'].notna().sum())}일")
+    previous_ret = pd.to_numeric(fl["skq_ret"], errors="coerce")
+    nav_ret = idx.map(upd["skq_ret_v2"])
+    corrected = int((nav_ret.notna() & previous_ret.notna()
+                     & ((nav_ret - previous_ret).abs() > 0.01)).sum())
+    filled = int((previous_ret.isna() & nav_ret.notna()).sum())
+    fl["skq_ret"] = nav_ret.combine_first(previous_ret)
+    logger.info(f"skq_ret NAV 종가 기준 교정 {corrected}일, 결측 보완 {filled}일; "
+                f"유효 {int(fl['skq_ret'].notna().sum())}일")
 
     fl.to_csv(FACTOR_LOG, index=False, na_rep="")
     logger.info(f"적용 완료: {FACTOR_LOG}  ({len(fl)}행, {len(fl.columns)}컬럼)")

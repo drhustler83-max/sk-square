@@ -1,0 +1,34 @@
+{
+  "snapshot_version": "factor_log_before_skq_ret_fix.v1",
+  "created_on": "2026-09-23",
+  "source": "data/factor_log.csv",
+  "snapshot": "data/snapshots/20260923/factor_log_before_skq_ret_fix.csv",
+  "sha256": "89e623d459a0654408c73ac37e40c41518ccdf0a686b11f7e6c42b6141d784b1",
+  "rows": 1175,
+  "columns": 32,
+  "corrections": [
+    {
+      "date": "20260804",
+      "column": "skq_ret",
+      "before": "-1.85",
+      "after": "3.41",
+      "previous_close": 1025000,
+      "close": 1060000
+    },
+    {
+      "date": "20260915",
+      "column": "skq_ret",
+      "before": "0.2",
+      "after": "1.4",
+      "previous_close": 1000000,
+      "close": 1014000
+    }
+  ],
+  "price_basis": "data/nav_daily.csv skq_close; corroborated by independent published price histories. Direct pykrx KRX query returned no data without KRX credentials.",
+  "corroboration_urls": [
+    "https://kstock.app/402340/valuation",
+    "https://maedong.kr/screen/gap-up?date=2026-08-04",
+    "https://moajoo.com/korea-market-20260915/",
+    "https://alphasquare.co.kr/home/stock-information?code=402340"
+  ]
+}
