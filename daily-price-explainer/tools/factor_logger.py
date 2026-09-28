@@ -21,6 +21,7 @@ Factor Logger
 """
 import csv
 import os
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from loguru import logger
@@ -28,6 +29,10 @@ from loguru import logger
 _BASE = Path(__file__).parent.parent
 LOG_PATH = _BASE / "data" / "factor_log.csv"
 
+# COLUMNS는 "이 로거가 매일 채우는 항목"의 기준 목록이자 신규 파일 생성 시의
+# 컬럼 순서다. CSV에 이미 있는 컬럼(예: NAV v2 마이그레이션의 *_v1, skq_shares_v2
+# 등, 2026-09 사고 이후 재발 방지)은 이 목록에 없어도 저장 시 그대로 보존된다.
+# 실제 쓰기 컬럼 계산은 _fieldnames() 참고.
 COLUMNS = [
     "date",
     "skq_ret",
@@ -52,6 +57,20 @@ COLUMNS = [
     "fut_volume",             # 근월물 거래량
     "foreign_own_pct",        # 외국인 지분율 (%, extra_log.csv 병합, 2026-07-21)
     "individual_net",         # 개인 순매수 (거래대금, 원)
+    # ── NAV v2 마이그레이션 (2026-09-17, tools/apply_nav_v2.py) ────────────
+    #   이 로거는 아래 컬럼을 채우지 않는다(위 ⚠ 참고 — nav.py가 아직 v1 방식).
+    #   여기 적어 두는 건 신규 CSV 생성 시 순서를 현재 파일과 맞추기 위함이고,
+    #   실제 보존은 _fieldnames()/_merge_row()가 기존 헤더를 우선하므로 이 목록에서
+    #   빠지더라도 사라지지 않는다.
+    "nav_total_trillion_v1",
+    "nav_implied_ret_v1",
+    "divergence_v1",
+    "nav_discount_pct_v1",
+    "nav_discount_delta_v1",
+    "nav_implied_ret_raw",
+    "nav_per_share",
+    "skq_shares_v2",
+    "skq_ret_v1",
 ]
 
 
@@ -71,6 +90,14 @@ def collect_and_log(date: str = None) -> dict:
     row: dict = {"date": date}
 
     # ── 1. NAV (SK스퀘어·하이닉스 수익률, divergence, 할인율 포함) ─────────
+    # ⚠ tools.nav.get_nav_data()는 memory/company_context.py의 고정 스냅샷
+    # (shares_outstanding, nav_holdings — "nav_last_updated": "2026Q1")으로 계산한다.
+    # 2026-09-17 도입된 point-in-time NAV(data/nav_daily.csv, tools/build_nav_daily.py,
+    # tools/apply_nav_v2.py)와 다른 방식이라, 여기서 나온 nav_total_trillion·
+    # nav_implied_ret·divergence·nav_discount_pct·nav_discount_delta는 factor_log.csv에
+    # 이미 있는 v2 값과 계산 근거가 다르다. 자사주 소각 등으로 shares_outstanding이
+    # 바뀌면 이 값들은 조용히 틀린다. 스케줄러를 다시 켜기 전에 이 경로를 v2
+    # 파이프라인에 맞추거나, 최소한 별도 컬럼(*_v1_live 등)으로 분리해야 한다.
     try:
         from tools.nav import get_nav_data
         nav = get_nav_data(date)
@@ -142,59 +169,83 @@ def collect_and_log(date: str = None) -> dict:
     return row
 
 
-def _append_to_csv(row: dict) -> None:
-    """row를 CSV에 추가. 파일 없으면 헤더 포함 생성.
-    컬럼이 추가된 경우 기존 CSV를 마이그레이션(누락 컬럼을 빈값으로 채움).
+def _fieldnames(existing_header: list, row: dict) -> list:
+    """저장에 쓸 전체 컬럼 목록.
+
+    기존 CSV 헤더 순서를 그대로 보존하고, 거기 없는 컬럼(COLUMNS 기준 항목이든
+    이번 수집에서 처음 등장한 키든)만 끝에 덧붙인다. 컬럼을 목록에서 빠뜨려도
+    조용히 지워지지 않는다 — 늘어나기만 한다.
     """
+    fieldnames = list(existing_header)
+    for col in list(COLUMNS) + list(row.keys()):
+        if col not in fieldnames:
+            fieldnames.append(col)
+    return fieldnames
+
+
+def _merge_row(existing: dict, incoming: dict, fieldnames: list) -> dict:
+    """기존 행에 이번 수집분만 덮어써 병합한다.
+
+    incoming에 없는 컬럼(예: NAV v2 마이그레이션이 붙인 *_v1, skq_shares_v2 등 —
+    이 로거가 아예 모르는 컬럼)은 기존 값을 그대로 유지한다. incoming 값이
+    None이면 "이번에 수집 못 함"으로 보고 역시 기존 값을 유지한다. 0은 정상
+    수집값이므로 덮어쓴다 — None 여부만으로 판단하고 값의 참/거짓은 보지 않는다.
+    """
+    merged = {col: (existing or {}).get(col, "") for col in fieldnames}
+    for col, val in incoming.items():
+        if val is not None:
+            merged[col] = val
+    return merged
+
+
+def _atomic_write_csv(fieldnames: list, rows: list) -> None:
+    """임시 파일에 전부 쓴 뒤 원본을 교체한다 — 쓰는 도중 죽어도 원본은 무사하다."""
     LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
-
-    if LOG_PATH.exists():
-        # 기존 헤더 확인 → 컬럼 추가 시 마이그레이션
-        with open(LOG_PATH, "r", encoding="utf-8") as f:
-            existing_cols = f.readline().strip().split(",")
-        new_cols = [c for c in COLUMNS if c not in existing_cols]
-        if new_cols:
-            logger.info(f"CSV 컬럼 마이그레이션: {new_cols} 추가")
-            _migrate_csv(existing_cols)
-
-        # 같은 날짜가 이미 있으면 덧붙이지 않고 교체(idempotent).
-        # 일별 스케줄 로그와 수동 backfill이 겹쳐도 중복 행이 생기지 않게 한다.
-        # (예: 장중 backfill로 들어간 불완전한 오늘 행을 장마감 후 로그가 덮어씀)
-        with open(LOG_PATH, "r", encoding="utf-8") as f:
-            rows = list(csv.DictReader(f))
-        new_row = {col: row.get(col, "") for col in COLUMNS}
-        idx = next((i for i, r in enumerate(rows) if r.get("date") == row.get("date")), None)
-        if idx is not None:
-            rows[idx] = new_row
-            logger.info(f"기존 {row.get('date')} 행 교체")
-        else:
-            rows.append(new_row)
-        with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
+    fd, tmp_path = tempfile.mkstemp(
+        dir=str(LOG_PATH.parent), prefix=LOG_PATH.stem + ".", suffix=".tmp"
+    )
+    try:
+        with os.fdopen(fd, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
             writer.writeheader()
             for r in rows:
-                writer.writerow({col: r.get(col, "") for col in COLUMNS})
+                writer.writerow({col: r.get(col, "") for col in fieldnames})
+        os.replace(tmp_path, LOG_PATH)
+    except Exception:
+        Path(tmp_path).unlink(missing_ok=True)
+        raise
+
+
+def _append_to_csv(row: dict) -> None:
+    """row를 CSV에 병합. 파일 없으면 헤더 포함 새로 만든다.
+
+    같은 날짜가 이미 있으면 행 전체를 교체하지 않고 이번에 수집된 값만
+    덮어쓴다(병합) — 그 외 컬럼(과거 NAV v2 마이그레이션이 남긴 *_v1 등)은
+    보존된다. 컬럼 목록도 COLUMNS 기준으로 줄어들지 않고 기존 헤더 위에
+    늘어나기만 한다. 2026-09-22 사고(23컬럼 저장으로 9개 컬럼 소멸) 재발 방지.
+    """
+    if LOG_PATH.exists():
+        with open(LOG_PATH, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            existing_header = reader.fieldnames or []
+            rows = list(reader)
     else:
-        with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
-            writer.writeheader()
-            writer.writerow({col: row.get(col, "") for col in COLUMNS})
+        existing_header, rows = [], []
 
+    fieldnames = _fieldnames(existing_header, row)
+    new_cols = [c for c in fieldnames if c not in existing_header]
+    if new_cols:
+        logger.info(f"CSV 컬럼 확장: {new_cols} 추가 (기존 컬럼은 그대로 유지)")
+
+    idx = next((i for i, r in enumerate(rows) if r.get("date") == row.get("date")), None)
+    if idx is not None:
+        rows[idx] = _merge_row(rows[idx], row, fieldnames)
+        logger.info(f"기존 {row.get('date')} 행 병합 갱신 (미수집 항목은 기존 값 유지)")
+    else:
+        rows.append(_merge_row(None, row, fieldnames))
+
+    _atomic_write_csv(fieldnames, rows)
     logger.info(f"팩터 로그 저장: {LOG_PATH} ({date_count()} 행)")
-
-
-def _migrate_csv(old_cols: list) -> None:
-    """기존 CSV를 읽어 누락 컬럼을 빈값으로 채운 후 덮어씀."""
-    rows = []
-    with open(LOG_PATH, "r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            rows.append(r)
-    with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
-        writer.writeheader()
-        for r in rows:
-            writer.writerow({col: r.get(col, "") for col in COLUMNS})
 
 
 def date_count() -> int:
