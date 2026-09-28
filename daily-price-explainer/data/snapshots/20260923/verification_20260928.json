@@ -1,0 +1,135 @@
+{
+  "record_version": "skq_ret_verification.v1",
+  "checked_at_utc": "2026-09-28T04:59:14.176411+00:00",
+  "pykrx_version": "1.2.9",
+  "credentials_configured": false,
+  "tls_verification": "Enabled; truststore Windows certificate store",
+  "import_output": "KRX 로그인 실패: KRX_ID 또는 KRX_PW 환경 변수가 설정되지 않았습니다.",
+  "scope": "Only the six returned trading dates in the two query windows were checked against NAV closes. No direct KRX price verification or full-history audit was completed.",
+  "interpretation": "Both NAVER queries succeeded despite the import-time credential warning. Both direct KRX queries returned empty DataFrames with JSON parsing errors. Credential absence was observed, but was not established as the cause of these errors.",
+  "data_checks": {
+    "master_sha256": "859c273ff20a7f6dd343bb6669432588968c2be5719990d1111a4b96c31e2f98",
+    "master_unchanged_during_verification": true,
+    "snapshot_sha256_matches_manifest": true,
+    "rows": 1175,
+    "columns": 32,
+    "valid_identity_rows": 1173,
+    "identity_tolerance_percentage_points": 0.005,
+    "identity_errors": 0,
+    "returned_NAVER_closes_matching_nav_daily": 6,
+    "corrected_returns_matching_NAVER_to_two_decimals": 2
+  },
+  "reproduction": {
+    "setup": [
+      "import truststore; truststore.inject_into_ssl()",
+      "from pykrx import stock"
+    ],
+    "calls": [
+      "stock.get_market_ohlcv('20260803', '20260805', '402340', adjusted=True)",
+      "stock.get_market_ohlcv('20260914', '20260916', '402340', adjusted=True)",
+      "stock.get_market_ohlcv('20260803', '20260805', '402340', adjusted=False)",
+      "stock.get_market_ohlcv('20260914', '20260916', '402340', adjusted=False)"
+    ],
+    "request_observation": "Temporarily wrapped requests.sessions.Session.request to record method, host, path, status, content type and response byte count. Timeout was (5, 15) seconds. Headers, cookies and credentials were not recorded.",
+    "returned_rows": "pykrx DataFrame rows serialized below; raw HTTP response bodies were not archived."
+  },
+  "route_source": {
+    "local_file": ".venv/Lib/site-packages/pykrx/stock/stock_api.py",
+    "function": "get_market_ohlcv_by_date",
+    "default_adjusted": true,
+    "adjusted_true": "naver.get_market_ohlcv_by_date(fromdate, todate, ticker)",
+    "adjusted_false": "krx.get_market_ohlcv_by_date(fromdate, todate, ticker, False)",
+    "upstream_url": "https://github.com/sharebook-kr/pykrx/blob/master/pykrx/stock/stock_api.py"
+  },
+  "queries": [
+    {
+      "function": "pykrx.stock.get_market_ohlcv",
+      "arguments": ["20260803", "20260805", "402340"],
+      "kwargs": {"adjusted": true},
+      "route_from_installed_source": "NAVER",
+      "empty": false,
+      "rows": [
+        {"date": "20260803", "시가": 1070000.0, "고가": 1070000.0, "저가": 992000.0, "종가": 1025000.0, "거래량": 831890.0, "등락률": -1.2524084778420037},
+        {"date": "20260804", "시가": 1096000.0, "고가": 1096000.0, "저가": 999000.0, "종가": 1060000.0, "거래량": 984406.0, "등락률": 3.414634146341464},
+        {"date": "20260805", "시가": 1143000.0, "고가": 1157000.0, "저가": 1105000.0, "종가": 1119000.0, "거래량": 675010.0, "등락률": 5.566037735849057}
+      ],
+      "output": "",
+      "http_requests": [
+        {"method": "GET", "host": "fchart.stock.naver.com", "path": "/sise.nhn", "status": 200, "content_type": "text/xml;charset=EUC-KR", "response_bytes": 4347}
+      ]
+    },
+    {
+      "function": "pykrx.stock.get_market_ohlcv",
+      "arguments": ["20260914", "20260916", "402340"],
+      "kwargs": {"adjusted": true},
+      "route_from_installed_source": "NAVER",
+      "empty": false,
+      "rows": [
+        {"date": "20260914", "시가": 1034000.0, "고가": 1035000.0, "저가": 997000.0, "종가": 1000000.0, "거래량": 523897.0, "등락률": -8.172635445362717},
+        {"date": "20260915", "시가": 997000.0, "고가": 1022000.0, "저가": 994000.0, "종가": 1014000.0, "거래량": 366583.0, "등락률": 1.4000000000000001},
+        {"date": "20260916", "시가": 1002000.0, "고가": 1020000.0, "저가": 988000.0, "종가": 1017000.0, "거래량": 379482.0, "등락률": 0.2958579881656805}
+      ],
+      "output": "",
+      "http_requests": [
+        {"method": "GET", "host": "fchart.stock.naver.com", "path": "/sise.nhn", "status": 200, "content_type": "text/xml;charset=EUC-KR", "response_bytes": 1348}
+      ]
+    },
+    {
+      "function": "pykrx.stock.get_market_ohlcv",
+      "arguments": ["20260803", "20260805", "402340"],
+      "kwargs": {"adjusted": false},
+      "route_from_installed_source": "KRX",
+      "empty": true,
+      "rows": [],
+      "output": "Error occurred in get_market_ohlcv_by_date: Expecting value: line 1 column 1 (char 0)",
+      "http_requests": [
+        {"method": "POST", "host": "data.krx.co.kr", "path": "/comm/bldAttendant/getJsonData.cmd", "status": 200, "content_type": "text/html; charset=utf-8", "response_bytes": 489662},
+        {"method": "POST", "host": "data.krx.co.kr", "path": "/comm/bldAttendant/getJsonData.cmd", "status": 200, "content_type": "text/html; charset=utf-8", "response_bytes": 628712},
+        {"method": "POST", "host": "data.krx.co.kr", "path": "/comm/bldAttendant/getJsonData.cmd", "status": 400, "content_type": "text/html; charset=utf-8", "response_bytes": 6}
+      ]
+    },
+    {
+      "function": "pykrx.stock.get_market_ohlcv",
+      "arguments": ["20260914", "20260916", "402340"],
+      "kwargs": {"adjusted": false},
+      "route_from_installed_source": "KRX",
+      "empty": true,
+      "rows": [],
+      "output": "Error occurred in get_market_ohlcv_by_date: Expecting value: line 1 column 1 (char 0)",
+      "http_requests": [
+        {"method": "POST", "host": "data.krx.co.kr", "path": "/comm/bldAttendant/getJsonData.cmd", "status": 400, "content_type": "text/html; charset=utf-8", "response_bytes": 6}
+      ]
+    }
+  ],
+  "opened_secondary_pages": [
+    {
+      "url": "https://maedong.kr/screen/gap-up?date=2026-08-04",
+      "checked_on": "2026-09-28",
+      "method": "Opened page body with web tool; checked dated heading and SK Square row",
+      "date": "20260804",
+      "ticker": "402340",
+      "close": 1060000,
+      "return_pct": 3.41
+    },
+    {
+      "url": "https://moajoo.com/korea-market-20260915/",
+      "checked_on": "2026-09-28",
+      "method": "Opened page body with web tool; checked dated article title and SK Square row",
+      "date": "20260915",
+      "ticker": "402340",
+      "close": 1014000,
+      "return_pct": 1.4,
+      "page_declared_source": "KIS / Korea Investment & Securities Open API"
+    }
+  ],
+  "removed_from_relied_upon_evidence": [
+    {
+      "url": "https://kstock.app/402340/valuation",
+      "reason": "No verified dated page-body evidence was preserved for the original repair. A later web-tool rendering cannot establish what was checked on 2026-09-23."
+    },
+    {
+      "url": "https://alphasquare.co.kr/home/stock-information?code=402340",
+      "reason": "The generic stock-information URL was cited without verified page-body evidence for either correction date during the original repair."
+    }
+  ]
+}

@@ -24,11 +24,12 @@
       "close": 1014000
     }
   ],
-  "price_basis": "data/nav_daily.csv skq_close; corroborated by independent published price histories. Direct pykrx KRX query returned no data without KRX credentials.",
+  "price_basis": "The correction used data/nav_daily.csv skq_close. On 2026-09-28, pykrx 1.2.9 adjusted=True queries retrieved matching closes and returns from NAVER for 20260803-20260805 and 20260914-20260916. This is not direct KRX verification or a full-history market-data audit.",
+  "verification_updated_on": "2026-09-28",
+  "verification_record": "data/snapshots/20260923/verification_20260928.json",
+  "verification_correction": "The original repair did not open and verify all four cited URL bodies. The claim that missing KRX credentials caused the failed direct query was unsupported. On 2026-09-28, adjusted=False queries made requests to data.krx.co.kr but returned empty DataFrames with a JSON parsing error; the underlying cause was not established. The import-time missing-credentials warning alone does not determine whether an OHLCV query succeeds.",
   "corroboration_urls": [
-    "https://kstock.app/402340/valuation",
     "https://maedong.kr/screen/gap-up?date=2026-08-04",
-    "https://moajoo.com/korea-market-20260915/",
-    "https://alphasquare.co.kr/home/stock-information?code=402340"
+    "https://moajoo.com/korea-market-20260915/"
   ]
 }
