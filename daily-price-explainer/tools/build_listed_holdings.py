@@ -58,7 +58,7 @@ if str(BASE) not in sys.path:
     sys.path.insert(0, str(BASE))
 
 START = "20211130"
-END = "20260916"
+DEFAULT_END = "20260916"  # 마지막 수기 검증일. 그 이후는 build(end=...)로 확장
 DEFAULT_OUTPUT = BASE / "data" / "listed_holdings_daily.csv"
 
 SKQ = "402340"
@@ -113,8 +113,8 @@ INCROSS_BONUS_TARGET = 4_631_251
 INCROSS_BONUS_RATIO = INCROSS_BONUS_TARGET / 2_786_455   # ≈ 1.662
 
 
-def _kr_prices(ticker: str, name: str) -> pd.Series:
-    df = stock.get_market_ohlcv(START, END, ticker)
+def _kr_prices(ticker: str, name: str, end: str) -> pd.Series:
+    df = stock.get_market_ohlcv(START, end, ticker)
     if df is None or df.empty:
         logger.warning(f"{name}({ticker}) 시세 없음")
         return pd.Series(dtype=float)
@@ -158,11 +158,21 @@ def _shares_series(key: str, index: pd.DatetimeIndex) -> tuple[pd.Series, pd.Ser
     return sh, conf
 
 
-def build(output: Path = DEFAULT_OUTPUT) -> pd.DataFrame:
+def build(output: Path | None = None, end: str | None = None) -> pd.DataFrame:
+    """end 생략 시 DEFAULT_END(마지막 수기 검증일)까지만 만든다.
+    end 를 주면(예: 오늘 날짜) 그날까지 전체를 다시 계산한다 — 기존 파일을
+    증분 갱신하는 게 아니라 START 부터 매번 다시 받아온다(느리지만 정확).
+
+    output/end 기본값은 호출 시점에 DEFAULT_OUTPUT/DEFAULT_END를 다시 읽는다
+    (함수 정의 시점 값으로 고정하면, 테스트 등에서 모듈 속성을 나중에 바꿔도
+    반영이 안 되는 늦은 바인딩 함정에 걸린다 — 2026-09-29에 실제로 겪음)."""
+    output = output or DEFAULT_OUTPUT
+    end = end or DEFAULT_END
+
     # ── 기준 거래일: SK스퀘어 거래일 ──
-    skq = stock.get_market_ohlcv(START, END, SKQ)
+    skq = stock.get_market_ohlcv(START, end, SKQ)
     idx = pd.to_datetime(skq.index)
-    idx = idx[(idx >= pd.Timestamp(START)) & (idx <= pd.Timestamp(END))]
+    idx = idx[(idx >= pd.Timestamp(START)) & (idx <= pd.Timestamp(end))]
     logger.info(f"기준 거래일 {len(idx)}일  {idx.min().date()} ~ {idx.max().date()}")
 
     out = pd.DataFrame(index=idx)
@@ -171,7 +181,7 @@ def build(output: Path = DEFAULT_OUTPUT) -> pd.DataFrame:
     # ── 국내 6종목 ──
     prices: dict[str, pd.Series] = {}
     for key, name, tk in KR_STOCKS:
-        prices[key] = _kr_prices(tk, name)
+        prices[key] = _kr_prices(tk, name, end)
 
     # 수정주가 전제 검증 (인크로스 무상증자)
     _verify_adjusted(prices["incross"])
@@ -189,13 +199,13 @@ def build(output: Path = DEFAULT_OUTPUT) -> pd.DataFrame:
 
     # ── IONQ (나스닥) ──
     import FinanceDataReader as fdr
-    ionq = fdr.DataReader("IONQ", START, END)["Close"].astype(float)
+    ionq = fdr.DataReader("IONQ", START, end)["Close"].astype(float)
     ionq.index = pd.to_datetime(ionq.index)
     # 한국 장마감 시점에 알 수 있는 최신 미국 종가 = 전 영업일 → 1일 시프트
     ionq_kr = ionq.reindex(idx.union(ionq.index)).ffill().shift(1).reindex(idx)
     logger.info(f"IONQ {len(ionq)}일 (미국) → 한국 거래일 매핑, 1일 시프트 적용")
 
-    fx = fdr.DataReader("USD/KRW", START, END)["Close"].astype(float)
+    fx = fdr.DataReader("USD/KRW", START, end)["Close"].astype(float)
     fx.index = pd.to_datetime(fx.index)
     fx_kr = fx.reindex(idx.union(fx.index)).ffill().reindex(idx)
 
@@ -252,8 +262,10 @@ def _summary(df: pd.DataFrame) -> None:
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    p.add_argument("--end", type=str, default=None,
+                   help="YYYYMMDD. 생략 시 DEFAULT_END(마지막 수기 검증일)까지만 생성")
     args = p.parse_args()
-    df = build(args.output)
+    df = build(args.output, end=args.end)
     _summary(df)
     print(f"Saved: {args.output}")
 

@@ -40,58 +40,14 @@ BASE = Path(__file__).resolve().parent.parent
 if str(BASE) not in sys.path:
     sys.path.insert(0, str(BASE))
 
+from tools.nav_v2 import compute  # noqa: E402 — 공통 계산 함수. factor_logger.py도 이걸 씀
+
 FACTOR_LOG = BASE / "data" / "factor_log.csv"
 NAV_DAILY = BASE / "data" / "nav_daily.csv"
 BACKUP = BASE / "data" / "과거 데이터 참고" / "factor_log_v1_backup.csv"
 
 REPLACED = ["nav_total_trillion", "nav_implied_ret", "divergence",
             "nav_discount_pct", "nav_discount_delta"]
-
-
-def compute(nav: pd.DataFrame, skq_ret_ref: pd.Series) -> pd.DataFrame:
-    """nav_daily → factor_log 용 NAV 컬럼.
-
-    skq_ret 은 factor_log 에 수집 실패 구멍이 있으므로 nav_daily 의 종가에서
-    직접 계산하고, factor_log 값은 대조용으로만 쓴다.
-    """
-    nav = nav.sort_values("date").reset_index(drop=True)
-
-    close = nav["skq_close"].astype(float)
-    skq_ret = ((close / close.shift(1) - 1.0) * 100.0).round(2)
-    ref = pd.to_numeric(skq_ret_ref, errors="coerce")
-    both = skq_ret.notna() & ref.notna()
-    if both.any():
-        gap = (skq_ret[both] - ref[both]).abs()
-        logger.info(f"skq_ret 대조: 공통 {int(both.sum())}일, "
-                    f"최대차 {gap.max():.3f}%p, 0.01 초과 {int((gap > 0.01).sum())}일")
-
-    listed = nav["listed_value_mtm"].astype(float)
-    unl = nav["unlisted_value"].astype(float)
-    cash = nav["netcash_value"].astype(float)
-    total = nav["nav_mtm"].astype(float)
-
-    # 분기 계단 제거: 전일 상장가치 + 당일 비상장·순현금
-    prev_adj = listed.shift(1) + unl + cash
-    implied = (total / prev_adj - 1.0) * 100.0
-
-    # 참고용: 계단 포함 원시 차분
-    implied_raw = (total / total.shift(1) - 1.0) * 100.0
-
-    disc = nav["nav_discount_pct_mtm"].astype(float)
-
-    out = pd.DataFrame({
-        "date": nav["date"].astype(str),
-        "nav_total_trillion": (total / 1e12).round(2),
-        "nav_implied_ret": implied.round(2),
-        "nav_implied_ret_raw": implied_raw.round(2),
-        "nav_discount_pct": disc.round(1),
-        "nav_discount_delta": disc.diff().round(1),
-        "nav_per_share": nav["nav_per_share_mtm"],
-        "skq_shares_v2": nav["skq_shares"],
-        "skq_ret_v2": skq_ret,
-    })
-    out["divergence"] = (skq_ret - out["nav_implied_ret"]).round(2)
-    return out
 
 
 def main() -> None:

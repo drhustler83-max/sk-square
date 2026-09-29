@@ -46,7 +46,11 @@ def run_factor_log(date: str = None):
     from tools.factor_logger import collect_and_log, date_count
     date = date or datetime.today().strftime("%Y%m%d")
     logger.info(f"=== Factor Log: {date} ===")
-    row = collect_and_log(date)
+    try:
+        row = collect_and_log(date)
+    except Exception as e:
+        print(f"\n[{date}] 저장 보류 — NAV 자료 미확정: {e}")
+        sys.exit(1)
     days = date_count()
     print(f"\n[{date}] 저장 완료 — 누적 {days}거래일")
     if days < 60:

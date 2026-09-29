@@ -57,19 +57,20 @@ COLUMNS = [
     "fut_volume",             # 근월물 거래량
     "foreign_own_pct",        # 외국인 지분율 (%, extra_log.csv 병합, 2026-07-21)
     "individual_net",         # 개인 순매수 (거래대금, 원)
-    # ── NAV v2 마이그레이션 (2026-09-17, tools/apply_nav_v2.py) ────────────
-    #   이 로거는 아래 컬럼을 채우지 않는다(위 ⚠ 참고 — nav.py가 아직 v1 방식).
-    #   여기 적어 두는 건 신규 CSV 생성 시 순서를 현재 파일과 맞추기 위함이고,
-    #   실제 보존은 _fieldnames()/_merge_row()가 기존 헤더를 우선하므로 이 목록에서
-    #   빠지더라도 사라지지 않는다.
+    # ── NAV v2 진단용 보조 컬럼 (tools/nav_v2.compute가 매번 함께 냄) ───────
+    "nav_implied_ret_raw",  # 분기 계단 제거 전 원시 차분 (참고용)
+    "nav_per_share",        # 주당 NAV
+    "skq_shares_v2",        # 그날 반영된 발행주식총수 (자사주 소각 반영)
+    # ── 2026-09-17 NAV v1→v2 마이그레이션 당시 원본 보존 컬럼 ───────────────
+    #   신규 날짜에는 채워지지 않는다(그 날짜엔 "v1"이라는 옛 계산이 애초에
+    #   없으므로 빈 값이 맞다). 여기 적어 두는 건 신규 CSV 생성 시 순서를
+    #   현재 파일과 맞추기 위함이고, 실제 보존은 _fieldnames()/_merge_row()가
+    #   기존 헤더를 우선하므로 이 목록에서 빠지더라도 사라지지 않는다.
     "nav_total_trillion_v1",
     "nav_implied_ret_v1",
     "divergence_v1",
     "nav_discount_pct_v1",
     "nav_discount_delta_v1",
-    "nav_implied_ret_raw",
-    "nav_per_share",
-    "skq_shares_v2",
     "skq_ret_v1",
 ]
 
@@ -90,38 +91,41 @@ def collect_and_log(date: str = None) -> dict:
     row: dict = {"date": date}
 
     # ── 1. NAV (SK스퀘어·하이닉스 수익률, divergence, 할인율 포함) ─────────
-    # ⚠ tools.nav.get_nav_data()는 memory/company_context.py의 고정 스냅샷
-    # (shares_outstanding, nav_holdings — "nav_last_updated": "2026Q1")으로 계산한다.
-    # 2026-09-17 도입된 point-in-time NAV(data/nav_daily.csv, tools/build_nav_daily.py,
-    # tools/apply_nav_v2.py)와 다른 방식이라, 여기서 나온 nav_total_trillion·
-    # nav_implied_ret·divergence·nav_discount_pct·nav_discount_delta는 factor_log.csv에
-    # 이미 있는 v2 값과 계산 근거가 다르다. 자사주 소각 등으로 shares_outstanding이
-    # 바뀌면 이 값들은 조용히 틀린다. 스케줄러를 다시 켜기 전에 이 경로를 v2
-    # 파이프라인에 맞추거나, 최소한 별도 컬럼(*_v1_live 등)으로 분리해야 한다.
+    # tools.nav_v2.get_live_nav_v2()가 point-in-time 파이프라인(data/nav_daily.csv,
+    # tools/build_nav_daily.py, tools/apply_nav_v2.py)과 같은 계산 함수를 쓴다
+    # (구 company_context.py 고정 스냅샷 방식은 더 이상 쓰지 않는다).
+    #
+    # ⚠ 여기서 예외가 나면(자료 부족·당일 시세 미확정 등) 이 날짜는 통째로
+    # 저장하지 않는다 — NAV가 없는데 다른 컬럼만 채워 저장하면 "결측"과
+    # "수집 안 함"이 구분 안 되고, v1 방식으로 대충 채우면 2026-09-22 사고와
+    # 다른 형태로 같은 문제(신뢰 안 되는 값이 조용히 섞여 들어감)가 재발한다.
     try:
-        from tools.nav import get_nav_data
-        nav = get_nav_data(date)
-
-        row["skq_ret"]            = nav.get("skq_pct")
-        row["nav_total_trillion"] = nav.get("nav_total_trillion")
-        row["nav_implied_ret"]    = nav.get("nav_implied_pct")
-        row["divergence"]         = nav.get("divergence")
-        row["nav_discount_pct"]   = nav.get("nav_discount_pct")
-        row["nav_discount_delta"] = nav.get("nav_discount_delta")
-
-        for h in nav.get("hynix_nav_change", []):
-            if "하이닉스" in h.get("name", ""):
-                row["hynix_ret"] = h.get("pct_change")
-                break
-
-        logger.info(
-            f"[{date}] SKQ {row.get('skq_ret'):+.2f}% | "
-            f"HYX {row.get('hynix_ret'):+.2f}% | "
-            f"divergence {row.get('divergence'):+.2f}%p | "
-            f"discount {row.get('nav_discount_pct'):+.1f}%"
-        )
+        from tools.nav_v2 import get_live_nav_v2
+        nav = get_live_nav_v2(date)
     except Exception as e:
-        logger.warning(f"NAV 수집 오류: {e}")
+        logger.error(f"[{date}] NAV v2 수집 실패 — 이 날짜 저장을 보류합니다: {e}")
+        raise  # tools/backfill.py 등 호출부가 실패로 집계하도록 예외를 그대로 전파
+
+    row["skq_ret"]            = nav.get("skq_ret")
+    row["hynix_ret"]          = nav.get("hynix_ret")
+    row["nav_total_trillion"] = nav.get("nav_total_trillion")
+    row["nav_implied_ret"]    = nav.get("nav_implied_ret")
+    row["divergence"]         = nav.get("divergence")
+    row["nav_discount_pct"]   = nav.get("nav_discount_pct")
+    row["nav_discount_delta"] = nav.get("nav_discount_delta")
+    row["nav_implied_ret_raw"] = nav.get("nav_implied_ret_raw")
+    row["nav_per_share"]       = nav.get("nav_per_share")
+    row["skq_shares_v2"]       = nav.get("skq_shares_v2")
+
+    def _fmt(v):
+        return float("nan") if v is None else v
+
+    logger.info(
+        f"[{date}] SKQ {_fmt(row.get('skq_ret')):+.2f}% | "
+        f"HYX {_fmt(row.get('hynix_ret')):+.2f}% | "
+        f"divergence {_fmt(row.get('divergence')):+.2f}%p | "
+        f"discount {_fmt(row.get('nav_discount_pct')):+.1f}%"
+    )
 
     # ── 2. 수급 (SK스퀘어 외국인·기관 순매수) ────────────────────────────
     try:

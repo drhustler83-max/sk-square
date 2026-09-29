@@ -142,7 +142,10 @@ def _skq_shares(index: pd.DatetimeIndex) -> tuple[pd.Series, pd.Series]:
     return sh, why
 
 
-def build(output: Path = DEFAULT_OUTPUT, lag: int = 1) -> pd.DataFrame:
+def build(output: Path | None = None, lag: int = 1) -> pd.DataFrame:
+    # output 기본값은 호출 시점에 DEFAULT_OUTPUT을 다시 읽는다(늦은 바인딩 함정 회피,
+    # tools/build_listed_holdings.py의 같은 수정과 동일한 이유 — 2026-09-29)
+    output = output or DEFAULT_OUTPUT
     if not LISTED_CSV.exists():
         raise FileNotFoundError(f"{LISTED_CSV} 없음 — build_listed_holdings.py 를 먼저 실행")
 
