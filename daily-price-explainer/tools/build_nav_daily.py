@@ -142,14 +142,17 @@ def _skq_shares(index: pd.DatetimeIndex) -> tuple[pd.Series, pd.Series]:
     return sh, why
 
 
-def build(output: Path | None = None, lag: int = 1) -> pd.DataFrame:
-    # output 기본값은 호출 시점에 DEFAULT_OUTPUT을 다시 읽는다(늦은 바인딩 함정 회피,
-    # tools/build_listed_holdings.py의 같은 수정과 동일한 이유 — 2026-09-29)
+def build(output: Path | None = None, lag: int = 1, listed_csv: Path | None = None) -> pd.DataFrame:
+    # output/listed_csv 기본값은 호출 시점에 다시 읽는다(늦은 바인딩 함정 회피,
+    # tools/build_listed_holdings.py의 같은 수정과 동일한 이유 — 2026-09-29).
+    # listed_csv를 명시적으로 넘길 수 있게 한 건 tools/nav_v2.py가 임시 경로의
+    # 상장분 CSV를 입력으로 써서 실제 파일을 건드리지 않고 먼저 검증하기 위함.
     output = output or DEFAULT_OUTPUT
-    if not LISTED_CSV.exists():
-        raise FileNotFoundError(f"{LISTED_CSV} 없음 — build_listed_holdings.py 를 먼저 실행")
+    listed_csv = listed_csv or LISTED_CSV
+    if not listed_csv.exists():
+        raise FileNotFoundError(f"{listed_csv} 없음 — build_listed_holdings.py 를 먼저 실행")
 
-    lf = pd.read_csv(LISTED_CSV, dtype={"date": str})
+    lf = pd.read_csv(listed_csv, dtype={"date": str})
     lf["dt"] = pd.to_datetime(lf["date"], format="%Y%m%d")
     lf = lf.sort_values("dt").reset_index(drop=True)
     idx = pd.DatetimeIndex(lf["dt"])

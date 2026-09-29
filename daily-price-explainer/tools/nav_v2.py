@@ -10,8 +10,9 @@ get_live_nav_v2(date)는 factor_logger 전용 진입점이다.
      다시 만든다(build_listed_holdings.build 재실행 — 기존 스크립트와 같은
      방식으로 전체 재계산이다, 증분 아님). 하루 한 번 도는 스케줄러 빈도에서는
      감내 가능하나 느리다는 점은 알아둘 것 — 나중에 증분 방식으로 최적화 여지.
-  2. 당일 보유 중인 국내 종목의 종가가 실제 그날 고시된 것인지 확인한다
-     (reindex+ffill 로 채워진 전일가를 정상 시세로 오인하지 않기 위함).
+  2. SK스퀘어 자신과 당일 보유 중인 국내 종목의 종가가 실제 그날 고시된
+     값과 일치하는지 재조회해 대조한다(reindex+ffill 로 채워진 전일가를
+     정상 시세로 오인하지 않기 위함 — 존재 여부가 아니라 값 자체를 비교).
   3. compute() 로 date 행을 뽑아 반환한다.
   4. 위 어느 단계든 불충분하면 NavDataUnavailable 을 던진다. 호출부(로거)는
      이걸 삼켜 "그날 저장 보류 + 사유 기록"으로만 처리해야 하고, 절대 빈
@@ -22,7 +23,9 @@ get_live_nav_v2(date)는 factor_logger 전용 진입점이다.
 from __future__ import annotations
 
 import csv
+import os
 import sys
+import tempfile
 from pathlib import Path
 
 import pandas as pd
@@ -108,6 +111,15 @@ def _ensure_coverage(date: str) -> None:
     """nav_daily.csv가 date를 포함하지 않으면 파이프라인을 date까지 다시
     만든다. 이미 date까지 있으면 아무것도 하지 않는다(매일 스케줄러가 돌면
     보통 이 경로 — 어제까지 있고 오늘 하루만 부족).
+
+    두 파일(listed_holdings_daily.csv, nav_daily.csv)을 실제 경로에 바로
+    쓰지 않는다. 먼저 data/ 바로 밑 임시 폴더에 둘 다 만들고, nav_daily
+    쪽에 date가 실제로 들어갔는지 확인한 뒤에만 os.replace로 실제 경로에
+    반영한다. 이렇게 안 하면 두 단계 중 하나(주로 두 번째, build_nav)만
+    실패했을 때 상장분 CSV는 새 날짜까지 늘어나 있는데 NAV 쪽은 그대로인
+    상태로 실제 데이터 폴더가 남는다(2026-09-29 재현·확인됨). 임시 폴더는
+    실제 파일과 같은 드라이브(= data/ 바로 밑)에 둬서 os.replace가 항상
+    원자적 rename으로 처리되게 한다.
     """
     end = _current_coverage_end()
     if end is not None and end >= date:
@@ -117,45 +129,96 @@ def _ensure_coverage(date: str) -> None:
     from tools.build_listed_holdings import build as build_listed
     from tools.build_nav_daily import build as build_nav
 
-    build_listed(end=date)
-    build_nav()
+    LISTED_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".nav_v2_extend_", dir=str(LISTED_CSV.parent)) as tmp:
+        tmp_listed = Path(tmp) / "listed_holdings_daily.csv"
+        tmp_nav = Path(tmp) / "nav_daily.csv"
+
+        build_listed(output=tmp_listed, end=date)
+        build_nav(output=tmp_nav, listed_csv=tmp_listed)
+
+        check = pd.read_csv(tmp_nav, dtype={"date": str})
+        if date not in set(check["date"]):
+            raise NavDataUnavailable(
+                f"{date}: 파이프라인을 다시 만들었지만 결과에 해당 거래일이 없습니다"
+                "(휴장일이거나 확장 실패 — 실제 파일은 손대지 않았습니다)"
+            )
+
+        # 여기까지 왔으면 둘 다 검증됐다 — 이제부터만 실제 경로를 건드린다.
+        os.replace(tmp_listed, LISTED_CSV)
+        os.replace(tmp_nav, NAV_DAILY)
+    logger.info(f"확장 완료 → {date} (listed_holdings_daily.csv / nav_daily.csv 둘 다 반영)")
 
 
 def _check_price_freshness(date: str) -> None:
-    """당일 보유 중인 국내 종목의 종가가 실제 그날 고시된 것인지 확인.
+    """listed_holdings_daily.csv/nav_daily.csv에 저장된 당일 종가가 실제
+    그날 고시된 값과 일치하는지 재조회해서 확인한다.
 
-    listed_holdings_daily.csv는 reindex+ffill로 결측을 메우므로, 완성된
-    파일만 봐서는 전일가가 그대로 들어간 것인지 구분할 수 없다. 원본 시세를
-    다시 조회해 당일자 데이터가 실제로 있는지 직접 확인한다.
+    "존재하는지"만 보면 안 된다 — reindex+ffill은 전일 값을 그대로 들고
+    내려와도 결측이 아니므로, 값이 있다는 것만으로는 그게 *오늘* 값이라는
+    보장이 없다(2026-09-29 Codex 재현: 전일 종가로 채워진 사본을 정상으로
+    받아들여 수익률이 +0.30%→0.00%로 계산됨). 그래서 재조회한 원본 종가와
+    파이프라인이 실제로 쓴 값을 직접 비교한다.
+
+    SK스퀘어 자기 자신도 검사 대상이다 — divergence의 분자(skq_ret)가
+    여기서 나오므로 빠지면 안 된다(직전 버전의 누락).
 
     IONQ는 검사 대상에서 제외한다 — 설계상 의도적으로 전일 미국 종가를
     쓰므로(한국 장마감 시점엔 당일 미국 장이 아직 안 열림, look-ahead 방지)
-    "당일 데이터 없음"이 정상 상태다.
+    재조회 값과 다른 게 정상이다.
     """
     from tools.build_listed_holdings import HOLDINGS, KR_STOCKS
     from pykrx import stock
 
     d = pd.Timestamp(date)
-    stale = []
-    for key, name, ticker in KR_STOCKS:
-        shares = 0
+
+    def _currently_held(key: str) -> bool:
         for start, end_, qty, _why, _conf in HOLDINGS[key]:
             s = pd.Timestamp(start)
             e = pd.Timestamp(end_) if end_ else d
-            if s <= d <= e:
-                shares = qty
-        if shares <= 0:
+            if s <= d <= e and qty > 0:
+                return True
+        return False
+
+    lf_row = nv_row = None
+    if LISTED_CSV.exists():
+        lf = pd.read_csv(LISTED_CSV, dtype={"date": str})
+        m = lf[lf["date"] == date]
+        lf_row = m.iloc[0] if not m.empty else None
+    if NAV_DAILY.exists():
+        nv = pd.read_csv(NAV_DAILY, dtype={"date": str})
+        m = nv[nv["date"] == date]
+        nv_row = m.iloc[0] if not m.empty else None
+
+    # (표시명, 티커, 저장된 값이 들어 있는 컬럼, 그 값을 읽을 행)
+    checks = [("SK스퀘어", "402340", "skq_close", nv_row)]
+    for key, name, ticker in KR_STOCKS:
+        if _currently_held(key):
+            checks.append((name, ticker, f"{key}_price", lf_row))
+
+    problems = []
+    for name, ticker, col, row_src in checks:
+        if row_src is None or col not in row_src or pd.isna(row_src[col]):
+            problems.append(f"{name}({ticker}): 파이프라인 결과에 저장된 값 없음")
             continue
+        used = float(row_src[col])
         try:
             ohlcv = stock.get_market_ohlcv(date, date, ticker)
         except Exception as exc:
-            raise NavDataUnavailable(f"{date}: {name}({ticker}) 시세 조회 실패 — {exc}") from exc
+            raise NavDataUnavailable(f"{date}: {name}({ticker}) 시세 재조회 실패 — {exc}") from exc
         if ohlcv is None or ohlcv.empty:
-            stale.append(f"{name}({ticker})")
+            problems.append(f"{name}({ticker}): 당일 시세 없음(재조회 실패)")
+            continue
+        fresh = float(ohlcv.iloc[0]["종가"])
+        if abs(fresh - used) > 0.5:
+            problems.append(
+                f"{name}({ticker}): 파이프라인 저장값 {used:,.0f} ≠ 재조회 {fresh:,.0f}"
+                "(전일가가 그대로 채워졌을 가능성)"
+            )
 
-    if stale:
+    if problems:
         raise NavDataUnavailable(
-            f"{date}: 보유 중인 종목의 당일 시세 없음(휴장·미수신 등) — {', '.join(stale)}. "
+            f"{date}: 당일 시세 검증 실패 — {'; '.join(problems)}. "
             "전일가로 채운 값을 정상 NAV로 저장하지 않기 위해 이 날짜 적재를 보류합니다."
         )
 
