@@ -43,6 +43,7 @@ if str(BASE) not in sys.path:
 
 FACTOR_LOG = BASE / "data" / "factor_log.csv"
 LISTED_CSV = BASE / "data" / "listed_holdings_daily.csv"
+NAV_CSV = BASE / "data" / "nav_daily.csv"
 
 # *_v1 컬럼은 2026-09-17 NAV v1→v2 마이그레이션 당시 원본 보존용. 그 이후
 # 날짜엔 원래 존재하지 않으므로 신규구간 결측은 정상(C).
@@ -66,6 +67,12 @@ def _trading_days(start: str, end: str, ticker: str = "402340") -> list[str]:
 
 def audit(start: str = DEFAULT_START, end: str = DEFAULT_END) -> dict:
     df = pd.read_csv(FACTOR_LOG, dtype={"date": str}).sort_values("date").reset_index(drop=True)
+    first_factor_date = str(df["date"].iloc[0])
+    first_nav_date = None
+    if NAV_CSV.exists():
+        nav_dates = pd.read_csv(NAV_CSV, usecols=["date"], dtype={"date": str})["date"]
+        if not nav_dates.empty:
+            first_nav_date = str(nav_dates.min())
     df = df[(df["date"] >= start) & (df["date"] <= end)]
     have = set(df["date"])
     tdays = _trading_days(start, end)
@@ -91,8 +98,11 @@ def audit(start: str = DEFAULT_START, end: str = DEFAULT_END) -> dict:
 
         # 정상(C) 판정
         normal = []
-        if start in dates:                       # 첫 거래일 파생값
-            normal.append(start)
+        if first_factor_date in dates:           # 실제 첫 거래일(임의 조회 시작일 아님)
+            normal.append(first_factor_date)
+        if (c in ("nav_implied_ret", "divergence", "nav_discount_delta",
+                  "nav_implied_ret_raw") and first_nav_date in dates):
+            normal.append(first_nav_date)       # NAV 첫날은 전일 NAV가 없어 차분 불가
         if c in V1_COLS:                          # v1 = 09-17 마이그레이션 동결 스냅샷
             normal += dates                      # → 결측 전부 정상(복구 대상 아님)
         if c in ("fut_basis", "fut_basis_pct", "fut_volume") and fl is not None:
@@ -125,7 +135,9 @@ def _hynix_recoverable_dates(df: pd.DataFrame) -> list[str]:
     lh = pd.read_csv(LISTED_CSV, dtype={"date": str})
     if "skhynix_price" not in lh:
         return []
-    ok = set(lh.loc[~_empty(lh["skhynix_price"]), "date"])
+    lh = lh.sort_values("date").reset_index(drop=True)
+    prices = pd.to_numeric(lh["skhynix_price"], errors="coerce")
+    ok = set(lh.loc[(prices > 0) & (prices.shift(1) > 0), "date"])
     miss = df.loc[_empty(df["hynix_ret"]), "date"]
     return sorted(d for d in miss if d in ok)
 
@@ -159,6 +171,9 @@ def _print(rep: dict) -> None:
 
 
 def main() -> None:
+    # Windows의 기본 cp949 콘솔에서도 보고서의 화살표·대시 문자를 출력한다.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     p = argparse.ArgumentParser()
     p.add_argument("--start", default=DEFAULT_START)
     p.add_argument("--end", default=DEFAULT_END)
