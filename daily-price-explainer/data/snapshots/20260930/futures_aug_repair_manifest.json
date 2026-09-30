@@ -1,0 +1,52 @@
+{
+  "source": "KRX Open API /drv/eqsfu_stk_bydd_trd and /sto/stk_bydd_trd",
+  "selection": "Highest-volume F YYYYMM outright with positive close, exclude SP spread",
+  "date_range": [
+    "20260803",
+    "20260914"
+  ],
+  "dates_repaired": [
+    "20260803",
+    "20260804",
+    "20260812",
+    "20260813",
+    "20260826",
+    "20260827",
+    "20260831",
+    "20260901",
+    "20260902",
+    "20260907",
+    "20260910",
+    "20260805",
+    "20260806",
+    "20260807",
+    "20260810",
+    "20260811",
+    "20260814",
+    "20260818",
+    "20260819",
+    "20260820",
+    "20260821",
+    "20260824",
+    "20260825",
+    "20260828",
+    "20260903",
+    "20260904",
+    "20260908",
+    "20260909",
+    "20260911",
+    "20260914"
+  ],
+  "changed_columns": [
+    "fut_listed",
+    "fut_basis",
+    "fut_basis_pct",
+    "fut_volume"
+  ],
+  "source_snapshot_sha256": "215d0642211ff261a24d92e2fc9c304c97620d08be14534d760c9478f9b5909b",
+  "head_before_sha256": "84bce618423dada3dc97454cb9c08aff940b72df9d3ea56ea111b2e4ef490836",
+  "staged_after_sha256": "b897c4c6a07f1a7ea921c7d6e0ca4be935bffbaf33e374bc2991c10ebcd66920",
+  "audit_past_missing_before": 30,
+  "audit_past_missing_after": 2,
+  "deferred": "20260915-20260929 prices differ among KRX, pykrx and NAV; recent seven rows remain unstaged"
+}

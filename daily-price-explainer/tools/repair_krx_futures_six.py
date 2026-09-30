@@ -25,7 +25,7 @@ DATES = ("20230410", "20230509", "20230810", "20240409", "20240502", "20240509")
 FIELDS = ("fut_basis", "fut_basis_pct", "fut_volume")
 
 
-def capture() -> dict:
+def capture(dates: tuple[str, ...] = DATES) -> dict:
     import requests
     import truststore
     from dotenv import dotenv_values
@@ -37,7 +37,7 @@ def capture() -> dict:
     session = requests.Session()
     session.headers["AUTH_KEY"] = key
     source = {}
-    for date in DATES:
+    for date in dates:
         def rows(endpoint: str) -> list[dict]:
             response = session.get("https://data-dbg.krx.co.kr/svc/apis/" + endpoint,
                                    params={"basDd": date}, timeout=20)
@@ -61,8 +61,9 @@ def capture() -> dict:
     return {"source": "KRX Open API", "dates": source}
 
 
-def plan(factor_path: Path, nav_path: Path, snapshot: dict) -> tuple[bytes, bytes, dict]:
-    if snapshot.get("source") != "KRX Open API" or set(snapshot.get("dates", {})) != set(DATES):
+def plan(factor_path: Path, nav_path: Path, snapshot: dict,
+         dates: tuple[str, ...] = DATES, mode: str = "spread") -> tuple[bytes, bytes, dict]:
+    if snapshot.get("source") != "KRX Open API" or set(snapshot.get("dates", {})) != set(dates):
         raise ValueError("Snapshot date/source mismatch")
     with nav_path.open(encoding="utf-8-sig", newline="") as file:
         nav = {row["date"]: row for row in csv.DictReader(file)}
@@ -73,16 +74,21 @@ def plan(factor_path: Path, nav_path: Path, snapshot: dict) -> tuple[bytes, byte
         raise ValueError("Unexpected factor columns")
     values = {}
     chosen = {}
-    for date in DATES:
+    for date in dates:
         entry = snapshot["dates"][date]
         spot_row = entry["spot"]
         spot = float(spot_row["TDD_CLSPRC"].replace(",", ""))
         if spot_row["BAS_DD"] != date or spot <= 0 or spot != float(nav[date]["skq_close"]):
             raise ValueError(f"KRX and NAV spot disagree on {date}")
-        if rows[date]["fut_listed"] not in ("1", "1.0"):
+        listed = rows[date]["fut_listed"]
+        if mode == "spread" and listed not in ("1", "1.0"):
             raise ValueError(f"Expected listed futures on {date}")
+        if mode == "gap" and listed not in ("", "0", "0.0"):
+            raise ValueError(f"Expected empty/incorrect listed flag on {date}")
         if rows[date]["fut_basis"] or rows[date]["fut_basis_pct"]:
             raise ValueError(f"Existing basis is not empty on {date}")
+        if mode == "gap" and rows[date]["fut_volume"]:
+            raise ValueError(f"Existing volume is not empty on {date}")
         outright = [r for r in entry["contracts"]
                     if r["BAS_DD"] == date and r["PROD_NM"] == "SK스퀘어 선물"
                     and re.search(r"\bF\s+\d{6}\b", r["ISU_NM"])
@@ -97,9 +103,12 @@ def plan(factor_path: Path, nav_path: Path, snapshot: dict) -> tuple[bytes, byte
         values[date] = {"fut_basis": str(basis),
                         "fut_basis_pct": str(round(basis / spot * 100, 3)),
                         "fut_volume": str(float(volume))}
+        if mode == "gap":
+            values[date]["fut_listed"] = "1.0"
         chosen[date] = {"contract": near["ISU_NM"].strip(), "spot": spot,
                         "future_close": close, "future_volume": volume,
-                        "replaced_spread_volume": rows[date]["fut_volume"]}
+                        "previous_listed": listed,
+                        "previous_volume": rows[date]["fut_volume"]}
     original = factor_path.read_bytes()
     lines = original.splitlines(keepends=True)
     if len(lines) != len(rows) + 1:
@@ -117,7 +126,7 @@ def plan(factor_path: Path, nav_path: Path, snapshot: dict) -> tuple[bytes, byte
             line = b",".join(cells) + ending
             changed.add(date)
         patched.append(line)
-    if changed != set(DATES):
+    if changed != set(dates):
         raise ValueError("Not every date was patched")
     result = b"".join(patched)
     return original, result, {"dates": chosen, "before_sha256": digest(original),
@@ -133,15 +142,30 @@ def main() -> None:
     source.add_argument("--snapshot", type=Path)
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--expected-sha256")
+    parser.add_argument("--mode", choices=("spread", "gap"), default="spread")
+    parser.add_argument("--start")
+    parser.add_argument("--end")
+    parser.add_argument("--expected-count", type=int)
     args = parser.parse_args()
+    if args.mode == "gap":
+        if not args.start or not args.end:
+            parser.error("Gap mode requires --start and --end")
+        with args.factor_log.open(encoding="utf-8-sig", newline="") as file:
+            dates = tuple(row["date"] for row in csv.DictReader(file)
+                          if args.start <= row["date"] <= args.end)
+    else:
+        dates = DATES
+    if args.expected_count is not None and len(dates) != args.expected_count:
+        raise ValueError(f"Expected {args.expected_count} dates, found {len(dates)}")
     if args.capture:
         if args.apply:
             parser.error("Cannot apply while capturing")
-        atomic_write(args.capture, (json.dumps(capture(), ensure_ascii=False, indent=2) + "\n").encode())
-        print(json.dumps({"captured_dates": len(DATES), "snapshot": str(args.capture)}))
+        atomic_write(args.capture, (json.dumps(capture(dates), ensure_ascii=False, indent=2) + "\n").encode())
+        print(json.dumps({"captured_dates": len(dates), "snapshot": str(args.capture)}))
         return
     original, patched, report = plan(args.factor_log, args.nav,
-                                     json.loads(args.snapshot.read_text(encoding="utf-8")))
+                                     json.loads(args.snapshot.read_text(encoding="utf-8")),
+                                     dates=dates, mode=args.mode)
     if args.expected_sha256 and report["before_sha256"] != args.expected_sha256:
         raise ValueError("Factor log changed since expected SHA-256")
     if args.apply:
