@@ -1,0 +1,2557 @@
+{
+  "source": "KRX Open API regular-session equity daily rows",
+  "endpoints": [
+    "sto/ksq_bydd_trd",
+    "sto/stk_bydd_trd"
+  ],
+  "tickers": {
+    "402340": "sto/stk_bydd_trd",
+    "000660": "sto/stk_bydd_trd",
+    "259960": "sto/stk_bydd_trd",
+    "060570": "sto/ksq_bydd_trd",
+    "216050": "sto/ksq_bydd_trd",
+    "039860": "sto/ksq_bydd_trd",
+    "205500": "sto/ksq_bydd_trd"
+  },
+  "date_range": [
+    "20260803",
+    "20260929"
+  ],
+  "rows": {
+    "20260803": {
+      "039860": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3530",
+        "CMPPREVDD_PRC": "50",
+        "FLUC_RT": "1.44",
+        "ACC_TRDVOL": "178714"
+      },
+      "205500": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1572",
+        "CMPPREVDD_PRC": "6",
+        "FLUC_RT": "0.38",
+        "ACC_TRDVOL": "128222"
+      },
+      "060570": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4575",
+        "CMPPREVDD_PRC": "-110",
+        "FLUC_RT": "-2.35",
+        "ACC_TRDVOL": "46325"
+      },
+      "402340": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1025000",
+        "CMPPREVDD_PRC": "-13000",
+        "FLUC_RT": "-1.25",
+        "ACC_TRDVOL": "831890"
+      },
+      "000660": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1567000",
+        "CMPPREVDD_PRC": "-151000",
+        "FLUC_RT": "-8.79",
+        "ACC_TRDVOL": "5432833"
+      },
+      "259960": {
+        "BAS_DD": "20260803",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "235000",
+        "CMPPREVDD_PRC": "-8000",
+        "FLUC_RT": "-3.29",
+        "ACC_TRDVOL": "128355"
+      }
+    },
+    "20260804": {
+      "039860": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3655",
+        "CMPPREVDD_PRC": "125",
+        "FLUC_RT": "3.54",
+        "ACC_TRDVOL": "179028"
+      },
+      "205500": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1698",
+        "CMPPREVDD_PRC": "126",
+        "FLUC_RT": "8.02",
+        "ACC_TRDVOL": "190930"
+      },
+      "060570": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4720",
+        "CMPPREVDD_PRC": "145",
+        "FLUC_RT": "3.17",
+        "ACC_TRDVOL": "29557"
+      },
+      "402340": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1060000",
+        "CMPPREVDD_PRC": "35000",
+        "FLUC_RT": "3.41",
+        "ACC_TRDVOL": "984406"
+      },
+      "000660": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1577000",
+        "CMPPREVDD_PRC": "10000",
+        "FLUC_RT": "0.64",
+        "ACC_TRDVOL": "5391210"
+      },
+      "259960": {
+        "BAS_DD": "20260804",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "238000",
+        "CMPPREVDD_PRC": "3000",
+        "FLUC_RT": "1.28",
+        "ACC_TRDVOL": "115700"
+      }
+    },
+    "20260812": {
+      "039860": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4035",
+        "CMPPREVDD_PRC": "-25",
+        "FLUC_RT": "-0.62",
+        "ACC_TRDVOL": "186601"
+      },
+      "205500": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1653",
+        "CMPPREVDD_PRC": "68",
+        "FLUC_RT": "4.29",
+        "ACC_TRDVOL": "311641"
+      },
+      "060570": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5240",
+        "CMPPREVDD_PRC": "70",
+        "FLUC_RT": "1.35",
+        "ACC_TRDVOL": "44132"
+      },
+      "402340": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1024000",
+        "CMPPREVDD_PRC": "79000",
+        "FLUC_RT": "8.36",
+        "ACC_TRDVOL": "708475"
+      },
+      "000660": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1504000",
+        "CMPPREVDD_PRC": "79000",
+        "FLUC_RT": "5.54",
+        "ACC_TRDVOL": "4566672"
+      },
+      "259960": {
+        "BAS_DD": "20260812",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "235000",
+        "CMPPREVDD_PRC": "-9000",
+        "FLUC_RT": "-3.69",
+        "ACC_TRDVOL": "94893"
+      }
+    },
+    "20260813": {
+      "039860": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4000",
+        "CMPPREVDD_PRC": "-35",
+        "FLUC_RT": "-0.87",
+        "ACC_TRDVOL": "166951"
+      },
+      "205500": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1675",
+        "CMPPREVDD_PRC": "22",
+        "FLUC_RT": "1.33",
+        "ACC_TRDVOL": "75005"
+      },
+      "060570": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5240",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "21735"
+      },
+      "402340": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1117000",
+        "CMPPREVDD_PRC": "93000",
+        "FLUC_RT": "9.08",
+        "ACC_TRDVOL": "778168"
+      },
+      "000660": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1593000",
+        "CMPPREVDD_PRC": "89000",
+        "FLUC_RT": "5.92",
+        "ACC_TRDVOL": "4680347"
+      },
+      "259960": {
+        "BAS_DD": "20260813",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "234500",
+        "CMPPREVDD_PRC": "-500",
+        "FLUC_RT": "-0.21",
+        "ACC_TRDVOL": "165400"
+      }
+    },
+    "20260826": {
+      "039860": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3820",
+        "CMPPREVDD_PRC": "-15",
+        "FLUC_RT": "-0.39",
+        "ACC_TRDVOL": "79069"
+      },
+      "205500": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1748",
+        "CMPPREVDD_PRC": "54",
+        "FLUC_RT": "3.19",
+        "ACC_TRDVOL": "191752"
+      },
+      "060570": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3375",
+        "CMPPREVDD_PRC": "-35",
+        "FLUC_RT": "-1.03",
+        "ACC_TRDVOL": "9596"
+      },
+      "216050": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5250",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "5146"
+      },
+      "402340": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1058000",
+        "CMPPREVDD_PRC": "-2000",
+        "FLUC_RT": "-0.19",
+        "ACC_TRDVOL": "512126"
+      },
+      "000660": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1688000",
+        "CMPPREVDD_PRC": "10000",
+        "FLUC_RT": "0.60",
+        "ACC_TRDVOL": "2923810"
+      },
+      "259960": {
+        "BAS_DD": "20260826",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "228000",
+        "CMPPREVDD_PRC": "5000",
+        "FLUC_RT": "2.24",
+        "ACC_TRDVOL": "75031"
+      }
+    },
+    "20260827": {
+      "039860": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3800",
+        "CMPPREVDD_PRC": "-20",
+        "FLUC_RT": "-0.52",
+        "ACC_TRDVOL": "107953"
+      },
+      "205500": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1807",
+        "CMPPREVDD_PRC": "59",
+        "FLUC_RT": "3.38",
+        "ACC_TRDVOL": "127449"
+      },
+      "060570": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3595",
+        "CMPPREVDD_PRC": "220",
+        "FLUC_RT": "6.52",
+        "ACC_TRDVOL": "11270"
+      },
+      "216050": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5200",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-0.95",
+        "ACC_TRDVOL": "6034"
+      },
+      "402340": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1068000",
+        "CMPPREVDD_PRC": "10000",
+        "FLUC_RT": "0.95",
+        "ACC_TRDVOL": "482253"
+      },
+      "000660": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1730000",
+        "CMPPREVDD_PRC": "42000",
+        "FLUC_RT": "2.49",
+        "ACC_TRDVOL": "3264042"
+      },
+      "259960": {
+        "BAS_DD": "20260827",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "219500",
+        "CMPPREVDD_PRC": "-8500",
+        "FLUC_RT": "-3.73",
+        "ACC_TRDVOL": "98172"
+      }
+    },
+    "20260831": {
+      "039860": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3925",
+        "CMPPREVDD_PRC": "25",
+        "FLUC_RT": "0.64",
+        "ACC_TRDVOL": "116357"
+      },
+      "205500": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1845",
+        "CMPPREVDD_PRC": "28",
+        "FLUC_RT": "1.54",
+        "ACC_TRDVOL": "181326"
+      },
+      "060570": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3510",
+        "CMPPREVDD_PRC": "-115",
+        "FLUC_RT": "-3.17",
+        "ACC_TRDVOL": "4404"
+      },
+      "216050": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5240",
+        "CMPPREVDD_PRC": "-30",
+        "FLUC_RT": "-0.57",
+        "ACC_TRDVOL": "5001"
+      },
+      "402340": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1037000",
+        "CMPPREVDD_PRC": "9000",
+        "FLUC_RT": "0.88",
+        "ACC_TRDVOL": "646713"
+      },
+      "000660": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1674000",
+        "CMPPREVDD_PRC": "21000",
+        "FLUC_RT": "1.27",
+        "ACC_TRDVOL": "3980661"
+      },
+      "259960": {
+        "BAS_DD": "20260831",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "227000",
+        "CMPPREVDD_PRC": "4500",
+        "FLUC_RT": "2.02",
+        "ACC_TRDVOL": "222814"
+      }
+    },
+    "20260901": {
+      "039860": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4170",
+        "CMPPREVDD_PRC": "245",
+        "FLUC_RT": "6.24",
+        "ACC_TRDVOL": "1864303"
+      },
+      "205500": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1838",
+        "CMPPREVDD_PRC": "-7",
+        "FLUC_RT": "-0.38",
+        "ACC_TRDVOL": "93097"
+      },
+      "060570": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4050",
+        "CMPPREVDD_PRC": "540",
+        "FLUC_RT": "15.38",
+        "ACC_TRDVOL": "64523"
+      },
+      "216050": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5260",
+        "CMPPREVDD_PRC": "20",
+        "FLUC_RT": "0.38",
+        "ACC_TRDVOL": "6692"
+      },
+      "402340": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1067000",
+        "CMPPREVDD_PRC": "30000",
+        "FLUC_RT": "2.89",
+        "ACC_TRDVOL": "461669"
+      },
+      "000660": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1693000",
+        "CMPPREVDD_PRC": "19000",
+        "FLUC_RT": "1.14",
+        "ACC_TRDVOL": "2727724"
+      },
+      "259960": {
+        "BAS_DD": "20260901",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "231000",
+        "CMPPREVDD_PRC": "4000",
+        "FLUC_RT": "1.76",
+        "ACC_TRDVOL": "66772"
+      }
+    },
+    "20260902": {
+      "039860": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4140",
+        "CMPPREVDD_PRC": "-30",
+        "FLUC_RT": "-0.72",
+        "ACC_TRDVOL": "316214"
+      },
+      "205500": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1849",
+        "CMPPREVDD_PRC": "11",
+        "FLUC_RT": "0.60",
+        "ACC_TRDVOL": "52599"
+      },
+      "060570": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4000",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-1.23",
+        "ACC_TRDVOL": "5473"
+      },
+      "216050": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5210",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-0.95",
+        "ACC_TRDVOL": "5156"
+      },
+      "402340": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "982000",
+        "CMPPREVDD_PRC": "-85000",
+        "FLUC_RT": "-7.97",
+        "ACC_TRDVOL": "538084"
+      },
+      "000660": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1613000",
+        "CMPPREVDD_PRC": "-80000",
+        "FLUC_RT": "-4.73",
+        "ACC_TRDVOL": "2568478"
+      },
+      "259960": {
+        "BAS_DD": "20260902",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "221000",
+        "CMPPREVDD_PRC": "-10000",
+        "FLUC_RT": "-4.33",
+        "ACC_TRDVOL": "68281"
+      }
+    },
+    "20260907": {
+      "039860": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4135",
+        "CMPPREVDD_PRC": "-30",
+        "FLUC_RT": "-0.72",
+        "ACC_TRDVOL": "250455"
+      },
+      "205500": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1786",
+        "CMPPREVDD_PRC": "-17",
+        "FLUC_RT": "-0.94",
+        "ACC_TRDVOL": "57476"
+      },
+      "060570": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4025",
+        "CMPPREVDD_PRC": "75",
+        "FLUC_RT": "1.90",
+        "ACC_TRDVOL": "3577"
+      },
+      "216050": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5160",
+        "CMPPREVDD_PRC": "-60",
+        "FLUC_RT": "-1.15",
+        "ACC_TRDVOL": "11357"
+      },
+      "402340": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1125000",
+        "CMPPREVDD_PRC": "84000",
+        "FLUC_RT": "8.07",
+        "ACC_TRDVOL": "543798"
+      },
+      "000660": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1783000",
+        "CMPPREVDD_PRC": "136000",
+        "FLUC_RT": "8.26",
+        "ACC_TRDVOL": "3480094"
+      },
+      "259960": {
+        "BAS_DD": "20260907",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "218000",
+        "CMPPREVDD_PRC": "1500",
+        "FLUC_RT": "0.69",
+        "ACC_TRDVOL": "87929"
+      }
+    },
+    "20260910": {
+      "039860": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4165",
+        "CMPPREVDD_PRC": "40",
+        "FLUC_RT": "0.97",
+        "ACC_TRDVOL": "120062"
+      },
+      "205500": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1872",
+        "CMPPREVDD_PRC": "34",
+        "FLUC_RT": "1.85",
+        "ACC_TRDVOL": "143378"
+      },
+      "060570": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4900",
+        "CMPPREVDD_PRC": "1095",
+        "FLUC_RT": "28.78",
+        "ACC_TRDVOL": "145045"
+      },
+      "216050": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5090",
+        "CMPPREVDD_PRC": "60",
+        "FLUC_RT": "1.19",
+        "ACC_TRDVOL": "11074"
+      },
+      "402340": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1135000",
+        "CMPPREVDD_PRC": "-3000",
+        "FLUC_RT": "-0.26",
+        "ACC_TRDVOL": "540428"
+      },
+      "000660": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1853000",
+        "CMPPREVDD_PRC": "-3000",
+        "FLUC_RT": "-0.16",
+        "ACC_TRDVOL": "4483585"
+      },
+      "259960": {
+        "BAS_DD": "20260910",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "208500",
+        "CMPPREVDD_PRC": "-500",
+        "FLUC_RT": "-0.24",
+        "ACC_TRDVOL": "114449"
+      }
+    },
+    "20260915": {
+      "039860": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4110",
+        "CMPPREVDD_PRC": "30",
+        "FLUC_RT": "0.74",
+        "ACC_TRDVOL": "101118"
+      },
+      "205500": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1958",
+        "CMPPREVDD_PRC": "40",
+        "FLUC_RT": "2.09",
+        "ACC_TRDVOL": "198382"
+      },
+      "060570": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4950",
+        "CMPPREVDD_PRC": "-100",
+        "FLUC_RT": "-1.98",
+        "ACC_TRDVOL": "5350"
+      },
+      "216050": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5050",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "3722"
+      },
+      "402340": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1000000",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "366583"
+      },
+      "000660": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1690000",
+        "CMPPREVDD_PRC": "-7000",
+        "FLUC_RT": "-0.41",
+        "ACC_TRDVOL": "2732031"
+      },
+      "259960": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "210500",
+        "CMPPREVDD_PRC": "-1500",
+        "FLUC_RT": "-0.71",
+        "ACC_TRDVOL": "46931"
+      }
+    },
+    "20260805": {
+      "039860": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3730",
+        "CMPPREVDD_PRC": "75",
+        "FLUC_RT": "2.05",
+        "ACC_TRDVOL": "284167"
+      },
+      "205500": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1676",
+        "CMPPREVDD_PRC": "-22",
+        "FLUC_RT": "-1.30",
+        "ACC_TRDVOL": "308956"
+      },
+      "060570": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4790",
+        "CMPPREVDD_PRC": "70",
+        "FLUC_RT": "1.48",
+        "ACC_TRDVOL": "20171"
+      },
+      "402340": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1119000",
+        "CMPPREVDD_PRC": "59000",
+        "FLUC_RT": "5.57",
+        "ACC_TRDVOL": "675010"
+      },
+      "000660": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1668000",
+        "CMPPREVDD_PRC": "91000",
+        "FLUC_RT": "5.77",
+        "ACC_TRDVOL": "3945674"
+      },
+      "259960": {
+        "BAS_DD": "20260805",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "229000",
+        "CMPPREVDD_PRC": "-9000",
+        "FLUC_RT": "-3.78",
+        "ACC_TRDVOL": "150714"
+      }
+    },
+    "20260806": {
+      "039860": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3840",
+        "CMPPREVDD_PRC": "110",
+        "FLUC_RT": "2.95",
+        "ACC_TRDVOL": "289241"
+      },
+      "205500": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1630",
+        "CMPPREVDD_PRC": "-46",
+        "FLUC_RT": "-2.74",
+        "ACC_TRDVOL": "186933"
+      },
+      "060570": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4860",
+        "CMPPREVDD_PRC": "70",
+        "FLUC_RT": "1.46",
+        "ACC_TRDVOL": "20236"
+      },
+      "402340": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "970000",
+        "CMPPREVDD_PRC": "-149000",
+        "FLUC_RT": "-13.32",
+        "ACC_TRDVOL": "808124"
+      },
+      "000660": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1495000",
+        "CMPPREVDD_PRC": "-173000",
+        "FLUC_RT": "-10.37",
+        "ACC_TRDVOL": "5498295"
+      },
+      "259960": {
+        "BAS_DD": "20260806",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "230000",
+        "CMPPREVDD_PRC": "1000",
+        "FLUC_RT": "0.44",
+        "ACC_TRDVOL": "131085"
+      }
+    },
+    "20260807": {
+      "039860": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3820",
+        "CMPPREVDD_PRC": "-20",
+        "FLUC_RT": "-0.52",
+        "ACC_TRDVOL": "217556"
+      },
+      "205500": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1571",
+        "CMPPREVDD_PRC": "-59",
+        "FLUC_RT": "-3.62",
+        "ACC_TRDVOL": "223717"
+      },
+      "060570": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5110",
+        "CMPPREVDD_PRC": "250",
+        "FLUC_RT": "5.14",
+        "ACC_TRDVOL": "69841"
+      },
+      "402340": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "939000",
+        "CMPPREVDD_PRC": "-31000",
+        "FLUC_RT": "-3.20",
+        "ACC_TRDVOL": "646939"
+      },
+      "000660": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1422000",
+        "CMPPREVDD_PRC": "-73000",
+        "FLUC_RT": "-4.88",
+        "ACC_TRDVOL": "5002539"
+      },
+      "259960": {
+        "BAS_DD": "20260807",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "241500",
+        "CMPPREVDD_PRC": "11500",
+        "FLUC_RT": "5.00",
+        "ACC_TRDVOL": "107856"
+      }
+    },
+    "20260810": {
+      "039860": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4045",
+        "CMPPREVDD_PRC": "225",
+        "FLUC_RT": "5.89",
+        "ACC_TRDVOL": "219123"
+      },
+      "205500": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1534",
+        "CMPPREVDD_PRC": "-37",
+        "FLUC_RT": "-2.36",
+        "ACC_TRDVOL": "366977"
+      },
+      "060570": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5170",
+        "CMPPREVDD_PRC": "60",
+        "FLUC_RT": "1.17",
+        "ACC_TRDVOL": "12110"
+      },
+      "402340": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "949000",
+        "CMPPREVDD_PRC": "10000",
+        "FLUC_RT": "1.06",
+        "ACC_TRDVOL": "410049"
+      },
+      "000660": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1420000",
+        "CMPPREVDD_PRC": "-2000",
+        "FLUC_RT": "-0.14",
+        "ACC_TRDVOL": "3295283"
+      },
+      "259960": {
+        "BAS_DD": "20260810",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "242000",
+        "CMPPREVDD_PRC": "500",
+        "FLUC_RT": "0.21",
+        "ACC_TRDVOL": "74792"
+      }
+    },
+    "20260811": {
+      "039860": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4060",
+        "CMPPREVDD_PRC": "15",
+        "FLUC_RT": "0.37",
+        "ACC_TRDVOL": "168539"
+      },
+      "205500": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1585",
+        "CMPPREVDD_PRC": "51",
+        "FLUC_RT": "3.32",
+        "ACC_TRDVOL": "260938"
+      },
+      "060570": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5170",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "9103"
+      },
+      "402340": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "945000",
+        "CMPPREVDD_PRC": "-4000",
+        "FLUC_RT": "-0.42",
+        "ACC_TRDVOL": "494514"
+      },
+      "000660": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1425000",
+        "CMPPREVDD_PRC": "5000",
+        "FLUC_RT": "0.35",
+        "ACC_TRDVOL": "3817655"
+      },
+      "259960": {
+        "BAS_DD": "20260811",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "244000",
+        "CMPPREVDD_PRC": "2000",
+        "FLUC_RT": "0.83",
+        "ACC_TRDVOL": "66912"
+      }
+    },
+    "20260814": {
+      "039860": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4030",
+        "CMPPREVDD_PRC": "30",
+        "FLUC_RT": "0.75",
+        "ACC_TRDVOL": "163289"
+      },
+      "205500": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1697",
+        "CMPPREVDD_PRC": "22",
+        "FLUC_RT": "1.31",
+        "ACC_TRDVOL": "79817"
+      },
+      "060570": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5310",
+        "CMPPREVDD_PRC": "70",
+        "FLUC_RT": "1.34",
+        "ACC_TRDVOL": "28773"
+      },
+      "402340": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1154000",
+        "CMPPREVDD_PRC": "37000",
+        "FLUC_RT": "3.31",
+        "ACC_TRDVOL": "658916"
+      },
+      "000660": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1645000",
+        "CMPPREVDD_PRC": "52000",
+        "FLUC_RT": "3.26",
+        "ACC_TRDVOL": "4520990"
+      },
+      "259960": {
+        "BAS_DD": "20260814",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "238000",
+        "CMPPREVDD_PRC": "3500",
+        "FLUC_RT": "1.49",
+        "ACC_TRDVOL": "94621"
+      }
+    },
+    "20260818": {
+      "039860": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3865",
+        "CMPPREVDD_PRC": "-165",
+        "FLUC_RT": "-4.09",
+        "ACC_TRDVOL": "185248"
+      },
+      "205500": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1677",
+        "CMPPREVDD_PRC": "-20",
+        "FLUC_RT": "-1.18",
+        "ACC_TRDVOL": "167455"
+      },
+      "060570": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5260",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-0.94",
+        "ACC_TRDVOL": "15984"
+      },
+      "402340": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1135000",
+        "CMPPREVDD_PRC": "-19000",
+        "FLUC_RT": "-1.65",
+        "ACC_TRDVOL": "712701"
+      },
+      "000660": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1662000",
+        "CMPPREVDD_PRC": "17000",
+        "FLUC_RT": "1.03",
+        "ACC_TRDVOL": "5139000"
+      },
+      "259960": {
+        "BAS_DD": "20260818",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "226500",
+        "CMPPREVDD_PRC": "-11500",
+        "FLUC_RT": "-4.83",
+        "ACC_TRDVOL": "114183"
+      }
+    },
+    "20260819": {
+      "039860": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3675",
+        "CMPPREVDD_PRC": "-190",
+        "FLUC_RT": "-4.92",
+        "ACC_TRDVOL": "143853"
+      },
+      "205500": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1687",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.60",
+        "ACC_TRDVOL": "128843"
+      },
+      "060570": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5150",
+        "CMPPREVDD_PRC": "-110",
+        "FLUC_RT": "-2.09",
+        "ACC_TRDVOL": "13492"
+      },
+      "402340": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1004000",
+        "CMPPREVDD_PRC": "-131000",
+        "FLUC_RT": "-11.54",
+        "ACC_TRDVOL": "628410"
+      },
+      "000660": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1500000",
+        "CMPPREVDD_PRC": "-162000",
+        "FLUC_RT": "-9.75",
+        "ACC_TRDVOL": "4223067"
+      },
+      "259960": {
+        "BAS_DD": "20260819",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "221500",
+        "CMPPREVDD_PRC": "-5000",
+        "FLUC_RT": "-2.21",
+        "ACC_TRDVOL": "88896"
+      }
+    },
+    "20260820": {
+      "039860": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3810",
+        "CMPPREVDD_PRC": "135",
+        "FLUC_RT": "3.67",
+        "ACC_TRDVOL": "664210"
+      },
+      "205500": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1732",
+        "CMPPREVDD_PRC": "45",
+        "FLUC_RT": "2.67",
+        "ACC_TRDVOL": "214776"
+      },
+      "060570": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5050",
+        "CMPPREVDD_PRC": "-100",
+        "FLUC_RT": "-1.94",
+        "ACC_TRDVOL": "15450"
+      },
+      "402340": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1123000",
+        "CMPPREVDD_PRC": "119000",
+        "FLUC_RT": "11.85",
+        "ACC_TRDVOL": "853378"
+      },
+      "000660": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1691000",
+        "CMPPREVDD_PRC": "191000",
+        "FLUC_RT": "12.73",
+        "ACC_TRDVOL": "5452970"
+      },
+      "259960": {
+        "BAS_DD": "20260820",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "222500",
+        "CMPPREVDD_PRC": "1000",
+        "FLUC_RT": "0.45",
+        "ACC_TRDVOL": "108239"
+      }
+    },
+    "20260821": {
+      "039860": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3640",
+        "CMPPREVDD_PRC": "-170",
+        "FLUC_RT": "-4.46",
+        "ACC_TRDVOL": "110693"
+      },
+      "205500": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1718",
+        "CMPPREVDD_PRC": "-14",
+        "FLUC_RT": "-0.81",
+        "ACC_TRDVOL": "99537"
+      },
+      "060570": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5100",
+        "CMPPREVDD_PRC": "50",
+        "FLUC_RT": "0.99",
+        "ACC_TRDVOL": "20264"
+      },
+      "402340": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1123000",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "602332"
+      },
+      "000660": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1730000",
+        "CMPPREVDD_PRC": "39000",
+        "FLUC_RT": "2.31",
+        "ACC_TRDVOL": "4274294"
+      },
+      "259960": {
+        "BAS_DD": "20260821",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "222000",
+        "CMPPREVDD_PRC": "-500",
+        "FLUC_RT": "-0.22",
+        "ACC_TRDVOL": "88499"
+      }
+    },
+    "20260824": {
+      "039860": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3810",
+        "CMPPREVDD_PRC": "170",
+        "FLUC_RT": "4.67",
+        "ACC_TRDVOL": "433660"
+      },
+      "205500": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1673",
+        "CMPPREVDD_PRC": "-45",
+        "FLUC_RT": "-2.62",
+        "ACC_TRDVOL": "97508"
+      },
+      "060570": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "728",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "0"
+      },
+      "216050": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5210",
+        "CMPPREVDD_PRC": "110",
+        "FLUC_RT": "2.16",
+        "ACC_TRDVOL": "19102"
+      },
+      "402340": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1076000",
+        "CMPPREVDD_PRC": "-47000",
+        "FLUC_RT": "-4.19",
+        "ACC_TRDVOL": "458531"
+      },
+      "000660": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1671000",
+        "CMPPREVDD_PRC": "-59000",
+        "FLUC_RT": "-3.41",
+        "ACC_TRDVOL": "3994599"
+      },
+      "259960": {
+        "BAS_DD": "20260824",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "224000",
+        "CMPPREVDD_PRC": "2000",
+        "FLUC_RT": "0.90",
+        "ACC_TRDVOL": "61653"
+      }
+    },
+    "20260825": {
+      "039860": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3835",
+        "CMPPREVDD_PRC": "25",
+        "FLUC_RT": "0.66",
+        "ACC_TRDVOL": "151057"
+      },
+      "205500": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1694",
+        "CMPPREVDD_PRC": "21",
+        "FLUC_RT": "1.26",
+        "ACC_TRDVOL": "72171"
+      },
+      "060570": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3410",
+        "CMPPREVDD_PRC": "-230",
+        "FLUC_RT": "-6.32",
+        "ACC_TRDVOL": "24189"
+      },
+      "216050": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5250",
+        "CMPPREVDD_PRC": "40",
+        "FLUC_RT": "0.77",
+        "ACC_TRDVOL": "10310"
+      },
+      "402340": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1060000",
+        "CMPPREVDD_PRC": "-16000",
+        "FLUC_RT": "-1.49",
+        "ACC_TRDVOL": "506863"
+      },
+      "000660": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1678000",
+        "CMPPREVDD_PRC": "7000",
+        "FLUC_RT": "0.42",
+        "ACC_TRDVOL": "4029660"
+      },
+      "259960": {
+        "BAS_DD": "20260825",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "223000",
+        "CMPPREVDD_PRC": "-1000",
+        "FLUC_RT": "-0.45",
+        "ACC_TRDVOL": "64414"
+      }
+    },
+    "20260828": {
+      "039860": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "3900",
+        "CMPPREVDD_PRC": "100",
+        "FLUC_RT": "2.63",
+        "ACC_TRDVOL": "105145"
+      },
+      "205500": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1817",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.55",
+        "ACC_TRDVOL": "102535"
+      },
+      "060570": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3625",
+        "CMPPREVDD_PRC": "30",
+        "FLUC_RT": "0.83",
+        "ACC_TRDVOL": "1450"
+      },
+      "216050": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5270",
+        "CMPPREVDD_PRC": "70",
+        "FLUC_RT": "1.35",
+        "ACC_TRDVOL": "7772"
+      },
+      "402340": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1028000",
+        "CMPPREVDD_PRC": "-40000",
+        "FLUC_RT": "-3.75",
+        "ACC_TRDVOL": "439255"
+      },
+      "000660": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1653000",
+        "CMPPREVDD_PRC": "-77000",
+        "FLUC_RT": "-4.45",
+        "ACC_TRDVOL": "3531892"
+      },
+      "259960": {
+        "BAS_DD": "20260828",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "222500",
+        "CMPPREVDD_PRC": "3000",
+        "FLUC_RT": "1.37",
+        "ACC_TRDVOL": "71846"
+      }
+    },
+    "20260903": {
+      "039860": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4235",
+        "CMPPREVDD_PRC": "95",
+        "FLUC_RT": "2.29",
+        "ACC_TRDVOL": "1310394"
+      },
+      "205500": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1794",
+        "CMPPREVDD_PRC": "-55",
+        "FLUC_RT": "-2.97",
+        "ACC_TRDVOL": "73851"
+      },
+      "060570": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3845",
+        "CMPPREVDD_PRC": "-155",
+        "FLUC_RT": "-3.88",
+        "ACC_TRDVOL": "17008"
+      },
+      "216050": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5070",
+        "CMPPREVDD_PRC": "-140",
+        "FLUC_RT": "-2.69",
+        "ACC_TRDVOL": "21450"
+      },
+      "402340": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "981000",
+        "CMPPREVDD_PRC": "-1000",
+        "FLUC_RT": "-0.10",
+        "ACC_TRDVOL": "402164"
+      },
+      "000660": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1596000",
+        "CMPPREVDD_PRC": "-17000",
+        "FLUC_RT": "-1.05",
+        "ACC_TRDVOL": "2632758"
+      },
+      "259960": {
+        "BAS_DD": "20260903",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "218000",
+        "CMPPREVDD_PRC": "-3000",
+        "FLUC_RT": "-1.36",
+        "ACC_TRDVOL": "68634"
+      }
+    },
+    "20260904": {
+      "039860": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4165",
+        "CMPPREVDD_PRC": "-70",
+        "FLUC_RT": "-1.65",
+        "ACC_TRDVOL": "209881"
+      },
+      "205500": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1803",
+        "CMPPREVDD_PRC": "9",
+        "FLUC_RT": "0.50",
+        "ACC_TRDVOL": "64846"
+      },
+      "060570": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3950",
+        "CMPPREVDD_PRC": "105",
+        "FLUC_RT": "2.73",
+        "ACC_TRDVOL": "4265"
+      },
+      "216050": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5220",
+        "CMPPREVDD_PRC": "150",
+        "FLUC_RT": "2.96",
+        "ACC_TRDVOL": "41628"
+      },
+      "402340": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1041000",
+        "CMPPREVDD_PRC": "60000",
+        "FLUC_RT": "6.12",
+        "ACC_TRDVOL": "455382"
+      },
+      "000660": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1647000",
+        "CMPPREVDD_PRC": "51000",
+        "FLUC_RT": "3.20",
+        "ACC_TRDVOL": "2827892"
+      },
+      "259960": {
+        "BAS_DD": "20260904",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "216500",
+        "CMPPREVDD_PRC": "-1500",
+        "FLUC_RT": "-0.69",
+        "ACC_TRDVOL": "73187"
+      }
+    },
+    "20260908": {
+      "039860": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4115",
+        "CMPPREVDD_PRC": "-20",
+        "FLUC_RT": "-0.48",
+        "ACC_TRDVOL": "212124"
+      },
+      "205500": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1815",
+        "CMPPREVDD_PRC": "29",
+        "FLUC_RT": "1.62",
+        "ACC_TRDVOL": "165605"
+      },
+      "060570": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3820",
+        "CMPPREVDD_PRC": "-205",
+        "FLUC_RT": "-5.09",
+        "ACC_TRDVOL": "4072"
+      },
+      "216050": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5110",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-0.97",
+        "ACC_TRDVOL": "10153"
+      },
+      "402340": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1131000",
+        "CMPPREVDD_PRC": "6000",
+        "FLUC_RT": "0.53",
+        "ACC_TRDVOL": "570963"
+      },
+      "000660": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1793000",
+        "CMPPREVDD_PRC": "10000",
+        "FLUC_RT": "0.56",
+        "ACC_TRDVOL": "4164618"
+      },
+      "259960": {
+        "BAS_DD": "20260908",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "213500",
+        "CMPPREVDD_PRC": "-4500",
+        "FLUC_RT": "-2.06",
+        "ACC_TRDVOL": "62282"
+      }
+    },
+    "20260909": {
+      "039860": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4125",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.24",
+        "ACC_TRDVOL": "146296"
+      },
+      "205500": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1838",
+        "CMPPREVDD_PRC": "23",
+        "FLUC_RT": "1.27",
+        "ACC_TRDVOL": "209213"
+      },
+      "060570": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "3805",
+        "CMPPREVDD_PRC": "-15",
+        "FLUC_RT": "-0.39",
+        "ACC_TRDVOL": "5516"
+      },
+      "216050": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5030",
+        "CMPPREVDD_PRC": "-80",
+        "FLUC_RT": "-1.57",
+        "ACC_TRDVOL": "10415"
+      },
+      "402340": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1138000",
+        "CMPPREVDD_PRC": "7000",
+        "FLUC_RT": "0.62",
+        "ACC_TRDVOL": "449374"
+      },
+      "000660": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1856000",
+        "CMPPREVDD_PRC": "63000",
+        "FLUC_RT": "3.51",
+        "ACC_TRDVOL": "3526484"
+      },
+      "259960": {
+        "BAS_DD": "20260909",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "209000",
+        "CMPPREVDD_PRC": "-4500",
+        "FLUC_RT": "-2.11",
+        "ACC_TRDVOL": "69623"
+      }
+    },
+    "20260911": {
+      "039860": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4115",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-1.20",
+        "ACC_TRDVOL": "125320"
+      },
+      "205500": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1911",
+        "CMPPREVDD_PRC": "39",
+        "FLUC_RT": "2.08",
+        "ACC_TRDVOL": "230522"
+      },
+      "060570": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "5040",
+        "CMPPREVDD_PRC": "140",
+        "FLUC_RT": "2.86",
+        "ACC_TRDVOL": "305593"
+      },
+      "216050": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5090",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "6316"
+      },
+      "402340": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1089000",
+        "CMPPREVDD_PRC": "-46000",
+        "FLUC_RT": "-4.05",
+        "ACC_TRDVOL": "405533"
+      },
+      "000660": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1812000",
+        "CMPPREVDD_PRC": "-41000",
+        "FLUC_RT": "-2.21",
+        "ACC_TRDVOL": "2625165"
+      },
+      "259960": {
+        "BAS_DD": "20260911",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "212500",
+        "CMPPREVDD_PRC": "4000",
+        "FLUC_RT": "1.92",
+        "ACC_TRDVOL": "60698"
+      }
+    },
+    "20260914": {
+      "039860": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4080",
+        "CMPPREVDD_PRC": "-35",
+        "FLUC_RT": "-0.85",
+        "ACC_TRDVOL": "93119"
+      },
+      "205500": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1918",
+        "CMPPREVDD_PRC": "7",
+        "FLUC_RT": "0.37",
+        "ACC_TRDVOL": "123274"
+      },
+      "060570": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "5050",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.20",
+        "ACC_TRDVOL": "20241"
+      },
+      "216050": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "5050",
+        "CMPPREVDD_PRC": "-40",
+        "FLUC_RT": "-0.79",
+        "ACC_TRDVOL": "10973"
+      },
+      "402340": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1000000",
+        "CMPPREVDD_PRC": "-89000",
+        "FLUC_RT": "-8.17",
+        "ACC_TRDVOL": "523897"
+      },
+      "000660": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1697000",
+        "CMPPREVDD_PRC": "-115000",
+        "FLUC_RT": "-6.35",
+        "ACC_TRDVOL": "4001549"
+      },
+      "259960": {
+        "BAS_DD": "20260914",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "212000",
+        "CMPPREVDD_PRC": "-500",
+        "FLUC_RT": "-0.24",
+        "ACC_TRDVOL": "65003"
+      }
+    },
+    "20260916": {
+      "039860": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4130",
+        "CMPPREVDD_PRC": "20",
+        "FLUC_RT": "0.49",
+        "ACC_TRDVOL": "119649"
+      },
+      "205500": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1885",
+        "CMPPREVDD_PRC": "-73",
+        "FLUC_RT": "-3.73",
+        "ACC_TRDVOL": "152165"
+      },
+      "060570": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4925",
+        "CMPPREVDD_PRC": "-25",
+        "FLUC_RT": "-0.51",
+        "ACC_TRDVOL": "8882"
+      },
+      "216050": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4950",
+        "CMPPREVDD_PRC": "-100",
+        "FLUC_RT": "-1.98",
+        "ACC_TRDVOL": "17759"
+      },
+      "402340": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1020000",
+        "CMPPREVDD_PRC": "20000",
+        "FLUC_RT": "2.00",
+        "ACC_TRDVOL": "379482"
+      },
+      "000660": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1759000",
+        "CMPPREVDD_PRC": "69000",
+        "FLUC_RT": "4.08",
+        "ACC_TRDVOL": "2857754"
+      },
+      "259960": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "203000",
+        "CMPPREVDD_PRC": "-7500",
+        "FLUC_RT": "-3.56",
+        "ACC_TRDVOL": "48627"
+      }
+    },
+    "20260917": {
+      "039860": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4150",
+        "CMPPREVDD_PRC": "20",
+        "FLUC_RT": "0.48",
+        "ACC_TRDVOL": "172980"
+      },
+      "205500": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1818",
+        "CMPPREVDD_PRC": "-67",
+        "FLUC_RT": "-3.55",
+        "ACC_TRDVOL": "158332"
+      },
+      "060570": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4980",
+        "CMPPREVDD_PRC": "55",
+        "FLUC_RT": "1.12",
+        "ACC_TRDVOL": "7933"
+      },
+      "216050": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4920",
+        "CMPPREVDD_PRC": "-30",
+        "FLUC_RT": "-0.61",
+        "ACC_TRDVOL": "10999"
+      },
+      "402340": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1008000",
+        "CMPPREVDD_PRC": "-12000",
+        "FLUC_RT": "-1.18",
+        "ACC_TRDVOL": "336217"
+      },
+      "000660": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1745000",
+        "CMPPREVDD_PRC": "-14000",
+        "FLUC_RT": "-0.80",
+        "ACC_TRDVOL": "2803398"
+      },
+      "259960": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "203000",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "50485"
+      }
+    },
+    "20260918": {
+      "039860": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4180",
+        "CMPPREVDD_PRC": "30",
+        "FLUC_RT": "0.72",
+        "ACC_TRDVOL": "198100"
+      },
+      "205500": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1818",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00",
+        "ACC_TRDVOL": "324548"
+      },
+      "060570": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "5090",
+        "CMPPREVDD_PRC": "110",
+        "FLUC_RT": "2.21",
+        "ACC_TRDVOL": "8081"
+      },
+      "216050": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4965",
+        "CMPPREVDD_PRC": "45",
+        "FLUC_RT": "0.91",
+        "ACC_TRDVOL": "17318"
+      },
+      "402340": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1079000",
+        "CMPPREVDD_PRC": "71000",
+        "FLUC_RT": "7.04",
+        "ACC_TRDVOL": "529524"
+      },
+      "000660": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1857000",
+        "CMPPREVDD_PRC": "112000",
+        "FLUC_RT": "6.42",
+        "ACC_TRDVOL": "4764077"
+      },
+      "259960": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "205000",
+        "CMPPREVDD_PRC": "2000",
+        "FLUC_RT": "0.99",
+        "ACC_TRDVOL": "119559"
+      }
+    },
+    "20260921": {
+      "039860": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4190",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.24",
+        "ACC_TRDVOL": "163442"
+      },
+      "205500": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1835",
+        "CMPPREVDD_PRC": "17",
+        "FLUC_RT": "0.94",
+        "ACC_TRDVOL": "267988"
+      },
+      "060570": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4890",
+        "CMPPREVDD_PRC": "-200",
+        "FLUC_RT": "-3.93",
+        "ACC_TRDVOL": "8228"
+      },
+      "216050": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4930",
+        "CMPPREVDD_PRC": "-35",
+        "FLUC_RT": "-0.70",
+        "ACC_TRDVOL": "12731"
+      },
+      "402340": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1127000",
+        "CMPPREVDD_PRC": "48000",
+        "FLUC_RT": "4.45",
+        "ACC_TRDVOL": "534201"
+      },
+      "000660": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1868000",
+        "CMPPREVDD_PRC": "11000",
+        "FLUC_RT": "0.59",
+        "ACC_TRDVOL": "2755380"
+      },
+      "259960": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "200000",
+        "CMPPREVDD_PRC": "-5000",
+        "FLUC_RT": "-2.44",
+        "ACC_TRDVOL": "71725"
+      }
+    },
+    "20260922": {
+      "039860": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4170",
+        "CMPPREVDD_PRC": "-20",
+        "FLUC_RT": "-0.48",
+        "ACC_TRDVOL": "136039"
+      },
+      "205500": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1799",
+        "CMPPREVDD_PRC": "-36",
+        "FLUC_RT": "-1.96",
+        "ACC_TRDVOL": "113930"
+      },
+      "060570": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4875",
+        "CMPPREVDD_PRC": "-15",
+        "FLUC_RT": "-0.31",
+        "ACC_TRDVOL": "2507"
+      },
+      "216050": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4915",
+        "CMPPREVDD_PRC": "-15",
+        "FLUC_RT": "-0.30",
+        "ACC_TRDVOL": "6757"
+      },
+      "402340": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1133000",
+        "CMPPREVDD_PRC": "6000",
+        "FLUC_RT": "0.53",
+        "ACC_TRDVOL": "585196"
+      },
+      "000660": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1840000",
+        "CMPPREVDD_PRC": "-28000",
+        "FLUC_RT": "-1.50",
+        "ACC_TRDVOL": "3271767"
+      },
+      "259960": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "202000",
+        "CMPPREVDD_PRC": "2000",
+        "FLUC_RT": "1.00",
+        "ACC_TRDVOL": "54435"
+      }
+    },
+    "20260923": {
+      "039860": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4190",
+        "CMPPREVDD_PRC": "20",
+        "FLUC_RT": "0.48",
+        "ACC_TRDVOL": "140848"
+      },
+      "205500": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1774",
+        "CMPPREVDD_PRC": "-25",
+        "FLUC_RT": "-1.39",
+        "ACC_TRDVOL": "93093"
+      },
+      "060570": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4900",
+        "CMPPREVDD_PRC": "25",
+        "FLUC_RT": "0.51",
+        "ACC_TRDVOL": "6400"
+      },
+      "216050": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4935",
+        "CMPPREVDD_PRC": "20",
+        "FLUC_RT": "0.41",
+        "ACC_TRDVOL": "7416"
+      },
+      "402340": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1190000",
+        "CMPPREVDD_PRC": "57000",
+        "FLUC_RT": "5.03",
+        "ACC_TRDVOL": "963292"
+      },
+      "000660": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1862000",
+        "CMPPREVDD_PRC": "22000",
+        "FLUC_RT": "1.20",
+        "ACC_TRDVOL": "2947714"
+      },
+      "259960": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "198000",
+        "CMPPREVDD_PRC": "-4000",
+        "FLUC_RT": "-1.98",
+        "ACC_TRDVOL": "61679"
+      }
+    },
+    "20260928": {
+      "039860": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4475",
+        "CMPPREVDD_PRC": "285",
+        "FLUC_RT": "6.80",
+        "ACC_TRDVOL": "2469575"
+      },
+      "205500": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1777",
+        "CMPPREVDD_PRC": "3",
+        "FLUC_RT": "0.17",
+        "ACC_TRDVOL": "122530"
+      },
+      "060570": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "4990",
+        "CMPPREVDD_PRC": "90",
+        "FLUC_RT": "1.84",
+        "ACC_TRDVOL": "9513"
+      },
+      "216050": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4945",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.20",
+        "ACC_TRDVOL": "2478"
+      },
+      "402340": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1100000",
+        "CMPPREVDD_PRC": "-90000",
+        "FLUC_RT": "-7.56",
+        "ACC_TRDVOL": "720972"
+      },
+      "000660": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1768000",
+        "CMPPREVDD_PRC": "-94000",
+        "FLUC_RT": "-5.05",
+        "ACC_TRDVOL": "3302748"
+      },
+      "259960": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "202000",
+        "CMPPREVDD_PRC": "4000",
+        "FLUC_RT": "2.02",
+        "ACC_TRDVOL": "72835"
+      }
+    },
+    "20260929": {
+      "039860": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "039860",
+        "ISU_NM": "나노엔텍",
+        "TDD_CLSPRC": "4485",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.22",
+        "ACC_TRDVOL": "327576"
+      },
+      "205500": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "205500",
+        "ISU_NM": "넥써쓰",
+        "TDD_CLSPRC": "1720",
+        "CMPPREVDD_PRC": "-57",
+        "FLUC_RT": "-3.21",
+        "ACC_TRDVOL": "91523"
+      },
+      "060570": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "060570",
+        "ISU_NM": "드림어스컴퍼니",
+        "TDD_CLSPRC": "5040",
+        "CMPPREVDD_PRC": "50",
+        "FLUC_RT": "1.00",
+        "ACC_TRDVOL": "3181"
+      },
+      "216050": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "216050",
+        "ISU_NM": "인크로스",
+        "TDD_CLSPRC": "4890",
+        "CMPPREVDD_PRC": "-55",
+        "FLUC_RT": "-1.11",
+        "ACC_TRDVOL": "4108"
+      },
+      "402340": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1118000",
+        "CMPPREVDD_PRC": "18000",
+        "FLUC_RT": "1.64",
+        "ACC_TRDVOL": "434558"
+      },
+      "000660": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "000660",
+        "ISU_NM": "SK하이닉스",
+        "TDD_CLSPRC": "1765000",
+        "CMPPREVDD_PRC": "-3000",
+        "FLUC_RT": "-0.17",
+        "ACC_TRDVOL": "2939411"
+      },
+      "259960": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "259960",
+        "ISU_NM": "크래프톤",
+        "TDD_CLSPRC": "198700",
+        "CMPPREVDD_PRC": "-3300",
+        "FLUC_RT": "-1.63",
+        "ACC_TRDVOL": "74380"
+      }
+    }
+  }
+}

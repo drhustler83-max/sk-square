@@ -1,0 +1,38 @@
+{
+  "source": "KRX Open API /sto/stk_bydd_trd, ISU_CD=402340",
+  "scope": "SK Square numerator/discount only; listed holdings price basis under separate audit",
+  "historical_dates_committed": [
+    "20260915",
+    "20260916"
+  ],
+  "recent_dates_applied_only_to_worktree": [
+    "20260917",
+    "20260918",
+    "20260921",
+    "20260922",
+    "20260923",
+    "20260928",
+    "20260929"
+  ],
+  "changed_factor_columns": [
+    "skq_ret",
+    "divergence",
+    "nav_discount_pct",
+    "nav_discount_delta"
+  ],
+  "changed_nav_columns": [
+    "skq_close",
+    "skq_market_cap",
+    "nav_discount_pct_mtm",
+    "nav_discount_pct_company"
+  ],
+  "source_snapshot_sha256": "99bea9a1168926b349c87115cb7cd302b6be3b4af7d61f9b2fb479d4e0720c76",
+  "head_factor_before_sha256": "f8737cefbf09627b1bb52b4a312a02cb7e0d5f14e3280119e128874dc1e3f136",
+  "head_nav_before_sha256": "e2c8d28f5f6d2bcda72cb8bd596fe91db7cddf515eadb819b29aa4db663ffbb3",
+  "staged_factor_after_sha256": "2a5e7c8893aaa6a591814819125394d3a8311963a6466fea09f205a4700bba60",
+  "staged_nav_after_sha256": "5a54142c134259fa9be017a8649323a61e495cf7f675a62cce3899ce24a5e59e",
+  "worktree_factor_after_sha256": "733866387cff8950b79baebed996179aa807671cf24fa18c9539cedf0aebad87",
+  "worktree_nav_after_sha256": "caa4496cc9d6ce909190240b698d120c5e99fd430c1b171f2bdabfcb22efbcd6",
+  "audit_missing_counts_unchanged": true,
+  "limitations": "Listed holdings NAV inputs and live loader still need regular-session source alignment"
+}
