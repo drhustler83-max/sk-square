@@ -1,0 +1,59 @@
+{
+  "source": "KRX Open API /drv/eqsfu_stk_bydd_trd and /sto/stk_bydd_trd",
+  "selection": "Highest-volume outright F YYYYMM contract with positive close; exclude SP spread contracts",
+  "dates": {
+    "20230410": {
+      "contract": "SK스퀘어   F 202304",
+      "spot": 38900.0,
+      "future_close": 38900.0,
+      "future_volume": 434,
+      "replaced_spread_volume": "1487.0"
+    },
+    "20230509": {
+      "contract": "SK스퀘어   F 202305",
+      "spot": 42350.0,
+      "future_close": 42450.0,
+      "future_volume": 278,
+      "replaced_spread_volume": "558.0"
+    },
+    "20230810": {
+      "contract": "SK스퀘어   F 202309",
+      "spot": 46050.0,
+      "future_close": 46000.0,
+      "future_volume": 535,
+      "replaced_spread_volume": "1072.0"
+    },
+    "20240409": {
+      "contract": "SK스퀘어   F 202404",
+      "spot": 74100.0,
+      "future_close": 73800.0,
+      "future_volume": 3878,
+      "replaced_spread_volume": "7321.0"
+    },
+    "20240502": {
+      "contract": "SK스퀘어   F 202405",
+      "spot": 75000.0,
+      "future_close": 75500.0,
+      "future_volume": 4396,
+      "replaced_spread_volume": "7399.0"
+    },
+    "20240509": {
+      "contract": "SK스퀘어   F 202406",
+      "spot": 78100.0,
+      "future_close": 78100.0,
+      "future_volume": 6791,
+      "replaced_spread_volume": "7254.0"
+    }
+  },
+  "changed_columns": [
+    "fut_basis",
+    "fut_basis_pct",
+    "fut_volume"
+  ],
+  "source_snapshot_sha256": "956a9938a20ec26902a8dd4cd0dd771ad01656d8b57641aed63db6e03296af55",
+  "head_before_sha256": "4960af31cdee2cd11a1270f894cc5b9926eef637621566380f358951de20f227",
+  "staged_after_sha256": "84bce618423dada3dc97454cb9c08aff940b72df9d3ea56ea111b2e4ef490836",
+  "audit_basis_past_missing_before": 36,
+  "audit_basis_past_missing_after": 30,
+  "deferred": "20260803 onward needs price source reconciliation; 7 recent rows remain unstaged"
+}
