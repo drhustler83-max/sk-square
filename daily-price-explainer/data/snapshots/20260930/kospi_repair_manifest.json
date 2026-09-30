@@ -1,0 +1,14 @@
+{
+  "column": "kospi_ret",
+  "source": "KRX Open API /idx/kospi_dd_trd",
+  "index": "KOSPI / 코스피",
+  "calculation": "round(100*CMPPREVDD_IDX/(CLSPRC_IDX-CMPPREVDD_IDX),2); checked against FLUC_RT",
+  "filled_historical_blank_rows": 57,
+  "source_snapshot_sha256": "64cf16ce082e431935f72da873706e48267921fd8fbea7a8fdf8589e796865ca",
+  "head_before_sha256": "40cac80470ff67f6131289055d3695eff2350b9b8553ecd04771bfe9bae17426",
+  "staged_after_sha256": "4960af31cdee2cd11a1270f894cc5b9926eef637621566380f358951de20f227",
+  "audit_before_past_missing": 57,
+  "audit_after_past_missing": 0,
+  "existing_values": "unchanged",
+  "deferred_recent_rows": "20260917-20260929 remain unstaged"
+}

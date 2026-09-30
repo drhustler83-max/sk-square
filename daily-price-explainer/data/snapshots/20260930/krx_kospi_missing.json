@@ -1,0 +1,577 @@
+{
+  "source": "KRX Open API",
+  "endpoint": "idx/kospi_dd_trd",
+  "column": "kospi_ret",
+  "rows": {
+    "20220103": [
+      {
+        "BAS_DD": "20220103",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2988.77",
+        "CMPPREVDD_IDX": "11.12",
+        "FLUC_RT": "0.37"
+      }
+    ],
+    "20220203": [
+      {
+        "BAS_DD": "20220203",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2707.82",
+        "CMPPREVDD_IDX": "44.48",
+        "FLUC_RT": "1.67"
+      }
+    ],
+    "20220302": [
+      {
+        "BAS_DD": "20220302",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2703.52",
+        "CMPPREVDD_IDX": "4.34",
+        "FLUC_RT": "0.16"
+      }
+    ],
+    "20220310": [
+      {
+        "BAS_DD": "20220310",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2680.32",
+        "CMPPREVDD_IDX": "57.92",
+        "FLUC_RT": "2.21"
+      }
+    ],
+    "20220506": [
+      {
+        "BAS_DD": "20220506",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2644.51",
+        "CMPPREVDD_IDX": "-33.06",
+        "FLUC_RT": "-1.23"
+      }
+    ],
+    "20220602": [
+      {
+        "BAS_DD": "20220602",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2658.99",
+        "CMPPREVDD_IDX": "-26.91",
+        "FLUC_RT": "-1.00"
+      }
+    ],
+    "20220607": [
+      {
+        "BAS_DD": "20220607",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2626.34",
+        "CMPPREVDD_IDX": "-44.31",
+        "FLUC_RT": "-1.66"
+      }
+    ],
+    "20220816": [
+      {
+        "BAS_DD": "20220816",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2533.52",
+        "CMPPREVDD_IDX": "5.58",
+        "FLUC_RT": "0.22"
+      }
+    ],
+    "20220913": [
+      {
+        "BAS_DD": "20220913",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2449.54",
+        "CMPPREVDD_IDX": "65.26",
+        "FLUC_RT": "2.74"
+      }
+    ],
+    "20221004": [
+      {
+        "BAS_DD": "20221004",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2209.38",
+        "CMPPREVDD_IDX": "53.89",
+        "FLUC_RT": "2.50"
+      }
+    ],
+    "20221011": [
+      {
+        "BAS_DD": "20221011",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2192.07",
+        "CMPPREVDD_IDX": "-40.77",
+        "FLUC_RT": "-1.83"
+      }
+    ],
+    "20230102": [
+      {
+        "BAS_DD": "20230102",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2225.67",
+        "CMPPREVDD_IDX": "-10.73",
+        "FLUC_RT": "-0.48"
+      }
+    ],
+    "20230125": [
+      {
+        "BAS_DD": "20230125",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2428.57",
+        "CMPPREVDD_IDX": "33.31",
+        "FLUC_RT": "1.39"
+      }
+    ],
+    "20230302": [
+      {
+        "BAS_DD": "20230302",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2427.85",
+        "CMPPREVDD_IDX": "15.00",
+        "FLUC_RT": "0.62"
+      }
+    ],
+    "20230502": [
+      {
+        "BAS_DD": "20230502",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2524.39",
+        "CMPPREVDD_IDX": "22.86",
+        "FLUC_RT": "0.91"
+      }
+    ],
+    "20230508": [
+      {
+        "BAS_DD": "20230508",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2513.21",
+        "CMPPREVDD_IDX": "12.27",
+        "FLUC_RT": "0.49"
+      }
+    ],
+    "20230530": [
+      {
+        "BAS_DD": "20230530",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2585.52",
+        "CMPPREVDD_IDX": "26.71",
+        "FLUC_RT": "1.04"
+      }
+    ],
+    "20230607": [
+      {
+        "BAS_DD": "20230607",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2615.60",
+        "CMPPREVDD_IDX": "0.19",
+        "FLUC_RT": "0.01"
+      }
+    ],
+    "20230816": [
+      {
+        "BAS_DD": "20230816",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2525.64",
+        "CMPPREVDD_IDX": "-45.23",
+        "FLUC_RT": "-1.76"
+      }
+    ],
+    "20231004": [
+      {
+        "BAS_DD": "20231004",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2405.69",
+        "CMPPREVDD_IDX": "-59.38",
+        "FLUC_RT": "-2.41"
+      }
+    ],
+    "20231010": [
+      {
+        "BAS_DD": "20231010",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2402.58",
+        "CMPPREVDD_IDX": "-6.15",
+        "FLUC_RT": "-0.26"
+      }
+    ],
+    "20231226": [
+      {
+        "BAS_DD": "20231226",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2602.59",
+        "CMPPREVDD_IDX": "3.08",
+        "FLUC_RT": "0.12"
+      }
+    ],
+    "20240102": [
+      {
+        "BAS_DD": "20240102",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2669.81",
+        "CMPPREVDD_IDX": "14.53",
+        "FLUC_RT": "0.55"
+      }
+    ],
+    "20240213": [
+      {
+        "BAS_DD": "20240213",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2649.64",
+        "CMPPREVDD_IDX": "29.32",
+        "FLUC_RT": "1.12"
+      }
+    ],
+    "20240304": [
+      {
+        "BAS_DD": "20240304",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2674.27",
+        "CMPPREVDD_IDX": "31.91",
+        "FLUC_RT": "1.21"
+      }
+    ],
+    "20240411": [
+      {
+        "BAS_DD": "20240411",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2706.96",
+        "CMPPREVDD_IDX": "1.80",
+        "FLUC_RT": "0.07"
+      }
+    ],
+    "20240502": [
+      {
+        "BAS_DD": "20240502",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2683.65",
+        "CMPPREVDD_IDX": "-8.41",
+        "FLUC_RT": "-0.31"
+      }
+    ],
+    "20240507": [
+      {
+        "BAS_DD": "20240507",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2734.36",
+        "CMPPREVDD_IDX": "57.73",
+        "FLUC_RT": "2.16"
+      }
+    ],
+    "20240516": [
+      {
+        "BAS_DD": "20240516",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2753.00",
+        "CMPPREVDD_IDX": "22.66",
+        "FLUC_RT": "0.83"
+      }
+    ],
+    "20240607": [
+      {
+        "BAS_DD": "20240607",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2722.67",
+        "CMPPREVDD_IDX": "33.17",
+        "FLUC_RT": "1.23"
+      }
+    ],
+    "20240816": [
+      {
+        "BAS_DD": "20240816",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2697.23",
+        "CMPPREVDD_IDX": "52.73",
+        "FLUC_RT": "1.99"
+      }
+    ],
+    "20240919": [
+      {
+        "BAS_DD": "20240919",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2580.80",
+        "CMPPREVDD_IDX": "5.39",
+        "FLUC_RT": "0.21"
+      }
+    ],
+    "20241002": [
+      {
+        "BAS_DD": "20241002",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2561.69",
+        "CMPPREVDD_IDX": "-31.58",
+        "FLUC_RT": "-1.22"
+      }
+    ],
+    "20241004": [
+      {
+        "BAS_DD": "20241004",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2569.71",
+        "CMPPREVDD_IDX": "8.02",
+        "FLUC_RT": "0.31"
+      }
+    ],
+    "20241010": [
+      {
+        "BAS_DD": "20241010",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2599.16",
+        "CMPPREVDD_IDX": "4.80",
+        "FLUC_RT": "0.19"
+      }
+    ],
+    "20241226": [
+      {
+        "BAS_DD": "20241226",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2429.67",
+        "CMPPREVDD_IDX": "-10.85",
+        "FLUC_RT": "-0.44"
+      }
+    ],
+    "20250102": [
+      {
+        "BAS_DD": "20250102",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2398.94",
+        "CMPPREVDD_IDX": "-0.55",
+        "FLUC_RT": "-0.02"
+      }
+    ],
+    "20250131": [
+      {
+        "BAS_DD": "20250131",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2517.37",
+        "CMPPREVDD_IDX": "-19.43",
+        "FLUC_RT": "-0.77"
+      }
+    ],
+    "20250304": [
+      {
+        "BAS_DD": "20250304",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2528.92",
+        "CMPPREVDD_IDX": "-3.86",
+        "FLUC_RT": "-0.15"
+      }
+    ],
+    "20250502": [
+      {
+        "BAS_DD": "20250502",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2559.79",
+        "CMPPREVDD_IDX": "3.18",
+        "FLUC_RT": "0.12"
+      }
+    ],
+    "20250507": [
+      {
+        "BAS_DD": "20250507",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2573.80",
+        "CMPPREVDD_IDX": "14.01",
+        "FLUC_RT": "0.55"
+      }
+    ],
+    "20250604": [
+      {
+        "BAS_DD": "20250604",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2770.84",
+        "CMPPREVDD_IDX": "71.87",
+        "FLUC_RT": "2.66"
+      }
+    ],
+    "20250609": [
+      {
+        "BAS_DD": "20250609",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "2855.77",
+        "CMPPREVDD_IDX": "43.72",
+        "FLUC_RT": "1.55"
+      }
+    ],
+    "20250818": [
+      {
+        "BAS_DD": "20250818",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "3177.28",
+        "CMPPREVDD_IDX": "-48.38",
+        "FLUC_RT": "-1.50"
+      }
+    ],
+    "20251010": [
+      {
+        "BAS_DD": "20251010",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "3610.60",
+        "CMPPREVDD_IDX": "61.39",
+        "FLUC_RT": "1.73"
+      }
+    ],
+    "20251226": [
+      {
+        "BAS_DD": "20251226",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "4129.68",
+        "CMPPREVDD_IDX": "21.06",
+        "FLUC_RT": "0.51"
+      }
+    ],
+    "20260102": [
+      {
+        "BAS_DD": "20260102",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "4309.63",
+        "CMPPREVDD_IDX": "95.46",
+        "FLUC_RT": "2.27"
+      }
+    ],
+    "20260219": [
+      {
+        "BAS_DD": "20260219",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "5677.25",
+        "CMPPREVDD_IDX": "170.24",
+        "FLUC_RT": "3.09"
+      }
+    ],
+    "20260303": [
+      {
+        "BAS_DD": "20260303",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "5791.91",
+        "CMPPREVDD_IDX": "-452.22",
+        "FLUC_RT": "-7.24"
+      }
+    ],
+    "20260504": [
+      {
+        "BAS_DD": "20260504",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "6936.99",
+        "CMPPREVDD_IDX": "338.12",
+        "FLUC_RT": "5.12"
+      }
+    ],
+    "20260506": [
+      {
+        "BAS_DD": "20260506",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "7384.56",
+        "CMPPREVDD_IDX": "447.57",
+        "FLUC_RT": "6.45"
+      }
+    ],
+    "20260526": [
+      {
+        "BAS_DD": "20260526",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "8047.51",
+        "CMPPREVDD_IDX": "199.80",
+        "FLUC_RT": "2.55"
+      }
+    ],
+    "20260604": [
+      {
+        "BAS_DD": "20260604",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "8639.41",
+        "CMPPREVDD_IDX": "-162.08",
+        "FLUC_RT": "-1.84"
+      }
+    ],
+    "20260720": [
+      {
+        "BAS_DD": "20260720",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "6516.27",
+        "CMPPREVDD_IDX": "-304.33",
+        "FLUC_RT": "-4.46"
+      }
+    ],
+    "20260803": [
+      {
+        "BAS_DD": "20260803",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "6257.45",
+        "CMPPREVDD_IDX": "-338.00",
+        "FLUC_RT": "-5.12"
+      }
+    ],
+    "20260804": [
+      {
+        "BAS_DD": "20260804",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "6358.95",
+        "CMPPREVDD_IDX": "101.50",
+        "FLUC_RT": "1.62"
+      }
+    ],
+    "20260818": [
+      {
+        "BAS_DD": "20260818",
+        "IDX_CLSS": "KOSPI",
+        "IDX_NM": "코스피",
+        "CLSPRC_IDX": "6869.83",
+        "CMPPREVDD_IDX": "-108.11",
+        "FLUC_RT": "-1.55"
+      }
+    ]
+  }
+}
