@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import csv
 import os
+import shutil
 import sys
 import tempfile
 from pathlib import Path
@@ -145,8 +146,27 @@ def _ensure_coverage(date: str) -> None:
             )
 
         # 여기까지 왔으면 둘 다 검증됐다 — 이제부터만 실제 경로를 건드린다.
+        # 두 파일 교체는 진짜 원자적일 수 없다(os.replace는 파일 단위). 첫 교체
+        # 성공 뒤 둘째가 실패하면 listed만 갱신돼 두 파일이 어긋난다(2026-09-30
+        # Codex 지적). → 첫 교체 전에 원본 listed를 백업하고, 둘째가 실패하면
+        # 첫 교체를 되돌려 "둘 다 반영 or 둘 다 원상복구"를 보장한다.
+        # 프로세스가 두 교체 사이에서 강제종료되는 극히 드문 창(listed만 앞선
+        # 상태)은 남지만, 자동 복구된다: 다음 확장 때 _current_coverage_end()가
+        # nav_daily(뒤처진 날짜)를 읽어 재빌드를 유발하고, build_listed/build_nav가
+        # 두 파일을 START부터 통째로 다시 만들어 os.replace로 함께 반영한다.
+        # 그 사이 get_live_nav_v2가 호출돼도 nav_daily에 그 날짜가 없어
+        # NavDataUnavailable로 안전하게 실패한다(잘못된 값 저장 없음).
+        bak_listed = None
+        if LISTED_CSV.exists():
+            bak_listed = Path(tmp) / "listed_rollback.csv"
+            shutil.copy2(LISTED_CSV, bak_listed)
         os.replace(tmp_listed, LISTED_CSV)
-        os.replace(tmp_nav, NAV_DAILY)
+        try:
+            os.replace(tmp_nav, NAV_DAILY)
+        except Exception:
+            if bak_listed is not None:
+                os.replace(bak_listed, LISTED_CSV)  # 첫 교체 롤백
+            raise
     logger.info(f"확장 완료 → {date} (listed_holdings_daily.csv / nav_daily.csv 둘 다 반영)")
 
 
