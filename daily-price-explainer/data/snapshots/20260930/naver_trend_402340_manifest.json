@@ -1,0 +1,35 @@
+{
+  "source_url": "https://m.stock.naver.com/api/stock/402340/trend",
+  "captured_at_utc": "2026-09-30T01:50:28.877003+00:00",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "ticker": "402340",
+  "row_count": 10,
+  "dates": [
+    "20260929",
+    "20260928",
+    "20260923",
+    "20260922",
+    "20260921",
+    "20260918",
+    "20260917",
+    "20260916",
+    "20260915",
+    "20260914"
+  ],
+  "raw_file": "naver_trend_402340.json",
+  "raw_sha256": "03897914ebe538672c72069ea51c3a671b5217010dda68ed2ea14ef495b3526a",
+  "purpose": "Preserve transient investor net-share data before the provider rolling window drops historical dates. No conversion or factor_log changes have been applied.",
+  "api_fields": [
+    "itemCode",
+    "bizdate",
+    "foreignerPureBuyQuant",
+    "foreignerHoldRatio",
+    "organPureBuyQuant",
+    "individualPureBuyQuant",
+    "closePrice",
+    "compareToPreviousClosePrice",
+    "compareToPreviousPrice",
+    "accumulatedTradingVolume"
+  ]
+}
