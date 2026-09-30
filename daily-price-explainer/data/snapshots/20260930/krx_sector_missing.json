@@ -1,0 +1,1385 @@
+{
+  "source": "KRX Open API",
+  "endpoint": "etp/etf_bydd_trd",
+  "column": "sector_semiconductor",
+  "rows": {
+    "20220103": [
+      {
+        "BAS_DD": "20220103",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "40005",
+        "CMPPREVDD_PRC": "300",
+        "FLUC_RT": "0.76"
+      },
+      {
+        "BAS_DD": "20220103",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "41200",
+        "CMPPREVDD_PRC": "470",
+        "FLUC_RT": "1.15"
+      },
+      {
+        "BAS_DD": "20220103",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "10645",
+        "CMPPREVDD_PRC": "320",
+        "FLUC_RT": "3.10"
+      }
+    ],
+    "20220203": [
+      {
+        "BAS_DD": "20220203",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "36375",
+        "CMPPREVDD_PRC": "60",
+        "FLUC_RT": "0.17"
+      },
+      {
+        "BAS_DD": "20220203",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "37385",
+        "CMPPREVDD_PRC": "75",
+        "FLUC_RT": "0.20"
+      },
+      {
+        "BAS_DD": "20220203",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9640",
+        "CMPPREVDD_PRC": "25",
+        "FLUC_RT": "0.26"
+      }
+    ],
+    "20220302": [
+      {
+        "BAS_DD": "20220302",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "35660",
+        "CMPPREVDD_PRC": "345",
+        "FLUC_RT": "0.98"
+      },
+      {
+        "BAS_DD": "20220302",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "36630",
+        "CMPPREVDD_PRC": "460",
+        "FLUC_RT": "1.27"
+      },
+      {
+        "BAS_DD": "20220302",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "10155",
+        "CMPPREVDD_PRC": "10",
+        "FLUC_RT": "0.10"
+      }
+    ],
+    "20220310": [
+      {
+        "BAS_DD": "20220310",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "35025",
+        "CMPPREVDD_PRC": "870",
+        "FLUC_RT": "2.55"
+      },
+      {
+        "BAS_DD": "20220310",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "35920",
+        "CMPPREVDD_PRC": "735",
+        "FLUC_RT": "2.09"
+      },
+      {
+        "BAS_DD": "20220310",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "10595",
+        "CMPPREVDD_PRC": "290",
+        "FLUC_RT": "2.81"
+      }
+    ],
+    "20220506": [
+      {
+        "BAS_DD": "20220506",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "34550",
+        "CMPPREVDD_PRC": "-765",
+        "FLUC_RT": "-2.17"
+      },
+      {
+        "BAS_DD": "20220506",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "35450",
+        "CMPPREVDD_PRC": "-825",
+        "FLUC_RT": "-2.27"
+      },
+      {
+        "BAS_DD": "20220506",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "8370",
+        "CMPPREVDD_PRC": "-50",
+        "FLUC_RT": "-0.59"
+      }
+    ],
+    "20220602": [
+      {
+        "BAS_DD": "20220602",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "34345",
+        "CMPPREVDD_PRC": "-135",
+        "FLUC_RT": "-0.39"
+      },
+      {
+        "BAS_DD": "20220602",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "35225",
+        "CMPPREVDD_PRC": "-175",
+        "FLUC_RT": "-0.49"
+      },
+      {
+        "BAS_DD": "20220602",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9465",
+        "CMPPREVDD_PRC": "150",
+        "FLUC_RT": "1.61"
+      }
+    ],
+    "20220607": [
+      {
+        "BAS_DD": "20220607",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "33455",
+        "CMPPREVDD_PRC": "-815",
+        "FLUC_RT": "-2.38"
+      },
+      {
+        "BAS_DD": "20220607",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "34210",
+        "CMPPREVDD_PRC": "-960",
+        "FLUC_RT": "-2.73"
+      },
+      {
+        "BAS_DD": "20220607",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9840",
+        "CMPPREVDD_PRC": "230",
+        "FLUC_RT": "2.39"
+      }
+    ],
+    "20220816": [
+      {
+        "BAS_DD": "20220816",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "28160",
+        "CMPPREVDD_PRC": "615",
+        "FLUC_RT": "2.23"
+      },
+      {
+        "BAS_DD": "20220816",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "28850",
+        "CMPPREVDD_PRC": "660",
+        "FLUC_RT": "2.34"
+      },
+      {
+        "BAS_DD": "20220816",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "10935",
+        "CMPPREVDD_PRC": "370",
+        "FLUC_RT": "3.50"
+      }
+    ],
+    "20220913": [
+      {
+        "BAS_DD": "20220913",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "26535",
+        "CMPPREVDD_PRC": "865",
+        "FLUC_RT": "3.37"
+      },
+      {
+        "BAS_DD": "20220913",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "27565",
+        "CMPPREVDD_PRC": "1345",
+        "FLUC_RT": "5.13"
+      },
+      {
+        "BAS_DD": "20220913",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "10610",
+        "CMPPREVDD_PRC": "-110",
+        "FLUC_RT": "-1.03"
+      }
+    ],
+    "20221004": [
+      {
+        "BAS_DD": "20221004",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "23500",
+        "CMPPREVDD_PRC": "1330",
+        "FLUC_RT": "6.00"
+      },
+      {
+        "BAS_DD": "20221004",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "24350",
+        "CMPPREVDD_PRC": "1385",
+        "FLUC_RT": "6.03"
+      },
+      {
+        "BAS_DD": "20221004",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9870",
+        "CMPPREVDD_PRC": "125",
+        "FLUC_RT": "1.28"
+      }
+    ],
+    "20221011": [
+      {
+        "BAS_DD": "20221011",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "23590",
+        "CMPPREVDD_PRC": "-675",
+        "FLUC_RT": "-2.78"
+      },
+      {
+        "BAS_DD": "20221011",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "24480",
+        "CMPPREVDD_PRC": "-755",
+        "FLUC_RT": "-2.99"
+      },
+      {
+        "BAS_DD": "20221011",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9505",
+        "CMPPREVDD_PRC": "-210",
+        "FLUC_RT": "-2.16"
+      }
+    ],
+    "20230102": [
+      {
+        "BAS_DD": "20230102",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "21870",
+        "CMPPREVDD_PRC": "-280",
+        "FLUC_RT": "-1.26"
+      },
+      {
+        "BAS_DD": "20230102",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "22650",
+        "CMPPREVDD_PRC": "-280",
+        "FLUC_RT": "-1.22"
+      },
+      {
+        "BAS_DD": "20230102",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "8245",
+        "CMPPREVDD_PRC": "85",
+        "FLUC_RT": "1.04"
+      }
+    ],
+    "20230125": [
+      {
+        "BAS_DD": "20230125",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "25355",
+        "CMPPREVDD_PRC": "945",
+        "FLUC_RT": "3.87"
+      },
+      {
+        "BAS_DD": "20230125",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "26315",
+        "CMPPREVDD_PRC": "960",
+        "FLUC_RT": "3.79"
+      },
+      {
+        "BAS_DD": "20230125",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9060",
+        "CMPPREVDD_PRC": "255",
+        "FLUC_RT": "2.90"
+      }
+    ],
+    "20230302": [
+      {
+        "BAS_DD": "20230302",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "25665",
+        "CMPPREVDD_PRC": "-125",
+        "FLUC_RT": "-0.48"
+      },
+      {
+        "BAS_DD": "20230302",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "26700",
+        "CMPPREVDD_PRC": "-170",
+        "FLUC_RT": "-0.63"
+      },
+      {
+        "BAS_DD": "20230302",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "8725",
+        "CMPPREVDD_PRC": "-70",
+        "FLUC_RT": "-0.80"
+      }
+    ],
+    "20230502": [
+      {
+        "BAS_DD": "20230502",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "27555",
+        "CMPPREVDD_PRC": "45",
+        "FLUC_RT": "0.16"
+      },
+      {
+        "BAS_DD": "20230502",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "28755",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00"
+      },
+      {
+        "BAS_DD": "20230502",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "8060",
+        "CMPPREVDD_PRC": "40",
+        "FLUC_RT": "0.50"
+      }
+    ],
+    "20230508": [
+      {
+        "BAS_DD": "20230508",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "27595",
+        "CMPPREVDD_PRC": "125",
+        "FLUC_RT": "0.46"
+      },
+      {
+        "BAS_DD": "20230508",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "28775",
+        "CMPPREVDD_PRC": "170",
+        "FLUC_RT": "0.59"
+      },
+      {
+        "BAS_DD": "20230508",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "7835",
+        "CMPPREVDD_PRC": "-140",
+        "FLUC_RT": "-1.76"
+      }
+    ],
+    "20230530": [
+      {
+        "BAS_DD": "20230530",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "30735",
+        "CMPPREVDD_PRC": "570",
+        "FLUC_RT": "1.89"
+      },
+      {
+        "BAS_DD": "20230530",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "31930",
+        "CMPPREVDD_PRC": "670",
+        "FLUC_RT": "2.14"
+      },
+      {
+        "BAS_DD": "20230530",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "7520",
+        "CMPPREVDD_PRC": "-340",
+        "FLUC_RT": "-4.33"
+      }
+    ],
+    "20230607": [
+      {
+        "BAS_DD": "20230607",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "30480",
+        "CMPPREVDD_PRC": "200",
+        "FLUC_RT": "0.66"
+      },
+      {
+        "BAS_DD": "20230607",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "31725",
+        "CMPPREVDD_PRC": "25",
+        "FLUC_RT": "0.08"
+      },
+      {
+        "BAS_DD": "20230607",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "7020",
+        "CMPPREVDD_PRC": "-145",
+        "FLUC_RT": "-2.02"
+      }
+    ],
+    "20230816": [
+      {
+        "BAS_DD": "20230816",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "32385",
+        "CMPPREVDD_PRC": "195",
+        "FLUC_RT": "0.61"
+      },
+      {
+        "BAS_DD": "20230816",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "33875",
+        "CMPPREVDD_PRC": "425",
+        "FLUC_RT": "1.27"
+      },
+      {
+        "BAS_DD": "20230816",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6630",
+        "CMPPREVDD_PRC": "-180",
+        "FLUC_RT": "-2.64"
+      }
+    ],
+    "20231004": [
+      {
+        "BAS_DD": "20231004",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "30830",
+        "CMPPREVDD_PRC": "-365",
+        "FLUC_RT": "-1.17"
+      },
+      {
+        "BAS_DD": "20231004",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "32125",
+        "CMPPREVDD_PRC": "-210",
+        "FLUC_RT": "-0.65"
+      },
+      {
+        "BAS_DD": "20231004",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6055",
+        "CMPPREVDD_PRC": "-165",
+        "FLUC_RT": "-2.65"
+      }
+    ],
+    "20231010": [
+      {
+        "BAS_DD": "20231010",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "30845",
+        "CMPPREVDD_PRC": "-470",
+        "FLUC_RT": "-1.50"
+      },
+      {
+        "BAS_DD": "20231010",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "32125",
+        "CMPPREVDD_PRC": "-380",
+        "FLUC_RT": "-1.17"
+      },
+      {
+        "BAS_DD": "20231010",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6130",
+        "CMPPREVDD_PRC": "-60",
+        "FLUC_RT": "-0.97"
+      }
+    ],
+    "20231226": [
+      {
+        "BAS_DD": "20231226",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "35645",
+        "CMPPREVDD_PRC": "-25",
+        "FLUC_RT": "-0.07"
+      },
+      {
+        "BAS_DD": "20231226",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "36940",
+        "CMPPREVDD_PRC": "-30",
+        "FLUC_RT": "-0.08"
+      },
+      {
+        "BAS_DD": "20231226",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5240",
+        "CMPPREVDD_PRC": "-60",
+        "FLUC_RT": "-1.13"
+      }
+    ],
+    "20240102": [
+      {
+        "BAS_DD": "20240102",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "36840",
+        "CMPPREVDD_PRC": "565",
+        "FLUC_RT": "1.56"
+      },
+      {
+        "BAS_DD": "20240102",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "38400",
+        "CMPPREVDD_PRC": "710",
+        "FLUC_RT": "1.88"
+      },
+      {
+        "BAS_DD": "20240102",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5520",
+        "CMPPREVDD_PRC": "-55",
+        "FLUC_RT": "-0.99"
+      }
+    ],
+    "20240213": [
+      {
+        "BAS_DD": "20240213",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "36640",
+        "CMPPREVDD_PRC": "1300",
+        "FLUC_RT": "3.68"
+      },
+      {
+        "BAS_DD": "20240213",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "38090",
+        "CMPPREVDD_PRC": "1315",
+        "FLUC_RT": "3.58"
+      },
+      {
+        "BAS_DD": "20240213",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5220",
+        "CMPPREVDD_PRC": "30",
+        "FLUC_RT": "0.58"
+      }
+    ],
+    "20240304": [
+      {
+        "BAS_DD": "20240304",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "38685",
+        "CMPPREVDD_PRC": "1605",
+        "FLUC_RT": "4.33"
+      },
+      {
+        "BAS_DD": "20240304",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "40205",
+        "CMPPREVDD_PRC": "1545",
+        "FLUC_RT": "4.00"
+      },
+      {
+        "BAS_DD": "20240304",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5620",
+        "CMPPREVDD_PRC": "110",
+        "FLUC_RT": "2.00"
+      }
+    ],
+    "20240411": [
+      {
+        "BAS_DD": "20240411",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "42940",
+        "CMPPREVDD_PRC": "680",
+        "FLUC_RT": "1.61"
+      },
+      {
+        "BAS_DD": "20240411",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "44750",
+        "CMPPREVDD_PRC": "770",
+        "FLUC_RT": "1.75"
+      },
+      {
+        "BAS_DD": "20240411",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5750",
+        "CMPPREVDD_PRC": "-15",
+        "FLUC_RT": "-0.26"
+      }
+    ],
+    "20240502": [
+      {
+        "BAS_DD": "20240502",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "40720",
+        "CMPPREVDD_PRC": "120",
+        "FLUC_RT": "0.30"
+      },
+      {
+        "BAS_DD": "20240502",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "42400",
+        "CMPPREVDD_PRC": "300",
+        "FLUC_RT": "0.71"
+      },
+      {
+        "BAS_DD": "20240502",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5770",
+        "CMPPREVDD_PRC": "15",
+        "FLUC_RT": "0.26"
+      }
+    ],
+    "20240507": [
+      {
+        "BAS_DD": "20240507",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "41835",
+        "CMPPREVDD_PRC": "1340",
+        "FLUC_RT": "3.31"
+      },
+      {
+        "BAS_DD": "20240507",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "43320",
+        "CMPPREVDD_PRC": "1320",
+        "FLUC_RT": "3.14"
+      },
+      {
+        "BAS_DD": "20240507",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5795",
+        "CMPPREVDD_PRC": "15",
+        "FLUC_RT": "0.26"
+      }
+    ],
+    "20240516": [
+      {
+        "BAS_DD": "20240516",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "41900",
+        "CMPPREVDD_PRC": "720",
+        "FLUC_RT": "1.75"
+      },
+      {
+        "BAS_DD": "20240516",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "43380",
+        "CMPPREVDD_PRC": "540",
+        "FLUC_RT": "1.26"
+      },
+      {
+        "BAS_DD": "20240516",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5705",
+        "CMPPREVDD_PRC": "-85",
+        "FLUC_RT": "-1.47"
+      }
+    ],
+    "20240607": [
+      {
+        "BAS_DD": "20240607",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "42565",
+        "CMPPREVDD_PRC": "970",
+        "FLUC_RT": "2.33"
+      },
+      {
+        "BAS_DD": "20240607",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "44070",
+        "CMPPREVDD_PRC": "935",
+        "FLUC_RT": "2.17"
+      },
+      {
+        "BAS_DD": "20240607",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5775",
+        "CMPPREVDD_PRC": "-180",
+        "FLUC_RT": "-3.02"
+      }
+    ],
+    "20240816": [
+      {
+        "BAS_DD": "20240816",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "38250",
+        "CMPPREVDD_PRC": "1640",
+        "FLUC_RT": "4.48"
+      },
+      {
+        "BAS_DD": "20240816",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "39660",
+        "CMPPREVDD_PRC": "1775",
+        "FLUC_RT": "4.69"
+      },
+      {
+        "BAS_DD": "20240816",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5480",
+        "CMPPREVDD_PRC": "5",
+        "FLUC_RT": "0.09"
+      }
+    ],
+    "20240919": [
+      {
+        "BAS_DD": "20240919",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "30595",
+        "CMPPREVDD_PRC": "-725",
+        "FLUC_RT": "-2.31"
+      },
+      {
+        "BAS_DD": "20240919",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "31630",
+        "CMPPREVDD_PRC": "-765",
+        "FLUC_RT": "-2.36"
+      },
+      {
+        "BAS_DD": "20240919",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5230",
+        "CMPPREVDD_PRC": "30",
+        "FLUC_RT": "0.58"
+      }
+    ],
+    "20241002": [
+      {
+        "BAS_DD": "20241002",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "32325",
+        "CMPPREVDD_PRC": "-370",
+        "FLUC_RT": "-1.13"
+      },
+      {
+        "BAS_DD": "20241002",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "33450",
+        "CMPPREVDD_PRC": "-340",
+        "FLUC_RT": "-1.01"
+      },
+      {
+        "BAS_DD": "20241002",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6635",
+        "CMPPREVDD_PRC": "395",
+        "FLUC_RT": "6.33"
+      }
+    ],
+    "20241004": [
+      {
+        "BAS_DD": "20241004",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "32620",
+        "CMPPREVDD_PRC": "295",
+        "FLUC_RT": "0.91"
+      },
+      {
+        "BAS_DD": "20241004",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "33765",
+        "CMPPREVDD_PRC": "315",
+        "FLUC_RT": "0.94"
+      },
+      {
+        "BAS_DD": "20241004",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6930",
+        "CMPPREVDD_PRC": "295",
+        "FLUC_RT": "4.45"
+      }
+    ],
+    "20241010": [
+      {
+        "BAS_DD": "20241010",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "32960",
+        "CMPPREVDD_PRC": "45",
+        "FLUC_RT": "0.14"
+      },
+      {
+        "BAS_DD": "20241010",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "34185",
+        "CMPPREVDD_PRC": "40",
+        "FLUC_RT": "0.12"
+      },
+      {
+        "BAS_DD": "20241010",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6475",
+        "CMPPREVDD_PRC": "-340",
+        "FLUC_RT": "-4.99"
+      }
+    ],
+    "20241226": [
+      {
+        "BAS_DD": "20241226",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "28630",
+        "CMPPREVDD_PRC": "-315",
+        "FLUC_RT": "-1.09"
+      },
+      {
+        "BAS_DD": "20241226",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "29480",
+        "CMPPREVDD_PRC": "-405",
+        "FLUC_RT": "-1.36"
+      },
+      {
+        "BAS_DD": "20241226",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6430",
+        "CMPPREVDD_PRC": "5",
+        "FLUC_RT": "0.08"
+      }
+    ],
+    "20250102": [
+      {
+        "BAS_DD": "20250102",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "29110",
+        "CMPPREVDD_PRC": "175",
+        "FLUC_RT": "0.60"
+      },
+      {
+        "BAS_DD": "20250102",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "30070",
+        "CMPPREVDD_PRC": "275",
+        "FLUC_RT": "0.92"
+      },
+      {
+        "BAS_DD": "20250102",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6115",
+        "CMPPREVDD_PRC": "-300",
+        "FLUC_RT": "-4.68"
+      }
+    ],
+    "20250131": [
+      {
+        "BAS_DD": "20250131",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "32495",
+        "CMPPREVDD_PRC": "-1910",
+        "FLUC_RT": "-5.55"
+      },
+      {
+        "BAS_DD": "20250131",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "33600",
+        "CMPPREVDD_PRC": "-2025",
+        "FLUC_RT": "-5.68"
+      },
+      {
+        "BAS_DD": "20250131",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5990",
+        "CMPPREVDD_PRC": "50",
+        "FLUC_RT": "0.84"
+      }
+    ],
+    "20250304": [
+      {
+        "BAS_DD": "20250304",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "31820",
+        "CMPPREVDD_PRC": "-385",
+        "FLUC_RT": "-1.20"
+      },
+      {
+        "BAS_DD": "20250304",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "32900",
+        "CMPPREVDD_PRC": "-425",
+        "FLUC_RT": "-1.28"
+      },
+      {
+        "BAS_DD": "20250304",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6165",
+        "CMPPREVDD_PRC": "5",
+        "FLUC_RT": "0.08"
+      }
+    ],
+    "20250502": [
+      {
+        "BAS_DD": "20250502",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "29700",
+        "CMPPREVDD_PRC": "435",
+        "FLUC_RT": "1.49"
+      },
+      {
+        "BAS_DD": "20250502",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "30895",
+        "CMPPREVDD_PRC": "510",
+        "FLUC_RT": "1.68"
+      },
+      {
+        "BAS_DD": "20250502",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5605",
+        "CMPPREVDD_PRC": "-35",
+        "FLUC_RT": "-0.62"
+      }
+    ],
+    "20250507": [
+      {
+        "BAS_DD": "20250507",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "30070",
+        "CMPPREVDD_PRC": "370",
+        "FLUC_RT": "1.25"
+      },
+      {
+        "BAS_DD": "20250507",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "31250",
+        "CMPPREVDD_PRC": "355",
+        "FLUC_RT": "1.15"
+      },
+      {
+        "BAS_DD": "20250507",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5565",
+        "CMPPREVDD_PRC": "-40",
+        "FLUC_RT": "-0.71"
+      }
+    ],
+    "20250604": [
+      {
+        "BAS_DD": "20250604",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "32195",
+        "CMPPREVDD_PRC": "975",
+        "FLUC_RT": "3.12"
+      },
+      {
+        "BAS_DD": "20250604",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "33535",
+        "CMPPREVDD_PRC": "1155",
+        "FLUC_RT": "3.57"
+      },
+      {
+        "BAS_DD": "20250604",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5310",
+        "CMPPREVDD_PRC": "40",
+        "FLUC_RT": "0.76"
+      }
+    ],
+    "20250609": [
+      {
+        "BAS_DD": "20250609",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "33430",
+        "CMPPREVDD_PRC": "360",
+        "FLUC_RT": "1.09"
+      },
+      {
+        "BAS_DD": "20250609",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "34800",
+        "CMPPREVDD_PRC": "340",
+        "FLUC_RT": "0.99"
+      },
+      {
+        "BAS_DD": "20250609",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "5325",
+        "CMPPREVDD_PRC": "20",
+        "FLUC_RT": "0.38"
+      }
+    ],
+    "20250818": [
+      {
+        "BAS_DD": "20250818",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "37240",
+        "CMPPREVDD_PRC": "-1140",
+        "FLUC_RT": "-2.97"
+      },
+      {
+        "BAS_DD": "20250818",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "38830",
+        "CMPPREVDD_PRC": "-1230",
+        "FLUC_RT": "-3.07"
+      },
+      {
+        "BAS_DD": "20250818",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "6035",
+        "CMPPREVDD_PRC": "165",
+        "FLUC_RT": "2.81"
+      }
+    ],
+    "20251010": [
+      {
+        "BAS_DD": "20251010",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "51995",
+        "CMPPREVDD_PRC": "2600",
+        "FLUC_RT": "5.26"
+      },
+      {
+        "BAS_DD": "20251010",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "54130",
+        "CMPPREVDD_PRC": "2955",
+        "FLUC_RT": "5.77"
+      },
+      {
+        "BAS_DD": "20251010",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "7615",
+        "CMPPREVDD_PRC": "-45",
+        "FLUC_RT": "-0.59"
+      }
+    ],
+    "20251226": [
+      {
+        "BAS_DD": "20251226",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "59525",
+        "CMPPREVDD_PRC": "1725",
+        "FLUC_RT": "2.98"
+      },
+      {
+        "BAS_DD": "20251226",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "62355",
+        "CMPPREVDD_PRC": "1775",
+        "FLUC_RT": "2.93"
+      },
+      {
+        "BAS_DD": "20251226",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "7985",
+        "CMPPREVDD_PRC": "185",
+        "FLUC_RT": "2.37"
+      }
+    ],
+    "20260102": [
+      {
+        "BAS_DD": "20260102",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "65480",
+        "CMPPREVDD_PRC": "4180",
+        "FLUC_RT": "6.82"
+      },
+      {
+        "BAS_DD": "20260102",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "68550",
+        "CMPPREVDD_PRC": "4510",
+        "FLUC_RT": "7.04"
+      },
+      {
+        "BAS_DD": "20260102",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "7750",
+        "CMPPREVDD_PRC": "35",
+        "FLUC_RT": "0.45"
+      }
+    ],
+    "20260219": [
+      {
+        "BAS_DD": "20260219",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "91585",
+        "CMPPREVDD_PRC": "2840",
+        "FLUC_RT": "3.20"
+      },
+      {
+        "BAS_DD": "20260219",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "95945",
+        "CMPPREVDD_PRC": "3005",
+        "FLUC_RT": "3.23"
+      },
+      {
+        "BAS_DD": "20260219",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "8740",
+        "CMPPREVDD_PRC": "5",
+        "FLUC_RT": "0.06"
+      }
+    ],
+    "20260303": [
+      {
+        "BAS_DD": "20260303",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "97715",
+        "CMPPREVDD_PRC": "-7685",
+        "FLUC_RT": "-7.29"
+      },
+      {
+        "BAS_DD": "20260303",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "103210",
+        "CMPPREVDD_PRC": "-7280",
+        "FLUC_RT": "-6.59"
+      },
+      {
+        "BAS_DD": "20260303",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9025",
+        "CMPPREVDD_PRC": "55",
+        "FLUC_RT": "0.61"
+      }
+    ],
+    "20260504": [
+      {
+        "BAS_DD": "20260504",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "130460",
+        "CMPPREVDD_PRC": "6610",
+        "FLUC_RT": "5.34"
+      },
+      {
+        "BAS_DD": "20260504",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "136155",
+        "CMPPREVDD_PRC": "6495",
+        "FLUC_RT": "5.01"
+      },
+      {
+        "BAS_DD": "20260504",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "8980",
+        "CMPPREVDD_PRC": "0",
+        "FLUC_RT": "0.00"
+      }
+    ],
+    "20260506": [
+      {
+        "BAS_DD": "20260506",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "140020",
+        "CMPPREVDD_PRC": "9560",
+        "FLUC_RT": "7.33"
+      },
+      {
+        "BAS_DD": "20260506",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "146300",
+        "CMPPREVDD_PRC": "10145",
+        "FLUC_RT": "7.45"
+      },
+      {
+        "BAS_DD": "20260506",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9025",
+        "CMPPREVDD_PRC": "45",
+        "FLUC_RT": "0.50"
+      }
+    ],
+    "20260526": [
+      {
+        "BAS_DD": "20260526",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "162660",
+        "CMPPREVDD_PRC": "7160",
+        "FLUC_RT": "4.60"
+      },
+      {
+        "BAS_DD": "20260526",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "168925",
+        "CMPPREVDD_PRC": "5765",
+        "FLUC_RT": "3.53"
+      },
+      {
+        "BAS_DD": "20260526",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9540",
+        "CMPPREVDD_PRC": "-125",
+        "FLUC_RT": "-1.29"
+      }
+    ],
+    "20260604": [
+      {
+        "BAS_DD": "20260604",
+        "ISU_CD": "091160",
+        "ISU_NM": "KODEX 반도체",
+        "TDD_CLSPRC": "168300",
+        "CMPPREVDD_PRC": "4425",
+        "FLUC_RT": "2.70"
+      },
+      {
+        "BAS_DD": "20260604",
+        "ISU_CD": "091230",
+        "ISU_NM": "TIGER 반도체",
+        "TDD_CLSPRC": "175600",
+        "CMPPREVDD_PRC": "2740",
+        "FLUC_RT": "1.59"
+      },
+      {
+        "BAS_DD": "20260604",
+        "ISU_CD": "396510",
+        "ISU_NM": "TIGER 차이나클린에너지SOLACTIVE",
+        "TDD_CLSPRC": "9390",
+        "CMPPREVDD_PRC": "-90",
+        "FLUC_RT": "-0.95"
+      }
+    ]
+  }
+}

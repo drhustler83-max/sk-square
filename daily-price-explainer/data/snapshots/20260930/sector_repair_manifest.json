@@ -1,0 +1,18 @@
+{
+  "column": "sector_semiconductor",
+  "source": "KRX Open API /etp/etf_bydd_trd",
+  "tickers": [
+    "091160",
+    "091230",
+    "396510"
+  ],
+  "calculation": "Each ETF return=round(100*change/(close-change),2); arithmetic mean rounded to 2 decimals",
+  "filled_historical_blank_rows": 53,
+  "source_snapshot_sha256": "968c49fd5bcdb4a71c6b44d0c3ca072e44c8fc1be1f5a8c39c683ff4eb5ed9e8",
+  "head_before_sha256": "d165567b0a84ba239ad65845f8af6af2f1a7d4a6eacf89e5481df59dfbddb294",
+  "staged_after_sha256": "40cac80470ff67f6131289055d3695eff2350b9b8553ecd04771bfe9bae17426",
+  "audit_before_past_missing": 53,
+  "audit_after_past_missing": 0,
+  "existing_values": "unchanged; separate historical source discrepancies remain",
+  "deferred_recent_rows": "20260917-20260929 remain unstaged"
+}
