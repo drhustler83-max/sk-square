@@ -1,0 +1,887 @@
+{
+  "source": "KRX Open API",
+  "dates": {
+    "20260915": {
+      "spot": {
+        "BAS_DD": "20260915",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1000000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1004000.00",
+          "ACC_TRDVOL": "19062"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1002000.00",
+          "ACC_TRDVOL": "102"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "3000.00",
+          "ACC_TRDVOL": "1"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260915",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260916": {
+      "spot": {
+        "BAS_DD": "20260916",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1020000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1012000.00",
+          "ACC_TRDVOL": "19164"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1025000.00",
+          "ACC_TRDVOL": "82"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "2000.00",
+          "ACC_TRDVOL": "2"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260916",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260917": {
+      "spot": {
+        "BAS_DD": "20260917",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1008000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1009000.00",
+          "ACC_TRDVOL": "19923"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1011000.00",
+          "ACC_TRDVOL": "302"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "2000.00",
+          "ACC_TRDVOL": "3"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260917",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260918": {
+      "spot": {
+        "BAS_DD": "20260918",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1079000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1080000.00",
+          "ACC_TRDVOL": "27045"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1078000.00",
+          "ACC_TRDVOL": "355"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260918",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260921": {
+      "spot": {
+        "BAS_DD": "20260921",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1127000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1127000.00",
+          "ACC_TRDVOL": "29897"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1128000.00",
+          "ACC_TRDVOL": "787"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "2000.00",
+          "ACC_TRDVOL": "1"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260921",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260922": {
+      "spot": {
+        "BAS_DD": "20260922",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1133000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1135000.00",
+          "ACC_TRDVOL": "30499"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1140000.00",
+          "ACC_TRDVOL": "316"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "3000.00",
+          "ACC_TRDVOL": "14"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260922",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260923": {
+      "spot": {
+        "BAS_DD": "20260923",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1190000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1184000.00",
+          "ACC_TRDVOL": "31571"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1188000.00",
+          "ACC_TRDVOL": "393"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "3000.00",
+          "ACC_TRDVOL": "2"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260923",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260928": {
+      "spot": {
+        "BAS_DD": "20260928",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1100000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1092000.00",
+          "ACC_TRDVOL": "34682"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1097000.00",
+          "ACC_TRDVOL": "238"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "3000.00",
+          "ACC_TRDVOL": "22"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260928",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    },
+    "20260929": {
+      "spot": {
+        "BAS_DD": "20260929",
+        "ISU_CD": "402340",
+        "ISU_NM": "SK스퀘어",
+        "TDD_CLSPRC": "1118000"
+      },
+      "contracts": [
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6A000",
+          "ISU_NM": "SK스퀘어   F 202610 ",
+          "TDD_CLSPRC": "1116000.00",
+          "ACC_TRDVOL": "32256"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6B000",
+          "ISU_NM": "SK스퀘어   F 202611 ",
+          "TDD_CLSPRC": "1120000.00",
+          "ACC_TRDVOL": "413"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE6C000",
+          "ISU_NM": "SK스퀘어   F 202612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE73000",
+          "ISU_NM": "SK스퀘어   F 202703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE76000",
+          "ISU_NM": "SK스퀘어   F 202706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "AFE79000",
+          "ISU_NM": "SK스퀘어   F 202709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6BS",
+          "ISU_NM": "SK스퀘어   SP 2610-2611 ",
+          "TDD_CLSPRC": "4000.00",
+          "ACC_TRDVOL": "2"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A6CS",
+          "ISU_NM": "SK스퀘어   SP 2610-2612 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A73S",
+          "ISU_NM": "SK스퀘어   SP 2610-2703 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A76S",
+          "ISU_NM": "SK스퀘어   SP 2610-2706 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        },
+        {
+          "BAS_DD": "20260929",
+          "PROD_NM": "SK스퀘어 선물",
+          "ISU_CD": "DFE6A79S",
+          "ISU_NM": "SK스퀘어   SP 2610-2709 ",
+          "TDD_CLSPRC": "",
+          "ACC_TRDVOL": "0"
+        }
+      ]
+    }
+  }
+}

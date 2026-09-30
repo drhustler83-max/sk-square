@@ -62,7 +62,8 @@ def capture(dates: tuple[str, ...] = DATES) -> dict:
 
 
 def plan(factor_path: Path, nav_path: Path, snapshot: dict,
-         dates: tuple[str, ...] = DATES, mode: str = "spread") -> tuple[bytes, bytes, dict]:
+         dates: tuple[str, ...] = DATES, mode: str = "spread",
+         spot_policy: str = "match_nav") -> tuple[bytes, bytes, dict]:
     if snapshot.get("source") != "KRX Open API" or set(snapshot.get("dates", {})) != set(dates):
         raise ValueError("Snapshot date/source mismatch")
     with nav_path.open(encoding="utf-8-sig", newline="") as file:
@@ -78,8 +79,13 @@ def plan(factor_path: Path, nav_path: Path, snapshot: dict,
         entry = snapshot["dates"][date]
         spot_row = entry["spot"]
         spot = float(spot_row["TDD_CLSPRC"].replace(",", ""))
-        if spot_row["BAS_DD"] != date or spot <= 0 or spot != float(nav[date]["skq_close"]):
+        nav_close = float(nav[date]["skq_close"])
+        if spot_row["BAS_DD"] != date or spot <= 0:
+            raise ValueError(f"Bad KRX spot on {date}")
+        if spot_policy == "match_nav" and spot != nav_close:
             raise ValueError(f"KRX and NAV spot disagree on {date}")
+        if spot_policy not in ("match_nav", "krx"):
+            raise ValueError("Unknown spot policy")
         listed = rows[date]["fut_listed"]
         if mode == "spread" and listed not in ("1", "1.0"):
             raise ValueError(f"Expected listed futures on {date}")
@@ -106,6 +112,7 @@ def plan(factor_path: Path, nav_path: Path, snapshot: dict,
         if mode == "gap":
             values[date]["fut_listed"] = "1.0"
         chosen[date] = {"contract": near["ISU_NM"].strip(), "spot": spot,
+                        "saved_nav_close": nav_close,
                         "future_close": close, "future_volume": volume,
                         "previous_listed": listed,
                         "previous_volume": rows[date]["fut_volume"]}
@@ -146,6 +153,7 @@ def main() -> None:
     parser.add_argument("--start")
     parser.add_argument("--end")
     parser.add_argument("--expected-count", type=int)
+    parser.add_argument("--spot-policy", choices=("match_nav", "krx"), default="match_nav")
     args = parser.parse_args()
     if args.mode == "gap":
         if not args.start or not args.end:
@@ -165,7 +173,8 @@ def main() -> None:
         return
     original, patched, report = plan(args.factor_log, args.nav,
                                      json.loads(args.snapshot.read_text(encoding="utf-8")),
-                                     dates=dates, mode=args.mode)
+                                     dates=dates, mode=args.mode,
+                                     spot_policy=args.spot_policy)
     if args.expected_sha256 and report["before_sha256"] != args.expected_sha256:
         raise ValueError("Factor log changed since expected SHA-256")
     if args.apply:

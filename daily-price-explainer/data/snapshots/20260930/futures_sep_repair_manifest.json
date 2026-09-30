@@ -1,0 +1,32 @@
+{
+  "source": "KRX Open API /drv/eqsfu_stk_bydd_trd and /sto/stk_bydd_trd",
+  "spot_policy": "KRX cash close for KRX futures basis; saved NAV may use later NXT quote",
+  "selection": "Highest-volume F YYYYMM outright with positive close, exclude SP spread",
+  "historical_dates_committed": [
+    "20260915",
+    "20260916"
+  ],
+  "recent_dates_applied_only_to_worktree": [
+    "20260917",
+    "20260918",
+    "20260921",
+    "20260922",
+    "20260923",
+    "20260928",
+    "20260929"
+  ],
+  "changed_columns": [
+    "fut_listed",
+    "fut_basis",
+    "fut_basis_pct",
+    "fut_volume"
+  ],
+  "source_snapshot_sha256": "051f07f6649a522df1d81ce05da95d395c92fb06b2bad4bcd4fc3ca147819dac",
+  "head_before_sha256": "b897c4c6a07f1a7ea921c7d6e0ca4be935bffbaf33e374bc2991c10ebcd66920",
+  "staged_after_sha256": "f8737cefbf09627b1bb52b4a312a02cb7e0d5f14e3280119e128874dc1e3f136",
+  "audit_worktree_before_historical_missing": 2,
+  "audit_worktree_after_historical_missing": 0,
+  "audit_worktree_before_recent_gap": 7,
+  "audit_worktree_after_recent_gap": 0,
+  "deferred": "Seven recent data rows remain unstaged pending flow decisions; NAV Sep29 differs from pykrx close"
+}
