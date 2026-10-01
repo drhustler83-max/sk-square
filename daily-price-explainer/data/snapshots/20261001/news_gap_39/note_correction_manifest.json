@@ -1,0 +1,8 @@
+{
+  "reason": "화면 입력 표기를 수정시각으로 부른 notes 문구 수정. 기사 속성은 변경 없음.",
+  "file": "news_search_log_codex.jsonl",
+  "before_sha256": "9936c7a8de4366ca2813bbc0de8ade1b361744fb7bf3fe2ba0eca4d4a557b3c9",
+  "after_sha256": "942575df20ae0659240ebbfe68ef5dc70bd99757a482e34392ff9f9d5d7cbf6d",
+  "batch_before_sha256": "e80e57f303ea59dd540acb8a27aed0b1857c847011946242d018b79b37df5a12",
+  "batch_after_sha256": "0b1a958386d23a77db23246b93c0d1c2d58dbe7e77de37a89cf00c9488a2adc0"
+}

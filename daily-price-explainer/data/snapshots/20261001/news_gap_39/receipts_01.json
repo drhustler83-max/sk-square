@@ -1,0 +1,546 @@
+[
+  {
+    "url": "https://www.news1.kr/industry/general-industry/6248191",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, HBF 첫 표준 공개…AI 메모리 생태계 확대 - 뉴스1",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-04T09:16:05+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://byline.network/2026/08/4-465/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.yna.co.kr/view/AKR20260805045000008",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, 미국발 훈풍에 4%대 급등…코스닥도 나흘째 상승(종합) | 연합뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-05T09:42:02+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-05T09:44:27+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://byline.network/2026/08/5-448/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.mt.co.kr/tech/2026/08/05/2026080516330837302",
+    "body_hash": "1bf1660d80162add80b3455f8f9fec9f2fe507ef13b1567443e20c4dbf953e44",
+    "body_chars": 519,
+    "http_status": 200,
+    "page_title": "[컨콜]SKT, \"SK하이닉스 AI 투자법인 이사회 참여…그룹 밸류체인 시너지\" - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-05T16:38:03+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-05T16:58:52+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008692912",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 프리마켓서 또 하한가 출발…프리마켓 시초가 논란 지속",
+    "date_metadata": [
+      {
+        "property": "og:updated_time",
+        "content": "2026-08-06T10:23:29+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-06T10:23:29+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260807_0003740290",
+    "body_hash": "f49c4f5dd667deed3e56f6100bb3ff3198a9ea09d6e72e52cb9abd99a7e0424a",
+    "body_chars": 1330,
+    "http_status": 200,
+    "page_title": "코스피·코스닥, 상승 출발했지만 동반↓…外人 '팔자'에 반락(종합) :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-07T11:24:31+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.ytn.co.kr/_ln/0545_202608071651457215",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 1주에 '하한가' 난장판…프리마켓 최후의 결단 [지금이뉴스] | YTN",
+    "date_metadata": [
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-07T16:51:00+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-07T16:51:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.tokenpost.kr/news/market/388018",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 1주 하한가 체결, 프리마켓 구조 논란 | 토큰포스트",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "12B9218BDBA3BB65CFC04863ADD739B9"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-11T00:02:28.000Z"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260811_0003744747",
+    "body_hash": "756e27cb619e06ed1ce20925317516102ec8096082894c00a6e556031310ada0",
+    "body_chars": 1303,
+    "http_status": 200,
+    "page_title": "반도체 수출 호조에 '반전'…삼전 4.13%·SK하닉 0.35% 상승 마감[핫스탁](종합) :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-11T16:56:23+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20260812000711",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, '삼전닉스' 7%대 급등에 6600선 회복…매수 사이드카 발동",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-12T13:18:22+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-12T13:18:28+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsway.co.kr/news/view?ud=2026081309444252771",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "美 금리 인상 우려 완화에···삼성전자·SK하이닉스 장 초반 강세 - 뉴스웨이",
+    "date_metadata": [
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2026-08-13T09:55:29+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2026-08-13T09:55:29+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-13T09:55:29+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/2026081410096",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "땡큐 샌디스크!…美 물가 안도에 삼전닉스 등 반도체株 급등 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-14T09:27:25+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.yna.co.kr/view/AKR20260814115100017",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어, 2분기 영업익 19.2조 '역대 최대' | 연합뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-14T16:02:49+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-14T16:02:49+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2026/08/18/2026081808340638421",
+    "body_hash": "9289e75b964eea7c6cee6d6ebd284e5dd71aa57c49cb0150b6c926bb76f7de8a",
+    "body_chars": 945,
+    "http_status": 200,
+    "page_title": "\"SK하이닉스 주가 하락 반영\" SK스퀘어 목표주가↓-NH - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-18T08:50:07+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-18T08:50:13+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://news.bizwatch.co.kr/article/mobile/2026/08/18/0013",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "넥써쓰, 게임·AI 결제에 원화 스테이블코인 'KRWQ' 도입",
+    "date_metadata": [
+      {
+        "property": "dd:published_time",
+        "content": "2026-08-18T14:59:03+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "20260818145903"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-18T14:59:03+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2026/08/19/2026081909124582222",
+    "body_hash": "f1b2a89ca01bec274837d5cf0470255c9836b4238ac7079de38fa1d38e32ab31",
+    "body_chars": 663,
+    "http_status": 200,
+    "page_title": "美 금리 상승·반도체주 약세…SK스퀘어·삼성생명 급락 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-19T09:14:02+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-19T09:14:09+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260819_0003754647",
+    "body_hash": "a5ed8df1c5a275045139a6a208e3c3255d1e2e46e2129a2a0951da59ab46d6f4",
+    "body_chars": 1271,
+    "http_status": 200,
+    "page_title": "SK하이닉스, '40조원 규모' 자사주 취득·소각…\"3개년 주주환원 조기 시행\" :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-19T16:03:33+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/2026082009706",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 40조 자사주 매입 긍정적…추가 주주환원도 대기-하나 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-20T07:49:53+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260820_0003756345",
+    "body_hash": "1442a077d96dafeedf9e7b96bd757a8f432fc46f682be074e3f2a24dcec97df5",
+    "body_chars": 1936,
+    "http_status": 200,
+    "page_title": "반도체 '불기둥'에 코스피 6800선 회복…SK하이닉스 12% 폭등 :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-20T16:05:13+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://biz.chosun.com/it-science/ict/2026/08/21/M4MXO32XUVBIJDUEHOOGVLJK5I/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "2분기 랜섬웨어 피해 48% 급증…SK쉴더스 “공통 플랫폼·인프라 공격 확산\"  - 조선비즈",
+    "date_metadata": [
+      {
+        "property": "og:published_time",
+        "content": "2026-08-21T01:39:22.692Z"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-21T01:39:22.692Z"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-21T01:40:15.11Z"
+      },
+      {
+        "property": "article:published_time",
+        "name": "article:published_time",
+        "content": "2026-08-21T01:39:22.692Z"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20260824000767",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "믿었던 SK하이닉스도 약세…코스피 6700선 '턱걸이'",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-24T14:23:15+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-24T14:23:20+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://biz.chosun.com/stock/stock_general/2026/08/25/MQ4TEMZYGYZGCMJSGQZGMYRVME/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, 미국 반도체주 급락에 약세...삼성전자 4%, SK하이닉스 6% 하락 - 조선비즈",
+    "date_metadata": [
+      {
+        "property": "og:published_time",
+        "content": "2026-08-25T00:04:58.381Z"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-25T00:04:58.381Z"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-25T00:04:14Z"
+      },
+      {
+        "property": "article:published_time",
+        "name": "article:published_time",
+        "content": "2026-08-25T00:04:58.381Z"
+      }
+    ]
+  },
+  {
+    "url": "https://www.fnnews.com/news/202608251020437891",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 임단협 잠정합의안 25표차 부결…재협상 돌입(종합) - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-25T10:20:45+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-25T10:20:45+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2026-08-25T10:20:45+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2026-08-25T10:20:45+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://unse.mimint.co.kr/bbs/view/news/S1N11/5546992",
+    "body_hash": null,
+    "body_chars": 0,
+    "error": "ReadTimeout"
+  },
+  {
+    "url": "https://www.ytn.co.kr/_ln/0102_202608261614475294",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, 하락 출발 뒤 반등...삼전닉스 상승 마감 | YTN",
+    "date_metadata": [
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-26T16:14:00+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-26T16:14:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mimint.co.kr/bbs/view/news/S1N11/5551462",
+    "body_hash": null,
+    "body_chars": 0,
+    "error": "ReadTimeout"
+  },
+  {
+    "url": "https://v.daum.net/v/20260828010127887",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 美인디애나 HBM 공장 첫 삽…2029년 양산 돌입(종합)",
+    "date_metadata": [
+      {
+        "property": "og:regDate",
+        "content": "20260828010127"
+      }
+    ]
+  },
+  {
+    "url": "https://www.fnnews.com/news/202608281636588699",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[특징주] 삼전·닉스, 3∼4%대 하락 마감…잭슨홀 연설 경계감?(종합) - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-28T16:37:39+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-28T16:37:39+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2026-08-28T16:37:39+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2026-08-28T16:37:39+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.news2day.co.kr/article/20260831500087",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, 반도체주 급락에 6,600선 후퇴 …SK하이닉스 3.39% ↓",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "DCF8AE369C38DFBC15D991DAA10BAC73"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20260831000880",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[마감시황] 코스피, '삼전닉스' 자사주 매입에 6800선 회복",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-08-31T16:13:14+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-31T16:13:16+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankookilbo.com/news/article/A2026083116500001692",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 일본에 반도체 공장 짓나... 최태원 \"검토 끝나면 밝히겠다\"-경제ㅣ한국일보",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "D67AA3F13EDB5867E2AAD30E32629A10"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-08-31T18:02:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-08-31T18:15:00+09:00"
+      }
+    ]
+  }
+]

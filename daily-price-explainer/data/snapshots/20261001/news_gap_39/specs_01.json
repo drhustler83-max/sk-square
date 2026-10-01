@@ -1,0 +1,824 @@
+{
+  "articles": [
+    {
+      "url": "https://www.news1.kr/industry/general-industry/6248191",
+      "publisher": "뉴스1",
+      "published_at": "2026-08-04T09:16:05+09:00",
+      "title": "SK하이닉스, HBF 첫 표준 공개…AI 메모리 생태계 확대",
+      "entities": [
+        "SK하이닉스",
+        "샌디스크"
+      ],
+      "evidence_facts": [
+        "샌디스크와 HBF 표준을 공개해 AI 메모리 생태계 확장을 추진했다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": 0.45,
+      "materiality_score": 0.5,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "relevance_score": 0.8,
+      "confidence_score": 0.85
+    },
+    {
+      "url": "https://byline.network/2026/08/4-465/",
+      "publisher": "바이라인네트워크",
+      "published_at": "2026-08-04T18:11:00+09:00",
+      "title": "넥써쓰, 2분기 영업손실 53억원…원스토어 인수로 순익 흑자",
+      "entities": [
+        "넥써쓰",
+        "원스토어"
+      ],
+      "evidence_facts": [
+        "영업적자가 이어졌지만 원스토어 인수 회계효과로 순이익이 흑자였다.",
+        "회사는 인수 효과가 다음 분기 영업에 반영될 것으로 전망했다."
+      ],
+      "primary_subject": "portfolio_company",
+      "event_type": "earnings",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": 0,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 0,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.45,
+      "numeric_claims": [
+        {
+          "metric": "영업손실",
+          "value": 53,
+          "unit": "억원",
+          "period": "2026Q2"
+        },
+        {
+          "metric": "순이익",
+          "value": 81,
+          "unit": "억원",
+          "period": "2026Q2"
+        }
+      ]
+    },
+    {
+      "url": "https://www.yna.co.kr/view/AKR20260805045000008",
+      "publisher": "연합뉴스",
+      "published_at": "2026-08-05T09:42:02+09:00",
+      "title": "코스피, 미국발 훈풍에 4%대 급등…코스닥도 나흘째 상승(종합)",
+      "entities": [
+        "SK하이닉스",
+        "SK스퀘어"
+      ],
+      "evidence_facts": [
+        "미국 증시와 국내 대형 반도체주 수급을 함께 다룬 장중 시황이다.",
+        "당일 가격 결과를 방향 라벨에 사용하지 않았다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45,
+      "mechanisms": [
+        "macro",
+        "supply_demand",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://byline.network/2026/08/5-448/",
+      "publisher": "바이라인네트워크",
+      "published_at": "2026-08-05T14:47:00+09:00",
+      "title": "크래프톤, 신작 5종 게임스컴서 공개…어떤 작품?",
+      "entities": [
+        "크래프톤"
+      ],
+      "evidence_facts": [
+        "게임스컴에서 여러 신작의 시연 및 공개를 예고했다."
+      ],
+      "primary_subject": "portfolio_company",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.35,
+      "materiality_score": 0.15,
+      "uncertainty_score": 0.55,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.35,
+      "numeric_claims": [
+        {
+          "metric": "공개 신작 수",
+          "value": 5,
+          "unit": "종"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mt.co.kr/tech/2026/08/05/2026080516330837302",
+      "publisher": "머니투데이",
+      "published_at": "2026-08-05T16:38:03+09:00",
+      "title": "[컨콜]SKT, \"SK하이닉스 AI 투자법인 이사회 참여…그룹 밸류체인 시너지\"",
+      "entities": [
+        "SK텔레콤",
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "SK텔레콤이 SK하이닉스 AI 투자법인 이사회 참여와 사업 시너지를 설명했다.",
+        "분할 출자 방식에 따라 자금 부담이 크지 않다는 회사 입장이다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "portfolio_acquisition",
+      "event_stage": "follow_up",
+      "novelty_score": 0.4,
+      "sentiment_score": 0.3,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation",
+        "nav"
+      ],
+      "availability": "full_text",
+      "article_text_hash": "1bf1660d80162add80b3455f8f9fec9f2fe507ef13b1567443e20c4dbf953e44"
+    },
+    {
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008692912",
+      "publisher": "SBS",
+      "published_at": "2026-08-06T10:23:29+09:00",
+      "title": "SK하이닉스, 프리마켓서 또 하한가 출발…프리마켓 시초가 논란 지속",
+      "entities": [
+        "SK하이닉스",
+        "넥스트레이드"
+      ],
+      "evidence_facts": [
+        "NXT 프리마켓 소량 주문과 시초가 형성 문제를 다룬 후속 기사다.",
+        "정규장 기업가치 뉴스와 구별해 가격 방향은 중립으로 기록했다."
+      ],
+      "novelty_score": 0.2,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.5,
+      "mechanisms": [
+        "supply_demand"
+      ],
+      "duplicate_cluster_id": "cluster_20260807_nxt_opening_rules"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260807_0003740290",
+      "publisher": "뉴시스",
+      "published_at": "2026-08-07T11:24:31+09:00",
+      "title": "코스피·코스닥, 상승 출발했지만 동반↓…外人 '팔자'에 반락(종합)",
+      "entities": [
+        "SK하이닉스",
+        "SK스퀘어"
+      ],
+      "evidence_facts": [
+        "외국인 수급과 대형 반도체주를 함께 다룬 장중 시황이다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45,
+      "article_text_hash": "f49c4f5dd667deed3e56f6100bb3ff3198a9ea09d6e72e52cb9abd99a7e0424a"
+    },
+    {
+      "url": "https://www.ytn.co.kr/_ln/0545_202608071651457215",
+      "publisher": "YTN",
+      "published_at": "2026-08-07T16:51:00+09:00",
+      "title": "SK하이닉스 1주에 '하한가' 난장판…프리마켓 최후의 결단 [지금이뉴스]",
+      "entities": [
+        "SK하이닉스",
+        "넥스트레이드"
+      ],
+      "evidence_facts": [
+        "NXT가 시초가 왜곡 방지를 위해 임시 주문 제한과 VI 도입을 예고했다.",
+        "특정 체결가격 자체가 아니라 거래제도 개선 계획을 평가했다."
+      ],
+      "primary_subject": "regulation",
+      "event_type": "regulation",
+      "event_stage": "announcement",
+      "novelty_score": 0.75,
+      "sentiment_score": 0.2,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.3,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "supply_demand"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.65,
+      "duplicate_cluster_id": "cluster_20260807_nxt_opening_rules"
+    },
+    {
+      "url": "https://www.tokenpost.kr/news/market/388018",
+      "publisher": "토큰포스트",
+      "published_at": "2026-08-11T09:02:28+09:00",
+      "title": "SK하이닉스 1주 하한가 체결, 프리마켓 구조 논란",
+      "entities": [
+        "SK하이닉스",
+        "넥스트레이드"
+      ],
+      "evidence_facts": [
+        "7월 발생한 프리마켓 이상 체결을 뒤늦게 다룬 후속 보도다.",
+        "특정 주문자의 의도를 확정한 조사 결과는 확인되지 않는다."
+      ],
+      "relevance_score": 0.5,
+      "novelty_score": 0.05,
+      "uncertainty_score": 0.55,
+      "duplicate_cluster_id": "cluster_20260807_nxt_opening_rules",
+      "confidence_score": 0.8
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260811_0003744747",
+      "publisher": "뉴시스",
+      "published_at": "2026-08-11T15:40:17+09:00",
+      "title": "반도체 수출 호조에 '반전'…삼전 4.13%·SK하닉 0.35% 상승 마감[핫스탁](종합)",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "반도체 수출 자료와 당일 종목 가격을 연결한 마감 후 시황이다."
+      ],
+      "primary_subject": "semiconductor_sector",
+      "relevance_score": 0.5,
+      "article_text_hash": "756e27cb619e06ed1ce20925317516102ec8096082894c00a6e556031310ada0"
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20260812000711",
+      "publisher": "뉴스핌",
+      "published_at": "2026-08-12T13:18:22+09:00",
+      "title": "코스피, '삼전닉스' 7%대 급등에 6600선 회복…매수 사이드카 발동",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "반도체주 수급과 프로그램 매매 조치를 다룬 장중 시황이다."
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45
+    },
+    {
+      "url": "https://www.newsway.co.kr/news/view?ud=2026081309444252771",
+      "publisher": "뉴스웨이",
+      "published_at": "2026-08-13T09:55:29+09:00",
+      "title": "美 금리 인상 우려 완화에···삼성전자·SK하이닉스 장 초반 강세",
+      "entities": [
+        "SK하이닉스",
+        "SK스퀘어"
+      ],
+      "evidence_facts": [
+        "미국 금리 기대를 배경으로 종목별 장 초반 가격을 설명했다."
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/2026081410096",
+      "publisher": "한국경제",
+      "published_at": "2026-08-14T09:27:25+09:00",
+      "title": "\"땡큐 샌디스크!\"…美 물가 안도에 삼전닉스 등 반도체株 급등",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "미국 물가와 금리 전망을 배경으로 반도체주 장중 흐름을 보도했다."
+      ],
+      "primary_subject": "semiconductor_sector",
+      "relevance_score": 0.5,
+      "novelty_score": 0.15,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.yna.co.kr/view/AKR20260814115100017",
+      "publisher": "연합뉴스",
+      "published_at": "2026-08-14T16:02:49+09:00",
+      "title": "SK스퀘어, 2분기 영업익 19.2조 '역대 최대'",
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "SK하이닉스 지분법 효과에 힘입어 분기 이익이 역대 최대였다.",
+        "AI·반도체 중심 투자와 추가 자사주 매입 계획을 설명했다.",
+        "시장 예상치가 제시되지 않아 실적 서프라이즈는 미확정으로 두었다."
+      ],
+      "primary_subject": "sk_square",
+      "event_type": "earnings",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": 0.6,
+      "materiality_score": 0.7,
+      "uncertainty_score": 0.2,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "capital_allocation"
+      ],
+      "availability": "full_text",
+      "relevance_score": 1,
+      "confidence_score": 0.95,
+      "numeric_claims": [
+        {
+          "metric": "영업이익",
+          "value": 192354,
+          "unit": "억원",
+          "period": "2026Q2"
+        },
+        {
+          "metric": "추가 자사주 매입 계획",
+          "value": 700,
+          "unit": "억원",
+          "period": "2027년 초까지"
+        }
+      ],
+      "duplicate_cluster_id": "cluster_20260814_sk_square_q2"
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2026/08/18/2026081808340638421",
+      "publisher": "머니투데이",
+      "published_at": "2026-08-18T08:50:07+09:00",
+      "title": "\"SK하이닉스 주가 하락 반영\" SK스퀘어 목표주가↓-NH",
+      "entities": [
+        "SK스퀘어",
+        "NH투자증권"
+      ],
+      "evidence_facts": [
+        "NH투자증권은 매수 의견을 유지하면서 목표주가와 적용 할인율을 조정했다.",
+        "긍정적 자산 성장 전망과 부정적 평가 가정 변경이 함께 제시됐다."
+      ],
+      "primary_subject": "sk_square",
+      "event_type": "analyst_opinion",
+      "event_stage": "announcement",
+      "novelty_score": 0.55,
+      "sentiment_score": -0.15,
+      "materiality_score": 0.45,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "ex_ante_impact_direction": -1,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "nav",
+        "nav_discount",
+        "valuation_multiple"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.95,
+      "confidence_score": 0.95,
+      "numeric_claims": [
+        {
+          "metric": "변경 목표주가",
+          "value": 2280000,
+          "unit": "원"
+        },
+        {
+          "metric": "적용 NAV 할인율",
+          "value": 40,
+          "unit": "%"
+        }
+      ],
+      "article_text_hash": "9289e75b964eea7c6cee6d6ebd284e5dd71aa57c49cb0150b6c926bb76f7de8a"
+    },
+    {
+      "url": "https://news.bizwatch.co.kr/article/mobile/2026/08/18/0013",
+      "publisher": "비즈워치",
+      "published_at": "2026-08-18T14:59:03+09:00",
+      "title": "넥써쓰, 게임·AI 결제에 원화 스테이블코인 'KRWQ' 도입",
+      "entities": [
+        "넥써쓰",
+        "원스토어"
+      ],
+      "evidence_facts": [
+        "원화 스테이블코인을 게임·AI 결제에 연계하기 위한 업무협약을 발표했다.",
+        "협약과 향후 활용 계획이며 매출 실현이 확정된 것은 아니다."
+      ],
+      "primary_subject": "portfolio_company",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.25,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.4
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2026/08/19/2026081909124582222",
+      "publisher": "머니투데이",
+      "published_at": "2026-08-19T09:14:02+09:00",
+      "title": "美 금리 상승·반도체주 약세…SK스퀘어·삼성생명 급락",
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "미국 금리와 업종 흐름을 배경으로 SK스퀘어 장중 가격을 다룬 시황이다."
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 0.65,
+      "mechanisms": [
+        "macro",
+        "sector_beta",
+        "supply_demand"
+      ],
+      "article_text_hash": "f1b2a89ca01bec274837d5cf0470255c9836b4238ac7079de38fa1d38e32ab31"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260819_0003754647",
+      "publisher": "뉴시스",
+      "published_at": "2026-08-19T16:03:33+09:00",
+      "title": "SK하이닉스, '40조원 규모' 자사주 취득·소각…\"3개년 주주환원 조기 시행\"",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "이사회가 대규모 자사주 취득 후 소각을 결의했다.",
+        "기존 3개년 환원 정책을 앞당겨 시행한다는 회사 설명이다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "capital_return",
+      "event_stage": "announcement",
+      "novelty_score": 0.95,
+      "sentiment_score": 0.8,
+      "materiality_score": 0.85,
+      "uncertainty_score": 0.15,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation",
+        "supply_demand"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.9,
+      "confidence_score": 0.95,
+      "numeric_claims": [
+        {
+          "metric": "자사주 취득 예정 수량",
+          "value": 24070000,
+          "unit": "주",
+          "period": "2026-08-20~2026-11-19"
+        }
+      ],
+      "duplicate_cluster_id": "cluster_20260819_hynix_buyback",
+      "article_text_hash": "a5ed8df1c5a275045139a6a208e3c3255d1e2e46e2129a2a0951da59ab46d6f4"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2026082009706",
+      "publisher": "한국경제",
+      "published_at": "2026-08-20T07:49:53+09:00",
+      "title": "\"SK하이닉스, 40조 자사주 매입 긍정적…추가 주주환원도 대기\"-하나",
+      "entities": [
+        "SK하이닉스",
+        "하나증권"
+      ],
+      "evidence_facts": [
+        "하나증권이 자사주 매입 규모를 기존 예상보다 크다고 평가했다.",
+        "추가 환원 가능성은 증권사 전망이며 확정된 공시가 아니다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0.7,
+      "materiality_score": 0.55,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "relevance_score": 0.8,
+      "surprise_direction": "positive",
+      "surprise_magnitude": 0.4,
+      "duplicate_cluster_id": "cluster_20260819_hynix_buyback"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260820_0003756345",
+      "publisher": "뉴시스",
+      "published_at": "2026-08-20T16:05:13+09:00",
+      "title": "반도체 '불기둥'에 코스피 6800선 회복…SK하이닉스 12% 폭등",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "자사주 매입 발표와 반도체주 당일 흐름을 연결한 후속 마감 시황이다."
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45,
+      "duplicate_cluster_id": "cluster_20260819_hynix_buyback",
+      "article_text_hash": "1442a077d96dafeedf9e7b96bd757a8f432fc46f682be074e3f2a24dcec97df5"
+    },
+    {
+      "url": "https://biz.chosun.com/it-science/ict/2026/08/21/M4MXO32XUVBIJDUEHOOGVLJK5I/",
+      "publisher": "조선비즈",
+      "published_at": "2026-08-21T10:39:22.692000+09:00",
+      "title": "2분기 랜섬웨어 피해 48% 급증…SK쉴더스 \"공통 플랫폼·인프라 공격 확산\"",
+      "entities": [
+        "SK쉴더스"
+      ],
+      "evidence_facts": [
+        "SK쉴더스가 랜섬웨어 산업 위험 분석을 발표했다.",
+        "SK쉴더스 자체가 피해를 입었다는 보도와는 구별된다."
+      ],
+      "primary_subject": "portfolio_company",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "relevance_score": 0.2,
+      "novelty_score": 0.45,
+      "materiality_score": 0.1,
+      "uncertainty_score": 0.25,
+      "impact_horizon": "unknown",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20260824000767",
+      "publisher": "뉴스핌",
+      "published_at": "2026-08-24T14:23:15+09:00",
+      "title": "믿었던 SK하이닉스도 약세…코스피 6700선 '턱걸이'",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "반도체 대형주와 지수의 장중 가격·수급을 보도했다."
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.5
+    },
+    {
+      "url": "https://biz.chosun.com/stock/stock_general/2026/08/25/MQ4TEMZYGYZGCMJSGQZGMYRVME/",
+      "publisher": "조선비즈",
+      "published_at": "2026-08-25T09:04:58.381000+09:00",
+      "title": "코스피, 미국 반도체주 급락에 약세...삼성전자 4%, SK하이닉스 6% 하락",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "미국 반도체 업종 흐름을 배경으로 국내 개장 시황을 다뤘다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "macro_market",
+      "relevance_score": 0.5,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.fnnews.com/news/202608251020437891",
+      "publisher": "연합뉴스(파이낸셜뉴스 재전재)",
+      "published_at": "2026-08-25T10:20:45+09:00",
+      "title": "SK하이닉스 임단협 잠정합의안 25표차 부결…재협상 돌입(종합)",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "노조 투표에서 임단협 잠정합의안이 부결돼 재협상이 필요해졌다.",
+        "가격 결과 대신 협상 지연의 사업 불확실성을 반영했다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": -0.3,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "ex_ante_impact_direction": -1,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "cash_flow"
+      ],
+      "relevance_score": 0.65
+    },
+    {
+      "url": "https://unse.mimint.co.kr/bbs/view/news/S1N11/5546992",
+      "publisher": "민심뉴스(마이민트 재전재)",
+      "published_at": "2026-08-25T16:13:00+09:00",
+      "title": "SK스퀘어, 1.58% 하락 마감…외국인·기관 수급 엇갈림 (402340, SK스퀘어, 주가, 외국인, 기관, 2026년 8월 25일 화요일)",
+      "entities": [
+        "SK스퀘어"
+      ],
+      "evidence_facts": [
+        "가격과 정형 재무지표를 나열한 저품질 시황이다.",
+        "6월 기준 실적을 예상 실적처럼 서술해 신규 전망 근거로 사용하지 않았다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_square",
+      "relevance_score": 0.4,
+      "novelty_score": 0.03,
+      "materiality_score": 0.05,
+      "uncertainty_score": 0.6,
+      "confidence_score": 0.95
+    },
+    {
+      "url": "https://www.ytn.co.kr/_ln/0102_202608261614475294",
+      "publisher": "YTN",
+      "published_at": "2026-08-26T16:14:00+09:00",
+      "title": "코스피, 하락 출발 뒤 반등...삼전닉스 상승 마감",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "미국 반도체 업종과 국내 종목별 마감 가격·수급을 정리한 짧은 시황이다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4
+    },
+    {
+      "url": "https://www.mimint.co.kr/bbs/view/news/S1N11/5551462",
+      "publisher": "민심뉴스(마이민트 재전재)",
+      "published_at": "2026-08-27T16:45:32+09:00",
+      "title": "SK스퀘어, 1.23% 상승 마감…외국인·기관 매도세 엇갈림 (+402340, 주가, 외국인, 기관, 2026년 8월 27일 목요일)",
+      "entities": [
+        "SK스퀘어"
+      ],
+      "evidence_facts": [
+        "정형 지표와 가격을 반복한 저품질 후속 시황이다.",
+        "새로운 기업 사건을 확인할 근거는 부족하다."
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 0.4,
+      "novelty_score": 0.03,
+      "materiality_score": 0.05,
+      "uncertainty_score": 0.5,
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://v.daum.net/v/20260828010127887",
+      "publisher": "뉴스1(다음 재전재)",
+      "published_at": "2026-08-28T01:01:00+09:00",
+      "title": "SK하이닉스, 美인디애나 HBM 공장 첫 삽…2029년 양산 돌입(종합)",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "인디애나 HBM 후공정 생산기지 기공식과 퍼듀대 연구협력을 보도했다.",
+        "2029년 하반기 양산은 회사 계획이며 완료된 생산 실적이 아니다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "execution",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.55,
+      "materiality_score": 0.65,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "capital_allocation"
+      ],
+      "availability": "full_text",
+      "relevance_score": 0.8,
+      "numeric_claims": [
+        {
+          "metric": "투자 예정액 하한",
+          "value": 40,
+          "unit": "억달러",
+          "period": "인디애나 공장 건설"
+        }
+      ]
+    },
+    {
+      "url": "https://www.fnnews.com/news/202608281636588699",
+      "publisher": "연합뉴스(파이낸셜뉴스 재전재)",
+      "published_at": "2026-08-28T16:37:39+09:00",
+      "title": "[특징주] 삼전·닉스, 3∼4%대 하락 마감…잭슨홀 연설 경계감?(종합)",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "배당락과 해외 업종 흐름을 배경으로 당일 마감을 설명한 시황이다."
+      ],
+      "relevance_score": 0.5
+    },
+    {
+      "url": "https://www.news2day.co.kr/article/20260831500087",
+      "publisher": "뉴스투데이",
+      "published_at": "2026-08-31T10:23:00+09:00",
+      "title": "코스피, 반도체주 급락에 6,600선 후퇴 …SK하이닉스 3.39% ↓",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "미국 반도체 관련 발언과 금리 불확실성을 배경으로 국내 장중 흐름을 보도했다."
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20260831000880",
+      "publisher": "뉴스핌",
+      "published_at": "2026-08-31T16:13:14+09:00",
+      "title": "[마감시황] 코스피, '삼전닉스' 자사주 매입에 6800선 회복",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "기존 자사주 매입과 대형 반도체주 수급을 연결한 마감 시황이다."
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.45
+    },
+    {
+      "url": "https://www.hankookilbo.com/news/article/A2026083116500001692",
+      "publisher": "한국일보",
+      "published_at": "2026-08-31T18:02:00+09:00",
+      "title": "SK하이닉스, 일본에 반도체 공장 짓나... 최태원 \"검토 끝나면 밝히겠다\"",
+      "entities": [
+        "SK하이닉스"
+      ],
+      "evidence_facts": [
+        "일본 생산거점 검토 가능성과 회장 발언을 보도했다.",
+        "검토 단계여서 투자 확정으로 기록하지 않았다."
+      ],
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "expectation",
+      "novelty_score": 0.5,
+      "sentiment_score": 0.15,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.8,
+      "forward_looking": true,
+      "ex_ante_impact_direction": 1,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "relevance_score": 0.7
+    }
+  ],
+  "notes": {
+    "20260804": "일반 웹 날짜별·보유자산 보완검색. HBF 기사는 HTML 최초 발행시각 09:16:05 확인. 가격 결과로 방향 판단하지 않음.",
+    "20260805": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260806": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음. IonQ 실적 원문은 날짜만 확인되고 정확한 공개시각 미확인이라 이번 귀속에서 제외.",
+    "20260807": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260810": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260811": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260812": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음. 뉴시스 마감 기사는 페이지 최초 등록 15:40:17을 사용; HTML 메타에는 수정본 시각 16:56:23이 표기됨. 둘 다 8/12 귀속.",
+    "20260813": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260814": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260818": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260819": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260820": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260821": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260824": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260825": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260826": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음. 민심뉴스 재전재는 실적·예상치 혼용을 명시한 저품질 시황.",
+    "20260827": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260828": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음. 민심뉴스 시황은 신규 사건 근거 부족. 인디애나 기공식은 별도 수록.",
+    "20260831": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음.",
+    "20260901": "일반 웹으로 SK스퀘어 날짜별 검색 및 보유자산 보완검색. 발행시각 기준 귀속; 중복·비기사 제외 후 수록 건수. 본문이 일부만 확인되면 partial_text. 시황 가격으로 방향 판단하지 않음."
+  }
+}

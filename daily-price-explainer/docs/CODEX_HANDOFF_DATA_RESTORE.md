@@ -725,3 +725,32 @@ SK스퀘어(402340) 주가설명 모델용 마스터 시계열 `data/factor_log.
     날짜 수정은 완료됐지만 온라인 원천 응답 정상화는 별도 확인이 필요하다.
     Q3 비상장가치·순현금이 들어오면 point-in-time NAV 입력을 갱신하고 10월 거래일을
     사본에서 검증한 후 스케줄러 등록을 검토한다.
+
+- 2026-10-01 | Claude Code | (이 커밋) | F6 뉴스 검색 39일(2026-08-04~09-30)
+  갭을 메울 Codex용 인계 자료 작성: `data/news_search_targets_gap_20260804_20260930.csv`
+  (39일, 전부 `reason=after_log_end`)와 `docs/CODEX_PROMPT_news_gap_39.md`
+  (기존 294일 작업 `docs/CODEX_PROMPT_news_gap_294.md`과 동일한 스키마·판단
+  규칙). `news_search_log_codex.jsonl`이 09-30 기준 2026-08-03에서 멈춰있던
+  걸 확인하고 작업폴더의 전체 거래일 캘린더(`factor_log.csv`)로 39일을 정확히
+  산출했다.
+
+- 2026-10-01 | Codex | (이 커밋) | 위 39일 뉴스 검색·속성 추출 완료, 2개
+  배치로 진행(`data/snapshots/20261001/news_gap_39/`에 배치별 원문·매니페스트·
+  검증 스크립트 보존). `data/news_property_codex_batch.jsonl`에 57개 기사
+  (`prompt_version=news_gap_39.v1`), `data/news_search_log_codex.jsonl`에
+  39개 로그 행을 append. 39일 전부 `status=completed_with_articles`(기사
+  0건인 날 없음).
+
+  Claude Code가 독립 검증: ① 두 파일의 append 전 바이트(각각 1,730,821·
+  214,081바이트)를 직접 해시 대조해 **기존 내용 완전 불변** 확인(파일
+  전체 sha256도 Codex 보고값과 정확히 일치). ② 39개 대상 날짜 전부 로그에
+  정확히 1건씩 존재(누락·중복 0). ③ 신규 57개 기사 전부 JSON 파싱·필수
+  스키마 필드 보유 확인(오류 0). ④ 신규분 내 `article_id`·URL 중복 0건
+  (기존 1,161개 기사 전체와 비교해도 중복 없음 — 단, 과거 294일 작업분
+  중 `dealsite.co.kr` URL 2개가 각 3번씩 재사용된 레거시 중복이 있었으나
+  이는 이번 작업 이전 배치(batch26~29)의 기존 특성이라 범위 밖). ⑤ 로그의
+  `articles_found` 합계(57)가 실제 기사 행 수와 각 날짜별로 정확히 일치.
+  Codex 자체 `validation_summary.json`과 독립 집계 결과가 완전히 일치했다.
+  - **다음 배턴**: 이 39일(unreviewed)과 기존 294일 작업분 완료 여부를 확인한
+    뒤, 뉴스 신호 재검정(`experiment_residual_news.py`·`experiment_f6_f7_news.py`)
+    재실행 여부를 판단한다. F4 공매도 09-29·09-30, Q3 NAV 값은 여전히 대기 중.

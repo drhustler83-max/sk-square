@@ -1,0 +1,398 @@
+[
+  {
+    "url": "https://www.newspim.com/news/view/20260901001010",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[마감시황] 코스피, 하락 출발 후 반등…6835선 마감",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-01T16:09:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-01T16:16:35+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://v.daum.net/v/20260902121127065",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "美 이란 공습·유가 90달러 충격…반도체 '자사주 방어막' 시험대",
+    "date_metadata": [
+      {
+        "property": "og:regDate",
+        "content": "20260902121127"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2026/09/03/2026090309040979497",
+    "body_hash": "bc561b3d706d677b51623271dd18ee5b838094772c4ea0115ad5e1ba2c98b762",
+    "body_chars": 1403,
+    "http_status": 200,
+    "page_title": "금리 하락·美 반도체주 어닝 서프에 삼전닉스 반등… 1%대↑ - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-03T09:20:57+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-03T09:21:04+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.yna.co.kr/view/AKR20260904039400008",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, 美증시 훈풍에 올라 6,600대…코스닥도 닷새만 상승(종합) | 연합뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-04T09:29:08+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-04T10:27:08+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.asiatoday.co.kr/kn/view.php?key=20260904010001643",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "티맵, 주행거리로 포인트 준다…‘운전 만보기’ 출시 - 아시아투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-04T09:10:57+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.gamechosun.co.kr/webzine/article/view.php?bid=11&no=224939",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "5민랩, 신작 ‘세계허구관리연맹: WPCA’ 첫 공식 트레일러 공개",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-04T12:17:18+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-04T12:17:18+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mk.co.kr/news/stock/12145692",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.fnnews.com/news/202609071602103407",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "간만에 활짝 웃은 코스피...SK하이닉스는 8%대 급등 [fn마감시황] - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-07T16:06:08+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-07T16:08:59+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2026-09-07T16:06:08+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2026-09-07T16:08:59+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260909_0003782257",
+    "body_hash": "44aa80812c22fa751076fe46efa403d2532039c58f6ab0b88d91ffec2f0e9e7e",
+    "body_chars": 1169,
+    "http_status": 200,
+    "page_title": "SK하이닉스, '2026 미래포럼' 열어…\"AI 전환 새 흐름 공유\" :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-09T11:14:24+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.yna.co.kr/view/AKR20260910058500017",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어 'AI 네이티브' 속도…투자 업무에 AI 전면 접목 | 연합뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-10T10:22:26+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-10T10:22:26+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://marketin.edaily.co.kr/News/ReadE?newsId=05146326645578480",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "아이온큐, 목표주가 하향 조정…장기 매출 기대는↑-미즈호",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.mk.co.kr/news/stock/12149706",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20260911000958",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[마감시황] 코스피, 외인·기관 4조원 매도에 1.76% ↓…6909.91 마감",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-11T15:58:39+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-11T15:58:41+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260914_0003788826",
+    "body_hash": "3595ef6521094bb8fd4790e27b78e1747677db5537d7454f0c99ca6b0ae89fcf",
+    "body_chars": 1262,
+    "http_status": 200,
+    "page_title": "중동리스크에 'AI 속도조절론'까지…삼전·닉스 4~6% 급락 마감[핫스탁](종합) :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-14T15:48:49+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mk.co.kr/news/business/12153992",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.mt.co.kr/world/2026/09/16/2026091615465714338",
+    "body_hash": "4b3868ad834cdc2d3e8944a189348d867b5eb7c01019c7ce214fb87d5d1375c8",
+    "body_chars": 1085,
+    "http_status": 200,
+    "page_title": "로이터 \"SK하이닉스,미국서 반도체 생산 추진…인텔과 협력 논의\" - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-16T15:59:09+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-16T18:13:15+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mk.co.kr/news/pick/12155385",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.mt.co.kr/industry/2026/09/18/2026091808482884383",
+    "body_hash": "79da711e788fd5e396f57430e41004e0ba340d8474f0f1654dbdbda310cf2c6a",
+    "body_chars": 1286,
+    "http_status": 200,
+    "page_title": "SK그룹 부회장 3인, SK하이닉스 합류…AI·반도체 힘 싣는다 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-18T09:59:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-18T09:59:06+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20260918_0003795953",
+    "body_hash": "1e8bdbbc1f3681e7cbcec04201143900eeaa74b45de557ac57df428c4de00665",
+    "body_chars": 1014,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 美 실리콘밸리서 'SK하이닉스 벤처스' 출범…AI 생태계 투자 본격화 :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-18T15:50:50+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mt.co.kr/tech/2026/09/22/2026092210385368102",
+    "body_hash": "5e28d5f4a772c91033e971b206bb9ba795794a6d3904dff331b9c23802001196",
+    "body_chars": 928,
+    "http_status": 200,
+    "page_title": "경북 구미에 '아이온큐' 양자컴 공장 들어선다 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-22T10:52:47+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-22T10:54:39+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.topstarnews.net/news/articleView.html?idxno=16206472",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어 주가, 9월 22일 장중 1,157,000원 2.66% 상승 | 김명수 기자 | 톱스타뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-22T10:32:03+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-22T10:32:03+09:00"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-09-22T10:32:03+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/industry/2026/09/23/2026092219440457622",
+    "body_hash": "0a8ba170a28547adf2658270feaba26280174b8edbef5bf8957843659c90bcd7",
+    "body_chars": 1476,
+    "http_status": 200,
+    "page_title": "AI 업고 eSSD 질주… 삼성·SK '승부수' - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-09-23T04:10:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-23T04:10:16+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://v.daum.net/v/qgr71QTslE",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 손자회사 솔리다임, 美 IPO 추진…몸값 최대 204조원",
+    "date_metadata": [
+      {
+        "property": "og:regDate",
+        "content": "20260927140803"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankookilbo.com/news/article/A2026092813570002644",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "솔리다임 IPO에 SK하이닉스 급락… \"이러니 국장 떠나지\" 반발도-경제ㅣ한국일보",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "D67AA3F13EDB5867E2AAD30E32629A10"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-09-28T17:30:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-28T17:40:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://biz.chosun.com/stock/stock_general/2026/09/30/EL6DB6QCLFDGXCF4VEERXHO4EE/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "“하이닉스 자사주 소각 이후가 더 기대”…SK證, SK스퀘어 목표가 185만원 유지 - 조선비즈",
+    "date_metadata": [
+      {
+        "property": "og:published_time",
+        "content": "2026-09-29T23:47:54.812Z"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-09-29T23:47:54.812Z"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-29T23:50:41.139Z"
+      },
+      {
+        "property": "article:published_time",
+        "name": "article:published_time",
+        "content": "2026-09-29T23:47:54.812Z"
+      }
+    ]
+  }
+]
