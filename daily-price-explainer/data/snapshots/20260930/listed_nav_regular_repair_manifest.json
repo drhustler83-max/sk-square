@@ -1,0 +1,110 @@
+{
+  "source": "data\\snapshots\\20260930\\krx_regular_closes_aug03_sep29.json",
+  "dreamus_split": {
+    "date": "20260804",
+    "ratio": "5:1",
+    "post_split_shares": 3286008
+  },
+  "krx_close_changed_dates": {
+    "skhynix": [
+      "20260914",
+      "20260915",
+      "20260916",
+      "20260917",
+      "20260918",
+      "20260921",
+      "20260922",
+      "20260923",
+      "20260928",
+      "20260929"
+    ],
+    "dreamus": [
+      "20260914",
+      "20260915",
+      "20260916",
+      "20260917",
+      "20260918",
+      "20260921",
+      "20260922",
+      "20260923",
+      "20260928",
+      "20260929"
+    ],
+    "nexus": [
+      "20260914",
+      "20260915",
+      "20260916",
+      "20260917",
+      "20260921",
+      "20260922",
+      "20260923",
+      "20260928"
+    ]
+  },
+  "updated_rows": {
+    "listed": 1181,
+    "nav": 1181,
+    "factor": 1181
+  },
+  "updated_columns": {
+    "listed": {
+      "dreamus_price": 1153,
+      "dreamus_value": 1181,
+      "total_listed_value": 1181,
+      "total_listed_value_trillion": 117,
+      "dreamus_shares": 38,
+      "skhynix_price": 10,
+      "skhynix_value": 10,
+      "nexus_price": 8,
+      "nexus_value": 8
+    },
+    "nav": {
+      "other_listed_value_mtm": 1181,
+      "listed_value_mtm": 1181,
+      "other_listed_value_frozen": 1181,
+      "nav_mtm": 1181,
+      "nav_company": 1181,
+      "nav_per_share_mtm": 1181,
+      "nav_per_share_company": 1181,
+      "nav_discount_pct_mtm": 1119,
+      "nav_discount_pct_company": 1140,
+      "nav_mtm_trillion": 1181,
+      "nav_company_trillion": 1181,
+      "hynix_value": 10
+    },
+    "factor": {
+      "nav_total_trillion": 1181,
+      "nav_discount_pct": 1038,
+      "nav_per_share": 1181,
+      "nav_implied_ret": 568,
+      "nav_implied_ret_raw": 568,
+      "divergence": 568,
+      "nav_discount_delta": 144,
+      "hynix_ret": 10
+    }
+  },
+  "before_sha256": {
+    "listed": "615aef9a5fe0769764cc8fe3d93f13d13c3e8bb2508787b41bc99b31e321e670",
+    "nav": "caa4496cc9d6ce909190240b698d120c5e99fd430c1b171f2bdabfcb22efbcd6",
+    "factor": "3b953f10cd6e4ee0cfbfaf0f4acde29b4c4fa0782a72395eb3fef3a867fbda86"
+  },
+  "after_sha256": {
+    "listed": "83b03b0ca959060957f19b1efa975d3d8dca87b4ee98ea0b9d583b9c306ee7f9",
+    "nav": "1cd79c143aaeb6fae81e0e87a3af3d15140ef94d8eac30812e4c5d39e90ba009",
+    "factor": "8f931a8f87f9d5c5ebead4a56037fa60a609a64408bbe3a7d620d054c27506f3"
+  },
+  "verification": {
+    "copy_test": "passed",
+    "idempotent": "zero cell updates on second run",
+    "invariants": "listed sum, NAV components, SKQ market cap and divergence checked across 1181 dates",
+    "raw_price_samples": "dreamus_split_price_samples.json",
+    "source_filing": "https://kind.krx.co.kr/external/2026/06/15/000334/20260615000750/00591.htm",
+    "share_count_crosscheck": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=060570&cn="
+  },
+  "scope_limit": "KRX regular-session comparison captured Aug03-Sep29 only; prior ATS-era holdings and production live loaders require independent source alignment.",
+  "worktree_backups": [
+    "data\\snapshots\\20260930\\listed_holdings_daily_before_nav_regular_local.csv",
+    "data\\snapshots\\20260930\\nav_daily_before_nav_regular_local.csv",
+    "data\\snapshots\\20260930\\factor_log_before_nav_regular_local.csv"
+  ]
+}

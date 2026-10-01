@@ -10,6 +10,7 @@ SK스퀘어 상장사 보유지분 일별 가치 산출 → data/listed_holdings
 확정 내역
   SK하이닉스   146,100,000주 전 기간 불변 (최초취득 2021-11-02)
   드림어스      29,246,387 → 16,430,038  @2025-11-28  (majorstock, 주식매매계약 체결·특별관계 해소)
+                16,430,038 → 3,286,008 @2026-08-04 (5:1 액면병합, 1주 미만 단주 처리)
   인크로스      2,786,455 → 4,631,251    @무상증자 권리락일 (1주당 0.66주, 2022 H1)
                 4,631,251 → 0            @2026-01-02  (majorstock, SK네트웍스 인수 완료)
   나노엔텍      7,600,649 → 0            @2023-09-08  (매각대금 입금 완료, 언론 확정)
@@ -81,7 +82,8 @@ HOLDINGS: dict[str, list[tuple[str, str | None, int, str, str]]] = {
     ],
     "dreamus": [
         ("20211130", "20251127", 29_246_387, "타법인출자현황", "confirmed"),
-        ("20251128", None,       16_430_038, "majorstock 2025-11-28 특별관계 해소", "confirmed"),
+        ("20251128", "20260803", 16_430_038, "majorstock 2025-11-28 특별관계 해소", "confirmed"),
+        ("20260804", None,        3_286_008, "2026-08-04 드림어스 5:1 액면병합", "confirmed"),
     ],
     "incross": [
         # 2022 H1 무상증자(1주당 0.66주)로 2,786,455 → 4,631,251 이 되었으나,
@@ -189,6 +191,12 @@ def build(output: Path | None = None, end: str | None = None) -> pd.DataFrame:
     total = pd.Series(0.0, index=idx)
     for key, name, _tk in KR_STOCKS:
         px = prices[key].reindex(idx).ffill()
+        if key == "dreamus":
+            # pykrx는 2026-08-04의 5:1 액면병합을 과거 가격에 소급 반영한다.
+            # 병합 전 실제 보유주식수와 곱할 때는 과거 수정주가를 5로 되돌린다.
+            # 거래정지 구간(07-31~08-24)의 728원 KRX 참조가는 체결 종가가
+            # 아니므로, 병합 효력일부터는 수정주가 3,640원을 사용한다.
+            px.loc[px.index < pd.Timestamp("20260804")] /= 5
         sh, conf = _shares_series(key, idx)
         val = px.fillna(0) * sh
         out[f"{key}_shares"] = sh

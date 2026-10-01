@@ -1,0 +1,61 @@
+{
+  "source": "KRX Open API sto/ksq_bydd_trd",
+  "captured_at_utc": "2026-10-01T01:07:58.674867+00:00",
+  "ticker": "060570",
+  "rows": {
+    "20211130": {
+      "BAS_DD": "20211130",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "5250",
+      "ACC_TRDVOL": "717098"
+    },
+    "20251127": {
+      "BAS_DD": "20251127",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "1584",
+      "ACC_TRDVOL": "45332"
+    },
+    "20251128": {
+      "BAS_DD": "20251128",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "1650",
+      "ACC_TRDVOL": "68880"
+    },
+    "20260630": {
+      "BAS_DD": "20260630",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "940",
+      "ACC_TRDVOL": "72814"
+    },
+    "20260730": {
+      "BAS_DD": "20260730",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "728",
+      "ACC_TRDVOL": "81463"
+    },
+    "20260803": {
+      "BAS_DD": "20260803",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "728",
+      "ACC_TRDVOL": "0"
+    },
+    "20260804": {
+      "BAS_DD": "20260804",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "728",
+      "ACC_TRDVOL": "0"
+    },
+    "20260824": {
+      "BAS_DD": "20260824",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "728",
+      "ACC_TRDVOL": "0"
+    },
+    "20260825": {
+      "BAS_DD": "20260825",
+      "ISU_CD": "060570",
+      "TDD_CLSPRC": "3410",
+      "ACC_TRDVOL": "24189"
+    }
+  }
+}
