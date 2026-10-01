@@ -5,7 +5,8 @@ factor_log.csv 완전성 감사 — 거래일 누락·컬럼 결측을 분류해
 객관적으로 확인하는 용도. 결측을 3부류로 나눈다:
   (A) 최근 갭   — RECENT_CUTOFF(기본 20260917) 이후. 진행 중 복구 대상
   (B) 과거 결측 — 그 이전의 진짜 결측(재수집/재계산 대상)
-  (C) 정상 결측 — 복구 불필요(첫 거래일 파생값, 선물 미상장, *_v1 신규구간)
+  (C) 정상/원천 부재 — 복구 불필요(첫 거래일, 선물 미상장, *_v1 신규구간,
+      수량 원천 시작일 전의 F3)
 
 사용:
   python tools/audit_factor_log.py                 # 사람이 읽는 리포트
@@ -53,6 +54,7 @@ V1_COLS = ["nav_total_trillion_v1", "nav_implied_ret_v1", "divergence_v1",
 DEFAULT_START = "20211129"
 DEFAULT_END = "20260929"
 RECENT_CUTOFF = "20260917"  # 이 날짜 이후 결측은 (A) 최근 갭
+FLOW_SOURCE_START = "20221109"  # 수량 HTS 원본의 첫 거래일
 
 
 def _empty(s: pd.Series) -> pd.Series:
@@ -105,6 +107,8 @@ def audit(start: str = DEFAULT_START, end: str = DEFAULT_END) -> dict:
             normal.append(first_nav_date)       # NAV 첫날은 전일 NAV가 없어 차분 불가
         if c in V1_COLS:                          # v1 = 09-17 마이그레이션 동결 스냅샷
             normal += dates                      # → 결측 전부 정상(복구 대상 아님)
+        if c in ("foreign_net", "institution_net", "individual_net"):
+            normal += [d for d in dates if d < FLOW_SOURCE_START]
         if c in ("fut_basis", "fut_basis_pct", "fut_volume") and fl is not None:
             normal += list(df.loc[m & (fl == 0), "date"])  # 선물 미상장
         normal = sorted(set(normal))
@@ -163,10 +167,10 @@ def _print(rep: dict) -> None:
                 tag = f" (listed_holdings로 {len(rep['hynix_ret_recomputable_dates'])}일 재계산 가능)"
             print(f"   {c:24} {len(ds)}일  {ds if len(ds)<=8 else ds[:8]+['...']}{tag}")
 
-    print("\n[C] 정상 결측 — 복구 불필요")
+    print("\n[C] 정상/원천 부재 — 현재 복구 불필요")
     for c, v in rep["columns"].items():
         if v["normal"]:
-            print(f"   {c:24} {len(v['normal'])}일 (첫거래일/선물미상장/v1신규구간)")
+            print(f"   {c:24} {len(v['normal'])}일 (첫거래일/선물미상장/v1신규구간/수량원천 전)")
     print()
 
 

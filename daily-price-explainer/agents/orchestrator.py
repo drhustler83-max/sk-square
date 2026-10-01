@@ -194,10 +194,9 @@ async def collect_data(ticker: str, company: str, date: str,
 
 
 def _investor_flow_trend(hist: list[dict]) -> str:
-    """최근 집계완료 거래일들의 주체별 순매수(거래대금)로 일별 흐름 코멘트 생성.
+    """최근 집계완료 거래일들의 주체별 순매수 수량(주)으로 흐름 코멘트 생성.
 
-    hist: 최신순 [{date, foreign_net, institution_net, individual_net(원)}]
-    예) "최근 5거래일 기준 외국인이 순매수를 주도(누적 +560억원, 3거래일 연속 순매수); 개인 누적 -610억원 순매도"
+    hist: 최신순 [{date, foreign_net, institution_net, individual_net(주)}]
     """
     if not hist:
         return ""
@@ -213,10 +212,10 @@ def _investor_flow_trend(hist: list[dict]) -> str:
         else:
             break
     parts = [f"최근 {len(hist)}거래일 기준 {label[lead]}이 순매수를 주도"
-             f"(누적 {cum[lead] / 1e8:+,.0f}억원"
+             f"(누적 {cum[lead]:+,}주"
              + (f", {streak}거래일 연속 순매수" if streak >= 2 else "") + ")"]
     if seller != lead and cum[seller] < 0:
-        parts.append(f"{label[seller]}은 누적 {cum[seller] / 1e8:+,.0f}억원 순매도")
+        parts.append(f"{label[seller]}은 누적 {cum[seller]:+,}주 순매도")
     return "; ".join(parts)
 
 
@@ -239,7 +238,7 @@ def build_context(data: dict, query: str) -> str:
         close_label = "전일 종가" if is_prev else "종가"
         lines.append(f"- {close_label}: {m.get('close', 'N/A')}원 ({pct_str})")
         lines.append(f"- 거래량: {vol_str}")
-        # ── SK스퀘어 주체별 순매수 (거래대금) — 장 중에는 미집계라 숨김 ──
+        # ── SK스퀘어 주체별 순매수 수량(주) — 장 중에는 미집계라 숨김 ──
         if m.get("investor_flow_in_session"):
             lines.append("- (SK스퀘어 외국인/기관/개인 주체별 순매수는 장 마감 후 집계 — "
                          "현재 미집계이므로 답변에서 생략할 것)")
@@ -249,16 +248,15 @@ def build_context(data: dict, query: str) -> str:
                 latest = hist[0]
                 ld = str(latest.get("date", ""))
                 ld_fmt = f"{ld[:4]}-{ld[4:6]}-{ld[6:]}" if len(ld) == 8 else ld
-                def _eok(v):
+                def _shares(v):
                     if v is None:
                         return "데이터 없음"
-                    e = v / 1e8
-                    direction = "순매수" if e > 0 else ("순매도" if e < 0 else "중립")
-                    return f"{e:+,.0f}억원 ({direction})"
-                lines.append(f"- [SK스퀘어 주체별 순매수 · {ld_fmt} 집계 기준, 거래대금]")
-                lines.append(f"  · 외국인: {_eok(latest.get('foreign_net'))}")
-                lines.append(f"  · 기관: {_eok(latest.get('institution_net'))}")
-                lines.append(f"  · 개인: {_eok(latest.get('individual_net'))}")
+                    direction = "순매수" if v > 0 else ("순매도" if v < 0 else "중립")
+                    return f"{v:+,}주 ({direction})"
+                lines.append(f"- [SK스퀘어 주체별 순매수 · {ld_fmt} 집계 기준, 수량]")
+                lines.append(f"  · 외국인: {_shares(latest.get('foreign_net'))}")
+                lines.append(f"  · 기관: {_shares(latest.get('institution_net'))}")
+                lines.append(f"  · 개인: {_shares(latest.get('individual_net'))}")
                 trend = _investor_flow_trend(hist)
                 if trend:
                     lines.append(f"  · [일별 흐름] {trend}")

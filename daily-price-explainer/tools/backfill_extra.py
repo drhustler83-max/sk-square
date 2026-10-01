@@ -36,6 +36,10 @@ DEFAULT_START = "20211101"
 
 
 def backfill_extra(ticker: str = "402340", start: str = DEFAULT_START, end: str = None) -> pd.DataFrame:
+    raise RuntimeError(
+        "이전 거래대금(원) 수급 백필은 사용 중지됐습니다. "
+        "수량(주) 적재는 tools/import_investor_quantity.py를 사용하세요."
+    )
     end = end or datetime.today().strftime("%Y%m%d")
 
     own = stock.get_exhaustion_rates_of_foreign_investment(start, end, ticker)

@@ -14,8 +14,8 @@ Factor Logger
   sector_semiconductor    — 반도체 섹터 ETF 평균 수익률 (%)
   kospi_ret               — KOSPI 일간 수익률 (%)
   usd_krw                 — USD/KRW 환율 (당일)
-  foreign_net             — 외국인 순매수 (원, SK스퀘어 종목)
-  institution_net         — 기관 순매수 (원, SK스퀘어 종목)
+  foreign_net             — 외국인 순매수 (주, SK스퀘어 종목)
+  institution_net         — 기관 순매수 (주, SK스퀘어 종목)
 
 60거래일 누적 후 tools/beta.py에서 rolling OLS로 팩터 베타 산출 예정.
 """
@@ -56,7 +56,7 @@ COLUMNS = [
     "fut_basis_pct",          # 근월물 베이시스 (%)
     "fut_volume",             # 근월물 거래량
     "foreign_own_pct",        # 외국인 지분율 (%, extra_log.csv 병합, 2026-07-21)
-    "individual_net",         # 개인 순매수 (거래대금, 원)
+    "individual_net",         # 개인 순매수 (주)
     # ── NAV v2 진단용 보조 컬럼 (tools/nav_v2.compute가 매번 함께 냄) ───────
     "nav_implied_ret_raw",  # 분기 계단 제거 전 원시 차분 (참고용)
     "nav_per_share",        # 주당 NAV
@@ -127,15 +127,11 @@ def collect_and_log(date: str = None) -> dict:
         f"discount {_fmt(row.get('nav_discount_pct')):+.1f}%"
     )
 
-    # ── 2. 수급 (SK스퀘어 외국인·기관 순매수) ────────────────────────────
-    try:
-        from tools.market import get_market_data
-        market = get_market_data(ticker, date)
-        flow = market.get("investor_flow", {})
-        row["foreign_net"]     = flow.get("foreign_net")
-        row["institution_net"] = flow.get("institution_net")
-    except Exception as e:
-        logger.warning(f"Market 수집 오류: {e}")
+    # ── 2. 수급: 네이버 투자자별 순매수 수량(주). 날짜 불일치 시 저장 보류 ──
+    from tools.investor_flow import get_daily_flow
+    flow = get_daily_flow(ticker, date)
+    for key in ("foreign_net", "institution_net", "individual_net", "foreign_own_pct"):
+        row[key] = flow[key]
 
     # ── 3. 매크로 (KOSPI 수익률, USD/KRW) ───────────────────────────────
     try:

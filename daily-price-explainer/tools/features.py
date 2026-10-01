@@ -45,7 +45,7 @@ FEATURE_TAXONOMY: dict[str, tuple[str, str]] = {
     # ── F3 수급 ───────────────────────────────────────────────────────────
     "foreign_net":          ("F3", "외국인 순매수 [raw]"),
     "institution_net":      ("F3", "기관 순매수 [raw]"),
-    "individual_net":       ("F3", "개인 순매수 (거래대금) [raw]"),
+    "individual_net":       ("F3", "개인 순매수 (주) [raw]"),
     "flow_sum":             ("F3", "외국인+기관 합산 (큰손 수급) [derived]"),
     "flow_z20":             ("F3", "수급(외국인+기관) 20일 z-score (서프라이즈) [derived]"),
     "foreign_net_3d":       ("F3", "외국인 순매수 3일 누적 [derived]"),

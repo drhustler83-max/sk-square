@@ -190,11 +190,13 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
         prev_ohlcv = stock.get_market_ohlcv(prev_date, prev_date, ticker)
         prev_close = float(prev_ohlcv.iloc[0]["종가"]) if not prev_ohlcv.empty else None
 
-        # 수급 (외국인/기관/개인)
+        # 종목별 수급은 로거와 같은 네이버 순매수 수량(주) 원천을 쓴다.
+        from tools.investor_flow import fetch_trend
         try:
-            flows = stock.get_market_trading_value_by_investor(date, date, ticker)
-        except Exception:
-            flows = pd.DataFrame()
+            trend_rows = fetch_trend(ticker)
+        except Exception as exc:
+            logger.warning(f"네이버 수급 조회 실패: {exc}")
+            trend_rows = {}
 
         close = row.get("종가", 0)
         result = {
@@ -211,15 +213,9 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
             "pct_change":    round((close / prev_close - 1) * 100, 2) if prev_close and close else None,
         }
 
-        if not flows.empty:
-            logger.debug(f"investor_flow 인덱스: {flows.index.tolist()}, 컬럼: {flows.columns.tolist()}")
-            nets = _investor_nets(flows)
-            if nets:
-                result["investor_flow"] = nets   # 거래대금(원) 기준, factor_logger F3 피처도 사용
-                logger.info(
-                    f"SK스퀘어 수급(거래대금) - 외국인: {nets['foreign_net']}, "
-                    f"기관: {nets['institution_net']}, 개인: {nets['individual_net']}"
-                )
+        if actual_date in trend_rows:
+            result["investor_flow"] = trend_rows[actual_date]
+            logger.info(f"SK스퀘어 수급(주): {trend_rows[actual_date]}")
 
         # KOSPI 전체 외국인 순매수 (Naver Finance 파싱)
         try:
@@ -235,10 +231,21 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
         # 주체별 수급 표시 게이팅: 장 중이면 미집계(숨김), 장 마감 후/장전이면 최근 집계완료일 히스토리
         result["investor_flow_in_session"] = _in_session(date)
         if with_history:
+            dates = sorted((d for d in trend_rows if d <= actual_date), reverse=True)
             result["investor_flow_history"] = (
                 [] if result["investor_flow_in_session"]
-                else _recent_investor_value_flows(ticker, date))
-            result["foreign_ownership"] = _foreign_ownership(ticker, date)  # 전일 기준(T+1), 장중에도 표시
+                else [{"date": d, **trend_rows[d]} for d in dates[:5]])
+            if dates:
+                latest = dates[0]
+                result["foreign_ownership"] = {
+                    "date": latest,
+                    "ratio": trend_rows[latest]["foreign_own_pct"],
+                    "chg_1d": (round(trend_rows[latest]["foreign_own_pct"]
+                                     - trend_rows[dates[1]]["foreign_own_pct"], 2)
+                               if len(dates) > 1 else None),
+                }
+            else:
+                result["foreign_ownership"] = None
         else:
             result["investor_flow_history"] = []
 
