@@ -1,0 +1,50 @@
+{
+  "applied": {
+    "20220204": {
+      "shorting_balance_replaced_legacy_value": "53716.0",
+      "shorting_balance": "53002",
+      "shorting_balance_ratio_replaced_legacy_value": "0.04",
+      "shorting_balance_ratio": "0.04",
+      "shorting_balance_change": "-714"
+    },
+    "20231005": {
+      "shorting_balance_replaced_legacy_value": "281631.0",
+      "shorting_balance": "299052",
+      "shorting_balance_ratio_replaced_legacy_value": "0.2",
+      "shorting_balance_ratio": "0.22",
+      "shorting_balance_change": "17421"
+    },
+    "20240920": {
+      "shorting_balance_replaced_legacy_value": "216995.0",
+      "shorting_balance": "209753",
+      "shorting_balance_ratio_replaced_legacy_value": "0.16",
+      "shorting_balance_ratio": "0.16",
+      "shorting_balance_change": "-7242"
+    },
+    "20250203": {
+      "shorting_balance_replaced_legacy_value": "55631.0",
+      "shorting_balance": "55631",
+      "shorting_balance_ratio_replaced_legacy_value": "0.04",
+      "shorting_balance_ratio": "0.04",
+      "shorting_balance_change": "0"
+    },
+    "20251013": {
+      "shorting_balance_replaced_legacy_value": "34501.0",
+      "shorting_balance": "34876",
+      "shorting_balance_ratio_replaced_legacy_value": "0.03",
+      "shorting_balance_ratio": "0.03",
+      "shorting_balance_change": "375"
+    },
+    "20260220": {
+      "shorting_balance_replaced_legacy_value": "13341.0",
+      "shorting_balance": "14151",
+      "shorting_balance_ratio_replaced_legacy_value": "0.01",
+      "shorting_balance_ratio": "0.01",
+      "shorting_balance_change": "810"
+    }
+  },
+  "source": "C:\\Users\\3100041\\Desktop\\sk-square\\daily-price-explainer\\data\\manual_krx\\shorting_gap_input_402340.xlsx",
+  "applied_dates": 6,
+  "before_sha256": "2e0b75f3acc18174ba97af53607d810144a3915735d447a8eab2dc70078d25e3",
+  "after_sha256": "a82e3e757ca87e3be9b7c28048227a20abe085902beecf35a2228fc4b0a73cfb"
+}

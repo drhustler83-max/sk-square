@@ -1,0 +1,83 @@
+{
+  "applied": {
+    "20220203": {
+      "shorting_balance": "53716",
+      "shorting_balance_ratio": "0.04",
+      "shorting_balance_change": "-604"
+    },
+    "20231004": {
+      "shorting_balance": "281631",
+      "shorting_balance_ratio": "0.20",
+      "shorting_balance_change": "-37548"
+    },
+    "20240919": {
+      "shorting_balance": "216995",
+      "shorting_balance_ratio": "0.16",
+      "shorting_balance_change": "-7317"
+    },
+    "20250131": {
+      "shorting_balance": "55631",
+      "shorting_balance_ratio": "0.04",
+      "shorting_balance_change": "3350"
+    },
+    "20251010": {
+      "shorting_balance": "34501",
+      "shorting_balance_ratio": "0.03",
+      "shorting_balance_change": "133"
+    },
+    "20260219": {
+      "shorting_balance": "13341",
+      "shorting_balance_ratio": "0.01",
+      "shorting_balance_change": "88"
+    },
+    "20260722": {
+      "shorting_balance": "127933",
+      "shorting_balance_ratio": "0.10",
+      "shorting_balance_change": "1298"
+    },
+    "20260803": {
+      "shorting_balance": "98563",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "10158"
+    },
+    "20260804": {
+      "shorting_balance": "93299",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-5264"
+    },
+    "20260917": {
+      "shorting_balance": "94783",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-286"
+    },
+    "20260918": {
+      "shorting_balance": "93779",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-1004"
+    },
+    "20260921": {
+      "shorting_balance": "94459",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "680"
+    },
+    "20260922": {
+      "shorting_balance": "94344",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-115"
+    },
+    "20260923": {
+      "shorting_balance": "96217",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "1873"
+    },
+    "20260928": {
+      "shorting_balance": "99851",
+      "shorting_balance_ratio": "0.08",
+      "shorting_balance_change": "3634"
+    }
+  },
+  "source": "C:\\Users\\3100041\\Desktop\\sk-square\\daily-price-explainer\\data\\manual_krx\\shorting_gap_input_402340.xlsx",
+  "applied_dates": 15,
+  "before_sha256": "d57d813aa0174a1eb92735a1761b1319652adb734e29da1e4b0a9fd620cb5aac",
+  "after_sha256": "2e0b75f3acc18174ba97af53607d810144a3915735d447a8eab2dc70078d25e3"
+}
