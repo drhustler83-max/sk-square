@@ -14,8 +14,8 @@ Factor Logger
   sector_semiconductor    — 반도체 섹터 ETF 평균 수익률 (%)
   kospi_ret               — KOSPI 일간 수익률 (%)
   usd_krw                 — USD/KRW 환율 (당일)
-  foreign_net             — 외국인 순매수 (주, SK스퀘어 종목)
-  institution_net         — 기관 순매수 (주, SK스퀘어 종목)
+  foreign_net             — 외국인+기타외국인 순매수 (주, SK스퀘어 KRX)
+  institution_net         — 기관 순매수 (주, SK스퀘어 KRX)
 
 60거래일 누적 후 tools/beta.py에서 rolling OLS로 팩터 베타 산출 예정.
 """
@@ -127,7 +127,7 @@ def collect_and_log(date: str = None) -> dict:
         f"discount {_fmt(row.get('nav_discount_pct')):+.1f}%"
     )
 
-    # ── 2. 수급: 네이버 투자자별 순매수 수량(주). 날짜 불일치 시 저장 보류 ──
+    # ── 2. 수급: 네이버 PC KRX 순매수 수량(주). 날짜 불일치 시 저장 보류 ──
     from tools.investor_flow import get_daily_flow
     flow = get_daily_flow(ticker, date)
     for key in ("foreign_net", "institution_net", "individual_net", "foreign_own_pct"):

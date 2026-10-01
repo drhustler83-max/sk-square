@@ -12,7 +12,7 @@
 
 | 데이터 | 파일명 | KRX 메뉴 | 받을 때 |
 |---|---|---|---|
-| **수급(F3)** | `krx_investor_402340.xlsx` | HTS 투자자별 순매수 수량 | 2022-11-09~2026-09-30, `tools/import_investor_quantity.py` |
+| **수급(F3)** | `krx_investor_402340.xlsx` | HTS 투자자별 순매수 수량(통합) | 2022-11-09~2026-09-30, 비교·보존용 |
 | **공매도(F4)** | `krx_short_402340.xlsx` | 공매도 거래량·비율과 대차잔고 | 추후 검토 |
 | **신용·대차** | `krx_credit_lending_402340.xlsx` | 신용·대차 자료 | 추후 검토 |
 
@@ -24,11 +24,19 @@
 - 공매도 → `shorting_balance`(잔고수량), `shorting_balance_ratio`(잔고율%),
   `shorting_volume_ratio`(당일 공매도 비중%), `shorting_balance_change`(잔고 전일대비, 임포터가 계산)
 
-현재 확보된 `krx_investor_402340.xlsx`의 투자자별 수량을
-`tools/import_investor_quantity.py`로 적재한다. 기존 거래대금(원) 값은
-수량(주)으로 교체하며 원 환산은 하지 않는다. 실시간 수집은 네이버 trend를
-사용한다. 겹치는 최근 10일은 네이버 수량을 우선 적용한다. HTS와 네이버가
-같은 날짜에도 값 차이가 있으므로 출처 전환은
-`data/snapshots/20260930/f3_quantity_import_manifest.json`에 기록했다.
-이 파일의 2022년 말 37거래일은 투자자별 값이 비어 있고,
-2021-11-29~2022-11-08은 수량 원천이 없어 결측으로 둔다.
+2026-10-01 Sean 확정: **KRX 수량·외국인+기타외국인**으로 통일한다.
+HTS 원본은 통합(KRX+NXT) 기준이며 ‘외국인’ 열은 기타외국인을 제외한다.
+따라서 이 원본으로 현재 F3를 다시 덮어쓰면 안 된다.
+`tools/import_investor_quantity.py --write`는 중단하도록 변경했다.
+
+현재 과거·실시간 원천은 네이버 PC
+`/api/domestic/detail/402340/trend?tradeType=KRX`이며,
+과거 적재는 `tools/import_naver_krx_quantity.py`를 사용한다.
+상장~2026-09-30 1,183일 원문·해시·비교·변경 매니페스트는
+`data/snapshots/20261001/f3_source_scope/`에 있다. 가격 열은 가져오지 않는다.
+2021-11-29~2022-11-08 233일은 실제 수량 원천으로 복구했다.
+**2022-11-09~12-29 37일은 Sean의 ‘넘어가자’ 지시로 결측 유지**한다.
+원문에 수량이 있어도 이 구간의 CSV F3 값은 채우지 않는다.
+원 환산·종가 곱셈은 하지 않는다.
+
+자세한 검증과 범위 한계는 `docs/F3_SOURCE_SCOPE_20261001.md`를 참조한다.

@@ -1,0 +1,38 @@
+{
+  "captured_at_utc": "2026-10-01T04:43:31.819717+00:00",
+  "naver_frontend": {
+    "url": "https://ssl.pstatic.net/imgstock/fn/real/pc/_next/static/chunks/83211-992a5ad42ceeb5eb.js",
+    "sha256": "353db2060b012385c7086c394d6998b1a7e7af9d156f6ba664e8b72c4d8a2b31",
+    "endpoint_function": "async function h(e,t,n,r){return(0,a.f)(\"/api/domestic/detail/\".concat(e,\"/trend?tradeType=\").concat(t,\"&startIdx=\").concat(n,\"&pageSize=\").concat(r))}"
+  },
+  "bullga_probe": {
+    "url": "https://mcp.bullga.ai/mcp",
+    "method": "list_investor_trading",
+    "arguments": {
+      "stock_code": "402340",
+      "trade_date_gte": "2022-11-09",
+      "trade_date_lte": "2022-12-29",
+      "page_size": 100
+    },
+    "response_file": "bullga_missing_37_response.json",
+    "response_sha256": "0b9c3f2ceda872b4a0933e3f09caa2f2a4e887ed23fccad3cadc1d06457b390d",
+    "count": 0,
+    "coverage_note": "Zero results for this symbol/date range; does not prove the underlying KRX data do not exist."
+  },
+  "official_references": [
+    {
+      "url": "https://download.kiwoom.com/hero4_help_new/0796.htm",
+      "finding": "Market settings support KRX, NXT and combined data; title bar shows the choice. KRX and NXT finalized investor reports have different update times. This does not identify the supplied workbook as Kiwoom."
+    },
+    {
+      "url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd?locale=ko",
+      "finding": "Official menu includes individual-stock investor trading performance. No official KRX 2022 quantity export was acquired; the separate Naver PC full-history capture subsequently supplied those dates."
+    }
+  ],
+  "later_naver_full_history": {
+    "file": "naver_pc_krx_0_1200.json",
+    "rows": 1183,
+    "covers_2022_gap": true,
+    "user_decision": "KRX quantities including other-foreign; preserve the 37-day 20221109-20221229 CSV gap. User confirmed HTS was combined-market."
+  }
+}

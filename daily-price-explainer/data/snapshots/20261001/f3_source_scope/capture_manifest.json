@@ -1,0 +1,78 @@
+[
+  {
+    "file": "naver_pc_krx_0_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=0&pageSize=60",
+    "status": 200,
+    "sha256": "1965e116c68648f89d7e802539ee7afe381b583c741f56185b0ed9849695d164",
+    "row_count": 60,
+    "range": [
+      "20260703",
+      "20260930"
+    ]
+  },
+  {
+    "file": "naver_pc_nxt_0_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=NXT&startIdx=0&pageSize=60",
+    "status": 200,
+    "sha256": "0643e9df6c2ced7b6e365f9897db92f86668a1a44e09aa867e87cd00b47a2c11",
+    "row_count": 60,
+    "range": [
+      "20260703",
+      "20260930"
+    ]
+  },
+  {
+    "file": "naver_pc_krx_900_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=900&pageSize=60",
+    "status": 200,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "row_count": 0,
+    "range": null
+  },
+  {
+    "file": "naver_pc_krx_950_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=950&pageSize=60",
+    "status": 200,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "row_count": 0,
+    "range": null
+  },
+  {
+    "file": "naver_pc_krx_60_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=60&pageSize=60",
+    "status": 200,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "row_count": 0,
+    "range": null
+  },
+  {
+    "file": "naver_pc_krx_850_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=850&pageSize=60",
+    "status": 200,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "row_count": 0,
+    "range": null
+  },
+  {
+    "file": "naver_pc_krx_0_1200.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=0&pageSize=1200",
+    "status": 200,
+    "sha256": "94763159fcb42fecb31f0edd1d91feb6f14e8dcc9ae0527dfa9cd1e2e1c7108c",
+    "row_count": 1183,
+    "range": [
+      "20211129",
+      "20260930"
+    ]
+  },
+  {
+    "file": "naver_pc_krx_1_60.json",
+    "url": "https://stock.naver.com/api/domestic/detail/402340/trend?tradeType=KRX&startIdx=1&pageSize=60",
+    "status": 200,
+    "sha256": "dd57422d84c8b31f89507a3621e6cff336263fb72ad3dfff5ab766e1f3c0b361",
+    "row_count": 60,
+    "range": [
+      "20260406",
+      "20260702"
+    ]
+  }
+]

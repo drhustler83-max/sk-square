@@ -54,7 +54,7 @@ V1_COLS = ["nav_total_trillion_v1", "nav_implied_ret_v1", "divergence_v1",
 DEFAULT_START = "20211129"
 DEFAULT_END = None  # use the latest date present in factor/NAV/listed sources
 RECENT_CUTOFF = "20260917"  # 이 날짜 이후 결측은 (A) 최근 갭
-FLOW_SOURCE_START = "20221109"  # 수량 HTS 원본의 첫 거래일
+FLOW_SOURCE_START = "20211129"  # explicit KRX Naver PC 수량 원본의 첫 거래일
 
 
 def _empty(s: pd.Series) -> pd.Series:

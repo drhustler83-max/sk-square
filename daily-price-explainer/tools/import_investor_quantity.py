@@ -1,4 +1,7 @@
-"""Replace SK Square F3 amount columns with net share quantities.
+"""Legacy HTS quantity parser and historical migration audit.
+
+Writing this mixed-market source is retired after the 2026-10-01 KRX decision.
+Use import_naver_krx_quantity.py for the finalized market/category definition.
 
 Historical quantities come from the preserved HTS workbook. Naver's preserved
 trend response supplies ownership ratios for its ten covered dates. The same
@@ -122,6 +125,8 @@ def main() -> None:
     parser.add_argument("--naver", type=Path, default=NAVER)
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
+    if args.write:
+        raise RuntimeError("HTS mixed-market import is retired; use import_naver_krx_quantity.py")
     patched, report = plan(args.factor_log, args.hts, args.naver)
     if args.write:
         if digest(args.factor_log.read_bytes()) != report["factor_before_sha256"]:

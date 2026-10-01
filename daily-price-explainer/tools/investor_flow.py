@@ -1,4 +1,8 @@
-"""SK Square investor net purchases in shares, sourced from Naver trend."""
+"""KRX-market net shares from Naver PC trend (explicit tradeType=KRX).
+
+foreign_net includes foreign and other-foreign investors. The endpoint's price
+fields are not a regular-session close source and must never feed NAV/targets.
+"""
 
 from __future__ import annotations
 
@@ -12,6 +16,7 @@ def _integer(value: object) -> int:
 
 
 def parse_trend_rows(rows: list[dict], ticker: str) -> dict[str, dict]:
+    """Parse preserved legacy mobile responses; live collection uses PC below."""
     if not isinstance(rows, list):
         raise ValueError("Naver trend response is not a list")
     result = {}
@@ -37,15 +42,31 @@ def parse_trend_rows(rows: list[dict], ticker: str) -> dict[str, dict]:
     return result
 
 
+def parse_pc_trend_rows(rows: list[dict], ticker: str) -> dict[str, dict]:
+    """Normalize a PC trend response captured with an explicit KRX selector."""
+    if not isinstance(rows, list):
+        raise ValueError("Naver PC trend response is not a list")
+    normalized = []
+    for row in rows:
+        ratio = row.get("frgnHoldRatio")
+        if not isinstance(ratio, str) or ratio.endswith("%"):
+            raise ValueError("Missing/unexpected PC ownership ratio")
+        normalized.append({**row, "foreignerHoldRatio": ratio + "%"})
+    return parse_trend_rows(normalized, ticker)
+
+
 def fetch_trend(ticker: str = "402340") -> dict[str, dict]:
     import requests
     import truststore
 
     truststore.inject_into_ssl()
-    response = requests.get(f"https://m.stock.naver.com/api/stock/{ticker}/trend",
-                            headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+    response = requests.get(f"https://stock.naver.com/api/domestic/detail/{ticker}/trend",
+                            params={"tradeType": "KRX", "startIdx": 0, "pageSize": 60},
+                            headers={"User-Agent": "Mozilla/5.0",
+                                     "Referer": f"https://stock.naver.com/domestic/stock/{ticker}/price"},
+                            timeout=20)
     response.raise_for_status()
-    return parse_trend_rows(response.json(), ticker)
+    return parse_pc_trend_rows(response.json(), ticker)
 
 
 def get_daily_flow(ticker: str, date: str) -> dict:
