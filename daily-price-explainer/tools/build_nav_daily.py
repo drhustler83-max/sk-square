@@ -171,6 +171,11 @@ def build(output: Path | None = None, lag: int = 1, listed_csv: Path | None = No
     for q, sq in zip(qs, src_q):
         u, uk = _lookup(UNLISTED_EOK, sq)
         c, ck = _lookup(NETCASH_EOK, sq)
+        if q >= (2022, 1) and (uk != sq or ck != sq):
+            raise ValueError(
+                f"{q[0]}Q{q[1]} NAV에 필요한 직전분기 {sq[0]}Q{sq[1]} "
+                "비상장 가치/순현금이 없어 저장을 보류합니다"
+            )
         b = "lagged"
         if u is None or c is None:            # 직전분기 없음 → 당분기 사용
             u2, uk2 = _lookup(UNLISTED_EOK, q)
@@ -214,7 +219,10 @@ def build(output: Path | None = None, lag: int = 1, listed_csv: Path | None = No
     shares = sh_ser.to_numpy()
     px = stock.get_market_ohlcv(lf["date"].iloc[0], lf["date"].iloc[-1], SKQ)["종가"].astype(float)
     px.index = pd.to_datetime(px.index)
-    px = px.reindex(idx).ffill().to_numpy()
+    px = px.reindex(idx).ffill()
+    from tools.krx_regular import overlay_closes
+
+    px = overlay_closes(px, SKQ).to_numpy()
 
     out["skq_close"] = px
     out["skq_shares"] = shares.astype("int64")

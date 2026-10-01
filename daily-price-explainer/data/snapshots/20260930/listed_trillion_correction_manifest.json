@@ -1,0 +1,38 @@
+{
+  "source": "data\\snapshots\\20260930\\krx_regular_closes_aug03_sep29.json",
+  "dreamus_split": {
+    "date": "20260804",
+    "ratio": "5:1",
+    "post_split_shares": 3286008
+  },
+  "krx_close_changed_dates": {
+    "skhynix": [],
+    "dreamus": [],
+    "nexus": []
+  },
+  "updated_rows": {
+    "listed": 1064,
+    "nav": 0,
+    "factor": 0
+  },
+  "updated_columns": {
+    "listed": {
+      "total_listed_value_trillion": 1064
+    },
+    "nav": {},
+    "factor": {}
+  },
+  "before_sha256": {
+    "listed": "83b03b0ca959060957f19b1efa975d3d8dca87b4ee98ea0b9d583b9c306ee7f9",
+    "nav": "1cd79c143aaeb6fae81e0e87a3af3d15140ef94d8eac30812e4c5d39e90ba009",
+    "factor": "86c5e8f6a46f2412279aecceed275b7910adff502990449fd3cd4b734509d845"
+  },
+  "after_sha256": {
+    "listed": "decd24e4cf3be1322dac62c72f54a86f9479b9b94f2dbc2a275866d13e388053",
+    "nav": "1cd79c143aaeb6fae81e0e87a3af3d15140ef94d8eac30812e4c5d39e90ba009",
+    "factor": "86c5e8f6a46f2412279aecceed275b7910adff502990449fd3cd4b734509d845"
+  },
+  "reason": "Correct trillion-unit derived column after earlier won-unit tolerance masked changes below 0.5 trillion.",
+  "copy_test": "passed; all 1181 total/trillion identities; idempotent",
+  "backup": "local-only: data/snapshots/20260930/listed_before_trillion_correction_local.csv"
+}

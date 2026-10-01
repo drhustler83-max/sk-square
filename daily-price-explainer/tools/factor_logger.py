@@ -133,27 +133,24 @@ def collect_and_log(date: str = None) -> dict:
     for key in ("foreign_net", "institution_net", "individual_net", "foreign_own_pct"):
         row[key] = flow[key]
 
-    # ── 3. 매크로 (KOSPI 수익률, USD/KRW) ───────────────────────────────
-    try:
-        from tools.macro import get_macro_data
-        macro = get_macro_data(date)
-        row["kospi_ret"] = macro.get("kospi", {}).get("pct_change")
-        row["usd_krw"]   = macro.get("usd_krw")
-    except Exception as e:
-        logger.warning(f"Macro 수집 오류: {e}")
+    # ── 3~4. KRX 지수·ETF와 한국은행 환율 — 날짜가 없으면 저장 보류 ──────────
+    from tools.regular_macro import get_daily_macro
 
-    # ── 4. 반도체 섹터 수익률 ────────────────────────────────────────────
-    try:
-        from tools.sector_rotation import get_sector_rotation
-        rotation = get_sector_rotation(date)
-        for sector, pct in rotation.get("rotation_signal", {}).get("all_sectors_ranked", []):
-            if sector == "반도체":
-                row["sector_semiconductor"] = pct
-                break
-    except Exception as e:
-        logger.warning(f"Sector 수집 오류: {e}")
+    row.update(get_daily_macro(date))
 
-    # ── 5. 공매도 데이터 ─────────────────────────────────────────────────
+    # ── 5. SK스퀘어 주식선물 — KRX 정규장 현물가를 분모로 사용 ────────────────
+    from tools.futures import get_futures_data
+
+    fut = get_futures_data(ticker, date)
+    if fut.get("error"):
+        raise ValueError(f"[{date}] 선물 자료 미확정 — 저장 보류: {fut['error']}")
+    row["fut_listed"] = 1 if fut["listed"] else 0
+    if fut["listed"]:
+        row["fut_basis"] = fut["basis"]
+        row["fut_basis_pct"] = fut["basis_pct"]
+        row["fut_volume"] = fut["near_month"]["volume"]
+
+    # ── 6. 공매도 데이터 ─────────────────────────────────────────────────
     try:
         from tools.short import get_shorting_data
         sh = get_shorting_data(ticker, date)
@@ -164,7 +161,7 @@ def collect_and_log(date: str = None) -> dict:
     except Exception as e:
         logger.warning(f"공매도 수집 오류: {e}")
 
-    # ── 6. CSV 저장 ──────────────────────────────────────────────────────
+    # ── 7. CSV 저장 ──────────────────────────────────────────────────────
     _append_to_csv(row)
     return row
 

@@ -11,7 +11,7 @@ factor_log.csv 완전성 감사 — 거래일 누락·컬럼 결측을 분류해
 사용:
   python tools/audit_factor_log.py                 # 사람이 읽는 리포트
   python tools/audit_factor_log.py --json out.json # 기계용 JSON 병기
-  python tools/audit_factor_log.py --start 20211129 --end 20260929
+  python tools/audit_factor_log.py --start 20211129 --end 20260930
 
 주의: 거래일 목록을 pykrx(네이버 경로)로 받으므로 네트워크 필요. 사내망
 SSL 우회를 위해 verify=False 를 주입한다(다른 tool 들과 동일).
@@ -52,7 +52,7 @@ V1_COLS = ["nav_total_trillion_v1", "nav_implied_ret_v1", "divergence_v1",
            "nav_discount_pct_v1", "nav_discount_delta_v1", "skq_ret_v1"]
 
 DEFAULT_START = "20211129"
-DEFAULT_END = "20260929"
+DEFAULT_END = None  # use the latest date present in factor/NAV/listed sources
 RECENT_CUTOFF = "20260917"  # 이 날짜 이후 결측은 (A) 최근 갭
 FLOW_SOURCE_START = "20221109"  # 수량 HTS 원본의 첫 거래일
 
@@ -67,14 +67,21 @@ def _trading_days(start: str, end: str, ticker: str = "402340") -> list[str]:
     return [d.strftime("%Y%m%d") for d in idx if start <= d.strftime("%Y%m%d") <= end]
 
 
-def audit(start: str = DEFAULT_START, end: str = DEFAULT_END) -> dict:
+def audit(start: str = DEFAULT_START, end: str | None = DEFAULT_END) -> dict:
     df = pd.read_csv(FACTOR_LOG, dtype={"date": str}).sort_values("date").reset_index(drop=True)
     first_factor_date = str(df["date"].iloc[0])
+    source_ends = [str(df["date"].max())]
     first_nav_date = None
     if NAV_CSV.exists():
         nav_dates = pd.read_csv(NAV_CSV, usecols=["date"], dtype={"date": str})["date"]
         if not nav_dates.empty:
             first_nav_date = str(nav_dates.min())
+            source_ends.append(str(nav_dates.max()))
+    if LISTED_CSV.exists():
+        listed_dates = pd.read_csv(LISTED_CSV, usecols=["date"], dtype={"date": str})["date"]
+        if not listed_dates.empty:
+            source_ends.append(str(listed_dates.max()))
+    end = end or max(source_ends)
     df = df[(df["date"] >= start) & (df["date"] <= end)]
     have = set(df["date"])
     tdays = _trading_days(start, end)

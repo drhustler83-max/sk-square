@@ -55,7 +55,18 @@ def get_macro_data(date: str) -> dict:
     """
     result = {}
     result.update(_get_bok_data(date))
-    result.update(_get_kospi(date))
+    # The daily model and chatbot use the same official KRX index row.
+    from tools.regular_macro import bok_usd_krw, krx_market_factors
+    try:
+        factors, source = krx_market_factors(date)
+        result["kospi"] = {"close": float(source["kospi"]["CLSPRC_IDX"]),
+                           "pct_change": factors["kospi_ret"]}
+    except Exception as exc:
+        logger.warning(f"KRX KOSPI 수집 오류: {exc}")
+    try:
+        result["usd_krw"], _ = bok_usd_krw(date)
+    except Exception as exc:
+        logger.warning(f"ECOS USD/KRW 수집 오류: {exc}")
     result.update(_get_yf_data(date))
     return result
 

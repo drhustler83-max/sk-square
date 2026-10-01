@@ -114,8 +114,15 @@ def plan(listed_path: Path, nav_path: Path, factor_path: Path,
     listed["total_listed_value_trillion"] = (listed["total_listed_value"] / 1e12).round(4)
     lfields = ["dreamus_shares", "dreamus_price", "dreamus_value",
                "skhynix_price", "skhynix_value", "nexus_price", "nexus_value",
-               "total_listed_value", "total_listed_value_trillion"]
+               "total_listed_value"]
     listed_updates = _updates(old_l, listed, lfields, atol=0.5)
+    # Total value is in won (~10^14); tiny float-sum noise is harmless there.
+    # The derived trillion column has four decimals, so its tolerance must be
+    # measured in trillions rather than inherited from the won-valued columns.
+    trillion_updates = _updates(old_l, listed,
+                                ["total_listed_value_trillion"], atol=0.00001)
+    for date, changed in trillion_updates.items():
+        listed_updates.setdefault(date, {}).update(changed)
 
     nav = old_n.copy()
     nav["hynix_value"] = listed["skhynix_value"]

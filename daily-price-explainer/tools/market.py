@@ -171,24 +171,31 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
         dict with ohlcv + investor flows
     """
     try:
-        # OHLCV — 오늘 데이터 없으면(장 시작 전/휴장) 전일로 fallback
-        ohlcv = stock.get_market_ohlcv(date, date, ticker)
+        # IR 종가는 반드시 KRX 정규장 시세를 사용한다. 당일 확정 전에는
+        # 직전 거래일 정규장 종가로 표시하고 실제 날짜를 함께 돌려준다.
+        from tools.krx_regular import NoRegularTrade, numeric, stock_row
+
         is_prev_day = False
         actual_date = date
-        if ohlcv.empty:
+        try:
+            krx_row = stock_row(ticker, date)
+            if numeric(krx_row, "ACC_TRDVOL") <= 0:
+                raise NoRegularTrade(f"{ticker} {date}: 정규장 거래 없음")
+        except NoRegularTrade:
             prev = _prev_trading_day(date)
-            ohlcv = stock.get_market_ohlcv(prev, prev, ticker)
-            if ohlcv.empty:
-                logger.warning(f"No OHLCV data for {ticker} on {date} or {prev}")
-                return {"error": "데이터 없음 (휴장일이거나 상장 전)"}
-            logger.info(f"{ticker} 오늘 데이터 없음 → 전일({prev}) 종가 사용")
+            krx_row = stock_row(ticker, prev)
+            if numeric(krx_row, "ACC_TRDVOL") <= 0:
+                return {"error": "KRX 정규장 시세 없음 (휴장일이거나 상장 전)"}
+            logger.info(f"{ticker} {date} 정규장 종가 없음 → {prev} 종가 사용")
             is_prev_day = True
             actual_date = prev
 
-        row = ohlcv.iloc[0].to_dict()  # Series → dict, KeyError 방지
-        prev_date = _prev_trading_day(date)
-        prev_ohlcv = stock.get_market_ohlcv(prev_date, prev_date, ticker)
-        prev_close = float(prev_ohlcv.iloc[0]["종가"]) if not prev_ohlcv.empty else None
+        close = numeric(krx_row, "TDD_CLSPRC")
+        prev_date = _prev_trading_day(actual_date)
+        try:
+            prev_close = numeric(stock_row(ticker, prev_date), "TDD_CLSPRC")
+        except NoRegularTrade:
+            prev_close = None
 
         # 종목별 수급은 로거와 같은 네이버 순매수 수량(주) 원천을 쓴다.
         from tools.investor_flow import fetch_trend
@@ -198,17 +205,16 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
             logger.warning(f"네이버 수급 조회 실패: {exc}")
             trend_rows = {}
 
-        close = row.get("종가", 0)
         result = {
             "date":         actual_date,
             "is_prev_day":  is_prev_day,   # True = 전일 종가 기준 (장 시작 전)
             "ticker": ticker,
-            "open":          _safe_int(row.get("시가")),
-            "high":          _safe_int(row.get("고가")),
-            "low":           _safe_int(row.get("저가")),
+            "open":          _safe_int(krx_row.get("TDD_OPNPRC")),
+            "high":          _safe_int(krx_row.get("TDD_HGPRC")),
+            "low":           _safe_int(krx_row.get("TDD_LWPRC")),
             "close":         _safe_int(close),
-            "volume":        _safe_int(row.get("거래량")),
-            "trading_value": _safe_int(row.get("거래대금")),
+            "volume":        numeric(krx_row, "ACC_TRDVOL"),
+            "trading_value": _safe_int(krx_row.get("ACC_TRDVAL")),
             "prev_close":    _safe_int(prev_close),
             "pct_change":    round((close / prev_close - 1) * 100, 2) if prev_close and close else None,
         }
@@ -219,12 +225,16 @@ def get_market_data(ticker: str, date: str, with_history: bool = False) -> dict:
 
         # KOSPI 전체 외국인 순매수 (Naver Finance 파싱)
         try:
-            result["kospi_investor_flow"] = _get_kospi_investor_flow()
-            kf = result["kospi_investor_flow"]
-            logger.info(
-                f"KOSPI 수급 - 외국인: {kf['foreign_net']:+,}억, "
-                f"기관: {kf['institution_net']:+,}억, 개인: {kf['individual_net']:+,}억"
-            )
+            kf = _get_kospi_investor_flow()
+            if all(kf.get(key) is not None for key in
+                   ("foreign_net", "institution_net", "individual_net")):
+                result["kospi_investor_flow"] = kf
+                logger.info(
+                    f"KOSPI 수급 - 외국인: {kf['foreign_net']:+,}억, "
+                    f"기관: {kf['institution_net']:+,}억, 개인: {kf['individual_net']:+,}억"
+                )
+            else:
+                logger.warning("KOSPI 투자자 수급 미확정 — 컨텍스트에서 생략")
         except Exception as e:
             logger.warning(f"KOSPI 수급 오류: {e}")
 

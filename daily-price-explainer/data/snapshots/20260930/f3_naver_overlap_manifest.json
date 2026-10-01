@@ -1,0 +1,118 @@
+{
+  "source": {
+    "hts": "data\\manual_krx\\krx_investor_402340.xlsx",
+    "naver": "data\\snapshots\\20260930\\naver_trend_402340.json"
+  },
+  "units": "shares",
+  "counts": {
+    "factor_rows": 1182,
+    "hts_rows": 950,
+    "hts_complete": 912,
+    "hts_blank": 37,
+    "before_hts": 233,
+    "factor_without_hts": 0,
+    "naver_ownership": 10,
+    "naver_flow": 10
+  },
+  "first_hts_date": "20221109",
+  "last_hts_date": "20260930",
+  "hts_naver_overlap_difference_naver_minus_hts": {
+    "20260915": {
+      "foreign_net": -9964,
+      "institution_net": 7192,
+      "individual_net": 3571
+    },
+    "20260914": {
+      "foreign_net": 32355,
+      "institution_net": 12184,
+      "individual_net": -44872
+    },
+    "20260916": {
+      "foreign_net": -814,
+      "institution_net": -1013,
+      "individual_net": 2335
+    },
+    "20260917": {
+      "foreign_net": 1939,
+      "institution_net": -3533,
+      "individual_net": 464
+    },
+    "20260918": {
+      "foreign_net": -52294,
+      "institution_net": -14027,
+      "individual_net": 64245
+    },
+    "20260921": {
+      "foreign_net": -25845,
+      "institution_net": -6841,
+      "individual_net": 32489
+    },
+    "20260922": {
+      "foreign_net": 3189,
+      "institution_net": -3494,
+      "individual_net": -3223
+    },
+    "20260923": {
+      "foreign_net": -86838,
+      "institution_net": -4024,
+      "individual_net": 86296
+    },
+    "20260928": {
+      "foreign_net": 72353,
+      "institution_net": 4332,
+      "individual_net": -76130
+    },
+    "20260929": {
+      "foreign_net": 4085,
+      "institution_net": 3220,
+      "individual_net": -2396
+    }
+  },
+  "factor_before_sha256": "8f931a8f87f9d5c5ebead4a56037fa60a609a64408bbe3a7d620d054c27506f3",
+  "factor_after_sha256": "86c5e8f6a46f2412279aecceed275b7910adff502990449fd3cd4b734509d845",
+  "krx_naver_volume_match": {
+    "20260929": {
+      "krx": 434558,
+      "naver": 434558
+    },
+    "20260928": {
+      "krx": 720972,
+      "naver": 720972
+    },
+    "20260923": {
+      "krx": 963292,
+      "naver": 963292
+    },
+    "20260922": {
+      "krx": 585196,
+      "naver": 585196
+    },
+    "20260921": {
+      "krx": 534201,
+      "naver": 534201
+    },
+    "20260918": {
+      "krx": 529524,
+      "naver": 529524
+    },
+    "20260917": {
+      "krx": 336217,
+      "naver": 336217
+    },
+    "20260916": {
+      "krx": 379482,
+      "naver": 379482
+    },
+    "20260915": {
+      "krx": 366583,
+      "naver": 366583
+    },
+    "20260914": {
+      "krx": 523897,
+      "naver": 523897
+    }
+  },
+  "hts_used_complete_rows": 902,
+  "backup": "local-only: data/snapshots/20260930/factor_log_before_naver_overlap_local.csv",
+  "copy_test": "passed; idempotent"
+}

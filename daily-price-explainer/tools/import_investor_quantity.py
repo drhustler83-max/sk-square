@@ -75,7 +75,7 @@ def plan(factor_path: Path, hts_path: Path, naver_path: Path) -> tuple[bytes, di
     updates = {}
     counts = {"factor_rows": len(rows), "hts_rows": len(hts), "hts_complete": 0,
               "hts_blank": 0, "before_hts": 0, "factor_without_hts": 0,
-              "naver_ownership": 0}
+              "naver_ownership": 0, "naver_flow": 0}
     overlap = {}
     first = min(hts)
     for row in rows:
@@ -98,6 +98,11 @@ def plan(factor_path: Path, hts_path: Path, naver_path: Path) -> tuple[bytes, di
                     field: int(naver[date][field]) - int(flow[field])
                     for field in FLOW_FIELDS
                 }
+            # The captured Naver volume equals KRX regular-session volume on
+            # all ten overlap dates. Use it at the live-source boundary.
+            for field in FLOW_FIELDS:
+                update[field] = str(naver[date][field])
+            counts["naver_flow"] += 1
         updates[date] = update
     patched = patch_rows(original, updates)
     report = {"source": {"hts": str(hts_path.relative_to(BASE)),

@@ -80,6 +80,27 @@ def get_sector_rotation(date: str) -> dict:
         etf_returns = []
         etf_details = []
 
+        if sector_name == "반도체":
+            # The model factor and chatbot share the same KRX ETF rows.
+            try:
+                from tools.regular_macro import _rate, krx_market_factors
+                factors, source = krx_market_factors(date)
+                names = {etf["ticker"]: etf for etf in etf_list}
+                etf_details = [
+                    {"name": names[row["ISU_CD"]]["name"],
+                     "manager": names[row["ISU_CD"]]["manager"],
+                     "pct_change": _rate(row, "TDD_CLSPRC", "CMPPREVDD_PRC")}
+                    for row in source["semiconductor_etfs"]
+                ]
+                sector_results[sector_name] = {
+                    "avg_pct_change": factors["sector_semiconductor"],
+                    "etf_count": len(etf_details),
+                    "etf_details": etf_details,
+                }
+            except Exception as exc:
+                logger.warning(f"반도체 KRX ETF 수집 오류: {exc}")
+            continue
+
         for etf in etf_list:
             ticker = etf["ticker"]
             if len(ticker) != 6 or not ticker.isdigit():

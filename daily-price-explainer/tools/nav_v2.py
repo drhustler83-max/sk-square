@@ -7,9 +7,8 @@ tools/apply_nav_v2.py(과거 일괄 보정)와 tools/factor_logger.py(매일 실
 
 get_live_nav_v2(date)는 factor_logger 전용 진입점이다.
   1. listed_holdings_daily.csv / nav_daily.csv 가 date 를 포함하도록 필요하면
-     다시 만든다(build_listed_holdings.build 재실행 — 기존 스크립트와 같은
-     방식으로 전체 재계산이다, 증분 아님). 하루 한 번 도는 스케줄러 빈도에서는
-     감내 가능하나 느리다는 점은 알아둘 것 — 나중에 증분 방식으로 최적화 여지.
+     임시 파일에서 재계산한 뒤 새 거래일만 기존 파일에 덧붙인다. 과거 환율 등
+     제공자 값이 바뀌어도 확정된 기존 행은 유지한다.
   2. SK스퀘어 자신과 당일 보유 중인 국내 종목의 종가가 실제 그날 고시된
      값과 일치하는지 재조회해 대조한다(reindex+ffill 로 채워진 전일가를
      정상 시세로 오인하지 않기 위함 — 존재 여부가 아니라 값 자체를 비교).
@@ -115,7 +114,8 @@ def _ensure_coverage(date: str) -> None:
 
     두 파일(listed_holdings_daily.csv, nav_daily.csv)을 실제 경로에 바로
     쓰지 않는다. 먼저 data/ 바로 밑 임시 폴더에 둘 다 만들고, nav_daily
-    쪽에 date가 실제로 들어갔는지 확인한 뒤에만 os.replace로 실제 경로에
+    쪽에 date가 실제로 들어갔는지 확인한 뒤 기존 행을 유지한 채 새 날짜만
+    덧붙여 os.replace로 실제 경로에
     반영한다. 이렇게 안 하면 두 단계 중 하나(주로 두 번째, build_nav)만
     실패했을 때 상장분 CSV는 새 날짜까지 늘어나 있는데 NAV 쪽은 그대로인
     상태로 실제 데이터 폴더가 남는다(2026-09-29 재현·확인됨). 임시 폴더는
@@ -144,6 +144,29 @@ def _ensure_coverage(date: str) -> None:
                 f"{date}: 파이프라인을 다시 만들었지만 결과에 해당 거래일이 없습니다"
                 "(휴장일이거나 확장 실패 — 실제 파일은 손대지 않았습니다)"
             )
+
+        # 전체 재빌드 결과에서는 새 날짜만 취한다. 환율 등 제공자가 과거 값을
+        # 수정할 수 있어, 전체 파일을 교체하면 검증·커밋한 역사적 NAV가
+        # 조용히 바뀐다(2026-09-28 USD/KRW 수정 실제 확인).
+        for old_path, new_path in ((LISTED_CSV, tmp_listed), (NAV_DAILY, tmp_nav)):
+            if not old_path.exists():
+                continue
+            old_bytes, generated = old_path.read_bytes(), new_path.read_bytes()
+            old_lines = old_bytes.splitlines(keepends=True)
+            new_lines = generated.splitlines(keepends=True)
+            if not old_lines or not old_lines[-1].endswith(b"\n"):
+                raise NavDataUnavailable(f"기존 파일 줄 끝이 올바르지 않음: {old_path.name}")
+            if old_lines[0].rstrip(b"\r\n") != new_lines[0].rstrip(b"\r\n"):
+                raise NavDataUnavailable(f"재빌드 컬럼이 기존과 다름: {old_path.name}")
+            old_dates = [line.split(b",", 1)[0] for line in old_lines[1:]]
+            new_dates = [line.split(b",", 1)[0] for line in new_lines[1:]]
+            if (len(old_dates) != len(set(old_dates)) or
+                    len(new_dates) != len(set(new_dates)) or
+                    new_dates[:len(old_dates)] != old_dates or
+                    len(new_dates) <= len(old_dates)):
+                raise NavDataUnavailable(f"기존 거래일 순서와 재빌드가 다름: {old_path.name}")
+            preserved = old_bytes + b"".join(new_lines[len(old_lines):])
+            new_path.write_bytes(preserved)  # 임시 폴더 안에서만 수정
 
         # 여기까지 왔으면 둘 다 검증됐다 — 이제부터만 실제 경로를 건드린다.
         # 두 파일 교체는 진짜 원자적일 수 없다(os.replace는 파일 단위). 첫 교체
@@ -188,7 +211,7 @@ def _check_price_freshness(date: str) -> None:
     재조회 값과 다른 게 정상이다.
     """
     from tools.build_listed_holdings import HOLDINGS, KR_STOCKS
-    from pykrx import stock
+    from tools.krx_regular import NoRegularTrade, stock_close
 
     d = pd.Timestamp(date)
 
@@ -223,13 +246,15 @@ def _check_price_freshness(date: str) -> None:
             continue
         used = float(row_src[col])
         try:
-            ohlcv = stock.get_market_ohlcv(date, date, ticker)
-        except Exception as exc:
-            raise NavDataUnavailable(f"{date}: {name}({ticker}) 시세 재조회 실패 — {exc}") from exc
-        if ohlcv is None or ohlcv.empty:
-            problems.append(f"{name}({ticker}): 당일 시세 없음(재조회 실패)")
+            fresh = float(stock_close(ticker, date))
+        except NoRegularTrade as exc:
+            if ticker == "060570" and "20260731" <= date <= "20260824":
+                # 드림어스 거래정지 기간은 병합 전후 가격 기준을 빌더가 처리한다.
+                continue
+            problems.append(f"{name}({ticker}): {exc}")
             continue
-        fresh = float(ohlcv.iloc[0]["종가"])
+        except Exception as exc:
+            raise NavDataUnavailable(f"{date}: {name}({ticker}) KRX 종가 재조회 실패 — {exc}") from exc
         if abs(fresh - used) > 0.5:
             problems.append(
                 f"{name}({ticker}): 파이프라인 저장값 {used:,.0f} ≠ 재조회 {fresh:,.0f}"

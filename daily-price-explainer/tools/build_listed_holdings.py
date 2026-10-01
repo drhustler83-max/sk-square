@@ -197,6 +197,10 @@ def build(output: Path | None = None, end: str | None = None) -> pd.DataFrame:
             # 거래정지 구간(07-31~08-24)의 728원 KRX 참조가는 체결 종가가
             # 아니므로, 병합 효력일부터는 수정주가 3,640원을 사용한다.
             px.loc[px.index < pd.Timestamp("20260804")] /= 5
+        if key in ("skhynix", "dreamus", "nexus"):
+            from tools.krx_regular import overlay_closes
+
+            px = overlay_closes(px, _tk, allow_halt=(key == "dreamus"))
         sh, conf = _shares_series(key, idx)
         val = px.fillna(0) * sh
         out[f"{key}_shares"] = sh

@@ -1,0 +1,29 @@
+{
+  "date": "20260930",
+  "source_close": "KRX regular session",
+  "f3_unit": "shares",
+  "before_sha256": {
+    "listed_holdings_daily.csv": "decd24e4cf3be1322dac62c72f54a86f9479b9b94f2dbc2a275866d13e388053",
+    "nav_daily.csv": "1cd79c143aaeb6fae81e0e87a3af3d15140ef94d8eac30812e4c5d39e90ba009",
+    "factor_log.csv": "e71d1941e08fa2c2e588ab1d61056bc582fe1d0eb88cb7c3068580e631896067"
+  },
+  "after_sha256": {
+    "listed_holdings_daily.csv": "cd23730161bbdee308e8323ef27946b13a9b5acb83c5dc2312997307a56ce35d",
+    "nav_daily.csv": "d93a2e9d8183ad701183da39830e5d9529ec47ca48ca45181888c1e99e2e0197",
+    "factor_log.csv": "51de83eeccbd4c662b9165b09552e55a414825679d55fabe4f82e488e3d3c369"
+  },
+  "factor_values": {
+    "skq_ret": "1.88",
+    "nav_implied_ret": "0.61",
+    "divergence": "1.27",
+    "kospi_ret": "-0.48",
+    "usd_krw": "1358.4",
+    "sector_semiconductor": "1.14",
+    "foreign_net": "29397",
+    "institution_net": "-2345",
+    "individual_net": "-25635",
+    "fut_basis": "0"
+  },
+  "skq_close": "1139000.0",
+  "captured_at_utc": "2026-10-01T02:25:53.743712+00:00"
+}
