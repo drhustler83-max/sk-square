@@ -6,10 +6,13 @@ pykrx를 통해 공매도 잔고 및 거래량 수집
   - 잔고 증가 + 현물 하락 = 공매도 압력
   - 잔고 감소 + 현물 상승 = 공매도 청산(숏커버링)
 
-※ KRX 공매도 잔고는 T+1 공시: 당일 날짜로 조회 시 데이터 없음.
-   → balance_date = _prev_trading_day(date) 사용
-   → "전일 잔고" = balance_date, "전전일 잔고" = prev_of_balance_date (변화량 계산용)
+원본은 요청한 실제 기준일 값으로 저장한다(Sean 결정, 2026-10-01).
+공시 지연/조회 실패 시 결측을 유지하며 이전 날짜 값으로 대체하지 않는다.
+과거 CSV의 레거시 지연 값은 소급 수정하지 않는다.
 """
+from datetime import datetime
+from decimal import Decimal
+
 import ssl
 import urllib3
 import requests
@@ -27,110 +30,116 @@ from loguru import logger
 
 
 def _find_col(df, candidates: list) -> str | None:
-    """컬럼명 방어적 매칭 (부분 문자열)"""
+    """정확한 컬럼명만 허용해 잔고금액을 잔고수량으로 읽지 않는다."""
     for c in candidates:
-        for col in df.columns:
-            if c in col:
-                return col
+        if c in df.columns:
+            return c
     return None
 
 
-def get_shorting_data(ticker: str, date: str) -> dict:
-    """
-    Args:
-        ticker: 종목코드 (e.g. '402340')
-        date:   'YYYYMMDD' — 조회 기준일 (당일). 잔고는 T+1이므로 내부에서 전일로 조정.
-    Returns:
-        balance_date:           실제 잔고 기준일 (전일)
-        shorting_balance:       공매도 잔고수량 (주)
-        shorting_balance_ratio: 공매도 잔고율 (%, 발행주식 대비)
-        shorting_volume:        전일 공매도 거래량 (주)
-        shorting_volume_ratio:  전일 공매도 비중 (%, 총거래량 대비)
-        balance_change:         전일 vs 전전일 잔고 변화 (주, 양수=증가)
-        signal:                 "압력" | "청산" | "중립" | None
-    """
-    from tools.market import _prev_trading_day
-
-    # 공매도 잔고는 T+2 공시: 전전일부터 역방향으로 최대 3일 시도
-    balance_date = None
-    df_bal_found = None
-    _d = _prev_trading_day(date)
-    for _ in range(3):
-        try:
-            _df = stock.get_shorting_balance_by_date(_d, _d, ticker)
-            if _df is not None and not _df.empty:
-                balance_date = _d
-                df_bal_found = _df
-                break
-        except Exception:
-            pass
-        _d = _prev_trading_day(_d)
-
-    if balance_date is None:
-        balance_date = _prev_trading_day(date)   # 표시용 fallback
-    prev_balance_date = _prev_trading_day(balance_date)
-
-    result: dict = {"balance_date": balance_date}
-
-    # ── 1. 공매도 잔고 (balance_date 기준, 위에서 이미 탐색 완료) ─────────────
-    if df_bal_found is not None:
-        row = df_bal_found.iloc[0]
-        col_qty   = _find_col(df_bal_found, ["잔고수량", "잔고"])
-        col_ratio = _find_col(df_bal_found, ["잔고율", "공매도비율", "비중", "비율"])
-        if col_qty:
-            result["shorting_balance"] = int(row[col_qty])
-        if col_ratio:
-            result["shorting_balance_ratio"] = round(float(row[col_ratio]), 2)
-        logger.info(
-            f"공매도 잔고({balance_date}) — "
-            f"{result.get('shorting_balance', 'N/A'):,}주 "
-            f"({result.get('shorting_balance_ratio', 'N/A')}%)"
-        )
-    else:
-        logger.warning(f"공매도 잔고 데이터 없음: {ticker} (최근 3일 조회 실패)")
-
-    # ── 2. 공매도 거래량 (balance_date 기준) ─────────────────────────────────
-    try:
-        df_vol = stock.get_shorting_volume_by_date(balance_date, balance_date, ticker)
-        if df_vol is not None and not df_vol.empty:
-            row = df_vol.iloc[0]
-            col_sv    = _find_col(df_vol, ["공매도", "공매"])
-            col_ratio = _find_col(df_vol, ["비중", "비율"])
-
-            if col_sv:
-                result["shorting_volume"] = int(row[col_sv])
-            if col_ratio:
-                result["shorting_volume_ratio"] = round(float(row[col_ratio]), 2)
-
-            logger.info(
-                f"공매도 거래량({balance_date}) — "
-                f"{result.get('shorting_volume', 'N/A'):,}주 "
-                f"(비중 {result.get('shorting_volume_ratio', 'N/A')}%)"
-            )
+def _dated_row(df, date: str):
+    """요청일의 유일한 행만 선택. 최신/첫 행으로 폴백하지 않는다."""
+    if df is None or df.empty:
+        return None
+    dates = []
+    for value in df.index:
+        if hasattr(value, "strftime"):
+            key = value.strftime("%Y%m%d")
         else:
-            logger.warning(f"공매도 거래량 데이터 없음: {ticker} {balance_date}")
-    except Exception as e:
-        logger.warning(f"get_shorting_volume_by_date 오류: {e}")
+            key = str(value).replace("-", "")
+        dates.append(key)
+    matches = [i for i, key in enumerate(dates) if key == date]
+    if len(matches) != 1:
+        raise ValueError(f"공매도 응답에 {date}의 유일한 행이 없습니다")
+    return df.iloc[matches[0]]
 
-    # ── 3. 전전일 잔고 → 변화량 계산 ─────────────────────────────────────────
+
+def _quantity(value) -> int:
+    number = Decimal(str(value).replace(",", ""))
+    if not number.is_finite() or number < 0 or number != number.to_integral_value():
+        raise ValueError("공매도 수량은 유한한 비음수 정수여야 합니다")
+    return int(number)
+
+
+def _ratio(value) -> float:
+    number = Decimal(str(value).replace(",", ""))
+    if not number.is_finite() or not 0 <= number <= 100:
+        raise ValueError("공매도 비율은 0~100%의 유한한 값이어야 합니다")
+    return round(float(number), 2)
+
+
+def get_shorting_data(ticker: str, date: str) -> dict:
+    """요청일 D의 잔고·거래비중, D와 직전 거래일의 잔고 차분을 반환.
+
+    balance_date/volume_date는 조회 기준일이다. 빈 응답·오류·날짜 불일치는
+    해당 값이 None이다. 포착한 예외는 errors에 남으며 빈 응답만으로 미공시를
+    확정하지 않는다. 0은 정상 값이다.
+    balance_change는 원천의 D 잔고와 직전 거래일 잔고가 둘 다 있어야 계산한다.
+    레거시 CSV 값을 차분 계산에 사용하지 않는다.
+    """
+    if not isinstance(date, str) or len(date) != 8 or not date.isdecimal():
+        raise ValueError("공매도 조회일은 YYYYMMDD여야 합니다")
+    datetime.strptime(date, "%Y%m%d")
+    result = {"balance_date": date, "volume_date": date, "prev_balance_date": None,
+              "shorting_balance": None, "shorting_balance_ratio": None,
+              "shorting_volume": None, "shorting_volume_ratio": None,
+              "prev_balance": None, "balance_change": None, "signal": None,
+              "errors": {}}
+
+    # 잔고 조회와 거래량 조회는 독립적이다. 잔고 미공시여도 당일 거래비중은 받는다.
     try:
-        df_prev = stock.get_shorting_balance_by_date(prev_balance_date, prev_balance_date, ticker)
-        if df_prev is not None and not df_prev.empty:
-            col_qty_p = _find_col(df_prev, ["잔고수량", "잔고"])
-            if col_qty_p:
-                prev_bal = int(df_prev.iloc[0][col_qty_p])
-                result["prev_balance"] = prev_bal
-                if "shorting_balance" in result:
-                    chg = result["shorting_balance"] - prev_bal
-                    result["balance_change"] = chg
-                    logger.info(
-                        f"공매도 잔고 변화: {chg:+,}주 "
-                        f"({prev_balance_date} {prev_bal:,}주 → {balance_date} {result['shorting_balance']:,}주)"
-                    )
-    except Exception as e:
-        logger.warning(f"전전일 잔고 조회 오류: {e}")
+        df_bal = stock.get_shorting_balance_by_date(date, date, ticker)
+        row = _dated_row(df_bal, date)
+        if row is not None:
+            col_qty = _find_col(df_bal, ["공매도잔고", "공매도잔고수량", "잔고수량", "잔고"])
+            if col_qty is None:
+                raise ValueError("공매도 잔고수량 컬럼이 없습니다")
+            balance = _quantity(row[col_qty])
+            col_ratio = _find_col(df_bal, ["잔고율", "공매도비율", "비중", "비율"])
+            ratio = _ratio(row[col_ratio]) if col_ratio else None
+            result["shorting_balance"] = balance
+            result["shorting_balance_ratio"] = ratio
+        else:
+            logger.warning(f"공매도 잔고 미확보: {ticker} {date}")
+    except Exception as exc:
+        result["errors"]["balance"] = str(exc)
+        logger.warning(f"공매도 잔고 조회 실패({date}): {exc}")
 
-    # ── 4. 시그널 판정 ─────────────────────────────────────────────────────
+    try:
+        df_vol = stock.get_shorting_volume_by_date(date, date, ticker)
+        row = _dated_row(df_vol, date)
+        if row is not None:
+            col_sv = _find_col(df_vol, ["공매도", "공매도거래량", "공매도수량", "공매"])
+            col_ratio = _find_col(df_vol, ["공매도비중", "비중", "비율"])
+            volume = _quantity(row[col_sv]) if col_sv else None
+            ratio = _ratio(row[col_ratio]) if col_ratio else None
+            result["shorting_volume"] = volume
+            result["shorting_volume_ratio"] = ratio
+        else:
+            logger.warning(f"공매도 거래량 미확보: {ticker} {date}")
+    except Exception as exc:
+        result["errors"]["volume"] = str(exc)
+        logger.warning(f"공매도 거래량 조회 실패({date}): {exc}")
+
+    if result["shorting_balance"] is not None:
+        try:
+            from tools.market import _prev_trading_day
+            previous = _prev_trading_day(date)
+            if previous >= date:
+                raise ValueError("직전 거래일이 요청일보다 이르지 않습니다")
+            result["prev_balance_date"] = previous
+            df_prev = stock.get_shorting_balance_by_date(previous, previous, ticker)
+            row = _dated_row(df_prev, previous)
+            if row is not None:
+                col_qty = _find_col(df_prev, ["공매도잔고", "공매도잔고수량", "잔고수량", "잔고"])
+                if col_qty is None:
+                    raise ValueError("직전 거래일의 잔고수량 컬럼이 없습니다")
+                result["prev_balance"] = _quantity(row[col_qty])
+                result["balance_change"] = result["shorting_balance"] - result["prev_balance"]
+        except Exception as exc:
+            result["errors"]["previous_balance"] = str(exc)
+            logger.warning(f"직전 거래일 잔고 조회 실패({date}): {exc}")
+
     chg   = result.get("balance_change")
     ratio = result.get("shorting_balance_ratio")
     if chg is not None and ratio is not None:

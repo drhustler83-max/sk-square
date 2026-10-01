@@ -109,6 +109,9 @@ def audit(start: str = DEFAULT_START, end: str | None = DEFAULT_END) -> dict:
         normal = []
         if first_factor_date in dates:           # 실제 첫 거래일(임의 조회 시작일 아님)
             normal.append(first_factor_date)
+        if c == "shorting_balance_change" and "20211130" in dates:
+            # Sean 확인: 상장 다음 날의 전일 잔고 원천 부재. 영구 복구 제외.
+            normal.append("20211130")
         if (c in ("nav_implied_ret", "divergence", "nav_discount_delta",
                   "nav_implied_ret_raw") and first_nav_date in dates):
             normal.append(first_nav_date)       # NAV 첫날은 전일 NAV가 없어 차분 불가

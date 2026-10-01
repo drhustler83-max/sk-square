@@ -154,6 +154,8 @@ def collect_and_log(date: str = None) -> dict:
     try:
         from tools.short import get_shorting_data
         sh = get_shorting_data(ticker, date)
+        if sh.get("balance_date") != date or sh.get("volume_date") != date:
+            raise ValueError(f"공매도 응답 기준일 불일치: 요청 {date}")
         row["shorting_balance"]        = sh.get("shorting_balance")
         row["shorting_balance_ratio"]  = sh.get("shorting_balance_ratio")
         row["shorting_volume_ratio"]   = sh.get("shorting_volume_ratio")

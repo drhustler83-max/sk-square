@@ -1,0 +1,49 @@
+{
+  "checked_at_utc": "2026-10-01T06:59:44.494005+00:00",
+  "source": "existing pykrx KRX exact-date paths",
+  "ticker": "402340",
+  "dates": {
+    "20260929": {
+      "balance_date": "20260929",
+      "volume_date": "20260929",
+      "prev_balance_date": null,
+      "shorting_balance": null,
+      "shorting_balance_ratio": null,
+      "shorting_volume": null,
+      "shorting_volume_ratio": null,
+      "prev_balance": null,
+      "balance_change": null,
+      "signal": null,
+      "errors": {
+        "volume": "'거래량'"
+      }
+    },
+    "20260930": {
+      "balance_date": "20260930",
+      "volume_date": "20260930",
+      "prev_balance_date": null,
+      "shorting_balance": null,
+      "shorting_balance_ratio": null,
+      "shorting_volume": null,
+      "shorting_volume_ratio": null,
+      "prev_balance": null,
+      "balance_change": null,
+      "signal": null,
+      "errors": {
+        "volume": "'거래량'"
+      }
+    }
+  },
+  "protected_before_sha256": {
+    "data\\factor_log.csv": "a82e3e757ca87e3be9b7c28048227a20abe085902beecf35a2228fc4b0a73cfb",
+    "data\\nav_daily.csv": "d93a2e9d8183ad701183da39830e5d9529ec47ca48ca45181888c1e99e2e0197",
+    "data\\listed_holdings_daily.csv": "cd23730161bbdee308e8323ef27946b13a9b5acb83c5dc2312997307a56ce35d"
+  },
+  "protected_after_sha256": {
+    "data\\factor_log.csv": "a82e3e757ca87e3be9b7c28048227a20abe085902beecf35a2228fc4b0a73cfb",
+    "data\\nav_daily.csv": "d93a2e9d8183ad701183da39830e5d9529ec47ca48ca45181888c1e99e2e0197",
+    "data\\listed_holdings_daily.csv": "cd23730161bbdee308e8323ef27946b13a9b5acb83c5dc2312997307a56ce35d"
+  },
+  "protected_files_unchanged": true,
+  "interpretation": "Missing/error responses do not establish whether the KRX portal has published these dates. No prior-date substitution or CSV write was performed."
+}

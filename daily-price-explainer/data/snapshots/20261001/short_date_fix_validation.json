@@ -1,0 +1,29 @@
+{
+  "protected_before_sha256": {
+    "data\\factor_log.csv": "a82e3e757ca87e3be9b7c28048227a20abe085902beecf35a2228fc4b0a73cfb",
+    "data\\nav_daily.csv": "d93a2e9d8183ad701183da39830e5d9529ec47ca48ca45181888c1e99e2e0197",
+    "data\\listed_holdings_daily.csv": "cd23730161bbdee308e8323ef27946b13a9b5acb83c5dc2312997307a56ce35d"
+  },
+  "protected_after_sha256": {
+    "data\\factor_log.csv": "a82e3e757ca87e3be9b7c28048227a20abe085902beecf35a2228fc4b0a73cfb",
+    "data\\nav_daily.csv": "d93a2e9d8183ad701183da39830e5d9529ec47ca48ca45181888c1e99e2e0197",
+    "data\\listed_holdings_daily.csv": "cd23730161bbdee308e8323ef27946b13a9b5acb83c5dc2312997307a56ce35d"
+  },
+  "csv_files_unchanged": true,
+  "pending_dates": [
+    "20260929",
+    "20260930"
+  ],
+  "pending_volume_ratio_dates": [
+    "20260930"
+  ],
+  "structural_balance_change_date": "20211130",
+  "blank_template": "data\\manual_krx\\shorting_gap_input_remaining_402340.xlsx",
+  "blank_template_sha256": "a7e59065c075d32fb6ff498adefa9c0e6e74dbf5ba856c1f42c812105152524c",
+  "blank_template_contains_no_manual_values": true,
+  "existing_manual_workbook_sha256": "f551a8130cb8237b0aa3658060bef8c04afc6b21e54e44717a4c355f422b88ae",
+  "tests_passed": 26,
+  "network_free_shorting_regression_tests": 9,
+  "existing_manual_workbook_head_sha256": "f551a8130cb8237b0aa3658060bef8c04afc6b21e54e44717a4c355f422b88ae",
+  "existing_manual_workbook_unchanged": true
+}

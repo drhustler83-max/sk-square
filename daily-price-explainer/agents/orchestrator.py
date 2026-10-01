@@ -185,7 +185,8 @@ async def collect_data(ticker: str, company: str, date: str,
             None, _cached_call, get_futures_data, key, ticker, date)
 
     if "short" in tools:
-        key = make_key("short", ticker=ticker, date=date)
+        # 기존 지연 기준 응답이 캐시에 남아 있어도 새 당일 기준에 재사용하지 않는다.
+        key = make_key("short", ticker=ticker, date=date, basis="true_date_v1")
         tasks["short"] = loop.run_in_executor(
             None, _cached_call, get_shorting_data, key, ticker, date)
 
@@ -536,8 +537,8 @@ def build_context(data: dict, query: str) -> str:
 
     if "short" in data and isinstance(data["short"], dict):
         sh = data["short"]
-        bal_date = sh.get("balance_date", "전일")
-        lines.append(f"### 공매도 현황 ({bal_date} 기준, T+1 공시)")
+        bal_date = sh.get("balance_date", "요청일")
+        lines.append(f"### 공매도 현황 ({bal_date} 기준, 잔고는 공시 지연 가능)")
         bal = sh.get("shorting_balance")
         bal_ratio = sh.get("shorting_balance_ratio")
         vol_ratio = sh.get("shorting_volume_ratio")
@@ -547,10 +548,11 @@ def build_context(data: dict, query: str) -> str:
         if bal is not None:
             lines.append(f"- 공매도 잔고: {bal:,}주 (잔고율 {bal_ratio}%)")
         if chg is not None:
-            chg_label = "증가 → 공매도 압력↑" if chg > 0 else "감소 → 숏커버링(매수 유입 가능)"
-            lines.append(f"- 전전일 대비 잔고 변화: {chg:+,}주 ({chg_label})")
+            chg_label = ("증가 → 공매도 압력↑" if chg > 0 else
+                         "감소 → 숏커버링(매수 유입 가능)" if chg < 0 else "변화 없음")
+            lines.append(f"- 직전 거래일 대비 잔고 변화: {chg:+,}주 ({chg_label})")
         if vol_ratio is not None:
-            lines.append(f"- 전일 공매도 비중: {vol_ratio}% (총거래량 대비)")
+            lines.append(f"- 기준일 공매도 비중: {vol_ratio}% (총거래량 대비)")
         if signal:
             signal_desc = {
                 "압력": "공매도 잔고 증가 + 잔고율 ≥1% → 하방 압력 구조",
@@ -558,8 +560,8 @@ def build_context(data: dict, query: str) -> str:
                 "중립": "공매도 변화 미미",
             }.get(signal, signal)
             lines.append(f"- 시그널: {signal_desc}")
-        if not any([bal, vol_ratio]):
-            lines.append("- 공매도 데이터 미수집 (KRX 데이터 지연 가능)")
+        if bal is None and vol_ratio is None:
+            lines.append("- 공매도 데이터 미수집 (공시 지연 또는 조회 실패)")
         lines.append("")
 
     lines.append(f"## 사용자 질문\n{query}")
