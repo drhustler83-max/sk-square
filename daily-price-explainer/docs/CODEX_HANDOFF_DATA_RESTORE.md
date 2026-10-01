@@ -507,3 +507,37 @@ SK스퀘어(402340) 주가설명 모델용 마스터 시계열 `data/factor_log.
         사본·해시·감사도구 전후 대조 필수.
     (3) 공매도(F4)는 F3 뒤. 잔고 정의(공매도잔고 별도 수집 vs 대차잔고 대체)는
         §5-3, 저순위.
+
+- 2026-09-30 | ChatGPT Codex | 3d50704 | (소급 기재 — 당시 §8 미기재) STEP(1)
+  1단계: 이미 커밋돼 있던 과거 구간 중 `factor_log.csv`/`nav_daily.csv` 09-15·09-16
+  2일의 SK스퀘어 종가를 KRX 정규장 종가로 수리(스크립트
+  `tools/repair_skq_regular_close.py` + `tools/capture_krx_regular_closes.py`,
+  원천 `data/snapshots/20260930/krx_regular_closes_aug03_sep29.json`). 영향 컬럼:
+  `skq_ret`/`divergence`/`nav_discount_pct`/`nav_discount_delta`(factor),
+  `skq_close`/`skq_market_cap`/`nav_discount_pct_mtm`/`nav_discount_pct_company`(nav).
+  범위를 **SK스퀘어 본체 분자·괴리율에 한정**하고 "listed holdings price basis
+  under separate audit"라고 스크립트 자체에 명시(하이닉스 등 자회사 가격은 건드리지
+  않음 — 아래 2026-10-01 로그 참고). 같은 실행에서 09-17~29 7일분도 계산해
+  working tree에 반영했으나 **그 7일은 이 커밋에는 포함하지 않고 미커밋으로 남김**
+  (매니페스트 `data/snapshots/20260930/skq_regular_repair_manifest.json`의
+  `recent_dates_applied_only_to_worktree` 참고).
+
+- 2026-10-01 | Claude Code | (이 커밋) | 미커밋 상태였던 09-17~29 신규 7행(KRX
+  정규장 종가 기준 skq_ret/divergence/nav_discount_* 등)을 독립 검증 후 커밋.
+  검증 방법: `skq_regular_repair_manifest.json`에 Codex가 자체 기록해둔
+  `worktree_factor_after_sha256`/`worktree_nav_after_sha256`를 현재 실제
+  `factor_log.csv`/`nav_daily.csv`의 sha256과 직접 대조 — **정확히 일치**함을
+  확인(계획대로 손상 없이 적용된 완결 상태). `data/factor_log.csv`,
+  `data/nav_daily.csv` 2개 파일만 커밋했다.
+  **`data/listed_holdings_daily.csv`는 이번 커밋에서 제외**했다: 이 파일은
+  mtime이 2026-09-29 18:08로 이번 KRX 정규장 조사(09-30)보다 먼저이고, 09-15·16
+  SK하이닉스 가격 등이 이전 세션(NAV v2 백필)에서 바뀐 채 미검증으로 남아 있다.
+  `repair_skq_regular_close.py`가 스스로 명시한 한계("Listed holdings NAV inputs
+  and live loader still need regular-session source alignment")와 정확히
+  일치하는 미해결 항목이므로, SK스퀘어 본체 종가 수리와 같은 커밋에 섞지 않고
+  working tree에 그대로 남겨둔다. 미추적 `data/snapshots/20260930/*_local.csv`
+  3개(수리 전 로컬 백업)는 기존 패턴대로 커밋하지 않고 유지했다.
+  - **다음 배턴**: ① `listed_holdings_daily.csv`의 하이닉스 등 자회사 가격도
+    SK스퀘어와 동일하게 KRX 정규장 vs pykrx/NXT 소스 대조가 필요한지 조사하고,
+    필요하면 같은 방식(사본·해시 대조)으로 별도 수리. ② §5 다음 배턴 (2) 수급
+    임포터(수량) 착수.
