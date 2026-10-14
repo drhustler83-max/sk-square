@@ -1,0 +1,378 @@
+[
+  {
+    "url": "https://biz.chosun.com/it-science/ict/2023/08/18/B32VKBNBHBBNFDRR4PUTC66AKI/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "넘쳐나던 반도체 재고 감소세로… 삼성·SK하이닉스, 고비 넘겼다 - 조선비즈",
+    "date_metadata": [
+      {
+        "property": "og:published_time",
+        "content": "2023-08-18T05:03:37.227Z"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-08-18T05:03:37.227Z"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-08-18T05:57:35.957Z"
+      },
+      {
+        "property": "article:published_time",
+        "name": "article:published_time",
+        "content": "2023-08-18T05:03:37.227Z"
+      }
+    ]
+  },
+  {
+    "url": "https://www.fnnews.com/news/202308210923184389",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 'HBM3E' 개발 성공...AI 반도체 기술 주도..내년 상반기 양산 - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-08-21T09:33:48+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-08-21T18:22:45+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2023-08-21T09:33:48+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2023-08-21T18:22:45+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mk.co.kr/news/business/10812240",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20230822_0002421845",
+    "body_hash": "beb6d8d8521d7a1b5815d7e558c788da5b5e7a862af1169abba399a6b239c2f8",
+    "body_chars": 1299,
+    "http_status": 200,
+    "page_title": "엔비디아 8% 폭등에…춤추는 반도체株 :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-08-22T12:08:06+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.asiae.co.kr/article/2023082508294835117",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[클릭 e종목]\"인크로스, 하반기 회복기조 뚜렷…목표가 '↓'\"",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-08-25T08:29:48+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-08-25T08:29:48+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://news.nate.com/view/20230825n08595",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "장중 주가 밀리는 삼성·하이닉스…간밤 美반도체 급락 여파 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.efnews.co.kr/news/articleView.html?idxno=106094",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어, MSCI ESG 평가에서 'A등급' 획득…\"2단계 업그레이드\" - 파이낸셜신문",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-08-28T10:09:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/tech/2023/09/04/2023090412530466224",
+    "body_hash": "e8aa96280545a26b187ff2ddb680bce33bbdd5b5742744454d28cfc4183a61c6",
+    "body_chars": 1691,
+    "http_status": 200,
+    "page_title": "티맵=네이버지도+카카오T+쏘카…'초대형 슈퍼앱' 도약 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-09-04T13:46:26+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-09-04T13:46:26+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.ytn.co.kr/_ln/0102_202309041632103191",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[기업] 티맵, 대중교통·식당예약 가능한 통합 서비스 제공 | YTN",
+    "date_metadata": [
+      {
+        "property": "article:modified_time",
+        "content": "2023-09-04T16:32:00+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-09-04T16:32:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.news2day.co.kr/article/20230905500001",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[반도체주 부활하나②] 삼성전자 SK하이닉스, 메모리 반도체 업황회복 기대",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "DCF8AE369C38DFBC15D991DAA10BAC73"
+      }
+    ]
+  },
+  {
+    "url": "https://news.nate.com/view/20230905n33587",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "매각·IPO 앞뒀는데…SK스퀘어 자회사 '11번가·티맵', 여전한 적자 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://news.nate.com/view/20230906n13605",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "'비상경영' SK하이닉스, 키파운드리 대만 법인 청산…'비메모리 강화'는 지속 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://news.nate.com/view/20230906n32174",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "삼성전자 국민경제 기여 압도적 1위…SK·쿠팡 고용서 두각 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.hankyung.com/article/2023091101901",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.ytn.co.kr/_ln/0103_202309131148131065",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "'SK하이닉스 핵심기술 중국 유출' 협력사 부사장 징역 1년 | YTN",
+    "date_metadata": [
+      {
+        "property": "article:modified_time",
+        "content": "2023-09-13T11:48:00+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-09-13T11:48:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/industry/2023/09/12/2023091212204466594",
+    "body_hash": "7d17ad093253e1967226592ef8453399c6b1e9ecd3d8016cb0282a0af211adba",
+    "body_chars": 2407,
+    "http_status": 200,
+    "page_title": "韓美 반도체·배터리 생존전략…\"마더 팩토리로 주도권 강화해야\" - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-09-12T18:14:22+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-09-12T18:14:22+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.datatooza.com/article/2023092111005299033f2b9ad1bf_80",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"SK하이닉스, 빨라지는 실적 개선의 속도\" -한화證",
+    "date_metadata": [
+      {
+        "name": "DC.date.issued",
+        "content": "2023-09-21"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-09-21T11:05:41+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://news.nate.com/view/20230922n02815",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "하이닉스 수처리시설 1조에 사고, SK는 유증 사실상 불참…SK리츠 주주들 뿔났다 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.etnews.com/20230924000045",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[ET시선]대한민국 반도체 생존 전략 '원팀' - 전자신문",
+    "date_metadata": [
+      {
+        "name": "DC.date.issued",
+        "content": "2023-09-24"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-09-24T16:00:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202309251009260190535",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "이성희 고용부 차관, 국내 최대규모 자회사형 표준사업장 ‘SK하이닉스 행복모아’ 방문 - 대한경제",
+    "date_metadata": []
+  },
+  {
+    "url": "https://dealsite.co.kr/articles/110569",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"SK하이닉스 재무역량 확충해야\" 신평사 한 목소리 - 딜사이트",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-09-27T07:35:13+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-08-25T09:21:07+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.yna.co.kr/view/AKR20230927026600002",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "KB증권 \"SK하이닉스 실적개선 초입…3분기 적자 40% 감소할 것\" | 연합뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-09-27T08:31:54+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-09-27T08:31:54+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.thebell.co.kr/front/newsview.asp?code=0402&key=202310050809060580104447",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[반도체 전략장비 빌드업] 디아이티, '150억 레이저 어닐링' 공급에 숨은 함의",
+    "date_metadata": []
+  },
+  {
+    "url": "https://news.nate.com/view/20231011n21319",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "기업 실적 시즌, SK하이닉스도 성적 개선할까 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://news.nate.com/view/20231012n14239",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[대기업집단 공시 대해부] SK그룹, 해외 거미줄 확장 중간지주 'SK스퀘어' 활용법 : 네이트 뉴스",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20231013_0002481364",
+    "body_hash": "dbd3c4e97a648aa29d468589bdf44463fd5261a6e024814720feb1ae66ee21bf",
+    "body_chars": 272,
+    "http_status": 200,
+    "page_title": "디지털프론티어, SK하이닉스와 368억 규모 계약 :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-10-13T09:47:56+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://biz.sbs.co.kr/article/20000139168",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "'불황에 결국'…SK하이닉스 자회사 무급휴직 받는다 - SBS Biz",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-10-13T11:15:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-10-14T13:46:00+09:00"
+      }
+    ]
+  }
+]

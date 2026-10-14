@@ -1,0 +1,358 @@
+[
+  {
+    "url": "https://www.newsis.com/view/NISX20240129_0002608296",
+    "body_hash": "0ba89666cedbf26bb325dc2cf063ad912c1d05df7d87ae2be4957ab2af620cf3",
+    "body_chars": 1205,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 오해순 최초 女연구위원…\"낸드 업턴 주도\" :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-01-29T13:05:29+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2024/03/12/2024031207554889009",
+    "body_hash": "c442c1c87029daf0c0092e6f8c7b7b7f67ac541d0cc737dfaf533e1e27e88090",
+    "body_chars": 626,
+    "http_status": 200,
+    "page_title": "SK하이닉스, HBM 시장 지배력 지속…목표주가 17% 상향-KB - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-03-12T08:12:20+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-03-12T08:12:20+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.fnnews.com/news/202403191116298727",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, HBM3E 세계 최초 대량 양산…엔비디아에 납품 시작(종합) - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-03-19T11:16:29+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-03-19T11:16:29+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2024-03-19T11:16:29+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2024-03-19T11:16:29+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/industry/2024/05/02/2024050211172634164",
+    "body_hash": "7b2bd22b951edcd18a629a972e174cc53e13bd0f5130238368081e333a437469",
+    "body_chars": 683,
+    "http_status": 200,
+    "page_title": "[단독]SK하이닉스, 청주에 D램 공장 증설 검토 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-05-02T11:35:15+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-05-02T11:35:15+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mk.co.kr/news/business/11006024",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.chosun.com/economy/tech_it/2024/05/09/FE72O6NK2ZFLZFN7SI2QNCYLWA/",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 차세대 AI용 낸드 ‘ZUFS4.0’개발...3분기 양산",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "name": "article:published_time",
+        "content": "2024-05-09T00:17:25.290Z"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20240508_0002727641",
+    "body_hash": "aaae032f28752f364ce630a2d99e460bda8e693f85d122197f3eb012f373c798",
+    "body_chars": 320,
+    "http_status": 200,
+    "page_title": "[속보]크래프톤, 1분기 영업이익 3105억원…전년比 9.7%↑ :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-05-08T18:26:52+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.seoulwire.com/news/articleView.html?idxno=608859",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 파운드리, 中에 지분 절반 매각… 무슨일? < 전자 < 산업 < 기사본문 - THE Biz(더비즈)",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-05-10T12:29:41+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/2024053031316",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20240805_0002838601",
+    "body_hash": "0b7c890b263999eae39d28d93640d1cf7c807c2b5581fe05ef4bd0772f3286eb",
+    "body_chars": 1188,
+    "http_status": 200,
+    "page_title": "'검은 월요일'…삼성전자·SK하이닉스 장중 10%대 추락  :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-05T15:26:03+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2024/08/06/2024080607281782821",
+    "body_hash": "7897c6d492cd17c5acbde4822749aa1adea14927d50acb2a136d66a1ee081072",
+    "body_chars": 723,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 투자의견 '매수'로 상향…\"충분히 매력적인 가격\"-키움 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-06T07:50:40+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-08-06T07:50:40+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20240806_0002840147",
+    "body_hash": "6c590198f82d11561a26bec69365e3d8d1f4218a058f9ae1ed246e8ef5b973bd",
+    "body_chars": 1510,
+    "http_status": 200,
+    "page_title": "삼성전자·SK하이닉스 10% 추락 딛고 반등[핫스탁](종합) :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-06T19:34:51+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/2024080800196",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.fnnews.com/news/202408090907559521",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[특징주] 엔비디아 급등..'주가 한몸' SK하이닉스·한미반도체 강세 - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-09T09:28:30+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-08-09T09:28:30+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2024-08-09T09:28:30+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2024-08-09T09:28:30+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/tech/2024/08/12/2024081213594350995",
+    "body_hash": "687b321889d086809323441c77c21f10e7210be746377d5bc544c5aa54ea8618",
+    "body_chars": 161,
+    "http_status": 200,
+    "page_title": "크래프톤, 2분기 영업익 3321억원...전년比 152.6%↑(1보) - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-12T15:51:43+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-08-12T15:51:43+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/202408166756g",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2024081613585891164",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"SK스퀘어가 마냥 방치하겠냐\"…11번가 '최후의 시나리오'",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2024-08-19T06:05:00+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-08-19T12:55:19+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.kipost.net/news/articleView.html?idxno=321088",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, D램 설비투자 중심 국내로 복귀 < 반도체 < KIPOST 프리미엄 < 기사본문 - KIPOST(키포스트)",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-16T18:52:18+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20240822_0002858341",
+    "body_hash": "0932780c3feefd817648a3c49a7599acfeb254bd6e62f38106ed2c3ca9545908",
+    "body_chars": 1412,
+    "http_status": 200,
+    "page_title": "김성한 SK하이닉스 부사장 \"기본 집중해 AI메모리 리더십 수성\" :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-22T09:34:18+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.electimes.com/news/articleView.html?idxno=341862",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 용인 LNG 열병합서 ‘열’만 구매하기로 < 산업정책 < 전기경제 < 기사본문 - 전기신문",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-23T08:58:15+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://zdnet.co.kr/view/?no=20240826083051",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 10월 HBM4 '테이프아웃'…엔비디아 공략 고삐 - ZDNet korea",
+    "date_metadata": [
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2024-08-26T14:23:14+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2024-08-27T08:36:04+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2024-08-26T14:23:14+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2024/08/29/2024082909061875183",
+    "body_hash": "8e1dda18f00db150832309d778b3e79161ad7f85383e6d8d9a479fac40ae08c3",
+    "body_chars": 413,
+    "http_status": 200,
+    "page_title": "엔비디아발 반도체 실망감… SK하이닉스 -6%, 한미반도체 -7% - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-29T09:07:55+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-08-29T09:07:55+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  }
+]

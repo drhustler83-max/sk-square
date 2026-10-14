@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "target_coverage": {
+    "news_search_targets_gap_202610.csv": {
+      "target_dates": 7,
+      "exactly_one_log_per_date": true,
+      "missing_or_duplicated": []
+    },
+    "news_search_targets_gap_294_remaining94.csv": {
+      "target_dates": 94,
+      "exactly_one_log_per_date": true,
+      "missing_or_duplicated": []
+    }
+  },
+  "all_log_rows": 1189,
+  "unique_logged_dates": 1189,
+  "log_min_date": "20211130",
+  "log_max_date": "20261013",
+  "duplicate_log_dates": {},
+  "calendar_dates_to_last_log": 1190,
+  "calendar_missing_dates": [
+    "20211129"
+  ],
+  "gaps_within_logged_range": [],
+  "new_article_rows": 129,
+  "new_log_rows": 101,
+  "new_availability": {
+    "partial_text": 112,
+    "full_text": 16,
+    "metadata_only": 1
+  },
+  "new_event_types": {
+    "ipo": 2,
+    "other": 46,
+    "market_flow": 22,
+    "earnings": 7,
+    "analyst_opinion": 17,
+    "portfolio_acquisition": 1,
+    "financing": 3,
+    "portfolio_disposal": 8,
+    "semiconductor_cycle": 13,
+    "regulation": 4,
+    "litigation": 2,
+    "capital_return": 1,
+    "governance": 1,
+    "management_change": 2
+  },
+  "new_articles_with_text_hash": 31,
+  "original_prefixes_unchanged": true,
+  "all_new_rows_unreviewed": true,
+  "market_flow_direction_and_sentiment_neutral": true
+}

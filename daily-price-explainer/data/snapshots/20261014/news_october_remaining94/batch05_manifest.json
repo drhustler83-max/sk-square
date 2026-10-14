@@ -1,0 +1,41 @@
+{
+  "batch": 5,
+  "group": "remaining94",
+  "progress": 94,
+  "target_total": 94,
+  "completed_days": [
+    "20240830",
+    "20240902",
+    "20241230",
+    "20250110",
+    "20250116",
+    "20250117",
+    "20250120",
+    "20250304",
+    "20250305",
+    "20250306",
+    "20250311",
+    "20250312",
+    "20250313",
+    "20250314"
+  ],
+  "article_rows": 17,
+  "log_rows": 14,
+  "at": "2026-10-14T16:39:24+09:00",
+  "files": {
+    "news_property_codex_batch.jsonl": {
+      "before_sha256": "e1561d3e429bd3999d6ad3e14585cf4067913352ed65f7a3788858320c6e2002",
+      "after_sha256": "34a244e25c294fbd707ffea5bec9119617bf059e10a1cb6c4cbb59892ea680f3",
+      "original_prefix_bytes": 2032841,
+      "batch_sha256": "3579cce1c8846f717d3f067cbdf2702f8a8bd9c82f356c9cb221c2cecd584e03",
+      "added_rows": 17
+    },
+    "news_search_log_codex.jsonl": {
+      "before_sha256": "bb3fc7cb07cdb2d26152bc93ad87217a0c455a61ecd67644f0b1fdbfb28b9708",
+      "after_sha256": "68d3f04c78a258ff46ecf4aad4ca46d8dd8e763d91c678deb33e6d03fd4aa1b4",
+      "original_prefix_bytes": 284963,
+      "batch_sha256": "5df44cb9a6ce3481325c30d4f84ceb40459952b4e92842edd84b931f18a57c02",
+      "added_rows": 14
+    }
+  }
+}

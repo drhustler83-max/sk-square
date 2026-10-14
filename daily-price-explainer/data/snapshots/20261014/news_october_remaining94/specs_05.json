@@ -1,0 +1,536 @@
+{
+  "completed_days": [
+    "20240830",
+    "20240902",
+    "20241230",
+    "20250110",
+    "20250116",
+    "20250117",
+    "20250120",
+    "20250304",
+    "20250305",
+    "20250306",
+    "20250311",
+    "20250312",
+    "20250313",
+    "20250314"
+  ],
+  "articles": [
+    {
+      "url": "https://www.mk.co.kr/news/business/11105402",
+      "publisher": "매일경제",
+      "published_at": "2024-08-30T10:21:00+09:00",
+      "title": "오아시스, 11번가 인수 사실상 결렬",
+      "evidence_facts": [
+        "오아시스와 11번가의 인수 협상이 사실상 결렬됐다고 전했다.",
+        "SK스퀘어 콜옵션 포기 후 FI가 주도하는 매각과 지분 교환 제안의 어려움을 설명했다.",
+        "인수 불발에 대한 보도이며 새 인수자나 매각 완료가 확정된 것은 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "11번가",
+        "오아시스"
+      ],
+      "event_type": "portfolio_disposal",
+      "event_stage": "follow_up",
+      "novelty_score": 0.4,
+      "sentiment_score": -0.25,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.95,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "sk_square"
+    },
+    {
+      "url": "https://m.ekn.kr/view.php?key=20240830023252182",
+      "publisher": "에너지경제신문",
+      "published_at": "2024-08-30T14:28:04+09:00",
+      "title": "‘첫 방한’ 우버 CEO “한국 시장 점유율 확대하겠다…SK스퀘어와 협력 계속될 것”",
+      "evidence_facts": [
+        "우버 CEO는 한국 사업 확대와 SK스퀘어와의 협력 지속을 강조했다.",
+        "한명진 스퀘어 대표와 만나 파트너십을 논의했고 티맵의 합작사 지분 정리설에는 선을 그었다.",
+        "사업 의지와 협력 설명이며 구체적인 신규 투자 금액이나 수익 개선은 확정되지 않았다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "티맵모빌리티",
+        "우버",
+        "우티"
+      ],
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.45,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.75,
+      "materiality_score": 0.15,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company"
+    },
+    {
+      "url": "https://www.news1.kr/finance/general-stock/5526811",
+      "publisher": "뉴스1",
+      "published_at": "2024-08-30T16:02:24+09:00",
+      "title": "\"엔비디아 실망감 정점 통과\"…SK하이닉스, 17만닉스 회복[핫종목]",
+      "evidence_facts": [
+        "엔비디아 실적 공개 후 하이닉스의 당일 시장 동향과 기관 매매를 정리한 특징주 후속 기사다.",
+        "관측된 시세 반응을 감성·사전 영향 방향 판단에 사용하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "엔비디아"
+      ],
+      "relevance_score": 0.4,
+      "materiality_score": 0.04,
+      "novelty_score": 0.05
+    },
+    {
+      "url": "https://www.mt.co.kr/industry/2024/12/30/2024123009382756317",
+      "publisher": "머니투데이",
+      "published_at": "2024-12-30T09:52:05+09:00",
+      "title": "SK하이닉스 中파운드리, 희망퇴직 돌입...\"업황회복 지연\"",
+      "evidence_facts": [
+        "하이닉스시스템IC가 중국 사업장의 한국인 직원을 대상으로 희망퇴직 신청을 받았다고 보도했다.",
+        "회사는 8인치 파운드리 업황 회복 지연과 경영 상황 악화를 이유로 설명했다.",
+        "신청 절차 보도이며 퇴직 인원이나 구조조정 완료 규모를 추정하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "SK하이닉스시스템IC"
+      ],
+      "event_type": "other",
+      "event_stage": "execution",
+      "novelty_score": 0.65,
+      "sentiment_score": -0.25,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.75,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "article_text_hash": "e221ea25942a183f5d723c08ad5a933e30d4fa4b8f50f484182d7c373986c4c4"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025010964826",
+      "publisher": "한국경제",
+      "published_at": "2025-01-09T16:14:36+09:00",
+      "title": "코스피, 5거래일 연속 상승…SK하이닉스 20만원 복귀",
+      "evidence_facts": [
+        "국내 지수와 주요 종목의 장 마감 동향을 정리한 시황 기사다.",
+        "하이닉스 등락과 CES 발언에 대한 시장 반응을 다루지만 관측 결과를 방향 라벨 근거로 사용하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "엔비디아"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.3,
+      "materiality_score": 0.03,
+      "novelty_score": 0.05
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2025/01/16/2025011608240668962",
+      "publisher": "머니투데이",
+      "published_at": "2025-01-16T08:25:47+09:00",
+      "title": "SK하이닉스, HBM 실적 성장세 둔화 예상…주가 박스권 흐름 전망-키움증권",
+      "evidence_facts": [
+        "키움증권은 수요 부진과 범용 메모리 가격 하락으로 2025년1분기 실적이 전분기보다 줄 것으로 전망했다.",
+        "4분기 실적은 시장 기대치에 부합할 것으로 예상하면서 이후 성장 둔화 위험을 설명했다.",
+        "방향 판단은 수요·이익 전망에 근거하며 당일 주가나 이후 확정 실적을 조회하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": -0.2,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "article_text_hash": "043e11b7a2ea58f4cba840fd01355ba6a25f209d3fc61735b7209de310aae05f"
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2025011515043996074",
+      "publisher": "아시아경제",
+      "published_at": "2025-01-16T07:30:00+09:00",
+      "title": "SK하이닉스 작년 HBM 매출비중 역대최대…D램 매출 30%는 HBM",
+      "evidence_facts": [
+        "증권사 추정치를 모아 하이닉스의 HBM 매출 비중이 확대될 것으로 분석했다.",
+        "기사의 연간 HBM 매출·비중은 미발표 실적 추정값이며 회사 확정 발표로 처리하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "semiconductor_cycle",
+      "event_stage": "expectation",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.75,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newsway.co.kr/news/view?ud=2025011611401431412",
+      "publisher": "뉴스웨이",
+      "published_at": "2025-01-16T15:41:39+09:00",
+      "title": "블랙웰 결함설 또 솔솔···삼성·SK하이닉스 긴장?",
+      "evidence_facts": [
+        "외신을 인용해 엔비디아 블랙웰 주문 연기·취소설과 메모리 공급업체 영향을 분석했다.",
+        "증권사는 수요 감소보다 일시적 공급 차질이며 하이닉스 영향이 제한적일 수 있다고 평가했다.",
+        "차질 보도와 완화 평가가 혼재해 순방향은 중립이고 불확실성은 높게 기록했다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "엔비디아"
+      ],
+      "event_type": "semiconductor_cycle",
+      "event_stage": "rumor",
+      "novelty_score": 0.35,
+      "sentiment_score": -0.1,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.7,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.8,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "confidence_score": 0.85
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2025012008312751675",
+      "publisher": "아시아경제",
+      "published_at": "2025-01-20T08:37:27+09:00",
+      "title": "한 달에 세 번 '10시 초특가' 판매'…11번가,10분러시데이",
+      "evidence_facts": [
+        "11번가가 매달 세 차례 정해진 시간에 특가상품을 판매하는 프로모션을 발표했다.",
+        "상품 행사 홍보 성격이며 이번 행사로 실현될 매출이나 이익을 제시하지 않았다."
+      ],
+      "entities": [
+        "11번가"
+      ],
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.35,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.25,
+      "materiality_score": 0.03,
+      "uncertainty_score": 0.35,
+      "forward_looking": false,
+      "impact_horizon": "unknown",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company"
+    },
+    {
+      "url": "https://www.ytn.co.kr/_ln/0134_202503041415048984",
+      "publisher": "YTN",
+      "published_at": "2025-03-04T14:15:00+09:00",
+      "title": "트럼프에 '두손두발' 든 TSMC...불안에 떠는 삼성전자·SK하이닉스 [Y녹취록]",
+      "evidence_facts": [
+        "방송 전문가가 미국의 관세·리쇼어링 정책과 TSMC 투자 확대가 한국 반도체 기업에 갖는 의미를 분석했다.",
+        "삼성전자·하이닉스의 부담 가능성을 논의한 의견·전망으로 해당 회사의 신규 투자 결의는 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "TSMC",
+        "미국 정부"
+      ],
+      "event_type": "regulation",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": -0.25,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.6,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.75,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation",
+        "cash_flow"
+      ],
+      "confidence_score": 0.85,
+      "primary_subject": "regulation"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025030403586",
+      "publisher": "한국경제",
+      "published_at": "2025-03-04T09:21:22+09:00",
+      "title": "엔비디아 급락에 반도체株 약세…SK하이닉스 3%↓",
+      "evidence_facts": [
+        "미국 관세와 AI 칩 규제 불확실성에 따른 시장 분위기와 국내 반도체 종목의 장 초반 시세를 정리했다.",
+        "시세 반응 중심의 특징주 기사이며 관측된 등락을 감성·사전 영향 방향 근거로 쓰지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "엔비디아"
+      ],
+      "relevance_score": 0.4,
+      "materiality_score": 0.04,
+      "novelty_score": 0.05
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2025030415441804154",
+      "publisher": "아시아경제",
+      "published_at": "2025-03-04T15:44:18+09:00",
+      "title": "[클릭 e종목]\"SK하이닉스, 당분간 18만~24만원 오갈듯\"",
+      "evidence_facts": [
+        "iM증권은 하이닉스 보유 의견과 목표주가 20만원을 유지했다.",
+        "1분기 전분기 대비 이익 감소를 예상하면서 HBM 경쟁력으로 상대적인 실적 우위를 전망했다.",
+        "부정적 업황 전망과 경쟁력 평가가 혼재해 순방향을 중립으로 기록했다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.2,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.8,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "목표주가",
+          "value": 200000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mk.co.kr/news/business/11252763",
+      "publisher": "매일경제(매경이코노미)",
+      "published_at": "2025-03-05T21:00:00+09:00",
+      "title": "SK스퀘어, 신규 투자로 정체성 강화해야",
+      "evidence_facts": [
+        "SK스퀘어의 신규 투자 감소와 현금 축적, 주주환원 요구 사이의 자본 배분 과제를 비판적으로 분석했다.",
+        "기존 실적과 투자 이력을 재정리한 의견 기사이며 새 투자·배당 결의는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.2,
+      "sentiment_score": -0.15,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 1,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation",
+        "nav_discount"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "sk_square"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025031154786",
+      "publisher": "한국경제",
+      "published_at": "2025-03-11T08:38:16+09:00",
+      "title": "\"SK하이닉스, HBM 경쟁력 우위 지속…목표가↑\"-DB",
+      "evidence_facts": [
+        "DB금융투자는 하이닉스 매수 의견을 유지하고 목표주가를 26만원에서 28만6천원으로 높였다.",
+        "HBM 경쟁력과 고객사 신제품 본격화에 따른 이익 증가를 예상했다.",
+        "미래 실적과 판매가격 전망이며 당시 확정된 1분기 실적은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.35,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "목표주가",
+          "value": 286000,
+          "unit": "원",
+          "period": null,
+          "comparison": "기존 260000원"
+        }
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/202503128023i",
+      "publisher": "한국경제",
+      "published_at": "2025-03-12T08:48:36+09:00",
+      "title": "[마켓PRO] Today's Pick : \"SK하이닉스, 예상보다 빠른 레거시 회복\"",
+      "evidence_facts": [
+        "증권사 보고서 요약에서 한화투자증권은 하이닉스 목표주가를 28만원에서 29만원으로 높이고 매수를 유지했다.",
+        "레거시 수요 개선과 1분기 출하·실적 추정치를 소개했다.",
+        "여러 종목 보고서를 간추린 기사로 하이닉스 관련 본문만 사용했으며 원보고서 전체를 확보하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "duplicate_cluster_id": "cluster_20250312_hynix_hanwha",
+      "numeric_claims": [
+        {
+          "metric": "한화투자증권 목표주가",
+          "value": 290000,
+          "unit": "원",
+          "period": null,
+          "comparison": "기존 280000원"
+        }
+      ]
+    },
+    {
+      "url": "https://www.fnnews.com/news/202503121545151443",
+      "publisher": "파이낸셜뉴스",
+      "published_at": "2025-03-13T06:00:00+09:00",
+      "title": "\"나쁠게 없다\"...목표가 30만원까지 치솟은 SK하이닉스",
+      "evidence_facts": [
+        "메모리 수요 개선 전망에 따른 여러 증권사의 하이닉스 목표주가 상향을 정리했다.",
+        "전일 한화투자증권의 목표주가 상향과 레거시 D램 재고·수요 개선 전망을 재소개했다.",
+        "기존 보고서의 후속 기사로 신규성은 낮게 기록하고 이후 실적·주가를 근거로 판단하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.15,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.75,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "duplicate_cluster_id": "cluster_20250312_hynix_hanwha"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20250313_0003097889",
+      "publisher": "뉴시스",
+      "published_at": "2025-03-13T15:43:43+09:00",
+      "title": "美 반도체 지수 강세…삼성전자↓SK하이닉스↑[핫스탁](종합)",
+      "evidence_facts": [
+        "삼성전자와 하이닉스의 장 마감 동향과 외국인 매매를 정리한 특징주 종합 기사다.",
+        "기업의 신규 발표를 확인하는 기사가 아니며 관측된 시세로 방향 라벨을 정하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자"
+      ],
+      "relevance_score": 0.4,
+      "materiality_score": 0.04,
+      "novelty_score": 0.05,
+      "article_text_hash": "950bbd7939caecb355442255a3d7af6b6d6fe4be16853df999d3c3eb94c6b881"
+    }
+  ],
+  "notes": {
+    "20240830": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 11번가 협상 불발과 우버 협력 지속 발언을 각각 기록.",
+    "20240902": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 8/30 금요일 16:02 특징주 보도를 다음 거래일로 배정.",
+    "20241230": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속.",
+    "20250110": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 1/9 장마감 뒤 시황을 다음 거래일 배정; 기사 수정일을 최초 공개일로 사용하지 않음.",
+    "20250116": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 키움의 수요·이익 둔화 전망과 HBM 매출 비중 추정을 각각 기록. HBM 추정치를 확정 실적으로 읽지 않음. 키움 분석 기사에는 2025/11/10 수정 메타가 있음; 처음 공개된 날짜로 귀속하고 본문의 당시 분기 전망만 사용. 본문 해시는 현재 확보본 해시이며 최초 발행본 보증은 아님.",
+    "20250117": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 1/16 15:41 블랙웰 차질 보도는 다음 거래일 귀속. 외신 보도·영향 제한 평가 혼재로 rumor·높은 불확실성.",
+    "20250120": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 11번가 상품 프로모션을 낮은 중요도·관련성으로 기록.",
+    "20250304": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 관세·리쇼어링 정책 방송 의견과 장중 시황을 구분.",
+    "20250305": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 3/4 15:44 iM증권 분석 기사를 다음 거래일 배정; 보유 의견·혼재 전망 중립.",
+    "20250306": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 3/5 21:00 스퀘어 자본 배분 의견 기사는 3/6 귀속; 수정 시각과 구분.",
+    "20250311": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속.",
+    "20250312": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 여러 종목을 다룬 기사에서 하이닉스 보고서 요약 부분만 추출.",
+    "20250313": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 전일 한화 보고서 등을 재정리한 후속 보도; 동일 사건 클러스터로 표시.",
+    "20250314": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 기사만으로 속성 추출; 원본 시세·잔차 조회 없음. 시황은 중립, 후속·의견·관측 기사와 본문 확보 수준을 표시. 전체 거래일 달력으로 귀속. 뉴시스 3/13 15:43:43 종합 특징주 기사는 3/14 귀속. 한화세미텍 공급 계약 기사 3/14 16:31은 3/17 귀속으로 제외. 뉴시스 메타 16:32:24는 수정 시각이어서 화면 최초 등록 15:43:43을 사용."
+  },
+  "keep_visible_times": [
+    "https://www.mk.co.kr/news/business/11105402",
+    "https://www.mk.co.kr/news/business/11252763",
+    "https://www.newsis.com/view/NISX20250313_0003097889"
+  ]
+}

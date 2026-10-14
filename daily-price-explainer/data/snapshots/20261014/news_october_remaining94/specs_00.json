@@ -1,0 +1,385 @@
+{
+  "articles": [
+    {
+      "url": "https://www.news1.kr/industry/general-industry/6307342",
+      "publisher": "뉴스1",
+      "published_at": "2026-10-01T10:59:51+09:00",
+      "title": "SK하닉 \"솔리다임 美 상장 확정 안돼…주주 가치 최우선 고려\"",
+      "evidence_facts": [
+        "SK하이닉스가 솔리다임 운영·투자재원 조달과 관련해 구체적 결정이 없다는 입장을 밝혔다.",
+        "외부·내부 자본 조달과 기존 주주 보호를 함께 검토한다는 설명이며 IPO 확정 발표가 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "솔리다임"
+      ],
+      "event_type": "ipo",
+      "event_stage": "follow_up",
+      "novelty_score": 0.45,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.8,
+      "materiality_score": 0.45,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "governance",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "duplicate_cluster_id": "cluster_20260925_solidigm_ipo"
+    },
+    {
+      "url": "https://www.ytn.co.kr/_ln/0102_202610011754154477",
+      "publisher": "YTN",
+      "published_at": "2026-10-01T17:54:00+09:00",
+      "title": "한전·SK하이닉스 협력 체계...\"반도체 산단 안정적 운영\"",
+      "evidence_facts": [
+        "한전과 SK하이닉스가 반도체 산업단지 전력설비 운영을 위한 업무협약을 체결했다.",
+        "설비 점검·기술 교류·고장 복구 협력이며 투자 규모나 실적 효과를 확정한 계약은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "한국전력"
+      ],
+      "availability": "full_text",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.65,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "cash_flow"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.chosun.com/economy/tech_it/2026/10/02/2TO5P2FXENDWZG3DMJ46TCK7P4/",
+      "publisher": "조선일보",
+      "published_at": "2026-10-01T16:00:12.302000+09:00",
+      "title": "솔리다임 상장설에 하이닉스 \"주주가치 최우선 고려\"",
+      "evidence_facts": [
+        "전날 SK하이닉스의 솔리다임 관련 회사 설명을 재전달한다.",
+        "상장이나 외부 투자 유치가 확정되지 않았다는 후속 보도다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "솔리다임"
+      ],
+      "event_type": "ipo",
+      "event_stage": "follow_up",
+      "novelty_score": 0.1,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.75,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "governance"
+      ],
+      "confidence_score": 0.9,
+      "duplicate_cluster_id": "cluster_20260925_solidigm_ipo"
+    },
+    {
+      "url": "https://www.news1.kr/finance/general-stock/6311291",
+      "publisher": "뉴스1",
+      "published_at": "2026-10-06T11:40:09+09:00",
+      "title": "금리 부담·메모리 약세에 '칠천피' 다시 내줘…코스닥 2.5%↑[장중시황]",
+      "evidence_facts": [
+        "금리와 국내 장중 수급을 다루며 SK스퀘어·SK하이닉스를 주요 종목으로 언급한다.",
+        "새로운 회사 발표보다 시장 거래 동향이 중심인 시황이다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.straightnews.co.kr/news/articleView.html?idxno=312624",
+      "publisher": "스트레이트뉴스",
+      "published_at": "2026-10-06T18:14:29+09:00",
+      "title": "SK스퀘어, 순익 27조인데 현금흐름 2608억…하이닉스發 '회계효과'",
+      "evidence_facts": [
+        "기존 상반기 연결 순이익과 현금흐름의 차이를 해설한다.",
+        "관계기업 지분법이익이 같은 규모의 현금 유입을 뜻하지 않는다는 내용이며 새로운 실적 공시는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "earnings",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": -0.1,
+      "ex_ante_impact_direction": 0,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "cash_flow",
+        "nav"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16240319",
+      "publisher": "톱스타뉴스",
+      "published_at": "2026-10-07T10:04:07+09:00",
+      "title": "SK스퀘어 주가, 10월 7일 장중 1,179,000원 1.55% 상승",
+      "evidence_facts": [
+        "SK스퀘어 장중 시세를 소개하는 짧은 기사다.",
+        "새로운 기업 사건이나 전망 근거가 없어 신규 정보성이 낮다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 0.4,
+      "novelty_score": 0.03,
+      "materiality_score": 0.05,
+      "mechanisms": [
+        "supply_demand"
+      ],
+      "confidence_score": 0.95
+    },
+    {
+      "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=493435",
+      "publisher": "핀포인트뉴스",
+      "published_at": "2026-10-07T16:14:04+09:00",
+      "title": "[거래소 기관] SK스퀘어·LG엔솔 담고 삼성전자·SK하이닉스 팔았다",
+      "evidence_facts": [
+        "기관의 당일 순매수·순매도 종목을 열거하는 수급 기사다.",
+        "새 기업 발표보다 이미 발생한 거래 결과를 정리한다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 0.6,
+      "novelty_score": 0.05,
+      "materiality_score": 0.08,
+      "mechanisms": [
+        "supply_demand"
+      ]
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20261008000107",
+      "publisher": "뉴스핌",
+      "published_at": "2026-10-08T09:39:00+09:00",
+      "title": "11번가, 슈팅배송 생필품 할인…31일까지 간편식·생활용품 특가",
+      "evidence_facts": [
+        "11번가가 슈팅배송 생활용품 할인 행사를 알렸다.",
+        "결제 수단별 할인 조건을 소개하는 판촉 기사이며 매출 증가를 입증하지 않는다."
+      ],
+      "entities": [
+        "11번가"
+      ],
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.1,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.25,
+      "materiality_score": 0.05,
+      "uncertainty_score": 0.2,
+      "forward_looking": false,
+      "impact_horizon": "unknown",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.95,
+      "primary_subject": "portfolio_company"
+    },
+    {
+      "url": "https://m.news.nate.com/view/20261008n15335",
+      "publisher": "뉴스핌(씽크풀 로보뉴스·네이트)",
+      "published_at": "2026-10-08T11:46:00+09:00",
+      "title": "[리포트 브리핑]SK하이닉스, '증명의 시간' 목표가 3,700,000원 - 유진투자증권",
+      "evidence_facts": [
+        "유진투자증권이 목표주가와 강한 매수 의견을 유지했다.",
+        "환율 가정에 따른 추정치 조정과 향후 이익 지속성을 분석한 자동생성 보고서 요약이다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "availability": "full_text",
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.75,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "SK하이닉스 목표주가",
+          "value": 3700000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/2026101144131",
+      "publisher": "한국경제",
+      "published_at": "2026-10-11T14:52:00+09:00",
+      "title": "[단독] SK스퀘어, 日 피지컬AI 기업 투자",
+      "evidence_facts": [
+        "SK스퀘어 해외 투자법인 TGC스퀘어가 일본 무진의 시리즈D 투자에 참여했다고 보도한다.",
+        "개별 투자 금액은 미공개이며 전체 라운드 조달액을 SK스퀘어 투자액으로 해석하지 않는다.",
+        "피지컬AI의 물류·반도체 공정 활용과 계열사 시너지는 전망이다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "TGC스퀘어",
+        "무진"
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "portfolio_acquisition",
+      "event_stage": "announcement",
+      "novelty_score": 0.85,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.55,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "duplicate_cluster_id": "cluster_20261011_mujin_investment"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20261013_0003823209",
+      "publisher": "뉴시스",
+      "published_at": "2026-10-13T08:54:43+09:00",
+      "title": "SK하이닉스 목표가 360만원 유지, 왜?…\"실적도 주주환원도 기대\"",
+      "evidence_facts": [
+        "하나증권이 SK하이닉스 목표주가와 매수 의견을 유지했다.",
+        "실적 전망과 추가 주주환원 가능성을 분석하며 실제 회사 결정이나 확정 실적과 구분된다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "valuation_multiple",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "SK하이닉스 목표주가",
+          "value": 3600000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ],
+      "article_text_hash": "d9b4c2234aed351c57c824c48868e9b533ce12d643363b088221f9adb929e1a2"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20261013_0003823798",
+      "publisher": "뉴시스",
+      "published_at": "2026-10-13T12:39:47+09:00",
+      "title": "크래프톤, AI 인재 100명 이상 뽑는다…역대 최대 신입 공채",
+      "evidence_facts": [
+        "크래프톤이 AI 활용 역량을 평가하는 채용연계형 인턴십 지원자를 모집한다고 발표했다.",
+        "채용 계획은 확정 선발·근무 시작이나 재무 효과 달성과 구분된다."
+      ],
+      "entities": [
+        "크래프톤"
+      ],
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.65,
+      "sentiment_score": 0.2,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.35,
+      "materiality_score": 0.12,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "numeric_claims": [
+        {
+          "metric": "신입 인턴 채용 계획",
+          "value": 100,
+          "unit": "명 이상",
+          "period": "2027 채용연계형 인턴십",
+          "comparison": null
+        }
+      ],
+      "article_text_hash": "18ad1d9d5f67b315d8b60259b79adb52d3c85738ebad0945c14c7cfa99e3d5b1"
+    }
+  ],
+  "completed_days": [
+    "20261001",
+    "20261002",
+    "20261006",
+    "20261007",
+    "20261008",
+    "20261012",
+    "20261013"
+  ],
+  "notes": {
+    "20261001": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 뉴스1 최초 발행 HTML 메타 10:59:51 사용; 화면 업데이트 11:11과 구분.",
+    "20261002": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 전일 17:54 전력설비 협약 기사와 개장 전 솔리다임 후속 기사 귀속. 조선일보 발행 메타(10-01 16:00:12 KST)와 화면 입력(10-02 00:34)이 다르나 귀속 거래일은 동일; 메타를 사용.",
+    "20261006": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 날짜만 포함된 시세 집계·종목 페이지는 기사로 선택하지 않음. DB증권 목표가 집계는 원 기사·공개시각을 확인하지 못해 제외.",
+    "20261007": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 전일 18:14 기존 실적 회계 해설 귀속. 원문 접속 제한으로 검색에서 읽힌 부분만 사용.",
+    "20261008": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 전일 16:14 수급 기사 귀속; 유진증권 로보뉴스·11번가 판촉은 각각 후속·낮은 중요도로 표기.",
+    "20261012": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 무진 기사 본문에 최초 유료 공개 10-11 14:52가 명시되어 해당 시각과 휴장일 버킷 사용; 공개 페이지 재게재 시각은 10-12 09:35. 개별 투자액 미공개.",
+    "20261013": "일반 웹 날짜별 SK스퀘어·보유자산 보완검색. 원문 또는 읽을 수 있는 검색 본문에서 확인한 사실만 추출; 시세·잔차 별도 조회 없이 기사 의미로 판단. 단순 가격·수급 시황은 중립 방향·낮은 신규성으로 수록. 뉴시스 두 기사는 화면 최초 등록시각 사용; HTML 메타의 수정시각과 구분. 15:35 이후 마감 기사는 10-14 귀속이라 이번 대상에서 제외."
+  },
+  "keep_visible_times": [
+    "https://www.hankyung.com/article/2026101144131",
+    "https://www.newsis.com/view/NISX20261013_0003823209",
+    "https://www.newsis.com/view/NISX20261013_0003823798"
+  ]
+}

@@ -1,0 +1,829 @@
+{
+  "completed_days": [
+    "20231016",
+    "20231019",
+    "20231103",
+    "20231106",
+    "20231108",
+    "20231113",
+    "20231114",
+    "20231123",
+    "20231124",
+    "20231128",
+    "20231129",
+    "20231205",
+    "20231206",
+    "20231207",
+    "20231208",
+    "20231211",
+    "20231212",
+    "20231221",
+    "20231227",
+    "20240115"
+  ],
+  "articles": [
+    {
+      "url": "https://www.mt.co.kr/stock/2023/10/16/2023101611307028623",
+      "publisher": "머니투데이(MTN)",
+      "published_at": "2023-10-16T11:51:22+09:00",
+      "title": "[10시 시황 해설자들 - 해설자들] SK하이닉스 대형 호재, 베팅 우선순위 삼성보다 하이닉스?",
+      "evidence_facts": [
+        "방송 안내에 하이닉스 관련 질문과 출연자 정보만 제시돼 구체적인 호재 내용이나 답변을 확보하지 못했다.",
+        "제목의 긍정 표현으로 기업 사건이나 영향 방향을 추정하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "availability": "metadata_only",
+      "relevance_score": 0.3,
+      "materiality_score": 0.02,
+      "novelty_score": 0.02,
+      "confidence_score": 0.95,
+      "article_text_hash": "9c92cde5f26ee2fb8ee19af823455a6359dedb0a422cc03f74af1c28bf5987bd",
+      "event_type": "other",
+      "event_stage": "unknown",
+      "mechanisms": [
+        "unclear"
+      ],
+      "impact_horizon": "unknown",
+      "forward_looking": false
+    },
+    {
+      "url": "https://www.ledesk.co.kr/view.php?uid=6873",
+      "publisher": "르데스크",
+      "published_at": "2023-10-19T14:50:00+09:00",
+      "title": "티몬·위메프 이어 11번가 까지…큐텐, 이커머스 3강 진입 초읽기",
+      "evidence_facts": [
+        "큐텐과 SK스퀘어가 11번가 지분 인수·투자 협상을 진행 중이라고 전했다.",
+        "FI 지분과 스퀘어 지분 일부를 대상으로 협의하는 단계로 매각 확정이나 완료는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "11번가",
+        "큐텐",
+        "나일홀딩스"
+      ],
+      "event_type": "portfolio_disposal",
+      "event_stage": "expectation",
+      "novelty_score": 0.35,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.9,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.75,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation",
+        "nav"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "sk_square"
+    },
+    {
+      "url": "https://www.news1.kr/industry/general-industry/5201501",
+      "publisher": "뉴스1",
+      "published_at": "2023-10-19T05:03:00+09:00",
+      "title": "\"2차선→8차선 확장 기술\"…삼성·SK하이닉스, HBM 다음 전장",
+      "evidence_facts": [
+        "하이닉스와 삼성전자가 차세대 메모리 연결 기술 CXL의 생태계와 기술을 소개하고 있다고 전했다.",
+        "하이닉스의 CXL 백서와 국제 행사 참여를 다룬 후속 산업 기사이며 새 양산 계약은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "헤이즐캐스트"
+      ],
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.6,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20231103_0002508065",
+      "publisher": "뉴시스",
+      "published_at": "2023-11-03T11:33:04+09:00",
+      "title": "\"이젠 낸드의 시간\"…삼성·SK하이닉스 '공정전환·감산' 승부수",
+      "evidence_facts": [
+        "메모리 업체들이 낸드 감산과 공정 전환, 고부가 제품 강화를 추진한다고 전했다.",
+        "높은 재고와 제한적인 AI 수요 효과로 낸드 회복은 D램보다 늦을 수 있다고 설명했다.",
+        "수익성 개선 전략과 수요 부진이 함께 제시돼 순방향은 중립으로 기록했다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자"
+      ],
+      "event_type": "semiconductor_cycle",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.75,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "confidence_score": 0.9,
+      "article_text_hash": "8753fa1d711ad9628605f66984f995858046ddf81f2e70c055a13425186daa60"
+    },
+    {
+      "url": "https://www.asiae.co.kr/article/2023110313473246333",
+      "publisher": "아시아경제",
+      "published_at": "2023-11-03T13:47:32+09:00",
+      "title": "SK하이닉스, 포르투갈에 디자인센터 설립 논의 중",
+      "evidence_facts": [
+        "하이닉스와 포르투갈 무역투자청의 반도체 투자 프로젝트 MOU를 현지 보도에 근거해 소개했다.",
+        "디자인센터 설립을 논의하는 단계이며 시설 완공이나 투자 집행 완료는 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "포르투갈 무역투자청"
+      ],
+      "event_type": "other",
+      "event_stage": "proposal",
+      "novelty_score": 0.65,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.65,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.datanet.co.kr/news/articleView.html?idxno=188447",
+      "publisher": "데이터넷",
+      "published_at": "2023-11-03T17:34:04+09:00",
+      "title": "인크로스, 광고시장 부진으로 3분기 실적 감소",
+      "evidence_facts": [
+        "인크로스가 광고시장 부진의 영향으로 3분기 실적이 감소했다고 설명했다.",
+        "검색광고 성장과 CTV·옥외광고·AI 신사업 발굴 계획도 소개했다.",
+        "확보한 검색 본문 일부만 사용했으며 직접 기사 페이지는 접근이 제한됐다."
+      ],
+      "entities": [
+        "인크로스"
+      ],
+      "event_type": "earnings",
+      "event_stage": "announcement",
+      "novelty_score": 0.75,
+      "sentiment_score": -0.25,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.35,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company"
+    },
+    {
+      "url": "https://www.fnnews.com/news/202311071559222702",
+      "publisher": "파이낸셜뉴스(뉴시스)",
+      "published_at": "2023-11-07T15:59:22+09:00",
+      "title": "[속보] 크래프톤, 3분기 영업익 1893억…전년비 30.9%↑",
+      "evidence_facts": [
+        "크래프톤은 3분기 매출 4503억원과 영업이익 1893억원을 공시했다.",
+        "전년 동기보다 매출은 3.8%, 영업이익은 30.9% 늘었다고 전했다."
+      ],
+      "entities": [
+        "크래프톤"
+      ],
+      "event_type": "earnings",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.45,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.25,
+      "forward_looking": false,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "availability": "full_text",
+      "numeric_claims": [
+        {
+          "metric": "매출액",
+          "value": 4503,
+          "unit": "억원",
+          "period": "2023Q3",
+          "comparison": "전년 동기 대비 3.8% 증가"
+        },
+        {
+          "metric": "영업이익",
+          "value": 1893,
+          "unit": "억원",
+          "period": "2023Q3",
+          "comparison": "전년 동기 대비 30.9% 증가"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2023/11/13/2023111310294358519",
+      "publisher": "머니투데이",
+      "published_at": "2023-11-13T15:01:58+09:00",
+      "title": "SK하이닉스 신고가 행진…LG엔솔 시총 2위 각축전",
+      "evidence_facts": [
+        "하이닉스와 LG에너지솔루션의 시가총액 순위와 장중 동향을 설명한 시황 기사다.",
+        "본문에 업황 전망이 포함돼 있지만 관측된 시세·시총 경쟁을 이유로 방향 라벨을 부여하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "LG에너지솔루션"
+      ],
+      "relevance_score": 0.5,
+      "materiality_score": 0.06,
+      "novelty_score": 0.08,
+      "article_text_hash": "5258f3a4feb272a5e4aa84400c8693d1344601b7e90430fdf1295889571f40a5"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2023111331391",
+      "publisher": "한국경제",
+      "published_at": "2023-11-13T18:05:00+09:00",
+      "title": "LG엔솔 VS SK하이닉스…시총 2위 전쟁",
+      "evidence_facts": [
+        "하이닉스와 LG에너지솔루션의 시가총액 순위 경쟁을 정리했다.",
+        "기업의 새 투자·실적 발표를 확인하는 기사가 아니므로 시황 중립으로 기록했다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "LG에너지솔루션"
+      ],
+      "relevance_score": 0.4,
+      "materiality_score": 0.04,
+      "novelty_score": 0.05
+    },
+    {
+      "url": "https://news.bizwatch.co.kr/article/consumer/2023/11/22/0026",
+      "publisher": "비즈워치",
+      "published_at": "2023-11-23T07:20:31+09:00",
+      "title": "[인사이드 스토리]'격랑의 11번가' 큐텐과는 정말 '인연' 아닐까",
+      "evidence_facts": [
+        "SK스퀘어가 큐텐에 11번가 지분 매각 협상 중단을 통보한 이후 상황을 분석했다.",
+        "가격·지분 비율 이견과 대안 투자자 부족을 설명하면서 협상 재개 가능성도 언급했다.",
+        "불발된 협상에 대한 후속 해설로 매각 완료나 새 인수자 확정은 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "11번가",
+        "큐텐"
+      ],
+      "event_type": "portfolio_disposal",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": -0.25,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.95,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation",
+        "nav"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "sk_square"
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2023112318020630701",
+      "publisher": "아시아경제",
+      "published_at": "2023-11-23T18:02:06+09:00",
+      "title": "\"SK하이닉스 3분기 D램 시장 점유율 35%…창사 이래 최고\"",
+      "evidence_facts": [
+        "옴디아는 3분기 D램 시장에서 하이닉스 점유율이 35%에 달했다고 발표했다.",
+        "HBM 수요와 품질 중심 경쟁을 설명한 시장 조사 기사이며 미래 점유율이 확정된 것은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "옴디아"
+      ],
+      "event_type": "semiconductor_cycle",
+      "event_stage": "announcement",
+      "novelty_score": 0.55,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "옴디아 집계 D램 시장점유율",
+          "value": 35,
+          "unit": "%",
+          "period": "2023Q3",
+          "comparison": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2023/11/28/2023112808010130706",
+      "publisher": "머니투데이",
+      "published_at": "2023-11-28T08:01:44+09:00",
+      "title": "SK하이닉스, AI 반도체 수요 증가의 최대 수혜주-KB증권",
+      "evidence_facts": [
+        "KB증권은 하이닉스의 매수 의견과 목표주가 16만원을 유지했다.",
+        "HBM3E 출하 확대와 메모리 판매가격 상승에 따른 2024년 실적 개선을 전망했다.",
+        "출하·양산과 미래 이익은 증권사 예상이며 이미 달성된 실적으로 해석하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "목표주가",
+          "value": 160000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ],
+      "article_text_hash": "78a24e808a3ee77454f8466d5e5ea494a972faa8a0d68da751875f20dc84f80a"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2023112902636",
+      "publisher": "한국경제",
+      "published_at": "2023-11-29T09:24:00+09:00",
+      "title": "긴축 종료 기대에도…증시 외인·기관 '팔자' 속 약세",
+      "evidence_facts": [
+        "미국 긴축 종료 기대와 국내 외국인·기관 매매 등 장중 시황을 전했다.",
+        "하이닉스 등이 주요 종목으로 언급되며 시장 등락을 감성·사전 영향 방향 판단에 사용하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.3,
+      "materiality_score": 0.03,
+      "novelty_score": 0.05
+    },
+    {
+      "url": "https://www.mt.co.kr/tech/2023/12/05/2023120511420789746",
+      "publisher": "머니투데이",
+      "published_at": "2023-12-05T12:58:45+09:00",
+      "title": "티빙-웨이브, 진짜 합친다…상호 합병 MOU 체결",
+      "evidence_facts": [
+        "CJ ENM과 SK스퀘어가 티빙·웨이브 합병을 추진하는 MOU를 체결했다고 전했다.",
+        "실사 이후 본계약을 체결할 예정이며 합병 비율·방식·일정은 아직 확정되지 않았다.",
+        "MOU와 완료된 합병을 구분하고 순효과는 중립으로 기록했다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "콘텐츠웨이브",
+        "티빙",
+        "CJ ENM"
+      ],
+      "event_type": "other",
+      "event_stage": "proposal",
+      "novelty_score": 0.8,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.9,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.7,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "duplicate_cluster_id": "cluster_20231205_tving_wavve_mou",
+      "article_text_hash": "ba39b886a80f95a81fc08453b3de122973dd15e1ee7426c55c14c14dd2f2537c"
+    },
+    {
+      "url": "https://www.fnnews.com/news/202312051823466084",
+      "publisher": "파이낸셜뉴스",
+      "published_at": "2023-12-05T18:23:49+09:00",
+      "title": "티빙-웨이브, 넷플릭스 독주 막는다… 900만 ‘토종 OTT’ 탄생",
+      "evidence_facts": [
+        "티빙·웨이브 합병 MOU를 후속 보도하며 이용자 통합과 콘텐츠 투자 효율 가능성을 설명했다.",
+        "양사 적자로 시너지에 대한 의문도 함께 제시됐으며 MOU 체결을 합병 완료로 읽지 않았다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "콘텐츠웨이브",
+        "티빙",
+        "CJ ENM"
+      ],
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.2,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.7,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.7,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "duplicate_cluster_id": "cluster_20231205_tving_wavve_mou"
+    },
+    {
+      "url": "https://www.kpenews.com/ViewM.aspx?No=3037940",
+      "publisher": "한국정경신문",
+      "published_at": "2023-12-06T10:42:00+09:00",
+      "title": "희망퇴직 마무리하는 11번가 새 주인은?..韓 이커머스 재편 가능성도 '솔솔'",
+      "evidence_facts": [
+        "11번가의 첫 희망퇴직 신청 마무리와 SK스퀘어 콜옵션 미행사 후 FI 매각 권한을 설명했다.",
+        "인수 후보와 재협상 가능성은 관측으로 제시돼 매수자나 거래가 확정됐다고 해석하지 않았다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "11번가",
+        "나일홀딩스",
+        "큐텐"
+      ],
+      "event_type": "portfolio_disposal",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": -0.25,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.7,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.7,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company"
+    },
+    {
+      "url": "https://www.fnnews.com/news/202312060833581933",
+      "publisher": "파이낸셜뉴스(연합뉴스)",
+      "published_at": "2023-12-06T08:33:59+09:00",
+      "title": "KB증권 \"SK하이닉스 내년 영업익 7.6조 전망…4분기부터 우상향\"",
+      "evidence_facts": [
+        "KB증권은 하이닉스 매수 의견과 목표주가 16만원을 유지했다.",
+        "2024년 영업이익을 7조6천억원으로 전망하며 메모리 가격과 판매량 개선을 예상했다.",
+        "미래 실적 추정치이며 회사가 발표한 확정 영업이익은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.2,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "KB증권 예상 영업이익",
+          "value": 76000,
+          "unit": "억원",
+          "period": "2024E",
+          "comparison": null
+        },
+        {
+          "metric": "목표주가",
+          "value": 160000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ]
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20231207000682",
+      "publisher": "뉴스핌",
+      "published_at": "2023-12-07T14:48:09+09:00",
+      "title": "SK스퀘어, 반도체·ICT 사업 밸류업·실행력 강화…송재승 CIO 선임",
+      "evidence_facts": [
+        "SK스퀘어가 투자조직을 신성장 투자와 기존 포트폴리오 재정비를 담당하는 듀얼 CIO 체제로 개편했다.",
+        "송재승 CIO 선임 등 2024년 조직개편·임원 인사를 발표했다.",
+        "조직과 인사 변화이며 포트폴리오 수익 개선이 이미 실현됐다는 의미는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "송재승",
+        "하형일"
+      ],
+      "event_type": "management_change",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.95,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "governance",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "governance"
+    },
+    {
+      "url": "https://www.mk.co.kr/news/business/10893109",
+      "publisher": "매일경제",
+      "published_at": "2023-12-07T15:02:00+09:00",
+      "title": "SK하이닉스, ‘AI 인프라’ 조직 신설…김주선 사장 승진",
+      "evidence_facts": [
+        "하이닉스가 HBM 역량을 결집하는 AI 인프라 조직과 HBM 비즈니스를 신설했다.",
+        "김주선 사장 승진과 기반기술센터 신설 등 조직개편을 발표했다.",
+        "사업 역량 강화 계획이며 신설 조직의 이익 기여는 아직 확정되지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "김주선"
+      ],
+      "event_type": "management_change",
+      "event_stage": "announcement",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.75,
+      "materiality_score": 0.2,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "governance"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.fnnews.com/news/202312081031238975",
+      "publisher": "파이낸셜뉴스(뉴스1)",
+      "published_at": "2023-12-08T10:31:23+09:00",
+      "title": "\"HBM 경력자 모십니다\"…'AI 역량' 키우는 SK하이닉스",
+      "evidence_facts": [
+        "하이닉스가 HBM 관련 경력사원 채용 공고를 내고 접수를 진행 중이라고 전했다.",
+        "AI 역량 확충과 조직 신설에 따른 채용으로 해석한 후속 기사이며 새 수주 규모는 제시하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0.1,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.55,
+      "materiality_score": 0.1,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2023/12/11/2023121108254689657",
+      "publisher": "머니투데이",
+      "published_at": "2023-12-11T08:35:06+09:00",
+      "title": "'16만닉스' 전망 나왔다…\"연말 기점 과잉재고 점차 해소\"-키움",
+      "evidence_facts": [
+        "키움증권은 하이닉스 매수 의견과 목표주가 16만원을 유지했다.",
+        "4분기 흑자 전환과 D램·낸드 가격 개선, 연말 이후 과잉 재고 해소를 전망했다.",
+        "예상 영업이익은 실적 발표값이 아니라 증권사 추정이다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "목표주가",
+          "value": 160000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ],
+      "article_text_hash": "ac6be5aa2487fce16cee93e24bb367db4d967fc0496dcef700666e6955b1257f"
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2023121209355806935",
+      "publisher": "아시아경제",
+      "published_at": "2023-12-12T09:35:58+09:00",
+      "title": "[특징주]필라델피아 지수 약 2년만의 최고가…SK하이닉스 1.9% ↑",
+      "evidence_facts": [
+        "미국 반도체지수와 하이닉스 장중 시세를 연결해 설명한 특징주 기사다.",
+        "새 회사 사건을 확인하는 기사가 아니므로 관측된 시장 반응은 방향 라벨로 사용하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "relevance_score": 0.4,
+      "materiality_score": 0.04,
+      "novelty_score": 0.05
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2023122016442346517",
+      "publisher": "아시아경제",
+      "published_at": "2023-12-21T10:38:52+09:00",
+      "title": "'실적 풍향계' 마이크론, 회복 신호탄…삼성·하이닉스 4분기 기대감↑",
+      "evidence_facts": [
+        "마이크론의 회계연도 1분기 매출 증가를 근거로 메모리 업황 회복을 분석했다.",
+        "삼성전자와 하이닉스의 4분기 실적 개선 가능성을 전망했으며 두 회사의 미발표 실적이 확정된 것은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "마이크론"
+      ],
+      "event_type": "semiconductor_cycle",
+      "event_stage": "expectation",
+      "novelty_score": 0.4,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.7,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.55,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20231226_0002571407",
+      "publisher": "뉴시스",
+      "published_at": "2023-12-27T06:00:00+09:00",
+      "title": "美, 中 반도체 사용 규제…삼성·SK 재고 소진 '청신호'",
+      "evidence_facts": [
+        "미 상무부가 미국 기업의 중국산 범용 반도체 의존도를 조사할 예정이라고 전했다.",
+        "보도는 향후 중국산 반도체 규제 가능성이 한국 메모리 업체 재고 소진에 도움을 줄 수 있다고 전망했다.",
+        "조사 예고와 수혜 전망이며 실제 사용 금지 시행이나 재고 소진 완료는 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "미국 상무부"
+      ],
+      "event_type": "regulation",
+      "event_stage": "proposal",
+      "novelty_score": 0.4,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.65,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.7,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "regulation",
+      "article_text_hash": "8442ed92aaf54192b4c48f02297a9c00bbbb7f2940901ea83bbace6150f4908c"
+    },
+    {
+      "url": "https://www.hankyung.com/article/202401154269a",
+      "publisher": "한국경제",
+      "published_at": "2024-01-15T10:50:00+09:00",
+      "title": "삼성전자와 SK하이닉스 CES 2024에서 CXL 차세대 메모리 공개, 관련주는?",
+      "evidence_facts": [
+        "CES에서 소개된 삼성전자·하이닉스의 CXL 메모리와 고객 인증·상용화 계획을 재정리했다.",
+        "관련 종목 소개를 함께 담은 투자 콘텐츠로 새로운 회사 결정이나 확정 실적은 제시하지 않았다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "삼성전자"
+      ],
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.15,
+      "sentiment_score": 0.1,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.35,
+      "materiality_score": 0.08,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "semiconductor_sector"
+    }
+  ],
+  "notes": {
+    "20231016": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 방송 질문 안내만 확보해 metadata_only. 제목만 보고 호재 내용을 추정하지 않음.",
+    "20231019": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231103": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 뉴시스 메타는 수정 시각 12:37:29이므로 최초 등록 11:33:04 유지.",
+    "20231106": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 인크로스 11/3 17:34 실적 보도는 다음 거래일 11/6 귀속.",
+    "20231108": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 크래프톤 11/7 15:59 실적 공시 기사는 장마감 뒤여서 11/8 귀속.",
+    "20231113": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231114": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 11/13 18:05 시총 기사 포함. 11/14 18시 이후 재고 보도는 11/15 귀속으로 제외.",
+    "20231123": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231124": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 11/23 18:02 옴디아 시장점유율 공개 기사 귀속. 콜옵션 논의 기사 11/24 22:26은 11/27 귀속으로 제외.",
+    "20231128": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231129": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 11번가 콜옵션 포기 보도 최초 입력 15:44:28은 11/30 귀속이므로 제외. 당일 장중 시황만 확보.",
+    "20231205": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 합병 MOU와 최종 합병을 구분; 비율·일정 미확정.",
+    "20231206": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 전일 장마감 뒤 MOU 후속 기사 포함. 희망퇴직·FI 매각과 증권사 실적 전망은 각각 기록. 한국정경신문 RFC 형식 메타에는 GMT 표기가 있으나 화면 승인 10:42 KST 기준; 시각 메타 불일치 표시.",
+    "20231207": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. SK스퀘어·하이닉스 조직개편과 인사를 기록. 조직개편의 수익 개선 실현을 가정하지 않음.",
+    "20231208": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231211": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231212": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 스퀘어 포트폴리오 분석 17:33 및 넘버스 12/21 16:01 보도는 다음 거래일 귀속으로 대상에서 제외.",
+    "20231221": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시.",
+    "20231227": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. 미국의 중국산 반도체 의존도 조사 예고와 향후 수혜 전망을 구분; 제목을 실제 사용 금지 시행으로 해석하지 않음. 뉴시스 수정 메타 07:25:31 대신 화면 최초 등록 06:00 사용.",
+    "20240115": "일반 웹에서 SK스퀘어·해당 날짜 검색 후 하이닉스와 관련 보유기업으로 확장. 공개 시각과 전체 거래일 달력으로 귀속; 기사만으로 속성 판단. 시황·방송 질문 안내의 방향은 중립, 확보 수준과 후속 보도 성격을 표시. CXL 관련 종목 소개 콘텐츠로 낮은 신규성·중요도. 17:24 실적 전망 및 20:03 기술인력 유출 보도는 1/16 귀속으로 제외."
+  },
+  "keep_visible_times": [
+    "https://www.newsis.com/view/NISX20231103_0002508065",
+    "https://www.hankyung.com/article/2023111331391",
+    "https://www.hankyung.com/article/2023112902636",
+    "https://www.mk.co.kr/news/business/10893109",
+    "https://www.newsis.com/view/NISX20231226_0002571407",
+    "https://www.hankyung.com/article/202401154269a"
+  ]
+}

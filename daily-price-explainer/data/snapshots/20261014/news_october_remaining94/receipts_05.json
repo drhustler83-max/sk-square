@@ -1,0 +1,281 @@
+[
+  {
+    "url": "https://www.mk.co.kr/news/business/11105402",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://m.ekn.kr/view.php?key=20240830023252182",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "‘첫 방한’ 우버 CEO “한국 시장 점유율 확대하겠다…SK스퀘어와 협력 계속될 것”",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-30T14:28:04+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.news1.kr/finance/general-stock/5526811",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"엔비디아 실망감 정점 통과\"…SK하이닉스, 17만닉스 회복[핫종목] - 뉴스1",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-08-30T16:02:24+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/industry/2024/12/30/2024123009382756317",
+    "body_hash": "e221ea25942a183f5d723c08ad5a933e30d4fa4b8f50f484182d7c373986c4c4",
+    "body_chars": 624,
+    "http_status": 200,
+    "page_title": "SK하이닉스 中파운드리, 희망퇴직 돌입...\"업황회복 지연\" - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2024-12-30T09:52:05+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2024-12-30T09:52:05+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/2025010964826",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "코스피, 5거래일 연속 상승…SK하이닉스 20만원 복귀 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-01-09T16:14:36+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2025/01/16/2025011608240668962",
+    "body_hash": "043e11b7a2ea58f4cba840fd01355ba6a25f209d3fc61735b7209de310aae05f",
+    "body_chars": 699,
+    "http_status": 200,
+    "page_title": "SK하이닉스, HBM 실적 성장세 둔화 예상…주가 박스권 흐름 전망-키움증권 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-01-16T08:25:47+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-11-10T20:09:11+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2025011515043996074",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 작년 HBM 매출비중 역대최대…D램 매출 30%는 HBM",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-01-16T07:30:00+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-01-16T07:54:03+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsway.co.kr/news/view?ud=2025011611401431412",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "블랙웰 결함설 또 솔솔···삼성·SK하이닉스 긴장? - 뉴스웨이",
+    "date_metadata": [
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2025-01-16T15:41:39+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2025-01-16T15:41:39+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-01-16T15:41:39+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2025012008312751675",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "한 달에 세 번 '10시 초특가' 판매'…11번가,10분러시데이",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-01-20T08:37:27+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-01-20T08:37:27+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.ytn.co.kr/_ln/0134_202503041415048984",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "트럼프에 '두손두발' 든 TSMC...불안에 떠는 삼성전자·SK하이닉스 [Y녹취록] | YTN",
+    "date_metadata": [
+      {
+        "property": "article:modified_time",
+        "content": "2025-03-04T14:15:00+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-03-04T14:15:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/2025030403586",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "엔비디아 급락에 반도체株 약세…SK하이닉스 3%↓ | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-04T09:21:22+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2025030415441804154",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[클릭 e종목]\"SK하이닉스, 당분간 18만~24만원 오갈듯\"",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-03-04T15:44:18+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-03-04T15:44:18+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mk.co.kr/news/business/11252763",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.hankyung.com/article/2025031154786",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, HBM 경쟁력 우위 지속…목표가↑-DB | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-11T08:38:16+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/202503128023i",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "Todays Pick : SK하이닉스, 예상보다 빠른 레거시 회복 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-12T08:48:36+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.fnnews.com/news/202503121545151443",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"나쁠게 없다\"...목표가 30만원까지 치솟은 SK하이닉스 - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-13T06:00:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-03-13T07:56:22+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2025-03-13T06:00:00+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2025-03-13T07:56:22+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20250313_0003097889",
+    "body_hash": "950bbd7939caecb355442255a3d7af6b6d6fe4be16853df999d3c3eb94c6b881",
+    "body_chars": 717,
+    "http_status": 200,
+    "page_title": "美 반도체 지수 강세…삼성전자↓SK하이닉스↑[핫스탁](종합) :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-13T16:32:24+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  }
+]

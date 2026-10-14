@@ -1,0 +1,47 @@
+{
+  "batch": 3,
+  "group": "remaining94",
+  "progress": 60,
+  "target_total": 94,
+  "completed_days": [
+    "20231016",
+    "20231019",
+    "20231103",
+    "20231106",
+    "20231108",
+    "20231113",
+    "20231114",
+    "20231123",
+    "20231124",
+    "20231128",
+    "20231129",
+    "20231205",
+    "20231206",
+    "20231207",
+    "20231208",
+    "20231211",
+    "20231212",
+    "20231221",
+    "20231227",
+    "20240115"
+  ],
+  "article_rows": 25,
+  "log_rows": 20,
+  "at": "2026-10-14T16:23:07+09:00",
+  "files": {
+    "news_property_codex_batch.jsonl": {
+      "before_sha256": "e7f4e2f6756c80b3dc32c902cdc174c47c2470802ee6f6e0600ed4f3428c555f",
+      "after_sha256": "9fd098e01b4078c041da617db7607f726f3ec09a439d984e2d8ef8ea75019713",
+      "original_prefix_bytes": 1962590,
+      "batch_sha256": "51b739fb6c22a850e460bb82249e33c81a198ac101ce0769dff9b5eb3ae23e4d",
+      "added_rows": 25
+    },
+    "news_search_log_codex.jsonl": {
+      "before_sha256": "f2576fdf6c2ee76b133b2207ab27f0550521bf846cf92973b2f48c42fe58f865",
+      "after_sha256": "0f95b03dacc2076f56f82b8efd0ed35c2bbbe5afbaf535f79d9e171e638d80a1",
+      "original_prefix_bytes": 265972,
+      "batch_sha256": "b89729feb85340f42e07635330dc5f50b9b40457e16804c9576eb074326b255a",
+      "added_rows": 20
+    }
+  }
+}

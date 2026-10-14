@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "october_completed": 7,
+  "october_total": 7,
+  "remaining94_completed": 94,
+  "remaining94_total": 94,
+  "new_articles": 129,
+  "new_logs": 101,
+  "schema_validated": 129,
+  "duplicate_new_url_or_id": 0,
+  "attribution_errors": 0,
+  "original_bytes_unchanged": true,
+  "files": {
+    "news_property_codex_batch.jsonl": {
+      "initial_sha256": "7190f18fc9d8933daa60f989fc0678177e73213e81b2d714322a469aa7b56a5d",
+      "current_sha256": "34a244e25c294fbd707ffea5bec9119617bf059e10a1cb6c4cbb59892ea680f3",
+      "original_prefix_bytes": 1865756,
+      "added_rows": 129,
+      "total_rows": 1386
+    },
+    "news_search_log_codex.jsonl": {
+      "initial_sha256": "54495023a1b9dd016a5a69d9b38d869e517eaa444e6a57d00c1bcb4695920625",
+      "current_sha256": "68d3f04c78a258ff46ecf4aad4ca46d8dd8e763d91c678deb33e6d03fd4aa1b4",
+      "original_prefix_bytes": 243969,
+      "added_rows": 101,
+      "total_rows": 1189
+    }
+  }
+}

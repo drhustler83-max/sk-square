@@ -1,0 +1,460 @@
+[
+  {
+    "url": "https://www.mt.co.kr/stock/2023/10/16/2023101611307028623",
+    "body_hash": "9c92cde5f26ee2fb8ee19af823455a6359dedb0a422cc03f74af1c28bf5987bd",
+    "body_chars": 481,
+    "http_status": 200,
+    "page_title": "[10시 시황 해설자들 - 해설자들] SK하이닉스 대형 호재, 베팅 우선순위 삼성보다 하이닉스? - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-10-16T11:51:22+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-10-16T11:51:22+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.ledesk.co.kr/view.php?uid=6873",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "르데스크 - 티몬·위메프 이어 11번가 까지…큐텐, 이커머스 3강 진입 초읽기",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "7D0D565379C06D22EE76739248BAA81D"
+      }
+    ]
+  },
+  {
+    "url": "https://www.news1.kr/industry/general-industry/5201501",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"2차선→8차선 확장 기술\"…삼성·SK하이닉스, HBM 다음 전장 - 뉴스1",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-10-19T05:03:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20231103_0002508065",
+    "body_hash": "8753fa1d711ad9628605f66984f995858046ddf81f2e70c055a13425186daa60",
+    "body_chars": 2179,
+    "http_status": 200,
+    "page_title": "\"이젠 낸드의 시간\"…삼성·SK하이닉스 '공정전환·감산' 승부수 :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-11-03T12:37:29+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.asiae.co.kr/article/2023110313473246333",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 포르투갈에 디자인센터 설립 논의 중",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-11-03T13:47:32+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-11-03T13:47:32+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.datanet.co.kr/news/articleView.html?idxno=188447",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "인크로스, 광고시장 부진으로 3분기 실적 감소 - 데이터넷",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-11-03T17:34:04+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.fnnews.com/news/202311071559222702",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[속보] 크래프톤, 3분기 영업익 1893억…전년비 30.9%↑  - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-11-07T15:59:22+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-11-07T15:59:22+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2023-11-07T15:59:22+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2023-11-07T15:59:22+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2023/11/13/2023111310294358519",
+    "body_hash": "5258f3a4feb272a5e4aa84400c8693d1344601b7e90430fdf1295889571f40a5",
+    "body_chars": 1584,
+    "http_status": 200,
+    "page_title": "SK하이닉스 신고가 행진…LG엔솔 시총 2위 각축전 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-11-13T15:01:58+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-11-13T15:01:58+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/2023111331391",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://news.bizwatch.co.kr/article/consumer/2023/11/22/0026",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[인사이드 스토리]'격랑의 11번가' 큐텐과는 정말 '인연' 아닐까",
+    "date_metadata": [
+      {
+        "property": "dd:published_time",
+        "content": "2023-11-23T07:20:31+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "20231123072031"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-11-23T07:20:31+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2023112318020630701",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"SK하이닉스 3분기 D램 시장 점유율 35%…창사 이래 최고\"",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-11-23T18:02:06+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-09T14:56:24+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2023/11/28/2023112808010130706",
+    "body_hash": "78a24e808a3ee77454f8466d5e5ea494a972faa8a0d68da751875f20dc84f80a",
+    "body_chars": 661,
+    "http_status": 200,
+    "page_title": "SK하이닉스, AI 반도체 수요 증가의 최대 수혜주-KB증권 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-11-28T08:01:44+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-11-28T08:01:44+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/2023112902636",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.mt.co.kr/tech/2023/12/05/2023120511420789746",
+    "body_hash": "ba39b886a80f95a81fc08453b3de122973dd15e1ee7426c55c14c14dd2f2537c",
+    "body_chars": 751,
+    "http_status": 200,
+    "page_title": "티빙-웨이브, 진짜 합친다…상호 합병 MOU 체결 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-05T12:58:45+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-05T12:58:45+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.fnnews.com/news/202312051823466084",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "티빙-웨이브, 넷플릭스 독주 막는다… 900만 ‘토종 OTT’ 탄생 - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-05T18:23:49+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-05T18:23:49+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2023-12-05T18:23:49+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2023-12-05T18:23:49+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.kpenews.com/ViewM.aspx?No=3037940",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "희망퇴직 마무리하는 11번가 새 주인은?..韓 이커머스 재편 가능성도 '솔솔' | 한국정경신문",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "Wed, 06 Dec 2023 10:42:41 GMT"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "8152A78903DCA480559EAA0821ADDEA6"
+      }
+    ]
+  },
+  {
+    "url": "https://www.fnnews.com/news/202312060833581933",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "KB증권 \"SK하이닉스 내년 영업익 7.6조 전망…4분기부터 우상향\" - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-06T08:33:59+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-06T08:33:59+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2023-12-06T08:33:59+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2023-12-06T08:33:59+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20231207000682",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어, 반도체·ICT 사업 밸류업·실행력 강화…송재승 CIO 선임",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-07T14:48:09+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-07T14:48:08+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mk.co.kr/news/business/10893109",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://www.fnnews.com/news/202312081031238975",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "\"HBM 경력자 모십니다\"…'AI 역량' 키우는 SK하이닉스 - 파이낸셜뉴스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-08T10:31:23+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-08T10:31:23+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2023-12-08T10:31:23+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2023-12-08T10:31:23+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "57689B7978DDFA5E64650156AB2E9050"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2023/12/11/2023121108254689657",
+    "body_hash": "ac6be5aa2487fce16cee93e24bb367db4d967fc0496dcef700666e6955b1257f",
+    "body_chars": 885,
+    "http_status": 200,
+    "page_title": "'16만닉스' 전망 나왔다…\"연말 기점 과잉재고 점차 해소\"-키움 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-11T08:35:06+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-11T08:35:06+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2023121209355806935",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[특징주]필라델피아 지수 약 2년만의 최고가…SK하이닉스 1.9% ↑",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-12-12T09:35:58+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-12T09:35:58+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2023122016442346517",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "'실적 풍향계' 마이크론, 회복 신호탄…삼성·하이닉스 4분기 기대감↑",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2023-12-21T10:38:52+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2023-12-21T10:38:52+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20231226_0002571407",
+    "body_hash": "8442ed92aaf54192b4c48f02297a9c00bbbb7f2940901ea83bbace6150f4908c",
+    "body_chars": 1531,
+    "http_status": 200,
+    "page_title": "美, 中 반도체 사용 규제…삼성·SK 재고 소진 '청신호' :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2023-12-27T07:25:31+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.hankyung.com/article/202401154269a",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  }
+]

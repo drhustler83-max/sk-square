@@ -1,0 +1,12 @@
+{
+  "news_property_codex_batch.jsonl": {
+    "sha256": "7190f18fc9d8933daa60f989fc0678177e73213e81b2d714322a469aa7b56a5d",
+    "bytes": 1865756,
+    "rows": 1257
+  },
+  "news_search_log_codex.jsonl": {
+    "sha256": "54495023a1b9dd016a5a69d9b38d869e517eaa444e6a57d00c1bcb4695920625",
+    "bytes": 243969,
+    "rows": 1088
+  }
+}
