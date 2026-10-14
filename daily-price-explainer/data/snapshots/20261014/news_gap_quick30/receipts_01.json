@@ -1,0 +1,400 @@
+[
+  {
+    "url": "https://www.smarttoday.co.kr/news/articleView.html?idxno=76368",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어, 올해 자사주 1000억원 매입 소각",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-27T09:51:12+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-12-12T17:15:09+09:00"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "6762DE9BF9110851FDB7A146BDB9DB0C"
+      }
+    ]
+  },
+  {
+    "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4348484",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어 \"자산 매각 2027년까지 투자재원 3조 확보\" < IB/기업 < 기사본문 - 연합인포맥스",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-27T13:41:48+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.mt.co.kr/stock/2025/03/28/2025032808342758078",
+    "body_hash": "8fd8cbd96c3dbe9078d246261e7de08eff9643865ba6f59af26670b677bdf0f7",
+    "body_chars": 838,
+    "http_status": 200,
+    "page_title": "\"SK스퀘어, 올해 주주환원 규모 4000억 넘을 듯\"-대신 - 머니투데이",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-03-28T08:53:34+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-11-10T19:28:59+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.mk.co.kr/news/stock/11275591",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 403
+  },
+  {
+    "url": "https://stock.mk.co.kr/news/view/706795",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스 \"AI 인재 육성할 것…전문가 양성 프로그램 준비\"",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20250414_0003137747",
+    "body_hash": "2670e8876922d6b7edb53fc204003c6deac695694adda7bcc6dcebc0e8300988",
+    "body_chars": 1691,
+    "http_status": 200,
+    "page_title": "\"美 증시 반등에\" 코스피, 1%대 상승세…코스닥 1.47%↑ :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-14T10:24:20+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://www.ytn.co.kr/_ln/0102_202504151053390743",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "차 부품 관세면제 시사에 코스피 상승...코스닥 하락 | YTN",
+    "date_metadata": [
+      {
+        "property": "article:modified_time",
+        "content": "2025-04-15T10:53:00+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-04-15T10:53:00+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/2025041644826",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "美, 대중 반도체 수출 규제…SK하이닉스 3% 하락 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-16T09:39:37+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://daily.hankooki.com/news/articleView.html?idxno=1204382",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, 엔비디아 AI칩 블랙웰에 8단 HBM3E 공급 < IT일반 < 전자·ICT·게임 < 산업 < 기사본문 - 데일리한국",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-15T15:37:13+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20250416_0003141864",
+    "body_hash": "a512c4e8282c8feccf58dba71ba953b3723277b9fa888c96faee2aae4f72fc90",
+    "body_chars": 645,
+    "http_status": 200,
+    "page_title": "SK하이닉스·삼성전자 3% 하락…엔비디아 중국 수출 규제 영향(종합) :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-16T15:54:35+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://stock.mk.co.kr/news/view/725188",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어 리밸런싱 속도 티맵 공항버스 사업도 정리",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20250418000946",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[마감시황] 부활절 휴장 앞두고 쉬어간 증시...코스피 2483.42",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-18T17:57:53+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-04-18T17:57:54+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.sisajournal.com/news/articleView.html?idxno=330913",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스-한미반도체 ‘HBM 공동체’ 깨지나 < 산업/재계 < 경제 < 기사본문 - 시사저널",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-21T14:19:20+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20250422_0003148679",
+    "body_hash": "09154e401bd37c5b261a7d42e1742dfffdcaf30101f1bc03b54cd18876b3a318",
+    "body_chars": 1804,
+    "http_status": 200,
+    "page_title": "'상승 전환' 코스피, 美 증시 급락에도 2490선 회복 :: 공감언론 뉴시스 ::",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-22T11:45:52+09:00"
+      }
+    ],
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text))"
+  },
+  {
+    "url": "https://sateconomy.co.kr/news/view/1065575578880716",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스, CXL 기반 96GB D램 고객 인증 완료",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-04-23T10:15:07+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/2025050204636",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK하이닉스에 몰린 외국인…4% 올라 18만원대 회복 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-05-02T14:19:10+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20250507000171",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[개장시황] 코스피, 연휴 후 상승 출발…외국인·기관 '사자'",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-05-07T09:33:10+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-05-07T09:33:16+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://view.asiae.co.kr/article/2025050713380786171",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "인크로스, 1분기 영업이익 20억…광고사업 호조로 실적 '껑충'",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-05-07T13:38:07+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-05-07T13:38:07+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://view.asiae.co.kr/news/view.htm?idxno=2025050907593784967",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "매출 500% 급등하더니…주가 하루 만에 50% '껑충' 오른 양자컴 기업",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "6BA948A1DBB30EE8C64BB7A1A83A6ECC"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-05-09T09:37:16+0900"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-05-09T16:03:52+0900"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hankyung.com/article/202505166509g",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "11번가, 1분기 영업손실 97억…전년비 50% 개선 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-05-16T08:29:34+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20250516000118",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[리포트 브리핑]SK스퀘어, '적정 가치를 향해 순항 중' 목표가 110,000원 - 대신증권",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-05-16T08:52:17+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-05-16T08:53:40+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsprime.co.kr/news/article/?no=689075",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어, 자회사 개선에 안정적 주주환원 재원까지…\"지속 보유 권고\"",
+    "date_metadata": []
+  },
+  {
+    "url": "https://www.hankyung.com/article/202505205356i",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "불안할 땐 믿을 건 실적…EPS 상향된 종목은 | 한국경제",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-05-21T07:00:09+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20250523000163",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "[개장시황]  코스피, 美 금리 안정에 강보합...개인 홀로 '사자'",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-05-23T09:33:11+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2025-05-23T09:33:11+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://www.inews24.com/view/1867774",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "SK스퀘어, 11번가 매각 소극적? 콜옵션은 어떻게?⋯사실 관계 짚어보니 [Q&A]",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2025-07-22T07:35:11+09:00"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2025-07-22T07:35:11+09:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2025-07-22T07:35:11+09:00"
+      },
+      {
+        "name": "date",
+        "content": "2025-07-22T07:35:11+09:00"
+      }
+    ]
+  },
+  {
+    "url": "https://news.bizwatch.co.kr/article/industry/2025/07/23/0008",
+    "body_hash": null,
+    "body_chars": 0,
+    "http_status": 200,
+    "page_title": "9조 찍는 하이닉스…최태원 '포스트 엔비디아' 승부수",
+    "date_metadata": [
+      {
+        "property": "dd:published_time",
+        "content": "2025-07-23T10:37:03+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "20250723103703"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2025-07-23T10:37:03+09:00"
+      }
+    ]
+  }
+]

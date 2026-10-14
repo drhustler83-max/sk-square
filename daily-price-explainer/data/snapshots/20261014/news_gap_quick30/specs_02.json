@@ -1,0 +1,404 @@
+{
+  "articles": [
+    {
+      "url": "https://www.fnnews.com/news/202509050919272068",
+      "publisher": "연합뉴스(파이낸셜뉴스)",
+      "published_at": "2025-09-05T09:19:25+09:00",
+      "title": "[특징주] SK하이닉스, 장초반 강세…27만원대 재탈환",
+      "evidence_facts": [
+        "미국 기술주 동향과 기존 D램 점유율 집계를 언급하는 장중 시황이다.",
+        "SK하이닉스 거래 반응이 중심이며 신규 회사 공시와 구분된다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025091704101",
+      "publisher": "한국경제",
+      "published_at": "2025-09-17T17:06:38+09:00",
+      "title": "올들어 152% 뛴 SK스퀘어, 하이닉스보다 많이 올랐다",
+      "evidence_facts": [
+        "SK스퀘어와 SK하이닉스의 과거 주가 흐름을 비교하는 해설이다.",
+        "기존 주주환원과 투자 내역을 재언급하며 기사 시점의 신규 회사 발표가 중심은 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "novelty_score": 0.1,
+      "materiality_score": 0.2
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20251121_0003411503",
+      "publisher": "뉴시스",
+      "published_at": "2025-11-21T08:33:16+09:00",
+      "title": "흥국證 \"SK스퀘어, 하이닉스 효과와 주주환원 기대…목표가↑\"",
+      "evidence_facts": [
+        "흥국증권이 SK스퀘어 목표주가를 올리고 매수 의견을 유지했다.",
+        "하이닉스 지분법 이익과 주주환원에 기초한 가치 분석이며 회사 신규 공시는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.4,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.5,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "nav_discount",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "SK스퀘어 목표주가",
+          "value": 350000,
+          "unit": "원",
+          "period": null,
+          "comparison": "종전 120000원"
+        }
+      ],
+      "article_text_hash": "0e7e24641a494a7efd4f92e4a86a77097123a5b10860506064848e7a63fd8624"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025112783526",
+      "publisher": "한국경제",
+      "published_at": "2025-11-27T09:06:04+09:00",
+      "title": "코스피, 장초반 4000선 등락…SK하이닉스 2.4%↑",
+      "evidence_facts": [
+        "국내 개장 수급과 SK스퀘어·SK하이닉스 등 주요 종목 움직임을 다룬다.",
+        "새로운 기업 사건보다 시장 거래 동향이 중심이다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://biz.chosun.com/it-science/ict/2025/11/27/YP2XJYSGGFF2XLIE2PMJJ6NDL4/",
+      "publisher": "조선비즈",
+      "published_at": "2025-11-27T10:44:17.982000+09:00",
+      "title": "크래프톤, 글로벌 e스포츠 통합 프로젝트 ‘펍지 유나이티드’ 공개",
+      "evidence_facts": [
+        "크래프톤이 배틀그라운드와 배틀그라운드 모바일의 글로벌 e스포츠를 연결하는 프로젝트를 공개했다.",
+        "콘텐츠·브랜드 확장 발표이며 매출이나 수익 증대를 확정한 기사는 아니다."
+      ],
+      "entities": [
+        "크래프톤"
+      ],
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.65,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.35,
+      "materiality_score": 0.12,
+      "uncertainty_score": 0.55,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company"
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025112797466",
+      "publisher": "한국경제",
+      "published_at": "2025-11-27T15:47:02+09:00",
+      "title": "코스피, 상승분 반납하며 4000선 아래서 마감…SK하이닉스 3.4%↑",
+      "evidence_facts": [
+        "금리와 수급, SK스퀘어·SK하이닉스 등 주요 종목을 다룬 시장 마감 기사다.",
+        "기사의 가격 변화는 사전 기업 영향 방향을 판단하는 근거로 쓰지 않는다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260323_0003559099",
+      "publisher": "뉴시스",
+      "published_at": "2026-03-23T09:08:09+09:00",
+      "title": "이란 확전 공포에…삼성전자 4%↓·SK하이닉스 5%대 급락[핫스탁]",
+      "evidence_facts": [
+        "중동 확전 우려와 위험 회피에 연결한 반도체주 개장 시황이다.",
+        "SK하이닉스의 새 기업 의사결정이나 실적 발표가 아니다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.5,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ],
+      "article_text_hash": "9a7d11c311dc4beb1dcc837bf3ae0214785f840d29efcdac3554a5df12333d27"
+    },
+    {
+      "url": "https://www.dizzotv.com/site/data/html_dir/2026/03/23/2026032380002.html",
+      "publisher": "디지틀조선TV",
+      "published_at": "2026-03-23T09:20:00+09:00",
+      "title": "[르포]콤플렉스콘 홍콩 들어서니…압도적 스케일 '배틀그라운드' 부스 눈길",
+      "evidence_facts": [
+        "홍콩 행사장에서 크래프톤의 체험 부스와 패션 브랜드 협업을 취재했다.",
+        "현장 홍보 활동을 소개하며 신규 게임 판매 성과나 확정 매출을 입증하지 않는다."
+      ],
+      "entities": [
+        "크래프톤"
+      ],
+      "availability": "full_text",
+      "primary_subject": "portfolio_company",
+      "event_type": "other",
+      "event_stage": "completion",
+      "novelty_score": 0.35,
+      "sentiment_score": 0.15,
+      "relevance_score": 0.25,
+      "materiality_score": 0.08,
+      "uncertainty_score": 0.2,
+      "impact_horizon": "unknown",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.95
+    },
+    {
+      "url": "https://www.etoday.co.kr/news/view/2570271",
+      "publisher": "이투데이",
+      "published_at": "2026-03-30T06:00:00+09:00",
+      "title": "[주간수급리포트] 외국인이 던진 삼전ㆍSK하닉 ‘10조원’ 물량, 개인이 그대로 건네 받아",
+      "evidence_facts": [
+        "지난 주 국내 대형주 개인·외국인 수급을 요약한다.",
+        "과거 거래 결과가 중심인 주간 해설이며 신규 회사 사건을 알리는 내용은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://news.nate.com/view/20260330n08516",
+      "publisher": "디지털투데이(네이트)",
+      "published_at": "2026-03-30T09:56:00+09:00",
+      "title": "디지털프론티어, SK하이닉스에 HBM4 웨이퍼 테스터 공급 계약",
+      "evidence_facts": [
+        "디아이 종속회사 디지털프론티어가 SK하이닉스에 검사장비를 공급하는 계약 공시를 전한다.",
+        "계약은 3월 27일 체결되고 30일 기사로 공개됐으며 장비 인도 완료와 구분해야 한다.",
+        "공급자의 매출액 대비 계약 비중을 SK하이닉스 매출 효과로 해석하지 않는다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "디지털프론티어",
+        "디아이"
+      ],
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.75,
+      "sentiment_score": 0.2,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.65,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "cash_flow",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "HBM4 웨이퍼 테스터 공급 계약액",
+          "value": 962.5,
+          "unit": "억원",
+          "period": "2026-03-27~2026-08-31",
+          "comparison": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260331_0003570651",
+      "publisher": "뉴시스",
+      "published_at": "2026-03-31T09:02:32+09:00",
+      "title": "KB증권 \"SK하이닉스, 중동 불안은 비중 확대 기회…목표가 유지\"",
+      "evidence_facts": [
+        "KB증권이 SK하이닉스 매수 의견과 목표주가를 유지했다.",
+        "중동 위험과 터보퀀트 기술에도 AI 메모리 수요가 늘 수 있다는 증권사 판단이며 확정 실적이 아니다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "valuation_multiple",
+        "sector_beta"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "SK하이닉스 목표주가",
+          "value": 1700000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ],
+      "article_text_hash": "9ce06133ecd0e51cef85100126ef7cb53de49c0d772a5946f3cb771e2062ea0b"
+    },
+    {
+      "url": "https://www.hankyung.com/article/202604151633L",
+      "publisher": "한국경제(한경로보뉴스)",
+      "published_at": "2026-04-15T09:10:35+09:00",
+      "title": "'SK하이닉스' 52주 신고가 경신, 전일 기관 대량 순매수",
+      "evidence_facts": [
+        "과거 수급과 장중 가격을 중심으로 기존 증권사 보고서를 덧붙인 자동생성 시황이다.",
+        "당일 새로운 기업 발표가 확인되지 않아 신규성을 낮게 두었다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "novelty_score": 0.05,
+      "materiality_score": 0.1
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20260415_0003592022",
+      "publisher": "뉴시스",
+      "published_at": "2026-04-15T10:55:23+09:00",
+      "title": "\"5000보 걷고 차보험 할인받자\"…티맵, '특약상품' 출시",
+      "evidence_facts": [
+        "티맵이 만보기 걸음 수와 연계한 자동차보험 특약 상품을 출시했다.",
+        "KB손해보험부터 제휴를 확대할 계획이며 티맵의 확정 수익 규모는 제시되지 않았다."
+      ],
+      "entities": [
+        "티맵모빌리티",
+        "KB손해보험"
+      ],
+      "availability": "full_text",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.4,
+      "materiality_score": 0.15,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "numeric_claims": [
+        {
+          "metric": "자동차보험료 최대 할인율",
+          "value": 9,
+          "unit": "%",
+          "period": null,
+          "comparison": "걸음 수 등 특약 충족 조건"
+        }
+      ],
+      "article_text_hash": "ae3097dc44f702a8e30b87e4534fd0be0af083ebc2024843a7e6aab2945eba1c"
+    },
+    {
+      "url": "https://news.mtn.co.kr/news-detail/2026070913150337594",
+      "publisher": "머니투데이방송 MTN",
+      "published_at": "2026-07-09T14:03:21+09:00",
+      "title": "[단독] 김정규 SK스퀘어 대표 \"SK하이닉스 美상장, '멀티플' 격차 해소 계기\"",
+      "evidence_facts": [
+        "SK스퀘어 대표가 SK하이닉스 ADR 상장을 통한 가치 재평가 기대를 인터뷰에서 설명했다.",
+        "국내 주식 전환 제약과 수급 위험도 언급해 국내 기업 가치 상승이 보장되지는 않는다.",
+        "기사의 청약대금 달러 표기끼리 일치하지 않아 해당 수치는 numeric_claims에서 제외했다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스"
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "ipo",
+      "event_stage": "follow_up",
+      "novelty_score": 0.4,
+      "sentiment_score": 0.2,
+      "ex_ante_impact_direction": 0,
+      "materiality_score": 0.5,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "nav",
+        "valuation_multiple",
+        "supply_demand"
+      ],
+      "confidence_score": 0.9,
+      "duplicate_cluster_id": "cluster_20260710_hynix_adr"
+    }
+  ],
+  "completed_days": [
+    "20250905",
+    "20250918",
+    "20251121",
+    "20251127",
+    "20251128",
+    "20260323",
+    "20260330",
+    "20260331",
+    "20260415",
+    "20260709"
+  ],
+  "notes": {
+    "20250905": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인.",
+    "20250918": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 09-17 17:06 SK스퀘어 후속 해설 귀속.",
+    "20251121": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인.",
+    "20251127": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 한경 스탁론 광고는 제외; 크래프톤 e스포츠 프로젝트는 재무 영향 미확정의 낮은 중요도 발표.",
+    "20251128": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 11-27 15:47 시장 기사 귀속; SK 모회사 목표가 분석을 SK스퀘어 목표가로 혼동하지 않음.",
+    "20260323": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 크래프톤 행사 르포는 홍보 활동으로 낮은 관련성·중요도; 당시 주가 결과로 방향을 판단하지 않음.",
+    "20260330": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 03-27 체결된 장비 공급계약의 03-30 공개 기사; 공급자 매출 효과와 SK하이닉스 효과를 구분.",
+    "20260331": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 뉴시스 화면 최초 등록 09:02:32 사용; 수정시각 09:20:23과 구분.",
+    "20260415": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. 티맵 특약 출시와 한경 자동 수급 시황을 구분. 16:03 사진·마감 기사는 다음 거래일이 대상 밖이라 제외.",
+    "20260709": "일반 웹 날짜별 SK스퀘어·SK하이닉스 검색과 보유자산 보완검색. 확인된 결과만 수록; 광고·자동 투자전략·비기사 페이지 제외. 단순 시황은 중립 방향으로 표기. 전체 거래일 달력으로 시간 귀속 확인. ADR 인터뷰는 재평가 기대와 국내 전환·수급 위험을 함께 반영한 중립 사전 방향. 기사 청약대금 달러 표기 모순을 명시. 키오시아 회수·원스토어 인터뷰 기사들은 장마감 후라 대상 밖으로 제외."
+  }
+}

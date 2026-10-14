@@ -1,0 +1,740 @@
+{
+  "articles": [
+    {
+      "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4348484",
+      "publisher": "연합인포맥스",
+      "published_at": "2025-03-27T13:41:48+09:00",
+      "title": "SK스퀘어 \"자산 매각 2027년까지 투자재원 3조 확보\"",
+      "evidence_facts": [
+        "한명진 대표가 주주총회에서 비핵심자산 유동화와 포트폴리오 가치 개선 목표를 제시했다.",
+        "2027년 투자재원 목표는 향후 계획이며 개별 거래 완료 공시는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "portfolio_disposal",
+      "event_stage": "expectation",
+      "novelty_score": 0.7,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.65,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "투자재원 확보 목표",
+          "value": 3,
+          "unit": "조원",
+          "period": "2027년까지",
+          "comparison": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.mt.co.kr/stock/2025/03/28/2025032808342758078",
+      "publisher": "머니투데이",
+      "published_at": "2025-03-28T08:53:34+09:00",
+      "title": "\"SK스퀘어, 올해 주주환원 규모 4000억 넘을 듯\"-대신",
+      "evidence_facts": [
+        "대신증권이 SK스퀘어 매수 의견과 목표주가를 유지했다.",
+        "자사주 취득·소각 계획에 기초해 향후 주주환원 규모를 추정하는 분석이다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.45,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav_discount",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "SK스퀘어 목표주가",
+          "value": 110000,
+          "unit": "원",
+          "period": null,
+          "comparison": "유지"
+        }
+      ],
+      "duplicate_cluster_id": "cluster_20250327_sk_square_buyback",
+      "article_text_hash": "8fd8cbd96c3dbe9078d246261e7de08eff9643865ba6f59af26670b677bdf0f7"
+    },
+    {
+      "url": "https://www.mk.co.kr/news/stock/11275591",
+      "publisher": "매일경제",
+      "published_at": "2025-03-27T17:53:00+09:00",
+      "title": "[유가증권시장 공시] SK스퀘어",
+      "evidence_facts": [
+        "SK스퀘어의 1000억원 규모 자사주 취득 결정을 짧게 전달한 공시 요약이다.",
+        "같은 날 발표된 주주환원 계획의 반복 보도다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "capital_return",
+      "event_stage": "follow_up",
+      "novelty_score": 0.1,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.55,
+      "uncertainty_score": 0.25,
+      "forward_looking": true,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "capital_allocation",
+        "nav_discount"
+      ],
+      "confidence_score": 0.9,
+      "availability": "full_text",
+      "duplicate_cluster_id": "cluster_20250327_sk_square_buyback"
+    },
+    {
+      "url": "https://stock.mk.co.kr/news/view/706795",
+      "publisher": "연합뉴스(매일경제 증권)",
+      "published_at": "2025-03-31T10:42:25+09:00",
+      "title": "SK하이닉스 \"AI 인재 육성할 것…전문가 양성 프로그램 준비\"",
+      "evidence_facts": [
+        "SK하이닉스 인재육성 담당 임원이 AI 전문가 양성과 사용 체계 확산 프로그램 준비를 설명했다.",
+        "인터뷰 기반의 인재육성 계획이며 확정 매출이나 신규 수주를 알리는 내용은 아니다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "other",
+      "event_stage": "expectation",
+      "novelty_score": 0.45,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.4,
+      "materiality_score": 0.12,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.9,
+      "availability": "full_text"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20250414_0003137747",
+      "publisher": "뉴시스",
+      "published_at": "2025-04-14T10:24:20+09:00",
+      "title": "\"美 증시 반등에\" 코스피, 1%대 상승세…코스닥 1.47%↑",
+      "evidence_facts": [
+        "미국 증시와 관세 동향을 배경으로 국내 개장 수급을 전한다.",
+        "SK하이닉스 등 대형주 움직임을 열거한 시황이다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ],
+      "article_text_hash": "2670e8876922d6b7edb53fc204003c6deac695694adda7bcc6dcebc0e8300988"
+    },
+    {
+      "url": "https://www.ytn.co.kr/_ln/0102_202504151053390743",
+      "publisher": "YTN",
+      "published_at": "2025-04-15T10:53:00+09:00",
+      "title": "차 부품 관세면제 시사에 코스피 상승...코스닥 하락",
+      "evidence_facts": [
+        "관세 관련 발언과 국내 반도체 산업 지원 소식이 포함된 장중 시장 기사다.",
+        "SK하이닉스 신규 기업 공시보다 시장 움직임이 중심이다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025041644826",
+      "publisher": "한국경제",
+      "published_at": "2025-04-16T09:39:37+09:00",
+      "title": "美, 대중 반도체 수출 규제…SK하이닉스 3% 하락",
+      "evidence_facts": [
+        "미국의 대중국 AI 반도체 수출 제한 소식에 연결한 반도체주 장중 시황이다.",
+        "기업의 새 계약이나 실적 공시를 전달하는 기사와 구분한다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "semiconductor_sector",
+      "relevance_score": 0.5,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://daily.hankooki.com/news/articleView.html?idxno=1204382",
+      "publisher": "데일리한국",
+      "published_at": "2025-04-15T15:37:13+09:00",
+      "title": "SK하이닉스, 엔비디아 AI칩 블랙웰에 8단 HBM3E 공급",
+      "evidence_facts": [
+        "테크인사이츠의 제품 분해 결과 엔비디아 HGX B200에서 SK하이닉스 HBM3E가 확인됐다고 전한다.",
+        "부품 탑재 확인이며 신규 계약 체결이나 공급 금액 공개와는 구분한다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "엔비디아",
+        "테크인사이츠"
+      ],
+      "event_type": "other",
+      "event_stage": "execution",
+      "novelty_score": 0.55,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.45,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20250416_0003141864",
+      "publisher": "뉴시스",
+      "published_at": "2025-04-16T15:54:35+09:00",
+      "title": "SK하이닉스·삼성전자 3% 하락…엔비디아 중국 수출 규제 영향(종합)",
+      "evidence_facts": [
+        "대중국 AI 반도체 수출 제한과 국내 반도체주 거래를 다룬 마감 시황이다.",
+        "이미 발생한 가격 결과를 정리하며 새로운 회사 의사결정을 알리지 않는다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "semiconductor_sector",
+      "relevance_score": 0.5,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ],
+      "article_text_hash": "a512c4e8282c8feccf58dba71ba953b3723277b9fa888c96faee2aae4f72fc90"
+    },
+    {
+      "url": "https://stock.mk.co.kr/news/view/725188",
+      "publisher": "매일경제",
+      "published_at": "2025-04-17T17:53:50+09:00",
+      "title": "SK스퀘어 리밸런싱 속도 티맵 공항버스 사업도 정리",
+      "evidence_facts": [
+        "티맵이 서울공항리무진 지분 100% 매각을 위한 주식매매계약을 체결했다고 업계 취재를 전한다.",
+        "공항버스 거래의 계약 체결과 향후 추가 계열사 정리 계획을 구분하며 클로징 완료로 해석하지 않는다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "티맵모빌리티"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "portfolio_disposal",
+      "event_stage": "announcement",
+      "novelty_score": 0.65,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9,
+      "availability": "full_text"
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20250418000946",
+      "publisher": "뉴스핌",
+      "published_at": "2025-04-18T17:57:53+09:00",
+      "title": "[마감시황] 부활절 휴장 앞두고 쉬어간 증시...코스피 2483.42",
+      "evidence_facts": [
+        "휴일을 앞둔 거래와 주요 종목 동향을 전하는 시장 마감 기사다.",
+        "SK하이닉스도 시가총액 상위 종목의 하나로 언급된다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.sisajournal.com/news/articleView.html?idxno=330913",
+      "publisher": "시사저널",
+      "published_at": "2025-04-21T14:19:20+09:00",
+      "title": "SK하이닉스-한미반도체 ‘HBM 공동체’ 깨지나",
+      "evidence_facts": [
+        "한미반도체의 SK하이닉스 이천공장 파견 엔지니어 철수를 업계 취재로 보도한다.",
+        "장비 공급망 변화와 양사 관계 불확실성을 다루며 SK하이닉스 생산 차질을 확정하지 않는다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "한미반도체",
+        "한화세미텍"
+      ],
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.4,
+      "sentiment_score": -0.2,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.65,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.7,
+      "forward_looking": true,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "cash_flow",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20250422_0003148679",
+      "publisher": "뉴시스",
+      "published_at": "2025-04-22T11:45:52+09:00",
+      "title": "'상승 전환' 코스피, 美 증시 급락에도 2490선 회복",
+      "evidence_facts": [
+        "미국 관세·연준 불확실성과 국내 장중 수급을 전한다.",
+        "SK하이닉스를 포함한 반도체주 움직임을 열거하는 시황이다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ],
+      "article_text_hash": "09154e401bd37c5b261a7d42e1742dfffdcaf30101f1bc03b54cd18876b3a318"
+    },
+    {
+      "url": "https://sateconomy.co.kr/news/view/1065575578880716",
+      "publisher": "토요경제",
+      "published_at": "2025-04-23T10:15:07+09:00",
+      "title": "SK하이닉스, CXL 기반 96GB D램 고객 인증 완료",
+      "evidence_facts": [
+        "SK하이닉스가 CXL 2.0 기반 96GB 메모리 모듈의 고객 인증 완료를 알렸다.",
+        "128GB 제품은 인증 중이어서 완료 제품과 구분된다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "event_type": "other",
+      "event_stage": "completion",
+      "novelty_score": 0.8,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.85,
+      "materiality_score": 0.45,
+      "uncertainty_score": 0.3,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "고객 인증 완료 제품 용량",
+          "value": 96,
+          "unit": "GB",
+          "period": null,
+          "comparison": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/2025050204636",
+      "publisher": "한국경제",
+      "published_at": "2025-05-02T14:19:10+09:00",
+      "title": "SK하이닉스에 몰린 외국인…4% 올라 18만원대 회복",
+      "evidence_facts": [
+        "외국인 잠정 순매수와 국내 반도체주 동향을 전하는 장중 시황이다.",
+        "새로운 SK하이닉스 실적이나 기업 공시를 전달하지 않는다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ]
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20250507000171",
+      "publisher": "뉴스핌",
+      "published_at": "2025-05-07T09:33:10+09:00",
+      "title": "[개장시황] 코스피, 연휴 후 상승 출발…외국인·기관 '사자'",
+      "evidence_facts": [
+        "연휴 이후 국내 개장 수급과 주요 대형주 움직임을 전한다.",
+        "SK하이닉스는 시장 시황의 일부로 언급된다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://view.asiae.co.kr/article/2025050713380786171",
+      "publisher": "아시아경제",
+      "published_at": "2025-05-07T13:38:07+09:00",
+      "title": "인크로스, 1분기 영업이익 20억…광고사업 호조로 실적 '껑충'",
+      "evidence_facts": [
+        "인크로스가 1분기 매출·영업이익·순이익의 전년 동기 대비 증가를 발표했다.",
+        "광고·커머스 사업 개선을 설명하며 잠정 실적과 장래 AI 사업 계획을 구분해야 한다."
+      ],
+      "entities": [
+        "인크로스"
+      ],
+      "event_type": "earnings",
+      "event_stage": "announcement",
+      "novelty_score": 0.8,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.4,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.25,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "numeric_claims": [
+        {
+          "metric": "영업이익",
+          "value": 20.08,
+          "unit": "억원",
+          "period": "2025Q1",
+          "comparison": "전년 동기 대비 155.8% 증가"
+        }
+      ]
+    },
+    {
+      "url": "https://view.asiae.co.kr/news/view.htm?idxno=2025050907593784967",
+      "publisher": "아시아경제",
+      "published_at": "2025-05-09T09:37:16+09:00",
+      "title": "매출 500% 급등하더니…주가 하루 만에 50% '껑충' 오른 양자컴 기업",
+      "evidence_facts": [
+        "디웨이브의 실적과 미국 양자컴퓨팅 종목의 거래 반응을 중심으로 다룬다.",
+        "아이온큐는 동반 움직임의 하나로 언급되며 아이온큐 자체 신규 발표가 중심은 아니다."
+      ],
+      "entities": [
+        "아이온큐",
+        "디웨이브"
+      ],
+      "primary_subject": "portfolio_company",
+      "relevance_score": 0.25,
+      "materiality_score": 0.08,
+      "novelty_score": 0.1,
+      "mechanisms": [
+        "sector_beta",
+        "supply_demand"
+      ]
+    },
+    {
+      "url": "https://www.hankyung.com/article/202505166509g",
+      "publisher": "한국경제",
+      "published_at": "2025-05-16T08:29:34+09:00",
+      "title": "11번가, 1분기 영업손실 97억…전년비 50% 개선",
+      "evidence_facts": [
+        "11번가가 1분기 영업손실 축소를 설명했다.",
+        "전사 EBITDA 흑자는 연간 목표이며 이미 달성한 확정 성과가 아니다."
+      ],
+      "entities": [
+        "11번가",
+        "SK스퀘어"
+      ],
+      "event_type": "earnings",
+      "event_stage": "announcement",
+      "novelty_score": 0.65,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.55,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.3,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9,
+      "primary_subject": "portfolio_company",
+      "numeric_claims": [
+        {
+          "metric": "영업손실",
+          "value": 97,
+          "unit": "억원",
+          "period": "2025Q1",
+          "comparison": "2024Q1 195억원"
+        }
+      ]
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20250516000118",
+      "publisher": "뉴스핌(씽크풀 로보뉴스)",
+      "published_at": "2025-05-16T08:52:17+09:00",
+      "title": "[리포트 브리핑]SK스퀘어, '적정 가치를 향해 순항 중' 목표가 110,000원 - 대신증권",
+      "evidence_facts": [
+        "대신증권 SK스퀘어 보고서를 요약한 자동생성 분석 기사다.",
+        "매수 의견과 목표주가를 전하며 회사의 새 공시와 구분된다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9,
+      "numeric_claims": [
+        {
+          "metric": "SK스퀘어 목표주가",
+          "value": 110000,
+          "unit": "원",
+          "period": null,
+          "comparison": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.newsprime.co.kr/news/article/?no=689075",
+      "publisher": "프라임경제",
+      "published_at": "2025-05-20T08:43:34+09:00",
+      "title": "SK스퀘어, 자회사 개선에 안정적 주주환원 재원까지…\"지속 보유 권고\"",
+      "evidence_facts": [
+        "DB증권이 자회사 개선과 자사주 매입·소각을 근거로 매수 의견을 유지했다.",
+        "주주환원 재원과 기업 가치에 대한 증권사 분석이며 신규 기업 공시는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.35,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.45,
+      "uncertainty_score": 0.4,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "nav_discount",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.hankyung.com/article/202505205356i",
+      "publisher": "한국경제",
+      "published_at": "2025-05-21T07:00:09+09:00",
+      "title": "[마켓PRO] 불안할 땐 믿을 건 실적…EPS 상향된 종목은",
+      "evidence_facts": [
+        "에프앤가이드 집계에서 SK스퀘어가 이익 전망치 상향 종목으로 언급된다.",
+        "전망치 개선과 종목 비교를 다룬 분석이며 실적 확정 공시는 아니다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "에프앤가이드"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 0.65,
+      "event_type": "analyst_opinion",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "valuation_multiple"
+      ],
+      "confidence_score": 0.9
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20250523000163",
+      "publisher": "뉴스핌",
+      "published_at": "2025-05-23T09:33:11+09:00",
+      "title": "[개장시황] 코스피, 美 금리 안정에 강보합...개인 홀로 '사자'",
+      "evidence_facts": [
+        "미국 정책·금리 동향에 따른 국내 개장 수급을 전한다.",
+        "SK하이닉스를 포함한 주요 종목의 거래 움직임이 중심이다."
+      ],
+      "entities": [
+        "SK하이닉스"
+      ],
+      "primary_subject": "macro_market",
+      "relevance_score": 0.4,
+      "mechanisms": [
+        "macro",
+        "sector_beta"
+      ]
+    },
+    {
+      "url": "https://www.inews24.com/view/1867774",
+      "publisher": "아이뉴스24",
+      "published_at": "2025-07-22T07:35:11+09:00",
+      "title": "SK스퀘어, 11번가 매각 소극적? 콜옵션은 어떻게?⋯사실 관계 짚어보니 [Q&A]",
+      "evidence_facts": [
+        "11번가 매각 진행과 재무적투자자의 회수 구조를 Q&A로 설명한다.",
+        "콜옵션은 선택권이라는 해석과 매각 노력에 대한 설명이며 거래 성사를 확정하지 않는다."
+      ],
+      "entities": [
+        "SK스퀘어",
+        "11번가"
+      ],
+      "primary_subject": "sk_square",
+      "relevance_score": 1,
+      "event_type": "portfolio_disposal",
+      "event_stage": "follow_up",
+      "novelty_score": 0.25,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation",
+        "governance"
+      ],
+      "confidence_score": 0.9,
+      "availability": "full_text"
+    },
+    {
+      "url": "https://news.bizwatch.co.kr/article/industry/2025/07/23/0008",
+      "publisher": "비즈워치",
+      "published_at": "2025-07-23T10:37:03+09:00",
+      "title": "9조 찍는 하이닉스…최태원 '포스트 엔비디아' 승부수",
+      "evidence_facts": [
+        "실적 발표를 앞둔 SK하이닉스의 시장 전망과 AI 사업 확대 가능성을 분석한다.",
+        "영업이익 전망과 오픈AI 협력 시나리오는 확정 실적·계약이 아니다."
+      ],
+      "entities": [
+        "SK하이닉스",
+        "오픈AI",
+        "엔비디아"
+      ],
+      "event_type": "earnings",
+      "event_stage": "expectation",
+      "novelty_score": 0.35,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.7,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.6,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.9
+    }
+  ],
+  "completed_days": [
+    "20250327",
+    "20250328",
+    "20250331",
+    "20250414",
+    "20250415",
+    "20250416",
+    "20250417",
+    "20250418",
+    "20250421",
+    "20250422",
+    "20250423",
+    "20250502",
+    "20250507",
+    "20250509",
+    "20250516",
+    "20250520",
+    "20250521",
+    "20250523",
+    "20250722",
+    "20250723"
+  ],
+  "notes": {
+    "20250327": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 스마트투데이 자사주 기사는 발행 메타(09:51:12)와 이동된 페이지 화면(18:51)이 달라 귀속 불명으로 제외; 주총 투자재원 기사는 시각 확인 후 수록.",
+    "20250328": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250331": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250414": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250415": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250416": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 04-15 15:37 부품 탑재 확인 기사 귀속; 8단 HBM3E 탑재 확인을 신규 공급계약 공시로 해석하지 않음.",
+    "20250417": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 04-16 15:54:35 마감 기사 귀속.",
+    "20250418": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 04-17 장마감 후 티맵 공항버스 사업 정리 기사 귀속.",
+    "20250421": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 04-18 장마감 후 시황 귀속. 장비 업체 엔지니어 철수는 불확실한 공급망 변화로 표기; 생산 차질로 확정하지 않음.",
+    "20250422": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250423": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250502": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250507": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 인크로스 잠정 실적 기사 별도 확인. SK텔레콤 유심 사과 기사는 직접 보유자산 기사로 선택하지 않음.",
+    "20250509": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 아이온큐 자체 신규 발표보다 디웨이브 거래 반응 중심의 낮은 관련성 기사. 17:36 SK그룹 IPO 후속 해설은 다음 거래일이 대상 밖이라 제외.",
+    "20250516": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 11번가 영업손실 개선과 로보뉴스 증권사 요약을 구분. 자동생성 성격을 근거에 명시.",
+    "20250520": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250521": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250523": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250722": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인.",
+    "20250723": "일반 웹 검색: SK스퀘어 날짜별 검색과 보유자산 보완검색. 확인된 기사만 수록하며 검색 범위에서의 결과임. 단순 시황은 market_flow·낮은 신규성·중립 방향으로 표기. 전체 거래일 달력으로 발행시각 귀속 확인. 실적 발표 전 전망 기사. 16:07 외국인 수급 기사·19:50 자사주 처분 기사는 07-24 귀속이라 대상 밖으로 제외."
+  }
+}
