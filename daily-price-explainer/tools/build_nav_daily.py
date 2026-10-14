@@ -14,6 +14,10 @@ SK스퀘어 일별 NAV 산출 → data/nav_daily.csv
   t 가 속한 분기의 '직전분기' 값을 쓴다 (--lag 로 조정, 기본 1).
   2021Q4(2021-11-30~12-31)는 직전분기가 없어 해당 분기 값을 그대로 쓰고
   nav_basis='stub_as_of' 로 표시한다.
+  직전분기 값이 실적발표 전이라 아직 없는 구간은 PROVISIONAL_UNTIL 까지만
+  그 이전 분기 값을 잠정 적용하고 nav_basis='provisional' 로 표시한다.
+  실제로 쓴 분기는 unlisted_src_q/netcash_src_q 에 그대로 남으므로, 발표 후
+  해당 행을 찾아 재계산하면 된다.
 
 두 가지 NAV
   nav_mtm        모든 상장 보유분을 매일 시가평가. 경제적으로 정확
@@ -59,6 +63,13 @@ DEFAULT_OUTPUT = BASE / "data" / "nav_daily.csv"
 SKQ = "402340"
 
 EOK = 1e8  # 1억원
+
+# 2026 Q3 실적발표가 2026-11-16로 잡혀, 그 전까지는 Q4 거래일(10-01~11-16)의 NAV에
+# 필요한 2026Q3 비상장가치·순현금을 알 수 없다. Sean 결정(2026-10-14): 그 구간은
+# 직전 분기(2026Q2) 값을 잠정 적용하고 nav_basis='provisional'로 표시한 뒤,
+# 발표 후 Q3 값을 UNLISTED_EOK/NETCASH_EOK에 넣고 재실행해 덮어쓴다.
+# 기한을 넘기도록 Q3가 들어오지 않으면 다시 저장을 보류한다.
+PROVISIONAL_UNTIL = "20261116"
 
 # 분기말 비상장사 지분가치 합계 (억원) — Sean 제공
 UNLISTED_EOK: dict[tuple[int, int], float] = {
@@ -168,15 +179,21 @@ def build(output: Path | None = None, lag: int = 1, listed_csv: Path | None = No
     src_q = [_shift_q(q, lag) for q in qs]
 
     unl, cash, basis, unl_q, cash_q = [], [], [], [], []
-    for q, sq in zip(qs, src_q):
+    for t, q, sq in zip(idx, qs, src_q):
         u, uk = _lookup(UNLISTED_EOK, sq)
         c, ck = _lookup(NETCASH_EOK, sq)
-        if q >= (2022, 1) and (uk != sq or ck != sq):
-            raise ValueError(
-                f"{q[0]}Q{q[1]} NAV에 필요한 직전분기 {sq[0]}Q{sq[1]} "
-                "비상장 가치/순현금이 없어 저장을 보류합니다"
-            )
         b = "lagged"
+        if q >= (2022, 1) and (uk != sq or ck != sq):
+            # 직전분기 값이 아직 없다. PROVISIONAL_UNTIL 까지는 그 이전 분기 값을
+            # 잠정 적용하고 nav_basis='provisional'로 표시한다. 기한을 넘기면
+            # 원래대로 저장을 보류한다 — 기한이 없으면 낡은 값이 무기한 쌓인다.
+            if t.strftime("%Y%m%d") > PROVISIONAL_UNTIL:
+                raise ValueError(
+                    f"{q[0]}Q{q[1]} NAV에 필요한 직전분기 {sq[0]}Q{sq[1]} "
+                    f"비상장 가치/순현금이 없고 잠정 적용 기한({PROVISIONAL_UNTIL})도 "
+                    "지나 저장을 보류합니다"
+                )
+            b = "provisional"
         if u is None or c is None:            # 직전분기 없음 → 당분기 사용
             u2, uk2 = _lookup(UNLISTED_EOK, q)
             c2, ck2 = _lookup(NETCASH_EOK, q)

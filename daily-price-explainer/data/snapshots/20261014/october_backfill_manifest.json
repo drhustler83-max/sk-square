@@ -1,0 +1,24 @@
+{
+  "captured_at": "2026-10-14T15:07:46.441972+09:00",
+  "range": [
+    "20261001",
+    "20261013"
+  ],
+  "nav_basis": "provisional (2026Q2 used for 2026Q4 dates until 2026-11-16 Q3 release)",
+  "backfill_result": {
+    "ok": 7,
+    "fail": 0,
+    "total_rows": 1190,
+    "failed_dates": []
+  },
+  "before_sha256": {
+    "factor_log.csv": "a82e3e757ca87e3be9b7c28048227a20abe085902beecf35a2228fc4b0a73cfb",
+    "nav_daily.csv": "d93a2e9d8183ad701183da39830e5d9529ec47ca48ca45181888c1e99e2e0197",
+    "listed_holdings_daily.csv": "cd23730161bbdee308e8323ef27946b13a9b5acb83c5dc2312997307a56ce35d"
+  },
+  "after_sha256": {
+    "factor_log.csv": "b0d64ff3e2518454c680c4809b452152fa6073de6da363ff0811000d929de0fe",
+    "nav_daily.csv": "08485bcb0d8ba4967917d4505b055d27bd5ffc877225390638f016f63d83fe8a",
+    "listed_holdings_daily.csv": "85b7da929d0954b26a14fccff31b61e7605c82e9fcf6a31adcd3d4cebf148fbb"
+  }
+}
