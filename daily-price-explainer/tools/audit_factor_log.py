@@ -89,8 +89,14 @@ def audit(start: str = DEFAULT_START, end: str | None = DEFAULT_END) -> dict:
     missing_rows = sorted(d for d in tdays if d not in have)
     extra_rows = sorted(d for d in have if d not in set(tdays))
 
-    # 선물 미상장(fut_listed=0)은 정상 결측
+    # 선물 미상장(fut_listed=0)은 정상 결측 — 단 "상장 이전"일 때만.
+    # fut_listed 자체가 틀릴 수 있다(2026-08-03·08-04, 2026-07-28~31에서 실제로
+    # 0으로 잘못 찍혀 있었고 KRX에는 계약이 있었다). 그 플래그를 그대로 믿으면
+    # 감사가 결함을 정상으로 덮어버리므로, 첫 상장일 이후의 0은 결측으로 본다.
     fl = pd.to_numeric(df.get("fut_listed"), errors="coerce") if "fut_listed" in df else None
+    first_listed = None
+    if fl is not None and (fl == 1).any():
+        first_listed = str(df.loc[fl == 1, "date"].min())
 
     hynix_recoverable = _hynix_recoverable_dates(df)
 
@@ -120,7 +126,10 @@ def audit(start: str = DEFAULT_START, end: str | None = DEFAULT_END) -> dict:
         if c in ("foreign_net", "institution_net", "individual_net"):
             normal += [d for d in dates if d < FLOW_SOURCE_START]
         if c in ("fut_basis", "fut_basis_pct", "fut_volume") and fl is not None:
-            normal += list(df.loc[m & (fl == 0), "date"])  # 선물 미상장
+            not_listed = df.loc[m & (fl == 0), "date"]
+            if first_listed is not None:
+                not_listed = [d for d in not_listed if d < first_listed]
+            normal += list(not_listed)  # 선물 상장 이전만 정상
         normal = sorted(set(normal))
 
         true_missing = sorted(set(dates) - set(normal))
