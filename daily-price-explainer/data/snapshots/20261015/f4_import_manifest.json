@@ -1,0 +1,49 @@
+﻿{
+  "applied": {
+    "20260929": {
+      "shorting_balance": "96604",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-3247"
+    },
+    "20260930": {
+      "shorting_balance": "97263",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "659",
+      "shorting_volume_ratio": "5.04"
+    },
+    "20261001": {
+      "shorting_balance": "95334",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-1929",
+      "shorting_volume_ratio": "6.24"
+    },
+    "20261002": {
+      "shorting_balance": "91882",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-3452",
+      "shorting_volume_ratio": "7.10"
+    },
+    "20261006": {
+      "shorting_balance": "91545",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-337",
+      "shorting_volume_ratio": "4.77"
+    },
+    "20261007": {
+      "shorting_balance": "91204",
+      "shorting_balance_ratio": "0.07",
+      "shorting_balance_change": "-341",
+      "shorting_volume_ratio": "6.72"
+    },
+    "20261008": {
+      "shorting_balance": "101991",
+      "shorting_balance_ratio": "0.08",
+      "shorting_balance_change": "10787",
+      "shorting_volume_ratio": "8.34"
+    }
+  },
+  "source": "data\\manual_krx\\shorting_gap_input_20261014_402340.xlsx",
+  "applied_dates": 7,
+  "before_sha256": "6f56f3ac4f7dfa2942011e30c1a8f0bd108e92db132f7fa5f44b8c2be8bac70d",
+  "after_sha256": "51ddada79e20091efa655d0d20201a9ab2ae9bc1d10c085f0a02baf3adb5ea0b"
+}

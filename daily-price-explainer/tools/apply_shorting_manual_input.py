@@ -58,7 +58,10 @@ def atomic_write(path: Path, data: bytes) -> None:
         raise
 
 
-def read_manual_input(workbook: Path) -> dict[str, dict[str, float]]:
+def read_manual_input(workbook: Path,
+                      exclude: set[str] | None = None) -> dict[str, dict[str, float]]:
+    """exclude: dates to hold back, e.g. a row whose cross-check has not passed yet."""
+    exclude = exclude or set()
     wb = openpyxl.load_workbook(workbook, data_only=True)
     ws = wb["공매도 입력"]
     out: dict[str, dict[str, float]] = {}
@@ -67,6 +70,8 @@ def read_manual_input(workbook: Path) -> dict[str, dict[str, float]]:
         if not date_cell or not str(date_cell).startswith("20"):
             continue
         date = str(date_cell).replace("-", "")
+        if date in exclude:
+            continue
         entry: dict[str, float] = {}
         if isinstance(balance, (int, float)):
             entry["shorting_balance"] = float(balance)
@@ -79,9 +84,10 @@ def read_manual_input(workbook: Path) -> dict[str, dict[str, float]]:
     return out
 
 
-def plan(factor_path: Path, nav_path: Path, workbook: Path) -> tuple[bytes, bytes, dict]:
+def plan(factor_path: Path, nav_path: Path, workbook: Path,
+         exclude: set[str] | None = None) -> tuple[bytes, bytes, dict]:
     original = factor_path.read_bytes()
-    manual = read_manual_input(workbook)
+    manual = read_manual_input(workbook, exclude)
     if not manual:
         raise ValueError("No manual values found in workbook")
 
@@ -159,9 +165,12 @@ def main() -> None:
     parser.add_argument("--workbook", type=Path, default=WORKBOOK)
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--expected-sha256")
+    parser.add_argument("--exclude", nargs="*", default=[],
+                        help="YYYYMMDD dates to hold back (e.g. a row still being cross-checked)")
     args = parser.parse_args()
 
-    original, patched, report = plan(args.factor_log, args.nav, args.workbook)
+    original, patched, report = plan(args.factor_log, args.nav, args.workbook,
+                                     set(args.exclude))
     if args.expected_sha256 and report["before_sha256"] != args.expected_sha256:
         raise ValueError("Factor log changed since expected SHA-256")
     if args.apply:

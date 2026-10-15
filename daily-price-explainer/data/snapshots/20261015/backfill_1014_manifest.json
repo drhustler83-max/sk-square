@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-10-15T14:16:44.292427+09:00",
+  "date": "20261014",
+  "result": {
+    "ok": 1,
+    "fail": 0,
+    "total_rows": 1191,
+    "failed_dates": []
+  },
+  "before_sha256": {
+    "factor_log.csv": "b0d64ff3e2518454c680c4809b452152fa6073de6da363ff0811000d929de0fe",
+    "nav_daily.csv": "08485bcb0d8ba4967917d4505b055d27bd5ffc877225390638f016f63d83fe8a",
+    "listed_holdings_daily.csv": "85b7da929d0954b26a14fccff31b61e7605c82e9fcf6a31adcd3d4cebf148fbb"
+  },
+  "after_sha256": {
+    "factor_log.csv": "6f56f3ac4f7dfa2942011e30c1a8f0bd108e92db132f7fa5f44b8c2be8bac70d",
+    "nav_daily.csv": "b1f0ec4641785bb70ce8e7befddb51270c4b03a22af2b29c910133c93a3d80f5",
+    "listed_holdings_daily.csv": "ec312aa5f1bc4ba862d4e0fdcdce0a441e61857b000423701a30fda86b9b14bd"
+  }
+}
