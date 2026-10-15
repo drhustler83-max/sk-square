@@ -1,0 +1,139 @@
+{
+  "new_batch_passed": true,
+  "all_article_schema_passed": false,
+  "files": {
+    "news_property_codex_batch.jsonl": {
+      "sha256": "d2d1359c18c98f4584f1e9ff90273ceb87f066884eb9bd62b31634762a9e0dc8",
+      "rows": 1399,
+      "original_prefix_unchanged": true,
+      "exact_suffix_matches_artifact": true
+    },
+    "news_search_log_codex.jsonl": {
+      "sha256": "2e949c9ceccdad8f791af2d1738875923ec9840ed743f59ef9ab6457ea176bd2",
+      "rows": 1190,
+      "original_prefix_unchanged": true,
+      "exact_suffix_matches_artifact": true
+    }
+  },
+  "new_article_schema_rows_passed": 13,
+  "existing_schema_issue_count": 14,
+  "existing_schema_issues": [
+    {
+      "line": 34,
+      "trading_date": "20211210",
+      "url": "https://www.fnnews.com/news/202112091807472306",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 38,
+      "trading_date": "20211224",
+      "url": "https://www.mk.co.kr/news/economy/10149073",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 39,
+      "trading_date": "20211224",
+      "url": "https://www.infostockdaily.co.kr/news/articleView.html?idxno=162285",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 43,
+      "trading_date": "20220103",
+      "url": "https://www.mk.co.kr/news/stock/10169096",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 47,
+      "trading_date": "20220119",
+      "url": "https://www.newsis.com/view/NISX20220119_0001729387",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 48,
+      "trading_date": "20220119",
+      "url": "https://www.mt.co.kr/amp/stock/2022/01/19/2022011910007089204",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 52,
+      "trading_date": "20220203",
+      "url": "https://www.fnnews.com/news/202202031751510482",
+      "path": "mechanisms.0",
+      "message": "'regulation' is not one of ['nav', 'nav_discount', 'cash_flow', 'capital_allocation', 'governance', 'supply_demand', 'sector_beta', 'macro', 'valuation_multiple', 'unclear']"
+    },
+    {
+      "line": 54,
+      "trading_date": "20220204",
+      "url": "https://www.mk.co.kr/news/economy/10205588",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 123,
+      "trading_date": "20220714",
+      "url": "https://www.fnnews.com/news/202207131600335654",
+      "path": "primary_subject",
+      "message": "'market_flow' is not one of ['sk_square', 'sk_hynix', 'portfolio_company', 'shareholder_policy', 'governance', 'semiconductor_sector', 'macro_market', 'regulation', 'other']"
+    },
+    {
+      "line": 137,
+      "trading_date": "20250430",
+      "url": "https://www.hankookilbo.com/News/Read/A2025042917460004822",
+      "path": "extraction.extractor",
+      "message": "'claude' is not one of ['codex', 'claude_code', 'gemini', 'human']"
+    },
+    {
+      "line": 138,
+      "trading_date": "20251124",
+      "url": "https://www.investchosun.com/site/data/html_dir/2025/11/24/2025112480133.html",
+      "path": "extraction.extractor",
+      "message": "'claude' is not one of ['codex', 'claude_code', 'gemini', 'human']"
+    },
+    {
+      "line": 139,
+      "trading_date": "20260710",
+      "url": "https://www.ytn.co.kr/_ln/0102_202607102236024016",
+      "path": "extraction.extractor",
+      "message": "'claude' is not one of ['codex', 'claude_code', 'gemini', 'human']"
+    },
+    {
+      "line": 140,
+      "trading_date": "20240814",
+      "url": "https://www.kipost.net/news/articleView.html?idxno=321007",
+      "path": "extraction.extractor",
+      "message": "'claude' is not one of ['codex', 'claude_code', 'gemini', 'human']"
+    },
+    {
+      "line": 152,
+      "trading_date": "20220818",
+      "url": "https://biz.sbs.co.kr/amp/article/20000076781",
+      "path": "mechanisms.0",
+      "message": "'regulation' is not one of ['nav', 'nav_discount', 'cash_flow', 'capital_allocation', 'governance', 'supply_demand', 'sector_beta', 'macro', 'valuation_multiple', 'unclear']"
+    }
+  ],
+  "added_articles": 13,
+  "added_logs": 1,
+  "first_trading_date": "20211130",
+  "last_trading_date": "20261014",
+  "missing_trading_dates": [],
+  "calendar_reference": "Previously captured trading calendar through 20261013, plus the user-provided 20261014 target",
+  "new_canonical_url_duplicates": 0,
+  "all_article_id_duplicates": 0,
+  "availability": {
+    "full_text": 12,
+    "partial_text": 1
+  },
+  "time_buckets": {
+    "post_close": 5,
+    "pre_open": 2,
+    "intraday": 6
+  },
+  "body_hash_available": 7,
+  "market_flow_neutral_rows": 2
+}

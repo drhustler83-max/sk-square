@@ -1,0 +1,856 @@
+[
+  {
+    "url": "https://www.donga.com/news/Economy/article/all/20261013/134834043/1",
+    "retrieved_at": "2026-10-15T14:39:39+09:00",
+    "body_hash": null,
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.donga.com/news/Economy/article/all/20261013/134834043/1",
+    "page_title": "AI 병목현상 ‘메모리 월’ 돌파 경쟁…삼성·SK, 차세대 CXL 기술로 승부수｜동아일보",
+    "canonical_url": "https://www.donga.com/news/Economy/article/all/20261013/134834043/1",
+    "date_metadata": [
+      {
+        "property": "og:pubdate",
+        "content": "2026-10-13 16:49:00"
+      },
+      {
+        "property": "dd:playtime"
+      },
+      {
+        "property": "dd:published_time",
+        "content": "2026-10-13T16:49:00+09:00"
+      },
+      {
+        "property": "dd:modified_time",
+        "content": "2026-10-13T16:50:33+09:00"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-10-13T16:49:00+09:00"
+      }
+    ],
+    "container_candidates": [
+      {
+        "tag": "main",
+        "id": "contents",
+        "class": [
+          "recon",
+          "recon02"
+        ]
+      },
+      {
+        "tag": "figure",
+        "id": null,
+        "class": [
+          "img_cont",
+          "articlePhotoC"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_end"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": "poll_content",
+        "class": [
+          "poll_form_sec"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_keyword"
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://www.mk.co.kr/news/stock/12174735",
+    "retrieved_at": "2026-10-15T14:39:39+09:00",
+    "body_hash": null,
+    "certificate_verification": false,
+    "http_status": 403,
+    "resolved_url": "https://www.mk.co.kr/news/stock/12174735"
+  },
+  {
+    "url": "https://www.hankyung.com/article/202610139523g",
+    "retrieved_at": "2026-10-15T14:39:39+09:00",
+    "body_hash": "df603e0bc5138241aadefef223c2e6f3cb14c510e748e15ac6efb39441267687",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.hankyung.com/article/202610139523g",
+    "page_title": "中반도체 D램 승부수에 삼전닉스 휘청…이익률 하락할 수도 | 한국경제",
+    "canonical_url": "https://www.hankyung.com/article/202610139523g",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-13T17:47:32+09:00"
+      }
+    ],
+    "body_chars": 1889,
+    "selector": "#articletxt",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www.pressian.com/pages/articles/2026101318285404669",
+    "retrieved_at": "2026-10-15T14:39:39+09:00",
+    "body_hash": null,
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.pressian.com/pages/articles/2026101318285404669",
+    "page_title": "\"정부 게임지원사업, 토종 앱마켓 외면하고 '구글·애플' 중심\"",
+    "canonical_url": "https://www.pressian.com/pages/articles/2026101318285404669",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-13T18:32:49+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-13T18:32:49+09:00"
+      }
+    ],
+    "container_candidates": [
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_view"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_title"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_view_top_ad"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_ad"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_ad2"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article_body"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "serials_articles"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "related_articles"
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=706904",
+    "retrieved_at": "2026-10-15T14:39:39+09:00",
+    "body_hash": "812cb14524311e1b56de39c504edef7d82c1bf1ec0acc854fb84f9e8e4ae036c",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=706904",
+    "page_title": "양자컴퓨터 기업 아이온큐, 사이버보안 스타트업 엘리시티 13억달러에 인수 - 디지털투데이 (DigitalToday)",
+    "canonical_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=706904",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-13T22:19:35+09:00"
+      },
+      {
+        "name": "msvalidate.01",
+        "content": "9793B730BE8BE4F8729CAA269237C91F"
+      }
+    ],
+    "body_chars": 538,
+    "selector": "#article-view-content-div",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20261013001265",
+    "retrieved_at": "2026-10-15T14:39:39+09:00",
+    "body_hash": "70db70055a296a56fa6e15e439cba74a8ca295e3cffc9ccae85ae0aefdbbf5ba",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.newspim.com/news/view/20261013001265",
+    "page_title": "반도체산업협회, 15일 AI 메모리 표준화 포럼 개최",
+    "canonical_url": "https://www.newspim.com/news/view/20261013001265",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T07:43:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-14T07:43:00+09:00"
+      }
+    ],
+    "body_chars": 1106,
+    "selector": "#news-contents",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20261014_0003824859",
+    "retrieved_at": "2026-10-15T14:39:40+09:00",
+    "body_hash": "8033b38a18c24178c6e509665886514922bc102e12293e164380f7a03e7ac5f0",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.newsis.com/view/NISX20261014_0003824859",
+    "page_title": "가습기부터 가을옷까지 반값…11번가, 'T 멤버십 쇼핑 페스타' :: 공감언론 뉴시스 ::",
+    "canonical_url": "https://www.newsis.com/view/NISX20261014_0003824859",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T08:26:26+09:00"
+      }
+    ],
+    "body_chars": 1244,
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www.topstarnews.net/news/articleView.html?idxno=16246401",
+    "retrieved_at": "2026-10-15T14:39:40+09:00",
+    "body_hash": null,
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.topstarnews.net/news/articleView.html?idxno=16246401",
+    "page_title": "SK스퀘어 주가, 10월 14일 장중 879,000원 2.57% 상승 | 신나리 기자 | 톱스타뉴스",
+    "canonical_url": "https://www.topstarnews.net/news/articleView.html?idxno=16246401",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T09:47:42+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-14T09:47:42+09:00"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-10-14T09:47:42+09:00"
+      }
+    ],
+    "container_candidates": [
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "off-canvas-content"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "user-search-content"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": "article-view",
+        "class": null
+      },
+      {
+        "tag": "header",
+        "id": null,
+        "class": [
+          "article-view-header"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": "article-sns",
+        "class": [
+          "reveal"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": "articleViewCon",
+        "class": [
+          "article-view-content"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": "snsAnchor",
+        "class": [
+          "sticky-article"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article-body"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": "article-view-content-div",
+        "class": [
+          "article-veiw-body",
+          "view-page"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article-view-page",
+          "clearfix"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "article--etc"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article-copy"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": null,
+        "class": [
+          "content"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": null,
+        "class": [
+          "content"
+        ]
+      },
+      {
+        "tag": "textarea",
+        "id": "cmtContent",
+        "class": [
+          "comment-content"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": null,
+        "class": [
+          "best-content"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": null,
+        "class": [
+          "normal-content"
+        ]
+      },
+      {
+        "tag": "textarea",
+        "id": "modiifyContent",
+        "class": [
+          "modiify-content"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": null,
+        "class": [
+          "content"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": "skin-74",
+        "class": [
+          "auto-article",
+          "auto-boll"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "poll-content-wrap",
+          "poll-win"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      },
+      {
+        "tag": "section",
+        "id": null,
+        "class": [
+          "content"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": "skin-support_main",
+        "class": [
+          "auto-article"
+        ]
+      },
+      {
+        "tag": "span",
+        "id": null,
+        "class": [
+          "contents"
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://www.betanews.net/article/view/beta202610140090",
+    "retrieved_at": "2026-10-15T14:39:40+09:00",
+    "body_hash": null,
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.betanews.net/article/view/beta202610140090",
+    "page_title": "원스토어, 리워드 원다이아 도입",
+    "canonical_url": "https://www.betanews.net/article/view/beta202610140090",
+    "date_metadata": [
+      {
+        "name": "msvalidate.01",
+        "content": "9909F262837E0164F0EE3DE86388999D"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T11:02:08+09:00"
+      }
+    ],
+    "container_candidates": [
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "content"
+        ]
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "modal-content"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article",
+          "swiper-slide"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "li",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      },
+      {
+        "tag": "article",
+        "id": null,
+        "class": [
+          "article"
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://www.newsis.com/view/NISX20261014_0003825533",
+    "retrieved_at": "2026-10-15T14:39:40+09:00",
+    "body_hash": "8975c8f3877d9ce847e6dfa0b813699cdf90765d5b90c6aad83ef5c9520ded0f",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.newsis.com/view/NISX20261014_0003825533",
+    "page_title": "SK하이닉스, 'SEDEX 2026'서 맞춤형 AI 메모리 솔루션 대거 공개 :: 공감언론 뉴시스 ::",
+    "canonical_url": "https://www.newsis.com/view/NISX20261014_0003825533",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T13:50:26+09:00"
+      }
+    ],
+    "body_chars": 1220,
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20261014000748",
+    "retrieved_at": "2026-10-15T14:39:41+09:00",
+    "body_hash": "3ff7cca1db9c6a4b56f3b9f34b1bf783647b3bca257a60d24f6228333987c126",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.newspim.com/news/view/20261014000748",
+    "page_title": "안현 SK하이닉스 사장 \"HBF 내년 1월 최종 규격 발표\"",
+    "canonical_url": "https://www.newspim.com/news/view/20261014000748",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T12:30:00+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-14T12:30:00+09:00"
+      }
+    ],
+    "body_chars": 2786,
+    "selector": "#news-contents",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www.mt.co.kr/industry/2026/10/14/2026101412241926278",
+    "retrieved_at": "2026-10-15T14:39:41+09:00",
+    "body_hash": "d6301d94c56ddd63be5c5823709aa2a2755bbfdf26775168735bf5a34e5bb9f3",
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www.mt.co.kr/industry/2026/10/14/2026101412241926278",
+    "page_title": "안현 SK하이닉스 사장 \"HBM 넘어 새로운 메모리 시대 열겠다\" - 머니투데이",
+    "canonical_url": "https://www.mt.co.kr/industry/2026/10/14/2026101412241926278",
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T13:06:42+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-14T13:54:26+09:00"
+      }
+    ],
+    "body_chars": 1666,
+    "selector": "[itemprop=\"articleBody\"]",
+    "hash_recipe": "SHA256(UTF8(collapsed-whitespace selected article container text)); script/style/iframe removed"
+  },
+  {
+    "url": "https://www3.newstomato.com/ReadNews.aspx?no=1316636",
+    "retrieved_at": "2026-10-15T14:39:42+09:00",
+    "body_hash": null,
+    "certificate_verification": false,
+    "http_status": 200,
+    "resolved_url": "https://www3.newstomato.com/ReadNews.aspx?no=1316636",
+    "page_title": "최태원, 앤디 김 상원의원 만났다…반도체 협력 논의",
+    "canonical_url": null,
+    "date_metadata": [
+      {
+        "property": "article:published_time",
+        "content": "2026-10-14T14:40:39+09:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-14T14:41:24+09:00"
+      }
+    ],
+    "container_candidates": [
+      {
+        "tag": "div",
+        "id": null,
+        "class": [
+          "rn_content"
+        ]
+      }
+    ]
+  }
+]

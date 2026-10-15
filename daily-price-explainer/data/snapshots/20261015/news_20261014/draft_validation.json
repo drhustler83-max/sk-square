@@ -1,0 +1,38 @@
+{
+  "target": "20261014",
+  "progress": "1/1",
+  "at": "2026-10-15T14:41:36+09:00",
+  "prompt_version": "news_gap_20261014.v1",
+  "article_rows": 13,
+  "log_rows": 1,
+  "event_time_bucket": {
+    "post_close": 5,
+    "pre_open": 2,
+    "intraday": 6
+  },
+  "availability": {
+    "full_text": 12,
+    "partial_text": 1
+  },
+  "market_flow_zero_direction_rows": 2,
+  "files": {
+    "news_property_codex_batch.jsonl": {
+      "before_sha256": "34a244e25c294fbd707ffea5bec9119617bf059e10a1cb6c4cbb59892ea680f3",
+      "after_sha256": "f2ae65467d59a1d96e919d4fc9e39d002792b2a8c8ebf65572de9b4235faedd5",
+      "original_prefix_bytes": 2058543,
+      "batch_sha256": "ecddc8f6d11b4587200f014dd00622a20ee0926882922c01d9a27c728b6e1e03",
+      "before_rows": 1386,
+      "added_rows": 13,
+      "after_rows": 1399
+    },
+    "news_search_log_codex.jsonl": {
+      "before_sha256": "68d3f04c78a258ff46ecf4aad4ca46d8dd8e763d91c678deb33e6d03fd4aa1b4",
+      "after_sha256": "2e949c9ceccdad8f791af2d1738875923ec9840ed743f59ef9ab6457ea176bd2",
+      "original_prefix_bytes": 292275,
+      "batch_sha256": "f7e467bd811f03cd7333b22ccdca932c10fd4b4bdc6784d9ac6d2d7e528b30de",
+      "before_rows": 1189,
+      "added_rows": 1,
+      "after_rows": 1190
+    }
+  }
+}

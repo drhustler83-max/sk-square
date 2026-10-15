@@ -1,0 +1,37 @@
+{
+  "metadata_time_refinements": [
+    {
+      "url": "https://www.hankyung.com/article/202610139523g",
+      "before": "2026-10-13T17:47:00+09:00",
+      "after": "2026-10-13T17:47:32+09:00",
+      "reason": "First-publication metadata provides seconds omitted by visible minute display"
+    },
+    {
+      "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=706904",
+      "before": "2026-10-13T22:19:00+09:00",
+      "after": "2026-10-13T22:19:35+09:00",
+      "reason": "First-publication metadata provides seconds omitted by visible minute display"
+    },
+    {
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16246401",
+      "before": "2026-10-14T09:47:00+09:00",
+      "after": "2026-10-14T09:47:42+09:00",
+      "reason": "First-publication metadata provides seconds omitted by visible minute display"
+    },
+    {
+      "url": "https://www.mt.co.kr/industry/2026/10/14/2026101412241926278",
+      "before": "2026-10-14T13:06:00+09:00",
+      "after": "2026-10-14T13:06:42+09:00",
+      "reason": "First-publication metadata provides seconds omitted by visible minute display"
+    }
+  ],
+  "manual_override": {
+    "url": "https://www.newsis.com/view/NISX20261014_0003825533",
+    "visible_registered_at": "2026-10-14T12:30:00+09:00",
+    "meta_article_published_time_is_modified_time": "2026-10-14T13:50:26+09:00"
+  },
+  "minute_precision": [
+    "https://www.mk.co.kr/news/stock/12174735"
+  ],
+  "body_receipts_caveat": "Hashes describe currently retrieved text containers, not an archived first-publication version. Inline live widgets may change. HTML receipt fetches used certificate_verification=false because the workspace proxy certificate is not trusted by requests/certifi; article facts and dates were cross-checked using ordinary web results."
+}

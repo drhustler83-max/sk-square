@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-10-15T14:33:57.530579+09:00",
+  "target": "20261014",
+  "window_kst": [
+    "2026-10-13T15:30:00+09:00",
+    "2026-10-14T15:30:00+09:00"
+  ],
+  "git_head": "e50fe9ca10187fd93e0ce39ccad0fb945bb5a1c5",
+  "files": {
+    "news_property_codex_batch.jsonl": {
+      "sha256": "34a244e25c294fbd707ffea5bec9119617bf059e10a1cb6c4cbb59892ea680f3",
+      "bytes": 2058543,
+      "rows": 1386,
+      "max_trading_date": "20261013"
+    },
+    "news_search_log_codex.jsonl": {
+      "sha256": "68d3f04c78a258ff46ecf4aad4ca46d8dd8e763d91c678deb33e6d03fd4aa1b4",
+      "bytes": 292275,
+      "rows": 1189,
+      "max_trading_date": "20261013"
+    }
+  }
+}

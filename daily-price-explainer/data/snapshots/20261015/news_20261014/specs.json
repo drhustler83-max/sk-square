@@ -1,0 +1,471 @@
+{
+  "completed_days": [
+    "20261014"
+  ],
+  "articles": [
+    {
+      "url": "https://www.donga.com/news/Economy/article/all/20261013/134834043/1",
+      "publisher": "동아일보",
+      "published_at": "2026-10-13T16:49:00+09:00",
+      "title": "AI 병목현상 ‘메모리 월’ 돌파 경쟁…삼성·SK, 차세대 CXL 기술로 승부수",
+      "entities": [
+        "SK하이닉스",
+        "삼성전자"
+      ],
+      "evidence_facts": [
+        "OCP 서밋에서 SK하이닉스가 서버 간 메모리 공유와 풀링을 활용하는 랙 설계를 소개했다.",
+        "앞서 공개된 기술 전략의 후속 해설이며 공급 계약이나 확정 매출 발표는 아니다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.2,
+      "sentiment_score": 0.2,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.65,
+      "materiality_score": 0.25,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.92,
+      "duplicate_cluster_id": "cluster_20261013_ocp_memory_rack",
+      "retrieved_at": "2026-10-15T14:39:39+09:00"
+    },
+    {
+      "url": "https://www.mk.co.kr/news/stock/12174735",
+      "publisher": "매일경제",
+      "published_at": "2026-10-13T17:42:00+09:00",
+      "title": "하닉 덕에 뜨고 하닉에 발목 … SK스퀘어 주가낙폭 2배 컸다",
+      "entities": [
+        "SK스퀘어",
+        "SK하이닉스",
+        "솔리다임"
+      ],
+      "evidence_facts": [
+        "SK스퀘어와 보유자산의 시장 동향에 지주사 할인·중복상장 우려를 덧붙인 후속 기사다.",
+        "회사 측의 기존 AI 투자·주주환원 설명을 재전달하며 새로운 확정 거래를 발표하지 않는다.",
+        "시황·사후 설명이 중심이므로 기사에 등장하는 등락을 방향값 판단에 사용하지 않았다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_square",
+      "event_type": "market_flow",
+      "event_stage": "follow_up",
+      "novelty_score": 0.1,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.9,
+      "materiality_score": 0.15,
+      "uncertainty_score": 0.4,
+      "forward_looking": false,
+      "impact_horizon": "intraday",
+      "mechanisms": [
+        "supply_demand",
+        "nav_discount"
+      ],
+      "confidence_score": 0.94,
+      "retrieved_at": "2026-10-15T14:39:39+09:00"
+    },
+    {
+      "url": "https://www.hankyung.com/article/202610139523g",
+      "publisher": "한국경제",
+      "published_at": "2026-10-13T17:47:32+09:00",
+      "title": "中반도체 D램 승부수에 삼전닉스 '휘청'…\"이익률 하락할 수도\" [이슈+]",
+      "entities": [
+        "SK하이닉스",
+        "삼성전자",
+        "CXMT",
+        "마이크론"
+      ],
+      "evidence_facts": [
+        "CXMT의 연말 서버용 DDR5 출시 계획과 셀 구조 변경을 다룬 기술 경쟁 후속 분석이다.",
+        "경쟁사의 가격 결정력과 이익률에 대한 잠재적 부담을 제기한다.",
+        "양산 수율·공급 규모·고객 검증이 확인되지 않았다는 한계도 함께 제시한다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "semiconductor_sector",
+      "event_type": "semiconductor_cycle",
+      "event_stage": "follow_up",
+      "novelty_score": 0.2,
+      "sentiment_score": -0.2,
+      "ex_ante_impact_direction": -1,
+      "relevance_score": 0.65,
+      "materiality_score": 0.35,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow",
+        "sector_beta"
+      ],
+      "confidence_score": 0.93,
+      "duplicate_cluster_id": "cluster_20261013_cxmt_4f2",
+      "retrieved_at": "2026-10-15T14:39:39+09:00",
+      "article_text_hash": "df603e0bc5138241aadefef223c2e6f3cb14c510e748e15ac6efb39441267687"
+    },
+    {
+      "url": "https://www.pressian.com/pages/articles/2026101318285404669",
+      "publisher": "프레시안",
+      "published_at": "2026-10-13T18:32:49+09:00",
+      "title": "\"정부 게임지원사업, 토종 앱마켓 외면하고 '구글·애플' 중심\"",
+      "entities": [
+        "원스토어",
+        "갤럭시스토어",
+        "한국콘텐츠진흥원",
+        "김재원"
+      ],
+      "evidence_facts": [
+        "국정감사에서 일부 게임 지원사업의 출시 인정 기준이 국내 앱마켓을 배제한다는 지적이 나왔다.",
+        "의원이 국내 플랫폼 출시 인정과 입점 가산점 등 개선을 요구했고 관계기관은 협의 의사를 밝혔다.",
+        "제도 변경이 확정된 단계는 아니며 원스토어의 기존 유통상 한계와 개선 가능성을 함께 다룬다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "portfolio_company",
+      "event_type": "regulation",
+      "event_stage": "proposal",
+      "novelty_score": 0.3,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.35,
+      "materiality_score": 0.1,
+      "uncertainty_score": 0.65,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "cash_flow"
+      ],
+      "confidence_score": 0.94,
+      "retrieved_at": "2026-10-15T14:39:39+09:00"
+    },
+    {
+      "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=706904",
+      "publisher": "디지털투데이",
+      "published_at": "2026-10-13T22:19:35+09:00",
+      "title": "양자컴퓨터 기업 아이온큐, 사이버보안 스타트업 엘리시티 13억달러에 인수",
+      "entities": [
+        "아이온큐",
+        "엘리시티"
+      ],
+      "evidence_facts": [
+        "아이온큐의 엘리시티 인수를 전날 해외 보도를 인용해 재전달한다.",
+        "인수 대상의 기업 네트워크 보안 기술에 양자 보안 기능을 더한다는 계획을 설명한다.",
+        "최초 발표 이후의 후속 보도이며 이번 기사만으로 거래 완료를 확인할 수 없다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "portfolio_company",
+      "event_type": "portfolio_acquisition",
+      "event_stage": "follow_up",
+      "novelty_score": 0.15,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.35,
+      "materiality_score": 0.15,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "capital_allocation"
+      ],
+      "confidence_score": 0.91,
+      "duplicate_cluster_id": "cluster_20261012_ionq_elisity",
+      "numeric_claims": [
+        {
+          "metric": "기사의 인수 규모",
+          "value": 13,
+          "unit": "억달러",
+          "period": null,
+          "comparison": null
+        }
+      ],
+      "retrieved_at": "2026-10-15T14:39:39+09:00",
+      "article_text_hash": "812cb14524311e1b56de39c504edef7d82c1bf1ec0acc854fb84f9e8e4ae036c"
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20261013001265",
+      "publisher": "뉴스핌",
+      "published_at": "2026-10-14T07:43:00+09:00",
+      "title": "반도체산업협회, 15일 AI 메모리 표준화 포럼 개최",
+      "entities": [
+        "SK하이닉스",
+        "한국반도체산업협회",
+        "JEDEC"
+      ],
+      "evidence_facts": [
+        "반도체산업협회 등이 15일 열리는 AI 메모리 표준화 포럼의 계획을 소개했다.",
+        "SK하이닉스는 LPDDR6-PIM 기술과 표준화 동향을 발표할 예정이라고 안내한다.",
+        "행사 예고이며 수주·실적·양산 일정의 확정 발표는 아니다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "semiconductor_sector",
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.15,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.3,
+      "materiality_score": 0.04,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "impact_horizon": "one_to_three_days",
+      "mechanisms": [
+        "unclear"
+      ],
+      "confidence_score": 0.95,
+      "retrieved_at": "2026-10-15T14:39:39+09:00",
+      "article_text_hash": "70db70055a296a56fa6e15e439cba74a8ca295e3cffc9ccae85ae0aefdbbf5ba"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20261014_0003824859",
+      "publisher": "뉴시스",
+      "published_at": "2026-10-14T08:26:26+09:00",
+      "title": "가습기부터 가을옷까지 반값…11번가, 'T 멤버십 쇼핑 페스타'",
+      "entities": [
+        "11번가",
+        "SK텔레콤"
+      ],
+      "evidence_facts": [
+        "11번가가 20일까지 T 멤버십 고객 대상 가을 상품 할인행사를 진행한다고 안내했다.",
+        "일상적인 판촉 소식이며 매출이나 이익 목표를 제시하지 않았다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "portfolio_company",
+      "event_type": "other",
+      "event_stage": "execution",
+      "novelty_score": 0.35,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.25,
+      "materiality_score": 0.03,
+      "uncertainty_score": 0.2,
+      "forward_looking": false,
+      "impact_horizon": "one_to_three_days",
+      "mechanisms": [
+        "cash_flow"
+      ],
+      "confidence_score": 0.96,
+      "duplicate_cluster_id": "cluster_20261014_11st_t_membership",
+      "retrieved_at": "2026-10-15T14:39:40+09:00",
+      "article_text_hash": "8033b38a18c24178c6e509665886514922bc102e12293e164380f7a03e7ac5f0"
+    },
+    {
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16246401",
+      "publisher": "톱스타뉴스",
+      "published_at": "2026-10-14T09:47:42+09:00",
+      "title": "SK스퀘어 주가, 10월 14일 장중 879,000원 2.57% 상승",
+      "entities": [
+        "SK스퀘어"
+      ],
+      "evidence_facts": [
+        "네이버페이 증권의 장중 거래 지표를 나열하는 시황 기사다.",
+        "검색 색인의 본문 일부만 확인했으며 신규 기업 사건을 확인하지 못했다.",
+        "표제의 등락과 본문 시세는 감성·예상 방향값의 근거로 사용하지 않았다."
+      ],
+      "availability": "partial_text",
+      "primary_subject": "sk_square",
+      "event_type": "market_flow",
+      "event_stage": "follow_up",
+      "novelty_score": 0.05,
+      "sentiment_score": 0,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.8,
+      "materiality_score": 0.03,
+      "uncertainty_score": 0.2,
+      "forward_looking": false,
+      "impact_horizon": "intraday",
+      "mechanisms": [
+        "supply_demand"
+      ],
+      "confidence_score": 0.95,
+      "retrieved_at": "2026-10-15T14:39:40+09:00"
+    },
+    {
+      "url": "https://www.betanews.net/article/view/beta202610140090",
+      "publisher": "베타뉴스",
+      "published_at": "2026-10-14T11:02:08+09:00",
+      "title": "원스토어, 리워드 원다이아 도입",
+      "entities": [
+        "원스토어"
+      ],
+      "evidence_facts": [
+        "원스토어가 기존 포인트 혜택을 통합한 리워드 재화를 도입한다고 밝혔다.",
+        "14일부터 광고 미션으로 적립할 수 있고 11월 초에는 원퀘스트 보상에도 적용할 계획이다.",
+        "매출 기여나 이용자 증가가 확인된 실적 발표는 아니다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "portfolio_company",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.6,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.35,
+      "materiality_score": 0.08,
+      "uncertainty_score": 0.45,
+      "forward_looking": true,
+      "impact_horizon": "one_to_four_weeks",
+      "mechanisms": [
+        "cash_flow"
+      ],
+      "confidence_score": 0.95,
+      "duplicate_cluster_id": "cluster_20261014_onestore_onedia",
+      "retrieved_at": "2026-10-15T14:39:40+09:00"
+    },
+    {
+      "url": "https://www.newsis.com/view/NISX20261014_0003825533",
+      "publisher": "뉴시스",
+      "published_at": "2026-10-14T12:30:00+09:00",
+      "title": "SK하이닉스, 'SEDEX 2026'서 맞춤형 AI 메모리 솔루션 대거 공개",
+      "entities": [
+        "SK하이닉스",
+        "엔비디아"
+      ],
+      "evidence_facts": [
+        "SK하이닉스가 SEDEX에서 서버·PC·모바일용 메모리와 스토리지 제품을 전시했다.",
+        "HBM·HBF 구조와 고객 맞춤형 AI 메모리 전략을 소개하며 공급 계약이나 확정 매출은 제시하지 않았다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "execution",
+      "novelty_score": 0.45,
+      "sentiment_score": 0.15,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.7,
+      "materiality_score": 0.18,
+      "uncertainty_score": 0.35,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.95,
+      "duplicate_cluster_id": "cluster_20261014_sedex_hynix_products",
+      "retrieved_at": "2026-10-15T14:39:40+09:00",
+      "article_text_hash": "8975c8f3877d9ce847e6dfa0b813699cdf90765d5b90c6aad83ef5c9520ded0f"
+    },
+    {
+      "url": "https://www.newspim.com/news/view/20261014000748",
+      "publisher": "뉴스핌",
+      "published_at": "2026-10-14T12:30:00+09:00",
+      "title": "안현 SK하이닉스 사장 \"HBF 내년 1월 최종 규격 발표\"",
+      "entities": [
+        "SK하이닉스",
+        "안현",
+        "샌디스크",
+        "구글"
+      ],
+      "evidence_facts": [
+        "안현 사장이 SEDEX 기조연설에서 메모리 계층 간 데이터 이동 병목과 HBF·3D 적층 D램 개발 방향을 설명했다.",
+        "HBF 최종 규격을 내년 1월 마련한다는 목표와 협력 생태계 확대 계획을 제시했다.",
+        "개발·표준화 로드맵이며 양산 수율이나 확정 판매 실적은 아니다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "announcement",
+      "novelty_score": 0.6,
+      "sentiment_score": 0.35,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.8,
+      "materiality_score": 0.4,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.94,
+      "duplicate_cluster_id": "cluster_20261014_sedex_hbf_roadmap",
+      "numeric_claims": [
+        {
+          "metric": "HBF 최종 규격 목표 시점",
+          "value": "2027-01",
+          "unit": "월",
+          "period": null,
+          "comparison": null
+        }
+      ],
+      "retrieved_at": "2026-10-15T14:39:41+09:00",
+      "article_text_hash": "3ff7cca1db9c6a4b56f3b9f34b1bf783647b3bca257a60d24f6228333987c126"
+    },
+    {
+      "url": "https://www.mt.co.kr/industry/2026/10/14/2026101412241926278",
+      "publisher": "머니투데이",
+      "published_at": "2026-10-14T13:06:42+09:00",
+      "title": "안현 SK하이닉스 사장 \"HBM 넘어 새로운 메모리 시대 열겠다\"",
+      "entities": [
+        "SK하이닉스",
+        "안현"
+      ],
+      "evidence_facts": [
+        "동일한 SEDEX 기조연설의 HBF·3D 적층 D램·CXL 개발 방향을 후속 보도했다.",
+        "기사에 제시된 성능·용량 개선치는 개발 구상의 설명이며 상용 제품의 검증 결과나 매출 전망이 아니다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.15,
+      "sentiment_score": 0.2,
+      "ex_ante_impact_direction": 1,
+      "relevance_score": 0.75,
+      "materiality_score": 0.3,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "nav",
+        "cash_flow"
+      ],
+      "confidence_score": 0.94,
+      "duplicate_cluster_id": "cluster_20261014_sedex_hbf_roadmap",
+      "retrieved_at": "2026-10-15T14:39:41+09:00",
+      "article_text_hash": "d6301d94c56ddd63be5c5823709aa2a2755bbfdf26775168735bf5a34e5bb9f3"
+    },
+    {
+      "url": "https://www3.newstomato.com/ReadNews.aspx?no=1316636",
+      "publisher": "뉴스토마토",
+      "published_at": "2026-10-14T14:40:39+09:00",
+      "title": "최태원, 앤디 김 상원의원 만났다…반도체 협력 논의",
+      "entities": [
+        "SK하이닉스",
+        "최태원",
+        "앤디 김",
+        "유정준"
+      ],
+      "evidence_facts": [
+        "최태원 회장과 앤디 김 상원의원의 반도체·인재 양성 협력 논의를 전했고 SK하이닉스 부회장 참석을 확인했다.",
+        "기존 미국 투자 계획을 배경으로 소개하며 신규 투자 계약이나 정책 승인이 확정됐다고 발표하지 않았다."
+      ],
+      "availability": "full_text",
+      "primary_subject": "sk_hynix",
+      "event_type": "other",
+      "event_stage": "follow_up",
+      "novelty_score": 0.3,
+      "sentiment_score": 0.1,
+      "ex_ante_impact_direction": 0,
+      "relevance_score": 0.5,
+      "materiality_score": 0.12,
+      "uncertainty_score": 0.5,
+      "forward_looking": true,
+      "impact_horizon": "structural",
+      "mechanisms": [
+        "capital_allocation",
+        "cash_flow"
+      ],
+      "confidence_score": 0.94,
+      "retrieved_at": "2026-10-15T14:39:42+09:00"
+    }
+  ],
+  "notes": {
+    "20261014": "일반 웹 검색; 2026-10-13 15:30 초과~10-14 15:30 이하 KST 최초 공개 기준。13건(전날 마감 후 5건). 시황 2건 감성·방향 0. HBF 동일 연설은 중복 클러스터/후속보도 처리. 판촉·행사 소식 낮은 관련성/중요도. 톱스타뉴스는 검색 색인 본문 일부만 확인(partial_text); 디지털투데이는 공개 HTML 본문 전체를 추가 확인. 뉴시스 SEDEX 기사 메타시각 13:50:26은 수정시각이므로 화면 등록시각 12:30 사용. 10-14 15:33 11번가, 16:59 크래프톤, 17:10 SK스퀘어 분석기사는 창 밖으로 제외. 시세 페이지·잔차 파일은 판단 근거로 사용하지 않음. 미검토 모델 출력."
+  }
+}

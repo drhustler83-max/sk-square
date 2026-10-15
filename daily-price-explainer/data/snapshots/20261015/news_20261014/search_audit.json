@@ -1,0 +1,1293 @@
+{
+  "method": "General web searches through web.run; no Naver News Search API calls. Public HTML GETs were used only to verify timestamps and compute body hashes.",
+  "target": "20261014",
+  "window_kst": [
+    "2026-10-13T15:30:00+09:00",
+    "2026-10-14T15:30:00+09:00"
+  ],
+  "query_examples": [
+    "SK스퀘어 \"2026.10.14\"",
+    "SK스퀘어 \"2026.10.13\"",
+    "SK하이닉스 \"2026.10.14\" -주가 -주식시세",
+    "크래프톤 \"2026.10.14\"",
+    "원스토어 \"2026.10.14\"",
+    "티맵 \"2026.10.14\"",
+    "SK쉴더스 \"2026.10.14\"",
+    "11번가 \"2026.10.14\"",
+    "드림어스 \"2026.10.14\"",
+    "인크로스 \"2026.10.14\"",
+    "나노엔텍 \"2026.10.14\"",
+    "SK플래닛 \"2026.10.14\"",
+    "넥써쓰 \"2026.10.14\"",
+    "아이온큐 \"2026.10.14\"",
+    "SK플래닛 \"2026.10.13\"",
+    "원스토어 \"2026.10.13\"",
+    "콘텐츠웨이브 \"2026.10.14\"",
+    "\"SK하이닉스\" \"2026.10.14\" \"OCP\""
+  ],
+  "query_examples_are_not_exhaustive": true,
+  "searches": [
+    {
+      "key": "day14_initial1",
+      "result_items": [
+        {
+          "title": "SK하이닉스 최근 지표 - 기업 자료 공개 자료 목록 | ECONARC",
+          "url": "https://econarc.com/company/disclosures/sk-hynix-src-filing/",
+          "tool_reference": "turn161search0"
+        },
+        {
+          "title": "한경글로벌마켓 | 한국경제",
+          "url": "https://www.hankyung.com/globalmarket/equities/americas/skhy",
+          "tool_reference": "turn161search1"
+        },
+        {
+          "title": "SK하이닉스, 목표주가 400만원 유지하는 이유…“환율 이기는 실적”[클릭e종목]",
+          "url": "https://view.asiae.co.kr/article/2026101214550156886",
+          "tool_reference": "turn161search2"
+        },
+        {
+          "title": "SK하이닉스 - 시세 - 이투데이",
+          "url": "https://m.etoday.co.kr/market/mkt_stkinfo?varIssCd=000660",
+          "tool_reference": "turn161search3"
+        },
+        {
+          "title": "SK하이닉스 목표가 360만원 유지, 왜?…\"실적도 주주환원도 기대\" :: 공감언론 뉴시스 ::",
+          "url": "https://files.newsis.com/view/NISX20261013_0003823209",
+          "tool_reference": "turn161search4"
+        },
+        {
+          "title": "시세 - 마켓 - 이투데이",
+          "url": "https://www.etoday.co.kr/market/mkt_stkinfo?varIssCd=475150",
+          "tool_reference": "turn161search5"
+        },
+        {
+          "title": "SK하이닉스(000660) 주가·시가총액·재무·배당 — 미래AI",
+          "url": "https://www.meerae.ai/atlas/000660/",
+          "tool_reference": "turn161search6"
+        },
+        {
+          "title": "SK하이닉스 주가, 10월 13일 장중 1,489,000원 7.23% 하락 | 김명수 기자 | 톱스타뉴스",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16245354",
+          "tool_reference": "turn161search7"
+        },
+        {
+          "title": "SK하이닉스, 두 달여 만에 장중 10%대 하락…삼성전자도 8%↓ < 증권 < 기사본문 - 연합인포맥스",
+          "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4438984",
+          "tool_reference": "turn161search8"
+        },
+        {
+          "title": "SK하이닉스, 반등 실패 후 1.7% 하락 마감…6거래일 연속 내려(종합)",
+          "url": "https://stock.mk.co.kr/news/view/1174475",
+          "tool_reference": "turn161search9"
+        },
+        {
+          "title": "SK하이닉스 외국인·기관 수급 — 투자자별 매매동향·외국인 지분율 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/000660/investors",
+          "tool_reference": "turn161search10"
+        },
+        {
+          "title": "SK하이닉스 | 한국경제",
+          "url": "https://markets.hankyung.com/stock/000660",
+          "tool_reference": "turn161search11"
+        },
+        {
+          "title": "2027 신입생 모집요강",
+          "url": "https://karts.ac.kr/cmm/fms/FileDown.do?accAt=&atchFileId=FILE_000000000161996&bbsId=BBSMSTR_000000000007&fileSn=19&nttId=69907&trgetId=SYSTEM_DEFAULT_BOARD",
+          "tool_reference": "turn161search12"
+        },
+        {
+          "title": "미래에셋증권 공모 ELS 제36124회",
+          "url": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0006X25_1.pdf",
+          "tool_reference": "turn161search13"
+        },
+        {
+          "title": "III  안전사고 피해자 보상 및 지원",
+          "url": "https://kau.ac.kr/upfile/2026/02/24/20260224170146-8557.pdf",
+          "tool_reference": "turn161search14"
+        },
+        {
+          "title": "13(tue)-16(fri) Oct, 2026        SEOUL , COEX",
+          "url": "https://www.kes.org/bbs/down.asp?id=kor_etc&no=2026",
+          "tool_reference": "turn161search15"
+        },
+        {
+          "title": "title",
+          "url": "https://www.svscr.cz/wp-content/files/zivocisne-produkty/Narizeni_SVS.pdf",
+          "tool_reference": "turn161search16"
+        }
+      ]
+    },
+    {
+      "key": "day14_search02",
+      "result_items": [
+        {
+          "title": "SK스퀘어(402340) 매매동향 · 외국인/기관 수급 — maedong.kr",
+          "url": "https://maedong.kr/stock/402340",
+          "tool_reference": "turn163search0"
+        },
+        {
+          "title": "SK스퀘어 주가·실적 (402340) | KPINFO",
+          "url": "https://kpinfo.kr/stock/402340",
+          "tool_reference": "turn163search1"
+        },
+        {
+          "title": "SK하이닉스 주주환원 확대, SK스퀘어 기업가치에도 호재 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610141708238087",
+          "tool_reference": "turn163search2"
+        },
+        {
+          "title": "SK스퀘어 주가, 10월 14일 장중 879,000원 2.57% 상승 | 신나리 기자 | 톱스타뉴스",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16246401",
+          "tool_reference": "turn163search3"
+        },
+        {
+          "title": "SK스퀘어 · Sentinel",
+          "url": "https://desk.glostat.io/ja/stocks/402340",
+          "tool_reference": "turn163search4"
+        },
+        {
+          "title": "SK스퀘어(402340) 공시 | 공시한입",
+          "url": "https://dartbrief.com/stocks/402340",
+          "tool_reference": "turn163search5"
+        },
+        {
+          "title": "한국경제TV",
+          "url": "https://m.wowtv.co.kr/Finance/DomesticStock/DomesticStockDetail?searchStr=402340",
+          "tool_reference": "turn163search6"
+        },
+        {
+          "title": "SK스퀘어 | 한국경제",
+          "url": "https://markets.hankyung.com/stock/402340",
+          "tool_reference": "turn163search7"
+        },
+        {
+          "title": "SK스퀘어(402340) 종목 분석 | 2026-10-13 - 커뮤니티",
+          "url": "https://portfolio.ezinit.com/community/stock_analysis/2938",
+          "tool_reference": "turn163search8"
+        },
+        {
+          "title": "SK스퀘어(402340) 주가·재무·공시 | 헤지나루",
+          "url": "https://hedgenaru.com/stocks/402340",
+          "tool_reference": "turn163search9"
+        },
+        {
+          "title": "SK스퀘어 실적·재무제표·주가 정보 (402340) | PlainRatio",
+          "url": "https://plainratio.com/stocks/402340",
+          "tool_reference": "turn163search10"
+        },
+        {
+          "title": "▒▒ 매일경제 / 증권센터 ▒▒",
+          "url": "https://open.shinhansec.com/goodicyber/mk/1206.jsp?code=402340",
+          "tool_reference": "turn163search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search03",
+      "result_items": [
+        {
+          "title": "SK하이닉스, 반등 실패 후 1.7% 하락 마감…6거래일 연속 내려(종합) | 연합뉴스",
+          "url": "https://www.yna.co.kr/amp/view/AKR20261014041251008",
+          "tool_reference": "turn162search0"
+        },
+        {
+          "title": "크래프톤, 게임 AI 외부에 판다...'게임 AI의 팔란티어' 지향",
+          "url": "https://search.newspim.com/news/view/20261014000938",
+          "tool_reference": "turn162search1"
+        },
+        {
+          "title": "크래프톤 주가 추이 — 역대 최고가·연도별 수익률 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/259960/history",
+          "tool_reference": "turn162search2"
+        },
+        {
+          "title": "SK하이닉스(000660) 주가·대차잔고·공매도·배당 — BruDash",
+          "url": "https://www.brudash.com/stock/000660",
+          "tool_reference": "turn162search3"
+        },
+        {
+          "title": "SK하이닉스 (000660) 주가·수급·공매도·재무 | FoldAlpha",
+          "url": "https://app.foldalpha.com/stock/000660",
+          "tool_reference": "turn162search4"
+        },
+        {
+          "title": "원스토어(주) 2026년 기업정보 | 직원수, 근무환경, 복리후생 등 - 사람인",
+          "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/aXRQajZiNTBQWlprL1lPNEZCUSttUT09/company_nm/%EC%9B%90%EC%8A%A4%ED%86%A0%EC%96%B4%28%EC%A3%BC%29",
+          "tool_reference": "turn162search5"
+        },
+        {
+          "title": "크래프톤 - ETF 보유 현황 | GoInsider",
+          "url": "https://goinsider.kr/stock/259960/etfs",
+          "tool_reference": "turn162search6"
+        },
+        {
+          "title": "크래프톤(259960) 주가·실적·재무제표 분석 | 보숲",
+          "url": "https://www.bosoop.com/stocks/259960/",
+          "tool_reference": "turn162search7"
+        },
+        {
+          "title": "SK하이닉스(000660) 주가·차트·PER·PBR·ROE | StockAnatomy",
+          "url": "https://stockanatomy.com/kr/000660",
+          "tool_reference": "turn162search8"
+        },
+        {
+          "title": "전국퀴즈대회(2026) - 원스토어",
+          "url": "https://m.onestore.co.kr/v2/ko-kr/app/0001010454",
+          "tool_reference": "turn162search9"
+        },
+        {
+          "title": "크래프톤-컨센서스 | 한국경제",
+          "url": "https://markets.hankyung.com/stock/259960/consensus",
+          "tool_reference": "turn162search10"
+        },
+        {
+          "title": "2026년 10월 14일 국내증시 마감 시황: 코스피 6,008.81, 반도체 수급은 엇갈렸다",
+          "url": "https://youniverse.tistory.com/329",
+          "tool_reference": "turn162search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search04",
+      "result_items": [
+        {
+          "title": "SK하이닉스, 반등 실패 후 1.7% 하락 마감…6거래일 연속 내려(종합)",
+          "url": "https://stock.mk.co.kr/news/view/1174475",
+          "tool_reference": "turn164search0"
+        },
+        {
+          "title": "삼전닉스, 급락 딛고 반등…삼성전자 3%·하이닉스 2%대 상승 | 한국경제",
+          "url": "https://www.hankyung.com/article/2026101407036",
+          "tool_reference": "turn164search1"
+        },
+        {
+          "title": "[단독] \"韓 메모리 주식 매도세 과도 … 낙폭 컸던 하이닉스 담아라\" - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12175975",
+          "tool_reference": "turn164search2"
+        },
+        {
+          "title": "SK하이닉스 주가, 10월 14일 장중 1,477,000원 2.36% 상승 | 최우진 기자 | 톱스타뉴스",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16246399",
+          "tool_reference": "turn164search3"
+        },
+        {
+          "title": "크래프톤(259960) 매매동향 · 외국인/기관 수급 — maedong.kr",
+          "url": "https://maedong.kr/stock/259960",
+          "tool_reference": "turn164search4"
+        },
+        {
+          "title": "‘낙폭 너무 컸나’ 코스피, 장 초반 2%대 상승…6100선 회복 - 조선비즈",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/10/14/2PUROY2T7VAXVJ6N4IIARJZWIA/?outputType=amp",
+          "tool_reference": "turn164search5"
+        },
+        {
+          "title": "[N2 증시 풍향계] 삼성전자·SK하이닉스 ‘반등’…강관·밸브·해운株 ‘강세’, 유니켐 ‘上’",
+          "url": "https://news2day.co.kr/article/20261014500147",
+          "tool_reference": "turn164search6"
+        },
+        {
+          "title": "[기업이슈] 반도체주 폭락에 코스피 '검은 화요일'",
+          "url": "https://biz.sbs.co.kr/amp/article/20000339802",
+          "tool_reference": "turn164search7"
+        },
+        {
+          "title": "[송재경의 인사이트] 삼성전자·SK하이닉스 발목 잡은 세 가지 악재…AI 투자 회의론 확산",
+          "url": "https://biz.sbs.co.kr/amp/article/20000339807",
+          "tool_reference": "turn164search8"
+        },
+        {
+          "title": "삼전닉스 주가 빠지자 다시 담는 초고수들 [주식 초고수는 지금] - 매일경제",
+          "url": "https://www.mk.co.kr/news/stock/12175530",
+          "tool_reference": "turn164search9"
+        },
+        {
+          "title": "SK하이닉스 부스 찾은 시민들",
+          "url": "https://www.dailian.co.kr/news/view/1701450/SK%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4-%EB%B6%80%EC%8A%A4-%EC%B0%BE%EC%9D%80-%EC%8B%9C%EB%AF%BC%EB%93%A4-2026",
+          "tool_reference": "turn164search10"
+        },
+        {
+          "title": "[CXMT 추격③] 삼전하닉 급락, 中반도체뿐일까…내달 9일이 걸리는 이유 < IB/기업 < 기사본문 - 연합인포맥스",
+          "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4439113",
+          "tool_reference": "turn164search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search05",
+      "result_items": [
+        {
+          "title": "보안 트렌드 & 인사이트 - 사이버보안 인사이트 | SK쉴더스",
+          "url": "https://www.skshieldus.com/security-insights/trends",
+          "tool_reference": "turn165search0"
+        },
+        {
+          "title": "여행 11번가 - 11번가",
+          "url": "https://tour.11st.co.kr/tour/TourfrontDomesticAction.tmall/detail?catalogNo=19406588&isSSL=Y&room=2%2C0",
+          "tool_reference": "turn165search1"
+        },
+        {
+          "title": "삼성에스디에스 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-summary?code=018260",
+          "tool_reference": "turn165search2"
+        },
+        {
+          "title": "月평균 두번 한식 먹는 외국인...\"한국인이 실제 먹는걸로 주세요\" - 머니투데이",
+          "url": "https://www.mt.co.kr/living/2026/10/14/2026101314245455290",
+          "tool_reference": "turn165search3"
+        },
+        {
+          "title": "구매 기관 | 나랏돈 50조 찾기",
+          "url": "https://savetax.now/agency/4681000",
+          "tool_reference": "turn165search4"
+        },
+        {
+          "title": "T공식대리점 | 11번가",
+          "url": "https://mobile.m.11st.co.kr/MW/tLounge/systemCheckPage.tmall",
+          "tool_reference": "turn165search5"
+        },
+        {
+          "title": "에스케이쉴더스㈜ 채용 - [SK쉴더스] 울산지역 NOV코리아 시설보안대원(BP3) 채용 | 잡코리아",
+          "url": "https://m.jobkorea.co.kr/Recruit/GI_Read/50077313",
+          "tool_reference": "turn165search6"
+        },
+        {
+          "title": "게임 뉴스 - 인벤",
+          "url": "https://www.inven.co.kr/webzine/news/?hashtag=%EC%9B%90%EC%8A%A4%ED%86%A0%EC%96%B4&iskin=webzine",
+          "tool_reference": "turn165search7"
+        },
+        {
+          "title": "11번가, T 멤버십 고객 대상 가을 쇼핑 행사…20일까지 진행 - 더퍼스트미디어",
+          "url": "https://www.thefirstmedia.net/news/articleView.html?idxno=210807",
+          "tool_reference": "turn165search8"
+        },
+        {
+          "title": "뉴스투온",
+          "url": "https://www.newstoon.co.kr/",
+          "tool_reference": "turn165search9"
+        },
+        {
+          "title": "[똑똑한쇼핑] 이마트, 롯데마트, 홈플러스, 쿠팡, 11번가, 신세계백화점",
+          "url": "https://m.ekn.kr/view.php?key=20261014023525959",
+          "tool_reference": "turn165search10"
+        },
+        {
+          "title": "머니투데이 기획 - 2026 K웨이브 올라탄 K이니셔티브 현장을 가다",
+          "url": "https://www.mt.co.kr/planning/4759",
+          "tool_reference": "turn165search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search06",
+      "result_items": [
+        {
+          "title": "퀀티랩 — 투자 판단을 더 선명하게",
+          "url": "https://quantylab.com/stock/039860/",
+          "tool_reference": "turn167search0"
+        },
+        {
+          "title": "인크로스 주가 추이 — 역대 최고가·연도별 수익률 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/216050/history",
+          "tool_reference": "turn167search1"
+        },
+        {
+          "title": "나노엔텍 - ETF 보유 현황 | GoInsider",
+          "url": "https://goinsider.kr/stock/039860/etfs",
+          "tool_reference": "turn167search2"
+        },
+        {
+          "title": "인크로스 PER·PBR 추이 — 현재 PER 5.24배·PBR 0.45배, 5년 밴드와 업종 비교 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/216050/valuation",
+          "tool_reference": "turn167search3"
+        },
+        {
+          "title": "나노엔텍(039860) 주가·실적·재무제표 분석 | 보숲",
+          "url": "https://www.bosoop.com/stocks/039860/",
+          "tool_reference": "turn167search4"
+        },
+        {
+          "title": "인크로스 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-summary?code=216050",
+          "tool_reference": "turn167search5"
+        },
+        {
+          "title": "인크로스(주) 2026년 기업정보 | 직원수, 근무환경, 복리후생 등 - 사람인",
+          "url": "https://m.saramin.co.kr/job-search/company-info-view?csn=eE5UeVhobUh6NXcwTHduMm1CTy85Zz09&searchword=%EC%97%90%EC%8A%A4%EC%BC%80%EC%9D%B4%EB%B8%8C%EB%A1%9C%EB%93%9C%EB%B0%B4%EB%93%9C",
+          "tool_reference": "turn167search6"
+        },
+        {
+          "title": "인크로스 최대주주·주주 구성 — 대주주 지분율, 국민연금, 유통주식 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/216050/shareholders",
+          "tool_reference": "turn167search7"
+        },
+        {
+          "title": "인크로스 외국인·기관 수급 — 투자자별 매매동향·외국인 지분율 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/216050/investors",
+          "tool_reference": "turn167search8"
+        },
+        {
+          "title": "[(주)유니에스] [SK계열사 인크로스] 마케팅 캠페인 운영 담당자 채용 (D-14) - 사람인",
+          "url": "https://m.saramin.co.kr/job-search/view?rec_idx=55284786",
+          "tool_reference": "turn167search9"
+        },
+        {
+          "title": "'가치주 종목 분석' 카테고리의 글 목록",
+          "url": "https://deepvalue-stock.tistory.com/category/%EA%B0%80%EC%B9%98%EC%A3%BC%20%EC%A2%85%EB%AA%A9%20%EB%B6%84%EC%84%9D?page=1",
+          "tool_reference": "turn167search10"
+        },
+        {
+          "title": "혈장치료 대장주·관련주 10종목 — 녹십자·시노펙스·한국유니온제약 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/theme/plasma-therapy",
+          "tool_reference": "turn167search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search07",
+      "result_items": [
+        {
+          "title": "넥써쓰(205500) 주가·실적·재무제표 분석 | 보숲",
+          "url": "https://www.bosoop.com/stocks/205500/",
+          "tool_reference": "turn166search0"
+        },
+        {
+          "title": "(주)넥써쓰 2026년 기업정보 | 직원수, 근무환경, 복리후생 등 - 사람인",
+          "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/aTIxRnRzZkZES1Z3VVNST1BhVllNUT09/company_nm/%28%EC%A3%BC%29%EC%95%A1%EC%85%98%EC%8A%A4%ED%80%98%EC%96%B4",
+          "tool_reference": "turn166search1"
+        },
+        {
+          "title": "선제 투자 마친 넥써쓰, 원스토어 효과로 4Q 실적 반등 예고 < 비즈니스 < 게임 < 기사본문 - 게임뷰",
+          "url": "https://www.gamevu.co.kr/news/articleView.html?idxno=61435",
+          "tool_reference": "turn166search2"
+        },
+        {
+          "title": "넥써쓰 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-information?code=205500",
+          "tool_reference": "turn166search3"
+        },
+        {
+          "title": "아이온큐 주가 — 실시간 시세·목표주가·수급 | 스톡허브",
+          "url": "https://www.stockhub.kr/stock/IONQ",
+          "tool_reference": "turn166search4"
+        },
+        {
+          "title": "2026년 10월 14일 (수) 시황 — 미국·한국 주식·AI·원자재·유니콘 | 브리픽",
+          "url": "https://briefick.com/daily/2026-10-14",
+          "tool_reference": "turn166search5"
+        },
+        {
+          "title": "아이온큐 (US46222L1089) - ETF 보유 현황 | GoInsider",
+          "url": "https://goinsider.kr/stock/US46222L1089/etfs",
+          "tool_reference": "turn166search6"
+        },
+        {
+          "title": "SK하이닉스(000660) 주가·재무·공시 | 헤지나루",
+          "url": "https://hedgenaru.com/stocks/000660",
+          "tool_reference": "turn166search7"
+        },
+        {
+          "title": "\"AI 병목 뚫는다\"…삼성·SK, 세계 최대 반도체 전시회서 '메모리 기술大戰'(종합)",
+          "url": "https://view.asiae.co.kr/article/2026080409434475837?kakao_from=mainnews",
+          "tool_reference": "turn166search8"
+        },
+        {
+          "title": "000660 주식 리서치 및 투자 실사 | SK HYNIX INC | Investment Dossier",
+          "url": "https://www.investdossier.com/ko/stocks/KR/000660",
+          "tool_reference": "turn166search9"
+        },
+        {
+          "title": "반도체산업협회, 15일 AI 메모리 표준화 포럼 개최",
+          "url": "https://ir.newspim.com/news/view/20261013001265",
+          "tool_reference": "turn166search10"
+        },
+        {
+          "title": "HBM 관련주 51종목 · 지금 강한 순서 | 골라타",
+          "url": "https://gollata.com/theme/hbm/",
+          "tool_reference": "turn166search11"
+        },
+        {
+          "title": "2025.10.15",
+          "url": "https://www.hanaw.com/main/research/research/download.cmd?attachFileSeq=1&bbsCd=2206&bbsId=&bbsSeq=1284490&dbType=",
+          "tool_reference": "turn166search12"
+        },
+        {
+          "title": "PowerPoint 프레젠테이션",
+          "url": "https://static2.einfomax.co.kr/imboard/infolive/20251021_193822_0.16657445305004792.pdf",
+          "tool_reference": "turn166search13"
+        },
+        {
+          "title": "2025년 10월 14일 I Global Asset Research",
+          "url": "https://www.hanaw.com/main/research/research/download.cmd?attachFileSeq=1&bbsCd=1263&bbsId=&bbsSeq=1284457&dbType=",
+          "tool_reference": "turn166search14"
+        },
+        {
+          "title": "2025년 12월 15일 월요일",
+          "url": "https://nimage.g-enews.com/phpwas/pdffile.php?pp=001&sp=202512141706302865186697f2be10625224987_0.pdf",
+          "tool_reference": "turn166search16"
+        }
+      ]
+    },
+    {
+      "key": "day14_search08",
+      "result_items": [
+        {
+          "title": "보도자료 - 11번가 주식회사",
+          "url": "https://www.11stcorp.com/pr/detail%3Bjsessionid%3DD357D8FFC26AE1B326B6B10D31755E86?contentId=1841",
+          "tool_reference": "turn168search0"
+        },
+        {
+          "title": "원스토어, 자체 리워드 '원다이아' 도입…리워드 체계 개편 | 아주경제",
+          "url": "https://www4.ajunews.com/view/20261014104241844",
+          "tool_reference": "turn168search1"
+        },
+        {
+          "title": "[리포트 브리핑]SK, '지배구조 변화로 체질 개선 & 주력 사업 호조' 목표가 900,000원 - BNK투자증권",
+          "url": "https://www.newspim.com/news/view/20261014000700",
+          "tool_reference": "turn168search2"
+        },
+        {
+          "title": "원스토어, 리워드 원다이아 도입",
+          "url": "https://www.betanews.net/article/view/beta202610140090",
+          "tool_reference": "turn168search3"
+        },
+        {
+          "title": "SK하이닉스 주주환원 확대, SK스퀘어 기업가치에도 호재 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610141708238087",
+          "tool_reference": "turn168search4"
+        },
+        {
+          "title": "최태원, 앤디 김 상원의원 만났다…반도체 협력 논의",
+          "url": "https://www3.newstomato.com/ReadNews.aspx?no=1316636",
+          "tool_reference": "turn168search5"
+        },
+        {
+          "title": "한경글로벌마켓 | 한국경제",
+          "url": "https://www.hankyung.com/globalmarket/equities/americas/skhy",
+          "tool_reference": "turn168search6"
+        },
+        {
+          "title": "갤럭시 어텀 페스타 - 11번가",
+          "url": "https://plan.11st.co.kr/plan/front/exhibitions/2239530/detail",
+          "tool_reference": "turn168search7"
+        },
+        {
+          "title": "202610 패션뷰티페스타 - 11번가 모바일",
+          "url": "https://plan.11st.co.kr/plan/mobile/exhibitions/2236496/detail",
+          "tool_reference": "turn168search8"
+        },
+        {
+          "title": "BNK금융지주-컨센서스 | 한국경제",
+          "url": "https://markets.hankyung.com/stock/138930/consensus",
+          "tool_reference": "turn168search9"
+        },
+        {
+          "title": "보도자료 - 11번가 주식회사",
+          "url": "https://www.11stcorp.com/pr/detail%3Bjsessionid%3DF399B2F668992A9A8195696003E2E1C8?contentId=1832",
+          "tool_reference": "turn168search10"
+        },
+        {
+          "title": "SK, 美 실리콘밸리서 글로벌 빅테크와 AI 인프라 협력 확대 – SK hynix Newsroom",
+          "url": "https://news.skhynix.co.kr/k-ai-summit-2026/",
+          "tool_reference": "turn168search11"
+        },
+        {
+          "title": "2026. 5. 8",
+          "url": "https://bbn.kiwoom.com/rfCR12082",
+          "tool_reference": "turn168search12"
+        },
+        {
+          "title": "B-Human '26 - Scalable Team Play up to 11 vs. 11",
+          "url": "https://arxiv.org/abs/2610.14733",
+          "tool_reference": "turn168academia13"
+        },
+        {
+          "title": "2026 공동체 성경읽기표_1227-2",
+          "url": "https://www.onnuri.org/wp-content/uploads/2025/01/2026-%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8E%E1%85%A6-%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5%E1%84%91%E1%85%AD_1227-2.pdf",
+          "tool_reference": "turn168search14"
+        },
+        {
+          "title": "2026 년도 BNK 금융그룹",
+          "url": "https://www.bnkfg.com/download?seq=6260",
+          "tool_reference": "turn168search15"
+        },
+        {
+          "title": "스카이데일리 Skyedaily 제1820호",
+          "url": "https://m.skyedaily.com/pdf_view.html?pdf_url=%2Fdata%2Fskyn_pdf%2F2026%2F20260424%2Fweb%2F20260424-01",
+          "tool_reference": "turn168search16"
+        },
+        {
+          "title": "2025. 4. 28",
+          "url": "https://invest.kiwoom.com/inv/resource/202504/UploadFile_20250428112026000093.pdf",
+          "tool_reference": "turn168search17"
+        }
+      ]
+    },
+    {
+      "key": "day14_search09",
+      "result_items": [
+        {
+          "title": "반도체 대전",
+          "url": "https://www.sedex.org/public_html/summary/summary_info.asp",
+          "tool_reference": "turn169search0"
+        },
+        {
+          "title": "안현 SK하이닉스 사장 \"HBF 내년 1월 최종 규격 발표\"",
+          "url": "https://ir.newspim.com/news/view/20261014000748",
+          "tool_reference": "turn169search1"
+        },
+        {
+          "title": "안현 SK하이닉스 사장 \"HBM 넘어 새로운 메모리 시대 열겠다\" - 머니투데이",
+          "url": "https://www.mt.co.kr/industry/2026/10/14/2026101412241926278",
+          "tool_reference": "turn169search2"
+        },
+        {
+          "title": "SK하이닉스, AI 로봇 무대 개최",
+          "url": "https://www.newspim.com/news/view/20261014000886",
+          "tool_reference": "turn169search3"
+        },
+        {
+          "title": "\"AI 데이터, HBM·D램만으론 어렵다\"…SK하이닉스, 다음 단계 메모리 준비 - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2376138.htm",
+          "tool_reference": "turn169search4"
+        },
+        {
+          "title": "[SEDEX 2026] SK하이닉스, HBM 넘어 HBF까지…AI 메모리 경쟁력 강화",
+          "url": "https://www.news2day.co.kr/article/20261014500368",
+          "tool_reference": "turn169search5"
+        },
+        {
+          "title": "[SEDEX 2026] 안현 SK하이닉스 사장 “AI 메모리 계층 진화 필요”",
+          "url": "https://news2day.co.kr/article/20261014500213",
+          "tool_reference": "turn169search6"
+        },
+        {
+          "title": "크래프톤, 3분기 영업익 기대감↓···신작 흥행이 반등 관건 - 뉴스웨이",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026101308174251826",
+          "tool_reference": "turn169search7"
+        },
+        {
+          "title": "SEDEX 달군 삼성·SK하닉 '기술 경쟁'..TSMC 언급에 \"더 잘하겠다\" - 머니투데이",
+          "url": "https://www.mt.co.kr/index.php/industry/2026/10/14/2026101415484054610",
+          "tool_reference": "turn169search8"
+        },
+        {
+          "title": "SK하이닉스, 'SEDEX 2026'서 맞춤형 AI 메모리 솔루션 대거 공개 :: 공감언론 뉴시스 ::",
+          "url": "https://www.newsis.com/view/NISX20261014_0003825533",
+          "tool_reference": "turn169search9"
+        },
+        {
+          "title": "[SEDEX] 안현 사장, HBM 넘어 3D스택·HBF로…SK하이닉스 진화 제시 < 재계·전자 < 산업 < 기사본문 - 파이낸셜포스트",
+          "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=280360",
+          "tool_reference": "turn169search10"
+        },
+        {
+          "title": "크래프톤 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-summary?code=259960",
+          "tool_reference": "turn169search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search10",
+      "result_items": [
+        {
+          "title": "크래프톤 주가 추이 — 역대 최고가·연도별 수익률 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/259960/history",
+          "tool_reference": "turn172search0"
+        },
+        {
+          "title": "크래프톤 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-summary?code=259960",
+          "tool_reference": "turn172search1"
+        },
+        {
+          "title": "크래프톤, 게임 AI 외부에 판다...'게임 AI의 팔란티어' 지향",
+          "url": "https://search.newspim.com/news/view/20261014000938",
+          "tool_reference": "turn172search2"
+        },
+        {
+          "title": "크래프톤-컨센서스 | 한국경제",
+          "url": "https://markets.hankyung.com/stock/259960/consensus",
+          "tool_reference": "turn172search3"
+        },
+        {
+          "title": "크래프톤(259960) 주가·실적·재무제표 분석 | 보숲",
+          "url": "https://www.bosoop.com/stocks/259960/",
+          "tool_reference": "turn172search4"
+        },
+        {
+          "title": "SK하이닉스 주주환원 확대, SK스퀘어 기업가치에도 호재 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610141708238087",
+          "tool_reference": "turn172search5"
+        },
+        {
+          "title": "(주) 크래프톤(220-87-45316) 사업자정보, 대표자 | 볼타",
+          "url": "https://bolta.io/biz/2208745316",
+          "tool_reference": "turn172search6"
+        },
+        {
+          "title": "퀀티랩 — 투자 판단을 더 선명하게",
+          "url": "https://quantylab.com/stock/259960/?tab=overview",
+          "tool_reference": "turn172search7"
+        },
+        {
+          "title": "플레이포럼",
+          "url": "https://www.playforum.net/",
+          "tool_reference": "turn172search8"
+        },
+        {
+          "title": "SK스퀘어 실적·재무제표·주가 정보 (402340) | PlainRatio",
+          "url": "https://plainratio.com/stocks/402340",
+          "tool_reference": "turn172search9"
+        },
+        {
+          "title": "SK스퀘어 주가 급락 — 오늘 -9.15% 이유·시세·뉴스 | 스톡허브",
+          "url": "https://www.stockhub.kr/stock/402340",
+          "tool_reference": "turn172search10"
+        },
+        {
+          "title": "SK스퀘어 주가, 10월 14일 장중 882,000원 2.92% 상승 < e-trend 뉴스 < 오가닉라이프 < 기사본문 - 중앙이코노미뉴스",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=554782",
+          "tool_reference": "turn172search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search11",
+      "result_items": [
+        {
+          "title": "외국인 매도세에 무너진 코스피, 6000선 겨우 턱걸이 - 경향신문",
+          "url": "https://www.khan.co.kr/article/202610131721001/",
+          "tool_reference": "turn173search0"
+        },
+        {
+          "title": "솔리다임 IPO 바라보는 시각…주주 가치 훼손 vs 상장 필요 | 한국경제",
+          "url": "https://www.hankyung.com/article/2026101266056",
+          "tool_reference": "turn173search1"
+        },
+        {
+          "title": "[속보]코스피, 5.5% 급락한 6,035 마감…외국인 2조원대 순매도에 한때 매도 사이드카 발동 - 강원일보",
+          "url": "https://www.kwnews.co.kr/article/20261013500422",
+          "tool_reference": "turn173search2"
+        },
+        {
+          "title": "中반도체 D램 승부수에 삼전닉스 휘청…이익률 하락할 수도 | 한국경제",
+          "url": "https://www.hankyung.com/article/202610139523g",
+          "tool_reference": "turn173search3"
+        },
+        {
+          "title": "하닉 덕에 뜨고 하닉에 발목 … SK스퀘어 주가낙폭 2배 컸다 - 매일경제",
+          "url": "https://m.mk.co.kr/news/stock/12174735",
+          "tool_reference": "turn173search4"
+        },
+        {
+          "title": "크래프톤, 서울대와 게임·로봇 분야 월드모델 공동 연구",
+          "url": "https://view.asiae.co.kr/article/2026100816391349426",
+          "tool_reference": "turn173search5"
+        },
+        {
+          "title": "SK하이닉스, 장중 10%대 급락…143만원선 후퇴 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610131340459150",
+          "tool_reference": "turn173search6"
+        },
+        {
+          "title": "“SK하이닉스, 내년 영업이익 전망 405조원”…하나증권, 0.5%↑ - 매일경제",
+          "url": "https://www.mk.co.kr/news/stock/12174091",
+          "tool_reference": "turn173search7"
+        },
+        {
+          "title": "[마감시황] \"6000선 간신히 사수\"…코스피, 반도체 급락에 5.46% 하락 < 증권 < 금융·증권 < 기사본문 - 중앙이코노미뉴스",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=554649",
+          "tool_reference": "turn173search8"
+        },
+        {
+          "title": "비트코인 장기 보유자, 2023년부터 꾸준한 수익... 현재 72% 미실현 이익 (BTC, 비트코인, 보유자, 수익) < 가상화폐 < 금융 < 기사본문 - 민심뉴스",
+          "url": "https://www.minsimnews.com/news/articleView.html?idxno=93533",
+          "tool_reference": "turn173search9"
+        },
+        {
+          "title": "6000선 마저 ‘위태’… 고금리·고유가·수급 타격에 찬바람 부는 코스피",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/10/13/2JWPPBIDFBDV7CGJFZX3KVRILU/",
+          "tool_reference": "turn173search10"
+        },
+        {
+          "title": "반도체 곱버스 ETF도 제쳤네 … 한달 수익률 1위는 AI 보안株",
+          "url": "https://stock12.mk.co.kr/news/view/1173699",
+          "tool_reference": "turn173search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search12",
+      "result_items": [
+        {
+          "title": "SK하이닉스 주주환원 확대, SK스퀘어 기업가치에도 호재 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610141708238087",
+          "tool_reference": "turn176search0"
+        },
+        {
+          "title": "넥써쓰 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-information?code=205500",
+          "tool_reference": "turn176search1"
+        },
+        {
+          "title": "11번가, T 멤버십 쇼핑 페스타…\"횟수 제한 없이 최대 5천원 할인\"",
+          "url": "https://biz.sbs.co.kr/amp/article/20000339812",
+          "tool_reference": "turn176search2"
+        },
+        {
+          "title": "퀀티랩 — 투자 판단을 더 선명하게",
+          "url": "https://quantylab.com/stock/205500/",
+          "tool_reference": "turn176search3"
+        },
+        {
+          "title": "아이온큐 주가 — 실시간 시세·목표주가·수급 | 스톡허브",
+          "url": "https://www.stockhub.kr/stock/IONQ",
+          "tool_reference": "turn176search4"
+        },
+        {
+          "title": "가습기부터 가을옷까지 반값…11번가, 'T 멤버십 쇼핑 페스타' :: 공감언론 뉴시스 ::",
+          "url": "https://www.newsis.com/view/NISX20261014_0003824859?id=NISX20261014_0003824859&reply=",
+          "tool_reference": "turn176search5"
+        },
+        {
+          "title": "[美특징주]JP모간, 예상치 밑도는 실적…주가 강보합",
+          "url": "https://m1.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01223446645612920",
+          "tool_reference": "turn176search6"
+        },
+        {
+          "title": "가습기부터 가을옷까지 반값…11번가, 'T 멤버십 쇼핑 페스타' - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610140827077369",
+          "tool_reference": "turn176search7"
+        },
+        {
+          "title": "아이온큐 (US46222L1089) - ETF 보유 현황 | GoInsider",
+          "url": "https://goinsider.kr/stock/US46222L1089/etfs",
+          "tool_reference": "turn176search8"
+        },
+        {
+          "title": "아이온큐, 13억 달러 규모 엘리시티 인수 발표에 지분 희석 우려 부각 - 매일경제",
+          "url": "https://www.mk.co.kr/news/stock/12176209",
+          "tool_reference": "turn176search9"
+        },
+        {
+          "title": "게임동아 - 언론사별 뉴스 : 네이트 뉴스",
+          "url": "https://m.news.nate.com/media?cpcd=gd",
+          "tool_reference": "turn176search10"
+        },
+        {
+          "title": "MOANARU",
+          "url": "https://moanaru.com/",
+          "tool_reference": "turn176search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search13",
+      "result_items": [
+        {
+          "title": "IONQ Inc. (via Public) / IonQ to Acquire Elisity to Accelerate Zero Trust for the Quantum Era (Form 8-K)",
+          "url": "https://www.publicnow.com/view/1F0DF069626FBFBC14252D9665D247F873855275",
+          "tool_reference": "turn177search0"
+        },
+        {
+          "title": "IonQ paid $1.8 billion for SkyWater, the foundry that just extended rival D-Wave's chip deal · The Inference",
+          "url": "https://theinference.org/article/ionq-paid-1-8-billion-for-skywater-the-foundry-that-just-extended-rival-d-wave-s-chip-deal",
+          "tool_reference": "turn177search1"
+        },
+        {
+          "title": "The TechEchelon Brief · Tuesday, October 13, 2026",
+          "url": "https://www.techechelon.com/brief/2026-10-13",
+          "tool_reference": "turn177search2"
+        },
+        {
+          "title": "IonQ Acquires Elisity: Quantum-Safe Security Meets Identity-Based Microsegmentation - NAND Research",
+          "url": "https://nand-research.com/ionq-acquires-elisity-quantum-safe-security-meets-identity-based-microsegmentation/",
+          "tool_reference": "turn177search3"
+        },
+        {
+          "title": "IONQ Stock: Overbought or Oversold? | MarketMoodz",
+          "url": "https://marketmoodz.com/stocks/IONQ.html",
+          "tool_reference": "turn177search4"
+        },
+        {
+          "title": "What Is Happening With IonQ Stock?",
+          "url": "https://tollbit.forbes.com/sites/greatspeculations/2026/10/14/what-is-happening-with-ionq-stock/",
+          "tool_reference": "turn177search5"
+        },
+        {
+          "title": "IonQ to buy zero trust startup Elisity for up to $1.3B as quantum shifts to enterprise security — TFN",
+          "url": "https://techfundingnews.com/ionq-to-buy-zero-trust-startup-elisity-for-up-to-1-3b-as-quantum-shifts-to-enterprise-security/",
+          "tool_reference": "turn177search6"
+        },
+        {
+          "title": "아이온큐 주가 — 실시간 시세·목표주가·수급 | 스톡허브",
+          "url": "https://www.stockhub.kr/stock/IONQ",
+          "tool_reference": "turn177search7"
+        },
+        {
+          "title": "Did The Market Read IonQ Stock Right? | Trefis",
+          "url": "https://www.trefis.com/stock/ionq/articles/618690/did-the-market-read-ionq-stock-right/2026-10-14",
+          "tool_reference": "turn177search8"
+        },
+        {
+          "title": "IonQ to Buy Elisity in Deal Worth Up to $1.3B",
+          "url": "https://www.govconwire.com/articles/ionq-elisity-acquisition-zero-trust-quantum-security",
+          "tool_reference": "turn177search9"
+        },
+        {
+          "title": "IonQ Elisity Acquisition: How the $150M Earnout Pays | TradeFlock USA",
+          "url": "https://www.tradeflock.net/ionq-elisity-acquisition",
+          "tool_reference": "turn177search10"
+        },
+        {
+          "title": "8-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526419609/ionq-20261009.htm",
+          "tool_reference": "turn177search11"
+        },
+        {
+          "title": "What are your thoughts on IonQ’s acquisition of Elisity?",
+          "url": "https://www.reddit.com/r/IonQStock/comments/1x4qg2y/what_are_your_thoughts_on_ionqs_acquisition_of/",
+          "tool_reference": "turn177reddit12"
+        },
+        {
+          "title": "IonQ Subsidiary SkyWater Technology Foundry Expands Quantum Manufacturing Collaboration With D-Wave Quantum",
+          "url": "https://www.reddit.com/r/IonQStock/comments/1x4wl68/ionq_subsidiary_skywater_technology_foundry/",
+          "tool_reference": "turn177reddit13"
+        },
+        {
+          "title": "Global Business News — October 12, 2026 — Evening Update — Last 20 Hours (Pacific Time)",
+          "url": "https://www.reddit.com/r/EverHint/comments/1x4mkiq/global_business_news_october_12_2026_evening/",
+          "tool_reference": "turn177reddit14"
+        }
+      ]
+    },
+    {
+      "key": "day14_search14",
+      "result_items": [
+        {
+          "title": "아이온큐, 엘리시티 인수로 보안 강화…주주 지분 희석 부담-대신 | 한국경제",
+          "url": "https://www.hankyung.com/article/2026101376646",
+          "tool_reference": "turn179search0"
+        },
+        {
+          "title": "보안기업 13억弗 인수에 아이온큐 주가 와르르 | 한국경제",
+          "url": "https://www.hankyung.com/article/2026101394631",
+          "tool_reference": "turn179search1"
+        },
+        {
+          "title": "📉 아직 안 나온 중국 D램에 털린 하이닉스",
+          "url": "https://soonsal.com/newsletters/2026/1014.html",
+          "tool_reference": "turn179search2"
+        },
+        {
+          "title": "아이온큐, 사이버보안 기업 13억달러에 인수…주가 9% 급락 - 머니투데이",
+          "url": "https://www.mt.co.kr/index.php/world/2026/10/13/2026101308455637008",
+          "tool_reference": "turn179search3"
+        },
+        {
+          "title": "글로벌 메모리주 덮친 중국발 충격…CXMT '차세대 D램' 기술 진전 뭐길래 - 디지털투데이 (DigitalToday)",
+          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=707040",
+          "tool_reference": "turn179search4"
+        },
+        {
+          "title": "아이온큐 | 개인투자자 6.5만명 · 수익률 -21.16% | 마켓와드",
+          "url": "https://marketward.co.kr/result.php?ticker=IONQ.K",
+          "tool_reference": "turn179search5"
+        },
+        {
+          "title": "삼전닉스 리포트 — 반도체 업황·종목 분석 · HLKR",
+          "url": "https://hlkr.co.kr/report",
+          "tool_reference": "turn179search6"
+        },
+        {
+          "title": "아이온큐 주가 — 실시간 시세·목표주가·수급 | 스톡허브",
+          "url": "https://www.stockhub.kr/stock/IONQ",
+          "tool_reference": "turn179search7"
+        },
+        {
+          "title": "양자컴퓨터 기업 아이온큐, 사이버보안 스타트업 엘리시티 13억달러에 인수 - 디지털투데이 (DigitalToday)",
+          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=706904",
+          "tool_reference": "turn179search8"
+        },
+        {
+          "title": "\"삼전닉스, 못하는 게 아니라 안 하는 것\"…CXMT 쇼크에 냉정한 분석 [지금이뉴스] | YTN",
+          "url": "https://m.ytn.co.kr/news_view.php?key=202610141720015298&s_mcd=0545",
+          "tool_reference": "turn179search9"
+        },
+        {
+          "title": "중국 CXMT 4F² D램, 메모리 과점을 깰 수 있나 — 수율이 답이다",
+          "url": "https://www.vlsi.kr/ko/cxmt-4f2-dram-oligopoly-challenge-ko/",
+          "tool_reference": "turn179search10"
+        },
+        {
+          "title": "아이온큐, 보안기업 엘리시티 최대 13억달러에 인수 < 모바일·반도체·가전 < 전자ICT < 기사본문 - 이비엔(EBN)뉴스센터",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1727543",
+          "tool_reference": "turn179search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search15",
+      "result_items": [
+        {
+          "title": "원스토어 2026년 기업정보 | 직원수, 근무환경, 복리후생 등 - 사람인",
+          "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/OUx2b09sRER3L1p3RkE3TERKNUlRUT09/company_nm/%EC%9B%90%EC%8A%A4%ED%86%A0%EC%96%B4",
+          "tool_reference": "turn181search0"
+        },
+        {
+          "title": "원스토어",
+          "url": "https://m.onestore.co.kr/v2/ko-kr/app/0001010340/about",
+          "tool_reference": "turn181search1"
+        },
+        {
+          "title": "원스토어",
+          "url": "https://m.onestore.co.kr/v2/ko-kr/app/0001010283/about",
+          "tool_reference": "turn181search2"
+        },
+        {
+          "title": "원스토어",
+          "url": "https://m.onestore.co.kr/v2/ko-kr/app/0001009493/about",
+          "tool_reference": "turn181search3"
+        },
+        {
+          "title": "13일 8시 0분 기준, 가상화폐(암호화폐) 웨이브 가격 변동 추이 < 코인정보 < AI기사 < 기사본문 - 뉴스인사이드",
+          "url": "https://www.newsinside.kr/news/articleView.html?idxno=5023025",
+          "tool_reference": "turn181search4"
+        },
+        {
+          "title": "위선 떨지 마 쓴소리 들은 이수민 종영 후 입 열었다…후회 NO 쉽게 할 수 없는 경험 | 텐아시아",
+          "url": "https://www.tenasia.co.kr/article/2026101258094",
+          "tool_reference": "turn181search5"
+        },
+        {
+          "title": "하닉 덕에 뜨고 하닉에 발목 … SK스퀘어 주가낙폭 2배 컸다 - 매일경제",
+          "url": "https://www.mk.co.kr/news/stock/12174735",
+          "tool_reference": "turn181search6"
+        },
+        {
+          "title": "다음 업데이트 신규 패치사항 · 뚜까펫: 서바이벌 · 뚜까이드",
+          "url": "https://ttugaguide.kr/index.php/guide/896",
+          "tool_reference": "turn181search7"
+        },
+        {
+          "title": "이번 주 해외에서 유행하는 것 398개 — 지금 이슈 있나요?",
+          "url": "https://issueitnow.com/",
+          "tool_reference": "turn181search8"
+        },
+        {
+          "title": "테크월드",
+          "url": "https://www.epnc.co.kr/",
+          "tool_reference": "turn181search9"
+        },
+        {
+          "title": "형지엘리트, 고교패션콘테스트 11년 연속 후원…미래 K-패션 인재 육성 앞장 < 유통일반 < 산업 < 기사본문 - 중앙이코노미뉴스",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=554316",
+          "tool_reference": "turn181search10"
+        },
+        {
+          "title": "\"정부 게임지원사업, 토종 앱마켓 외면하고 '구글·애플' 중심\"",
+          "url": "https://www.pressian.com/pages/articles/2026101318285404669%26ref%3Drss",
+          "tool_reference": "turn181search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search16",
+      "result_items": [
+        {
+          "title": "나노엔텍(039860) 주가·대차잔고·공매도·배당 — BruDash",
+          "url": "https://blog.brudash.com/stock/039860",
+          "tool_reference": "turn182search0"
+        },
+        {
+          "title": "Incross Stock Symbol 216050 (KRX) | Korean Tickers",
+          "url": "https://www.koreantickers.com/stock/216050",
+          "tool_reference": "turn182search1"
+        },
+        {
+          "title": "도매11번가 2026년 기업정보 | 직원수, 근무환경, 복리후생 등 - 사람인",
+          "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/T1VELzZTcCtXSm52TGNqLytBWk5jZz09/company_nm/%EB%8F%84%EB%A7%A411%EB%B2%88%EA%B0%80",
+          "tool_reference": "turn182search2"
+        },
+        {
+          "title": "나노엔텍 | 기업 인덱스 | MAA",
+          "url": "https://medicalaialliance.org/ko/companies/nanoen-tek-039860",
+          "tool_reference": "turn182search3"
+        },
+        {
+          "title": "나노엔텍 - StockPulse",
+          "url": "https://sangsoo.synology.me/stocks/039860",
+          "tool_reference": "turn182search4"
+        },
+        {
+          "title": "인크로스(216050) 배당금·배당락일·배당기준일·자사주 소각",
+          "url": "https://mydividend.kr/stock/216050.html",
+          "tool_reference": "turn182search5"
+        },
+        {
+          "title": "▒▒ 매일경제 / 증권센터 ▒▒",
+          "url": "https://open.shinhansec.com/goodicyber/mk/1206.jsp?code=039860",
+          "tool_reference": "turn182search6"
+        },
+        {
+          "title": "[인크로스] 2026년 9월 매체력 평가 리포트 - 아이보스 마케팅 자료실 - 콘텐츠 - 아이보스",
+          "url": "https://www.i-boss.co.kr/ab-3208-1830",
+          "tool_reference": "turn182search7"
+        },
+        {
+          "title": "NICE CompanySearch",
+          "url": "https://comp.nicebizline.com/hi/HI0100M010GE.nice?nav=1&stockcd=039860",
+          "tool_reference": "turn182search8"
+        },
+        {
+          "title": "인크로스 주가 📈 - 실시간 차트 · 주가 전망 · 투자정보",
+          "url": "https://alphasquare.co.kr/home/stock-summary?code=216050",
+          "tool_reference": "turn182search9"
+        },
+        {
+          "title": "",
+          "url": "https://animals.or.kr/support/enter",
+          "tool_reference": "turn182search10"
+        },
+        {
+          "title": "[LP] 악뮤 (AKMU) - 정규 4집 개화 [LP] (이달의 가요 LP )",
+          "url": "https://www.11st.co.kr/products/9395749819",
+          "tool_reference": "turn182search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search17",
+      "result_items": [
+        {
+          "title": "\"AI 데이터, HBM·D램만으론 어렵다\"…SK하이닉스, 다음 단계 메모리 준비 - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2376138.htm",
+          "tool_reference": "turn184search0"
+        },
+        {
+          "title": "티맵모빌리티(주) 2026년 기업정보 | 직원수, 근무환경, 복리후생 등 - 사람인",
+          "url": "https://m.saramin.co.kr/job-search/company-info-view?csn=V0JLcnNPNlRFRk1wanZtdmRBcmlodz09&searchword=%EC%97%90%EC%8A%A4%EC%BC%80%EC%9D%B4%EB%B8%8C%EB%A1%9C%EB%93%9C%EB%B0%B4%EB%93%9C",
+          "tool_reference": "turn184search1"
+        },
+        {
+          "title": "“2030년 AI 인프라 20배 커진다”…SK하이닉스가 그리는 ‘포스트 HBM’ 청사진 < 전자/IT < 경제 < 기사본문 - 투데이신문",
+          "url": "https://www.ntoday.co.kr/news/articleView.html?idxno=130049",
+          "tool_reference": "turn184search2"
+        },
+        {
+          "title": "투자정보::한경유레카 NO.1 AI투자서비스",
+          "url": "https://eureka.hankyung.com/invest/detail?board_id=19894&expanded=",
+          "tool_reference": "turn184search3"
+        },
+        {
+          "title": "K-FOCUS | DBR",
+          "url": "https://dbr.donga.com/kfocus/category",
+          "tool_reference": "turn184search4"
+        },
+        {
+          "title": "CSRBRIEFING | 기업 ESG·규제·공시 실무를 위한 브리핑",
+          "url": "https://csrbriefing.kr/",
+          "tool_reference": "turn184search5"
+        },
+        {
+          "title": "퀀티랩 — 투자 판단을 더 선명하게",
+          "url": "https://quantylab.com/stock/060570/",
+          "tool_reference": "turn184search6"
+        },
+        {
+          "title": "",
+          "url": "https://www.truefriend.com/main/research/Main.jsp",
+          "tool_reference": "turn184search7"
+        },
+        {
+          "title": "리드커리어㈜ 채용 - [드림어스컴퍼니/강남] V컬러링 서비스 운영 담당 채용 | 잡코리아",
+          "url": "https://m.jobkorea.co.kr/Recruit/GI_Read/50163877?PageGbn=MST&sc=226",
+          "tool_reference": "turn184search8"
+        },
+        {
+          "title": "드림어스컴퍼니 AI 분석 — 모멘텀·변동성·수급·밸류에이션 진단 | 주가맵",
+          "url": "https://jugamap.keywordegg.com/stock/060570/analysis",
+          "tool_reference": "turn184search9"
+        },
+        {
+          "title": "\"AI 병목 뚫는다\"…삼성·SK, 세계 최대 반도체 전시회서 '메모리 기술大戰'(종합)",
+          "url": "https://view.asiae.co.kr/article/2026080409434475837?kakao_from=mainnews",
+          "tool_reference": "turn184search10"
+        },
+        {
+          "title": "투자 노트 · 10/14(수) 오전시황 ; 한차례 폭풍이 지나간 후....",
+          "url": "https://arod2750.cafe24.com/doc/naver-premium-228ed0dc4c9074",
+          "tool_reference": "turn184search11"
+        }
+      ]
+    },
+    {
+      "key": "day14_search18",
+      "result_items": [
+        {
+          "title": "AI 병목현상 ‘메모리 월’ 돌파 경쟁…삼성·SK, 차세대 CXL 기술로 승부수｜동아일보",
+          "url": "https://www.donga.com/news/Economy/article/all/20261013/134834043/1",
+          "tool_reference": "turn186search0"
+        },
+        {
+          "title": "SK하이닉스, 메모리 중심 AI 랙 시스템 설계 제시 | 증권플러스 뉴스룸",
+          "url": "https://newsroom.stockplus.com/breaking-news/38802",
+          "tool_reference": "turn186search1"
+        },
+        {
+          "title": "삼전 ‘HBM5-CXL-SSD’ 닉스 ‘메모리 중심 랙’ | DBR",
+          "url": "https://dbr.donga.com/kfocus/view/article_no/3715",
+          "tool_reference": "turn186search2"
+        },
+        {
+          "title": "삼성전자, 새 메모리 전략 공개…속도·확장성·영속성 초점",
+          "url": "https://stock11.mk.co.kr/news/view/1173208",
+          "tool_reference": "turn186search3"
+        },
+        {
+          "title": "AI 병목 뚫어라… 삼성·SK, 차세대 메모리 전략 맞붙었다 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610131818166769",
+          "tool_reference": "turn186search4"
+        },
+        {
+          "title": "“속도·확장성·영속성에 초점”…삼성전자, 새 메모리 전략 공개 - 매일경제",
+          "url": "https://www.mk.co.kr/news/business/12174109",
+          "tool_reference": "turn186search5"
+        },
+        {
+          "title": "삼성전자, AI 모델 대형화와 추론 과정 처리 맞춤형 새 메모리 전략 공개…속도·확장성·영속성 초점 - 파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610130804018945",
+          "tool_reference": "turn186search6"
+        },
+        {
+          "title": "삼성전자, 차세대 HBM5 공개하며 AI 메모리 승부수…AMD와 기술 협력 확대 < 전기·전자·반도체 < 산업 < 기사본문 - 중앙이코노미뉴스",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=554318",
+          "tool_reference": "turn186search7"
+        },
+        {
+          "title": "삼성전자, HBM5·CXL 앞세워 AI 한계 돌파…글로벌 1위 굳힌다 < 기업일반 < 모바일·반도체·가전 < 전자ICT < 기사본문 - 이비엔(EBN)뉴스센터",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1727546",
+          "tool_reference": "turn186search8"
+        },
+        {
+          "title": "삼성전자 'HBM5·CXL' 새 AI 메모리 전략 공개",
+          "url": "https://www.incheonilbo.com/news/articleView.html?idxno=1334039",
+          "tool_reference": "turn186search9"
+        },
+        {
+          "title": "삼성전자, AI 시대 메모리 전략 공개…HBM·CXL·차세대 SSD 공략",
+          "url": "https://www.ziksir.com/news/articleView.html?idxno=149206",
+          "tool_reference": "turn186search10"
+        },
+        {
+          "title": "역대 가장 중요한 어닝시즌에 오신 걸 환영합니다! [10/13 G모닝]｜Global Money Club",
+          "url": "https://www.joongang.co.kr/gmc/article/25469199",
+          "tool_reference": "turn186search11"
+        }
+      ]
+    }
+  ],
+  "selection_notes": "Representative canonical articles from verified eligible events retained. Duplicate syndications and overlapping photo coverage were not separately added. Two distinct reports of the same HBF speech were retained with one duplicate cluster and low novelty for the later report. Search hits for live quote screens, crawl-date-only pages, unrelated Waves cryptocurrency, old articles with live date widgets, and ambiguous date-only pages were not treated as eligible news.",
+  "outcome_blinding": "No stock-price data endpoints or local return/residual data were queried for labeling. Incidental quote snippets in broad web results and market-flow articles were not used to assign sentiment or expected direction."
+}
